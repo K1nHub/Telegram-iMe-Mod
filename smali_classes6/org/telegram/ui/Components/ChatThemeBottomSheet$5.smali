@@ -43,7 +43,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
     .locals 0
 
-    .line 415
+    .line 409
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$5;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .method private synthetic lambda$onComplete$0(Ljava/util/List;)V
     .locals 1
 
-    .line 422
+    .line 416
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$5;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$400(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Ljava/util/List;)V
@@ -67,7 +67,7 @@
 .method public bridge synthetic onComplete(Ljava/lang/Object;)V
     .locals 0
 
-    .line 415
+    .line 409
     check-cast p1, Ljava/util/List;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$5;->onComplete(Ljava/util/List;)V
@@ -88,14 +88,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 418
+    .line 412
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 419
+    .line 413
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$5;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$200(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/ChatActivity$ThemeDelegate;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->setCachedThemes(Ljava/util/List;)V
 
-    .line 421
+    .line 415
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$5;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
@@ -128,7 +128,7 @@
 .method public onError(Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 2
 
-    .line 428
+    .line 422
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$5;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;

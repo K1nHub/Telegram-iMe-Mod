@@ -25,7 +25,7 @@ import com.google.zxing.common.detector.MathUtils;
 import java.util.Arrays;
 import java.util.Comparator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SvgHelper;
@@ -98,10 +98,10 @@ public class CacheChart extends View {
     static {
         int i = Theme.key_statisticChartLine_purple;
         DEFAULT_COLORS = new int[]{Theme.key_statisticChartLine_lightblue, Theme.key_statisticChartLine_blue, Theme.key_statisticChartLine_green, i, Theme.key_statisticChartLine_lightgreen, Theme.key_statisticChartLine_red, Theme.key_statisticChartLine_orange, Theme.key_statisticChartLine_cyan, i, Theme.key_statisticChartLine_golden};
-        int i2 = C3634R.raw.cache_videos;
-        int i3 = C3634R.raw.cache_music;
-        int i4 = C3634R.raw.cache_other;
-        DEFAULT_PARTICLES = new int[]{C3634R.raw.cache_photos, i2, C3634R.raw.cache_documents, i3, i2, i3, C3634R.raw.cache_stickers, C3634R.raw.cache_profile_photos, i4, i4};
+        int i2 = C3632R.raw.cache_videos;
+        int i3 = C3632R.raw.cache_music;
+        int i4 = C3632R.raw.cache_other;
+        DEFAULT_PARTICLES = new int[]{C3632R.raw.cache_photos, i2, C3632R.raw.cache_documents, i3, i2, i3, C3632R.raw.cache_stickers, C3632R.raw.cache_profile_photos, i4, i4};
         particlesStart = -1L;
     }
 

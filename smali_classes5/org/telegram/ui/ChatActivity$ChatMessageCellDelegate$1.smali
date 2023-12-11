@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 33782
+    .line 33792
     iput-object v0, v12, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     move-object v0, p0
@@ -63,10 +63,10 @@
 .method public dismissInternal()V
     .locals 2
 
-    .line 33785
+    .line 33795
     invoke-super {p0}, Lorg/telegram/ui/Components/ShareAlert;->dismissInternal()V
 
-    .line 33786
+    .line 33796
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -85,7 +85,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
 
-    .line 33787
+    .line 33797
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -98,7 +98,7 @@
 
     if-nez v0, :cond_0
 
-    .line 33788
+    .line 33798
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -126,14 +126,14 @@
         }
     .end annotation
 
-    .line 33794
+    .line 33804
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$12600(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 33795
+    .line 33805
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -146,7 +146,7 @@
 
     return-void
 
-    .line 33798
+    .line 33808
     :cond_0
     invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
 
@@ -156,7 +156,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 33799
+    .line 33809
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -191,7 +191,7 @@
 
     goto :goto_0
 
-    .line 33801
+    .line 33811
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 

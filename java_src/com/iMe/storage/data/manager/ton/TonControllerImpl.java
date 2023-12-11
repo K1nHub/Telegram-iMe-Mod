@@ -2,6 +2,7 @@ package com.iMe.storage.data.manager.ton;
 
 import com.iMe.storage.data.network.model.error.ErrorModel;
 import com.iMe.storage.data.network.model.error.IErrorStatus;
+import com.iMe.storage.data.utils.extentions.StringExtKt;
 import com.iMe.storage.domain.gateway.TelegramGateway;
 import com.iMe.storage.domain.manager.ton.TonController;
 import com.iMe.storage.domain.model.Result;
@@ -41,6 +42,7 @@ import org.ton.block.AddrStd;
 import org.ton.cell.Cell;
 import org.ton.contract.wallet.WalletContract;
 import org.ton.lite.client.LiteClient;
+import org.ton.mnemonic.Mnemonic;
 import timber.log.Timber;
 /* compiled from: TonControllerImpl.kt */
 /* loaded from: classes3.dex */
@@ -96,7 +98,7 @@ public final class TonControllerImpl implements TonController {
     @Override // com.iMe.storage.domain.manager.ton.TonController
     public Observable<Result<Boolean>> isValidAddress(final String address) {
         Intrinsics.checkNotNullParameter(address, "address");
-        Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda4
+        Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda5
             @Override // java.util.concurrent.Callable
             public final Object call() {
                 Result isValidAddress$lambda$1;
@@ -136,6 +138,48 @@ public final class TonControllerImpl implements TonController {
         return (Result) tmp0.invoke(obj);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Result isValidMnemonic$lambda$3(String mnemonic) {
+        Intrinsics.checkNotNullParameter(mnemonic, "$mnemonic");
+        return Result.Companion.success(Boolean.valueOf(Mnemonic.isValid$default(StringExtKt.splitBySpace(mnemonic), null, null, 6, null)));
+    }
+
+    @Override // com.iMe.storage.domain.manager.ton.TonController
+    public Observable<Result<Boolean>> isValidMnemonic(final String mnemonic) {
+        Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
+        Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda6
+            @Override // java.util.concurrent.Callable
+            public final Object call() {
+                Result isValidMnemonic$lambda$3;
+                isValidMnemonic$lambda$3 = TonControllerImpl.isValidMnemonic$lambda$3(mnemonic);
+                return isValidMnemonic$lambda$3;
+            }
+        });
+        final TonControllerImpl$isValidMnemonic$2 tonControllerImpl$isValidMnemonic$2 = new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$isValidMnemonic$2
+            @Override // kotlin.jvm.functions.Function1
+            public final Result<Boolean> invoke(Throwable it) {
+                Intrinsics.checkNotNullParameter(it, "it");
+                return Result.Companion.success(Boolean.FALSE);
+            }
+        };
+        Observable<Result<Boolean>> onErrorReturn = fromCallable.onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                Result isValidMnemonic$lambda$4;
+                isValidMnemonic$lambda$4 = TonControllerImpl.isValidMnemonic$lambda$4(Function1.this, obj);
+                return isValidMnemonic$lambda$4;
+            }
+        });
+        Intrinsics.checkNotNullExpressionValue(onErrorReturn, "fromCallable { Mnemonic.…urn { false.toSuccess() }");
+        return onErrorReturn;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Result isValidMnemonic$lambda$4(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (Result) tmp0.invoke(obj);
+    }
+
     @Override // com.iMe.storage.domain.manager.ton.TonController
     public Observable<Result<Wallet>> createWallet() {
         Observable<Result<Wallet>> observable = RxSingleKt.rxSingle$default(null, new TonControllerImpl$createWallet$1(this, null), 1, null).toObservable();
@@ -154,12 +198,12 @@ public final class TonControllerImpl implements TonController {
     @Override // com.iMe.storage.domain.manager.ton.TonController
     public Observable<Result<String>> sendTransaction(String to, long j, int i, TonTransactionPayload tonTransactionPayload, int i2) {
         Intrinsics.checkNotNullParameter(to, "to");
-        Observable<Result<String>> observable = RxSingleKt.rxSingle$default(null, new TonControllerImpl$sendTransaction$1(this, to, j, i, tonTransactionPayload, null), 1, null).onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2
+        Observable<Result<String>> observable = RxSingleKt.rxSingle$default(null, new TonControllerImpl$sendTransaction$1(this, to, j, i, tonTransactionPayload, null), 1, null).onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                Result sendTransaction$lambda$3;
-                sendTransaction$lambda$3 = TonControllerImpl.sendTransaction$lambda$3((Throwable) obj);
-                return sendTransaction$lambda$3;
+                Result sendTransaction$lambda$5;
+                sendTransaction$lambda$5 = TonControllerImpl.sendTransaction$lambda$5((Throwable) obj);
+                return sendTransaction$lambda$5;
             }
         }).toObservable();
         Intrinsics.checkNotNullExpressionValue(observable, "override fun sendTransac…          .toObservable()");
@@ -167,7 +211,7 @@ public final class TonControllerImpl implements TonController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Result sendTransaction$lambda$3(Throwable it) {
+    public static final Result sendTransaction$lambda$5(Throwable it) {
         Intrinsics.checkNotNullParameter(it, "it");
         return Result.Companion.error$default(Result.Companion, new ErrorModel((IErrorStatus) null, it, 1, (DefaultConstructorMarker) null), null, 2, null);
     }
@@ -175,12 +219,12 @@ public final class TonControllerImpl implements TonController {
     @Override // com.iMe.storage.domain.manager.ton.TonController
     public Observable<Result<byte[]>> signData(final byte[] data) {
         Intrinsics.checkNotNullParameter(data, "data");
-        Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda3
+        Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda4
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                Result signData$lambda$4;
-                signData$lambda$4 = TonControllerImpl.signData$lambda$4(TonControllerImpl.this, data);
-                return signData$lambda$4;
+                Result signData$lambda$6;
+                signData$lambda$6 = TonControllerImpl.signData$lambda$6(TonControllerImpl.this, data);
+                return signData$lambda$6;
             }
         });
         final TonControllerImpl$signData$2 tonControllerImpl$signData$2 = new Function1<Throwable, Result<? extends byte[]>>() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$signData$2
@@ -193,9 +237,9 @@ public final class TonControllerImpl implements TonController {
         Observable<Result<byte[]>> onErrorReturn = fromCallable.onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                Result signData$lambda$5;
-                signData$lambda$5 = TonControllerImpl.signData$lambda$5(Function1.this, obj);
-                return signData$lambda$5;
+                Result signData$lambda$7;
+                signData$lambda$7 = TonControllerImpl.signData$lambda$7(Function1.this, obj);
+                return signData$lambda$7;
             }
         });
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "fromCallable {\n         …).toError()\n            }");
@@ -203,14 +247,14 @@ public final class TonControllerImpl implements TonController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Result signData$lambda$4(TonControllerImpl this$0, byte[] data) {
+    public static final Result signData$lambda$6(TonControllerImpl this$0, byte[] data) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(data, "$data");
         return Result.Companion.success(this$0.getPrivateKeySafe().sign(data));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Result signData$lambda$5(Function1 tmp0, Object obj) {
+    public static final Result signData$lambda$7(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return (Result) tmp0.invoke(obj);
     }
@@ -484,9 +528,12 @@ public final class TonControllerImpl implements TonController {
                 String str;
                 CryptoPreferenceHelper cryptoPreferenceHelper;
                 boolean isBlank;
+                CryptoPreferenceHelper cryptoPreferenceHelper2;
                 Intrinsics.checkNotNullParameter(result, "result");
                 if (result instanceof Result.Success) {
                     str = (String) ((Result.Success) result).getData();
+                    cryptoPreferenceHelper2 = TonControllerImpl.this.cryptoPreferenceHelper;
+                    cryptoPreferenceHelper2.setTonConfigJsonString(str);
                 } else if (result instanceof Result.Error) {
                     cryptoPreferenceHelper = TonControllerImpl.this.cryptoPreferenceHelper;
                     str = cryptoPreferenceHelper.getTonConfigJsonString();

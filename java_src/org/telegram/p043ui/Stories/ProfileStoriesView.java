@@ -55,7 +55,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     private final int currentAccount;
 
     /* renamed from: cy */
-    private float f1983cy;
+    private float f1984cy;
     private final long dialogId;
     private float expandProgress;
     private float expandRight;
@@ -94,7 +94,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     private int uploadingStoriesCount;
 
     /* renamed from: w */
-    float f1984w;
+    float f1985w;
     private final Paint whitePaint;
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -183,7 +183,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         this.newStoryBounceT = 1.0f;
         this.expandRightPadAnimated = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
         this.rightAnimated = new AnimatedFloat(this, 0L, 350L, cubicBezierInterpolator);
-        this.provider = new C71023();
+        this.provider = new C71003();
         this.onLongPressRunnable = new Runnable() { // from class: org.telegram.ui.Stories.ProfileStoriesView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
@@ -690,13 +690,13 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     }
 
     public void setBounds(float f, float f2, float f3, boolean z) {
-        boolean z2 = Math.abs(f - this.left) > 0.1f || Math.abs(f2 - this.right) > 0.1f || Math.abs(f3 - this.f1983cy) > 0.1f;
+        boolean z2 = Math.abs(f - this.left) > 0.1f || Math.abs(f2 - this.right) > 0.1f || Math.abs(f3 - this.f1984cy) > 0.1f;
         this.left = f;
         this.right = f2;
         if (!z) {
             this.rightAnimated.set(f2, true);
         }
-        this.f1983cy = f3;
+        this.f1984cy = f3;
         if (z2) {
             invalidate();
         }
@@ -739,13 +739,13 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.ProfileStoriesView$3 */
     /* loaded from: classes6.dex */
-    public class C71023 implements StoryViewer.PlaceProvider {
+    public class C71003 implements StoryViewer.PlaceProvider {
         @Override // org.telegram.p043ui.Stories.StoryViewer.PlaceProvider
         public /* synthetic */ void loadNext(boolean z) {
             StoryViewer.PlaceProvider.CC.$default$loadNext(this, z);
         }
 
-        C71023() {
+        C71003() {
         }
 
         @Override // org.telegram.p043ui.Stories.StoryViewer.PlaceProvider
@@ -802,7 +802,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                 transitionViewHolder.drawClip = new StoryViewer.HolderClip() { // from class: org.telegram.ui.Stories.ProfileStoriesView$3$$ExternalSyntheticLambda0
                     @Override // org.telegram.p043ui.Stories.StoryViewer.HolderClip
                     public final void clip(Canvas canvas, RectF rectF3, float f, boolean z) {
-                        ProfileStoriesView.C71023.this.lambda$findView$0(rectF, storyCircle, rectF2, storyCircle2, canvas, rectF3, f, z);
+                        ProfileStoriesView.C71003.this.lambda$findView$0(rectF, storyCircle, rectF2, storyCircle2, canvas, rectF3, f, z);
                     }
                 };
             } else {
@@ -851,7 +851,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         if (this.expandProgress < 0.9f) {
             z = this.rect2.contains(motionEvent.getX(), motionEvent.getY());
         } else {
-            z = motionEvent.getX() >= (getExpandRight() - this.f1984w) - ((float) AndroidUtilities.m104dp(32)) && motionEvent.getX() <= getExpandRight() + ((float) AndroidUtilities.m104dp(32)) && Math.abs(motionEvent.getY() - this.expandY) < ((float) AndroidUtilities.m104dp(32));
+            z = motionEvent.getX() >= (getExpandRight() - this.f1985w) - ((float) AndroidUtilities.m104dp(32)) && motionEvent.getX() <= getExpandRight() + ((float) AndroidUtilities.m104dp(32)) && Math.abs(motionEvent.getY() - this.expandY) < ((float) AndroidUtilities.m104dp(32));
         }
         if (z && motionEvent.getAction() == 0) {
             this.tapTime = System.currentTimeMillis();

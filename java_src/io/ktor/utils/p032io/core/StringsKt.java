@@ -126,11 +126,11 @@ public final class StringsKt {
         ChunkBuffer prepareWriteHead = UnsafeKt.prepareWriteHead(output, 1, null);
         while (true) {
             try {
-                int m1927encodeUTF8lBXzO7A = UTF8Kt.m1927encodeUTF8lBXzO7A(prepareWriteHead.m1917getMemorySK3TCg8(), charSequence, i, i2, prepareWriteHead.getWritePosition(), prepareWriteHead.getLimit());
-                int m1921component1Mh2AYeg = EncodeResult.m1921component1Mh2AYeg(m1927encodeUTF8lBXzO7A) & 65535;
-                i += m1921component1Mh2AYeg;
-                prepareWriteHead.commitWritten(EncodeResult.m1922component2Mh2AYeg(m1927encodeUTF8lBXzO7A) & 65535);
-                int i3 = (m1921component1Mh2AYeg != 0 || i >= i2) ? i < i2 ? 1 : 0 : 8;
+                int m1929encodeUTF8lBXzO7A = UTF8Kt.m1929encodeUTF8lBXzO7A(prepareWriteHead.m1919getMemorySK3TCg8(), charSequence, i, i2, prepareWriteHead.getWritePosition(), prepareWriteHead.getLimit());
+                int m1923component1Mh2AYeg = EncodeResult.m1923component1Mh2AYeg(m1929encodeUTF8lBXzO7A) & 65535;
+                i += m1923component1Mh2AYeg;
+                prepareWriteHead.commitWritten(EncodeResult.m1924component2Mh2AYeg(m1929encodeUTF8lBXzO7A) & 65535);
+                int i3 = (m1923component1Mh2AYeg != 0 || i >= i2) ? i < i2 ? 1 : 0 : 8;
                 if (i3 <= 0) {
                     return;
                 }

@@ -499,7 +499,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     return false;
                 }
             });
-            this.windowView = new C71522(context, lastFragment);
+            this.windowView = new C71502(context, lastFragment);
         }
         if (this.containerView == null) {
             this.containerView = new HwFrameLayout(context) { // from class: org.telegram.ui.Stories.StoryViewer.3
@@ -597,7 +597,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 }
             };
             this.storiesViewPager = hwStoriesViewPager;
-            hwStoriesViewPager.setDelegate(new C71585(storiesList, arrayList));
+            hwStoriesViewPager.setDelegate(new C71565(storiesList, arrayList));
             this.containerView.addView(this.storiesViewPager, LayoutHelper.createFrame(-1, -1, 1));
             this.aspectRatioFrameLayout = new AspectRatioFrameLayout(context);
             if (this.USE_SURFACE_VIEW) {
@@ -697,7 +697,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.StoryViewer$2 */
     /* loaded from: classes6.dex */
-    public class C71522 extends SizeNotifierFrameLayout {
+    public class C71502 extends SizeNotifierFrameLayout {
         float lastTouchX;
         SparseArray<Float> lastX;
         final RectF outFromRectAvatar;
@@ -711,7 +711,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         final /* synthetic */ BaseFragment val$fragment;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C71522(Context context, BaseFragment baseFragment) {
+        C71502(Context context, BaseFragment baseFragment) {
             super(context);
             this.val$fragment = baseFragment;
             this.path = new Path();
@@ -744,7 +744,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 Method dump skipped, instructions count: 1964
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Stories.StoryViewer.C71522.dispatchDraw(android.graphics.Canvas):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Stories.StoryViewer.C71502.dispatchDraw(android.graphics.Canvas):void");
         }
 
         @Override // android.view.ViewGroup, android.view.ViewParent
@@ -775,7 +775,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                         StoryViewer.this.swipeToDissmissBackAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoryViewer$2$$ExternalSyntheticLambda0
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                StoryViewer.C71522.this.lambda$dispatchTouchEvent$0(valueAnimator);
+                                StoryViewer.C71502.this.lambda$dispatchTouchEvent$0(valueAnimator);
                             }
                         });
                         StoryViewer.this.swipeToDissmissBackAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.StoryViewer.2.1
@@ -912,7 +912,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     StoryViewer.this.delayedTapRunnable = new Runnable() { // from class: org.telegram.ui.Stories.StoryViewer$2$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryViewer.C71522.this.lambda$onInterceptTouchEvent$1();
+                            StoryViewer.C71502.this.lambda$onInterceptTouchEvent$1();
                         }
                     };
                     AndroidUtilities.runOnUIThread(StoryViewer.this.delayedTapRunnable, 150L);
@@ -1027,7 +1027,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                         StoryViewer.this.swipeToDissmissBackAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.StoryViewer$2$$ExternalSyntheticLambda1
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                StoryViewer.C71522.this.lambda$onTouchEvent$2(valueAnimator);
+                                StoryViewer.C71502.this.lambda$onTouchEvent$2(valueAnimator);
                             }
                         });
                         StoryViewer.this.swipeToDissmissBackAnimator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.StoryViewer.2.2
@@ -1121,7 +1121,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                         return 0;
                     }
                     AndroidUtilities.getViewPositionInParent(currentPeerView.storyContainer, StoryViewer.this.windowView, this.position);
-                    return (int) (C71522.this.getMeasuredHeight() - (this.position[1] + currentPeerView.storyContainer.getMeasuredHeight()));
+                    return (int) (C71502.this.getMeasuredHeight() - (this.position[1] + currentPeerView.storyContainer.getMeasuredHeight()));
                 }
             });
             NotificationCenter.getInstance(StoryViewer.this.currentAccount).addObserver(StoryViewer.this, NotificationCenter.storiesListUpdated);
@@ -1152,11 +1152,11 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.StoryViewer$5 */
     /* loaded from: classes6.dex */
-    public class C71585 implements PeerStoriesView.Delegate {
+    public class C71565 implements PeerStoriesView.Delegate {
         final /* synthetic */ ArrayList val$peerIds;
         final /* synthetic */ StoriesController.StoriesList val$storiesList;
 
-        C71585(StoriesController.StoriesList storiesList, ArrayList arrayList) {
+        C71565(StoriesController.StoriesList storiesList, ArrayList arrayList) {
             this.val$storiesList = storiesList;
             this.val$peerIds = arrayList;
         }
@@ -1198,7 +1198,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     storiesViewPager.onNextIdle(new Runnable() { // from class: org.telegram.ui.Stories.StoryViewer$5$$ExternalSyntheticLambda1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryViewer.C71585.this.lambda$switchToNextAndRemoveCurrentPeer$0(storiesList, arrayList);
+                            StoryViewer.C71565.this.lambda$switchToNextAndRemoveCurrentPeer$0(storiesList, arrayList);
                         }
                     });
                     return;
@@ -1217,7 +1217,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     StoryViewer.this.storiesViewPager.onNextIdle(new Runnable() { // from class: org.telegram.ui.Stories.StoryViewer$5$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryViewer.C71585.this.lambda$switchToNextAndRemoveCurrentPeer$1(arrayList2, indexOf2);
+                            StoryViewer.C71565.this.lambda$switchToNextAndRemoveCurrentPeer$1(arrayList2, indexOf2);
                         }
                     });
                     return;
@@ -1498,7 +1498,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                     videoPlayerHolder.setOnSeekUpdate(new Runnable() { // from class: org.telegram.ui.Stories.StoryViewer$5$$ExternalSyntheticLambda2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            StoryViewer.C71585.this.lambda$preparePlayer$2(videoPlayerHolder);
+                            StoryViewer.C71565.this.lambda$preparePlayer$2(videoPlayerHolder);
                         }
                     });
                     videoPlayerHolder.uri = uri;
@@ -2086,7 +2086,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
         });
         this.locker.lock();
         this.containerView.enableHwAcceleration();
-        this.openCloseAnimator.addListener(new C714810());
+        this.openCloseAnimator.addListener(new C714610());
         this.openCloseAnimator.setStartDelay(40L);
         this.openCloseAnimator.setDuration(250L);
         this.openCloseAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
@@ -2115,8 +2115,8 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.StoryViewer$10 */
     /* loaded from: classes6.dex */
-    public class C714810 extends AnimatorListenerAdapter {
-        C714810() {
+    public class C714610 extends AnimatorListenerAdapter {
+        C714610() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -2157,7 +2157,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 StoryViewer.this.storiesIntro.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.StoryViewer$10$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        StoryViewer.C714810.this.lambda$onAnimationEnd$0(view);
+                        StoryViewer.C714610.this.lambda$onAnimationEnd$0(view);
                     }
                 });
                 StoryViewer.this.storiesIntro.animate().alpha(1.0f).setDuration(150L).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Stories.StoryViewer.10.2
@@ -2290,7 +2290,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
             return;
         }
         this.containerView.enableHwAcceleration();
-        this.openCloseAnimator.addListener(new C715111());
+        this.openCloseAnimator.addListener(new C714911());
         this.openCloseAnimator.setDuration(400L);
         this.openCloseAnimator.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         this.openCloseAnimator.start();
@@ -2299,8 +2299,8 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.StoryViewer$11 */
     /* loaded from: classes6.dex */
-    public class C715111 extends AnimatorListenerAdapter {
-        C715111() {
+    public class C714911 extends AnimatorListenerAdapter {
+        C714911() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -2340,7 +2340,7 @@ public class StoryViewer implements NotificationCenter.NotificationCenterDelegat
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoryViewer$11$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StoryViewer.C715111.this.lambda$onAnimationEnd$0();
+                        StoryViewer.C714911.this.lambda$onAnimationEnd$0();
                     }
                 });
             } catch (Exception unused) {

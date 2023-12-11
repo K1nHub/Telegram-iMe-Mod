@@ -1,7 +1,7 @@
 package p033j$.util.function;
 
 import java.util.Objects;
-import p033j$.util.concurrent.C2808a;
+import p033j$.util.concurrent.C2805a;
 /* renamed from: j$.util.function.BiConsumer */
 /* loaded from: classes2.dex */
 public interface BiConsumer<T, U> {
@@ -11,7 +11,7 @@ public interface BiConsumer<T, U> {
     public final /* synthetic */ class CC {
         public static BiConsumer $default$andThen(BiConsumer biConsumer, BiConsumer biConsumer2) {
             Objects.requireNonNull(biConsumer2);
-            return new C2808a(biConsumer, biConsumer2);
+            return new C2805a(biConsumer, biConsumer2);
         }
     }
 

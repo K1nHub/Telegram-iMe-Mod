@@ -50,7 +50,7 @@
 
     const/4 v1, -0x1
 
-    .line 53
+    .line 57
     iput v1, p0, Lorg/telegram/ui/Components/Text;->ellipsizeWidth:I
 
     .line 34
@@ -76,14 +76,14 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 95
+    .line 99
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->layout:Landroid/text/StaticLayout;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 98
+    .line 102
     :cond_0
     iget v1, p0, Lorg/telegram/ui/Components/Text;->ellipsizeWidth:I
 
@@ -103,7 +103,7 @@
 
     int-to-float v6, v1
 
-    .line 99
+    .line 103
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getHeight()I
 
     move-result v0
@@ -118,13 +118,13 @@
 
     invoke-virtual/range {v3 .. v9}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 101
+    .line 105
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 102
+    .line 106
     iget v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizeWidth:I
 
     if-ltz v0, :cond_3
@@ -137,14 +137,14 @@
 
     if-lez v0, :cond_3
 
-    .line 103
+    .line 107
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizeGradient:Landroid/graphics/LinearGradient;
 
     const/16 v1, 0x8
 
     if-nez v0, :cond_2
 
-    .line 104
+    .line 108
     new-instance v0, Landroid/graphics/LinearGradient;
 
     const/4 v3, 0x0
@@ -177,14 +177,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizeGradient:Landroid/graphics/LinearGradient;
 
-    .line 105
+    .line 109
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizeMatrix:Landroid/graphics/Matrix;
 
-    .line 106
+    .line 110
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v2, 0x1
@@ -193,7 +193,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizePaint:Landroid/graphics/Paint;
 
-    .line 107
+    .line 111
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
@@ -202,23 +202,23 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 108
+    .line 112
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizePaint:Landroid/graphics/Paint;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Text;->ellipsizeGradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 110
+    .line 114
     :cond_2
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 111
+    .line 115
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizeMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 112
+    .line 116
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizeMatrix:Landroid/graphics/Matrix;
 
     iget v2, p0, Lorg/telegram/ui/Components/Text;->ellipsizeWidth:I
@@ -241,14 +241,14 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 113
+    .line 117
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizeGradient:Landroid/graphics/LinearGradient;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Text;->ellipsizeMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v2}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 114
+    .line 118
     iget v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizeWidth:I
 
     int-to-float v0, v0
@@ -289,10 +289,10 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 115
+    .line 119
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 116
+    .line 120
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3
@@ -316,18 +316,18 @@
 .method public draw(Landroid/graphics/Canvas;FF)V
     .locals 2
 
-    .line 81
+    .line 85
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->layout:Landroid/text/StaticLayout;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 84
+    .line 88
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 85
+    .line 89
     iget v0, p0, Lorg/telegram/ui/Components/Text;->left:F
 
     sub-float/2addr p2, v0
@@ -348,10 +348,10 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 86
+    .line 90
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Text;->draw(Landroid/graphics/Canvas;)V
 
-    .line 87
+    .line 91
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -360,14 +360,14 @@
 .method public draw(Landroid/graphics/Canvas;FFIF)V
     .locals 1
 
-    .line 67
+    .line 71
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->layout:Landroid/text/StaticLayout;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 70
+    .line 74
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->paint:Landroid/text/TextPaint;
 
@@ -379,7 +379,7 @@
 
     if-eqz p4, :cond_1
 
-    .line 72
+    .line 76
     iget-object p4, p0, Lorg/telegram/ui/Components/Text;->paint:Landroid/text/TextPaint;
 
     invoke-virtual {p4}, Landroid/text/TextPaint;->getAlpha()I
@@ -394,11 +394,11 @@
 
     invoke-virtual {p4, p5}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 74
+    .line 78
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 75
+    .line 79
     iget p4, p0, Lorg/telegram/ui/Components/Text;->left:F
 
     sub-float/2addr p2, p4
@@ -419,10 +419,10 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 76
+    .line 80
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Text;->draw(Landroid/graphics/Canvas;)V
 
-    .line 77
+    .line 81
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -431,16 +431,38 @@
 .method public ellipsize(I)Lorg/telegram/ui/Components/Text;
     .locals 0
 
-    .line 55
+    .line 59
     iput p1, p0, Lorg/telegram/ui/Components/Text;->ellipsizeWidth:I
 
     return-object p0
 .end method
 
+.method public getCurrentWidth()F
+    .locals 1
+
+    .line 129
+    iget v0, p0, Lorg/telegram/ui/Components/Text;->width:F
+
+    return v0
+.end method
+
+.method public getTextSize()F
+    .locals 1
+
+    .line 46
+    iget-object v0, p0, Lorg/telegram/ui/Components/Text;->paint:Landroid/text/TextPaint;
+
+    invoke-virtual {v0}, Landroid/text/TextPaint;->getTextSize()F
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getWidth()F
     .locals 2
 
-    .line 121
+    .line 125
     iget v0, p0, Lorg/telegram/ui/Components/Text;->ellipsizeWidth:I
 
     if-ltz v0, :cond_0
@@ -465,7 +487,7 @@
 .method public setColor(I)V
     .locals 1
 
-    .line 50
+    .line 54
     iget-object v0, p0, Lorg/telegram/ui/Components/Text;->paint:Landroid/text/TextPaint;
 
     invoke-virtual {v0, p1}, Landroid/text/TextPaint;->setColor(I)V

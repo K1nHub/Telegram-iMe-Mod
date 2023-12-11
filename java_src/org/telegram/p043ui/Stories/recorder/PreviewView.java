@@ -55,10 +55,10 @@ import org.telegram.tgnet.TLRPC$TL_documentAttributeFilename;
 public class PreviewView extends FrameLayout {
 
     /* renamed from: Tx */
-    private float f1999Tx;
+    private float f2000Tx;
 
     /* renamed from: Ty */
-    private float f2000Ty;
+    private float f2001Ty;
     private IStoryPart activePart;
     private boolean activePartPressed;
     private boolean allowCropping;
@@ -71,10 +71,10 @@ public class PreviewView extends FrameLayout {
     private final BlurringShader.BlurManager blurManager;
 
     /* renamed from: cx */
-    private float f2001cx;
+    private float f2002cx;
 
     /* renamed from: cy */
-    private float f2002cy;
+    private float f2003cy;
     private boolean doNotSpanRotation;
     private boolean draw;
     private StoryEntry entry;
@@ -85,7 +85,7 @@ public class PreviewView extends FrameLayout {
     private int gradientTop;
 
     /* renamed from: h */
-    private float f2003h;
+    private float f2004h;
     private boolean inTrash;
     public Runnable invalidateBlur;
     private boolean isPart;
@@ -699,7 +699,7 @@ public class PreviewView extends FrameLayout {
         VideoPlayer videoPlayer3 = new VideoPlayer();
         this.videoPlayer = videoPlayer3;
         videoPlayer3.allowMultipleInstances = true;
-        videoPlayer3.setDelegate(new C72553(storyEntry, new Runnable[]{runnable}));
+        videoPlayer3.setDelegate(new C72533(storyEntry, new Runnable[]{runnable}));
         VideoEditTextureView videoEditTextureView2 = this.textureView;
         if (videoEditTextureView2 != null) {
             videoEditTextureView2.clearAnimation();
@@ -759,7 +759,7 @@ public class PreviewView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.recorder.PreviewView$3 */
     /* loaded from: classes6.dex */
-    public class C72553 implements VideoPlayer.VideoPlayerDelegate {
+    public class C72533 implements VideoPlayer.VideoPlayerDelegate {
         final /* synthetic */ StoryEntry val$entry;
         final /* synthetic */ Runnable[] val$whenReadyFinal;
 
@@ -787,7 +787,7 @@ public class PreviewView extends FrameLayout {
         public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         }
 
-        C72553(StoryEntry storyEntry, Runnable[] runnableArr) {
+        C72533(StoryEntry storyEntry, Runnable[] runnableArr) {
             this.val$entry = storyEntry;
             this.val$whenReadyFinal = runnableArr;
         }
@@ -844,7 +844,7 @@ public class PreviewView extends FrameLayout {
                     duration.withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.PreviewView$3$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            PreviewView.C72553.this.lambda$onRenderedFirstFrame$0(storyEntry);
+                            PreviewView.C72533.this.lambda$onRenderedFirstFrame$0(storyEntry);
                         }
                     }).start();
                     return;
@@ -918,14 +918,14 @@ public class PreviewView extends FrameLayout {
         int i = (int) ((measuredWidth * 16) / 9.0f);
         for (int i2 = 0; i2 < storyEntry.parts.size(); i2++) {
             StoryEntry.Part part = storyEntry.parts.get(i2);
-            if (part != null && this.partsBitmap.get(Integer.valueOf(part.f1992id)) == null) {
+            if (part != null && this.partsBitmap.get(Integer.valueOf(part.f1993id)) == null) {
                 String path = part.file.getPath();
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
                 BitmapFactory.decodeFile(path, options);
                 options.inJustDecodeBounds = false;
                 options.inSampleSize = StoryEntry.calculateInSampleSize(options, measuredWidth, i);
-                this.partsBitmap.put(Integer.valueOf(part.f1992id), BitmapFactory.decodeFile(path, options));
+                this.partsBitmap.put(Integer.valueOf(part.f1993id), BitmapFactory.decodeFile(path, options));
             }
         }
         Iterator<Map.Entry<Integer, Bitmap>> it = this.partsBitmap.entrySet().iterator();
@@ -936,7 +936,7 @@ public class PreviewView extends FrameLayout {
                 if (i3 >= storyEntry.parts.size()) {
                     z = false;
                     break;
-                } else if (storyEntry.parts.get(i3).f1992id == next.getKey().intValue()) {
+                } else if (storyEntry.parts.get(i3).f1993id == next.getKey().intValue()) {
                     z = true;
                     break;
                 } else {
@@ -1169,16 +1169,16 @@ public class PreviewView extends FrameLayout {
         fArr[1] = storyEntry.height / 2.0f;
         matrix.mapPoints(fArr);
         float[] fArr2 = this.vertices;
-        this.f2001cx = fArr2[0];
-        this.f2002cy = fArr2[1];
+        this.f2002cx = fArr2[0];
+        this.f2003cy = fArr2[1];
         StoryEntry storyEntry2 = this.entry;
         fArr2[0] = storyEntry2.width;
         fArr2[1] = storyEntry2.height / 2.0f;
         matrix.mapPoints(fArr2);
         float[] fArr3 = this.vertices;
-        this.angle = (float) Math.toDegrees(Math.atan2(fArr3[1] - this.f2002cy, fArr3[0] - this.f2001cx));
-        float f = this.f2001cx;
-        float f2 = this.f2002cy;
+        this.angle = (float) Math.toDegrees(Math.atan2(fArr3[1] - this.f2003cy, fArr3[0] - this.f2002cx));
+        float f = this.f2002cx;
+        float f2 = this.f2003cy;
         float[] fArr4 = this.vertices;
         MathUtils.distance(f, f2, fArr4[0], fArr4[1]);
         float[] fArr5 = this.vertices;
@@ -1186,10 +1186,10 @@ public class PreviewView extends FrameLayout {
         fArr5[0] = storyEntry3.width / 2.0f;
         fArr5[1] = storyEntry3.height;
         matrix.mapPoints(fArr5);
-        float f3 = this.f2001cx;
-        float f4 = this.f2002cy;
+        float f3 = this.f2002cx;
+        float f4 = this.f2003cy;
         float[] fArr6 = this.vertices;
-        this.f2003h = MathUtils.distance(f3, f4, fArr6[0], fArr6[1]) * 2.0f;
+        this.f2004h = MathUtils.distance(f3, f4, fArr6[0], fArr6[1]) * 2.0f;
     }
 
     public void setDraw(boolean z) {
@@ -1225,8 +1225,8 @@ public class PreviewView extends FrameLayout {
         float f2 = this.trashT.set(!this.inTrash);
         for (int i = 0; i < this.entry.parts.size(); i++) {
             StoryEntry.Part part = this.entry.parts.get(i);
-            if (part != null && (bitmap = this.partsBitmap.get(Integer.valueOf(part.f1992id))) != null) {
-                ButtonBounce buttonBounce = this.partsBounce.get(Integer.valueOf(part.f1992id));
+            if (part != null && (bitmap = this.partsBitmap.get(Integer.valueOf(part.f1993id))) != null) {
+                ButtonBounce buttonBounce = this.partsBounce.get(Integer.valueOf(part.f1993id));
                 float scale = buttonBounce != null ? buttonBounce.getScale(0.05f) : 1.0f;
                 this.matrix.set(part.matrix);
                 canvas.save();
@@ -1237,7 +1237,7 @@ public class PreviewView extends FrameLayout {
                     this.matrix.mapPoints(fArr);
                     canvas.scale(scale, scale, (this.tempVertices[0] / this.entry.resultWidth) * getWidth(), (this.tempVertices[1] / this.entry.resultHeight) * getHeight());
                 }
-                if (this.trashPartIndex == part.f1992id) {
+                if (this.trashPartIndex == part.f1993id) {
                     float lerp = AndroidUtilities.lerp(0.2f, 1.0f, f2);
                     canvas.scale(lerp, lerp, this.trashCx, this.trashCy);
                 }

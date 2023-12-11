@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/app/Activity;)V
     .locals 0
 
-    .line 3136
+    .line 3139
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$27;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$27;->val$activity:Landroid/app/Activity;
@@ -39,7 +39,7 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 1
 
-    .line 3144
+    .line 3147
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$27;->val$activity:Landroid/app/Activity;
 
     return-object v0
@@ -48,7 +48,7 @@
 .method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 2
 
-    .line 3149
+    .line 3152
     new-instance v0, Lorg/telegram/ui/Stories/PeerStoriesView$27$1;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$27;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -73,12 +73,12 @@
 .method public presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
     .locals 1
 
-    .line 3160
+    .line 3163
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     if-eqz v0, :cond_0
 
-    .line 3161
+    .line 3164
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     :cond_0

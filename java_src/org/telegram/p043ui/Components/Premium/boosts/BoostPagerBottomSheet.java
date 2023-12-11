@@ -12,7 +12,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.BottomSheet;
@@ -32,6 +32,7 @@ import org.telegram.tgnet.p042tl.TL_stories$TL_prepaidGiveaway;
 /* loaded from: classes6.dex */
 public class BoostPagerBottomSheet extends BottomSheet {
     private static BoostPagerBottomSheet instance;
+    private boolean isLandscapeOrientation;
     private final SelectorBottomSheet rightSheet;
     private final ViewPagerFixed viewPager;
 
@@ -68,11 +69,13 @@ public class BoostPagerBottomSheet extends BottomSheet {
         setBackgroundColor(0);
         fixNavigationBar();
         AndroidUtilities.setLightStatusBar(getWindow(), isLightStatusBar());
+        checkScreenOrientation();
         ViewPagerFixed viewPagerFixed = new ViewPagerFixed(getContext()) { // from class: org.telegram.ui.Components.Premium.boosts.BoostPagerBottomSheet.1
             private boolean isKeyboardVisible;
             private boolean isScrolling;
             private final Path path = new Path();
             private final Paint backgroundPaint = new Paint(1);
+            private final boolean isTablet = AndroidUtilities.isTablet();
 
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
             protected void onLayout(boolean z3, int i, int i2, int i3, int i4) {
@@ -149,7 +152,19 @@ public class BoostPagerBottomSheet extends BottomSheet {
                     canvas.restore();
                     return;
                 }
+                if (this.isTablet || BoostPagerBottomSheet.this.isLandscapeOrientation) {
+                    canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                }
                 super.dispatchDraw(canvas);
+            }
+
+            /* JADX INFO: Access modifiers changed from: protected */
+            @Override // org.telegram.p043ui.Components.ViewPagerFixed
+            public float getAvailableTranslationX() {
+                if (this.isTablet || BoostPagerBottomSheet.this.isLandscapeOrientation) {
+                    return getMeasuredWidth();
+                }
+                return super.getAvailableTranslationX();
             }
 
             @Override // org.telegram.p043ui.Components.ViewPagerFixed
@@ -231,7 +246,7 @@ public class BoostPagerBottomSheet extends BottomSheet {
 
             @Override // org.telegram.p043ui.Components.Premium.boosts.SelectorBottomSheet.SelectedObjectsListener
             public void onShowToast(String str) {
-                BulletinFactory.m63of(((BottomSheet) BoostPagerBottomSheet.this).container, resourcesProvider).createSimpleBulletin(C3634R.raw.chats_infotip, str).show(true);
+                BulletinFactory.m63of(((BottomSheet) BoostPagerBottomSheet.this).container, resourcesProvider).createSimpleBulletin(C3632R.raw.chats_infotip, str).show(true);
             }
         });
         selectorBottomSheet.setOnCloseClick(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.BoostPagerBottomSheet$$ExternalSyntheticLambda1
@@ -279,6 +294,10 @@ public class BoostPagerBottomSheet extends BottomSheet {
         });
     }
 
+    private void checkScreenOrientation() {
+        this.isLandscapeOrientation = getContext().getResources().getConfiguration().orientation == 2;
+    }
+
     @Override // org.telegram.p043ui.ActionBar.BottomSheet
     public void dismissInternal() {
         super.dismissInternal();
@@ -288,6 +307,7 @@ public class BoostPagerBottomSheet extends BottomSheet {
     @Override // org.telegram.p043ui.ActionBar.BottomSheet
     public void onConfigurationChanged(Configuration configuration) {
         this.rightSheet.onConfigurationChanged(configuration);
+        checkScreenOrientation();
         super.onConfigurationChanged(configuration);
     }
 

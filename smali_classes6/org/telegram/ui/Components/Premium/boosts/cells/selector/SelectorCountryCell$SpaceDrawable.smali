@@ -22,10 +22,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 122
+    .line 111
     invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
 
-    .line 123
+    .line 112
     iput p1, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;->size:I
 
     return-void
@@ -42,7 +42,7 @@
 .method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
     .locals 0
 
-    .line 128
+    .line 117
     iget p1, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;->size:I
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

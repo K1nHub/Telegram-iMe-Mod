@@ -40,12 +40,12 @@ public abstract class WalletCreationBaseFragment extends WalletAuthBaseFragment 
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents domainRxEvents) {
-                m1576invoke(domainRxEvents);
+                m1577invoke(domainRxEvents);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1576invoke(DomainRxEvents it) {
+            public final void m1577invoke(DomainRxEvents it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents domainRxEvents = it;
                 if (domainRxEvents instanceof DomainRxEvents.WalletCreated ? true : domainRxEvents instanceof DomainRxEvents.WalletRestored) {

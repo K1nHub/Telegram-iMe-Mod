@@ -1,6 +1,7 @@
 package wallet.core.jni;
 
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes4.dex */
 public enum CoinType {
     AETERNITY(457),
@@ -50,7 +51,7 @@ public enum CoinType {
     VIACOIN(14),
     WANCHAIN(5718350),
     ZCASH(133),
-    FIRO(136),
+    FIRO(MessagesStorage.LAST_DB_VERSION),
     ZILLIQA(313),
     ZELCASH(19167),
     RAVENCOIN(175),
@@ -183,7 +184,7 @@ public enum CoinType {
                 return COSMOS;
             case 133:
                 return ZCASH;
-            case 136:
+            case MessagesStorage.LAST_DB_VERSION /* 136 */:
                 return FIRO;
             case 144:
                 return XRP;

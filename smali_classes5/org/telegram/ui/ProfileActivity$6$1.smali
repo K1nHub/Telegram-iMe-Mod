@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity$6;)V
     .locals 0
 
-    .line 2605
+    .line 2603
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$6$1;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
 
-    .line 2608
+    .line 2606
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2609
+    .line 2607
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$6$1;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     iget-object v0, v0, Lorg/telegram/ui/ProfileActivity$6;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -58,7 +58,7 @@
 
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2610
+    .line 2608
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$6$1;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     iget-object v0, v0, Lorg/telegram/ui/ProfileActivity$6;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0, v1, v2, p2}, Lorg/telegram/messenger/TopicsController;->deleteTopics(JLjava/util/ArrayList;)V
 
-    .line 2611
+    .line 2609
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$6$1;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     iget-object p2, p2, Lorg/telegram/ui/ProfileActivity$6;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -90,7 +90,7 @@
 
     invoke-static {p2, v0}, Lorg/telegram/ui/ProfileActivity;->access$6302(Lorg/telegram/ui/ProfileActivity;I)I
 
-    .line 2612
+    .line 2610
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$6$1;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     iget-object p2, p2, Lorg/telegram/ui/ProfileActivity$6;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -115,7 +115,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 2613
+    .line 2611
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$6$1;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
@@ -135,7 +135,7 @@
 
     if-ge v0, p2, :cond_1
 
-    .line 2614
+    .line 2612
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$6$1;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     iget-object p2, p2, Lorg/telegram/ui/ProfileActivity$6;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -154,7 +154,7 @@
 
     check-cast p2, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 2615
+    .line 2613
     instance-of v1, p2, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v1, :cond_0
@@ -177,7 +177,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 2616
+    .line 2614
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
     :cond_0
@@ -185,7 +185,7 @@
 
     goto :goto_0
 
-    .line 2620
+    .line 2618
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$6$1;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
@@ -193,7 +193,7 @@
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 2622
+    .line 2620
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$6$1;->this$1:Lorg/telegram/ui/ProfileActivity$6;
 
     iget-object p2, p2, Lorg/telegram/ui/ProfileActivity$6;->this$0:Lorg/telegram/ui/ProfileActivity;
@@ -204,7 +204,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 2624
+    .line 2622
     invoke-static {p2}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;->make(Landroid/content/Context;)Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;
 
     move-result-object p2
@@ -237,7 +237,7 @@
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    .line 2626
+    .line 2624
     :cond_2
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 

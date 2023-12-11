@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentFragmentProductsBinding implements ViewBinding {
     public final RecyclerView recyclerProducts;
@@ -27,7 +27,7 @@ public final class ForkFragmentFragmentProductsBinding implements ViewBinding {
     }
 
     public static ForkFragmentFragmentProductsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_fragment_fragment_products, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_fragment_fragment_products, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,7 +35,7 @@ public final class ForkFragmentFragmentProductsBinding implements ViewBinding {
     }
 
     public static ForkFragmentFragmentProductsBinding bind(View view) {
-        int i = C3634R.C3637id.recycler_products;
+        int i = C3632R.C3635id.recycler_products;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentFragmentProductsBinding((SwipeRefreshLayout) view, recyclerView);

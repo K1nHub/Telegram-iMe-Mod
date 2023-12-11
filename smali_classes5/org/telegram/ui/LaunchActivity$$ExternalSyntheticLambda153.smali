@@ -2,48 +2,78 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/LocationActivity$LocationActivityDelegate;
+.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:[I
+.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:J
+.field public final synthetic f$1:I
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$User;
+
+.field public final synthetic f$3:Ljava/lang/String;
+
+.field public final synthetic f$4:Ljava/lang/String;
+
+.field public final synthetic f$5:Lorg/telegram/ui/DialogsActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>([IJ)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;ILorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$0:[I
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-wide p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$1:J
+    iput p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$1:I
+
+    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$2:Lorg/telegram/tgnet/TLRPC$User;
+
+    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$3:Ljava/lang/String;
+
+    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$4:Ljava/lang/String;
+
+    iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$5:Lorg/telegram/ui/DialogsActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectLocation(Lorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
-    .locals 8
+.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 13
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$0:[I
+    move-object v0, p0
 
-    iget-wide v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$1:J
+    iget-object v1, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    move-object v3, p1
+    iget v2, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$1:I
 
-    move v4, p2
+    iget-object v3, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$2:Lorg/telegram/tgnet/TLRPC$User;
 
-    move v5, p3
+    iget-object v4, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$3:Ljava/lang/String;
 
-    move v6, p4
+    iget-object v5, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$4:Ljava/lang/String;
 
-    move-object v7, p5
+    iget-object v6, v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda153;->f$5:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$GZZ6GU2EcLgRtpP8dHeUmDcBDtE([IJLorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
+    move-object v7, p1
 
-    return-void
+    move-object v8, p2
+
+    move-object/from16 v9, p3
+
+    move/from16 v10, p4
+
+    move-object/from16 v11, p5
+
+    move-object/from16 v12, p6
+
+    invoke-static/range {v1 .. v12}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$00K6drQOw1fz78TJu_YZ7gm85Cs(Lorg/telegram/ui/LaunchActivity;ILorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+
+    move-result v1
+
+    return v1
 .end method

@@ -36,13 +36,13 @@ public interface CellSlice {
     BigInteger loadUInt(int i);
 
     /* renamed from: loadUInt16-Mh2AYeg  reason: not valid java name */
-    short mo5219loadUInt16Mh2AYeg();
+    short mo5201loadUInt16Mh2AYeg();
 
     /* renamed from: loadUInt32-pVg5ArA  reason: not valid java name */
-    int mo5220loadUInt32pVg5ArA();
+    int mo5202loadUInt32pVg5ArA();
 
     /* renamed from: loadUInt64-s-VKNKU  reason: not valid java name */
-    long mo5221loadUInt64sVKNKU();
+    long mo5203loadUInt64sVKNKU();
 
     BigInteger loadUIntLeq(int i);
 
@@ -58,18 +58,18 @@ public interface CellSlice {
     /* loaded from: classes6.dex */
     public static final class DefaultImpls {
         /* renamed from: loadUInt16-Mh2AYeg  reason: not valid java name */
-        public static short m5222loadUInt16Mh2AYeg(CellSlice cellSlice) {
-            return UShort.m2016constructorimpl((short) cellSlice.loadTinyInt(16));
+        public static short m5204loadUInt16Mh2AYeg(CellSlice cellSlice) {
+            return UShort.m2018constructorimpl((short) cellSlice.loadTinyInt(16));
         }
 
         /* renamed from: loadUInt32-pVg5ArA  reason: not valid java name */
-        public static int m5223loadUInt32pVg5ArA(CellSlice cellSlice) {
-            return UInt.m1972constructorimpl((int) cellSlice.loadTinyInt(32));
+        public static int m5205loadUInt32pVg5ArA(CellSlice cellSlice) {
+            return UInt.m1974constructorimpl((int) cellSlice.loadTinyInt(32));
         }
 
         /* renamed from: loadUInt64-s-VKNKU  reason: not valid java name */
-        public static long m5224loadUInt64sVKNKU(CellSlice cellSlice) {
-            return ULong.m1994constructorimpl(cellSlice.loadTinyInt(64));
+        public static long m5206loadUInt64sVKNKU(CellSlice cellSlice) {
+            return ULong.m1996constructorimpl(cellSlice.loadTinyInt(64));
         }
 
         public static long preloadTinyInt(CellSlice cellSlice, int i) {

@@ -22,7 +22,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 597
+    .line 599
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;-><init>()V
 
     return-void

@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;)V
     .locals 0
 
-    .line 220
+    .line 236
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -62,7 +62,7 @@
 .method public getTopOffset(I)I
     .locals 0
 
-    .line 223
+    .line 239
     sget p1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     return p1

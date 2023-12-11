@@ -9,7 +9,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* compiled from: CryptoBuyItem.kt */
 /* loaded from: classes3.dex */
 public final class CryptoBuyItem extends NoChildNode {
@@ -95,7 +95,7 @@ public final class CryptoBuyItem extends NoChildNode {
     public final String getAmount(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         if (this.product.isCustom()) {
-            return resourceManager.getString(C3634R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title);
+            return resourceManager.getString(C3632R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title);
         }
         BuyingCryptoQuote buyingCryptoQuote = this.quote;
         if (buyingCryptoQuote != null) {
@@ -114,11 +114,11 @@ public final class CryptoBuyItem extends NoChildNode {
                 return sb.toString();
             }
         }
-        return resourceManager.getString(C3634R.string.common_dash);
+        return resourceManager.getString(C3632R.string.common_dash);
     }
 
     public final String getPrice(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
-        return this.product.isCustom() ? resourceManager.getString(C3634R.string.wallet_crypto_buy_max_price) : BalanceFormatter.formatFiatBalance$default(BalanceFormatter.INSTANCE, Float.valueOf(this.product.getPriceInDollars()), null, 2, null);
+        return this.product.isCustom() ? resourceManager.getString(C3632R.string.wallet_crypto_buy_max_price) : BalanceFormatter.formatFiatBalance$default(BalanceFormatter.INSTANCE, Float.valueOf(this.product.getPriceInDollars()), null, 2, null);
     }
 }

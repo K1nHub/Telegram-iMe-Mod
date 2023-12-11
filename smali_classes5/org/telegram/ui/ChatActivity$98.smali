@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 24666
+    .line 24674
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 24669
+    .line 24677
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
     return-void

@@ -69,12 +69,12 @@ public final class UnsignedTypes {
     }
 
     public static final boolean isUnsignedType(KotlinType type) {
-        ClassifierDescriptor mo2051getDeclarationDescriptor;
+        ClassifierDescriptor mo2053getDeclarationDescriptor;
         Intrinsics.checkNotNullParameter(type, "type");
-        if (TypeUtils.noExpectedType(type) || (mo2051getDeclarationDescriptor = type.getConstructor().mo2051getDeclarationDescriptor()) == null) {
+        if (TypeUtils.noExpectedType(type) || (mo2053getDeclarationDescriptor = type.getConstructor().mo2053getDeclarationDescriptor()) == null) {
             return false;
         }
-        return INSTANCE.isUnsignedClass(mo2051getDeclarationDescriptor);
+        return INSTANCE.isUnsignedClass(mo2053getDeclarationDescriptor);
     }
 
     public final boolean isUnsignedClass(DeclarationDescriptor descriptor) {

@@ -27,14 +27,14 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 29011
+    .line 29019
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$128;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x1
 
-    .line 29013
+    .line 29021
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$128;->isEnter:Z
 
     return-void
@@ -53,19 +53,19 @@
 
     if-nez p1, :cond_0
 
-    .line 29017
+    .line 29025
     iget-boolean p1, p0, Lorg/telegram/ui/ChatActivity$128;->isEnter:Z
 
     if-nez p1, :cond_0
 
-    .line 29018
+    .line 29026
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$128;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->startEnterAnimation(Z)V
 
     const/4 p1, 0x1
 
-    .line 29019
+    .line 29027
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$128;->isEnter:Z
 
     goto :goto_0
@@ -77,12 +77,12 @@
 
     if-nez p2, :cond_1
 
-    .line 29020
+    .line 29028
     iget-boolean p2, p0, Lorg/telegram/ui/ChatActivity$128;->isEnter:Z
 
     if-eqz p2, :cond_1
 
-    .line 29021
+    .line 29029
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$128;->val$finalReactionsLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     sub-float v1, p1, p3
@@ -93,7 +93,7 @@
 
     if-nez p1, :cond_1
 
-    .line 29023
+    .line 29031
     iput-boolean v0, p0, Lorg/telegram/ui/ChatActivity$128;->isEnter:Z
 
     :cond_1

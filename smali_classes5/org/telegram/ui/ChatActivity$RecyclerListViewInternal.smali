@@ -25,10 +25,10 @@
 .method public constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ChatActivity$ThemeDelegate;)V
     .locals 0
 
-    .line 37197
+    .line 37274
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$RecyclerListViewInternal;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 37198
+    .line 37275
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -39,7 +39,7 @@
 .method public updateClip([I)V
     .locals 3
 
-    .line 37203
+    .line 37280
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$RecyclerListViewInternal;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4100(Lorg/telegram/ui/ChatActivity;)F
@@ -60,7 +60,7 @@
 
     aput v0, p1, v1
 
-    .line 37204
+    .line 37281
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$RecyclerListViewInternal;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$3700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;

@@ -40,19 +40,19 @@
 .method private constructor <init>(JLorg/telegram/messenger/MessageObject;II)V
     .locals 0
 
-    .line 13861
+    .line 13871
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 13863
+    .line 13873
     iput-object p3, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
-    .line 13864
+    .line 13874
     iput p4, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->start:I
 
-    .line 13865
+    .line 13875
     iput p5, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->end:I
 
-    .line 13867
+    .line 13877
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ReplyQuote;->update()Z
 
     return-void
@@ -61,7 +61,7 @@
 .method static synthetic access$29800(Lorg/telegram/ui/ChatActivity$ReplyQuote;)Z
     .locals 0
 
-    .line 13851
+    .line 13861
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ReplyQuote;->update()Z
 
     move-result p0
@@ -74,7 +74,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 13886
+    .line 13896
     iget-object v0, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz v0, :cond_1
@@ -88,7 +88,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 13889
+    .line 13899
     iget v1, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -131,11 +131,11 @@
 
     return-object p0
 
-    .line 13896
+    .line 13906
     :cond_0
     new-instance v6, Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-    .line 13897
+    .line 13907
     invoke-virtual {p0}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v1
@@ -160,7 +160,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 13871
+    .line 13881
     iget-object v1, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz v1, :cond_2
@@ -173,7 +173,7 @@
 
     goto :goto_0
 
-    .line 13874
+    .line 13884
     :cond_0
     invoke-virtual {v1, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
@@ -183,16 +183,16 @@
 
     return-object v0
 
-    .line 13878
+    .line 13888
     :cond_1
     new-instance v0, Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-    .line 13879
+    .line 13889
     invoke-virtual {p0}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v3
 
-    .line 13881
+    .line 13891
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -213,7 +213,7 @@
 .method private update()Z
     .locals 9
 
-    .line 13904
+    .line 13914
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
     const/4 v1, 0x0
@@ -230,7 +230,7 @@
 
     goto/16 :goto_6
 
-    .line 13908
+    .line 13918
     :cond_0
     iget v2, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->end:I
 
@@ -268,7 +268,7 @@
 
     goto/16 :goto_5
 
-    .line 13912
+    .line 13922
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
@@ -276,12 +276,12 @@
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 13913
+    .line 13923
     invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    .line 13914
+    .line 13924
     :goto_0
     iget v3, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->end:I
 
@@ -301,7 +301,7 @@
 
     goto :goto_0
 
-    .line 13915
+    .line 13925
     :cond_2
     iget v3, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->end:I
 
@@ -318,7 +318,7 @@
 
     add-int/lit8 v4, v3, -0x1
 
-    .line 13916
+    .line 13926
     invoke-virtual {v2, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v4
@@ -338,12 +338,12 @@
 
     const-string v0, "ReplyQuote: message is full of whitespace"
 
-    .line 13918
+    .line 13928
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
     return v1
 
-    .line 13921
+    .line 13931
     :cond_4
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
@@ -357,15 +357,15 @@
 
     iput-object v2, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->text:Ljava/lang/String;
 
-    .line 13922
+    .line 13932
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->entities:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_5
 
-    .line 13923
+    .line 13933
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 13925
+    .line 13935
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
@@ -383,7 +383,7 @@
 
     move v2, v1
 
-    .line 13926
+    .line 13936
     :goto_2
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
@@ -397,7 +397,7 @@
 
     if-ge v2, v4, :cond_10
 
-    .line 13927
+    .line 13937
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
     iget-object v4, v4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -410,7 +410,7 @@
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$MessageEntity;
 
-    .line 13928
+    .line 13938
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
 
     iget v6, v4, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
@@ -425,83 +425,83 @@
 
     goto/16 :goto_4
 
-    .line 13933
+    .line 13943
     :cond_6
     instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBold;
 
     if-eqz v5, :cond_7
 
-    .line 13934
+    .line 13944
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBold;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBold;-><init>()V
 
     goto :goto_3
 
-    .line 13935
+    .line 13945
     :cond_7
     instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$TL_messageEntityItalic;
 
     if-eqz v5, :cond_8
 
-    .line 13936
+    .line 13946
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityItalic;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityItalic;-><init>()V
 
     goto :goto_3
 
-    .line 13937
+    .line 13947
     :cond_8
     instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$TL_messageEntityUnderline;
 
     if-eqz v5, :cond_9
 
-    .line 13938
+    .line 13948
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityUnderline;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityUnderline;-><init>()V
 
     goto :goto_3
 
-    .line 13939
+    .line 13949
     :cond_9
     instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$TL_messageEntityStrike;
 
     if-eqz v5, :cond_a
 
-    .line 13940
+    .line 13950
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityStrike;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityStrike;-><init>()V
 
     goto :goto_3
 
-    .line 13941
+    .line 13951
     :cond_a
     instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$TL_messageEntitySpoiler;
 
     if-eqz v5, :cond_b
 
-    .line 13942
+    .line 13952
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntitySpoiler;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntitySpoiler;-><init>()V
 
     goto :goto_3
 
-    .line 13943
+    .line 13953
     :cond_b
     instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
 
     if-eqz v5, :cond_f
 
-    .line 13944
+    .line 13954
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;-><init>()V
 
-    .line 13945
+    .line 13955
     move-object v6, v4
 
     check-cast v6, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
@@ -510,18 +510,18 @@
 
     iput-wide v7, v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document_id:J
 
-    .line 13946
+    .line 13956
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iput-object v6, v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 13951
+    .line 13961
     :goto_3
     iget v6, v4, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
 
     sub-int v7, v6, v0
 
-    .line 13952
+    .line 13962
     iget v4, v4, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
 
     add-int/2addr v6, v4
@@ -539,7 +539,7 @@
 
     goto :goto_4
 
-    .line 13957
+    .line 13967
     :cond_d
     invoke-static {v1, v7}, Ljava/lang/Math;->max(II)I
 
@@ -549,7 +549,7 @@
 
     sub-int v4, v3, v0
 
-    .line 13958
+    .line 13968
     invoke-static {v6, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v4
@@ -560,19 +560,19 @@
 
     iput v4, v5, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
 
-    .line 13960
+    .line 13970
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->entities:Ljava/util/ArrayList;
 
     if-nez v4, :cond_e
 
-    .line 13961
+    .line 13971
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v4, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->entities:Ljava/util/ArrayList;
 
-    .line 13963
+    .line 13973
     :cond_e
     iget-object v4, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->entities:Ljava/util/ArrayList;
 
@@ -589,7 +589,7 @@
 
     return v0
 
-    .line 13909
+    .line 13919
     :cond_11
     :goto_5
     new-instance v0, Ljava/lang/StringBuilder;
@@ -644,7 +644,7 @@
     :goto_6
     const-string v0, "ReplyQuote: message is null"
 
-    .line 13905
+    .line 13915
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
     return v1
@@ -659,7 +659,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 13974
+    .line 13984
     iget-object v1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz v1, :cond_5
@@ -670,7 +670,7 @@
 
     goto/16 :goto_1
 
-    .line 13978
+    .line 13988
     :cond_0
     iget v2, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->end:I
 
@@ -706,7 +706,7 @@
 
     goto :goto_0
 
-    .line 13982
+    .line 13992
     :cond_1
     iget-object v3, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -716,7 +716,7 @@
 
     move-result-object v1
 
-    .line 13983
+    .line 13993
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->text:Ljava/lang/String;
 
     invoke-static {v2, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -725,18 +725,18 @@
 
     if-eqz v1, :cond_2
 
-    .line 13984
+    .line 13994
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
-    .line 13985
+    .line 13995
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ReplyQuote;->update()Z
 
-    .line 13986
+    .line 13996
     iput-boolean v0, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->outdated:Z
 
     return v0
 
-    .line 13988
+    .line 13998
     :cond_2
     iget-object v1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -750,10 +750,10 @@
 
     if-ltz v1, :cond_3
 
-    .line 13990
+    .line 14000
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
-    .line 13991
+    .line 14001
     iget p1, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->end:I
 
     iget v2, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->start:I
@@ -764,25 +764,25 @@
 
     iput p1, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->end:I
 
-    .line 13992
+    .line 14002
     iput v1, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->start:I
 
-    .line 13993
+    .line 14003
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ReplyQuote;->update()Z
 
-    .line 13994
+    .line 14004
     iput-boolean v0, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->outdated:Z
 
     return v0
 
-    .line 13996
+    .line 14006
     :cond_3
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
-    .line 13997
+    .line 14007
     iput v0, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->start:I
 
-    .line 13998
+    .line 14008
     iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
@@ -793,17 +793,17 @@
 
     iput p1, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->end:I
 
-    .line 13999
+    .line 14009
     invoke-direct {p0}, Lorg/telegram/ui/ChatActivity$ReplyQuote;->update()Z
 
     const/4 p1, 0x1
 
-    .line 14000
+    .line 14010
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->outdated:Z
 
     return p1
 
-    .line 13979
+    .line 13989
     :cond_4
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -850,7 +850,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 13980
+    .line 13990
     iput-boolean v0, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->outdated:Z
 
     return v0
@@ -859,10 +859,10 @@
     :goto_1
     const-string p1, "ReplyQuote.checkEdit: message is null"
 
-    .line 13975
+    .line 13985
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 13976
+    .line 13986
     iput-boolean v0, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->outdated:Z
 
     return v0
@@ -879,7 +879,7 @@
         }
     .end annotation
 
-    .line 14008
+    .line 14018
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->entities:Ljava/util/ArrayList;
 
     return-object v0
@@ -888,7 +888,7 @@
 .method public getText()Ljava/lang/String;
     .locals 1
 
-    .line 14004
+    .line 14014
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ReplyQuote;->text:Ljava/lang/String;
 
     return-object v0

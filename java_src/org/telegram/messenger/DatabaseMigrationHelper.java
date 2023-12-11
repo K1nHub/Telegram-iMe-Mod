@@ -1285,7 +1285,13 @@ public class DatabaseMigrationHelper {
             sQLiteDatabase.executeFast("CREATE TABLE dialog_photos(uid INTEGER, id INTEGER, num INTEGER, data BLOB, PRIMARY KEY (uid, id))").stepThis().dispose();
             sQLiteDatabase.executeFast("CREATE TABLE dialog_photos_count(uid INTEGER PRIMARY KEY, count INTEGER)").stepThis().dispose();
             sQLiteDatabase.executeFast("PRAGMA user_version = 135").stepThis().dispose();
-            return 135;
+            i6 = TsExtractor.TS_STREAM_TYPE_E_AC3;
+        }
+        if (i6 == 135) {
+            sQLiteDatabase.executeFast("CREATE TABLE stickersets2(id INTEGER PRIMATE KEY, data BLOB, hash INTEGER, date INTEGER);").stepThis().dispose();
+            sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS stickersets2_id_index ON stickersets2(id);").stepThis().dispose();
+            sQLiteDatabase.executeFast("PRAGMA user_version = 136").stepThis().dispose();
+            return MessagesStorage.LAST_DB_VERSION;
         }
         return i6;
     }
@@ -1328,7 +1334,7 @@ public class DatabaseMigrationHelper {
             FileLog.m99e(e2);
             z = false;
         }
-        if (intValue != 135) {
+        if (intValue != 136) {
             FileLog.m101e("can't restore database from version " + intValue);
             return false;
         }

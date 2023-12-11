@@ -28,9 +28,9 @@ final class ClassValueParametrizedCache<T> implements ParametrizedSerializerCach
 
     @Override // kotlinx.serialization.internal.ParametrizedSerializerCache
     /* renamed from: get-gIAlu-s  reason: not valid java name */
-    public Object mo2127getgIAlus(KClass<Object> key, List<? extends KType> types) {
+    public Object mo2129getgIAlus(KClass<Object> key, List<? extends KType> types) {
         int collectionSizeOrDefault;
-        Object m1940constructorimpl;
+        Object m1942constructorimpl;
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(types, "types");
         Object obj = this.classValue.get(JvmClassMappingKt.getJavaClass(key));
@@ -56,16 +56,16 @@ final class ClassValueParametrizedCache<T> implements ParametrizedSerializerCach
         if (obj2 == null) {
             try {
                 Result.Companion companion = Result.Companion;
-                m1940constructorimpl = Result.m1940constructorimpl(this.compute.invoke(key, types));
+                m1942constructorimpl = Result.m1942constructorimpl(this.compute.invoke(key, types));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
+                m1942constructorimpl = Result.m1942constructorimpl(ResultKt.createFailure(th));
             }
-            Result m1939boximpl = Result.m1939boximpl(m1940constructorimpl);
-            Object putIfAbsent = access$getSerializers$p.putIfAbsent(arrayList, m1939boximpl);
-            obj2 = putIfAbsent == null ? m1939boximpl : putIfAbsent;
+            Result m1941boximpl = Result.m1941boximpl(m1942constructorimpl);
+            Object putIfAbsent = access$getSerializers$p.putIfAbsent(arrayList, m1941boximpl);
+            obj2 = putIfAbsent == null ? m1941boximpl : putIfAbsent;
         }
         Intrinsics.checkNotNullExpressionValue(obj2, "serializers.getOrPut(wra… { producer() }\n        }");
-        return ((Result) obj2).m1948unboximpl();
+        return ((Result) obj2).m1950unboximpl();
     }
 }

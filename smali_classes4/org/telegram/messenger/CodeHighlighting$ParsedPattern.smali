@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 638
+    .line 628
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/CodeHighlighting$1;)V
     .locals 0
 
-    .line 638
+    .line 628
     invoke-direct {p0}, Lorg/telegram/messenger/CodeHighlighting$ParsedPattern;-><init>()V
 
     return-void
@@ -48,7 +48,7 @@
 .method public flags()I
     .locals 3
 
-    .line 643
+    .line 633
     iget-boolean v0, p0, Lorg/telegram/messenger/CodeHighlighting$ParsedPattern;->multiline:Z
 
     const/4 v1, 0x0
@@ -78,12 +78,12 @@
 .method public getCachedPattern()Lorg/telegram/messenger/CodeHighlighting$CachedPattern;
     .locals 3
 
-    .line 648
+    .line 638
     iget-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$ParsedPattern;->cachedPattern:Lorg/telegram/messenger/CodeHighlighting$CachedPattern;
 
     if-nez v0, :cond_0
 
-    .line 649
+    .line 639
     new-instance v0, Lorg/telegram/messenger/CodeHighlighting$CachedPattern;
 
     iget-object v1, p0, Lorg/telegram/messenger/CodeHighlighting$ParsedPattern;->pattern:Ljava/lang/String;
@@ -96,7 +96,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$ParsedPattern;->cachedPattern:Lorg/telegram/messenger/CodeHighlighting$CachedPattern;
 
-    .line 651
+    .line 641
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$ParsedPattern;->cachedPattern:Lorg/telegram/messenger/CodeHighlighting$CachedPattern;
 

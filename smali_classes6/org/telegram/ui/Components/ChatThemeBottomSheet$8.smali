@@ -27,14 +27,14 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
     .locals 0
 
-    .line 632
+    .line 626
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$8;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 633
+    .line 627
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$8;->changedNavigationBarColor:Z
 
     return-void
@@ -45,7 +45,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 637
+    .line 631
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$8;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -60,7 +60,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$1802(Lorg/telegram/ui/Components/ChatThemeBottomSheet;F)F
 
-    .line 638
+    .line 632
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$8;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2000(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Landroid/view/View;
@@ -69,7 +69,7 @@
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 639
+    .line 633
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$8;->changedNavigationBarColor:Z
 
     if-nez p1, :cond_0
@@ -88,7 +88,7 @@
 
     const/4 p1, 0x1
 
-    .line 640
+    .line 634
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$8;->changedNavigationBarColor:Z
 
     :cond_0

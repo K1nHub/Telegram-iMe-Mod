@@ -53,7 +53,7 @@ public final class KeyMaxLt implements TlbObject {
         if (z) {
             r0 = 1;
         }
-        return (r0 * 31) + ULong.m1996hashCodeimpl(this.maxEndLt);
+        return (r0 * 31) + ULong.m1998hashCodeimpl(this.maxEndLt);
     }
 
     private KeyMaxLt(int i, boolean z, ULong uLong, SerializationConstructorMarker serializationConstructorMarker) {
@@ -61,7 +61,7 @@ public final class KeyMaxLt implements TlbObject {
             PluginExceptionsKt.throwMissingFieldException(i, 3, KeyMaxLt$$serializer.INSTANCE.getDescriptor());
         }
         this.key = z;
-        this.maxEndLt = uLong.m1998unboximpl();
+        this.maxEndLt = uLong.m2000unboximpl();
     }
 
     private KeyMaxLt(boolean z, long j) {
@@ -71,7 +71,7 @@ public final class KeyMaxLt implements TlbObject {
 
     public static final /* synthetic */ void write$Self(KeyMaxLt keyMaxLt, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeBooleanElement(serialDescriptor, 0, keyMaxLt.key);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1993boximpl(keyMaxLt.maxEndLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1995boximpl(keyMaxLt.maxEndLt));
     }
 
     public final boolean getKey() {
@@ -79,7 +79,7 @@ public final class KeyMaxLt implements TlbObject {
     }
 
     /* renamed from: getMaxEndLt-s-VKNKU  reason: not valid java name */
-    public final long m5119getMaxEndLtsVKNKU() {
+    public final long m5101getMaxEndLtsVKNKU() {
         return this.maxEndLt;
     }
 
@@ -134,7 +134,7 @@ public final class KeyMaxLt implements TlbObject {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("key_max_lt");
         open.field("key", Boolean.valueOf(this.key));
-        open.field("max_end_lt", ULong.m1993boximpl(this.maxEndLt));
+        open.field("max_end_lt", ULong.m1995boximpl(this.maxEndLt));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

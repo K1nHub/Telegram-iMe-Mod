@@ -28,7 +28,7 @@ public final class MsgDiscardTr$$serializer implements GeneratedSerializer<MsgDi
         pluginGeneratedSerialDescriptor.addElement("transaction_id", false);
         pluginGeneratedSerialDescriptor.addElement("fwd_fee", false);
         pluginGeneratedSerialDescriptor.addElement("proof_delivered", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7574x6f655aa4("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7572x6f655aa4("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

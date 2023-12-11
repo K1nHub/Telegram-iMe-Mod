@@ -29,7 +29,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
@@ -182,7 +182,7 @@ public final class BinancePayHelper implements KoinComponent {
             action.invoke();
             return;
         }
-        DialogModel dialogModel = new DialogModel(LocaleController.getInternalString(C3634R.string.wallet_binance_pay_not_activated_dialog_title), LocaleController.getInternalString(C3634R.string.wallet_binance_pay_not_activated_dialog_description), LocaleController.getInternalString(C3634R.string.common_cancel), LocaleController.getInternalString(C3634R.string.wallet_button_auth_dialog_action_btn));
+        DialogModel dialogModel = new DialogModel(LocaleController.getInternalString(C3632R.string.wallet_binance_pay_not_activated_dialog_title), LocaleController.getInternalString(C3632R.string.wallet_binance_pay_not_activated_dialog_description), LocaleController.getInternalString(C3632R.string.common_cancel), LocaleController.getInternalString(C3632R.string.wallet_button_auth_dialog_action_btn));
         Activity parentActivity = fragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "fragment.parentActivity");
         DialogUtils.createDialog$default(parentActivity, dialogModel, new Callbacks$Callback() { // from class: com.iMe.utils.helper.binancepay.BinancePayHelper$$ExternalSyntheticLambda1

@@ -337,15 +337,15 @@
     .line 321
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda27;
+    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda29;
 
-    invoke-direct {p2, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda27;-><init>(Ljava/text/Collator;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda29;-><init>(Ljava/text/Collator;)V
 
     goto :goto_4
 
     .line 323
     :cond_7
-    sget-object p2, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda29;->INSTANCE:Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda29;
+    sget-object p2, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda31;->INSTANCE:Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda31;
 
     .line 325
     :goto_4

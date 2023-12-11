@@ -17,15 +17,15 @@ public final class CounterTlbConstructor extends org.ton.tlb.TlbConstructor<Coun
     public void storeTlb(CellBuilder cellBuilder, Counters value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5103getLastUpdatedpVg5ArA());
-        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5104getTotalsVKNKU());
-        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5101getCnt2048sVKNKU());
-        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5102getCnt65536sVKNKU());
+        cellBuilder.mo5192storeUInt32WZ4Q5Ns(value.m5085getLastUpdatedpVg5ArA());
+        cellBuilder.mo5193storeUInt64VKZWuLQ(value.m5086getTotalsVKNKU());
+        cellBuilder.mo5193storeUInt64VKZWuLQ(value.m5083getCnt2048sVKNKU());
+        cellBuilder.mo5193storeUInt64VKZWuLQ(value.m5084getCnt65536sVKNKU());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public Counters loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new Counters(cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.mo5221loadUInt64sVKNKU(), cellSlice.mo5221loadUInt64sVKNKU(), cellSlice.mo5221loadUInt64sVKNKU(), null);
+        return new Counters(cellSlice.mo5202loadUInt32pVg5ArA(), cellSlice.mo5203loadUInt64sVKNKU(), cellSlice.mo5203loadUInt64sVKNKU(), cellSlice.mo5203loadUInt64sVKNKU(), null);
     }
 }

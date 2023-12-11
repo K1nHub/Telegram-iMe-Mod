@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 414
+    .line 416
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     move-object v0, p0
@@ -53,7 +53,7 @@
 .method public drawRoundRect(Landroid/graphics/Canvas;Landroid/graphics/Rect;F)V
     .locals 9
 
-    .line 417
+    .line 419
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$000(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/graphics/RectF;
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, p2}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 418
+    .line 420
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->customBlur()Z
@@ -71,7 +71,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 419
+    .line 421
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$800(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
@@ -116,7 +116,7 @@
 
     goto :goto_0
 
-    .line 421
+    .line 423
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
@@ -132,7 +132,7 @@
 
     if-nez p2, :cond_1
 
-    .line 423
+    .line 425
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$900(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/graphics/Paint;
@@ -143,7 +143,7 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 424
+    .line 426
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$000(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/graphics/RectF;
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 426
+    .line 428
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
@@ -170,7 +170,7 @@
 
     invoke-virtual {p1, v0, p3, p3, p2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 427
+    .line 429
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$900(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/graphics/Paint;
@@ -181,7 +181,7 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 428
+    .line 430
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$3;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$000(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/graphics/RectF;

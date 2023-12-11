@@ -32,7 +32,7 @@ public interface AdnlAddress {
             KClass[] kClassArr = {Reflection.getOrCreateKotlinClass(AdnlAddressTunnel.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp6.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp6.class)};
             AdnlAddressUdp$$serializer adnlAddressUdp$$serializer = AdnlAddressUdp$$serializer.INSTANCE;
             AdnlAddressUdp6$$serializer adnlAddressUdp6$$serializer = AdnlAddressUdp6$$serializer.INSTANCE;
-            return new SealedClassSerializer("org.ton.api.adnl.AdnlAddress", orCreateKotlinClass, kClassArr, new KSerializer[]{AdnlAddressTunnel$$serializer.INSTANCE, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer}, new Annotation[]{new C7499x63816b8c("@type")});
+            return new SealedClassSerializer("org.ton.api.adnl.AdnlAddress", orCreateKotlinClass, kClassArr, new KSerializer[]{AdnlAddressTunnel$$serializer.INSTANCE, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer}, new Annotation[]{new C7497x63816b8c("@type")});
         }
     }
 }

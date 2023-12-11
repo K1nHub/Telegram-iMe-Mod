@@ -41,7 +41,7 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -363,7 +363,7 @@ public class LinkActionView extends LinearLayout {
         }
         TextView textView = new TextView(getContext());
         this.maxView = textView;
-        textView.setText(LocaleController.getInternalString(C3634R.string.common_max));
+        textView.setText(LocaleController.getInternalString(C3632R.string.common_max));
         this.maxView.setTextSize(1, 14.0f);
         this.maxView.setSingleLine(true);
         this.maxView.setGravity(17);
@@ -394,7 +394,7 @@ public class LinkActionView extends LinearLayout {
             BackupImageView backupImageView = new BackupImageView(getContext());
             this.clearTextImageView = backupImageView;
             backupImageView.setRoundRadius(AndroidUtilities.m104dp(24));
-            Drawable drawable = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.fork_delete_icon);
+            Drawable drawable = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.fork_delete_icon);
             if (drawable != null) {
                 drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.SRC_IN));
             }
@@ -417,8 +417,8 @@ public class LinkActionView extends LinearLayout {
     }
 
     public void setErrorState(boolean z) {
-        this.editText.setBackgroundResource(z ? C3634R.C3636drawable.fork_bg_error : 0);
-        this.linkView.setBackgroundResource(z ? C3634R.C3636drawable.fork_bg_error : 0);
+        this.editText.setBackgroundResource(z ? C3632R.C3634drawable.fork_bg_error : 0);
+        this.linkView.setBackgroundResource(z ? C3632R.C3634drawable.fork_bg_error : 0);
     }
 
     private void updateInputPadding(Boolean bool) {
@@ -473,8 +473,8 @@ public class LinkActionView extends LinearLayout {
         frameLayout.addView(this.linkView);
         ImageView imageView = new ImageView(context);
         this.optionsView = imageView;
-        imageView.setImageDrawable(ContextCompat.getDrawable(context, C3634R.C3636drawable.ic_ab_other));
-        this.optionsView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+        imageView.setImageDrawable(ContextCompat.getDrawable(context, C3632R.C3634drawable.ic_ab_other));
+        this.optionsView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
         this.optionsView.setScaleType(ImageView.ScaleType.CENTER);
         frameLayout.addView(this.optionsView, LayoutHelper.createFrame(40, 48, 21));
         if (z4) {
@@ -491,9 +491,9 @@ public class LinkActionView extends LinearLayout {
         this.copyView = textView2;
         textView2.setGravity(17);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "..").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3634R.C3636drawable.msg_copy_filled)), 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) "..").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3632R.C3634drawable.msg_copy_filled)), 0, 1, 0);
         spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m104dp(6)), 1, 2, 0);
-        int i = C3634R.string.LinkActionCopy;
+        int i = C3632R.string.LinkActionCopy;
         spannableStringBuilder.append((CharSequence) LocaleController.getString("LinkActionCopy", i));
         textView2.setText(spannableStringBuilder);
         textView2.setContentDescription(LocaleController.getString("LinkActionCopy", i));
@@ -506,9 +506,9 @@ public class LinkActionView extends LinearLayout {
         this.shareView = textView3;
         textView3.setGravity(17);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        spannableStringBuilder2.append((CharSequence) "..").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3634R.C3636drawable.msg_share_filled)), 0, 1, 0);
+        spannableStringBuilder2.append((CharSequence) "..").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3632R.C3634drawable.msg_share_filled)), 0, 1, 0);
         spannableStringBuilder2.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m104dp(6)), 1, 2, 0);
-        int i2 = C3634R.string.LinkActionShare;
+        int i2 = C3632R.string.LinkActionShare;
         spannableStringBuilder2.append((CharSequence) LocaleController.getString("LinkActionShare", i2));
         textView3.setText(spannableStringBuilder2);
         textView3.setContentDescription(LocaleController.getString("LinkActionShare", i2));
@@ -521,9 +521,9 @@ public class LinkActionView extends LinearLayout {
         this.removeView = textView4;
         textView4.setGravity(17);
         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
-        spannableStringBuilder3.append((CharSequence) "..").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3634R.C3636drawable.msg_delete_filled)), 0, 1, 0);
+        spannableStringBuilder3.append((CharSequence) "..").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3632R.C3634drawable.msg_delete_filled)), 0, 1, 0);
         spannableStringBuilder3.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m104dp(8)), 1, 2, 0);
-        spannableStringBuilder3.append((CharSequence) LocaleController.getString("DeleteLink", C3634R.string.DeleteLink));
+        spannableStringBuilder3.append((CharSequence) LocaleController.getString("DeleteLink", C3632R.string.DeleteLink));
         spannableStringBuilder3.append((CharSequence) ".").setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m104dp(5)), spannableStringBuilder3.length() - 1, spannableStringBuilder3.length(), 0);
         textView4.setText(spannableStringBuilder3);
         textView4.setPadding(AndroidUtilities.m104dp(8), 0, AndroidUtilities.m104dp(8), 0);
@@ -611,7 +611,7 @@ public class LinkActionView extends LinearLayout {
             Intent intent = new Intent("android.intent.action.SEND");
             intent.setType("text/plain");
             intent.putExtra("android.intent.extra.TEXT", this.link);
-            baseFragment.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("InviteToGroupByLink", C3634R.string.InviteToGroupByLink)), 500);
+            baseFragment.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("InviteToGroupByLink", C3632R.string.InviteToGroupByLink)), 500);
         } catch (Exception e) {
             FileLog.m99e(e);
         }
@@ -620,15 +620,15 @@ public class LinkActionView extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$7(BaseFragment baseFragment, View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
-        builder.setTitle(LocaleController.getString("DeleteLink", C3634R.string.DeleteLink));
-        builder.setMessage(LocaleController.getString("DeleteLinkHelp", C3634R.string.DeleteLinkHelp));
-        builder.setPositiveButton(LocaleController.getString("Delete", C3634R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda1
+        builder.setTitle(LocaleController.getString("DeleteLink", C3632R.string.DeleteLink));
+        builder.setMessage(LocaleController.getString("DeleteLinkHelp", C3632R.string.DeleteLinkHelp));
+        builder.setPositiveButton(LocaleController.getString("Delete", C3632R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 LinkActionView.this.lambda$new$6(dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
         baseFragment.showDialog(builder.create());
     }
 
@@ -712,7 +712,7 @@ public class LinkActionView extends LinearLayout {
                         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                         public void onAnimationEnd(Animator animator) {
                             if (view2.getParent() != null) {
-                                C51513 c51513 = C51513.this;
+                                C51483 c51483 = C51483.this;
                                 container.removeView(view2);
                             }
                             container.getViewTreeObserver().removeOnPreDrawListener(onPreDrawListener);
@@ -723,7 +723,7 @@ public class LinkActionView extends LinearLayout {
             this.actionBarPopupWindow.setOutsideTouchable(true);
             this.actionBarPopupWindow.setFocusable(true);
             this.actionBarPopupWindow.setBackgroundDrawable(new ColorDrawable(0));
-            this.actionBarPopupWindow.setAnimationStyle(C3634R.style.PopupContextAnimation);
+            this.actionBarPopupWindow.setAnimationStyle(C3632R.style.PopupContextAnimation);
             this.actionBarPopupWindow.setInputMethodMode(2);
             this.actionBarPopupWindow.setSoftInputMode(0);
             actionBarPopupWindowLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda16
@@ -744,7 +744,7 @@ public class LinkActionView extends LinearLayout {
     public /* synthetic */ void lambda$new$11(Context context, ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout) {
         if (!this.permanent && this.canEdit) {
             ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(context, true, false);
-            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Edit", C3634R.string.Edit), C3634R.C3636drawable.msg_edit);
+            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Edit", C3632R.string.Edit), C3632R.C3634drawable.msg_edit);
             actionBarPopupWindowLayout.addView((View) actionBarMenuSubItem, LayoutHelper.createLinear(-1, 48));
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
@@ -754,7 +754,7 @@ public class LinkActionView extends LinearLayout {
             });
         }
         ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(context, true, false);
-        actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("GetQRCode", C3634R.string.GetQRCode), C3634R.C3636drawable.msg_qrcode);
+        actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("GetQRCode", C3632R.string.GetQRCode), C3632R.C3634drawable.msg_qrcode);
         actionBarPopupWindowLayout.addView((View) actionBarMenuSubItem2, LayoutHelper.createLinear(-1, 48));
         actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
@@ -766,7 +766,7 @@ public class LinkActionView extends LinearLayout {
             return;
         }
         ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(context, false, true);
-        actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString("RevokeLink", C3634R.string.RevokeLink), C3634R.C3636drawable.msg_delete);
+        actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString("RevokeLink", C3632R.string.RevokeLink), C3632R.C3634drawable.msg_delete);
         int i = Theme.key_text_RedRegular;
         actionBarMenuSubItem3.setColors(Theme.getColor(i), Theme.getColor(i));
         actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda7
@@ -843,15 +843,15 @@ public class LinkActionView extends LinearLayout {
         int i;
         String str;
         Context context = getContext();
-        String string = LocaleController.getString("InviteByQRCode", C3634R.string.InviteByQRCode);
+        String string = LocaleController.getString("InviteByQRCode", C3632R.string.InviteByQRCode);
         String str2 = this.link;
         String str3 = this.qrText;
         if (str3 == null) {
             if (this.isChannel) {
-                i = C3634R.string.QRCodeLinkHelpChannel;
+                i = C3632R.string.QRCodeLinkHelpChannel;
                 str = "QRCodeLinkHelpChannel";
             } else {
-                i = C3634R.string.QRCodeLinkHelpGroup;
+                i = C3632R.string.QRCodeLinkHelpGroup;
                 str = "QRCodeLinkHelpGroup";
             }
             str3 = LocaleController.getString(str, i);
@@ -864,7 +864,7 @@ public class LinkActionView extends LinearLayout {
             }
         };
         this.qrCodeBottomSheet = qRCodeBottomSheet;
-        qRCodeBottomSheet.setCenterAnimation(C3634R.raw.qr_code_logo);
+        qRCodeBottomSheet.setCenterAnimation(C3632R.raw.qr_code_logo);
         this.qrCodeBottomSheet.show();
         ActionBarPopupWindow actionBarPopupWindow = this.actionBarPopupWindow;
         if (actionBarPopupWindow != null) {
@@ -915,7 +915,7 @@ public class LinkActionView extends LinearLayout {
     public void setLink(String str) {
         this.link = str;
         if (str == null) {
-            this.linkView.setText(LocaleController.getString("Loading", C3634R.string.Loading));
+            this.linkView.setText(LocaleController.getString("Loading", C3632R.string.Loading));
         } else if (str.startsWith("https://")) {
             this.linkView.setText(str.substring(8));
         } else {
@@ -946,7 +946,7 @@ public class LinkActionView extends LinearLayout {
             this.hideRevokeOption = z;
             this.optionsView.setVisibility(0);
             ImageView imageView = this.optionsView;
-            imageView.setImageDrawable(ContextCompat.getDrawable(imageView.getContext(), C3634R.C3636drawable.ic_ab_other));
+            imageView.setImageDrawable(ContextCompat.getDrawable(imageView.getContext(), C3632R.C3634drawable.ic_ab_other));
         }
     }
 
@@ -993,15 +993,15 @@ public class LinkActionView extends LinearLayout {
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this.fragment.getParentActivity());
-        builder.setTitle(LocaleController.getString("RevokeLink", C3634R.string.RevokeLink));
-        builder.setMessage(LocaleController.getString("RevokeAlert", C3634R.string.RevokeAlert));
-        builder.setPositiveButton(LocaleController.getString("RevokeButton", C3634R.string.RevokeButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda0
+        builder.setTitle(LocaleController.getString("RevokeLink", C3632R.string.RevokeLink));
+        builder.setMessage(LocaleController.getString("RevokeAlert", C3632R.string.RevokeAlert));
+        builder.setPositiveButton(LocaleController.getString("RevokeButton", C3632R.string.RevokeButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.LinkActionView$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 LinkActionView.this.lambda$revokeLink$14(dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
         TextView textView = (TextView) builder.create().getButton(-1);
         if (textView != null) {
             textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));

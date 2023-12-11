@@ -92,8 +92,10 @@
     .line 41
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;)V
 
+    const/16 p2, 0x11
+
     .line 42
-    invoke-virtual {p1, v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
     .line 44
     new-instance p1, Landroid/graphics/Paint;

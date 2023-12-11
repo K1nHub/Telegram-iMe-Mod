@@ -27,7 +27,7 @@ public final class StateInitTlbConstructor extends org.ton.tlb.TlbConstructor<St
 
     static {
         Maybe.Companion companion = Maybe.Companion;
-        Maybe5 = companion.tlbCodec(UIntTlbConstructor.Companion.m5255int(5));
+        Maybe5 = companion.tlbCodec(UIntTlbConstructor.Companion.m5237int(5));
         MaybeTickTock = companion.tlbCodec(TickTock.Companion);
         MaybeCell = companion.tlbCodec(CellRef.Companion.tlbCodec(AnyTlbConstructor.INSTANCE));
         Library = HashMapE.Companion.tlbCodec(256, SimpleLib.Companion);

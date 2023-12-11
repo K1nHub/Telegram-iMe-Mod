@@ -74,7 +74,7 @@ public final class IhrPendingSince$$serializer implements GeneratedSerializer<Ih
         Intrinsics.checkNotNullParameter(value, "value");
         SerialDescriptor descriptor2 = getDescriptor();
         CompositeEncoder beginStructure = encoder.beginStructure(descriptor2);
-        beginStructure.encodeSerializableElement(descriptor2, 0, ULongSerializer.INSTANCE, ULong.m1993boximpl(value.import_lt));
+        beginStructure.encodeSerializableElement(descriptor2, 0, ULongSerializer.INSTANCE, ULong.m1995boximpl(value.import_lt));
         beginStructure.endStructure(descriptor2);
     }
 

@@ -35,9 +35,9 @@ public final class AdnlAddressTunnel implements AdnlAddress {
     private final PublicKey pubkey;
 
     /* renamed from: to */
-    private final byte[] f2024to;
+    private final byte[] f2025to;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {null, new SealedClassSerializer("org.ton.api.pub.PublicKey", Reflection.getOrCreateKotlinClass(PublicKey.class), new KClass[]{Reflection.getOrCreateKotlinClass(PublicKeyAes.class), Reflection.getOrCreateKotlinClass(PublicKeyEd25519.class), Reflection.getOrCreateKotlinClass(PublicKeyOverlay.class), Reflection.getOrCreateKotlinClass(PublicKeyUnencrypted.class)}, new KSerializer[]{PublicKeyAes$$serializer.INSTANCE, PublicKeyEd25519$$serializer.INSTANCE, PublicKeyOverlay$$serializer.INSTANCE, PublicKeyUnencrypted$$serializer.INSTANCE}, new Annotation[]{new C7499x63816b8c("@type")})};
+    private static final KSerializer<Object>[] $childSerializers = {null, new SealedClassSerializer("org.ton.api.pub.PublicKey", Reflection.getOrCreateKotlinClass(PublicKey.class), new KClass[]{Reflection.getOrCreateKotlinClass(PublicKeyAes.class), Reflection.getOrCreateKotlinClass(PublicKeyEd25519.class), Reflection.getOrCreateKotlinClass(PublicKeyOverlay.class), Reflection.getOrCreateKotlinClass(PublicKeyUnencrypted.class)}, new KSerializer[]{PublicKeyAes$$serializer.INSTANCE, PublicKeyEd25519$$serializer.INSTANCE, PublicKeyOverlay$$serializer.INSTANCE, PublicKeyUnencrypted$$serializer.INSTANCE}, new Annotation[]{new C7497x63816b8c("@type")})};
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -45,42 +45,42 @@ public final class AdnlAddressTunnel implements AdnlAddress {
         }
         if (obj instanceof AdnlAddressTunnel) {
             AdnlAddressTunnel adnlAddressTunnel = (AdnlAddressTunnel) obj;
-            return Intrinsics.areEqual(this.f2024to, adnlAddressTunnel.f2024to) && Intrinsics.areEqual(this.pubkey, adnlAddressTunnel.pubkey);
+            return Intrinsics.areEqual(this.f2025to, adnlAddressTunnel.f2025to) && Intrinsics.areEqual(this.pubkey, adnlAddressTunnel.pubkey);
         }
         return false;
     }
 
     public int hashCode() {
-        return (Arrays.hashCode(this.f2024to) * 31) + this.pubkey.hashCode();
+        return (Arrays.hashCode(this.f2025to) * 31) + this.pubkey.hashCode();
     }
 
     public String toString() {
-        return "AdnlAddressTunnel(to=" + Arrays.toString(this.f2024to) + ", pubkey=" + this.pubkey + ')';
+        return "AdnlAddressTunnel(to=" + Arrays.toString(this.f2025to) + ", pubkey=" + this.pubkey + ')';
     }
 
     public /* synthetic */ AdnlAddressTunnel(int i, byte[] bArr, PublicKey publicKey, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, AdnlAddressTunnel$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2024to = bArr;
+        this.f2025to = bArr;
         this.pubkey = publicKey;
     }
 
     public AdnlAddressTunnel(byte[] to, PublicKey pubkey) {
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(pubkey, "pubkey");
-        this.f2024to = to;
+        this.f2025to = to;
         this.pubkey = pubkey;
     }
 
     public static final /* synthetic */ void write$Self(AdnlAddressTunnel adnlAddressTunnel, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ByteArraySerializer.INSTANCE, adnlAddressTunnel.f2024to);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ByteArraySerializer.INSTANCE, adnlAddressTunnel.f2025to);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, kSerializerArr[1], adnlAddressTunnel.pubkey);
     }
 
     public final byte[] getTo() {
-        return this.f2024to;
+        return this.f2025to;
     }
 
     public final PublicKey getPubkey() {

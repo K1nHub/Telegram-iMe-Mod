@@ -26,16 +26,16 @@
 .method public constructor <init>(III)V
     .locals 0
 
-    .line 295
+    .line 285
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 296
+    .line 286
     iput p1, p0, Lorg/telegram/messenger/CodeHighlighting$CachedToSpan;->group:I
 
-    .line 297
+    .line 287
     iput p2, p0, Lorg/telegram/messenger/CodeHighlighting$CachedToSpan;->start:I
 
-    .line 298
+    .line 288
     iput p3, p0, Lorg/telegram/messenger/CodeHighlighting$CachedToSpan;->end:I
 
     return-void

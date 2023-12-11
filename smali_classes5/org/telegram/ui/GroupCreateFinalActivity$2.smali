@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateFinalActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 346
+    .line 347
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$2;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;-><init>(Landroid/content/Context;)V
@@ -37,19 +37,19 @@
 .method protected onLayout(ZIIII)V
     .locals 10
 
-    .line 391
+    .line 392
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result p1
 
-    .line 393
+    .line 394
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->measureKeyboardHeight()I
 
     move-result v0
 
     const/16 v1, 0x14
 
-    .line 394
+    .line 395
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -83,19 +83,19 @@
     :cond_0
     move v1, v2
 
-    .line 395
+    .line 396
     :goto_0
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setBottomClip(I)V
 
     :goto_1
     if-ge v2, p1, :cond_a
 
-    .line 398
+    .line 399
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 399
+    .line 400
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
 
     move-result v4
@@ -106,7 +106,7 @@
 
     goto/16 :goto_7
 
-    .line 402
+    .line 403
     :cond_1
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -114,17 +114,17 @@
 
     check-cast v4, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 404
+    .line 405
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v5
 
-    .line 405
+    .line 406
     invoke-virtual {v3}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
 
-    .line 410
+    .line 411
     iget v7, v4, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     const/4 v8, -0x1
@@ -148,7 +148,7 @@
 
     if-eq v8, v9, :cond_3
 
-    .line 427
+    .line 428
     iget v8, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     goto :goto_3
@@ -156,7 +156,7 @@
     :cond_3
     sub-int v8, p4, v5
 
-    .line 423
+    .line 424
     iget v9, v4, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     goto :goto_2
@@ -166,7 +166,7 @@
 
     sub-int/2addr v8, v5
 
-    .line 420
+    .line 421
     div-int/lit8 v8, v8, 0x2
 
     iget v9, v4, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
@@ -191,7 +191,7 @@
 
     if-eq v7, v9, :cond_5
 
-    .line 441
+    .line 442
     iget v4, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     goto :goto_5
@@ -203,12 +203,12 @@
 
     sub-int/2addr v7, v6
 
-    .line 438
+    .line 439
     iget v4, v4, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     goto :goto_4
 
-    .line 432
+    .line 433
     :cond_6
     iget v4, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
@@ -227,7 +227,7 @@
 
     sub-int/2addr v7, v6
 
-    .line 435
+    .line 436
     div-int/lit8 v7, v7, 0x2
 
     iget v9, v4, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
@@ -239,7 +239,7 @@
     :goto_4
     sub-int v4, v7, v4
 
-    .line 444
+    .line 445
     :goto_5
     iget-object v7, p0, Lorg/telegram/ui/GroupCreateFinalActivity$2;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
@@ -261,14 +261,14 @@
 
     if-eqz v7, :cond_9
 
-    .line 445
+    .line 446
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v4
 
     if-eqz v4, :cond_8
 
-    .line 446
+    .line 447
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v4
@@ -279,7 +279,7 @@
 
     goto :goto_6
 
-    .line 448
+    .line 449
     :cond_8
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
@@ -299,7 +299,7 @@
 
     add-int/2addr v6, v4
 
-    .line 451
+    .line 452
     invoke-virtual {v3, v8, v4, v5, v6}, Landroid/view/View;->layout(IIII)V
 
     :goto_7
@@ -307,7 +307,7 @@
 
     goto/16 :goto_1
 
-    .line 454
+    .line 455
     :cond_a
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->notifyHeightChanged()V
 
@@ -317,27 +317,27 @@
 .method protected onMeasure(II)V
     .locals 11
 
-    .line 352
+    .line 353
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 353
+    .line 354
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 355
+    .line 356
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 356
+    .line 357
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v2
 
     sub-int/2addr v1, v2
 
-    .line 358
+    .line 359
     iget-object v2, p0, Lorg/telegram/ui/GroupCreateFinalActivity$2;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$000(Lorg/telegram/ui/GroupCreateFinalActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -356,14 +356,14 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 360
+    .line 361
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->measureKeyboardHeight()I
 
     move-result v2
 
     const/16 v3, 0x14
 
-    .line 361
+    .line 362
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -386,10 +386,10 @@
 
     const/4 v2, 0x1
 
-    .line 362
+    .line 363
     iput-boolean v2, p0, Lorg/telegram/ui/GroupCreateFinalActivity$2;->ignoreLayout:Z
 
-    .line 363
+    .line 364
     iget-object v2, p0, Lorg/telegram/ui/GroupCreateFinalActivity$2;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$100(Lorg/telegram/ui/GroupCreateFinalActivity;)Lorg/telegram/ui/Components/EditTextEmoji;
@@ -398,10 +398,10 @@
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/EditTextEmoji;->hideEmojiView()V
 
-    .line 364
+    .line 365
     iput-boolean v4, p0, Lorg/telegram/ui/GroupCreateFinalActivity$2;->ignoreLayout:Z
 
-    .line 367
+    .line 368
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
@@ -410,14 +410,14 @@
     :goto_0
     if-ge v4, v2, :cond_8
 
-    .line 369
+    .line 370
     invoke-virtual {p0, v4}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
     if-eqz v6, :cond_7
 
-    .line 370
+    .line 371
     invoke-virtual {v6}, Landroid/view/View;->getVisibility()I
 
     move-result v3
@@ -436,7 +436,7 @@
 
     goto/16 :goto_3
 
-    .line 373
+    .line 374
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/GroupCreateFinalActivity$2;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
@@ -458,7 +458,7 @@
 
     if-eqz v3, :cond_6
 
-    .line 374
+    .line 375
     sget-boolean v3, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
 
     const/high16 v5, 0x40000000    # 2.0f
@@ -473,7 +473,7 @@
 
     goto :goto_1
 
-    .line 381
+    .line 382
     :cond_2
     invoke-static {v0, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -493,7 +493,7 @@
 
     goto :goto_3
 
-    .line 375
+    .line 376
     :cond_3
     :goto_1
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
@@ -502,7 +502,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 376
+    .line 377
     invoke-static {v0, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v3
@@ -547,7 +547,7 @@
 
     goto :goto_3
 
-    .line 378
+    .line 379
     :cond_5
     invoke-static {v0, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -582,7 +582,7 @@
 
     move v9, p2
 
-    .line 384
+    .line 385
     invoke-virtual/range {v5 .. v10}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
     :cond_7
@@ -598,14 +598,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 459
+    .line 460
     iget-boolean v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$2;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 462
+    .line 463
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 

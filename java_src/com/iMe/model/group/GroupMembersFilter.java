@@ -7,7 +7,7 @@ import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$ChannelParticipantsFilter;
 import org.telegram.tgnet.TLRPC$TL_channelParticipantsAdmins;
@@ -107,35 +107,35 @@ public enum GroupMembersFilter {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3634R.string.profile_group_filter_all);
+                String internalString = LocaleController.getInternalString(C3632R.string.profile_group_filter_all);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…profile_group_filter_all)");
                 return internalString;
             case 2:
-                String internalString2 = LocaleController.getInternalString(C3634R.string.profile_group_filter_administrator);
+                String internalString2 = LocaleController.getInternalString(C3632R.string.profile_group_filter_administrator);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…oup_filter_administrator)");
                 return internalString2;
             case 3:
-                String internalString3 = LocaleController.getInternalString(C3634R.string.profile_group_filter_bots);
+                String internalString3 = LocaleController.getInternalString(C3632R.string.profile_group_filter_bots);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…rofile_group_filter_bots)");
                 return internalString3;
             case 4:
-                String internalString4 = LocaleController.getInternalString(C3634R.string.profile_group_filter_contacts);
+                String internalString4 = LocaleController.getInternalString(C3632R.string.profile_group_filter_contacts);
                 Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…le_group_filter_contacts)");
                 return internalString4;
             case 5:
-                String string = LocaleController.getString("LimitPremium", C3634R.string.LimitPremium);
+                String string = LocaleController.getString("LimitPremium", C3632R.string.LimitPremium);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"LimitPremium\", R.string.LimitPremium)");
                 return string;
             case 6:
-                String internalString5 = LocaleController.getInternalString(C3634R.string.profile_group_filter_restricted);
+                String internalString5 = LocaleController.getInternalString(C3632R.string.profile_group_filter_restricted);
                 Intrinsics.checkNotNullExpressionValue(internalString5, "getInternalString(R.stri…_group_filter_restricted)");
                 return internalString5;
             case 7:
-                String internalString6 = LocaleController.getInternalString(C3634R.string.profile_group_filter_blocked);
+                String internalString6 = LocaleController.getInternalString(C3632R.string.profile_group_filter_blocked);
                 Intrinsics.checkNotNullExpressionValue(internalString6, "getInternalString(R.stri…ile_group_filter_blocked)");
                 return internalString6;
             case 8:
-                String internalString7 = LocaleController.getInternalString(C3634R.string.profile_group_filter_deleted);
+                String internalString7 = LocaleController.getInternalString(C3632R.string.profile_group_filter_deleted);
                 Intrinsics.checkNotNullExpressionValue(internalString7, "getInternalString(R.stri…ile_group_filter_deleted)");
                 return internalString7;
             default:

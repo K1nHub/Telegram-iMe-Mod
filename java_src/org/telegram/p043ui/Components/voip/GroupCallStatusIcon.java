@@ -4,7 +4,8 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.p043ui.Components.RLottieDrawable;
@@ -92,9 +93,9 @@ public class GroupCallStatusIcon {
     }
 
     public GroupCallStatusIcon() {
-        int i = C3634R.raw.voice_mini;
+        int i = C3632R.raw.voice_mini;
         this.micDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.m104dp(24), AndroidUtilities.m104dp(24), true, null);
-        int i2 = C3634R.raw.hand_2;
+        int i2 = C3632R.raw.hand_2;
         this.shakeHandDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m104dp(15), AndroidUtilities.m104dp(15), true, null);
     }
 
@@ -166,7 +167,7 @@ public class GroupCallStatusIcon {
             if (j != 0 && j2 <= 5000) {
                 AndroidUtilities.runOnUIThread(this.checkRaiseRunnable, 5000 - j2);
             }
-            customEndFrame = this.micDrawable.setCustomEndFrame(136);
+            customEndFrame = this.micDrawable.setCustomEndFrame(MessagesStorage.LAST_DB_VERSION);
         } else {
             this.iconView.setAnimation(this.micDrawable);
             this.micDrawable.setOnFinishCallback(null, 0);
@@ -183,7 +184,7 @@ public class GroupCallStatusIcon {
         } else if (customEndFrame) {
             if (z6) {
                 this.micDrawable.setCurrentFrame(99);
-                this.micDrawable.setCustomEndFrame(136);
+                this.micDrawable.setCustomEndFrame(MessagesStorage.LAST_DB_VERSION);
             } else if (z5 && this.lastRaisedHand && !z6) {
                 this.micDrawable.setCurrentFrame(0);
                 this.micDrawable.setCustomEndFrame(36);

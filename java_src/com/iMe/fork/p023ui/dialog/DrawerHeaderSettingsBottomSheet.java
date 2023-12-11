@@ -21,7 +21,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -403,9 +403,9 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         if (z) {
-            string = LocaleController.getString("Cancel", C3634R.string.Cancel);
+            string = LocaleController.getString("Cancel", C3632R.string.Cancel);
         } else {
-            string = LocaleController.getString("Save", C3634R.string.Save);
+            string = LocaleController.getString("Save", C3632R.string.Save);
         }
         Intrinsics.checkNotNullExpressionValue(string, "if (cancel) {\n          … R.string.Save)\n        }");
         String upperCase = string.toUpperCase(Locale.ROOT);
@@ -504,7 +504,7 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
                 z = i == DrawerHeaderSettingsBottomSheet.this.avatarRow;
                 TextCheckCell textCheckCell = (TextCheckCell) view;
-                String internalString = LocaleController.getInternalString(z ? C3634R.string.drawer_profile_cell_avatar : C3634R.string.drawer_profile_cell_archive);
+                String internalString = LocaleController.getInternalString(z ? C3632R.string.drawer_profile_cell_avatar : C3632R.string.drawer_profile_cell_archive);
                 DrawerHeaderSettings newSettings = DrawerHeaderSettingsBottomSheet.this.getNewSettings();
                 textCheckCell.setTextAndCheck(internalString, z ? newSettings.isShowAvatar() : newSettings.isShowArchive(), true);
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATIONS_CHECK_CELL && (view instanceof NotificationsCheckCell)) {
@@ -512,7 +512,7 @@ public final class DrawerHeaderSettingsBottomSheet extends BottomSheet {
                 DrawerHeaderSettings newSettings2 = DrawerHeaderSettingsBottomSheet.this.getNewSettings();
                 DrawerAccountData title = z ? newSettings2.getTitle() : newSettings2.getSubtitle();
                 NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) view;
-                String internalString2 = LocaleController.getInternalString(z ? C3634R.string.drawer_profile_cell_alert_title : C3634R.string.drawer_profile_cell_alert_subtitle);
+                String internalString2 = LocaleController.getInternalString(z ? C3632R.string.drawer_profile_cell_alert_title : C3632R.string.drawer_profile_cell_alert_subtitle);
                 String title2 = title.getTitle();
                 DrawerHeaderSettings newSettings3 = DrawerHeaderSettingsBottomSheet.this.getNewSettings();
                 notificationsCheckCell.setTextAndValueAndCheck(internalString2, title2, z ? newSettings3.isShowTitle() : newSettings3.isShowSubtitle(), true);

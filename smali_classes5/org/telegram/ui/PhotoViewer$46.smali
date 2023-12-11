@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;Lorg/telegram/ui/Components/VideoSeekPreviewImage$VideoSeekPreviewImageDelegate;)V
     .locals 0
 
-    .line 8224
+    .line 8226
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/VideoSeekPreviewImage;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/VideoSeekPreviewImage$VideoSeekPreviewImageDelegate;)V
@@ -35,10 +35,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 8227
+    .line 8229
     invoke-super/range {p0 .. p5}, Landroid/view/View;->onLayout(ZIIII)V
 
-    .line 8228
+    .line 8230
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$22200(Lorg/telegram/ui/PhotoViewer;)V
@@ -49,12 +49,12 @@
 .method public setVisibility(I)V
     .locals 0
 
-    .line 8233
+    .line 8235
     invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     if-nez p1, :cond_0
 
-    .line 8235
+    .line 8237
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$46;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$22200(Lorg/telegram/ui/PhotoViewer;)V

@@ -166,7 +166,7 @@ public final class TypeDeserializer {
         }
         TypeConstructor typeConstructor = typeConstructor(proto);
         boolean z2 = true;
-        if (ErrorUtils.isError(typeConstructor.mo2051getDeclarationDescriptor())) {
+        if (ErrorUtils.isError(typeConstructor.mo2053getDeclarationDescriptor())) {
             return ErrorUtils.INSTANCE.createErrorType(ErrorTypeKind.TYPE_FOR_ERROR_TYPE_CONSTRUCTOR, typeConstructor, typeConstructor.toString());
         }
         DeserializedAnnotations deserializedAnnotations = new DeserializedAnnotations(this.f1385c.getStorageManager(), new Function0<List<? extends AnnotationDescriptor>>() { // from class: kotlin.reflect.jvm.internal.impl.serialization.deserialization.TypeDeserializer$simpleType$annotations$1
@@ -203,10 +203,10 @@ public final class TypeDeserializer {
             i = i2;
         }
         list = CollectionsKt___CollectionsKt.toList(arrayList);
-        ClassifierDescriptor mo2051getDeclarationDescriptor = typeConstructor.mo2051getDeclarationDescriptor();
-        if (z && (mo2051getDeclarationDescriptor instanceof TypeAliasDescriptor)) {
+        ClassifierDescriptor mo2053getDeclarationDescriptor = typeConstructor.mo2053getDeclarationDescriptor();
+        if (z && (mo2053getDeclarationDescriptor instanceof TypeAliasDescriptor)) {
             KotlinTypeFactory kotlinTypeFactory = KotlinTypeFactory.INSTANCE;
-            SimpleType computeExpandedType = KotlinTypeFactory.computeExpandedType((TypeAliasDescriptor) mo2051getDeclarationDescriptor, list);
+            SimpleType computeExpandedType = KotlinTypeFactory.computeExpandedType((TypeAliasDescriptor) mo2053getDeclarationDescriptor, list);
             List<TypeAttributeTranslator> typeAttributeTranslators = this.f1385c.getComponents().getTypeAttributeTranslators();
             Annotations.Companion companion = Annotations.Companion;
             plus = CollectionsKt___CollectionsKt.plus((Iterable) deserializedAnnotations, (Iterable) computeExpandedType.getAnnotations());
@@ -282,7 +282,7 @@ public final class TypeDeserializer {
             }
         });
         mutableList = SequencesKt___SequencesKt.toMutableList(map);
-        generateSequence2 = SequencesKt__SequencesKt.generateSequence(classId, C3453x1c22db09.INSTANCE);
+        generateSequence2 = SequencesKt__SequencesKt.generateSequence(classId, C3450x1c22db09.INSTANCE);
         count = SequencesKt___SequencesKt.count(generateSequence2);
         while (mutableList.size() < count) {
             mutableList.add(0);
@@ -375,7 +375,7 @@ public final class TypeDeserializer {
             goto L7e
         L14:
             kotlin.reflect.jvm.internal.impl.types.TypeConstructor r2 = r0.getConstructor()
-            kotlin.reflect.jvm.internal.impl.descriptors.ClassifierDescriptor r2 = r2.mo2051getDeclarationDescriptor()
+            kotlin.reflect.jvm.internal.impl.descriptors.ClassifierDescriptor r2 = r2.mo2053getDeclarationDescriptor()
             if (r2 == 0) goto L23
             kotlin.reflect.jvm.internal.impl.name.FqName r2 = kotlin.reflect.jvm.internal.impl.resolve.descriptorUtil.DescriptorUtilsKt.getFqNameSafe(r2)
             goto L24

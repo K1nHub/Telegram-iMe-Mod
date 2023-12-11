@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
@@ -73,8 +73,8 @@ public class EmojiTabsStrip extends ScrollableHorizontalScrollView {
     public boolean updateButtonDrawables;
     private boolean wasDrawn;
     private int wasIndex;
-    private static int[] emojiTabsDrawableIds = {C3634R.C3636drawable.msg_emoji_smiles, C3634R.C3636drawable.msg_emoji_cat, C3634R.C3636drawable.msg_emoji_food, C3634R.C3636drawable.msg_emoji_activities, C3634R.C3636drawable.msg_emoji_travel, C3634R.C3636drawable.msg_emoji_objects, C3634R.C3636drawable.msg_emoji_other, C3634R.C3636drawable.msg_emoji_flags};
-    private static int[] emojiTabsAnimatedDrawableIds = {C3634R.raw.msg_emoji_smiles, C3634R.raw.msg_emoji_cat, C3634R.raw.msg_emoji_food, C3634R.raw.msg_emoji_activities, C3634R.raw.msg_emoji_travel, C3634R.raw.msg_emoji_objects, C3634R.raw.msg_emoji_other, C3634R.raw.msg_emoji_flags};
+    private static int[] emojiTabsDrawableIds = {C3632R.C3634drawable.msg_emoji_smiles, C3632R.C3634drawable.msg_emoji_cat, C3632R.C3634drawable.msg_emoji_food, C3632R.C3634drawable.msg_emoji_activities, C3632R.C3634drawable.msg_emoji_travel, C3632R.C3634drawable.msg_emoji_objects, C3632R.C3634drawable.msg_emoji_other, C3632R.C3634drawable.msg_emoji_flags};
+    private static int[] emojiTabsAnimatedDrawableIds = {C3632R.raw.msg_emoji_smiles, C3632R.raw.msg_emoji_cat, C3632R.raw.msg_emoji_food, C3632R.raw.msg_emoji_activities, C3632R.raw.msg_emoji_travel, C3632R.raw.msg_emoji_objects, C3632R.raw.msg_emoji_other, C3632R.raw.msg_emoji_flags};
 
     protected boolean allowEmojisForNonPremium() {
         return false;
@@ -101,8 +101,8 @@ public class EmojiTabsStrip extends ScrollableHorizontalScrollView {
 
     public EmojiTabsStrip(Context context, Theme.ResourcesProvider resourcesProvider, boolean z, boolean z2, final boolean z3, int i, Runnable runnable, int i2) {
         super(context);
-        this.recentDrawableId = C3634R.C3636drawable.msg_emoji_recent;
-        this.settingsDrawableId = C3634R.C3636drawable.smiles_tab_settings;
+        this.recentDrawableId = C3632R.C3634drawable.msg_emoji_recent;
+        this.settingsDrawableId = C3632R.C3634drawable.smiles_tab_settings;
         this.forceTabsShow = !UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
         this.showSelected = true;
         this.removingViews = new HashMap<>();
@@ -308,12 +308,12 @@ public class EmojiTabsStrip extends ScrollableHorizontalScrollView {
         addView(this.contentView);
         if (i == 4) {
             LinearLayout linearLayout2 = this.contentView;
-            EmojiTabButton emojiTabButton = new EmojiTabButton(context, C3634R.C3636drawable.msg_emoji_stickers, false, false);
+            EmojiTabButton emojiTabButton = new EmojiTabButton(context, C3632R.C3634drawable.msg_emoji_stickers, false, false);
             this.toggleEmojiStickersTab = emojiTabButton;
             linearLayout2.addView(emojiTabButton);
         }
         if (i == 3) {
-            this.recentDrawableId = C3634R.C3636drawable.msg_emoji_smiles;
+            this.recentDrawableId = C3632R.C3634drawable.msg_emoji_smiles;
         }
         if (z) {
             LinearLayout linearLayout3 = this.contentView;
@@ -1054,10 +1054,10 @@ public class EmojiTabsStrip extends ScrollableHorizontalScrollView {
             }
             updateLock(true);
             if (bool.booleanValue()) {
-                this.lockView.setImageResource(C3634R.C3636drawable.msg_mini_lockedemoji);
+                this.lockView.setImageResource(C3632R.C3634drawable.msg_mini_lockedemoji);
                 return;
             }
-            Drawable mutate = getResources().getDrawable(C3634R.C3636drawable.msg_mini_addemoji).mutate();
+            Drawable mutate = getResources().getDrawable(C3632R.C3634drawable.msg_mini_addemoji).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
             this.lockView.setImageDrawable(mutate);
         }

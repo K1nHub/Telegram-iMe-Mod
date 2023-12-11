@@ -2,7 +2,7 @@ package org.telegram.p043ui.Components.Premium.boosts.cells;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.TextInfoPrivacyCell;
 import org.telegram.p043ui.Components.CombinedDrawable;
@@ -17,7 +17,7 @@ public class TextInfoCell extends TextInfoPrivacyCell {
     }
 
     public void setBackground(boolean z) {
-        CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray, this.resourcesProvider)), Theme.getThemedDrawable(getContext(), z ? C3634R.C3636drawable.greydivider_bottom : C3634R.C3636drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, this.resourcesProvider)), 0, 0);
+        CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray, this.resourcesProvider)), Theme.getThemedDrawable(getContext(), z ? C3632R.C3634drawable.greydivider_bottom : C3632R.C3634drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, this.resourcesProvider)), 0, 0);
         combinedDrawable.setFullsize(true);
         setBackground(combinedDrawable);
     }

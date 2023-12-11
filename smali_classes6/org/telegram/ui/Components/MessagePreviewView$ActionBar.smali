@@ -38,16 +38,16 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 10
 
-    .line 2351
+    .line 2409
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
-    .line 2352
+    .line 2410
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2353
+    .line 2411
     iput-object p3, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 2355
+    .line 2413
     new-instance v7, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v8, 0x1
@@ -56,7 +56,7 @@
 
     iput-object v7, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->title:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    .line 2356
+    .line 2414
     sget-object v9, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const v1, 0x3e99999a    # 0.3f
@@ -73,14 +73,14 @@
 
     const-string v0, "fonts/rmedium.ttf"
 
-    .line 2357
+    .line 2415
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
 
     invoke-virtual {v7, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2358
+    .line 2416
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
     invoke-static {v0, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -91,7 +91,7 @@
 
     const/16 v0, 0x12
 
-    .line 2359
+    .line 2417
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -100,24 +100,24 @@
 
     invoke-virtual {v7, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 2360
+    .line 2418
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     xor-int/2addr v0, v8
 
     invoke-virtual {v7, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setEllipsizeByGradient(Z)V
 
-    .line 2361
+    .line 2419
     invoke-virtual {v7, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 2362
+    .line 2420
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, v0, Landroid/graphics/Point;->x:I
 
     invoke-virtual {v7, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setOverrideFullWidth(I)V
 
-    .line 2364
+    .line 2422
     new-instance v7, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-direct {v7, v8, v8, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>(ZZZ)V
@@ -134,10 +134,10 @@
 
     move-object v6, v9
 
-    .line 2365
+    .line 2423
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 2366
+    .line 2424
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubtitle:I
 
     invoke-static {v0, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -148,7 +148,7 @@
 
     const/16 p3, 0xe
 
-    .line 2367
+    .line 2425
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
@@ -157,24 +157,24 @@
 
     invoke-virtual {v7, p3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 2368
+    .line 2426
     sget-boolean p3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     xor-int/2addr p3, v8
 
     invoke-virtual {v7, p3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setEllipsizeByGradient(Z)V
 
-    .line 2369
+    .line 2427
     invoke-virtual {v7, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 2370
+    .line 2428
     sget-object p3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget p3, p3, Landroid/graphics/Point;->x:I
 
     invoke-virtual {v7, p3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setOverrideFullWidth(I)V
 
-    .line 2372
+    .line 2430
     iget-object p3, p1, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
     invoke-virtual {p3}, Lorg/telegram/messenger/MessagePreviewParams;->isTemplatePreview()Z
@@ -191,26 +191,26 @@
 
     if-nez p3, :cond_0
 
-    .line 2373
+    .line 2431
     new-instance p3, Landroid/widget/ImageView;
 
     invoke-direct {p3, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p3, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->editorButton:Landroid/widget/ImageView;
 
-    .line 2374
+    .line 2432
     sget p2, Lorg/telegram/messenger/R$drawable;->msg_edit:I
 
     invoke-virtual {p3, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2375
+    .line 2433
     iget-object p2, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->editorButton:Landroid/widget/ImageView;
 
     sget-object p3, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 2376
+    .line 2434
     iget-object p2, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->editorButton:Landroid/widget/ImageView;
 
     new-instance p3, Landroid/graphics/PorterDuffColorFilter;
@@ -227,7 +227,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2377
+    .line 2435
     iget-object p2, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->editorButton:Landroid/widget/ImageView;
 
     sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
@@ -242,7 +242,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2378
+    .line 2436
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->editorButton:Landroid/widget/ImageView;
 
     new-instance p2, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar$$ExternalSyntheticLambda0;
@@ -251,7 +251,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2384
+    .line 2442
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->editorButton:Landroid/widget/ImageView;
 
     const/16 p2, 0x15
@@ -271,7 +271,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;)V
     .locals 0
 
-    .line 2314
+    .line 2372
     invoke-direct {p0}, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->updateEditorButton()V
 
     return-void
@@ -280,7 +280,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 1
 
-    .line 2379
+    .line 2437
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MessagePreviewView;->access$1600(Lorg/telegram/ui/Components/MessagePreviewView;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -301,7 +301,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2380
+    .line 2438
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MessagePreviewView;->access$1600(Lorg/telegram/ui/Components/MessagePreviewView;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -312,7 +312,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide(Z)V
 
-    .line 2382
+    .line 2440
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
@@ -324,7 +324,7 @@
 .method private setBounds(Landroid/graphics/drawable/Drawable;F)V
     .locals 5
 
-    .line 2415
+    .line 2473
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v0
@@ -333,14 +333,14 @@
 
     const/16 v1, 0x20
 
-    .line 2416
+    .line 2474
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     sub-int v2, p2, v2
 
-    .line 2417
+    .line 2475
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v3
@@ -369,14 +369,14 @@
     :goto_0
     sub-int/2addr v3, v4
 
-    .line 2418
+    .line 2476
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     add-int/2addr p2, v1
 
-    .line 2414
+    .line 2472
     invoke-virtual {p1, v0, v2, v3, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     return-void
@@ -385,20 +385,20 @@
 .method private updateEditorButton()V
     .locals 4
 
-    .line 2324
+    .line 2382
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->editorButton:Landroid/widget/ImageView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2327
+    .line 2385
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2328
+    .line 2386
     iget-object v1, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
@@ -411,10 +411,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 2329
+    .line 2387
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/MessagePreviewParams$Messages;->getSelectedMessages(Ljava/util/ArrayList;Z)V
 
-    .line 2331
+    .line 2389
     :cond_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -446,7 +446,7 @@
 
     goto :goto_0
 
-    .line 2337
+    .line 2395
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->editorButton:Landroid/widget/ImageView;
 
@@ -454,7 +454,7 @@
 
     goto :goto_1
 
-    .line 2332
+    .line 2390
     :cond_3
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->editorButton:Landroid/widget/ImageView;
@@ -463,7 +463,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2333
+    .line 2391
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/MessagePreviewView;->access$1600(Lorg/telegram/ui/Components/MessagePreviewView;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -484,7 +484,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 2334
+    .line 2392
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/MessagePreviewView;->access$1600(Lorg/telegram/ui/Components/MessagePreviewView;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -503,10 +503,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 2424
+    .line 2482
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 2425
+    .line 2483
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->title:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/16 v1, 0x1d
@@ -535,12 +535,12 @@
 
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->setBounds(Landroid/graphics/drawable/Drawable;F)V
 
-    .line 2426
+    .line 2484
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->title:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2428
+    .line 2486
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->subtitle:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/high16 v1, 0x421e0000    # 39.5f
@@ -553,7 +553,7 @@
 
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->setBounds(Landroid/graphics/drawable/Drawable;F)V
 
-    .line 2429
+    .line 2487
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->subtitle:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -566,7 +566,7 @@
 
     const/16 p2, 0x38
 
-    .line 2404
+    .line 2462
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -581,7 +581,7 @@
 
     const/16 p1, 0x12
 
-    .line 2405
+    .line 2463
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -607,7 +607,7 @@
 .method public setSubtitle(Ljava/lang/CharSequence;Z)V
     .locals 1
 
-    .line 2399
+    .line 2457
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->subtitle:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     if-eqz p2, :cond_0
@@ -632,7 +632,7 @@
 .method public setTitle(Ljava/lang/CharSequence;Z)V
     .locals 1
 
-    .line 2395
+    .line 2453
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->title:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     if-eqz p2, :cond_0
@@ -657,7 +657,7 @@
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    .line 2410
+    .line 2468
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$ActionBar;->title:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     if-eq v0, p1, :cond_1

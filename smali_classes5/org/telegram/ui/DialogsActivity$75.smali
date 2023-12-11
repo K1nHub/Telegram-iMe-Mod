@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Z)V
     .locals 0
 
-    .line 14585
+    .line 14590
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$75;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$75;->val$visible:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 14594
+    .line 14599
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$75;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$41200(Lorg/telegram/ui/DialogsActivity;)Landroid/animation/AnimatorSet;
@@ -48,14 +48,14 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 14595
+    .line 14600
     iget-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$75;->val$visible:Z
 
     const/16 v0, 0x8
 
     if-eqz p1, :cond_0
 
-    .line 14596
+    .line 14601
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$75;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -64,7 +64,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 14597
+    .line 14602
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$75;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -75,7 +75,7 @@
 
     goto :goto_0
 
-    .line 14600
+    .line 14605
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$75;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -85,7 +85,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 14601
+    .line 14606
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$75;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -94,7 +94,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 14604
+    .line 14609
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$75;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -110,7 +110,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 14588
+    .line 14593
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$75;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -121,7 +121,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 14589
+    .line 14594
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$75;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41100(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/RLottieImageView;

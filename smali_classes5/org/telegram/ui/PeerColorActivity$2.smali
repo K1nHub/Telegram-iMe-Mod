@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PeerColorActivity;)V
     .locals 0
 
-    .line 149
+    .line 155
     iput-object p1, p0, Lorg/telegram/ui/PeerColorActivity$2;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 153
+    .line 159
     iget-object p1, p0, Lorg/telegram/ui/PeerColorActivity$2;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PeerColorActivity;->access$000(Lorg/telegram/ui/PeerColorActivity;)Z
@@ -68,14 +68,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 154
+    .line 160
     iget-object p1, p0, Lorg/telegram/ui/PeerColorActivity$2;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PeerColorActivity;->access$100(Lorg/telegram/ui/PeerColorActivity;)V
 
     return-void
 
-    .line 157
+    .line 163
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PeerColorActivity$2;->this$0:Lorg/telegram/ui/PeerColorActivity;
 

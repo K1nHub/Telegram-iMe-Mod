@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;)V
     .locals 0
 
-    .line 358
+    .line 359
     iput-object p3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$5;->val$nestedSizeNotifierLayout:Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 361
+    .line 362
     invoke-super {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->invalidate()V
 
-    .line 362
+    .line 363
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$5;->val$nestedSizeNotifierLayout:Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V

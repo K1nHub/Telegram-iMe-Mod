@@ -30,7 +30,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -282,7 +282,7 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
             }
         };
         this.emptyView = stickerEmptyView;
-        stickerEmptyView.title.setText(LocaleController.getString("NoResult", C3634R.string.NoResult));
+        stickerEmptyView.title.setText(LocaleController.getString("NoResult", C3632R.string.NoResult));
         this.emptyView.subtitle.setVisibility(8);
         this.emptyView.setVisibility(8);
         this.emptyView.addView(flickerLoadingView, 0);
@@ -472,13 +472,13 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
                     return lambda$showActionMode$1;
                 }
             });
-            ActionBarMenuItem addItemWithWidth = this.actionMode.addItemWithWidth(203, C3634R.C3636drawable.avd_speed, AndroidUtilities.m104dp(54), LocaleController.getString("AccDescrPremiumSpeed", C3634R.string.AccDescrPremiumSpeed));
+            ActionBarMenuItem addItemWithWidth = this.actionMode.addItemWithWidth(203, C3632R.C3634drawable.avd_speed, AndroidUtilities.m104dp(54), LocaleController.getString("AccDescrPremiumSpeed", C3632R.string.AccDescrPremiumSpeed));
             this.speedItem = addItemWithWidth;
             addItemWithWidth.getIconView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
-            this.gotoItem = this.actionMode.addItemWithWidth(200, C3634R.C3636drawable.msg_message, AndroidUtilities.m104dp(54), LocaleController.getString("AccDescrGoToMessage", C3634R.string.AccDescrGoToMessage));
-            this.forwardToCloudItem = this.actionMode.addItemWithWidth(IdFabric$Menu.MESSAGE_SAVE_CLOUD, C3634R.C3636drawable.fork_forward_cloud, AndroidUtilities.m104dp(54));
-            this.forwardItem = this.actionMode.addItemWithWidth(201, C3634R.C3636drawable.msg_forward, AndroidUtilities.m104dp(54), LocaleController.getString("Forward", C3634R.string.Forward));
-            this.deleteItem = this.actionMode.addItemWithWidth(202, C3634R.C3636drawable.msg_delete, AndroidUtilities.m104dp(54), LocaleController.getString("Delete", C3634R.string.Delete));
+            this.gotoItem = this.actionMode.addItemWithWidth(200, C3632R.C3634drawable.msg_message, AndroidUtilities.m104dp(54), LocaleController.getString("AccDescrGoToMessage", C3632R.string.AccDescrGoToMessage));
+            this.forwardToCloudItem = this.actionMode.addItemWithWidth(IdFabric$Menu.MESSAGE_SAVE_CLOUD, C3632R.C3634drawable.fork_forward_cloud, AndroidUtilities.m104dp(54));
+            this.forwardItem = this.actionMode.addItemWithWidth(201, C3632R.C3634drawable.msg_forward, AndroidUtilities.m104dp(54), LocaleController.getString("Forward", C3632R.string.Forward));
+            this.deleteItem = this.actionMode.addItemWithWidth(202, C3632R.C3634drawable.msg_delete, AndroidUtilities.m104dp(54), LocaleController.getString("Delete", C3632R.string.Delete));
         }
         if (this.selectedMessagesCountTextView != null) {
             DialogsSearchAdapter dialogsSearchAdapter = this.dialogsSearchAdapter;
@@ -549,15 +549,15 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
             AlertDialog.Builder builder = new AlertDialog.Builder(this.parent.getParentActivity());
             builder.setTitle(LocaleController.formatPluralString("RemoveDocumentsTitle", this.selectedFiles.size(), new Object[0]));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("RemoveDocumentsMessage", this.selectedFiles.size(), new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) LocaleController.getString("RemoveDocumentsAlertMessage", C3634R.string.RemoveDocumentsAlertMessage));
+            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("RemoveDocumentsMessage", this.selectedFiles.size(), new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) LocaleController.getString("RemoveDocumentsAlertMessage", C3632R.string.RemoveDocumentsAlertMessage));
             builder.setMessage(spannableStringBuilder);
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.SearchViewPager$$ExternalSyntheticLambda1
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.SearchViewPager$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     dialogInterface.dismiss();
                 }
             });
-            builder.setPositiveButton(LocaleController.getString("Delete", C3634R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.SearchViewPager$$ExternalSyntheticLambda0
+            builder.setPositiveButton(LocaleController.getString("Delete", C3632R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.SearchViewPager$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     SearchViewPager.this.lambda$onActionBarItemClick$3(arrayList, dialogInterface, i2);
@@ -1120,10 +1120,10 @@ public class SearchViewPager extends ViewPagerFixed implements FilteredSearchVie
         @Override // org.telegram.p043ui.Components.ViewPagerFixed.Adapter
         public String getItemTitle(int i) {
             if (this.items.get(i).type == 0) {
-                return LocaleController.getString("SearchAllChatsShort", C3634R.string.SearchAllChatsShort);
+                return LocaleController.getString("SearchAllChatsShort", C3632R.string.SearchAllChatsShort);
             }
             if (this.items.get(i).type == 1) {
-                return LocaleController.getString("DownloadsTabs", C3634R.string.DownloadsTabs);
+                return LocaleController.getString("DownloadsTabs", C3632R.string.DownloadsTabs);
             }
             return FiltersView.filters[this.items.get(i).filterIndex].getTitle();
         }

@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p030ui.custom.ActionButton;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletEthAddressMismatchBinding implements ViewBinding {
@@ -38,7 +38,7 @@ public final class ForkFragmentWalletEthAddressMismatchBinding implements ViewBi
     }
 
     public static ForkFragmentWalletEthAddressMismatchBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_fragment_wallet_eth_address_mismatch, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_fragment_wallet_eth_address_mismatch, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -46,19 +46,19 @@ public final class ForkFragmentWalletEthAddressMismatchBinding implements ViewBi
     }
 
     public static ForkFragmentWalletEthAddressMismatchBinding bind(View view) {
-        int i = C3634R.C3637id.button_backup;
+        int i = C3632R.C3635id.button_backup;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3634R.C3637id.button_delete;
+            i = C3632R.C3635id.button_delete;
             AppCompatButton appCompatButton = (AppCompatButton) ViewBindings.findChildViewById(view, i);
             if (appCompatButton != null) {
-                i = C3634R.C3637id.image_logo;
+                i = C3632R.C3635id.image_logo;
                 RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
                 if (rLottieImageView != null) {
-                    i = C3634R.C3637id.text_description;
+                    i = C3632R.C3635id.text_description;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
-                        i = C3634R.C3637id.text_title;
+                        i = C3632R.C3635id.text_title;
                         AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView2 != null) {
                             return new ForkFragmentWalletEthAddressMismatchBinding((RelativeLayout) view, actionButton, appCompatButton, rLottieImageView, appCompatTextView, appCompatTextView2);

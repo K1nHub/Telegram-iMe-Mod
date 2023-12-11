@@ -57,12 +57,12 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1609invoke(result);
+                m1610invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1609invoke(Result<? extends String> it) {
+            public final void m1610invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -129,12 +129,12 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends RecognizedImageModel>> result) {
-                m1608invoke(result);
+                m1609invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1608invoke(Result<? extends List<? extends RecognizedImageModel>> it) {
+            public final void m1609invoke(Result<? extends List<? extends RecognizedImageModel>> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends RecognizedImageModel>> result = it;

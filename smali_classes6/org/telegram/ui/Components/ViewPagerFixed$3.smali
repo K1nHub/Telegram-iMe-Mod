@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed;Landroid/content/Context;ZILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 251
+    .line 255
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;-><init>(Landroid/content/Context;ZILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,10 +35,10 @@
 .method public selectTab(IIF)V
     .locals 2
 
-    .line 254
+    .line 258
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->selectTab(IIF)V
 
-    .line 255
+    .line 259
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$3;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     const/high16 v1, 0x3f000000    # 0.5f

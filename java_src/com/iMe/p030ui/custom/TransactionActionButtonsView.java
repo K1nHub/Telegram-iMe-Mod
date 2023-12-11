@@ -25,7 +25,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkContentStakingTransactionActionsBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TransactionActionButtonsView.kt */
@@ -234,8 +234,8 @@ public final class TransactionActionButtonsView extends FrameLayout implements K
     private final void setupView() {
         setupColors();
         ForkContentStakingTransactionActionsBinding forkContentStakingTransactionActionsBinding = this.binding;
-        forkContentStakingTransactionActionsBinding.buttonConditions.setText(getResourceManager().getString(C3634R.string.staking_deposit_conditions));
-        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(getResourceManager().getString(C3634R.string.wallet_swap_process_what_is_approve));
+        forkContentStakingTransactionActionsBinding.buttonConditions.setText(getResourceManager().getString(C3632R.string.staking_deposit_conditions));
+        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(getResourceManager().getString(C3632R.string.wallet_swap_process_what_is_approve));
         addView(this.binding.getRoot());
     }
 }

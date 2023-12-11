@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReplyMessageLine;)V
     .locals 0
 
-    .line 63
+    .line 66
     iput-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine$1;->this$0:Lorg/telegram/ui/Components/ReplyMessageLine;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onViewAttachedToWindow(Landroid/view/View;)V
     .locals 0
 
-    .line 66
+    .line 69
     iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine$1;->this$0:Lorg/telegram/ui/Components/ReplyMessageLine;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ReplyMessageLine;->access$000(Lorg/telegram/ui/Components/ReplyMessageLine;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -47,7 +47,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 67
+    .line 70
     iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine$1;->this$0:Lorg/telegram/ui/Components/ReplyMessageLine;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ReplyMessageLine;->access$000(Lorg/telegram/ui/Components/ReplyMessageLine;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -63,7 +63,7 @@
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
     .locals 0
 
-    .line 72
+    .line 75
     iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine$1;->this$0:Lorg/telegram/ui/Components/ReplyMessageLine;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ReplyMessageLine;->access$000(Lorg/telegram/ui/Components/ReplyMessageLine;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -72,7 +72,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 73
+    .line 76
     iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine$1;->this$0:Lorg/telegram/ui/Components/ReplyMessageLine;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ReplyMessageLine;->access$000(Lorg/telegram/ui/Components/ReplyMessageLine;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;

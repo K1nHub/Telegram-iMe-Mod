@@ -8,7 +8,7 @@ public interface Delay {
     DisposableHandle invokeOnTimeout(long j, Runnable runnable, CoroutineContext coroutineContext);
 
     /* renamed from: scheduleResumeAfterDelay */
-    void mo2120scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation);
+    void mo2122scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation);
 
     /* compiled from: Delay.kt */
     /* loaded from: classes4.dex */

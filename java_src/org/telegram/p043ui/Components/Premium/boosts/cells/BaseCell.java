@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -125,7 +125,7 @@ public abstract class BaseCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: protected */
     public CharSequence withArrow(CharSequence charSequence) {
         SpannableString spannableString = new SpannableString(">");
-        Drawable drawable = getContext().getResources().getDrawable(C3634R.C3636drawable.attach_arrow_right);
+        Drawable drawable = getContext().getResources().getDrawable(C3632R.C3634drawable.attach_arrow_right);
         ColoredImageSpan coloredImageSpan = new ColoredImageSpan(drawable, 2);
         drawable.setBounds(0, AndroidUtilities.m104dp(1), AndroidUtilities.m104dp(11), AndroidUtilities.m104dp(12));
         spannableString.setSpan(coloredImageSpan, 0, spannableString.length(), 33);

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ViewPagerFixed;)V
     .locals 0
 
-    .line 260
+    .line 264
     iput-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public canPerformActions()Z
     .locals 1
 
-    .line 309
+    .line 313
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->access$000(Lorg/telegram/ui/Components/ViewPagerFixed;)Z
@@ -69,7 +69,7 @@
 .method public invalidateBlur()V
     .locals 1
 
-    .line 314
+    .line 318
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ViewPagerFixed;->invalidateBlur()V
@@ -90,7 +90,7 @@
 
     if-nez v1, :cond_1
 
-    .line 281
+    .line 285
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -99,10 +99,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 282
+    .line 286
     invoke-static {p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->access$100(Lorg/telegram/ui/Components/ViewPagerFixed;)V
 
-    .line 283
+    .line 287
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewsByType:Landroid/util/SparseArray;
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 284
+    .line 288
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -130,7 +130,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 285
+    .line 289
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -141,7 +141,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 286
+    .line 290
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -153,7 +153,7 @@
     :cond_0
     return-void
 
-    .line 290
+    .line 294
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -165,7 +165,7 @@
 
     return-void
 
-    .line 293
+    .line 297
     :cond_2
     invoke-static {v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->access$400(Lorg/telegram/ui/Components/ViewPagerFixed;)Z
 
@@ -173,7 +173,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 294
+    .line 298
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -194,7 +194,7 @@
 
     invoke-virtual {v3, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 295
+    .line 299
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -217,7 +217,7 @@
 
     goto :goto_0
 
-    .line 297
+    .line 301
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -241,7 +241,7 @@
 
     invoke-virtual {v3, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 298
+    .line 302
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -267,27 +267,27 @@
 .method public onPageSelected(IZ)V
     .locals 3
 
-    .line 263
+    .line 267
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-static {v0, p2}, Lorg/telegram/ui/Components/ViewPagerFixed;->access$402(Lorg/telegram/ui/Components/ViewPagerFixed;Z)Z
 
-    .line 264
+    .line 268
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iput p1, v0, Lorg/telegram/ui/Components/ViewPagerFixed;->nextPosition:I
 
     const/4 v1, 0x1
 
-    .line 265
+    .line 269
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->access$500(Lorg/telegram/ui/Components/ViewPagerFixed;I)V
 
-    .line 267
+    .line 271
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTabPageSelected(I)V
 
-    .line 268
+    .line 272
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
@@ -304,7 +304,7 @@
 
     move-result v0
 
-    .line 269
+    .line 273
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed$4;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -316,7 +316,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 271
+    .line 275
     aget-object p1, p1, v1
 
     int-to-float p2, v0
@@ -325,7 +325,7 @@
 
     goto :goto_0
 
-    .line 273
+    .line 277
     :cond_1
     aget-object p1, p1, v1
 

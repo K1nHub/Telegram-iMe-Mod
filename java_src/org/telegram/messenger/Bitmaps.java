@@ -93,7 +93,7 @@ public class Bitmaps {
         Bitmap.Config config = Bitmap.Config.ARGB_8888;
         Bitmap.Config config2 = bitmap.getConfig();
         if (config2 != null) {
-            int i8 = C35622.$SwitchMap$android$graphics$Bitmap$Config[config2.ordinal()];
+            int i8 = C35602.$SwitchMap$android$graphics$Bitmap$Config[config2.ordinal()];
             if (i8 == 1) {
                 config = Bitmap.Config.ARGB_8888;
             } else if (i8 == 2) {
@@ -140,7 +140,7 @@ public class Bitmaps {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.Bitmaps$2 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C35622 {
+    public static /* synthetic */ class C35602 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$Config;
 
         static {

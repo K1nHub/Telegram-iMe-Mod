@@ -29,7 +29,7 @@ public final class GlShader {
     }
 
     public final void release() {
-        GLES20.glDeleteShader(UInt.m1972constructorimpl(this.f410id));
+        GLES20.glDeleteShader(UInt.m1974constructorimpl(this.f410id));
     }
 
     /* compiled from: GlShader.kt */
@@ -44,17 +44,17 @@ public final class GlShader {
 
         /* JADX INFO: Access modifiers changed from: private */
         public final int compile(int i, String str) {
-            int m1972constructorimpl = UInt.m1972constructorimpl(GLES20.glCreateShader(UInt.m1972constructorimpl(i)));
+            int m1974constructorimpl = UInt.m1974constructorimpl(GLES20.glCreateShader(UInt.m1974constructorimpl(i)));
             Egloo.checkGlError(Intrinsics.stringPlus("glCreateShader type=", Integer.valueOf(i)));
-            GLES20.glShaderSource(m1972constructorimpl, str);
-            GLES20.glCompileShader(m1972constructorimpl);
+            GLES20.glShaderSource(m1974constructorimpl, str);
+            GLES20.glCompileShader(m1974constructorimpl);
             int[] iArr = new int[1];
-            GLES20.glGetShaderiv(m1972constructorimpl, GlKt.getGL_COMPILE_STATUS(), iArr, 0);
+            GLES20.glGetShaderiv(m1974constructorimpl, GlKt.getGL_COMPILE_STATUS(), iArr, 0);
             if (iArr[0] != 0) {
-                return m1972constructorimpl;
+                return m1974constructorimpl;
             }
-            String str2 = "Could not compile shader " + i + ": '" + ((Object) GLES20.glGetShaderInfoLog(m1972constructorimpl)) + "' source: " + str;
-            GLES20.glDeleteShader(m1972constructorimpl);
+            String str2 = "Could not compile shader " + i + ": '" + ((Object) GLES20.glGetShaderInfoLog(m1974constructorimpl)) + "' source: " + str;
+            GLES20.glDeleteShader(m1974constructorimpl);
             throw new RuntimeException(str2);
         }
     }

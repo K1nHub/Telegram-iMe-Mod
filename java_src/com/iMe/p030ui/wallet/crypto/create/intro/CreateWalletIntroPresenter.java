@@ -30,7 +30,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
 /* compiled from: CreateWalletIntroPresenter.kt */
@@ -117,12 +117,12 @@ public final class CreateWalletIntroPresenter extends BasePresenter<CreateWallet
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Wallet> result) {
-                    m1635invoke(result);
+                    m1636invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1635invoke(Result<? extends Wallet> it) {
+                public final void m1636invoke(Result<? extends Wallet> it) {
                     ResourceManager resourceManager;
                     CryptoAccessManager cryptoAccessManager;
                     Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -195,7 +195,7 @@ public final class CreateWalletIntroPresenter extends BasePresenter<CreateWallet
     }
 
     private final void showCreateNewWalletConfirmationDialog() {
-        ((CreateWalletIntroView) getViewState()).showCreateNewWalletConfirmationDialog(new DialogModel(this.resourceManager.getString(C3634R.string.wallet_creation_intro_new_wallet_confirmation_title), this.resourceManager.getString(C3634R.string.wallet_creation_intro_new_wallet_confirmation_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(this.walletCreationType.getButtonTextResId())));
+        ((CreateWalletIntroView) getViewState()).showCreateNewWalletConfirmationDialog(new DialogModel(this.resourceManager.getString(C3632R.string.wallet_creation_intro_new_wallet_confirmation_title), this.resourceManager.getString(C3632R.string.wallet_creation_intro_new_wallet_confirmation_description), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(this.walletCreationType.getButtonTextResId())));
     }
 
     private final Network initNetwork(BlockchainType blockchainType) {

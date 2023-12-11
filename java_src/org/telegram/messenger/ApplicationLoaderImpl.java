@@ -58,12 +58,12 @@ public class ApplicationLoaderImpl extends ApplicationLoader implements Distribu
 
     @Override // org.telegram.messenger.ApplicationLoader
     protected int onGetVersionCode() {
-        return 1020009;
+        return 1020609;
     }
 
     @Override // org.telegram.messenger.ApplicationLoader
     protected String onGetVersionName() {
-        return "10.2.0";
+        return "10.2.6";
     }
 
     @Override // org.telegram.messenger.ApplicationLoader

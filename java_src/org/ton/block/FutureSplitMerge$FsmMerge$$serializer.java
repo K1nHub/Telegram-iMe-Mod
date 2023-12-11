@@ -25,7 +25,7 @@ public final class FutureSplitMerge$FsmMerge$$serializer implements GeneratedSer
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("fsm_merge", futureSplitMerge$FsmMerge$$serializer, 2);
         pluginGeneratedSerialDescriptor.addElement("mergeUtime", false);
         pluginGeneratedSerialDescriptor.addElement("interval", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7556xec1cadf2("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7554xec1cadf2("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

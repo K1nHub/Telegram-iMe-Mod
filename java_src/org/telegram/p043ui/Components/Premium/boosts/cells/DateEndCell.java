@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -33,7 +33,7 @@ public class DateEndCell extends FrameLayout {
         simpleTextView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader, resourcesProvider));
         simpleTextView2.setGravity(LocaleController.isRTL ? 3 : 5);
         addView(simpleTextView2);
-        simpleTextView.setText(LocaleController.formatString("BoostingDateAndTime", C3634R.string.BoostingDateAndTime, new Object[0]));
+        simpleTextView.setText(LocaleController.formatString("BoostingDateAndTime", C3632R.string.BoostingDateAndTime, new Object[0]));
         boolean z = LocaleController.isRTL;
         simpleTextView.setLayoutParams(LayoutHelper.createFrame(-1, -2, (z ? 5 : 3) | 16, z ? 0 : 21, 0, z ? 21 : 0, 0));
         boolean z2 = LocaleController.isRTL;
@@ -44,7 +44,7 @@ public class DateEndCell extends FrameLayout {
     public void setDate(long j) {
         this.selectedTime = j;
         Date date = new Date(j);
-        this.timeTextView.setText(LocaleController.formatString("formatDateAtTime", C3634R.string.formatDateAtTime, LocaleController.getInstance().formatterDayMonth.format(date), LocaleController.getInstance().formatterDay.format(date)));
+        this.timeTextView.setText(LocaleController.formatString("formatDateAtTime", C3632R.string.formatDateAtTime, LocaleController.getInstance().formatterDayMonth.format(date), LocaleController.getInstance().formatterDay.format(date)));
     }
 
     public long getSelectedTime() {
@@ -53,6 +53,6 @@ public class DateEndCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(56), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(50), 1073741824));
     }
 }

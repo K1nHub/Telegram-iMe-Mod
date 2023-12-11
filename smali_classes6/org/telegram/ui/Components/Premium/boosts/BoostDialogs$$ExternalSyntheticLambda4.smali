@@ -5,27 +5,17 @@
 .implements Landroid/content/DialogInterface$OnClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda4;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/tgnet/TLRPC$TL_payments_giveawayInfoResults;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda4;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda4;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda4;->INSTANCE:Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda4;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLRPC$TL_payments_giveawayInfoResults;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/tgnet/TLRPC$TL_payments_giveawayInfoResults;
 
     return-void
 .end method
@@ -33,9 +23,11 @@
 
 # virtual methods
 .method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+    .locals 1
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$1prNEYTiUjHx4G6Kt4kJAf1qhKM(Landroid/content/DialogInterface;I)V
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/tgnet/TLRPC$TL_payments_giveawayInfoResults;
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$XtxKyaBdGg2UNfq5bwrrdCHNcl8(Lorg/telegram/tgnet/TLRPC$TL_payments_giveawayInfoResults;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

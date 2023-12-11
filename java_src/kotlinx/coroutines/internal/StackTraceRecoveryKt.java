@@ -25,26 +25,26 @@ public final class StackTraceRecoveryKt {
 
     static {
         Object obj;
-        Object m1940constructorimpl;
+        Object m1942constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            obj = Result.m1940constructorimpl(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
+            obj = Result.m1942constructorimpl(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            obj = Result.m1940constructorimpl(ResultKt.createFailure(th));
+            obj = Result.m1942constructorimpl(ResultKt.createFailure(th));
         }
-        baseContinuationImplClassName = (String) (Result.m1943exceptionOrNullimpl(obj) == null ? obj : "kotlin.coroutines.jvm.internal.BaseContinuationImpl");
+        baseContinuationImplClassName = (String) (Result.m1945exceptionOrNullimpl(obj) == null ? obj : "kotlin.coroutines.jvm.internal.BaseContinuationImpl");
         try {
             Result.Companion companion3 = Result.Companion;
-            m1940constructorimpl = Result.m1940constructorimpl(StackTraceRecoveryKt.class.getCanonicalName());
+            m1942constructorimpl = Result.m1942constructorimpl(StackTraceRecoveryKt.class.getCanonicalName());
         } catch (Throwable th2) {
             Result.Companion companion4 = Result.Companion;
-            m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th2));
+            m1942constructorimpl = Result.m1942constructorimpl(ResultKt.createFailure(th2));
         }
-        if (Result.m1943exceptionOrNullimpl(m1940constructorimpl) != null) {
-            m1940constructorimpl = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
+        if (Result.m1945exceptionOrNullimpl(m1942constructorimpl) != null) {
+            m1942constructorimpl = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
         }
-        stackTraceRecoveryClassName = (String) m1940constructorimpl;
+        stackTraceRecoveryClassName = (String) m1942constructorimpl;
     }
 
     public static final <E extends Throwable> E recoverStackTrace(E e) {

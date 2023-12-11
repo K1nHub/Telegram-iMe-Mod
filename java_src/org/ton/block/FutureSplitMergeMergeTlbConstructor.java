@@ -18,13 +18,13 @@ public final class FutureSplitMergeMergeTlbConstructor extends org.ton.tlb.TlbCo
     public void storeTlb(CellBuilder cellBuilder, FutureSplitMerge.FsmMerge value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5111getMergeUtimepVg5ArA());
-        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5110getIntervalpVg5ArA());
+        cellBuilder.mo5192storeUInt32WZ4Q5Ns(value.m5093getMergeUtimepVg5ArA());
+        cellBuilder.mo5192storeUInt32WZ4Q5Ns(value.m5092getIntervalpVg5ArA());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public FutureSplitMerge.FsmMerge loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new FutureSplitMerge.FsmMerge(cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.mo5220loadUInt32pVg5ArA(), null);
+        return new FutureSplitMerge.FsmMerge(cellSlice.mo5202loadUInt32pVg5ArA(), cellSlice.mo5202loadUInt32pVg5ArA(), null);
     }
 }

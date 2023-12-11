@@ -26,7 +26,7 @@ import p033j$.util.Spliterator;
 import p033j$.util.function.Consumer;
 import p033j$.util.function.IntFunction;
 import p033j$.util.function.Predicate;
-import p033j$.util.stream.AbstractC3086o1;
+import p033j$.util.stream.AbstractC3083o1;
 import p033j$.util.stream.Stream;
 import p033j$.wrappers.C$r8$wrapper$java$util$function$Predicate$VWRP;
 /* compiled from: DhtNodes.kt */
@@ -76,7 +76,7 @@ public final class DhtNodes implements Collection<DhtNode>, KMappedMarker, p033j
         return (obj instanceof DhtNodes) && Intrinsics.areEqual(this.nodes, ((DhtNodes) obj).nodes);
     }
 
-    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2674e
+    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2671e
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$CC.$default$forEach(this, consumer);
     }
@@ -103,7 +103,7 @@ public final class DhtNodes implements Collection<DhtNode>, KMappedMarker, p033j
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream parallelStream() {
         Stream m399y;
-        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), true);
+        m399y = AbstractC3083o1.m399y(Collection.EL.m695b(this), true);
         return m399y;
     }
 
@@ -132,7 +132,7 @@ public final class DhtNodes implements Collection<DhtNode>, KMappedMarker, p033j
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, p033j$.util.Collection, p033j$.lang.InterfaceC2674e
+    @Override // java.util.Collection, java.lang.Iterable, p033j$.util.Collection, p033j$.lang.InterfaceC2671e
     public /* synthetic */ Spliterator spliterator() {
         return Collection.CC.$default$spliterator(this);
     }
@@ -140,7 +140,7 @@ public final class DhtNodes implements Collection<DhtNode>, KMappedMarker, p033j
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream stream() {
         Stream m399y;
-        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), false);
+        m399y = AbstractC3083o1.m399y(Collection.EL.m695b(this), false);
         return m399y;
     }
 

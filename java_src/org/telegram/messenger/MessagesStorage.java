@@ -76,11 +76,13 @@ import org.telegram.tgnet.TLRPC$TL_inputMessageEntityMentionName;
 import org.telegram.tgnet.TLRPC$TL_message;
 import org.telegram.tgnet.TLRPC$TL_messageActionChatAddUser;
 import org.telegram.tgnet.TLRPC$TL_messageActionGeoProximityReached;
+import org.telegram.tgnet.TLRPC$TL_messageActionGiftCode;
 import org.telegram.tgnet.TLRPC$TL_messageActionTopicCreate;
 import org.telegram.tgnet.TLRPC$TL_messageActionTopicEdit;
 import org.telegram.tgnet.TLRPC$TL_messageEntityCustomEmoji;
 import org.telegram.tgnet.TLRPC$TL_messageEntityMentionName;
 import org.telegram.tgnet.TLRPC$TL_messageMediaDocument;
+import org.telegram.tgnet.TLRPC$TL_messageMediaGiveaway;
 import org.telegram.tgnet.TLRPC$TL_messageMediaPhoto;
 import org.telegram.tgnet.TLRPC$TL_messageMediaPoll;
 import org.telegram.tgnet.TLRPC$TL_messageMediaUnsupported;
@@ -115,7 +117,7 @@ import timber.log.Timber;
 /* loaded from: classes4.dex */
 public class MessagesStorage extends BaseController {
     public static final String[] DATABASE_TABLES;
-    public static final int LAST_DB_VERSION = 135;
+    public static final int LAST_DB_VERSION = 136;
     private final int[][] adminCounters;
     private final ArrayList<MessagesController.DialogFilter> archiveSortingFilters;
     private int archiveUnreadCount;
@@ -598,7 +600,7 @@ public class MessagesStorage extends BaseController {
                         FileLog.m99e(e3);
                     }
                 }
-                if (intValue < 135) {
+                if (intValue < 136) {
                     try {
                         updateDbToLastVersion(intValue);
                     } catch (Exception e4) {
@@ -771,7 +773,6 @@ public class MessagesStorage extends BaseController {
         sQLiteDatabase.executeFast("CREATE TABLE stickers_v2(id INTEGER PRIMARY KEY, data BLOB, date INTEGER, hash INTEGER);").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE stickers_featured(id INTEGER PRIMARY KEY, data BLOB, unread BLOB, date INTEGER, hash INTEGER, premium INTEGER, emoji INTEGER);").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE stickers_dice(emoji TEXT PRIMARY KEY, data BLOB, date INTEGER);").stepThis().dispose();
-        sQLiteDatabase.executeFast("CREATE TABLE stickersets(id INTEGER PRIMATE KEY, data BLOB, hash INTEGER);").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE hashtag_recent_v2(id TEXT PRIMARY KEY, date INTEGER);").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE webpage_pending_v2(id INTEGER, mid INTEGER, uid INTEGER, PRIMARY KEY (id, mid, uid));").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE sent_files_v2(uid TEXT, type INTEGER, data BLOB, parent TEXT, PRIMARY KEY (uid, type))").stepThis().dispose();
@@ -782,6 +783,8 @@ public class MessagesStorage extends BaseController {
         sQLiteDatabase.executeFast("CREATE TABLE pending_tasks(id INTEGER PRIMARY KEY, data BLOB);").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE requested_holes(uid INTEGER, seq_out_start INTEGER, seq_out_end INTEGER, PRIMARY KEY (uid, seq_out_start, seq_out_end));").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE sharing_locations(uid INTEGER PRIMARY KEY, mid INTEGER, date INTEGER, period INTEGER, message BLOB, proximity INTEGER);").stepThis().dispose();
+        sQLiteDatabase.executeFast("CREATE TABLE stickersets2(id INTEGER PRIMATE KEY, data BLOB, hash INTEGER, date INTEGER);").stepThis().dispose();
+        sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS stickersets2_id_index ON stickersets2(id);").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS stickers_featured_emoji_index ON stickers_featured(emoji);").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE shortcut_widget(id INTEGER, did INTEGER, ord INTEGER, PRIMARY KEY (id, did));").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE INDEX IF NOT EXISTS shortcut_widget_did ON shortcut_widget(did);").stepThis().dispose();
@@ -837,7 +840,7 @@ public class MessagesStorage extends BaseController {
         sQLiteDatabase.executeFast("CREATE TABLE story_drafts (id INTEGER PRIMARY KEY, date INTEGER, data BLOB, type INTEGER);").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE story_pushes (uid INTEGER, sid INTEGER, date INTEGER, localName TEXT, flags INTEGER, expire_date INTEGER, PRIMARY KEY(uid, sid));").stepThis().dispose();
         sQLiteDatabase.executeFast("CREATE TABLE unconfirmed_auth (data BLOB);").stepThis().dispose();
-        sQLiteDatabase.executeFast("PRAGMA user_version = 135").stepThis().dispose();
+        sQLiteDatabase.executeFast("PRAGMA user_version = 136").stepThis().dispose();
     }
 
     public boolean isDatabaseMigrationInProgress() {
@@ -851,7 +854,7 @@ public class MessagesStorage extends BaseController {
                 MessagesStorage.this.lambda$updateDbToLastVersion$5();
             }
         });
-        FileLog.m102d("MessagesStorage start db migration from " + i + " to 135");
+        FileLog.m102d("MessagesStorage start db migration from " + i + " to " + LAST_DB_VERSION);
         int migrate = DatabaseMigrationHelper.migrate(this, i);
         StringBuilder sb = new StringBuilder();
         sb.append("MessagesStorage db migration finished to varsion ");
@@ -2542,7 +2545,8 @@ public class MessagesStorage extends BaseController {
         saveDialogFiltersOrderInternal();
     }
 
-    protected static void addReplyMessages(TLRPC$Message tLRPC$Message, LongSparseArray<SparseArray<ArrayList<TLRPC$Message>>> longSparseArray, LongSparseArray<ArrayList<Integer>> longSparseArray2) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static void addReplyMessages(TLRPC$Message tLRPC$Message, LongSparseArray<SparseArray<ArrayList<TLRPC$Message>>> longSparseArray, LongSparseArray<ArrayList<Integer>> longSparseArray2) {
         int i = tLRPC$Message.reply_to.reply_to_msg_id;
         long replyToDialogId = MessageObject.getReplyToDialogId(tLRPC$Message);
         SparseArray<ArrayList<TLRPC$Message>> sparseArray = longSparseArray.get(replyToDialogId);
@@ -2566,6 +2570,7 @@ public class MessagesStorage extends BaseController {
         arrayList2.add(tLRPC$Message);
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Removed duplicated region for block: B:27:0x0092 A[Catch: all -> 0x0101, Exception -> 0x0103, TryCatch #1 {Exception -> 0x0103, blocks: (B:22:0x0045, B:25:0x008c, B:27:0x0092, B:29:0x0098, B:31:0x00d3, B:33:0x00da, B:35:0x00f4, B:24:0x0069), top: B:49:0x0045, outer: #0 }] */
     /* JADX WARN: Removed duplicated region for block: B:35:0x00f4 A[Catch: all -> 0x0101, Exception -> 0x0103, TRY_LEAVE, TryCatch #1 {Exception -> 0x0103, blocks: (B:22:0x0045, B:25:0x008c, B:27:0x0092, B:29:0x0098, B:31:0x00d3, B:33:0x00da, B:35:0x00f4, B:24:0x0069), top: B:49:0x0045, outer: #0 }] */
     /* JADX WARN: Type inference failed for: r14v10 */
@@ -2576,7 +2581,7 @@ public class MessagesStorage extends BaseController {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    protected void loadReplyMessages(androidx.collection.LongSparseArray<android.util.SparseArray<java.util.ArrayList<org.telegram.tgnet.TLRPC$Message>>> r20, androidx.collection.LongSparseArray<java.util.ArrayList<java.lang.Integer>> r21, java.util.ArrayList<java.lang.Long> r22, java.util.ArrayList<java.lang.Long> r23, boolean r24) throws org.telegram.SQLite.SQLiteException {
+    public void loadReplyMessages(androidx.collection.LongSparseArray<android.util.SparseArray<java.util.ArrayList<org.telegram.tgnet.TLRPC$Message>>> r20, androidx.collection.LongSparseArray<java.util.ArrayList<java.lang.Integer>> r21, java.util.ArrayList<java.lang.Long> r22, java.util.ArrayList<java.lang.Long> r23, boolean r24) throws org.telegram.SQLite.SQLiteException {
         /*
             Method dump skipped, instructions count: 283
             To view this dump add '--comments-level debug' option
@@ -6408,7 +6413,7 @@ public class MessagesStorage extends BaseController {
                 if (appWidgetManager == null) {
                     appWidgetManager = AppWidgetManager.getInstance(ApplicationLoader.applicationContext);
                 }
-                appWidgetManager.notifyAppWidgetViewDataChanged(queryFinalized.intValue(0), C3634R.C3637id.list_view);
+                appWidgetManager.notifyAppWidgetViewDataChanged(queryFinalized.intValue(0), C3632R.C3635id.list_view);
             }
             queryFinalized.dispose();
         } catch (Exception e) {
@@ -9701,8 +9706,12 @@ public class MessagesStorage extends BaseController {
                 arrayList2.add(Long.valueOf(tLRPC$Message.action.chat_id));
             }
             TLRPC$MessageAction tLRPC$MessageAction2 = tLRPC$Message.action;
-            if (tLRPC$MessageAction2 instanceof TLRPC$TL_messageActionGeoProximityReached) {
-                TLRPC$TL_messageActionGeoProximityReached tLRPC$TL_messageActionGeoProximityReached = (TLRPC$TL_messageActionGeoProximityReached) tLRPC$MessageAction2;
+            if (tLRPC$MessageAction2 instanceof TLRPC$TL_messageActionGiftCode) {
+                addLoadPeerInfo(((TLRPC$TL_messageActionGiftCode) tLRPC$MessageAction2).boost_peer, arrayList, arrayList2);
+            }
+            TLRPC$MessageAction tLRPC$MessageAction3 = tLRPC$Message.action;
+            if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionGeoProximityReached) {
+                TLRPC$TL_messageActionGeoProximityReached tLRPC$TL_messageActionGeoProximityReached = (TLRPC$TL_messageActionGeoProximityReached) tLRPC$MessageAction3;
                 addLoadPeerInfo(tLRPC$TL_messageActionGeoProximityReached.from_id, arrayList, arrayList2);
                 addLoadPeerInfo(tLRPC$TL_messageActionGeoProximityReached.to_id, arrayList, arrayList2);
             }
@@ -9734,8 +9743,18 @@ public class MessagesStorage extends BaseController {
                 arrayList.add(Long.valueOf(tLRPC$Message.media.user_id));
             }
             TLRPC$MessageMedia tLRPC$MessageMedia2 = tLRPC$Message.media;
-            if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaPoll) {
-                TLRPC$TL_messageMediaPoll tLRPC$TL_messageMediaPoll = (TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia2;
+            if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaGiveaway) {
+                Iterator<Long> it = ((TLRPC$TL_messageMediaGiveaway) tLRPC$MessageMedia2).channels.iterator();
+                while (it.hasNext()) {
+                    Long next = it.next();
+                    if (!arrayList2.contains(next)) {
+                        arrayList2.add(next);
+                    }
+                }
+            }
+            TLRPC$MessageMedia tLRPC$MessageMedia3 = tLRPC$Message.media;
+            if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaPoll) {
+                TLRPC$TL_messageMediaPoll tLRPC$TL_messageMediaPoll = (TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia3;
                 if (!tLRPC$TL_messageMediaPoll.results.recent_voters.isEmpty()) {
                     for (int i3 = 0; i3 < tLRPC$TL_messageMediaPoll.results.recent_voters.size(); i3++) {
                         addLoadPeerInfo(tLRPC$TL_messageMediaPoll.results.recent_voters.get(i3), arrayList, arrayList2);

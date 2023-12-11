@@ -25,7 +25,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
@@ -33,7 +33,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ChatActivity;
 import org.telegram.p043ui.Components.BottomPagesView;
@@ -48,7 +48,7 @@ import org.telegram.p043ui.Stories.StoryViewer;
 /* renamed from: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet */
 /* loaded from: classes6.dex */
 public class PremiumFeatureBottomSheet extends BottomSheet implements NotificationCenter.NotificationCenterDelegate {
-    C3706ActionBar actionBar;
+    C3704ActionBar actionBar;
     private final BaseFragment baseFragment;
     private FrameLayout buttonContainer;
     FrameLayout closeLayout;
@@ -103,7 +103,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         fixNavigationBar(getThemedColor(Theme.key_dialogBackground));
         this.startType = i2;
         this.onlySelectedType = z;
-        this.svgIcon = SvgHelper.getDrawable(RLottieDrawable.readRes(null, C3634R.raw.star_loader));
+        this.svgIcon = SvgHelper.getDrawable(RLottieDrawable.readRes(null, C3632R.raw.star_loader));
         FrameLayout frameLayout = new FrameLayout(getContext()) { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet.1
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i3, int i4) {
@@ -163,7 +163,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         };
         this.closeLayout = new FrameLayout(getContext());
         ImageView imageView = new ImageView(getContext());
-        imageView.setImageResource(C3634R.C3636drawable.msg_close);
+        imageView.setImageResource(C3632R.C3634drawable.msg_close);
         imageView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(12), ColorUtils.setAlphaComponent(-1, 40), ColorUtils.setAlphaComponent(-1, 100)));
         this.closeLayout.addView(imageView, LayoutHelper.createFrame(24, 24, 17));
         this.closeLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet$$ExternalSyntheticLambda1
@@ -237,7 +237,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         frameLayout.addView(this.viewPager, LayoutHelper.createFrame(-1, 100, 0, 0, 18, 0, 0));
         frameLayout.addView(this.closeLayout, LayoutHelper.createFrame(52, 52, 53, 0, 24, 0, 0));
         BottomPagesView bottomPagesView = new BottomPagesView(getContext(), this.viewPager, this.premiumFeatures.size());
-        this.viewPager.addOnPageChangeListener(new C53875(bottomPagesView));
+        this.viewPager.addOnPageChangeListener(new C53835(bottomPagesView));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.addView(frameLayout);
         linearLayout.setOrientation(1);
@@ -265,7 +265,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         this.buttonContainer.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
         linearLayout.addView(this.buttonContainer, LayoutHelper.createLinear(-1, 68, 80));
         if (UserConfig.getInstance(i).isPremium()) {
-            this.premiumButtonView.setOverlayText(LocaleController.getString("OK", C3634R.string.OK), false, false);
+            this.premiumButtonView.setOverlayText(LocaleController.getString("OK", C3632R.string.OK), false, false);
         }
         final ScrollView scrollView = new ScrollView(getContext());
         scrollView.addView(linearLayout);
@@ -273,7 +273,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         MediaDataController.getInstance(i).preloadPremiumPreviewStickers();
         setButtonText();
         this.customViewGravity = 83;
-        final Drawable mutate = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.header_shadow).mutate();
+        final Drawable mutate = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.header_shadow).mutate();
         FrameLayout frameLayout3 = new FrameLayout(getContext()) { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet.6
             Path path = new Path();
 
@@ -304,8 +304,8 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                 drawable.setBounds(0, ((premiumFeatureBottomSheet.topCurrentOffset + ((BottomSheet) premiumFeatureBottomSheet).backgroundPaddingTop) - AndroidUtilities.m104dp(2)) + 1, getMeasuredWidth(), getMeasuredHeight());
                 ((BottomSheet) PremiumFeatureBottomSheet.this).shadowDrawable.draw(canvas);
                 super.dispatchDraw(canvas);
-                C3706ActionBar c3706ActionBar = PremiumFeatureBottomSheet.this.actionBar;
-                if (c3706ActionBar == null || c3706ActionBar.getVisibility() != 0 || PremiumFeatureBottomSheet.this.actionBar.getAlpha() == BitmapDescriptorFactory.HUE_RED) {
+                C3704ActionBar c3704ActionBar = PremiumFeatureBottomSheet.this.actionBar;
+                if (c3704ActionBar == null || c3704ActionBar.getVisibility() != 0 || PremiumFeatureBottomSheet.this.actionBar.getAlpha() == BitmapDescriptorFactory.HUE_RED) {
                     return;
                 }
                 mutate.setBounds(0, PremiumFeatureBottomSheet.this.actionBar.getBottom(), getMeasuredWidth(), PremiumFeatureBottomSheet.this.actionBar.getBottom() + mutate.getIntrinsicHeight());
@@ -354,14 +354,14 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet$5 */
     /* loaded from: classes6.dex */
-    public class C53875 implements ViewPager.OnPageChangeListener {
+    public class C53835 implements ViewPager.OnPageChangeListener {
         final /* synthetic */ BottomPagesView val$bottomPages;
 
         @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
         }
 
-        C53875(BottomPagesView bottomPagesView) {
+        C53835(BottomPagesView bottomPagesView) {
             this.val$bottomPages = bottomPagesView;
         }
 
@@ -378,10 +378,10 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
             if (PremiumFeatureBottomSheet.this.premiumFeatures.get(i).type == 0) {
-                PremiumFeatureBottomSheet.this.actionBar.setTitle(LocaleController.getString("DoubledLimits", C3634R.string.DoubledLimits));
+                PremiumFeatureBottomSheet.this.actionBar.setTitle(LocaleController.getString("DoubledLimits", C3632R.string.DoubledLimits));
                 PremiumFeatureBottomSheet.this.actionBar.requestLayout();
             } else if (PremiumFeatureBottomSheet.this.premiumFeatures.get(i).type == 14) {
-                PremiumFeatureBottomSheet.this.actionBar.setTitle(LocaleController.getString("UpgradedStories", C3634R.string.UpgradedStories));
+                PremiumFeatureBottomSheet.this.actionBar.setTitle(LocaleController.getString("UpgradedStories", C3632R.string.UpgradedStories));
                 PremiumFeatureBottomSheet.this.actionBar.requestLayout();
             }
             checkPage();
@@ -401,7 +401,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                 Method dump skipped, instructions count: 291
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Premium.PremiumFeatureBottomSheet.C53875.checkPage():void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Premium.PremiumFeatureBottomSheet.C53835.checkPage():void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -466,17 +466,17 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
 
     private void setButtonText() {
         if (this.forceAbout) {
-            this.premiumButtonView.buttonTextView.setText(LocaleController.getString(C3634R.string.AboutTelegramPremium));
+            this.premiumButtonView.buttonTextView.setText(LocaleController.getString(C3632R.string.AboutTelegramPremium));
         } else if (this.onlySelectedType) {
             int i = this.startType;
             if (i == 4) {
-                this.premiumButtonView.buttonTextView.setText(LocaleController.getString(C3634R.string.UnlockPremiumReactions));
-                this.premiumButtonView.setIcon(C3634R.raw.unlock_icon);
+                this.premiumButtonView.buttonTextView.setText(LocaleController.getString(C3632R.string.UnlockPremiumReactions));
+                this.premiumButtonView.setIcon(C3632R.raw.unlock_icon);
             } else if (i == 3 || i == 2 || i == 9 || i == 8) {
-                this.premiumButtonView.buttonTextView.setText(LocaleController.getString(C3634R.string.AboutTelegramPremium));
+                this.premiumButtonView.buttonTextView.setText(LocaleController.getString(C3632R.string.AboutTelegramPremium));
             } else if (i == 10) {
-                this.premiumButtonView.buttonTextView.setText(LocaleController.getString(C3634R.string.UnlockPremiumIcons));
-                this.premiumButtonView.setIcon(C3634R.raw.unlock_icon);
+                this.premiumButtonView.buttonTextView.setText(LocaleController.getString(C3632R.string.UnlockPremiumIcons));
+                this.premiumButtonView.setIcon(C3632R.raw.unlock_icon);
             }
         } else {
             this.premiumButtonView.buttonTextView.setText(PremiumPreviewFragment.getPremiumButtonText(this.currentAccount, this.selectedTier));
@@ -496,7 +496,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.billingProductDetailsUpdated);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.premiumPromoUpdated);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.currentUserPremiumStatusChanged);
-        C3706ActionBar c3706ActionBar = new C3706ActionBar(getContext()) { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet.7
+        C3704ActionBar c3704ActionBar = new C3704ActionBar(getContext()) { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet.7
             @Override // android.view.View
             public void setAlpha(float f) {
                 if (getAlpha() != f) {
@@ -511,16 +511,16 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                 PremiumFeatureBottomSheet.this.updateStatusBar();
             }
         };
-        this.actionBar = c3706ActionBar;
-        c3706ActionBar.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
+        this.actionBar = c3704ActionBar;
+        c3704ActionBar.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
         this.actionBar.setTitleColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
         this.actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), false);
         this.actionBar.setItemsColor(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), false);
         this.actionBar.setCastShadows(true);
         this.actionBar.setExtraHeight(AndroidUtilities.m104dp(2));
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet.8
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.Premium.PremiumFeatureBottomSheet.8
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     PremiumFeatureBottomSheet.this.dismiss();
@@ -531,11 +531,11 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
         ((FrameLayout.LayoutParams) this.actionBar.getLayoutParams()).topMargin = (-this.backgroundPaddingTop) - AndroidUtilities.m104dp(2);
         AndroidUtilities.updateViewVisibilityAnimated(this.actionBar, false, 1.0f, false);
         if (this.premiumFeatures.get(this.selectedPosition).type == 14) {
-            this.actionBar.setTitle(LocaleController.getString("UpgradedStories", C3634R.string.UpgradedStories));
+            this.actionBar.setTitle(LocaleController.getString("UpgradedStories", C3632R.string.UpgradedStories));
             this.actionBar.requestLayout();
             return;
         }
-        this.actionBar.setTitle(LocaleController.getString("DoubledLimits", C3634R.string.DoubledLimits));
+        this.actionBar.setTitle(LocaleController.getString("DoubledLimits", C3632R.string.DoubledLimits));
         this.actionBar.requestLayout();
     }
 
@@ -554,7 +554,7 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
             setButtonText();
         } else if (i == NotificationCenter.currentUserPremiumStatusChanged) {
             if (UserConfig.getInstance(this.currentAccount).isPremium()) {
-                this.premiumButtonView.setOverlayText(LocaleController.getString("OK", C3634R.string.OK), false, true);
+                this.premiumButtonView.setOverlayText(LocaleController.getString("OK", C3632R.string.OK), false, true);
             } else {
                 this.premiumButtonView.clearOverlayText();
             }
@@ -662,32 +662,32 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
                                     if (PremiumFeatureBottomSheet.this.startType != 9) {
                                         if (PremiumFeatureBottomSheet.this.startType != 8) {
                                             if (PremiumFeatureBottomSheet.this.startType == 13) {
-                                                this.title.setText(LocaleController.getString(C3634R.string.PremiumPreviewTranslations));
-                                                this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3634R.string.PremiumPreviewTranslationsDescription)));
+                                                this.title.setText(LocaleController.getString(C3632R.string.PremiumPreviewTranslations));
+                                                this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3632R.string.PremiumPreviewTranslationsDescription)));
                                             }
                                         } else {
-                                            this.title.setText(LocaleController.getString(C3634R.string.PremiumPreviewVoiceToText));
-                                            this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3634R.string.PremiumPreviewVoiceToTextDescription2)));
+                                            this.title.setText(LocaleController.getString(C3632R.string.PremiumPreviewVoiceToText));
+                                            this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3632R.string.PremiumPreviewVoiceToTextDescription2)));
                                         }
                                     } else {
-                                        this.title.setText(LocaleController.getString(C3634R.string.PremiumPreviewAdvancedChatManagement));
-                                        this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3634R.string.PremiumPreviewAdvancedChatManagementDescription2)));
+                                        this.title.setText(LocaleController.getString(C3632R.string.PremiumPreviewAdvancedChatManagement));
+                                        this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3632R.string.PremiumPreviewAdvancedChatManagementDescription2)));
                                     }
                                 } else {
-                                    this.title.setText(LocaleController.getString(C3634R.string.PremiumPreviewDownloadSpeed));
-                                    this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3634R.string.PremiumPreviewDownloadSpeedDescription2)));
+                                    this.title.setText(LocaleController.getString(C3632R.string.PremiumPreviewDownloadSpeed));
+                                    this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3632R.string.PremiumPreviewDownloadSpeedDescription2)));
                                 }
                             } else {
-                                this.title.setText(LocaleController.getString("PremiumPreviewAppIcon", C3634R.string.PremiumPreviewAppIcon));
-                                this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString("PremiumPreviewAppIconDescription2", C3634R.string.PremiumPreviewAppIconDescription2)));
+                                this.title.setText(LocaleController.getString("PremiumPreviewAppIcon", C3632R.string.PremiumPreviewAppIcon));
+                                this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString("PremiumPreviewAppIconDescription2", C3632R.string.PremiumPreviewAppIconDescription2)));
                             }
                         } else {
-                            this.title.setText(LocaleController.getString("PremiumPreviewNoAds", C3634R.string.PremiumPreviewNoAds));
-                            this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString("PremiumPreviewNoAdsDescription2", C3634R.string.PremiumPreviewNoAdsDescription2)));
+                            this.title.setText(LocaleController.getString("PremiumPreviewNoAds", C3632R.string.PremiumPreviewNoAds));
+                            this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString("PremiumPreviewNoAdsDescription2", C3632R.string.PremiumPreviewNoAdsDescription2)));
                         }
                     } else {
-                        this.title.setText(LocaleController.getString("AdditionalReactions", C3634R.string.AdditionalReactions));
-                        this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString("AdditionalReactionsDescription", C3634R.string.AdditionalReactionsDescription)));
+                        this.title.setText(LocaleController.getString("AdditionalReactions", C3632R.string.AdditionalReactions));
+                        this.description.setText(AndroidUtilities.replaceTags(LocaleController.getString("AdditionalReactionsDescription", C3632R.string.AdditionalReactionsDescription)));
                     }
                     this.topViewOnFullHeight = false;
                 } else {
@@ -832,8 +832,8 @@ public class PremiumFeatureBottomSheet extends BottomSheet implements Notificati
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateStatusBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        if (c3706ActionBar != null && c3706ActionBar.getTag() != null) {
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        if (c3704ActionBar != null && c3704ActionBar.getTag() != null) {
             AndroidUtilities.setLightStatusBar(getWindow(), isLightStatusBar());
         } else if (this.baseFragment != null) {
             AndroidUtilities.setLightStatusBar(getWindow(), this.baseFragment.isLightStatusBar());

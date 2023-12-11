@@ -50,7 +50,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 891
+    .line 1039
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -61,7 +61,7 @@
 .method public hasNeighborByBottom()Z
     .locals 1
 
-    .line 910
+    .line 1058
     iget v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
     and-int/lit8 v0, v0, 0x8
@@ -82,7 +82,7 @@
 .method public hasNeighborByLeft()Z
     .locals 2
 
-    .line 898
+    .line 1046
     iget v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
     const/4 v1, 0x1
@@ -103,7 +103,7 @@
 .method public hasNeighborByRight()Z
     .locals 1
 
-    .line 906
+    .line 1054
     iget v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
     and-int/lit8 v0, v0, 0x2
@@ -124,7 +124,7 @@
 .method public hasNeighborByTop()Z
     .locals 1
 
-    .line 902
+    .line 1050
     iget v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
     and-int/lit8 v0, v0, 0x4
@@ -147,36 +147,36 @@
 
     int-to-byte p1, p1
 
-    .line 935
+    .line 1083
     iput-byte p1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->minX:B
 
     int-to-byte p1, p2
 
-    .line 936
+    .line 1084
     iput-byte p1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->maxX:B
 
     int-to-byte p1, p3
 
-    .line 937
+    .line 1085
     iput-byte p1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->minY:B
 
     int-to-byte p1, p4
 
-    .line 938
+    .line 1086
     iput-byte p1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->maxY:B
 
-    .line 939
+    .line 1087
     iput p5, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->pw:I
 
-    .line 940
+    .line 1088
     iput p5, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->spanSize:I
 
-    .line 941
+    .line 1089
     iput p6, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->ph:F
 
     int-to-byte p1, p7
 
-    .line 942
+    .line 1090
     iput p1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->flags:I
 
     return-void

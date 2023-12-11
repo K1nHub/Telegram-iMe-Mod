@@ -29,7 +29,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
 
     /* renamed from: io.reactivex.internal.operators.flowable.FlowableCreate$1 */
     /* loaded from: classes4.dex */
-    static /* synthetic */ class C26691 {
+    static /* synthetic */ class C26661 {
         static final /* synthetic */ int[] $SwitchMap$io$reactivex$BackpressureStrategy;
 
         static {
@@ -57,7 +57,7 @@ public final class FlowableCreate<T> extends Flowable<T> {
     @Override // io.reactivex.Flowable
     public void subscribeActual(Subscriber<? super T> subscriber) {
         BaseEmitter missingEmitter;
-        int i = C26691.$SwitchMap$io$reactivex$BackpressureStrategy[this.backpressure.ordinal()];
+        int i = C26661.$SwitchMap$io$reactivex$BackpressureStrategy[this.backpressure.ordinal()];
         if (i == 1) {
             missingEmitter = new MissingEmitter(subscriber);
         } else if (i == 2) {

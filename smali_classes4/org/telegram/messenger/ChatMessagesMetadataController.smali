@@ -58,14 +58,6 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$1QBGKjJyRBFJPKr5X6Qh-_YmV3k(Lorg/telegram/messenger/ChatMessagesMetadataController;[ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/messenger/ChatMessagesMetadataController;->lambda$loadReactionsForMessages$4([ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$3ORdqccNtisAdoZ6M7KyLAtInos(Lorg/telegram/messenger/ChatMessagesMetadataController;ILorg/telegram/messenger/MessageObject;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
@@ -74,10 +66,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$5Fq1y7dxdXcDefb4Btl6bDkj1_w(Lorg/telegram/messenger/ChatMessagesMetadataController;[I)V
+.method public static synthetic $r8$lambda$I_GetxeD3JKA8B29_UNoKb6hAYY(Lorg/telegram/messenger/ChatMessagesMetadataController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/messenger/ChatMessagesMetadataController;->lambda$loadExtendedMediaForMessages$5([I)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/ChatMessagesMetadataController;->lambda$loadReactionsForMessages$3(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
@@ -90,10 +82,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ZkKaprthFYutKnYVmE3VVC3uj0o(Lorg/telegram/messenger/ChatMessagesMetadataController;[ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$mBX52OUoNOPCzX1tHHzCSYQhR3g(Lorg/telegram/messenger/ChatMessagesMetadataController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/messenger/ChatMessagesMetadataController;->lambda$loadExtendedMediaForMessages$6([ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/ChatMessagesMetadataController;->lambda$loadExtendedMediaForMessages$4(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
@@ -102,14 +94,6 @@
     .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/messenger/ChatMessagesMetadataController;->lambda$loadStoriesForMessages$1(Lorg/telegram/messenger/MessageObject;JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$zLOYERgyhjhcovlys2eBCJzV7ZE(Lorg/telegram/messenger/ChatMessagesMetadataController;[I)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/messenger/ChatMessagesMetadataController;->lambda$loadReactionsForMessages$3([I)V
 
     return-void
 .end method
@@ -163,88 +147,43 @@
     return-void
 .end method
 
-.method private synthetic lambda$loadExtendedMediaForMessages$5([I)V
-    .locals 2
-
-    .line 171
-    iget-object v0, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->extendedMediaRequests:Ljava/util/ArrayList;
-
-    const/4 v1, 0x0
-
-    aget p1, p1, v1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$loadExtendedMediaForMessages$6([ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$loadExtendedMediaForMessages$4(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    if-nez p3, :cond_0
+    if-nez p2, :cond_0
 
-    .line 168
-    iget-object p3, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
+    .line 163
+    iget-object p2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
-    move-result-object p3
+    move-result-object p2
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$Updates;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Updates;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p3, p2, v0}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
+    invoke-virtual {p2, p1, v0}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
 
-    .line 170
     :cond_0
-    new-instance p2, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda2;
-
-    invoke-direct {p2, p0, p1}, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/ChatMessagesMetadataController;[I)V
-
-    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
-
     return-void
 .end method
 
-.method private synthetic lambda$loadReactionsForMessages$3([I)V
+.method private synthetic lambda$loadReactionsForMessages$3(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 2
 
-    .line 146
-    iget-object v0, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->reactionsRequests:Ljava/util/ArrayList;
+    if-nez p2, :cond_2
 
-    const/4 v1, 0x0
+    .line 136
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$Updates;
 
-    aget p1, p1, v1
+    const/4 p2, 0x0
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-
-    return-void
-.end method
-
-.method private synthetic lambda$loadReactionsForMessages$4([ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 2
-
-    if-nez p3, :cond_2
+    move v0, p2
 
     .line 137
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$Updates;
-
-    const/4 p3, 0x0
-
-    move v0, p3
-
-    .line 138
     :goto_0
-    iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
+    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -252,8 +191,8 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 139
-    iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
+    .line 138
+    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -263,8 +202,8 @@
 
     if-eqz v1, :cond_0
 
-    .line 140
-    iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
+    .line 139
+    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -272,14 +211,14 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_updateMessageReactions;
 
-    iput-boolean p3, v1, Lorg/telegram/tgnet/TLRPC$TL_updateMessageReactions;->updateUnreadState:Z
+    iput-boolean p2, v1, Lorg/telegram/tgnet/TLRPC$TL_updateMessageReactions;->updateUnreadState:Z
 
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 143
+    .line 142
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
@@ -287,16 +226,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p2, p3}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
+    invoke-virtual {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
 
-    .line 145
     :cond_2
-    new-instance p2, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda3;
-
-    invoke-direct {p2, p0, p1}, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/ChatMessagesMetadataController;[I)V
-
-    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
-
     return-void
 .end method
 
@@ -957,7 +889,7 @@
         }
     .end annotation
 
-    .line 156
+    .line 152
     invoke-virtual {p3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -966,13 +898,13 @@
 
     return-void
 
-    .line 159
+    .line 155
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getExtendedMedia;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_getExtendedMedia;-><init>()V
 
-    .line 160
+    .line 156
     iget-object v1, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -989,7 +921,7 @@
 
     move p2, p1
 
-    .line 161
+    .line 157
     :goto_0
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -997,14 +929,14 @@
 
     if-ge p2, v1, :cond_1
 
-    .line 162
+    .line 158
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/messenger/MessageObject;
 
-    .line 163
+    .line 159
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getExtendedMedia;->id:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -1021,32 +953,24 @@
 
     goto :goto_0
 
+    .line 161
     :cond_1
-    const/4 p2, 0x1
+    iget-object p2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
-    new-array p2, p2, [I
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
+
+    move-result-object p2
+
+    new-instance p3, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda3;
+
+    invoke-direct {p3, p0}, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/ChatMessagesMetadataController;)V
+
+    invoke-virtual {p2, v0, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+
+    move-result p2
 
     .line 166
-    iget-object p3, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
-
-    invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
-
-    move-result-object p3
-
-    new-instance v1, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda6;
-
-    invoke-direct {v1, p0, p2}, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/messenger/ChatMessagesMetadataController;[I)V
-
-    invoke-virtual {p3, v0, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
-
-    move-result p3
-
-    aput p3, p2, p1
-
-    .line 174
     iget-object p3, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->extendedMediaRequests:Ljava/util/ArrayList;
-
-    aget p2, p2, p1
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1054,8 +978,7 @@
 
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 175
-    :goto_1
+    .line 167
     iget-object p2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->extendedMediaRequests:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
@@ -1066,7 +989,7 @@
 
     if-le p2, p3, :cond_2
 
-    .line 176
+    .line 168
     iget-object p2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -1086,8 +1009,6 @@
     move-result p3
 
     invoke-virtual {p2, p3, p1}, Lorg/telegram/tgnet/ConnectionsManager;->cancelRequest(IZ)V
-
-    goto :goto_1
 
     :cond_2
     return-void
@@ -1168,32 +1089,24 @@
 
     goto :goto_0
 
+    .line 134
     :cond_1
-    const/4 p2, 0x1
+    iget-object p2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
-    new-array p2, p2, [I
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
-    .line 135
-    iget-object p3, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
+    move-result-object p2
 
-    invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
+    new-instance p3, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda2;
 
-    move-result-object p3
+    invoke-direct {p3, p0}, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/ChatMessagesMetadataController;)V
 
-    new-instance v1, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda5;
+    invoke-virtual {p2, v0, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    invoke-direct {v1, p0, p2}, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/ChatMessagesMetadataController;[I)V
+    move-result p2
 
-    invoke-virtual {p3, v0, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
-
-    move-result p3
-
-    aput p3, p2, p1
-
-    .line 149
+    .line 145
     iget-object p3, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->reactionsRequests:Ljava/util/ArrayList;
-
-    aget p2, p2, p1
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1201,19 +1114,18 @@
 
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 150
-    :goto_1
+    .line 146
     iget-object p2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->reactionsRequests:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
     move-result p2
 
-    const/4 p3, 0x4
+    const/4 p3, 0x5
 
     if-le p2, p3, :cond_2
 
-    .line 151
+    .line 147
     iget-object p2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -1224,17 +1136,17 @@
 
     invoke-virtual {p3, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    move-result-object p3
+    move-result-object p1
 
-    check-cast p3, Ljava/lang/Integer;
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result p3
+    move-result p1
 
-    invoke-virtual {p2, p3, p1}, Lorg/telegram/tgnet/ConnectionsManager;->cancelRequest(IZ)V
+    const/4 p3, 0x1
 
-    goto :goto_1
+    invoke-virtual {p2, p1, p3}, Lorg/telegram/tgnet/ConnectionsManager;->cancelRequest(IZ)V
 
     :cond_2
     return-void
@@ -1247,7 +1159,7 @@
 
     move v1, v0
 
-    .line 181
+    .line 173
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->reactionsRequests:Ljava/util/ArrayList;
 
@@ -1257,7 +1169,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 182
+    .line 174
     iget-object v2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -1282,7 +1194,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 176
     :cond_0
     iget-object v1, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->reactionsRequests:Ljava/util/ArrayList;
 
@@ -1290,7 +1202,7 @@
 
     move v1, v0
 
-    .line 185
+    .line 177
     :goto_1
     iget-object v2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->extendedMediaRequests:Ljava/util/ArrayList;
 
@@ -1300,7 +1212,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 186
+    .line 178
     iget-object v2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -1325,7 +1237,7 @@
 
     goto :goto_1
 
-    .line 188
+    .line 180
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/ChatMessagesMetadataController;->extendedMediaRequests:Ljava/util/ArrayList;
 

@@ -29,7 +29,7 @@
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;->$r8$lambda$zn-cEdMuxWwgPyDnDnOyYW_iL5A(Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;->$r8$lambda$XQdhH-Wn_SeGgMoo4N8KGRb7Ha0(Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

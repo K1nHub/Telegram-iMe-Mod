@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateFinalActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 553
+    .line 554
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$6;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 562
+    .line 563
     invoke-super {p0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 563
+    .line 564
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$6;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$600(Lorg/telegram/ui/GroupCreateFinalActivity;)Landroid/view/View;
@@ -53,10 +53,10 @@
 .method public invalidate(IIII)V
     .locals 0
 
-    .line 556
+    .line 557
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/ImageView;->invalidate(IIII)V
 
-    .line 557
+    .line 558
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$6;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$600(Lorg/telegram/ui/GroupCreateFinalActivity;)Landroid/view/View;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/content/Context;)V
     .locals 0
 
-    .line 2841
+    .line 2844
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 2844
+    .line 2847
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6900(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/view/View;
@@ -48,7 +48,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2845
+    .line 2848
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$7000(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/widget/TextView;
@@ -97,7 +97,7 @@
 
     float-to-int v0, v0
 
-    .line 2846
+    .line 2849
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6900(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/view/View;
@@ -112,7 +112,7 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 2847
+    .line 2850
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6900(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/view/View;
@@ -125,7 +125,7 @@
 
     iput v0, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 2848
+    .line 2851
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6900(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/view/View;
@@ -134,7 +134,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 2849
+    .line 2852
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$25;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6900(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/view/View;
@@ -143,7 +143,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    .line 2852
+    .line 2855
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 

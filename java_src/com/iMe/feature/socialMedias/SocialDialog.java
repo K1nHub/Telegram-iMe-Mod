@@ -25,7 +25,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkDialogSocialNetworksBinding;
 import org.telegram.messenger.databinding.ForkDialogSocialNetworksItemBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -81,7 +81,7 @@ public final class SocialDialog extends MvpBottomSheet {
     @Override // com.iMe.p030ui.base.mvp.MvpBottomSheet
     public View onCreateView(Bundle bundle) {
         this.binding.text.setTextColor(this.textColor);
-        this.binding.text.setText(getResource().getString(C3634R.string.social_cell_social_networks));
+        this.binding.text.setText(getResource().getString(C3632R.string.social_cell_social_networks));
         ConstraintLayout root = this.binding.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "binding.root");
         return root;

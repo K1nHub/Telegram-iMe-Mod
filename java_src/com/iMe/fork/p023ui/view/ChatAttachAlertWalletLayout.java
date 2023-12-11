@@ -75,12 +75,12 @@ import org.koin.core.scope.Scope;
 import org.koin.java.KoinJavaComponent;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -356,7 +356,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                 if (i == 0) {
                     int m105dp = AndroidUtilities.m105dp(13.0f);
                     int backgroundPaddingTop = ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertWalletLayout.this).parentAlert.getBackgroundPaddingTop();
-                    if (((((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertWalletLayout.this).parentAlert.scrollOffsetY[0] - backgroundPaddingTop) - m105dp) + backgroundPaddingTop >= C3706ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) recyclerListView.findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.m105dp(53.0f)) {
+                    if (((((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertWalletLayout.this).parentAlert.scrollOffsetY[0] - backgroundPaddingTop) - m105dp) + backgroundPaddingTop >= C3704ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) recyclerListView.findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.m105dp(53.0f)) {
                         return;
                     }
                     recyclerListView.smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.m105dp(53.0f));
@@ -503,7 +503,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
         Intrinsics.checkNotNullParameter(action, "action");
         BaseFragment baseFragment = this.parentAlert.getBaseFragment();
         Intrinsics.checkNotNullExpressionValue(baseFragment, "parentAlert.baseFragment");
-        Dialog createSuccessAlert$default = DialogsFactoryKt.createSuccessAlert$default(baseFragment, title, message, getResourceManager().getString(C3634R.string.common_ok), null, action, 8, null);
+        Dialog createSuccessAlert$default = DialogsFactoryKt.createSuccessAlert$default(baseFragment, title, message, getResourceManager().getString(C3632R.string.common_ok), null, action, 8, null);
         createSuccessAlert$default.show();
         this.activeDialog = createSuccessAlert$default;
     }
@@ -592,7 +592,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
             if (this.selectedBalance != null) {
                 getPresenter().loadAddressInfoById(String.valueOf(currentUser.f1749id));
             } else {
-                showToast(getResourceManager().getString(C3634R.string.transfer_via_wallet_transfer_empty_selected_account));
+                showToast(getResourceManager().getString(C3632R.string.transfer_via_wallet_transfer_empty_selected_account));
             }
         }
     }
@@ -723,11 +723,11 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
 
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
     public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
-        this.parentAlert.actionBar.setTitle(LocaleController.getInternalString(C3634R.string.transfer_via_wallet_toolbar_title));
+        this.parentAlert.actionBar.setTitle(LocaleController.getInternalString(C3632R.string.transfer_via_wallet_toolbar_title));
         ActionBarMenuItem onShow$lambda$11 = this.parentAlert.doneItem;
         Intrinsics.checkNotNullExpressionValue(onShow$lambda$11, "onShow$lambda$11");
         ViewExtKt.visible$default(onShow$lambda$11, false, 1, null);
-        String internalString = LocaleController.getInternalString(C3634R.string.transfer_via_wallet_action_item);
+        String internalString = LocaleController.getInternalString(C3632R.string.transfer_via_wallet_action_item);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…r_via_wallet_action_item)");
         String upperCase = internalString.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -740,7 +740,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
         ActionBarMenuItem onHide$lambda$12 = this.parentAlert.doneItem;
         Intrinsics.checkNotNullExpressionValue(onHide$lambda$12, "onHide$lambda$12");
         ViewExtKt.invisible$default(onHide$lambda$12, false, 1, null);
-        String string = LocaleController.getString("Create", C3634R.string.Create);
+        String string = LocaleController.getString("Create", C3632R.string.Create);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Create\", R.string.Create)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -824,18 +824,18 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                 ChatAttachAlertWalletLayout chatAttachAlertWalletLayout = this.this$0;
                 if (i == chatAttachAlertWalletLayout.sendHeaderRow) {
                     headerCell.getTextView().setGravity(19);
-                    headerCell.setText(LocaleController.getInternalString(C3634R.string.transfer_via_wallet_transfer_title));
+                    headerCell.setText(LocaleController.getInternalString(C3632R.string.transfer_via_wallet_transfer_title));
                     return;
                 }
                 headerCell.getTextView().setGravity((LocaleController.isRTL ? 5 : 3) | 16);
                 if (i != chatAttachAlertWalletLayout.accountsHeaderRow) {
                     if (i == chatAttachAlertWalletLayout.transactionsHeaderRow) {
-                        headerCell.setText(LocaleController.getInternalString(C3634R.string.transfer_via_wallet_transaction_title));
+                        headerCell.setText(LocaleController.getInternalString(C3632R.string.transfer_via_wallet_transaction_title));
                         return;
                     }
                     return;
                 }
-                headerCell.setText(LocaleController.getInternalString(C3634R.string.transfer_via_wallet_my_accounts_title));
+                headerCell.setText(LocaleController.getInternalString(C3632R.string.transfer_via_wallet_my_accounts_title));
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_NETWORK_SWITCHER) {
                 View view2 = holder.itemView;
                 Intrinsics.checkNotNull(view2, "null cannot be cast to non-null type com.iMe.fork.ui.view.TextNetworkSwitcherCell");
@@ -849,7 +849,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                             ChatAttachAlertWalletLayout.ListAdapter.onBindViewHolder$lambda$2$lambda$1(ChatAttachAlertWalletLayout.this, view3);
                         }
                     });
-                    String internalString = LocaleController.getInternalString(C3634R.string.transfer_via_wallet_choose_account_hint);
+                    String internalString = LocaleController.getInternalString(C3632R.string.transfer_via_wallet_choose_account_hint);
                     Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…llet_choose_account_hint)");
                     textNetworkSwitcherCell.setText(internalString);
                     textNetworkSwitcherCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
@@ -868,7 +868,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                     imageRadioCell.setImageUrl(tokenBalance.getToken().getAvatarUrl());
                 }
             } else if (itemViewType == IdFabric$ViewTypes.TRANSACTION) {
-                ((GlobalStateLayout) holder.itemView.findViewById(C3634R.C3637id.global_state_layout)).setInternalState(this.this$0.transactionState);
+                ((GlobalStateLayout) holder.itemView.findViewById(C3632R.C3635id.global_state_layout)).setInternalState(this.this$0.transactionState);
                 if (Intrinsics.areEqual(this.this$0.transactionState, GlobalState.Content.INSTANCE)) {
                     WalletTransactionsRecycleAdapter transactionAdapter = this.this$0.getTransactionAdapter();
                     mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) this.this$0.transactions);
@@ -900,7 +900,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                 imageRadioCell = new HeaderCell(this.mContext, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, false);
             } else if (i == IdFabric$ViewTypes.SHADOW_SECTION) {
                 imageRadioCell = new ShadowSectionCell(this.mContext);
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(this.mContext, C3634R.C3636drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(this.mContext, C3632R.C3634drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable.setFullsize(true);
                 imageRadioCell.setBackground(combinedDrawable);
             } else if (i == IdFabric$ViewTypes.TEXT_NETWORK_SWITCHER) {
@@ -918,9 +918,9 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                     }
                 };
             } else if (i == IdFabric$ViewTypes.TRANSACTION) {
-                imageRadioCell = LayoutInflater.from(((ChatAttachAlert.AttachAlertLayout) this.this$0).parentAlert.getBaseFragment().getParentActivity()).inflate(C3634R.layout.fork_recycle_item_wallet_attach_transactions, parent, false);
+                imageRadioCell = LayoutInflater.from(((ChatAttachAlert.AttachAlertLayout) this.this$0).parentAlert.getBaseFragment().getParentActivity()).inflate(C3632R.layout.fork_recycle_item_wallet_attach_transactions, parent, false);
                 final ChatAttachAlertWalletLayout chatAttachAlertWalletLayout2 = this.this$0;
-                RecyclerView recyclerView = (RecyclerView) imageRadioCell.findViewById(C3634R.C3637id.recycle_transactions);
+                RecyclerView recyclerView = (RecyclerView) imageRadioCell.findViewById(C3632R.C3635id.recycle_transactions);
                 WalletTransactionsRecycleAdapter transactionAdapter = chatAttachAlertWalletLayout2.getTransactionAdapter();
                 transactionAdapter.getHeaderProvider().setExtraPadding(6.0f);
                 transactionAdapter.getTokenTransactionProvider().setExtraPadding(6.0f);
@@ -934,7 +934,7 @@ public final class ChatAttachAlertWalletLayout extends ChatAttachAlert.AttachAle
                 recyclerView.setAdapter(transactionAdapter);
                 recyclerView.setNestedScrollingEnabled(false);
                 recyclerView.setLayoutManager(new LinearLayoutManager(this.mContext));
-                ((GlobalStateLayout) imageRadioCell.findViewById(C3634R.C3637id.global_state_layout)).setRetryButtonClickListener(new Function0<Unit>() { // from class: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$3$2$1
+                ((GlobalStateLayout) imageRadioCell.findViewById(C3632R.C3635id.global_state_layout)).setRetryButtonClickListener(new Function0<Unit>() { // from class: com.iMe.fork.ui.view.ChatAttachAlertWalletLayout$ListAdapter$onCreateViewHolder$3$2$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     {
                         super(0);

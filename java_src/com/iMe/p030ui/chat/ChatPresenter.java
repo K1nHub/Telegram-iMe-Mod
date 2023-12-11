@@ -175,12 +175,12 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxInfo> result) {
-                m1591invoke(result);
+                m1592invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1591invoke(Result<? extends CryptoBoxInfo> it) {
+            public final void m1592invoke(Result<? extends CryptoBoxInfo> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoBoxInfo> result = it;
@@ -234,12 +234,12 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CharSequence> result) {
-                m1588invoke(result);
+                m1589invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1588invoke(Result<? extends CharSequence> it) {
+            public final void m1589invoke(Result<? extends CharSequence> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CharSequence> result = it;
                 if (result instanceof Result.Success) {
@@ -288,12 +288,12 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1590invoke(result);
+                m1591invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1590invoke(Result<? extends String> it) {
+            public final void m1591invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -361,12 +361,12 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
-                    m1587invoke(bool);
+                    m1588invoke(bool);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1587invoke(Boolean it) {
+                public final void m1588invoke(Boolean it) {
                     Intrinsics.checkNotNullExpressionValue(it, "it");
                     it.booleanValue();
                     ChatPresenter chatPresenter = ChatPresenter.this;
@@ -428,12 +428,12 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<TranslationLanguage>> result) {
-                m1589invoke(result);
+                m1590invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1589invoke(Result<? extends List<TranslationLanguage>> it) {
+            public final void m1590invoke(Result<? extends List<TranslationLanguage>> it) {
                 ResourceManager resourceManager;
                 int collectionSizeOrDefault;
                 List sortedWith;

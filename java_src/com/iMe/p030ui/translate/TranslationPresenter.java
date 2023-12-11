@@ -102,12 +102,12 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<TranslationLanguage>> result) {
-                m1615invoke(result);
+                m1616invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1615invoke(Result<? extends List<TranslationLanguage>> it) {
+            public final void m1616invoke(Result<? extends List<TranslationLanguage>> it) {
                 ResourceManager resourceManager;
                 int collectionSizeOrDefault;
                 String currentLanguage;
@@ -206,12 +206,12 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Translation> result) {
-                    m1616invoke(result);
+                    m1617invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1616invoke(Result<? extends Translation> it) {
+                public final void m1617invoke(Result<? extends Translation> it) {
                     ResourceManager resourceManager;
                     TranslationLanguageUiModel translationLanguageUiModel;
                     TranslationLanguageUiModel translationLanguageUiModel2;
@@ -321,12 +321,12 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Translation> result) {
-                m1617invoke(result);
+                m1618invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1617invoke(Result<? extends Translation> it) {
+            public final void m1618invoke(Result<? extends Translation> it) {
                 ResourceManager resourceManager;
                 TranslationLanguageUiModel translationLanguageUiModel;
                 TranslationLanguageUiModel translationLanguageUiModel2;

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
     .locals 0
 
-    .line 1256
+    .line 1250
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public isDark()Z
     .locals 1
 
-    .line 1261
+    .line 1255
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$000(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Z
@@ -51,7 +51,7 @@
 .method public switchDayNight()V
     .locals 5
 
-    .line 1266
+    .line 1260
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$000(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Z
@@ -64,7 +64,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$002(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Z)Z
 
-    .line 1267
+    .line 1261
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2500(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
@@ -73,12 +73,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 1268
+    .line 1262
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$902(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Z)Z
 
-    .line 1269
+    .line 1263
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2200(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/ChatActivity;
@@ -87,7 +87,7 @@
 
     iput-boolean v2, v0, Lorg/telegram/ui/ChatActivity;->forceDisallowRedrawThemeDescriptions:Z
 
-    .line 1270
+    .line 1264
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2600(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Z
@@ -113,7 +113,7 @@
 
     move-result-object v0
 
-    .line 1271
+    .line 1265
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
@@ -127,7 +127,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 1272
+    .line 1266
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$200(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/ChatActivity$ThemeDelegate;
@@ -148,7 +148,7 @@
 
     goto :goto_1
 
-    .line 1274
+    .line 1268
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
@@ -176,7 +176,7 @@
 
     invoke-virtual {v1, v3, v0, v2, v4}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->setCurrentTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;Lorg/telegram/tgnet/TLRPC$WallPaper;ZLjava/lang/Boolean;)V
 
-    .line 1276
+    .line 1270
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 

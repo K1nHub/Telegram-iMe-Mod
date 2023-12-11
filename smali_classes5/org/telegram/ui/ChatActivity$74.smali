@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 11692
+    .line 11702
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$74;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 11694
+    .line 11704
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -44,17 +44,17 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 11731
+    .line 11741
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 11732
+    .line 11742
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 11733
+    .line 11743
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$74;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$33100(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Path;
@@ -76,10 +76,10 @@
 .method protected onSizeChanged(IIII)V
     .locals 2
 
-    .line 11698
+    .line 11708
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
-    .line 11699
+    .line 11709
     iget-object p3, p0, Lorg/telegram/ui/ChatActivity$74;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/ChatActivity;->access$33100(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Path;
@@ -88,7 +88,7 @@
 
     invoke-virtual {p3}, Landroid/graphics/Path;->reset()V
 
-    .line 11700
+    .line 11710
     sget p3, Lorg/telegram/messenger/R$id;->parent_tag:I
 
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->getTag(I)Ljava/lang/Object;
@@ -99,7 +99,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 11702
+    .line 11712
     invoke-virtual {p3}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
 
     move-result-object p3
@@ -113,7 +113,7 @@
 
     if-ge p4, v1, :cond_0
 
-    .line 11705
+    .line 11715
     aget v1, p3, p4
 
     invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
@@ -124,7 +124,7 @@
 
     goto :goto_0
 
-    .line 11707
+    .line 11717
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/ChatActivity$74;->rect:Landroid/graphics/RectF;
 
@@ -136,7 +136,7 @@
 
     invoke-virtual {p3, p4, p4, p1, p2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 11708
+    .line 11718
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$74;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$33100(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Path;
@@ -163,7 +163,7 @@
 
     goto :goto_1
 
-    .line 11710
+    .line 11720
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/ChatActivity$74;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -183,7 +183,7 @@
 
     invoke-virtual {p3, p1, p2, p1, p4}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 11712
+    .line 11722
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$74;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -199,10 +199,10 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 11717
+    .line 11727
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 11718
+    .line 11728
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$74;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
@@ -215,7 +215,7 @@
 .method public setVisibility(I)V
     .locals 1
 
-    .line 11723
+    .line 11733
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     if-nez p1, :cond_0
@@ -224,7 +224,7 @@
 
     const/4 v0, 0x0
 
-    .line 11725
+    .line 11735
     invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->setLayerType(ILandroid/graphics/Paint;)V
 
     :cond_0

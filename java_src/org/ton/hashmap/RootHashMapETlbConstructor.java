@@ -15,12 +15,12 @@ import org.ton.tlb.TlbConstructor;
 public final class RootHashMapETlbConstructor<X> extends TlbConstructor<HmeRoot<X>> {
 
     /* renamed from: ID */
-    private static final BitString f2096ID;
+    private static final BitString f2097ID;
     private final TlbCodec<CellRef<HmEdge<X>>> cellRef;
 
     static {
         new Companion(null);
-        f2096ID = BitString.Companion.m42of(Arrays.copyOf(new boolean[]{true}, 1));
+        f2097ID = BitString.Companion.m42of(Arrays.copyOf(new boolean[]{true}, 1));
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
@@ -30,7 +30,7 @@ public final class RootHashMapETlbConstructor<X> extends TlbConstructor<HmeRoot<
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public RootHashMapETlbConstructor(int i, TlbCodec<X> x) {
-        super("hme_root$1 {n:#} {X:Type} root:^(Hashmap n X) = HashmapE n X;", f2096ID);
+        super("hme_root$1 {n:#} {X:Type} root:^(Hashmap n X) = HashmapE n X;", f2097ID);
         Intrinsics.checkNotNullParameter(x, "x");
         this.cellRef = CellRef.Companion.tlbCodec(HmEdge.Companion.tlbCodec(i, x));
     }

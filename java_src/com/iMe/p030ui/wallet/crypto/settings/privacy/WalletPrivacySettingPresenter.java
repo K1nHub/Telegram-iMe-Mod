@@ -31,7 +31,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: WalletPrivacySettingPresenter.kt */
 @InjectViewState
@@ -149,12 +149,12 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> pair) {
-                m1656invoke(pair);
+                m1657invoke(pair);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1656invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> it) {
+            public final void m1657invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> it) {
                 int resolveAccessTypeBy;
                 int resolveAccessTypeBy2;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -246,12 +246,12 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<? extends Result<? extends Boolean>> list) {
-                m1657invoke(list);
+                m1658invoke(list);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1657invoke(List<? extends Result<? extends Boolean>> it) {
+            public final void m1658invoke(List<? extends Result<? extends Boolean>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 if (ResultExtKt.isAllSuccess(it)) {
                     ((WalletPrivacySettingsView) WalletPrivacySettingPresenter.this.getViewState()).onSuccessSaveCryptoSettings();
@@ -481,6 +481,6 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     private final DialogModel getEverybodyWarningDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3634R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3632R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3632R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.common_confirm));
     }
 }

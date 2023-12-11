@@ -133,27 +133,27 @@ public final class TypeUtilsKt {
     /* JADX WARN: Multi-variable type inference failed */
     private static final void extractTypeParametersFromUpperBounds(KotlinType kotlinType, KotlinType kotlinType2, Set<TypeParameterDescriptor> set, Set<? extends TypeParameterDescriptor> set2) {
         boolean contains;
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        if (mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor) {
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        if (mo2053getDeclarationDescriptor instanceof TypeParameterDescriptor) {
             if (!Intrinsics.areEqual(kotlinType.getConstructor(), kotlinType2.getConstructor())) {
-                set.add(mo2051getDeclarationDescriptor);
+                set.add(mo2053getDeclarationDescriptor);
                 return;
             }
-            for (KotlinType upperBound : ((TypeParameterDescriptor) mo2051getDeclarationDescriptor).getUpperBounds()) {
+            for (KotlinType upperBound : ((TypeParameterDescriptor) mo2053getDeclarationDescriptor).getUpperBounds()) {
                 Intrinsics.checkNotNullExpressionValue(upperBound, "upperBound");
                 extractTypeParametersFromUpperBounds(upperBound, kotlinType2, set, set2);
             }
             return;
         }
-        ClassifierDescriptor mo2051getDeclarationDescriptor2 = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        ClassifierDescriptorWithTypeParameters classifierDescriptorWithTypeParameters = mo2051getDeclarationDescriptor2 instanceof ClassifierDescriptorWithTypeParameters ? (ClassifierDescriptorWithTypeParameters) mo2051getDeclarationDescriptor2 : null;
+        ClassifierDescriptor mo2053getDeclarationDescriptor2 = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        ClassifierDescriptorWithTypeParameters classifierDescriptorWithTypeParameters = mo2053getDeclarationDescriptor2 instanceof ClassifierDescriptorWithTypeParameters ? (ClassifierDescriptorWithTypeParameters) mo2053getDeclarationDescriptor2 : null;
         List<TypeParameterDescriptor> declaredTypeParameters = classifierDescriptorWithTypeParameters != null ? classifierDescriptorWithTypeParameters.getDeclaredTypeParameters() : null;
         int i = 0;
         for (TypeProjection typeProjection : kotlinType.getArguments()) {
             int i2 = i + 1;
             TypeParameterDescriptor typeParameterDescriptor = declaredTypeParameters != null ? (TypeParameterDescriptor) CollectionsKt.getOrNull(declaredTypeParameters, i) : null;
             if (!((typeParameterDescriptor == null || set2 == null || !set2.contains(typeParameterDescriptor)) ? false : true) && !typeProjection.isStarProjection()) {
-                contains = CollectionsKt___CollectionsKt.contains(set, typeProjection.getType().getConstructor().mo2051getDeclarationDescriptor());
+                contains = CollectionsKt___CollectionsKt.contains(set, typeProjection.getType().getConstructor().mo2053getDeclarationDescriptor());
                 if (!contains && !Intrinsics.areEqual(typeProjection.getType().getConstructor(), kotlinType2.getConstructor())) {
                     KotlinType type = typeProjection.getType();
                     Intrinsics.checkNotNullExpressionValue(type, "argument.type");
@@ -203,8 +203,8 @@ public final class TypeUtilsKt {
         if (Intrinsics.areEqual(kotlinType.getConstructor(), typeConstructor)) {
             return true;
         }
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        ClassifierDescriptorWithTypeParameters classifierDescriptorWithTypeParameters = mo2051getDeclarationDescriptor instanceof ClassifierDescriptorWithTypeParameters ? (ClassifierDescriptorWithTypeParameters) mo2051getDeclarationDescriptor : null;
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        ClassifierDescriptorWithTypeParameters classifierDescriptorWithTypeParameters = mo2053getDeclarationDescriptor instanceof ClassifierDescriptorWithTypeParameters ? (ClassifierDescriptorWithTypeParameters) mo2053getDeclarationDescriptor : null;
         List<TypeParameterDescriptor> declaredTypeParameters = classifierDescriptorWithTypeParameters != null ? classifierDescriptorWithTypeParameters.getDeclaredTypeParameters() : null;
         withIndex = CollectionsKt___CollectionsKt.withIndex(kotlinType.getArguments());
         if (!(withIndex instanceof Collection) || !((Collection) withIndex).isEmpty()) {
@@ -235,8 +235,8 @@ public final class TypeUtilsKt {
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(UnwrappedType it) {
                 Intrinsics.checkNotNullParameter(it, "it");
-                ClassifierDescriptor mo2051getDeclarationDescriptor = it.getConstructor().mo2051getDeclarationDescriptor();
-                return Boolean.valueOf(mo2051getDeclarationDescriptor != null ? TypeUtilsKt.isTypeAliasParameter(mo2051getDeclarationDescriptor) : false);
+                ClassifierDescriptor mo2053getDeclarationDescriptor = it.getConstructor().mo2053getDeclarationDescriptor();
+                return Boolean.valueOf(mo2053getDeclarationDescriptor != null ? TypeUtilsKt.isTypeAliasParameter(mo2053getDeclarationDescriptor) : false);
             }
         });
     }
@@ -252,9 +252,9 @@ public final class TypeUtilsKt {
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(UnwrappedType it) {
                 Intrinsics.checkNotNullParameter(it, "it");
-                ClassifierDescriptor mo2051getDeclarationDescriptor = it.getConstructor().mo2051getDeclarationDescriptor();
+                ClassifierDescriptor mo2053getDeclarationDescriptor = it.getConstructor().mo2053getDeclarationDescriptor();
                 boolean z = false;
-                if (mo2051getDeclarationDescriptor != null && ((mo2051getDeclarationDescriptor instanceof TypeAliasDescriptor) || (mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor))) {
+                if (mo2053getDeclarationDescriptor != null && ((mo2053getDeclarationDescriptor instanceof TypeAliasDescriptor) || (mo2053getDeclarationDescriptor instanceof TypeParameterDescriptor))) {
                     z = true;
                 }
                 return Boolean.valueOf(z);
@@ -291,7 +291,7 @@ public final class TypeUtilsKt {
             r4 = r2
             kotlin.reflect.jvm.internal.impl.types.KotlinType r4 = (kotlin.reflect.jvm.internal.impl.types.KotlinType) r4
             kotlin.reflect.jvm.internal.impl.types.TypeConstructor r4 = r4.getConstructor()
-            kotlin.reflect.jvm.internal.impl.descriptors.ClassifierDescriptor r4 = r4.mo2051getDeclarationDescriptor()
+            kotlin.reflect.jvm.internal.impl.descriptors.ClassifierDescriptor r4 = r4.mo2053getDeclarationDescriptor()
             boolean r5 = r4 instanceof kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
             if (r5 == 0) goto L3a
             r3 = r4
@@ -364,7 +364,7 @@ public final class TypeUtilsKt {
         if (unwrap instanceof FlexibleType) {
             FlexibleType flexibleType = (FlexibleType) unwrap;
             SimpleType lowerBound = flexibleType.getLowerBound();
-            if (!lowerBound.getConstructor().getParameters().isEmpty() && lowerBound.getConstructor().mo2051getDeclarationDescriptor() != null) {
+            if (!lowerBound.getConstructor().getParameters().isEmpty() && lowerBound.getConstructor().mo2053getDeclarationDescriptor() != null) {
                 List<TypeParameterDescriptor> parameters = lowerBound.getConstructor().getParameters();
                 Intrinsics.checkNotNullExpressionValue(parameters, "constructor.parameters");
                 collectionSizeOrDefault3 = CollectionsKt__IterablesKt.collectionSizeOrDefault(parameters, 10);
@@ -375,7 +375,7 @@ public final class TypeUtilsKt {
                 lowerBound = TypeSubstitutionKt.replace$default(lowerBound, arrayList, null, 2, null);
             }
             SimpleType upperBound = flexibleType.getUpperBound();
-            if (!upperBound.getConstructor().getParameters().isEmpty() && upperBound.getConstructor().mo2051getDeclarationDescriptor() != null) {
+            if (!upperBound.getConstructor().getParameters().isEmpty() && upperBound.getConstructor().mo2053getDeclarationDescriptor() != null) {
                 List<TypeParameterDescriptor> parameters2 = upperBound.getConstructor().getParameters();
                 Intrinsics.checkNotNullExpressionValue(parameters2, "constructor.parameters");
                 collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(parameters2, 10);
@@ -393,9 +393,9 @@ public final class TypeUtilsKt {
             boolean isEmpty = simpleType2.getConstructor().getParameters().isEmpty();
             simpleType = simpleType2;
             if (!isEmpty) {
-                ClassifierDescriptor mo2051getDeclarationDescriptor = simpleType2.getConstructor().mo2051getDeclarationDescriptor();
+                ClassifierDescriptor mo2053getDeclarationDescriptor = simpleType2.getConstructor().mo2053getDeclarationDescriptor();
                 simpleType = simpleType2;
-                if (mo2051getDeclarationDescriptor != null) {
+                if (mo2053getDeclarationDescriptor != null) {
                     List<TypeParameterDescriptor> parameters3 = simpleType2.getConstructor().getParameters();
                     Intrinsics.checkNotNullExpressionValue(parameters3, "constructor.parameters");
                     collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(parameters3, 10);

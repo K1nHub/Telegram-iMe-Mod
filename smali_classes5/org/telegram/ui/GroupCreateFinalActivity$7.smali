@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateFinalActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 573
+    .line 574
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$7;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RadialProgressView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 576
+    .line 577
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RadialProgressView;->setAlpha(F)V
 
-    .line 577
+    .line 578
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$7;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$600(Lorg/telegram/ui/GroupCreateFinalActivity;)Landroid/view/View;

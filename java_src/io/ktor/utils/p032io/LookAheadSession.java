@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 /* loaded from: classes4.dex */
 public interface LookAheadSession {
     /* renamed from: consumed */
-    void mo1930consumed(int i);
+    void mo1932consumed(int i);
 
     ByteBuffer request(int i, int i2);
 }

@@ -55,7 +55,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatThemeController;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.Emoji;
@@ -570,7 +570,7 @@ public class QrActivity extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onItemSelected$10() {
-        final Bitmap bitmap = SvgHelper.getBitmap(C3634R.raw.default_pattern, this.backgroundView.getWidth(), this.backgroundView.getHeight(), -16777216);
+        final Bitmap bitmap = SvgHelper.getBitmap(C3632R.raw.default_pattern, this.backgroundView.getWidth(), this.backgroundView.getHeight(), -16777216);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.QrActivity$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
@@ -661,7 +661,7 @@ public class QrActivity extends BaseFragment {
         Uri bitmapShareUri = AndroidUtilities.getBitmapShareUri(createBitmap, "qr_tmp.jpg", Bitmap.CompressFormat.JPEG);
         if (bitmapShareUri != null) {
             try {
-                getParentActivity().startActivityForResult(Intent.createChooser(new Intent("android.intent.action.SEND").setType("image/*").putExtra("android.intent.extra.STREAM", bitmapShareUri), LocaleController.getString("InviteByQRCode", C3634R.string.InviteByQRCode)), 500);
+                getParentActivity().startActivityForResult(Intent.createChooser(new Intent("android.intent.action.SEND").setType("image/*").putExtra("android.intent.extra.STREAM", bitmapShareUri), LocaleController.getString("InviteByQRCode", C3632R.string.InviteByQRCode)), 500);
             } catch (ActivityNotFoundException e) {
                 e.printStackTrace();
             }
@@ -1014,7 +1014,7 @@ public class QrActivity extends BaseFragment {
             boolean z = this.hasTimer;
             if (z) {
                 if (z && this.loadingMatrix == null) {
-                    RLottieDrawable rLottieDrawable = new RLottieDrawable(C3634R.raw.qr_matrix, "qr_matrix", AndroidUtilities.m104dp(200), AndroidUtilities.m104dp(200));
+                    RLottieDrawable rLottieDrawable = new RLottieDrawable(C3632R.raw.qr_matrix, "qr_matrix", AndroidUtilities.m104dp(200), AndroidUtilities.m104dp(200));
                     this.loadingMatrix = rLottieDrawable;
                     rLottieDrawable.setMasterParent(this);
                     this.loadingMatrix.getPaint().setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
@@ -1222,7 +1222,7 @@ public class QrActivity extends BaseFragment {
                     return super.calculateTimeForScrolling(i) * 6;
                 }
             };
-            Drawable mutate = parentActivity.getResources().getDrawable(C3634R.C3636drawable.sheet_shadow_round).mutate();
+            Drawable mutate = parentActivity.getResources().getDrawable(C3632R.C3634drawable.sheet_shadow_round).mutate();
             this.backgroundDrawable = mutate;
             mutate.setColorFilter(new PorterDuffColorFilter(baseFragment.getThemedColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
             FrameLayout frameLayout = new FrameLayout(parentActivity, QrActivity.this, baseFragment) { // from class: org.telegram.ui.QrActivity.ThemeListViewController.2
@@ -1309,7 +1309,7 @@ public class QrActivity extends BaseFragment {
             int i = Theme.key_featuredStickers_addButton;
             int themedColor = baseFragment.getThemedColor(i);
             int m104dp = AndroidUtilities.m104dp(28);
-            int i2 = C3634R.raw.sun_outline;
+            int i2 = C3632R.raw.sun_outline;
             RLottieDrawable rLottieDrawable = new RLottieDrawable(i2, "" + i2, m104dp, m104dp, false, null);
             this.darkThemeDrawable = rLottieDrawable;
             this.forceDark = Theme.getActiveTheme().isDark() ^ true;
@@ -1321,9 +1321,9 @@ public class QrActivity extends BaseFragment {
                 public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
                     super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                     if (QrActivity.this.isCurrentThemeDark) {
-                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToDayTheme", C3634R.string.AccDescrSwitchToDayTheme));
+                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToDayTheme", C3632R.string.AccDescrSwitchToDayTheme));
                     } else {
-                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToNightTheme", C3634R.string.AccDescrSwitchToNightTheme));
+                        accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToNightTheme", C3632R.string.AccDescrSwitchToNightTheme));
                     }
                 }
             };
@@ -1377,7 +1377,7 @@ public class QrActivity extends BaseFragment {
             View view = new View(parentActivity);
             this.topShadow = view;
             view.setAlpha(BitmapDescriptorFactory.HUE_RED);
-            int i3 = C3634R.C3636drawable.shadowdown;
+            int i3 = C3632R.C3634drawable.shadowdown;
             view.setBackground(ContextCompat.getDrawable(parentActivity, i3));
             view.setRotation(180.0f);
             frameLayout.addView(view);
@@ -1392,7 +1392,7 @@ public class QrActivity extends BaseFragment {
             textView2.setGravity(17);
             textView2.setLines(1);
             textView2.setSingleLine(true);
-            textView2.setText(LocaleController.getString("ShareQrCode", C3634R.string.ShareQrCode));
+            textView2.setText(LocaleController.getString("ShareQrCode", C3632R.string.ShareQrCode));
             textView2.setTextColor(baseFragment.getThemedColor(Theme.key_featuredStickers_buttonText));
             textView2.setTextSize(1, 15.0f);
             textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));

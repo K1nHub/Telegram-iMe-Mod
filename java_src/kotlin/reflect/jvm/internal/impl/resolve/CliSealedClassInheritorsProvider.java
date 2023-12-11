@@ -80,11 +80,11 @@ public final class CliSealedClassInheritorsProvider extends SealedClassInheritor
                 if (classDescriptor2.isExpect()) {
                     Name name = classDescriptor2.getName();
                     Intrinsics.checkNotNullExpressionValue(name, "descriptor.name");
-                    ClassifierDescriptor mo2053getContributedClassifier = memberScope.mo2053getContributedClassifier(name, NoLookupLocation.WHEN_GET_ALL_DESCRIPTORS);
-                    if (mo2053getContributedClassifier instanceof ClassDescriptor) {
-                        classDescriptor2 = (ClassDescriptor) mo2053getContributedClassifier;
+                    ClassifierDescriptor mo2055getContributedClassifier = memberScope.mo2055getContributedClassifier(name, NoLookupLocation.WHEN_GET_ALL_DESCRIPTORS);
+                    if (mo2055getContributedClassifier instanceof ClassDescriptor) {
+                        classDescriptor2 = (ClassDescriptor) mo2055getContributedClassifier;
                     } else {
-                        classDescriptor2 = mo2053getContributedClassifier instanceof TypeAliasDescriptor ? ((TypeAliasDescriptor) mo2053getContributedClassifier).getClassDescriptor() : null;
+                        classDescriptor2 = mo2055getContributedClassifier instanceof TypeAliasDescriptor ? ((TypeAliasDescriptor) mo2055getContributedClassifier).getClassDescriptor() : null;
                     }
                 }
                 if (classDescriptor2 != null) {

@@ -41,11 +41,11 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentWalletNotificationsBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* compiled from: WalletNotificationsFragment.kt */
@@ -264,18 +264,18 @@ public final class WalletNotificationsFragment extends WalletAuthBaseFragment im
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_notifications_toolbar_title));
-        c3706ActionBar.setAllowOverlayTitle(true);
-        ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = c3706ActionBar.createMenu().addItem(0, C3634R.C3636drawable.ic_ab_other);
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.wallet_notifications_toolbar_title));
+        c3704ActionBar.setAllowOverlayTitle(true);
+        ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = c3704ActionBar.createMenu().addItem(0, C3632R.C3634drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$3$lambda$2$lambda$1, "setupActionBar$lambda$3$lambda$2$lambda$1");
         ViewExtKt.gone$default(setupActionBar$lambda$3$lambda$2$lambda$1, false, 1, null);
-        setupActionBar$lambda$3$lambda$2$lambda$1.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
-        setupActionBar$lambda$3$lambda$2$lambda$1.addSubItem(1, C3634R.C3636drawable.fork_ic_folder_tab_read_all_24, getResourceManager().getString(C3634R.string.dialogs_tab_popup_read_all));
+        setupActionBar$lambda$3$lambda$2$lambda$1.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
+        setupActionBar$lambda$3$lambda$2$lambda$1.addSubItem(1, C3632R.C3634drawable.fork_ic_folder_tab_read_all_24, getResourceManager().getString(C3632R.string.dialogs_tab_popup_read_all));
         this.optionsMenuItem = setupActionBar$lambda$3$lambda$2$lambda$1;
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$setupActionBar$1$2
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletNotificationsPresenter presenter;
                 WalletNotificationsRecycleAdapter notificationAdapter;

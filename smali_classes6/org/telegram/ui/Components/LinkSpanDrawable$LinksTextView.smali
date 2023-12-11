@@ -115,7 +115,7 @@
 .method private synthetic lambda$onTouchEvent$0(Lorg/telegram/ui/Components/LinkSpanDrawable;Landroid/text/style/ClickableSpan;)V
     .locals 2
 
-    .line 583
+    .line 588
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->onLongPressListener:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView$OnLinkPress;
 
     if-eqz v0, :cond_0
@@ -124,15 +124,15 @@
 
     if-ne v1, p1, :cond_0
 
-    .line 584
+    .line 589
     invoke-interface {v0, p2}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView$OnLinkPress;->run(Landroid/text/style/ClickableSpan;)V
 
     const/4 p1, 0x0
 
-    .line 585
+    .line 590
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
-    .line 586
+    .line 591
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->clear()V
@@ -255,20 +255,20 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 615
+    .line 620
     iget-boolean v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->isCustomLinkCollector:Z
 
     if-nez v0, :cond_4
 
-    .line 616
+    .line 621
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 617
+    .line 622
     iget-boolean v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->disablePaddingsOffset:Z
 
     if-nez v0, :cond_2
 
-    .line 618
+    .line 623
     iget-boolean v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->disablePaddingsOffsetX:Z
 
     const/4 v1, 0x0
@@ -303,7 +303,7 @@
     :goto_1
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 620
+    .line 625
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
@@ -313,14 +313,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 621
+    .line 626
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
 
-    .line 623
+    .line 628
     :cond_3
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 625
+    .line 630
     :cond_4
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -330,19 +330,19 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 568
+    .line 572
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_5
 
-    .line 569
+    .line 573
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
     move-result-object v0
 
-    .line 571
+    .line 575
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v2
@@ -361,14 +361,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 572
+    .line 576
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 573
+    .line 577
     new-instance v3, Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -383,15 +383,22 @@
 
     invoke-direct {v3, v2, v4, v5, p1}, Lorg/telegram/ui/Components/LinkSpanDrawable;-><init>(Landroid/text/style/CharacterStyle;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;FF)V
 
-    .line 574
+    .line 578
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->overrideColor()I
+
+    move-result p1
+
+    invoke-virtual {v3, p1}, Lorg/telegram/ui/Components/LinkSpanDrawable;->setColor(I)V
+
+    .line 579
     iput-object v3, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
-    .line 575
+    .line 580
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->addLink(Lorg/telegram/ui/Components/LinkSpanDrawable;)V
 
-    .line 576
+    .line 581
     new-instance p1, Landroid/text/SpannableString;
 
     invoke-virtual {v0}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
@@ -400,7 +407,7 @@
 
     invoke-direct {p1, v4}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 577
+    .line 582
     iget-object v4, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/LinkSpanDrawable;->getSpan()Landroid/text/style/CharacterStyle;
@@ -411,7 +418,7 @@
 
     move-result v4
 
-    .line 578
+    .line 583
     iget-object v5, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/LinkSpanDrawable;->getSpan()Landroid/text/style/CharacterStyle;
@@ -422,14 +429,14 @@
 
     move-result p1
 
-    .line 579
+    .line 584
     iget-object v5, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/LinkSpanDrawable;->obtainNewPath()Lorg/telegram/ui/Components/LinkPath;
 
     move-result-object v5
 
-    .line 580
+    .line 585
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaddingTop()I
 
     move-result v6
@@ -438,27 +445,27 @@
 
     invoke-virtual {v5, v0, v4, v6}, Lorg/telegram/ui/Components/LinkPath;->setCurrentLayout(Landroid/text/Layout;IF)V
 
-    .line 581
+    .line 586
     invoke-virtual {v0, v4, p1, v5}, Landroid/text/Layout;->getSelectionPath(IILandroid/graphics/Path;)V
 
-    .line 582
+    .line 587
     new-instance p1, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0, v3, v2}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;Lorg/telegram/ui/Components/LinkSpanDrawable;Landroid/text/style/ClickableSpan;)V
 
-    .line 588
+    .line 593
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     move-result v0
 
     int-to-long v2, v0
 
-    .line 582
+    .line 587
     invoke-static {p1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return v1
 
-    .line 592
+    .line 597
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -468,12 +475,12 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 593
+    .line 598
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->clear()V
 
-    .line 594
+    .line 599
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     if-eqz v0, :cond_3
@@ -484,12 +491,12 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 595
+    .line 600
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->onPressListener:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView$OnLinkPress;
 
     if-eqz p1, :cond_1
 
-    .line 596
+    .line 601
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LinkSpanDrawable;->getSpan()Landroid/text/style/CharacterStyle;
@@ -502,7 +509,7 @@
 
     goto :goto_0
 
-    .line 597
+    .line 602
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
@@ -512,7 +519,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 598
+    .line 603
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LinkSpanDrawable;->getSpan()Landroid/text/style/CharacterStyle;
@@ -523,18 +530,18 @@
 
     invoke-virtual {p1, p0}, Landroid/text/style/ClickableSpan;->onClick(Landroid/view/View;)V
 
-    .line 600
+    .line 605
     :cond_2
     :goto_0
     iput-object v3, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     return v1
 
-    .line 603
+    .line 608
     :cond_3
     iput-object v3, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
-    .line 605
+    .line 610
     :cond_4
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -544,15 +551,15 @@
 
     if-ne v0, v2, :cond_5
 
-    .line 606
+    .line 611
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->clear()V
 
-    .line 607
+    .line 612
     iput-object v3, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
-    .line 610
+    .line 615
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
@@ -572,6 +579,21 @@
     :cond_7
     :goto_1
     return v1
+.end method
+
+.method public overrideColor()I
+    .locals 2
+
+    .line 567
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_linkSelectBackground:I
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public setDisablePaddingsOffset(Z)V

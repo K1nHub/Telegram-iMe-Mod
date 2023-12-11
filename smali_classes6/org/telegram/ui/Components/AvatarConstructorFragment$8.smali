@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;FFZ)V
     .locals 0
 
-    .line 526
+    .line 527
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iput p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->val$translationYFrom:F
@@ -50,7 +50,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 529
+    .line 530
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -65,7 +65,7 @@
 
     iput p1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
 
-    .line 530
+    .line 531
     iget p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->val$translationYFrom:F
 
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->val$translationYTo:F
@@ -78,7 +78,7 @@
 
     move-result p1
 
-    .line 531
+    .line 532
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$1500(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -95,7 +95,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 532
+    .line 533
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandWithKeyboard:Z
@@ -108,7 +108,7 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 533
+    .line 534
     iget v2, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
 
     sub-float/2addr v1, v2
@@ -117,7 +117,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$200(Lorg/telegram/ui/Components/AvatarConstructorFragment;FZ)V
 
-    .line 535
+    .line 536
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
@@ -125,7 +125,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/LinearLayout;->setTranslationY(F)V
 
-    .line 536
+    .line 537
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$300(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Landroid/widget/FrameLayout;
@@ -134,7 +134,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 537
+    .line 538
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$1600(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Landroid/view/View;
@@ -143,7 +143,7 @@
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 538
+    .line 539
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$8;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$1700(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Lorg/telegram/ui/ActionBar/ActionBar;

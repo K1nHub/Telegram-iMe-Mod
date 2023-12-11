@@ -18,7 +18,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CryptoBoxActionProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CryptoBoxActionProvider */
@@ -34,7 +34,7 @@ public final class CryptoBoxActionProvider extends BaseNodeProvider<CryptoBoxAct
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.CRYPTOBOX_ACTION;
-        this.layoutId = C3634R.layout.fork_recycle_item_wallet_transaction;
+        this.layoutId = C3632R.layout.fork_recycle_item_wallet_transaction;
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxActionProvider$networkIconCornerSize$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -46,7 +46,7 @@ public final class CryptoBoxActionProvider extends BaseNodeProvider<CryptoBoxAct
             public final Float invoke() {
                 ResourceManager resourceManager2;
                 resourceManager2 = CryptoBoxActionProvider.this.resourceManager;
-                return Float.valueOf(resourceManager2.getDimens(C3634R.dimen.icon_size_default) / 2);
+                return Float.valueOf(resourceManager2.getDimens(C3632R.dimen.icon_size_default) / 2);
             }
         });
         this.networkIconCornerSize$delegate = lazy;
@@ -71,20 +71,20 @@ public final class CryptoBoxActionProvider extends BaseNodeProvider<CryptoBoxAct
     public void convert(BaseViewHolder helper, final CryptoBoxActionItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder rippleForeground = BaseQuickAdapterExtKt.setRippleForeground(helper, C3634R.C3637id.linear_root, false);
-        int i = C3634R.C3637id.text_date;
+        BaseViewHolder rippleForeground = BaseQuickAdapterExtKt.setRippleForeground(helper, C3632R.C3635id.linear_root, false);
+        int i = C3632R.C3635id.text_date;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(rippleForeground, i, Theme.key_chats_date);
-        int i2 = C3634R.C3637id.text_amount;
+        int i2 = C3632R.C3635id.text_amount;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i2, Theme.key_chats_name);
-        int i3 = C3634R.C3637id.text_status;
+        int i3 = C3632R.C3635id.text_status;
         BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i3, item.getStatusColor());
-        int i4 = C3634R.C3637id.text_transaction_type_title;
+        int i4 = C3632R.C3635id.text_transaction_type_title;
         BaseViewHolder themedTextColor4 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i4, Theme.key_chats_message);
-        int i5 = C3634R.C3637id.view_divider;
+        int i5 = C3632R.C3635id.view_divider;
         BaseNodeAdapter<CryptoBoxActionItem> adapter = getAdapter();
         Intrinsics.checkNotNull(adapter);
-        BaseViewHolder imageResource = BaseQuickAdapterExtKt.setVisibleElseGone(themedTextColor4, i5, !RecycleViewExtKt.isLastItem(helper, adapter)).setImageResource(C3634R.C3637id.image_transaction_type_icon, item.getIcon());
-        int i6 = C3634R.C3637id.image_staking_icon;
+        BaseViewHolder imageResource = BaseQuickAdapterExtKt.setVisibleElseGone(themedTextColor4, i5, !RecycleViewExtKt.isLastItem(helper, adapter)).setImageResource(C3632R.C3635id.image_transaction_type_icon, item.getIcon());
+        int i6 = C3632R.C3635id.image_staking_icon;
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.loadImage$default(imageResource, i6, item.getToken().getAvatarUrl(), null, false, 12, null), i2).setText(i3, item.getStatusText(this.resourceManager)).setText(i2, item.getAmount()).setText(i4, item.getTransactionTitle(this.resourceManager)), i, new Function1<TimeWithClockView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxActionProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {

@@ -8,7 +8,7 @@ import androidx.core.app.NotificationManagerCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -100,9 +100,9 @@ public class StoryUploadingService extends Service implements NotificationCenter
             builder.setSmallIcon(17301640);
             this.builder.setWhen(System.currentTimeMillis());
             this.builder.setChannelId(NotificationsController.OTHER_NOTIFICATIONS_CHANNEL);
-            this.builder.setContentTitle(LocaleController.getString("AppName", C3634R.string.AppName));
+            this.builder.setContentTitle(LocaleController.getString("AppName", C3632R.string.AppName));
             NotificationCompat.Builder builder2 = this.builder;
-            int i5 = C3634R.string.StoryUploading;
+            int i5 = C3632R.string.StoryUploading;
             builder2.setTicker(LocaleController.getString("StoryUploading", i5));
             this.builder.setContentText(LocaleController.getString("StoryUploading", i5));
         }

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Z)V
     .locals 0
 
-    .line 10180
+    .line 10177
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$51;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ProfileActivity$51;->val$show:Z
@@ -39,7 +39,7 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 10194
+    .line 10191
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$51;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     const/4 v0, 0x0
@@ -52,7 +52,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 10183
+    .line 10180
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$51;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$23900(Lorg/telegram/ui/ProfileActivity;)Landroid/animation/AnimatorSet;
@@ -71,13 +71,13 @@
 
     goto :goto_0
 
-    .line 10186
+    .line 10183
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/ProfileActivity$51;->val$show:Z
 
     if-nez p1, :cond_1
 
-    .line 10187
+    .line 10184
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$51;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$24000(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RadialProgressView;
@@ -88,7 +88,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 10189
+    .line 10186
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$51;->this$0:Lorg/telegram/ui/ProfileActivity;
 

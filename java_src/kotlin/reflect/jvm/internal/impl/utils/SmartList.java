@@ -17,7 +17,7 @@ import p033j$.util.function.Consumer;
 import p033j$.util.function.IntFunction;
 import p033j$.util.function.Predicate;
 import p033j$.util.function.UnaryOperator;
-import p033j$.util.stream.AbstractC3086o1;
+import p033j$.util.stream.AbstractC3083o1;
 import p033j$.util.stream.Stream;
 /* loaded from: classes4.dex */
 public class SmartList<E> extends AbstractList<E> implements RandomAccess, List {
@@ -70,7 +70,7 @@ public class SmartList<E> extends AbstractList<E> implements RandomAccess, List 
         throw new IllegalStateException(format);
     }
 
-    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2674e
+    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2671e
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$CC.$default$forEach(this, consumer);
     }
@@ -78,7 +78,7 @@ public class SmartList<E> extends AbstractList<E> implements RandomAccess, List 
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream parallelStream() {
         Stream m399y;
-        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), true);
+        m399y = AbstractC3083o1.m399y(Collection.EL.m695b(this), true);
         return m399y;
     }
 
@@ -92,7 +92,7 @@ public class SmartList<E> extends AbstractList<E> implements RandomAccess, List 
         List.CC.$default$replaceAll(this, unaryOperator);
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, java.util.List, p033j$.util.List, p033j$.util.Collection, p033j$.lang.InterfaceC2674e
+    @Override // java.util.Collection, java.lang.Iterable, java.util.List, p033j$.util.List, p033j$.util.Collection, p033j$.lang.InterfaceC2671e
     public /* synthetic */ Spliterator spliterator() {
         return List.CC.$default$spliterator(this);
     }
@@ -100,7 +100,7 @@ public class SmartList<E> extends AbstractList<E> implements RandomAccess, List 
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream stream() {
         Stream m399y;
-        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), false);
+        m399y = AbstractC3083o1.m399y(Collection.EL.m695b(this), false);
         return m399y;
     }
 

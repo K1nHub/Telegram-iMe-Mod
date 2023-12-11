@@ -21,7 +21,7 @@ public final class MsgDiscardFinTlbConstructor extends org.ton.tlb.TlbConstructo
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeRef(value.getInMsg().toCell(MsgEnvelope.Companion));
-        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5126getTransactionIdsVKNKU());
+        cellBuilder.mo5193storeUInt64VKZWuLQ(value.m5108getTransactionIdsVKNKU());
         Coins.Companion.storeTlb(cellBuilder, (CellBuilder) value.getFwdFee());
     }
 
@@ -29,6 +29,6 @@ public final class MsgDiscardFinTlbConstructor extends org.ton.tlb.TlbConstructo
     public MsgDiscardFin loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
         MsgEnvelope.Companion companion = MsgEnvelope.Companion;
-        return new MsgDiscardFin(CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) companion), cellSlice.mo5221loadUInt64sVKNKU(), Coins.Companion.loadTlb(cellSlice), null);
+        return new MsgDiscardFin(CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) companion), cellSlice.mo5203loadUInt64sVKNKU(), Coins.Companion.loadTlb(cellSlice), null);
     }
 }

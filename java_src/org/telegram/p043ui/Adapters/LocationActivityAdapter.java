@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Locale;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.MessageObject;
@@ -180,7 +180,7 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
                 } else {
                     Location location = this.customLocation;
                     if ((location == null && this.gpsLocation == null) || this.fetchingLocation) {
-                        str = LocaleController.getString("Loading", C3634R.string.Loading);
+                        str = LocaleController.getString("Loading", C3632R.string.Loading);
                     } else if (location != null) {
                         str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location.getLatitude()), Double.valueOf(this.customLocation.getLongitude()));
                     } else {
@@ -188,21 +188,21 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
                         if (location2 != null) {
                             str = String.format(Locale.US, "(%f,%f)", Double.valueOf(location2.getLatitude()), Double.valueOf(this.gpsLocation.getLongitude()));
                         } else if (!this.myLocationDenied) {
-                            str = LocaleController.getString("Loading", C3634R.string.Loading);
+                            str = LocaleController.getString("Loading", C3632R.string.Loading);
                         }
                     }
                 }
                 if (this.locationType == 4) {
-                    this.sendLocationCell.setText(LocaleController.getString("ChatSetThisLocation", C3634R.string.ChatSetThisLocation), str);
+                    this.sendLocationCell.setText(LocaleController.getString("ChatSetThisLocation", C3632R.string.ChatSetThisLocation), str);
                 } else {
-                    this.sendLocationCell.setText(LocaleController.getString("SendSelectedLocation", C3634R.string.SendSelectedLocation), str);
+                    this.sendLocationCell.setText(LocaleController.getString("SendSelectedLocation", C3632R.string.SendSelectedLocation), str);
                 }
                 this.sendLocationCell.setHasLocation(true);
             } else if (this.gpsLocation != null) {
-                sendLocationCell.setText(LocaleController.getString("SendLocation", C3634R.string.SendLocation), LocaleController.formatString("AccurateTo", C3634R.string.AccurateTo, LocaleController.formatPluralString("Meters", (int) this.gpsLocation.getAccuracy(), new Object[0])));
+                sendLocationCell.setText(LocaleController.getString("SendLocation", C3632R.string.SendLocation), LocaleController.formatString("AccurateTo", C3632R.string.AccurateTo, LocaleController.formatPluralString("Meters", (int) this.gpsLocation.getAccuracy(), new Object[0])));
                 this.sendLocationCell.setHasLocation(true);
             } else {
-                sendLocationCell.setText(LocaleController.getString("SendLocation", C3634R.string.SendLocation), this.myLocationDenied ? "" : LocaleController.getString("Loading", C3634R.string.Loading));
+                sendLocationCell.setText(LocaleController.getString("SendLocation", C3632R.string.SendLocation), this.myLocationDenied ? "" : LocaleController.getString("Loading", C3632R.string.Loading));
                 this.sendLocationCell.setHasLocation(!this.myLocationDenied);
             }
         }
@@ -342,7 +342,7 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
                 break;
             case 9:
                 View shadowSectionCell = new ShadowSectionCell(this.mContext);
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(getThemedColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3634R.C3636drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(getThemedColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3632R.C3634drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable.setFullsize(true);
                 shadowSectionCell.setBackgroundDrawable(combinedDrawable);
                 view = shadowSectionCell;
@@ -382,10 +382,10 @@ public class LocationActivityAdapter extends BaseLocationAdapter implements Loca
         if (itemViewType == 2) {
             HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
             if (this.currentMessageObject != null) {
-                headerCell.setText(LocaleController.getString("LiveLocations", C3634R.string.LiveLocations));
+                headerCell.setText(LocaleController.getString("LiveLocations", C3632R.string.LiveLocations));
                 return;
             } else {
-                headerCell.setText(LocaleController.getString("NearbyVenue", C3634R.string.NearbyVenue));
+                headerCell.setText(LocaleController.getString("NearbyVenue", C3632R.string.NearbyVenue));
                 return;
             }
         }

@@ -18,22 +18,22 @@ public final class ChannelResult<T> {
     }
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ ChannelResult m2101boximpl(Object obj) {
+    public static final /* synthetic */ ChannelResult m2103boximpl(Object obj) {
         return new ChannelResult(obj);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m2102constructorimpl(Object obj) {
+    public static <T> Object m2104constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2103equalsimpl(Object obj, Object obj2) {
-        return (obj2 instanceof ChannelResult) && Intrinsics.areEqual(obj, ((ChannelResult) obj2).m2109unboximpl());
+    public static boolean m2105equalsimpl(Object obj, Object obj2) {
+        return (obj2 instanceof ChannelResult) && Intrinsics.areEqual(obj, ((ChannelResult) obj2).m2111unboximpl());
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2105hashCodeimpl(Object obj) {
+    public static int m2107hashCodeimpl(Object obj) {
         if (obj == null) {
             return 0;
         }
@@ -41,15 +41,15 @@ public final class ChannelResult<T> {
     }
 
     public boolean equals(Object obj) {
-        return m2103equalsimpl(this.holder, obj);
+        return m2105equalsimpl(this.holder, obj);
     }
 
     public int hashCode() {
-        return m2105hashCodeimpl(this.holder);
+        return m2107hashCodeimpl(this.holder);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m2109unboximpl() {
+    public final /* synthetic */ Object m2111unboximpl() {
         return this.holder;
     }
 
@@ -58,17 +58,17 @@ public final class ChannelResult<T> {
     }
 
     /* renamed from: isSuccess-impl  reason: not valid java name */
-    public static final boolean m2107isSuccessimpl(Object obj) {
+    public static final boolean m2109isSuccessimpl(Object obj) {
         return !(obj instanceof Failed);
     }
 
     /* renamed from: isClosed-impl  reason: not valid java name */
-    public static final boolean m2106isClosedimpl(Object obj) {
+    public static final boolean m2108isClosedimpl(Object obj) {
         return obj instanceof Closed;
     }
 
     /* renamed from: exceptionOrNull-impl  reason: not valid java name */
-    public static final Throwable m2104exceptionOrNullimpl(Object obj) {
+    public static final Throwable m2106exceptionOrNullimpl(Object obj) {
         Closed closed = obj instanceof Closed ? (Closed) obj : null;
         if (closed != null) {
             return closed.cause;
@@ -114,27 +114,27 @@ public final class ChannelResult<T> {
         }
 
         /* renamed from: success-JP2dKIU  reason: not valid java name */
-        public final <E> Object m2112successJP2dKIU(E e) {
-            return ChannelResult.m2102constructorimpl(e);
+        public final <E> Object m2114successJP2dKIU(E e) {
+            return ChannelResult.m2104constructorimpl(e);
         }
 
         /* renamed from: failure-PtdJZtk  reason: not valid java name */
-        public final <E> Object m2111failurePtdJZtk() {
-            return ChannelResult.m2102constructorimpl(ChannelResult.failed);
+        public final <E> Object m2113failurePtdJZtk() {
+            return ChannelResult.m2104constructorimpl(ChannelResult.failed);
         }
 
         /* renamed from: closed-JP2dKIU  reason: not valid java name */
-        public final <E> Object m2110closedJP2dKIU(Throwable th) {
-            return ChannelResult.m2102constructorimpl(new Closed(th));
+        public final <E> Object m2112closedJP2dKIU(Throwable th) {
+            return ChannelResult.m2104constructorimpl(new Closed(th));
         }
     }
 
     public String toString() {
-        return m2108toStringimpl(this.holder);
+        return m2110toStringimpl(this.holder);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2108toStringimpl(Object obj) {
+    public static String m2110toStringimpl(Object obj) {
         if (obj instanceof Closed) {
             return ((Closed) obj).toString();
         }

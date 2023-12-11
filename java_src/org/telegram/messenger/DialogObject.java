@@ -129,7 +129,7 @@ public class DialogObject {
         if (tLObject instanceof TLRPC$User) {
             TLRPC$User tLRPC$User = (TLRPC$User) tLObject;
             if (UserObject.isReplyUser(tLRPC$User)) {
-                String string = LocaleController.getString("RepliesTitle", C3634R.string.RepliesTitle);
+                String string = LocaleController.getString("RepliesTitle", C3632R.string.RepliesTitle);
                 if (avatarDrawable != null) {
                     avatarDrawable.setAvatarType(12);
                 }
@@ -139,7 +139,7 @@ public class DialogObject {
                 }
                 return string;
             } else if (UserObject.isUserSelf(tLRPC$User)) {
-                String string2 = LocaleController.getString("SavedMessages", C3634R.string.SavedMessages);
+                String string2 = LocaleController.getString("SavedMessages", C3632R.string.SavedMessages);
                 if (avatarDrawable != null) {
                     avatarDrawable.setAvatarType(1);
                 }

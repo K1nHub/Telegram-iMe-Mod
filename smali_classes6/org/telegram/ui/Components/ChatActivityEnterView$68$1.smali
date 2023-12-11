@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView$68;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    .line 9696
+    .line 9695
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$1;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$68;
 
     iput-object p5, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$1;->val$reasonCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
@@ -39,10 +39,10 @@
 .method public dismissInternal()V
     .locals 1
 
-    .line 9700
+    .line 9699
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
-    .line 9701
+    .line 9700
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$1;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$68;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$68;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -53,7 +53,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 9702
+    .line 9701
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$1;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$68;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$68;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -71,12 +71,12 @@
 .method protected onSend(ILjava/lang/String;)V
     .locals 3
 
-    .line 9708
+    .line 9707
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$1;->val$reasonCallback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-interface {p1, p2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
-    .line 9709
+    .line 9708
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$1;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$68;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView$68;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;

@@ -48,7 +48,7 @@ import kotlin.ranges.LongProgression;
 import kotlin.ranges.LongRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.Charts.data.ChartData;
 import org.telegram.p043ui.StatisticActivity;
 import timber.log.Timber;
@@ -134,7 +134,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         String str;
         StakingDetailsItem stakingDetailsItem = this.selectedStakingProgramme;
         if (stakingDetailsItem != null) {
-            str = '(' + this.resourceManager.getString(this.selectedAmount >= stakingDetailsItem.getCompoundAccrualThreshold().doubleValue() ? C3634R.string.staking_details_apy : C3634R.string.staking_details_apr) + ')';
+            str = '(' + this.resourceManager.getString(this.selectedAmount >= stakingDetailsItem.getCompoundAccrualThreshold().doubleValue() ? C3632R.string.staking_details_apy : C3632R.string.staking_details_apr) + ')';
         } else {
             str = null;
         }
@@ -234,12 +234,12 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends AccountLevel> result) {
-                m1812invoke(result);
+                m1814invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1812invoke(Result<? extends AccountLevel> it) {
+            public final void m1814invoke(Result<? extends AccountLevel> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends AccountLevel> result = it;
                 if (result instanceof Result.Success) {
@@ -310,12 +310,12 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
-                m1813invoke(result);
+                m1815invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1813invoke(Result<? extends TokenBalance> it) {
+            public final void m1815invoke(Result<? extends TokenBalance> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends TokenBalance> result = it;
                 if (result instanceof Result.Success) {
@@ -360,11 +360,11 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         String message;
         StakingCalculatorView stakingCalculatorView = (StakingCalculatorView) getViewState();
         if (errorModel.isNoConnectionStatus()) {
-            message = this.resourceManager.getString(C3634R.string.common_error_no_internet);
+            message = this.resourceManager.getString(C3632R.string.common_error_no_internet);
         } else {
             message = errorModel.getMessage(this.resourceManager);
             if (message.length() == 0) {
-                message = this.resourceManager.getString(C3634R.string.common_error_unexpected);
+                message = this.resourceManager.getString(C3632R.string.common_error_unexpected);
             }
         }
         stakingCalculatorView.showToast(message);
@@ -485,7 +485,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         sb.append(TokenBalanceExtKt.getTotalBalanceShortText(copy));
         this.tokenProfitText = sb.toString();
         ResourceManager resourceManager = this.resourceManager;
-        int i2 = C3634R.string.staking_details_profit;
+        int i2 = C3632R.string.staking_details_profit;
         StatisticActivity.ChartViewData chartViewData = new StatisticActivity.ChartViewData(resourceManager.getString(i2), 0);
         chartViewData.setup(new ChartData(TelegramStatisticsChartData.Companion.generateJSONObject(this.resourceManager.getString(i2), list, arrayList)));
         return chartViewData;

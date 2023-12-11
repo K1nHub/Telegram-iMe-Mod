@@ -47,34 +47,42 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$7ItAME4qTpI5QUw816_u6IY_gAM(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$MMpB-MAIuU_zBEPlCNZm9g6D2fo(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->lambda$new$2(Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->lambda$new$3(Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$9ZKwywK0qb-jlB0XQz7br_kWmR4(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Ljava/util/List;Ljava/util/HashSet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;)V
+.method public static synthetic $r8$lambda$XVgHfWy77H7-2h9tpgpxgBgoDzk(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$Chat;Ljava/util/List;Ljava/util/HashSet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->lambda$new$0(Ljava/util/List;Ljava/util/HashSet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->lambda$new$1(Lorg/telegram/tgnet/TLRPC$Chat;Ljava/util/List;Ljava/util/HashSet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$RNkWmxcaVCO4xZP0s6-rB6Cc-6A(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$eTsGuooOHcgpzOxFCMHAPppZWcQ(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->lambda$new$1(Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->lambda$new$2(Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ol_j0Kjm26y6P26dBSDSqNW_eHc(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;I)V
+.method public static synthetic $r8$lambda$qSlOmGxMvacNSV3y-_-5H29CnYA(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;Ljava/util/List;Ljava/util/HashSet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->lambda$new$3(Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;I)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->lambda$new$0(Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;Ljava/util/List;Ljava/util/HashSet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$zROTQYaTV-dY7aKqsdzB0xYoyHk(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->lambda$new$4(Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;I)V
 
     return-void
 .end method
@@ -84,17 +92,17 @@
 
     const/4 v0, 0x0
 
-    .line 86
+    .line 84
     invoke-direct {p0, p1, v0, v0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZ)V
 
-    .line 75
+    .line 73
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->selectedBoosts:Ljava/util/List;
 
-    .line 76
+    .line 74
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -103,13 +111,13 @@
 
     const p1, 0x3e99999a    # 0.3f
 
-    .line 87
+    .line 85
     iput p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->topPadding:F
 
-    .line 89
+    .line 87
     iput-object p3, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 91
+    .line 89
     iget-object p1, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;->my_boosts:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -130,7 +138,7 @@
 
     check-cast p2, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;
 
-    .line 92
+    .line 90
     iget-object v1, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     if-eqz v1, :cond_0
@@ -147,14 +155,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 93
+    .line 91
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->allUsedBoosts:Ljava/util/List;
 
     invoke-interface {v1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 97
+    .line 95
     :cond_1
     new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorBtnCell;
 
@@ -172,15 +180,15 @@
 
     const/4 p2, 0x1
 
-    .line 98
+    .line 96
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->setClickable(Z)V
 
-    .line 99
+    .line 97
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v1, 0x8
 
-    .line 100
+    .line 98
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -199,7 +207,7 @@
 
     invoke-virtual {p1, v2, v3, v4, v1}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 101
+    .line 99
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -210,7 +218,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 102
+    .line 100
     new-instance v1, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$1;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -223,15 +231,15 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->actionButton:Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
-    .line 128
+    .line 126
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->withCounterIcon()V
 
     const p2, -0x678b04
 
-    .line 129
+    .line 127
     invoke-virtual {v1, p2}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setCounterColor(I)V
 
-    .line 130
+    .line 128
     new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0, p3}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$Chat;)V
@@ -288,9 +296,9 @@
     .line 157
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda3;
+    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda4;
 
-    invoke-direct {p2, p0, p3}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$Chat;)V
+    invoke-direct {p2, p0, p3}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$Chat;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
@@ -318,7 +326,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;)Ljava/util/List;
     .locals 0
 
-    .line 59
+    .line 57
     iget-object p0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->allUsedBoosts:Ljava/util/List;
 
     return-object p0
@@ -327,7 +335,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 59
+    .line 57
     iget-object p0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p0
@@ -336,7 +344,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 59
+    .line 57
     iget-object p0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p0
@@ -345,7 +353,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;)Ljava/util/List;
     .locals 0
 
-    .line 59
+    .line 57
     iget-object p0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->selectedBoosts:Ljava/util/List;
 
     return-object p0
@@ -354,7 +362,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;)Lorg/telegram/tgnet/TLRPC$Chat;
     .locals 0
 
-    .line 59
+    .line 57
     iget-object p0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     return-object p0
@@ -363,7 +371,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
-    .line 59
+    .line 57
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object p0
@@ -372,7 +380,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;)Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$TopCell;
     .locals 0
 
-    .line 59
+    .line 57
     iget-object p0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->topCell:Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$TopCell;
 
     return-object p0
@@ -381,19 +389,19 @@
 .method static synthetic access$602(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$TopCell;)Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$TopCell;
     .locals 0
 
-    .line 59
+    .line 57
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->topCell:Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$TopCell;
 
     return-object p1
 .end method
 
-.method private synthetic lambda$new$0(Ljava/util/List;Ljava/util/HashSet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;)V
+.method private synthetic lambda$new$0(Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;Ljava/util/List;Ljava/util/HashSet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
     .locals 4
 
-    .line 145
+    .line 144
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 146
+    .line 145
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -402,15 +410,15 @@
 
     sget v1, Lorg/telegram/messenger/NotificationCenter;->boostedChannelByUser:I
 
-    const/4 v2, 0x3
+    const/4 v2, 0x4
 
     new-array v2, v2, [Ljava/lang/Object;
 
     const/4 v3, 0x0
 
-    aput-object p3, v2, v3
+    aput-object p1, v2, v3
 
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result p1
 
@@ -418,11 +426,11 @@
 
     move-result-object p1
 
-    const/4 p3, 0x1
+    const/4 p2, 0x1
 
-    aput-object p1, v2, p3
+    aput-object p1, v2, p2
 
-    invoke-virtual {p2}, Ljava/util/HashSet;->size()I
+    invoke-virtual {p3}, Ljava/util/HashSet;->size()I
 
     move-result p1
 
@@ -434,12 +442,43 @@
 
     aput-object p1, v2, p2
 
+    const/4 p1, 0x3
+
+    aput-object p4, v2, p1
+
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$new$1(Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$new$1(Lorg/telegram/tgnet/TLRPC$Chat;Ljava/util/List;Ljava/util/HashSet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;)V
+    .locals 3
+
+    .line 143
+    iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getBoostsController()Lorg/telegram/messenger/ChannelBoostsController;
+
+    move-result-object v0
+
+    iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    neg-long v1, v1
+
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda1;
+
+    invoke-direct {p1, p0, p4, p2, p3}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;Ljava/util/List;Ljava/util/HashSet;)V
+
+    invoke-virtual {v0, v1, v2, p1}, Lorg/telegram/messenger/ChannelBoostsController;->getBoostsStats(JLcom/google/android/exoplayer2/util/Consumer;)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$new$2(Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 2
 
     .line 148
@@ -459,10 +498,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$new$2(Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;)V
+.method private synthetic lambda$new$3(Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;)V
     .locals 4
 
-    .line 131
+    .line 129
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->selectedBoosts:Ljava/util/List;
 
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
@@ -473,7 +512,7 @@
 
     return-void
 
-    .line 134
+    .line 132
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->actionButton:Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
@@ -485,7 +524,7 @@
 
     return-void
 
-    .line 137
+    .line 135
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->actionButton:Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
@@ -493,17 +532,17 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setLoading(Z)V
 
-    .line 138
+    .line 136
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 139
+    .line 137
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    .line 140
+    .line 138
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;->selectedBoosts:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -523,7 +562,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;
 
-    .line 141
+    .line 139
     iget v3, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;->slot:I
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -532,7 +571,7 @@
 
     invoke-interface {p2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 142
+    .line 140
     iget-object v2, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v2}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
@@ -547,24 +586,24 @@
 
     goto :goto_0
 
-    .line 144
+    .line 142
     :cond_2
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
+    new-instance v3, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda3;
+
+    invoke-direct {v3, p0, p1, p2, v0}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Lorg/telegram/tgnet/TLRPC$Chat;Ljava/util/List;Ljava/util/HashSet;)V
+
     new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda2;
 
-    invoke-direct {p1, p0, p2, v0}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Ljava/util/List;Ljava/util/HashSet;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;)V
 
-    new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda1;
-
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;)V
-
-    invoke-static {v1, v2, p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->applyBoost(JLjava/util/List;Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-static {v1, v2, p2, v3, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->applyBoost(JLjava/util/List;Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$new$3(Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;I)V
+.method private synthetic lambda$new$4(Lorg/telegram/tgnet/TLRPC$Chat;Landroid/view/View;I)V
     .locals 2
 
     .line 158
@@ -587,25 +626,17 @@
     if-lez p3, :cond_0
 
     .line 161
-    sget p1, Lorg/telegram/messenger/R$string;->BoostingWaitWarning:I
-
-    new-array p2, v0, [Ljava/lang/Object;
-
-    const/4 p3, 0x0
-
     invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->boostsPerSentGift()I
 
-    move-result v1
+    move-result p1
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/4 p2, 0x0
 
-    move-result-object v1
+    new-array p2, p2, [Ljava/lang/Object;
 
-    aput-object v1, p2, p3
+    const-string p3, "BoostingWaitWarningPlural"
 
-    const-string p3, "BoostingWaitWarning"
-
-    invoke-static {p3, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p3, p1, p2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -700,12 +731,12 @@
 .method public static show(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;
     .locals 1
 
-    .line 70
+    .line 68
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_myBoosts;Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 71
+    .line 69
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
     return-object v0

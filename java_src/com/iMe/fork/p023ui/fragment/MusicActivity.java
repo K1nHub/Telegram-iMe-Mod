@@ -50,7 +50,7 @@ import kotlin.p034io.CloseableKt;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -288,7 +288,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
 
     @Override // com.iMe.p030ui.pager.TelegramViewPagerFragment
     public String getToolbarTitle() {
-        String string = LocaleController.getString("AttachMusic", C3634R.string.AttachMusic);
+        String string = LocaleController.getString("AttachMusic", C3632R.string.AttachMusic);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"AttachMusic\", R.string.AttachMusic)");
         return string;
     }
@@ -313,7 +313,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
         Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(MusicTab.BOTS.titleResId)");
         String internalString4 = LocaleController.getInternalString(MusicTab.DEVICE.getTitleResId());
         Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(MusicTab.DEVICE.titleResId)");
-        return new ViewPageData[]{new ViewPageData(internalString, getAlbumsAdapter(), C3634R.C3636drawable.fork_fab_albums), new ViewPageData(internalString2, getChannelsAdapter(), 0), new ViewPageData(internalString3, getBotsAdapter(), 0), new ViewPageData(internalString4, getDeviceAdapter(), 0)};
+        return new ViewPageData[]{new ViewPageData(internalString, getAlbumsAdapter(), C3632R.C3634drawable.fork_fab_albums), new ViewPageData(internalString2, getChannelsAdapter(), 0), new ViewPageData(internalString3, getBotsAdapter(), 0), new ViewPageData(internalString4, getDeviceAdapter(), 0)};
     }
 
     @Override // com.iMe.p030ui.pager.TelegramViewPagerFragment
@@ -614,7 +614,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
     }
 
     private final void showDeviceMusicDeleteConfirmDialog(final MessageObject messageObject) {
-        AlertsCreator.showConfirmationDialog(this, getParentActivity(), null, LocaleController.getInternalString(C3634R.string.music_device_delete_alert_message), LocaleController.getString("Delete", C3634R.string.Delete), true, null, new Callbacks$Callback1() { // from class: com.iMe.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda0
+        AlertsCreator.showConfirmationDialog(this, getParentActivity(), null, LocaleController.getInternalString(C3632R.string.music_device_delete_alert_message), LocaleController.getString("Delete", C3632R.string.Delete), true, null, new Callbacks$Callback1() { // from class: com.iMe.fork.ui.fragment.MusicActivity$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
                 MusicActivity.showDeviceMusicDeleteConfirmDialog$lambda$25(MessageObject.this, this, (Boolean) obj);
@@ -663,7 +663,7 @@ public final class MusicActivity extends TelegramViewPagerFragment implements No
             this$0.loadDeviceMusic();
             return;
         }
-        String string = LocaleController.getString("UnknownError", C3634R.string.UnknownError);
+        String string = LocaleController.getString("UnknownError", C3632R.string.UnknownError);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\n             …                        )");
         ContextExtKt.toast(string);
     }

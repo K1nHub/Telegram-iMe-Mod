@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.SortedSet;
-import p033j$.lang.InterfaceC2674e;
+import p033j$.lang.InterfaceC2671e;
 import p033j$.util.List;
 import p033j$.util.function.Consumer;
 import p033j$.util.function.IntFunction;
@@ -14,7 +14,7 @@ import p033j$.util.function.Predicate;
 import p033j$.util.stream.Stream;
 /* renamed from: j$.util.Collection */
 /* loaded from: classes2.dex */
-public interface Collection<E> extends InterfaceC2674e {
+public interface Collection<E> extends InterfaceC2671e {
 
     /* renamed from: j$.util.Collection$-CC */
     /* loaded from: classes2.dex */
@@ -37,7 +37,7 @@ public interface Collection<E> extends InterfaceC2674e {
 
         public static Spliterator $default$spliterator(java.util.Collection collection) {
             Objects.requireNonNull(collection);
-            return new C2770D(collection, 0);
+            return new C2767D(collection, 0);
         }
 
         /* renamed from: a */
@@ -70,16 +70,16 @@ public interface Collection<E> extends InterfaceC2674e {
             if (collection instanceof LinkedHashSet) {
                 LinkedHashSet linkedHashSet = (LinkedHashSet) collection;
                 Objects.requireNonNull(linkedHashSet);
-                return new C2770D(linkedHashSet, 17);
+                return new C2767D(linkedHashSet, 17);
             } else if (collection instanceof SortedSet) {
                 SortedSet sortedSet = (SortedSet) collection;
-                return new C2850q(sortedSet, sortedSet, 21);
+                return new C2847q(sortedSet, sortedSet, 21);
             } else if (!(collection instanceof Set)) {
                 return collection instanceof List ? List.CC.$default$spliterator((java.util.List) collection) : CC.$default$spliterator(collection);
             } else {
                 Set set = (Set) collection;
                 Objects.requireNonNull(set);
-                return new C2770D(set, 1);
+                return new C2767D(set, 1);
             }
         }
 
@@ -100,7 +100,7 @@ public interface Collection<E> extends InterfaceC2674e {
 
     boolean equals(Object obj);
 
-    @Override // p033j$.lang.InterfaceC2674e
+    @Override // p033j$.lang.InterfaceC2671e
     void forEach(Consumer<? super E> consumer);
 
     int hashCode();
@@ -121,7 +121,7 @@ public interface Collection<E> extends InterfaceC2674e {
 
     int size();
 
-    @Override // p033j$.lang.InterfaceC2674e
+    @Override // p033j$.lang.InterfaceC2671e
     Spliterator<E> spliterator();
 
     Stream<E> stream();

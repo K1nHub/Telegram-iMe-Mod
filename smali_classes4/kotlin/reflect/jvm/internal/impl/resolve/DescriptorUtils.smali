@@ -426,7 +426,7 @@
     goto/16 :goto_4
 
     :pswitch_23
-    const-string v3, "isSingletonOrAnonymousObject"
+    const-string/jumbo v3, "isSingletonOrAnonymousObject"
 
     aput-object v3, v2, v1
 
@@ -493,14 +493,14 @@
     goto/16 :goto_4
 
     :pswitch_2e
-    const-string v3, "isTopLevelOrInnerClass"
+    const-string/jumbo v3, "isTopLevelOrInnerClass"
 
     aput-object v3, v2, v1
 
     goto/16 :goto_4
 
     :pswitch_2f
-    const-string v3, "isStaticNestedClass"
+    const-string/jumbo v3, "isStaticNestedClass"
 
     aput-object v3, v2, v1
 
@@ -583,21 +583,21 @@
     goto/16 :goto_4
 
     :pswitch_3c
-    const-string v3, "isSubtypeOfClass"
+    const-string/jumbo v3, "isSubtypeOfClass"
 
     aput-object v3, v2, v1
 
     goto :goto_4
 
     :pswitch_3d
-    const-string v3, "isSameClass"
+    const-string/jumbo v3, "isSameClass"
 
     aput-object v3, v2, v1
 
     goto :goto_4
 
     :pswitch_3e
-    const-string v3, "isSubclass"
+    const-string/jumbo v3, "isSubclass"
 
     aput-object v3, v2, v1
 
@@ -651,7 +651,7 @@
     goto :goto_4
 
     :pswitch_46
-    const-string v3, "isStaticDeclaration"
+    const-string/jumbo v3, "isStaticDeclaration"
 
     aput-object v3, v2, v1
 
@@ -731,6 +731,8 @@
 
     :goto_5
     throw v1
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

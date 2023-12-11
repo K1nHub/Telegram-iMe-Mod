@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -127,18 +127,18 @@ public class DialogsRequestedEmptyCell extends LinearLayout implements Notificat
 
     public void set(TLRPC$RequestPeerType tLRPC$RequestPeerType) {
         if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeBroadcast) {
-            this.titleView.setText(LocaleController.getString("NoSuchChannels", C3634R.string.NoSuchChannels));
-            this.subtitleView.setText(LocaleController.getString("NoSuchChannelsInfo", C3634R.string.NoSuchChannelsInfo));
+            this.titleView.setText(LocaleController.getString("NoSuchChannels", C3632R.string.NoSuchChannels));
+            this.subtitleView.setText(LocaleController.getString("NoSuchChannelsInfo", C3632R.string.NoSuchChannelsInfo));
             this.buttonView.setVisibility(0);
-            this.buttonView.setText(LocaleController.getString("CreateChannelForThis", C3634R.string.CreateChannelForThis));
+            this.buttonView.setText(LocaleController.getString("CreateChannelForThis", C3632R.string.CreateChannelForThis));
         } else if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeChat) {
-            this.titleView.setText(LocaleController.getString("NoSuchGroups", C3634R.string.NoSuchGroups));
-            this.subtitleView.setText(LocaleController.getString("NoSuchGroupsInfo", C3634R.string.NoSuchGroupsInfo));
+            this.titleView.setText(LocaleController.getString("NoSuchGroups", C3632R.string.NoSuchGroups));
+            this.subtitleView.setText(LocaleController.getString("NoSuchGroupsInfo", C3632R.string.NoSuchGroupsInfo));
             this.buttonView.setVisibility(0);
-            this.buttonView.setText(LocaleController.getString("CreateGroupForThis", C3634R.string.CreateGroupForThis));
+            this.buttonView.setText(LocaleController.getString("CreateGroupForThis", C3632R.string.CreateGroupForThis));
         } else {
-            this.titleView.setText(LocaleController.getString("NoSuchUsers", C3634R.string.NoSuchUsers));
-            this.subtitleView.setText(LocaleController.getString("NoSuchUsersInfo", C3634R.string.NoSuchUsersInfo));
+            this.titleView.setText(LocaleController.getString("NoSuchUsers", C3632R.string.NoSuchUsers));
+            this.subtitleView.setText(LocaleController.getString("NoSuchUsersInfo", C3632R.string.NoSuchUsersInfo));
             this.buttonView.setVisibility(8);
         }
     }

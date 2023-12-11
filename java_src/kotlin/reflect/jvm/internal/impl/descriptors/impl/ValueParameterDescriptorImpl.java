@@ -50,7 +50,7 @@ public class ValueParameterDescriptorImpl extends VariableDescriptorImpl impleme
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.VariableDescriptor
     /* renamed from: getCompileTimeInitializer  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ ConstantValue mo2047getCompileTimeInitializer() {
+    public /* bridge */ /* synthetic */ ConstantValue mo2049getCompileTimeInitializer() {
         return (ConstantValue) getCompileTimeInitializer();
     }
 

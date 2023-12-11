@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -65,7 +65,7 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
             ProgressButton progressButton = new ProgressButton(context);
             this.addButton = progressButton;
             this.currentButton = progressButton;
-            progressButton.setText(LocaleController.getString("Add", C3634R.string.Add));
+            progressButton.setText(LocaleController.getString("Add", C3632R.string.Add));
             progressButton.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
             progressButton.setProgressColor(Theme.getColor(Theme.key_featuredStickers_buttonProgress));
             progressButton.setBackgroundRoundRect(Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed));
@@ -79,7 +79,7 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
             progressButton2.setTextSize(1, 14.0f);
             int i = Theme.key_featuredStickers_removeButtonText;
             progressButton2.setTextColor(Theme.getColor(i));
-            progressButton2.setText(LocaleController.getString("StickersRemove", C3634R.string.StickersRemove));
+            progressButton2.setText(LocaleController.getString("StickersRemove", C3632R.string.StickersRemove));
             progressButton2.setBackground(Theme.getRoundRectSelectorDrawable(Theme.getColor(i)));
             progressButton2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             ViewHelper.setPadding(progressButton2, 8.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED);

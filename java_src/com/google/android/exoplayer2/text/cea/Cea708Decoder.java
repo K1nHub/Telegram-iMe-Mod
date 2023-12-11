@@ -367,7 +367,7 @@ public final class Cea708Decoder extends CeaDecoder {
                     return;
                 }
                 return;
-            case COMMAND_CLW /* 136 */:
+            case 136:
                 while (i2 <= 8) {
                     if (this.captionChannelPacketData.readBit()) {
                         this.cueInfoBuilders[8 - i2].clear();

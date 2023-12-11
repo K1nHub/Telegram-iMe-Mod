@@ -2,40 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public final synthetic f$0:Lorg/telegram/ui/Components/BulletinFactory;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/browser/Browser$Progress;
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$Chat;
+
+.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lorg/telegram/messenger/browser/Browser$Progress;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/BulletinFactory;ZLorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Components/BulletinFactory;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$1:Lorg/telegram/messenger/browser/Browser$Progress;
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$1:Z
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$2:Lorg/telegram/tgnet/TLRPC$Chat;
+
+    iput-object p4, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$3:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Components/BulletinFactory;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$1:Lorg/telegram/messenger/browser/Browser$Progress;
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$1:Z
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_error;
+    iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$2:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$CwQemHToGXE-ffQNljDPkZ3PG-4(Ljava/util/concurrent/atomic/AtomicBoolean;Lorg/telegram/messenger/browser/Browser$Progress;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v3, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda21;->f$3:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$pWHdl9MD1mdykSAnBJyin0APF9M(Lorg/telegram/ui/Components/BulletinFactory;ZLorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method

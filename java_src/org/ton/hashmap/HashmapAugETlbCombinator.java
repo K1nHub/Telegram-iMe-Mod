@@ -12,10 +12,10 @@ import org.ton.tlb.TlbCombinator;
 final class HashmapAugETlbCombinator<X, Y> extends TlbCombinator<HashmapAugE<?, ?>> {
 
     /* renamed from: x */
-    private final TlbCodec<X> f2089x;
+    private final TlbCodec<X> f2090x;
 
     /* renamed from: y */
-    private final TlbCodec<Y> f2090y;
+    private final TlbCodec<Y> f2091y;
 
     public /* synthetic */ HashmapAugETlbCombinator(int i, TlbCodec tlbCodec, TlbCodec tlbCodec2, TlbCodec<HashmapAugE.AhmeEmpty<X, Y>> tlbCodec3, TlbCodec<HashmapAugE.AhmeRoot<X, Y>> tlbCodec4, int i2, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, tlbCodec, tlbCodec2, (i2 & 8) != 0 ? HashmapAugE.AhmeEmpty.Companion.tlbCodec(i, tlbCodec2) : tlbCodec3, (i2 & 16) != 0 ? HashmapAugE.AhmeRoot.Companion.tlbCodec(i, tlbCodec, tlbCodec2) : tlbCodec4);
@@ -28,7 +28,7 @@ final class HashmapAugETlbCombinator<X, Y> extends TlbCombinator<HashmapAugE<?, 
         Intrinsics.checkNotNullParameter(y, "y");
         Intrinsics.checkNotNullParameter(ahmeEmptyCodec, "ahmeEmptyCodec");
         Intrinsics.checkNotNullParameter(ahmeRootCodec, "ahmeRootCodec");
-        this.f2089x = x;
-        this.f2090y = y;
+        this.f2090x = x;
+        this.f2091y = y;
     }
 }

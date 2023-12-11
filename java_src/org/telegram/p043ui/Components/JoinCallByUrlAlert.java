@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
@@ -89,20 +89,20 @@ public class JoinCallByUrlAlert extends BottomSheet {
             }
             int i = groupCall.call.participants_count;
             if (i == 0) {
-                textView2.setText(LocaleController.getString("NoOneJoinedYet", C3634R.string.NoOneJoinedYet));
+                textView2.setText(LocaleController.getString("NoOneJoinedYet", C3632R.string.NoOneJoinedYet));
             } else {
                 textView2.setText(LocaleController.formatPluralString("Participants", i, new Object[0]));
             }
         } else {
             textView.setText(tLRPC$Chat.title);
-            textView2.setText(LocaleController.getString("NoOneJoinedYet", C3634R.string.NoOneJoinedYet));
+            textView2.setText(LocaleController.getString("NoOneJoinedYet", C3632R.string.NoOneJoinedYet));
         }
         BottomSheetCell bottomSheetCell = new BottomSheetCell(context);
         bottomSheetCell.setBackground(null);
         if (ChatObject.isChannelOrGiga(tLRPC$Chat)) {
-            bottomSheetCell.setText(LocaleController.getString("VoipChannelJoinVoiceChatUrl", C3634R.string.VoipChannelJoinVoiceChatUrl));
+            bottomSheetCell.setText(LocaleController.getString("VoipChannelJoinVoiceChatUrl", C3632R.string.VoipChannelJoinVoiceChatUrl));
         } else {
-            bottomSheetCell.setText(LocaleController.getString("VoipGroupJoinVoiceChatUrl", C3634R.string.VoipGroupJoinVoiceChatUrl));
+            bottomSheetCell.setText(LocaleController.getString("VoipGroupJoinVoiceChatUrl", C3632R.string.VoipGroupJoinVoiceChatUrl));
         }
         bottomSheetCell.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinCallByUrlAlert$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener

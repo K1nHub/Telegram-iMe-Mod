@@ -129,7 +129,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite implement
             private final boolean messageSetWireFormat;
             private Map.Entry<ExtensionDescriptor, Object> next;
 
-            /* synthetic */ ExtensionWriter(ExtendableMessage extendableMessage, boolean z, C34211 c34211) {
+            /* synthetic */ ExtensionWriter(ExtendableMessage extendableMessage, boolean z, C34181 c34181) {
                 this(z);
             }
 
@@ -219,7 +219,7 @@ public abstract class GeneratedMessageLite extends AbstractMessageLite implement
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: kotlin.reflect.jvm.internal.impl.protobuf.GeneratedMessageLite$1 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C34211 {
+    public static /* synthetic */ class C34181 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;
 
         static {

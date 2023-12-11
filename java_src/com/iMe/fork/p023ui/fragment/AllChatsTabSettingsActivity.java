@@ -27,11 +27,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -125,7 +125,7 @@ public final class AllChatsTabSettingsActivity extends MvpFragment {
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
         int i3 = Theme.key_windowBackgroundGrayShadow;
@@ -139,7 +139,7 @@ public final class AllChatsTabSettingsActivity extends MvpFragment {
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, Theme.key_windowBackgroundGray), new ThemeDescription(c3706ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, HeaderCell.class, FloatingActionButtonsCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, i3));
+        }, Theme.key_windowBackgroundGray), new ThemeDescription(c3704ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, HeaderCell.class, FloatingActionButtonsCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, i3));
         return arrayListOf;
     }
 
@@ -159,12 +159,12 @@ public final class AllChatsTabSettingsActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setAllowOverlayTitle(true);
-        c3706ActionBar.setTitle(LocaleController.getInternalString(C3634R.string.folder_tabs_all_chats_tab_settings_item_title));
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.AllChatsTabSettingsActivity$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setAllowOverlayTitle(true);
+        c3704ActionBar.setTitle(LocaleController.getInternalString(C3632R.string.folder_tabs_all_chats_tab_settings_item_title));
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.AllChatsTabSettingsActivity$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     AllChatsTabSettingsActivity.this.finishFragment();
@@ -354,33 +354,33 @@ public final class AllChatsTabSettingsActivity extends MvpFragment {
                 if (i != allChatsTabSettingsActivity.enableRow) {
                     if (i == allChatsTabSettingsActivity.iconInsteadTitleRow) {
                         textCheckCell.setType(0);
-                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.all_chats_tab_settings_icon_instead_text_item_title), allChatsTabSettingsActivity.getFiltersController().isIconInsteadAllChatsTabTitleEnabled(), needDivider);
+                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.all_chats_tab_settings_icon_instead_text_item_title), allChatsTabSettingsActivity.getFiltersController().isIconInsteadAllChatsTabTitleEnabled(), needDivider);
                         return;
                     }
                     return;
                 }
                 textCheckCell.setType(1);
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.all_chats_tab_settings_enable_item_title), allChatsTabSettingsActivity.getFiltersController().isAllChatsTabEnabled(), needDivider);
+                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.all_chats_tab_settings_enable_item_title), allChatsTabSettingsActivity.getFiltersController().isAllChatsTabEnabled(), needDivider);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL && (view instanceof TextInfoPrivacyCell)) {
                 AllChatsTabSettingsActivity allChatsTabSettingsActivity2 = AllChatsTabSettingsActivity.this;
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) view;
                 if (i != allChatsTabSettingsActivity2.enableSectionRow) {
                     if (i == allChatsTabSettingsActivity2.fabsSectionRow) {
-                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3634R.string.create_folder_change_fab_section_description));
-                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3634R.C3636drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3632R.string.create_folder_change_fab_section_description));
+                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3632R.C3634drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     }
                 } else if (allChatsTabSettingsActivity2.getFiltersController().isAllChatsTabEnabled()) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3634R.C3636drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3632R.C3634drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                     textInfoPrivacyCell.setText(null);
                     textInfoPrivacyCell.setFixedSize(12);
                 } else {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3634R.C3636drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
-                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3634R.string.all_chats_tab_settings_enable_item_hint));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(allChatsTabSettingsActivity2.getParentActivity(), C3632R.C3634drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                    textInfoPrivacyCell.setText(LocaleController.getInternalString(C3632R.string.all_chats_tab_settings_enable_item_hint));
                 }
             } else if (itemViewType == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
                 HeaderCell headerCell = (HeaderCell) view;
                 if (i == AllChatsTabSettingsActivity.this.iconInsteadTitleHeaderRow) {
-                    headerCell.setText(LocaleController.getInternalString(C3634R.string.all_chats_tab_settings_icon_instead_text_header));
+                    headerCell.setText(LocaleController.getInternalString(C3632R.string.all_chats_tab_settings_icon_instead_text_header));
                 }
             } else if (itemViewType == IdFabric$ViewTypes.FLOATING_ACTION_BUTTON && (view instanceof FloatingActionButtonsCell)) {
                 AllChatsTabSettingsActivity allChatsTabSettingsActivity3 = AllChatsTabSettingsActivity.this;

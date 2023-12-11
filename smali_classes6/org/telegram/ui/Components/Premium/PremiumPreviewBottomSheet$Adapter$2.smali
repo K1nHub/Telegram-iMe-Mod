@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$Adapter;Landroid/content/Context;I)V
     .locals 0
 
-    .line 410
+    .line 422
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;-><init>(Landroid/content/Context;I)V
 
     return-void
@@ -29,12 +29,12 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 413
+    .line 425
     invoke-super {p0}, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;->onAttachedToWindow()V
 
     const/4 v0, 0x0
 
-    .line 414
+    .line 426
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;->setPaused(Z)V
 
     return-void
@@ -43,12 +43,12 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 419
+    .line 431
     invoke-super {p0}, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;->onDetachedFromWindow()V
 
     const/4 v0, 0x1
 
-    .line 420
+    .line 432
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;->setPaused(Z)V
 
     return-void

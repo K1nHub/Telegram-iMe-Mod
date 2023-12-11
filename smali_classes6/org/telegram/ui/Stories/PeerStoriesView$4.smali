@@ -48,7 +48,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/content/Context;Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;Lorg/telegram/ui/Stories/StoryViewer;)V
     .locals 0
 
-    .line 449
+    .line 446
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iput-object p3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
@@ -57,7 +57,7 @@
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/HwFrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 451
+    .line 448
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -68,14 +68,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->progressToAudio:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 452
+    .line 449
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct {p1, p0, p3, p4, p2}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JLandroid/animation/TimeInterpolator;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->progressToFullBlackoutA:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 453
+    .line 450
     new-instance p1, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     const/16 p2, 0x20
@@ -88,28 +88,28 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
-    .line 454
+    .line 451
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha2:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 455
+    .line 452
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 457
+    .line 454
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha2:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 p2, 0x1f4
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/Components/AnimatedFloat;->setDuration(J)V
 
-    .line 458
+    .line 455
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 p2, 0x64
@@ -124,7 +124,7 @@
 
     move-object/from16 v7, p0
 
-    .line 670
+    .line 667
     iget-object v0, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/ImageReceiver;
@@ -155,7 +155,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 671
+    .line 668
     :cond_0
     iget-object v0, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -163,7 +163,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->checkSendView()V
 
-    .line 675
+    .line 672
     :cond_1
     iget-object v0, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -171,7 +171,7 @@
 
     move-result v0
 
-    .line 676
+    .line 673
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
@@ -186,7 +186,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 677
+    .line 674
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->playerSharedScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
@@ -195,19 +195,19 @@
 
     if-eqz v2, :cond_2
 
-    .line 678
+    .line 675
     iget-wide v3, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->videoDuration:J
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->getPlaybackProgress(J)F
 
     move-result v1
 
-    .line 679
+    .line 676
     invoke-static {v1, v8, v9}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v1
 
-    .line 680
+    .line 677
     iget-object v2, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v3, v2, Lorg/telegram/ui/Stories/PeerStoriesView;->playerSharedScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
@@ -222,7 +222,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 681
+    .line 678
     iget-object v2, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$900(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryMediaAreasView;
@@ -236,14 +236,14 @@
     :cond_2
     move v1, v9
 
-    .line 684
+    .line 681
     :cond_3
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Stories/HwFrameLayout;->invalidate()V
 
     goto/16 :goto_1
 
-    .line 685
+    .line 682
     :cond_4
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -295,12 +295,12 @@
 
     if-eqz v1, :cond_7
 
-    .line 686
+    .line 683
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    .line 687
+    .line 684
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$2600(Lorg/telegram/ui/Stories/PeerStoriesView;)J
@@ -313,7 +313,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 688
+    .line 685
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$2100(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
@@ -322,7 +322,7 @@
 
     if-nez v1, :cond_6
 
-    .line 689
+    .line 686
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$2700(Lorg/telegram/ui/Stories/PeerStoriesView;)J
@@ -353,7 +353,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 690
+    .line 687
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$900(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryMediaAreasView;
@@ -362,7 +362,7 @@
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/StoryMediaAreasView;->shine()V
 
-    .line 692
+    .line 689
     :cond_5
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -374,13 +374,13 @@
 
     invoke-static {v1, v5, v6}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$2714(Lorg/telegram/ui/Stories/PeerStoriesView;J)J
 
-    .line 695
+    .line 692
     :cond_6
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1, v3, v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$2602(Lorg/telegram/ui/Stories/PeerStoriesView;J)J
 
-    .line 696
+    .line 693
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$2700(Lorg/telegram/ui/Stories/PeerStoriesView;)J
@@ -395,12 +395,12 @@
 
     move-result v1
 
-    .line 697
+    .line 694
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Stories/HwFrameLayout;->invalidate()V
 
     goto :goto_1
 
-    .line 699
+    .line 696
     :cond_7
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -419,7 +419,7 @@
     :goto_1
     move v14, v1
 
-    .line 703
+    .line 700
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->playerSharedScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
@@ -443,7 +443,7 @@
     :cond_8
     move/from16 v20, v14
 
-    .line 707
+    .line 704
     :goto_2
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$2800(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
 
@@ -484,19 +484,19 @@
 
     if-nez v1, :cond_a
 
-    .line 708
+    .line 705
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1, v10}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$2802(Lorg/telegram/ui/Stories/PeerStoriesView;Z)Z
 
-    .line 709
+    .line 706
     new-instance v1, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, v7}, Lorg/telegram/ui/Stories/PeerStoriesView$4$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/PeerStoriesView$4;)V
 
     invoke-virtual {v7, v1}, Landroid/widget/FrameLayout;->post(Ljava/lang/Runnable;)Z
 
-    .line 723
+    .line 720
     :cond_a
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -504,7 +504,7 @@
 
     if-eqz v1, :cond_c
 
-    .line 724
+    .line 721
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3000(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryPositionView;
@@ -513,7 +513,7 @@
 
     if-nez v1, :cond_b
 
-    .line 725
+    .line 722
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     new-instance v2, Lorg/telegram/ui/Stories/StoryPositionView;
@@ -522,7 +522,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3002(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/ui/Stories/StoryPositionView;)Lorg/telegram/ui/Stories/StoryPositionView;
 
-    .line 727
+    .line 724
     :cond_b
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -574,13 +574,13 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Stories/StoryPositionView;->draw(Landroid/graphics/Canvas;FIILandroid/widget/FrameLayout;Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;)V
 
-    .line 730
+    .line 727
     :cond_c
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     const/16 v0, 0x8
 
-    .line 731
+    .line 728
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -607,7 +607,7 @@
 
     invoke-virtual {v0, v9, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 732
+    .line 729
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
@@ -637,7 +637,7 @@
     :cond_d
     move/from16 v18, v2
 
-    .line 733
+    .line 730
     :goto_3
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -674,7 +674,7 @@
     :cond_e
     move/from16 v19, v2
 
-    .line 734
+    .line 731
     :goto_4
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -703,7 +703,7 @@
 
     move-result v16
 
-    .line 735
+    .line 732
     iget-object v1, v7, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryLinesDrawable;
@@ -746,7 +746,7 @@
 
     invoke-virtual/range {v10 .. v20}, Lorg/telegram/ui/Stories/StoryLinesDrawable;->draw(Landroid/graphics/Canvas;IIFIFFZZF)V
 
-    .line 736
+    .line 733
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -755,14 +755,14 @@
 .method private synthetic lambda$drawLines$0()V
     .locals 3
 
-    .line 710
+    .line 707
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
 
     if-eqz v1, :cond_3
 
-    .line 711
+    .line 708
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$2300(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
 
     move-result v0
@@ -787,7 +787,7 @@
 
     goto :goto_0
 
-    .line 718
+    .line 715
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -797,7 +797,7 @@
 
     goto :goto_1
 
-    .line 712
+    .line 709
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -810,7 +810,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 713
+    .line 710
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->playerSharedScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
@@ -821,7 +821,7 @@
 
     goto :goto_1
 
-    .line 715
+    .line 712
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -843,7 +843,7 @@
 
     move-object/from16 v9, p1
 
-    .line 466
+    .line 463
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->isActive:Z
@@ -852,7 +852,7 @@
 
     if-nez v2, :cond_0
 
-    .line 467
+    .line 464
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->headerView:Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -863,7 +863,7 @@
 
     invoke-virtual {v1, v10, v10}, Lorg/telegram/messenger/ImageReceiver;->setVisible(ZZ)V
 
-    .line 469
+    .line 466
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -885,28 +885,28 @@
 
     if-nez v2, :cond_11
 
-    .line 470
+    .line 467
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->playerSharedScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->renderView:Landroid/view/View;
 
     if-eqz v1, :cond_1
 
-    .line 471
+    .line 468
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Stories/HwFrameLayout;->invalidate()V
 
-    .line 473
+    .line 470
     :cond_1
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 474
+    .line 471
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->pinchToZoomHelper:Lorg/telegram/ui/PinchToZoomHelper;
 
     invoke-virtual {v1, v9}, Lorg/telegram/ui/PinchToZoomHelper;->applyTransform(Landroid/graphics/Canvas;)V
 
-    .line 475
+    .line 472
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->playerSharedScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
@@ -919,7 +919,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 477
+    .line 474
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
@@ -930,7 +930,7 @@
 
     if-nez v1, :cond_2
 
-    .line 478
+    .line 475
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->imageBackgroundDrawable:Landroid/graphics/drawable/Drawable;
@@ -947,14 +947,14 @@
 
     invoke-virtual {v1, v13, v13, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 479
+    .line 476
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->imageBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v9}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 481
+    .line 478
     :cond_2
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -978,7 +978,7 @@
 
     invoke-virtual {v1, v14, v14, v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 482
+    .line 479
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/ImageReceiver;
@@ -987,14 +987,14 @@
 
     invoke-virtual {v1, v9}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 483
+    .line 480
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->isActive:Z
 
     if-eqz v2, :cond_9
 
-    .line 484
+    .line 481
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-boolean v2, v2, Lorg/telegram/ui/Stories/StoryViewer;->USE_SURFACE_VIEW:Z
@@ -1019,7 +1019,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 485
+    .line 482
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -1042,7 +1042,7 @@
 
     div-float/2addr v1, v2
 
-    .line 486
+    .line 483
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v2
@@ -1065,13 +1065,13 @@
 
     div-float/2addr v2, v3
 
-    .line 487
+    .line 484
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 488
+    .line 485
     invoke-virtual {v9, v1, v2}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 489
+    .line 486
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->playerSharedScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
@@ -1084,7 +1084,7 @@
 
     invoke-virtual {v9, v2, v14, v14, v1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 490
+    .line 487
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
@@ -1092,14 +1092,14 @@
     :cond_3
     if-eqz v2, :cond_4
 
-    .line 492
+    .line 489
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$500(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
 
     move-result v1
 
     if-eqz v1, :cond_9
 
-    .line 493
+    .line 490
     :cond_4
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1114,10 +1114,10 @@
     :cond_5
     if-eqz v5, :cond_6
 
-    .line 500
+    .line 497
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Stories/HwFrameLayout;->invalidate()V
 
-    .line 502
+    .line 499
     :cond_6
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1127,7 +1127,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 503
+    .line 500
     invoke-static {v8, v4, v3}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v1
@@ -1136,7 +1136,7 @@
 
     goto :goto_0
 
-    .line 505
+    .line 502
     :cond_7
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/ImageReceiver;
 
@@ -1148,7 +1148,7 @@
 
     if-nez v1, :cond_8
 
-    .line 506
+    .line 503
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->imageBackgroundDrawable:Landroid/graphics/drawable/Drawable;
@@ -1165,14 +1165,14 @@
 
     invoke-virtual {v1, v13, v13, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 507
+    .line 504
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->imageBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v9}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 509
+    .line 506
     :cond_8
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1196,7 +1196,7 @@
 
     invoke-virtual {v1, v14, v14, v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 510
+    .line 507
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/ImageReceiver;
@@ -1205,12 +1205,12 @@
 
     invoke-virtual {v1, v9}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 513
+    .line 510
     :cond_9
     :goto_0
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 514
+    .line 511
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$600(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
@@ -1219,17 +1219,17 @@
 
     if-eqz v1, :cond_a
 
-    .line 515
+    .line 512
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha2:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v1, v14, v10}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 516
+    .line 513
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v1, v14, v10}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 519
+    .line 516
     :cond_a
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1241,7 +1241,7 @@
 
     if-eqz v1, :cond_d
 
-    .line 520
+    .line 517
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->playerSharedScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
@@ -1290,7 +1290,7 @@
 
     goto :goto_1
 
-    .line 522
+    .line 519
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1302,7 +1302,7 @@
 
     move-result v1
 
-    .line 524
+    .line 521
     :goto_1
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha2:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -1330,7 +1330,7 @@
     :goto_2
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
-    .line 525
+    .line 522
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha2:Lorg/telegram/ui/Components/AnimatedFloat;
@@ -1353,7 +1353,7 @@
     :goto_3
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
-    .line 527
+    .line 524
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
@@ -1364,7 +1364,7 @@
 
     if-lez v1, :cond_10
 
-    .line 528
+    .line 525
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -1381,7 +1381,7 @@
 
     invoke-virtual {v1, v14, v14, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 529
+    .line 526
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     iget-object v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawableAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
@@ -1396,7 +1396,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setAlpha(I)V
 
-    .line 530
+    .line 527
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -1407,7 +1407,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setParentWidth(I)V
 
-    .line 531
+    .line 528
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->loadingDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     const v3, 0x3fa66666    # 1.3f
@@ -1416,7 +1416,7 @@
 
     const/16 v3, 0xa
 
-    .line 532
+    .line 529
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -1425,7 +1425,7 @@
 
     invoke-virtual {v2, v9, v1, v3, v0}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/view/View;)V
 
-    .line 534
+    .line 531
     :cond_10
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1433,7 +1433,7 @@
 
     goto :goto_4
 
-    .line 536
+    .line 533
     :cond_11
     invoke-static {v8, v4, v3}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
@@ -1441,7 +1441,7 @@
 
     invoke-virtual {v9, v1}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 538
+    .line 535
     :goto_4
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1457,7 +1457,7 @@
 
     if-lez v1, :cond_13
 
-    .line 539
+    .line 536
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
@@ -1472,7 +1472,7 @@
 
     if-nez v1, :cond_12
 
-    .line 540
+    .line 537
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     goto :goto_5
@@ -1482,7 +1482,7 @@
 
     const/4 v3, 0x0
 
-    .line 542
+    .line 539
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
@@ -1527,7 +1527,7 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 544
+    .line 541
     :goto_5
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1537,10 +1537,10 @@
 
     invoke-virtual {v1, v9}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 545
+    .line 542
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 548
+    .line 545
     :cond_13
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1562,17 +1562,17 @@
 
     if-eqz v1, :cond_14
 
-    .line 549
+    .line 546
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1, v10}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1002(Lorg/telegram/ui/Stories/PeerStoriesView;Z)Z
 
-    .line 550
+    .line 547
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 552
+    .line 549
     :cond_14
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1580,7 +1580,7 @@
 
     move-result v1
 
-    .line 554
+    .line 551
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->access$1200(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
@@ -1591,7 +1591,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 555
+    .line 552
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->access$1200(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
@@ -1600,7 +1600,7 @@
 
     invoke-virtual {v2, v9}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 557
+    .line 554
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-boolean v3, v2, Lorg/telegram/ui/Stories/PeerStoriesView;->isSelf:Z
@@ -1625,7 +1625,7 @@
 
     if-nez v2, :cond_24
 
-    .line 558
+    .line 555
     :cond_15
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1641,12 +1641,12 @@
 
     const/16 v2, 0x48
 
-    .line 559
+    .line 556
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 560
+    .line 557
     iget-object v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
@@ -1683,7 +1683,7 @@
 
     add-int/2addr v2, v3
 
-    .line 562
+    .line 559
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v5
@@ -1694,7 +1694,7 @@
 
     mul-float/2addr v5, v6
 
-    .line 563
+    .line 560
     iget-object v6, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v6}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1400(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
@@ -1707,7 +1707,7 @@
 
     const/16 v15, 0x3c
 
-    .line 564
+    .line 561
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -1744,7 +1744,7 @@
 
     if-eqz v7, :cond_16
 
-    .line 565
+    .line 562
     iget-object v7, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v7}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
@@ -1781,7 +1781,7 @@
 
     sub-float/2addr v5, v4
 
-    .line 566
+    .line 563
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -1794,14 +1794,14 @@
 
     if-lez v4, :cond_18
 
-    .line 567
+    .line 564
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iput-boolean v10, v4, Lorg/telegram/ui/Stories/PeerStoriesView;->inBlackoutMode:Z
 
     goto :goto_6
 
-    .line 569
+    .line 566
     :cond_16
     iget-object v7, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -1809,10 +1809,10 @@
 
     if-eqz v11, :cond_17
 
-    .line 570
+    .line 567
     iput-boolean v13, v7, Lorg/telegram/ui/Stories/PeerStoriesView;->checkBlackoutMode:Z
 
-    .line 571
+    .line 568
     invoke-static {v7}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
 
     move-result-object v7
@@ -1847,7 +1847,7 @@
 
     sub-float/2addr v5, v4
 
-    .line 572
+    .line 569
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -1860,14 +1860,14 @@
 
     if-lez v4, :cond_18
 
-    .line 573
+    .line 570
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iput-boolean v10, v4, Lorg/telegram/ui/Stories/PeerStoriesView;->inBlackoutMode:Z
 
     goto :goto_6
 
-    .line 575
+    .line 572
     :cond_17
     invoke-static {v7}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
 
@@ -1881,7 +1881,7 @@
 
     if-nez v4, :cond_18
 
-    .line 576
+    .line 573
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iput-boolean v13, v4, Lorg/telegram/ui/Stories/PeerStoriesView;->inBlackoutMode:Z
@@ -1895,7 +1895,7 @@
     :cond_19
     move v1, v12
 
-    .line 579
+    .line 576
     :goto_7
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->progressToFullBlackoutA:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -1921,22 +1921,22 @@
 
     if-lez v15, :cond_1b
 
-    .line 581
+    .line 578
     iput-boolean v10, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->splitDrawing:Z
 
-    .line 582
+    .line 579
     iput-boolean v13, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->drawOverlayed:Z
 
-    .line 583
+    .line 580
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 584
+    .line 581
     iput-boolean v13, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->splitDrawing:Z
 
-    .line 585
+    .line 582
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/Stories/PeerStoriesView$4;->drawLines(Landroid/graphics/Canvas;)V
 
-    .line 586
+    .line 583
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-static {v4}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->access$1500(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/Paint;
@@ -1957,7 +1957,7 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 587
+    .line 584
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-static {v4}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->access$1500(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/Paint;
@@ -1971,10 +1971,10 @@
 
     if-gez v4, :cond_1c
 
-    .line 590
+    .line 587
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 591
+    .line 588
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-static {v4}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->access$1500(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/Paint;
@@ -1997,7 +1997,7 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 592
+    .line 589
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-static {v4}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->access$1600(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
@@ -2014,7 +2014,7 @@
 
     invoke-virtual {v4, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 593
+    .line 590
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->access$1600(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
@@ -2027,7 +2027,7 @@
 
     invoke-virtual {v1, v13, v3, v4, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 594
+    .line 591
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->access$1600(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
@@ -2040,7 +2040,7 @@
 
     int-to-float v4, v2
 
-    .line 595
+    .line 592
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -2073,13 +2073,13 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 596
+    .line 593
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_1c
     if-lez v15, :cond_1e
 
-    .line 598
+    .line 595
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
@@ -2094,7 +2094,7 @@
 
     if-lez v1, :cond_1e
 
-    .line 599
+    .line 596
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
@@ -2103,7 +2103,7 @@
 
     invoke-virtual {v1, v13}, Lorg/telegram/ui/Stories/StoryCaptionView;->disableDraw(Z)V
 
-    .line 600
+    .line 597
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
@@ -2122,7 +2122,7 @@
 
     const/4 v3, 0x0
 
-    .line 601
+    .line 598
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -2159,11 +2159,11 @@
 
     goto :goto_9
 
-    .line 603
+    .line 600
     :cond_1d
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 605
+    .line 602
     :goto_9
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -2201,7 +2201,7 @@
 
     invoke-virtual {v9, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 606
+    .line 603
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
@@ -2210,10 +2210,10 @@
 
     invoke-virtual {v1, v9}, Lorg/telegram/ui/Stories/StoryCaptionView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 607
+    .line 604
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 609
+    .line 606
     :cond_1e
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -2235,21 +2235,21 @@
 
     if-lez v15, :cond_25
 
-    .line 611
+    .line 608
     iput-boolean v10, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->splitDrawing:Z
 
-    .line 612
+    .line 609
     iput-boolean v10, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->drawOverlayed:Z
 
-    .line 613
+    .line 610
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 614
+    .line 611
     iput-boolean v13, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->splitDrawing:Z
 
     goto :goto_c
 
-    .line 617
+    .line 614
     :cond_20
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -2271,7 +2271,7 @@
 
     move-result v2
 
-    .line 618
+    .line 615
     iget-object v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-boolean v4, v3, Lorg/telegram/ui/Stories/PeerStoriesView;->isSelf:Z
@@ -2305,7 +2305,7 @@
 
     float-to-int v2, v2
 
-    .line 621
+    .line 618
     :cond_23
     iget-object v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
@@ -2337,7 +2337,7 @@
 
     invoke-virtual {v3, v13, v4, v2, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 623
+    .line 620
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->access$1600(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
@@ -2352,7 +2352,7 @@
 
     invoke-virtual {v2, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 624
+    .line 621
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->val$sharedResources:Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;->access$1600(Lorg/telegram/ui/Stories/PeerStoriesView$SharedResources;)Landroid/graphics/drawable/Drawable;
@@ -2364,7 +2364,7 @@
     :cond_24
     move v11, v14
 
-    .line 627
+    .line 624
     :cond_25
     :goto_c
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -2385,7 +2385,7 @@
 
     if-eqz v1, :cond_26
 
-    .line 628
+    .line 625
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;
@@ -2422,7 +2422,7 @@
 
     invoke-virtual/range {v1 .. v8}, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->draw(Landroid/graphics/Canvas;FFIIII)V
 
-    .line 631
+    .line 628
     :cond_26
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->progressToAudio:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -2442,14 +2442,14 @@
     :goto_d
     invoke-virtual {v1, v12}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
-    .line 633
+    .line 630
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->isActive:Z
 
     if-eqz v2, :cond_2b
 
-    .line 634
+    .line 631
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
 
     move-result-object v1
@@ -2484,7 +2484,7 @@
     :cond_29
     move v1, v13
 
-    .line 635
+    .line 632
     :goto_e
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -2520,14 +2520,14 @@
     :goto_f
     invoke-static {v2, v10}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$2102(Lorg/telegram/ui/Stories/PeerStoriesView;Z)Z
 
-    .line 636
+    .line 633
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
 
     invoke-interface {v2, v1}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->setIsCaption(Z)V
 
-    .line 637
+    .line 634
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
@@ -2543,13 +2543,13 @@
 
     if-gtz v1, :cond_2c
 
-    .line 640
+    .line 637
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 641
+    .line 638
     invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/Stories/PeerStoriesView$4;->drawLines(Landroid/graphics/Canvas;)V
 
-    .line 644
+    .line 641
     :cond_2c
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -2559,7 +2559,7 @@
 
     if-eqz v1, :cond_2d
 
-    .line 645
+    .line 642
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/EmojiAnimationsOverlay;
@@ -2575,7 +2575,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 2
 
-    .line 651
+    .line 648
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$900(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryMediaAreasView;
@@ -2588,13 +2588,13 @@
 
     return v1
 
-    .line 654
+    .line 651
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->splitDrawing:Z
 
     if-eqz v0, :cond_3
 
-    .line 655
+    .line 652
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
@@ -2611,12 +2611,12 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 656
+    .line 653
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->drawOverlayed:Z
 
     if-eqz v0, :cond_1
 
-    .line 657
+    .line 654
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p1
@@ -2626,7 +2626,7 @@
     :cond_1
     return v1
 
-    .line 662
+    .line 659
     :cond_2
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -2634,7 +2634,7 @@
 
     return p1
 
-    .line 665
+    .line 662
     :cond_3
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -2646,10 +2646,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 741
+    .line 738
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 742
+    .line 739
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/EmojiAnimationsOverlay;
@@ -2658,7 +2658,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/EmojiAnimationsOverlay;->onAttachedToWindow()V
 
-    .line 743
+    .line 740
     new-instance v0, Lorg/telegram/ui/Stories/PeerStoriesView$4$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/PeerStoriesView$4$1;-><init>(Lorg/telegram/ui/Stories/PeerStoriesView$4;)V
@@ -2671,10 +2671,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 776
+    .line 773
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 777
+    .line 774
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/EmojiAnimationsOverlay;
@@ -2683,10 +2683,10 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/EmojiAnimationsOverlay;->onDetachedFromWindow()V
 
-    .line 778
+    .line 775
     invoke-static {p0}, Lorg/telegram/ui/Components/Bulletin;->removeDelegate(Landroid/widget/FrameLayout;)V
 
-    .line 779
+    .line 776
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
@@ -2695,7 +2695,7 @@
 
     const/4 v1, 0x0
 
-    .line 780
+    .line 777
     invoke-interface {v0, v1}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->setBulletinIsVisible(Z)V
 
     :cond_0
@@ -2705,7 +2705,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 786
+    .line 783
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3800(Lorg/telegram/ui/Stories/PeerStoriesView;)Landroid/widget/FrameLayout;
@@ -2718,7 +2718,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 787
+    .line 784
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3900(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
@@ -2729,7 +2729,7 @@
 
     const/4 v1, 0x2
 
-    .line 788
+    .line 785
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2738,7 +2738,7 @@
 
     const/16 v1, 0x37
 
-    .line 789
+    .line 786
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2750,7 +2750,7 @@
     :cond_0
     const/16 v1, 0x2a
 
-    .line 791
+    .line 788
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2759,14 +2759,14 @@
 
     const/16 v1, 0xf
 
-    .line 792
+    .line 789
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 794
+    .line 791
     :goto_0
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 

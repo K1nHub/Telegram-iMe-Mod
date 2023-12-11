@@ -17,9 +17,9 @@
     c = "com.iMe.storage.data.manager.ton.TonControllerImpl"
     f = "TonControllerImpl.kt"
     l = {
-        0xa6,
-        0xa9,
-        0xa8
+        0xac,
+        0xaf,
+        0xae
     }
     m = "sendInternal"
 .end annotation

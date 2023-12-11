@@ -18,6 +18,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes.dex */
 public final class DefaultBandwidthMeter implements BandwidthMeter, TransferListener {
     private static final int BYTES_TRANSFERRED_FOR_ESTIMATE = 524288;
@@ -1990,9 +1991,9 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{2, 0, 0, 1, 1, 2};
             case TsExtractor.TS_STREAM_TYPE_SPLICE_INFO /* 134 */:
                 return new int[]{4, 2, 1, 3, 2, 2};
-            case 135:
+            case TsExtractor.TS_STREAM_TYPE_E_AC3 /* 135 */:
                 return new int[]{2, 0, 0, 1, 3, 2};
-            case 136:
+            case MessagesStorage.LAST_DB_VERSION /* 136 */:
             case 217:
                 return new int[]{3, 4, 2, 2, 2, 2};
             case 137:

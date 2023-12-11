@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
@@ -844,9 +844,9 @@ public class FilterShaders {
         int i = 2;
         int i2 = 1;
         if (hDRType == 1) {
-            readRes = RLottieDrawable.readRes(null, C3634R.raw.yuv_hlg2rgb);
+            readRes = RLottieDrawable.readRes(null, C3632R.raw.yuv_hlg2rgb);
         } else {
-            readRes = hDRType == 2 ? RLottieDrawable.readRes(null, C3634R.raw.yuv_pq2rgb) : "";
+            readRes = hDRType == 2 ? RLottieDrawable.readRes(null, C3632R.raw.yuv_pq2rgb) : "";
         }
         boolean z = this.isVideo;
         String str = z ? "#extension GL_OES_EGL_image_external : require" : "";

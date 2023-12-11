@@ -11,7 +11,7 @@ public final class OutputPrimitivesKt {
         int tailPosition$ktor_io = output.getTailPosition$ktor_io();
         if (output.getTailEndExclusive$ktor_io() - tailPosition$ktor_io > 4) {
             output.setTailPosition$ktor_io(tailPosition$ktor_io + 4);
-            output.m1920getTailMemorySK3TCg8$ktor_io().putInt(tailPosition$ktor_io, i);
+            output.m1922getTailMemorySK3TCg8$ktor_io().putInt(tailPosition$ktor_io, i);
             z = true;
         } else {
             z = false;
@@ -28,7 +28,7 @@ public final class OutputPrimitivesKt {
         int tailPosition$ktor_io = output.getTailPosition$ktor_io();
         if (output.getTailEndExclusive$ktor_io() - tailPosition$ktor_io > 8) {
             output.setTailPosition$ktor_io(tailPosition$ktor_io + 8);
-            output.m1920getTailMemorySK3TCg8$ktor_io().putLong(tailPosition$ktor_io, j);
+            output.m1922getTailMemorySK3TCg8$ktor_io().putLong(tailPosition$ktor_io, j);
             z = true;
         } else {
             z = false;
@@ -45,7 +45,7 @@ public final class OutputPrimitivesKt {
         int tailPosition$ktor_io = output.getTailPosition$ktor_io();
         if (output.getTailEndExclusive$ktor_io() - tailPosition$ktor_io > 2) {
             output.setTailPosition$ktor_io(tailPosition$ktor_io + 2);
-            output.m1920getTailMemorySK3TCg8$ktor_io().putShort(tailPosition$ktor_io, s);
+            output.m1922getTailMemorySK3TCg8$ktor_io().putShort(tailPosition$ktor_io, s);
             z = true;
         } else {
             z = false;

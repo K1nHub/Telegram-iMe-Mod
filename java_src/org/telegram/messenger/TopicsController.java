@@ -703,7 +703,7 @@ public class TopicsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$pinTopic$15(BaseFragment baseFragment) {
-        baseFragment.showDialog(new AlertDialog.Builder(baseFragment.getContext()).setTitle(LocaleController.getString("LimitReached", C3634R.string.LimitReached)).setMessage(LocaleController.formatString("LimitReachedPinnedTopics", C3634R.string.LimitReachedPinnedTopics, Integer.valueOf(MessagesController.getInstance(this.currentAccount).topicsPinnedLimit))).setPositiveButton(LocaleController.getString("OK", C3634R.string.OK), null).create());
+        baseFragment.showDialog(new AlertDialog.Builder(baseFragment.getContext()).setTitle(LocaleController.getString("LimitReached", C3632R.string.LimitReached)).setMessage(LocaleController.formatString("LimitReachedPinnedTopics", C3632R.string.LimitReachedPinnedTopics, Integer.valueOf(MessagesController.getInstance(this.currentAccount).topicsPinnedLimit))).setPositiveButton(LocaleController.getString("OK", C3632R.string.OK), null).create());
     }
 
     public void reorderPinnedTopics(long j, ArrayList<Integer> arrayList) {

@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.Layout;
 import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.style.LeadingMarginSpan;
@@ -18,11 +19,16 @@ import android.text.style.MetricAffectingSpan;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.TreeSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC$MessageEntity;
+import org.telegram.tgnet.TLRPC$TL_messageEntityBlockquote;
 /* renamed from: org.telegram.ui.Components.QuoteSpan */
 /* loaded from: classes6.dex */
 public class QuoteSpan implements LeadingMarginSpan {
@@ -60,7 +66,7 @@ public class QuoteSpan implements LeadingMarginSpan {
         this.color = -1;
         this.edit = z;
         this.styleSpan = quoteStyleSpan;
-        this.quoteDrawable = ApplicationLoader.applicationContext.getResources().getDrawable(C3634R.C3636drawable.mini_quote).mutate();
+        this.quoteDrawable = ApplicationLoader.applicationContext.getResources().getDrawable(C3632R.C3634drawable.mini_quote).mutate();
         paint2.setColor(this.color);
         paint.setColor(ColorUtils.setAlphaComponent(this.color, 30));
     }
@@ -96,7 +102,7 @@ public class QuoteSpan implements LeadingMarginSpan {
         @Override // android.text.style.MetricAffectingSpan
         public void updateMeasureState(TextPaint textPaint) {
             textPaint.setTextSize(AndroidUtilities.m104dp(this.span.edit ? 16 : SharedConfig.fontSize - 2));
-            textPaint.setTextScaleX(this.span.edit ? 1.08f : 1.0f);
+            textPaint.setTextScaleX(this.span.edit ? 1.1f : 1.0f);
         }
 
         @Override // android.text.style.LineHeightSpan
@@ -257,7 +263,11 @@ public class QuoteSpan implements LeadingMarginSpan {
             int i2;
             this.span = quoteSpan;
             quoteSpan.start = spanned.getSpanStart(quoteSpan);
-            quoteSpan.end = spanned.getSpanEnd(quoteSpan);
+            int spanEnd = spanned.getSpanEnd(quoteSpan);
+            quoteSpan.end = spanEnd;
+            if (spanEnd - 1 >= 0 && spanEnd < spanned.length() && spanned.charAt(quoteSpan.end) != '\n' && spanned.charAt(quoteSpan.end - 1) == '\n') {
+                quoteSpan.end--;
+            }
             int lineForOffset = layout.getLineForOffset(quoteSpan.start);
             int lineForOffset2 = layout.getLineForOffset(quoteSpan.end);
             quoteSpan.singleLine = lineForOffset2 - lineForOffset < 1;
@@ -355,5 +365,106 @@ public class QuoteSpan implements LeadingMarginSpan {
             }
             canvas.restore();
         }
+    }
+
+    public static void mergeQuotes(SpannableStringBuilder spannableStringBuilder, ArrayList<TLRPC$MessageEntity> arrayList) {
+        if (arrayList == null || !(spannableStringBuilder instanceof Spanned)) {
+            return;
+        }
+        TreeSet treeSet = new TreeSet();
+        HashMap hashMap = new HashMap();
+        for (int i = 0; i < arrayList.size(); i++) {
+            TLRPC$MessageEntity tLRPC$MessageEntity = arrayList.get(i);
+            if (tLRPC$MessageEntity.offset + tLRPC$MessageEntity.length <= spannableStringBuilder.length()) {
+                int i2 = tLRPC$MessageEntity.offset;
+                int i3 = tLRPC$MessageEntity.length + i2;
+                if (tLRPC$MessageEntity instanceof TLRPC$TL_messageEntityBlockquote) {
+                    treeSet.add(Integer.valueOf(i2));
+                    treeSet.add(Integer.valueOf(i3));
+                    hashMap.put(Integer.valueOf(i2), Integer.valueOf(1 | (hashMap.containsKey(Integer.valueOf(i2)) ? ((Integer) hashMap.get(Integer.valueOf(i2))).intValue() : 0)));
+                    hashMap.put(Integer.valueOf(i3), Integer.valueOf((hashMap.containsKey(Integer.valueOf(i3)) ? ((Integer) hashMap.get(Integer.valueOf(i3))).intValue() : 0) | 2));
+                }
+            }
+        }
+        Iterator it = treeSet.iterator();
+        int i4 = 0;
+        int i5 = 0;
+        while (it.hasNext()) {
+            int intValue = ((Integer) it.next()).intValue();
+            int intValue2 = ((Integer) hashMap.get(Integer.valueOf(intValue))).intValue();
+            if (i4 != intValue) {
+                int i6 = intValue - 1;
+                int i7 = (i6 < 0 || i6 >= spannableStringBuilder.length() || spannableStringBuilder.charAt(i6) != '\n') ? intValue : intValue - 1;
+                if (i5 > 0) {
+                    putQuoteToEditable(spannableStringBuilder, i4, i7);
+                }
+                i4 = intValue + 1;
+                if (i4 >= spannableStringBuilder.length() || spannableStringBuilder.charAt(intValue) != '\n') {
+                    i4 = intValue;
+                }
+            }
+            if ((intValue2 & 2) != 0) {
+                i5--;
+            }
+            if ((intValue2 & 1) != 0) {
+                i5++;
+            }
+        }
+        if (i4 >= spannableStringBuilder.length() || i5 <= 0) {
+            return;
+        }
+        putQuoteToEditable(spannableStringBuilder, i4, spannableStringBuilder.length());
+    }
+
+    public static void normalizeQuotes(Spannable spannable) {
+        QuoteStyleSpan[] quoteStyleSpanArr;
+        if (spannable == null) {
+            return;
+        }
+        TreeSet treeSet = new TreeSet();
+        HashMap hashMap = new HashMap();
+        for (QuoteStyleSpan quoteStyleSpan : (QuoteStyleSpan[]) spannable.getSpans(0, spannable.length(), QuoteStyleSpan.class)) {
+            int spanStart = spannable.getSpanStart(quoteStyleSpan);
+            int spanEnd = spannable.getSpanEnd(quoteStyleSpan);
+            treeSet.add(Integer.valueOf(spanStart));
+            hashMap.put(Integer.valueOf(spanStart), Integer.valueOf(1 | (hashMap.containsKey(Integer.valueOf(spanStart)) ? ((Integer) hashMap.get(Integer.valueOf(spanStart))).intValue() : 0)));
+            treeSet.add(Integer.valueOf(spanEnd));
+            hashMap.put(Integer.valueOf(spanEnd), Integer.valueOf((hashMap.containsKey(Integer.valueOf(spanEnd)) ? ((Integer) hashMap.get(Integer.valueOf(spanEnd))).intValue() : 0) | 2));
+            spannable.removeSpan(quoteStyleSpan);
+            spannable.removeSpan(quoteStyleSpan.span);
+        }
+        Iterator it = treeSet.iterator();
+        int i = 0;
+        int i2 = 0;
+        while (it.hasNext()) {
+            int intValue = ((Integer) it.next()).intValue();
+            int intValue2 = ((Integer) hashMap.get(Integer.valueOf(intValue))).intValue();
+            int i3 = intValue2 & 2;
+            if (i3 == 0 || (intValue2 & 1) == 0) {
+                if (i2 <= 0 || (intValue2 & 1) == 0) {
+                    if (i != intValue) {
+                        int i4 = intValue - 1;
+                        int i5 = (i4 < 0 || i4 >= spannable.length() || spannable.charAt(i4) != '\n') ? intValue : intValue - 1;
+                        if (i2 > 0) {
+                            putQuote(spannable, i, i5);
+                        }
+                        i = intValue + 1;
+                        if (i >= spannable.length() || spannable.charAt(intValue) != '\n') {
+                            i = intValue;
+                        }
+                    }
+                    if (i3 != 0) {
+                        i2--;
+                    }
+                    if ((intValue2 & 1) != 0) {
+                        i2++;
+                    }
+                }
+            }
+        }
+        if (i >= spannable.length() || i2 <= 0) {
+            return;
+        }
+        putQuote(spannable, i, spannable.length());
     }
 }

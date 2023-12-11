@@ -57,7 +57,7 @@
 
     move-object v4, p4
 
-    .line 64
+    .line 63
     invoke-virtual/range {v0 .. v5}, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;->saveWalletToPrefs(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
@@ -93,10 +93,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 39
+    .line 40
     iget-object p1, p0, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 40
+    .line 41
     invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletPublicAddresses()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     move-result-object v0
@@ -105,7 +105,7 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;->remove(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
-    .line 41
+    .line 42
     invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletSeeds()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     move-result-object v0
@@ -114,7 +114,7 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;->remove(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
-    .line 42
+    .line 43
     invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletCreationDates()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     move-result-object v0
@@ -123,7 +123,7 @@
 
     invoke-virtual {v0, v1}, Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;->remove(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
-    .line 43
+    .line 44
     invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletSeeds()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     move-result-object v0
@@ -138,7 +138,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 44
+    .line 45
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -147,28 +147,14 @@
 
     const-string v0, ""
 
-    .line 45
+    .line 46
     invoke-interface {p1, v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setWalletPassword(Ljava/lang/String;)V
 
-    .line 46
+    .line 47
     invoke-interface {p1, v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setLastLoggedInGuid(Ljava/lang/String;)V
 
     :cond_0
     return-void
-.end method
-
-.method public abstract generateAddressByMnemonic(Ljava/lang/String;)Lio/reactivex/Observable;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
 .end method
 
 .method public abstract importWallet(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
@@ -188,6 +174,20 @@
 .end method
 
 .method public abstract isValidAddress(Ljava/lang/String;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/lang/Boolean;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract isValidMnemonic(Ljava/lang/String;)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -224,7 +224,7 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 60
+    .line 59
     invoke-virtual {p0, p2}, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;->deleteWallet(Ljava/lang/String;)V
 
     const/4 v6, 0x1
@@ -239,7 +239,7 @@
 
     move-object v5, p4
 
-    .line 61
+    .line 60
     invoke-virtual/range {v1 .. v6}, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;->saveWalletToPrefs(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
     return-void
@@ -264,10 +264,10 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 71
+    .line 70
     iget-object v0, p0, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 72
+    .line 71
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getLastLoggedInGuid()Ljava/lang/String;
 
     move-result-object v1
@@ -294,7 +294,7 @@
 
     if-eqz p5, :cond_2
 
-    .line 73
+    .line 72
     :cond_1
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setLastLoggedInGuid(Ljava/lang/String;)V
 
@@ -302,14 +302,14 @@
 
     aput-object p1, p5, v3
 
-    .line 74
+    .line 73
     invoke-static {p5}, Lkotlin/collections/CollectionsKt;->mutableListOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
 
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setWalletsGuid(Ljava/util/List;)V
 
-    .line 76
+    .line 75
     :cond_2
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletCreationDates()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
@@ -327,7 +327,7 @@
 
     invoke-virtual {p1, p5, v1}, Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;->put(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/lang/Object;)V
 
-    .line 77
+    .line 76
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletPublicAddresses()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     move-result-object p1
@@ -336,7 +336,7 @@
 
     invoke-virtual {p1, p5, p2}, Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;->put(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/lang/Object;)V
 
-    .line 78
+    .line 77
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletSeeds()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
 
     move-result-object p1

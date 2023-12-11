@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda67;->f$0:Lorg/telegram/ui/ProfileActivity$SearchAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->$r8$lambda$KTlYehMLaeJFslHYvx9JFD6TiqQ(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->$r8$lambda$JwQS3iLWy_wNN4_8FKDiQWndmXo(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     return-void
 .end method

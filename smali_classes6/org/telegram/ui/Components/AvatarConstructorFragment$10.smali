@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;ZZ)V
     .locals 0
 
-    .line 588
+    .line 589
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$10;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$10;->val$expanded:Z
@@ -43,14 +43,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 591
+    .line 592
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$10;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     const/4 v0, 0x0
 
     iput-object v0, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
-    .line 592
+    .line 593
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$10;->val$expanded:Z
 
     if-eqz v0, :cond_0
@@ -67,12 +67,12 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$200(Lorg/telegram/ui/Components/AvatarConstructorFragment;FZ)V
 
-    .line 593
+    .line 594
     iget-boolean p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$10;->val$fromClick:Z
 
     if-eqz p1, :cond_1
 
-    .line 594
+    .line 595
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$10;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
@@ -81,7 +81,7 @@
 
     iput v0, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->overrideExpandProgress:F
 
-    .line 595
+    .line 596
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$10;->val$expanded:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->setExpanded(Z)V

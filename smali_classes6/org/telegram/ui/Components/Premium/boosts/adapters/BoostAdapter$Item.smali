@@ -54,7 +54,7 @@
 .method private constructor <init>(IZ)V
     .locals 0
 
-    .line 324
+    .line 325
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     return-void
@@ -63,7 +63,7 @@
 .method public static asAddChannel()Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 3
 
-    .line 388
+    .line 389
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/16 v1, 0x8
@@ -78,7 +78,7 @@
 .method public static asBoost(IILjava/lang/Object;I)Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 2
 
-    .line 367
+    .line 368
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     if-ne p3, p0, :cond_0
@@ -95,13 +95,13 @@
 
     invoke-direct {v0, v1, p3}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 368
+    .line 369
     iput p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->subType:I
 
-    .line 369
+    .line 370
     iput p1, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue:I
 
-    .line 370
+    .line 371
     iput-object p2, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->user:Ljava/lang/Object;
 
     return-object v0
@@ -110,7 +110,7 @@
 .method public static asChat(Lorg/telegram/tgnet/TLRPC$Chat;ZI)Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 3
 
-    .line 343
+    .line 344
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/16 v1, 0x9
@@ -119,18 +119,18 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 344
+    .line 345
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     const/4 p0, 0x0
 
-    .line 345
+    .line 346
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 346
+    .line 347
     iput-boolean p1, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->boolValue:Z
 
-    .line 347
+    .line 348
     iput p2, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue:I
 
     return-object v0
@@ -139,7 +139,7 @@
 .method public static asDateEnd(J)Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 3
 
-    .line 375
+    .line 376
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/16 v1, 0xa
@@ -148,7 +148,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 376
+    .line 377
     iput-wide p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->longValue:J
 
     return-object v0
@@ -157,7 +157,7 @@
 .method public static asDivider()Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 3
 
-    .line 332
+    .line 333
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/4 v1, 0x4
@@ -172,7 +172,7 @@
 .method public static asDivider(Ljava/lang/CharSequence;Z)Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 3
 
-    .line 336
+    .line 337
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/4 v1, 0x7
@@ -181,10 +181,10 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 337
+    .line 338
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->text:Ljava/lang/CharSequence;
 
-    .line 338
+    .line 339
     iput-boolean p1, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->boolValue:Z
 
     return-object v0
@@ -193,7 +193,7 @@
 .method public static asDuration(Ljava/lang/Object;IIJILjava/lang/String;Z)Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 2
 
-    .line 405
+    .line 406
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     if-ne p1, p5, :cond_0
@@ -210,22 +210,22 @@
 
     invoke-direct {v0, v1, p5}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 406
+    .line 407
     iput p1, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue:I
 
-    .line 407
+    .line 408
     iput p2, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue2:I
 
-    .line 408
+    .line 409
     iput-wide p3, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->longValue:J
 
-    .line 409
+    .line 410
     iput-boolean p7, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->boolValue:Z
 
-    .line 410
+    .line 411
     iput-object p6, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->text:Ljava/lang/CharSequence;
 
-    .line 411
+    .line 412
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->object:Ljava/lang/Object;
 
     return-object v0
@@ -234,7 +234,7 @@
 .method public static asHeader()Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 2
 
-    .line 328
+    .line 329
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/4 v1, 0x0
@@ -256,7 +256,7 @@
         }
     .end annotation
 
-    .line 416
+    .line 417
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     if-ne p1, p0, :cond_0
@@ -273,13 +273,13 @@
 
     invoke-direct {v0, v1, p1}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 417
+    .line 418
     iput p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->subType:I
 
-    .line 418
+    .line 419
     iput-boolean p2, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->boolValue:Z
 
-    .line 419
+    .line 420
     iput-object p3, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->user:Ljava/lang/Object;
 
     return-object v0
@@ -288,7 +288,7 @@
 .method public static asPeer(Lorg/telegram/tgnet/TLRPC$InputPeer;ZI)Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 3
 
-    .line 352
+    .line 353
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/16 v1, 0x9
@@ -297,18 +297,18 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 353
+    .line 354
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     const/4 p0, 0x0
 
-    .line 354
+    .line 355
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 355
+    .line 356
     iput-boolean p1, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->boolValue:Z
 
-    .line 356
+    .line 357
     iput p2, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue:I
 
     return-object v0
@@ -317,7 +317,7 @@
 .method public static asSingleBoost(Ljava/lang/Object;)Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 3
 
-    .line 361
+    .line 362
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/16 v1, 0xe
@@ -326,7 +326,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 362
+    .line 363
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->user:Ljava/lang/Object;
 
     return-object v0
@@ -344,7 +344,7 @@
         }
     .end annotation
 
-    .line 381
+    .line 382
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/4 v1, 0x5
@@ -353,10 +353,10 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 382
+    .line 383
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->values:Ljava/util/List;
 
-    .line 383
+    .line 384
     iput p1, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue:I
 
     return-object v0
@@ -365,7 +365,7 @@
 .method public static asSubTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 3
 
-    .line 392
+    .line 393
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/4 v1, 0x6
@@ -374,7 +374,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 393
+    .line 394
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->text:Ljava/lang/CharSequence;
 
     return-object v0
@@ -383,7 +383,7 @@
 .method public static asSubTitleWithCounter(Ljava/lang/CharSequence;I)Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
     .locals 3
 
-    .line 398
+    .line 399
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     const/16 v1, 0xd
@@ -392,10 +392,10 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;-><init>(IZ)V
 
-    .line 399
+    .line 400
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->text:Ljava/lang/CharSequence;
 
-    .line 400
+    .line 401
     iput p1, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue:I
 
     return-object v0
@@ -417,7 +417,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 426
+    .line 427
     const-class v2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -428,11 +428,11 @@
 
     goto :goto_0
 
-    .line 427
+    .line 428
     :cond_1
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;
 
-    .line 428
+    .line 429
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -441,7 +441,7 @@
 
     return v1
 
-    .line 431
+    .line 432
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -523,7 +523,7 @@
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->text:Ljava/lang/CharSequence;
 
-    .line 438
+    .line 439
     invoke-static {v2, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result p1

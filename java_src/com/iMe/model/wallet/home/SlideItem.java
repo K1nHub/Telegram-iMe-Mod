@@ -28,7 +28,7 @@ public final class SlideItem {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof SlideItem) && this.slide == ((SlideItem) obj).slide;
+        return (obj instanceof SlideItem) && Intrinsics.areEqual(this.slide, ((SlideItem) obj).slide);
     }
 
     public int hashCode() {

@@ -30,7 +30,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -380,7 +380,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         addView(flickerLoadingView);
         addView(this.recyclerListView);
         this.recyclerListView.setSectionsType(2);
-        this.recyclerListView.setOnScrollListener(new C61086());
+        this.recyclerListView.setOnScrollListener(new C61046());
         ChatActionCell chatActionCell = new ChatActionCell(parentActivity);
         this.floatingDateView = chatActionCell;
         chatActionCell.setCustomDate((int) (System.currentTimeMillis() / 1000), false, false);
@@ -419,8 +419,8 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.FilteredSearchView$6 */
     /* loaded from: classes5.dex */
-    public class C61086 extends RecyclerView.OnScrollListener {
-        C61086() {
+    public class C61046 extends RecyclerView.OnScrollListener {
+        C61046() {
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
@@ -446,7 +446,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilteredSearchView$6$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            FilteredSearchView.C61086.this.lambda$onScrolled$0();
+                            FilteredSearchView.C61046.this.lambda$onScrolled$0();
                         }
                     });
                 }
@@ -494,13 +494,13 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         if (spannableStringBuilderArr[i] == null) {
             spannableStringBuilderArr[i] = new SpannableStringBuilder(">");
             if (i == 0) {
-                i2 = C3634R.C3636drawable.attach_arrow_right;
+                i2 = C3632R.C3634drawable.attach_arrow_right;
             } else if (i == 1) {
-                i2 = C3634R.C3636drawable.msg_mini_arrow_mediathin;
+                i2 = C3632R.C3634drawable.msg_mini_arrow_mediathin;
             } else if (i != 2) {
                 return "";
             } else {
-                i2 = C3634R.C3636drawable.msg_mini_arrow_mediabold;
+                i2 = C3632R.C3634drawable.msg_mini_arrow_mediabold;
             }
             ColoredImageSpan coloredImageSpan = new ColoredImageSpan(ContextCompat.getDrawable(ApplicationLoader.applicationContext, i2).mutate(), i == 0 ? 2 : 1);
             if (i == 1 || i == 2) {
@@ -739,9 +739,9 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         }
         this.isLoading = false;
         if (tLRPC$TL_error != null) {
-            this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3634R.string.SearchEmptyViewTitle2));
+            this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3632R.string.SearchEmptyViewTitle2));
             this.emptyView.subtitle.setVisibility(0);
-            this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3634R.string.SearchEmptyViewFilteredSubtitle2));
+            this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3632R.string.SearchEmptyViewFilteredSubtitle2));
             this.emptyView.showProgress(false, true);
             return;
         }
@@ -782,28 +782,28 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         if (this.messages.isEmpty()) {
             if (mediaFilterData != null) {
                 if (TextUtils.isEmpty(this.currentDataQuery) && j == 0 && j2 == 0) {
-                    this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle", C3634R.string.SearchEmptyViewTitle));
+                    this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle", C3632R.string.SearchEmptyViewTitle));
                     int i4 = mediaFilterData.filterType;
                     if (i4 == 1) {
-                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleFiles", C3634R.string.SearchEmptyViewFilteredSubtitleFiles);
+                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleFiles", C3632R.string.SearchEmptyViewFilteredSubtitleFiles);
                     } else if (i4 == 0) {
-                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleMedia", C3634R.string.SearchEmptyViewFilteredSubtitleMedia);
+                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleMedia", C3632R.string.SearchEmptyViewFilteredSubtitleMedia);
                     } else if (i4 == 2) {
-                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleLinks", C3634R.string.SearchEmptyViewFilteredSubtitleLinks);
+                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleLinks", C3632R.string.SearchEmptyViewFilteredSubtitleLinks);
                     } else if (i4 == 3) {
-                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleMusic", C3634R.string.SearchEmptyViewFilteredSubtitleMusic);
+                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleMusic", C3632R.string.SearchEmptyViewFilteredSubtitleMusic);
                     } else {
-                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleVoice", C3634R.string.SearchEmptyViewFilteredSubtitleVoice);
+                        string = LocaleController.getString("SearchEmptyViewFilteredSubtitleVoice", C3632R.string.SearchEmptyViewFilteredSubtitleVoice);
                     }
                     this.emptyView.subtitle.setVisibility(0);
                     this.emptyView.subtitle.setText(string);
                 } else {
-                    this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3634R.string.SearchEmptyViewTitle2));
+                    this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3632R.string.SearchEmptyViewTitle2));
                     this.emptyView.subtitle.setVisibility(0);
-                    this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3634R.string.SearchEmptyViewFilteredSubtitle2));
+                    this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3632R.string.SearchEmptyViewFilteredSubtitle2));
                 }
             } else {
-                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3634R.string.SearchEmptyViewTitle2));
+                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3632R.string.SearchEmptyViewTitle2));
                 this.emptyView.subtitle.setVisibility(8);
             }
         }
@@ -837,7 +837,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
             if (arrayList2 != null) {
                 this.localTipChats.addAll(arrayList2);
             }
-            if (str != null && str.length() >= 3 && (LocaleController.getString("SavedMessages", C3634R.string.SavedMessages).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
+            if (str != null && str.length() >= 3 && (LocaleController.getString("SavedMessages", C3632R.string.SavedMessages).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
                 int i6 = 0;
                 while (true) {
                     if (i6 >= this.localTipChats.size()) {
@@ -857,7 +857,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
             this.localTipDates.clear();
             this.localTipDates.addAll(arrayList3);
             this.localTipArchive = false;
-            if (str != null && str.length() >= 3 && (LocaleController.getString("ArchiveSearchFilter", C3634R.string.ArchiveSearchFilter).toLowerCase().startsWith(str) || "archive".startsWith(str))) {
+            if (str != null && str.length() >= 3 && (LocaleController.getString("ArchiveSearchFilter", C3632R.string.ArchiveSearchFilter).toLowerCase().startsWith(str) || "archive".startsWith(str))) {
                 this.localTipArchive = true;
             }
             Delegate delegate = this.delegate;
@@ -915,7 +915,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                                 public void onAnimationEnd(Animator animator) {
                                     view.setAlpha(1.0f);
                                     layoutManager.stopIgnoringView(view);
-                                    ViewTreeObserver$OnPreDrawListenerC61097 viewTreeObserver$OnPreDrawListenerC61097 = ViewTreeObserver$OnPreDrawListenerC61097.this;
+                                    ViewTreeObserver$OnPreDrawListenerC61057 viewTreeObserver$OnPreDrawListenerC61057 = ViewTreeObserver$OnPreDrawListenerC61057.this;
                                     FilteredSearchView.this.recyclerListView.removeView(view);
                                 }
                             });
@@ -1232,7 +1232,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
     /* loaded from: classes5.dex */
     public class SharedLinksAdapter extends RecyclerListView.SectionsAdapter {
         private Context mContext;
-        private final SharedLinkCell.SharedLinkCellDelegate sharedLinkCellDelegate = new C61191();
+        private final SharedLinkCell.SharedLinkCellDelegate sharedLinkCellDelegate = new C61151();
 
         @Override // org.telegram.p043ui.Components.RecyclerListView.SectionsAdapter
         public Object getItem(int i, int i2) {
@@ -1252,8 +1252,8 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.FilteredSearchView$SharedLinksAdapter$1 */
         /* loaded from: classes5.dex */
-        public class C61191 implements SharedLinkCell.SharedLinkCellDelegate {
-            C61191() {
+        public class C61151 implements SharedLinkCell.SharedLinkCellDelegate {
+            C61151() {
             }
 
             @Override // org.telegram.p043ui.Cells.SharedLinkCell.SharedLinkCellDelegate
@@ -1274,10 +1274,10 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                 }
                 BottomSheet.Builder builder = new BottomSheet.Builder(FilteredSearchView.this.parentActivity);
                 builder.setTitle(str);
-                builder.setItems(new CharSequence[]{LocaleController.getString("Open", C3634R.string.Open), LocaleController.getString("Copy", C3634R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilteredSearchView$SharedLinksAdapter$1$$ExternalSyntheticLambda0
+                builder.setItems(new CharSequence[]{LocaleController.getString("Open", C3632R.string.Open), LocaleController.getString("Copy", C3632R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilteredSearchView$SharedLinksAdapter$1$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        FilteredSearchView.SharedLinksAdapter.C61191.this.lambda$onLinkPress$0(str, dialogInterface, i);
+                        FilteredSearchView.SharedLinksAdapter.C61151.this.lambda$onLinkPress$0(str, dialogInterface, i);
                     }
                 });
                 FilteredSearchView.this.parentFragment.showDialog(builder.create());
@@ -1728,7 +1728,7 @@ public class FilteredSearchView extends FrameLayout implements NotificationCente
                 dialogCell = flickerLoadingView;
             } else {
                 GraySectionCell graySectionCell = new GraySectionCell(viewGroup.getContext());
-                graySectionCell.setText(LocaleController.getString("SearchMessages", C3634R.string.SearchMessages));
+                graySectionCell.setText(LocaleController.getString("SearchMessages", C3632R.string.SearchMessages));
                 dialogCell = graySectionCell;
             }
             dialogCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 4480
+    .line 4482
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$6;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/StickerCategoriesListView;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -37,7 +37,7 @@
 
     const/16 p1, 0x4004
 
-    .line 4489
+    .line 4491
     invoke-static {p1}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result p1
@@ -74,10 +74,10 @@
 .method public selectCategory(I)V
     .locals 0
 
-    .line 4483
+    .line 4485
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/StickerCategoriesListView;->selectCategory(I)V
 
-    .line 4484
+    .line 4486
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$6;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
     invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$8700(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)V

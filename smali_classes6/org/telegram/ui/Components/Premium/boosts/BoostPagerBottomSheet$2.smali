@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;)V
     .locals 0
 
-    .line 146
+    .line 162
     iput-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$2;->val$leftSheet:Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$2;->val$rightSheet:Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;
@@ -47,7 +47,7 @@
 
     if-nez p1, :cond_0
 
-    .line 155
+    .line 171
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$2;->val$leftSheet:Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainerView()Landroid/view/ViewGroup;
@@ -56,7 +56,7 @@
 
     return-object p1
 
-    .line 157
+    .line 173
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$2;->val$rightSheet:Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;
 

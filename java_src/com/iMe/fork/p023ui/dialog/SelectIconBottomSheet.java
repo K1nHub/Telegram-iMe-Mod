@@ -28,7 +28,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -164,7 +164,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
             }
         });
         this.deleteButton$delegate = lazy4;
-        setTitle(LocaleController.getInternalString(C3634R.string.select_icon), true);
+        setTitle(LocaleController.getInternalString(C3632R.string.select_icon), true);
         setCustomView(getRootView());
         setupListeners();
     }
@@ -234,7 +234,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
                 SelectIconBottomSheet.initDeleteButton$lambda$3$lambda$2(SelectIconBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getString("Delete", C3634R.string.Delete));
+        bottomSheetCell.setText(LocaleController.getString("Delete", C3632R.string.Delete));
         return bottomSheetCell;
     }
 

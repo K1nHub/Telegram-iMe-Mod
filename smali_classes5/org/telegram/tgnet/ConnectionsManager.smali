@@ -1834,7 +1834,7 @@
     :catch_1
     move-exception v0
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
     :cond_1
     if-eqz v3, :cond_3
@@ -2002,13 +2002,26 @@
 
     invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    const-string v3, " messageId = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-wide/from16 v5, p20
+
+    invoke-virtual {v2, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
+    goto :goto_1
+
     :cond_7
+    move-wide/from16 v5, p20
+
+    :goto_1
     move-object v2, p1
 
     move-object v3, v11
@@ -2047,13 +2060,13 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    goto :goto_2
+    goto :goto_3
 
     .line 406
-    :goto_1
+    :goto_2
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :goto_2
+    :goto_3
     return-void
 .end method
 

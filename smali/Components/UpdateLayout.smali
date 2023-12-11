@@ -815,7 +815,7 @@
     .line 268
     iget-object p1, p0, LComponents/UpdateLayout;->updateTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const v6, 0x7f1106c4
+    const v6, 0x7f110732
 
     const-string v9, "Checking"
 

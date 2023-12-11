@@ -106,7 +106,7 @@ public final class WalletV3R2Contract implements WalletContract<Cell> {
         Object coroutine_suspended;
         Instant now = Clock$System.INSTANCE.now();
         Duration.Companion companion = Duration.Companion;
-        Object transfer = transfer(liteApi, privateKeyEd25519, now.m2126plusLRDsOJo(DurationKt.toDuration(60, DurationUnit.SECONDS)), num, (WalletTransfer[]) Arrays.copyOf(walletTransferArr, walletTransferArr.length), continuation);
+        Object transfer = transfer(liteApi, privateKeyEd25519, now.m2128plusLRDsOJo(DurationKt.toDuration(60, DurationUnit.SECONDS)), num, (WalletTransfer[]) Arrays.copyOf(walletTransferArr, walletTransferArr.length), continuation);
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         return transfer == coroutine_suspended ? transfer : Unit.INSTANCE;
     }

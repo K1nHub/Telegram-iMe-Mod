@@ -44,7 +44,7 @@ public final class ShardDescrNew implements ShardDescr {
     private final boolean nxCcUpdated;
 
     /* renamed from: r1 */
-    private final CellRef<ShardDescrAux> f2049r1;
+    private final CellRef<ShardDescrAux> f2050r1;
     private final int regMcSeqno;
     private final BitString rootHash;
     private final int seqNo;
@@ -53,7 +53,7 @@ public final class ShardDescrNew implements ShardDescr {
     private final boolean wantMerge;
     private final boolean wantSplit;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new SealedClassSerializer("org.ton.block.FutureSplitMerge", Reflection.getOrCreateKotlinClass(FutureSplitMerge.class), new KClass[]{Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmMerge.class), Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmNone.class), Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmSplit.class)}, new KSerializer[]{FutureSplitMerge$FsmMerge$$serializer.INSTANCE, new ObjectSerializer("fsm_none", FutureSplitMerge.FsmNone.INSTANCE, new Annotation[]{new C7595x18a57a5b("@type")}), FutureSplitMerge$FsmSplit$$serializer.INSTANCE}, new Annotation[]{new C7595x18a57a5b("@type")}), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0])};
+    private static final KSerializer<Object>[] $childSerializers = {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new SealedClassSerializer("org.ton.block.FutureSplitMerge", Reflection.getOrCreateKotlinClass(FutureSplitMerge.class), new KClass[]{Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmMerge.class), Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmNone.class), Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmSplit.class)}, new KSerializer[]{FutureSplitMerge$FsmMerge$$serializer.INSTANCE, new ObjectSerializer("fsm_none", FutureSplitMerge.FsmNone.INSTANCE, new Annotation[]{new C7593x18a57a5b("@type")}), FutureSplitMerge$FsmSplit$$serializer.INSTANCE}, new Annotation[]{new C7593x18a57a5b("@type")}), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0])};
 
     public /* synthetic */ ShardDescrNew(int i, int i2, long j, long j2, BitString bitString, BitString bitString2, boolean z, boolean z2, boolean z3, boolean z4, boolean z5, int i3, int i4, long j3, int i5, int i6, FutureSplitMerge futureSplitMerge, CellRef cellRef, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, i2, j, j2, bitString, bitString2, z, z2, z3, z4, z5, i3, i4, j3, i5, i6, futureSplitMerge, cellRef);
@@ -69,20 +69,20 @@ public final class ShardDescrNew implements ShardDescr {
         }
         if (obj instanceof ShardDescrNew) {
             ShardDescrNew shardDescrNew = (ShardDescrNew) obj;
-            return this.seqNo == shardDescrNew.seqNo && this.regMcSeqno == shardDescrNew.regMcSeqno && this.startLt == shardDescrNew.startLt && this.endLt == shardDescrNew.endLt && Intrinsics.areEqual(this.rootHash, shardDescrNew.rootHash) && Intrinsics.areEqual(this.fileHash, shardDescrNew.fileHash) && this.beforeSplit == shardDescrNew.beforeSplit && this.beforeMerge == shardDescrNew.beforeMerge && this.wantSplit == shardDescrNew.wantSplit && this.wantMerge == shardDescrNew.wantMerge && this.nxCcUpdated == shardDescrNew.nxCcUpdated && this.flags == shardDescrNew.flags && this.nextCatchainSeqno == shardDescrNew.nextCatchainSeqno && this.nextValidatorShard == shardDescrNew.nextValidatorShard && this.minRefMcSeqno == shardDescrNew.minRefMcSeqno && this.genUtime == shardDescrNew.genUtime && Intrinsics.areEqual(this.splitMergeAt, shardDescrNew.splitMergeAt) && Intrinsics.areEqual(this.f2049r1, shardDescrNew.f2049r1);
+            return this.seqNo == shardDescrNew.seqNo && this.regMcSeqno == shardDescrNew.regMcSeqno && this.startLt == shardDescrNew.startLt && this.endLt == shardDescrNew.endLt && Intrinsics.areEqual(this.rootHash, shardDescrNew.rootHash) && Intrinsics.areEqual(this.fileHash, shardDescrNew.fileHash) && this.beforeSplit == shardDescrNew.beforeSplit && this.beforeMerge == shardDescrNew.beforeMerge && this.wantSplit == shardDescrNew.wantSplit && this.wantMerge == shardDescrNew.wantMerge && this.nxCcUpdated == shardDescrNew.nxCcUpdated && this.flags == shardDescrNew.flags && this.nextCatchainSeqno == shardDescrNew.nextCatchainSeqno && this.nextValidatorShard == shardDescrNew.nextValidatorShard && this.minRefMcSeqno == shardDescrNew.minRefMcSeqno && this.genUtime == shardDescrNew.genUtime && Intrinsics.areEqual(this.splitMergeAt, shardDescrNew.splitMergeAt) && Intrinsics.areEqual(this.f2050r1, shardDescrNew.f2050r1);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1974hashCodeimpl = ((((((((((UInt.m1974hashCodeimpl(this.seqNo) * 31) + UInt.m1974hashCodeimpl(this.regMcSeqno)) * 31) + ULong.m1996hashCodeimpl(this.startLt)) * 31) + ULong.m1996hashCodeimpl(this.endLt)) * 31) + this.rootHash.hashCode()) * 31) + this.fileHash.hashCode()) * 31;
+        int m1976hashCodeimpl = ((((((((((UInt.m1976hashCodeimpl(this.seqNo) * 31) + UInt.m1976hashCodeimpl(this.regMcSeqno)) * 31) + ULong.m1998hashCodeimpl(this.startLt)) * 31) + ULong.m1998hashCodeimpl(this.endLt)) * 31) + this.rootHash.hashCode()) * 31) + this.fileHash.hashCode()) * 31;
         boolean z = this.beforeSplit;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        int i2 = (m1974hashCodeimpl + i) * 31;
+        int i2 = (m1976hashCodeimpl + i) * 31;
         boolean z2 = this.beforeMerge;
         int i3 = z2;
         if (z2 != 0) {
@@ -102,17 +102,17 @@ public final class ShardDescrNew implements ShardDescr {
         }
         int i8 = (i6 + i7) * 31;
         boolean z5 = this.nxCcUpdated;
-        return ((((((((((((((i8 + (z5 ? 1 : z5 ? 1 : 0)) * 31) + this.flags) * 31) + UInt.m1974hashCodeimpl(this.nextCatchainSeqno)) * 31) + ULong.m1996hashCodeimpl(this.nextValidatorShard)) * 31) + UInt.m1974hashCodeimpl(this.minRefMcSeqno)) * 31) + UInt.m1974hashCodeimpl(this.genUtime)) * 31) + this.splitMergeAt.hashCode()) * 31) + this.f2049r1.hashCode();
+        return ((((((((((((((i8 + (z5 ? 1 : z5 ? 1 : 0)) * 31) + this.flags) * 31) + UInt.m1976hashCodeimpl(this.nextCatchainSeqno)) * 31) + ULong.m1998hashCodeimpl(this.nextValidatorShard)) * 31) + UInt.m1976hashCodeimpl(this.minRefMcSeqno)) * 31) + UInt.m1976hashCodeimpl(this.genUtime)) * 31) + this.splitMergeAt.hashCode()) * 31) + this.f2050r1.hashCode();
     }
 
     @Override // org.ton.tlb.TlbObject
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("shard_descr_new");
-        open.field("seq_no", UInt.m1971boximpl(this.seqNo));
-        open.field("reg_mc_seqno", UInt.m1971boximpl(this.regMcSeqno));
-        open.field("start_lt", ULong.m1993boximpl(this.startLt));
-        open.field("end_lt", ULong.m1993boximpl(this.endLt));
+        open.field("seq_no", UInt.m1973boximpl(this.seqNo));
+        open.field("reg_mc_seqno", UInt.m1973boximpl(this.regMcSeqno));
+        open.field("start_lt", ULong.m1995boximpl(this.startLt));
+        open.field("end_lt", ULong.m1995boximpl(this.endLt));
         open.field("root_hash", this.rootHash);
         open.field("file_hash", this.fileHash);
         open.field("before_split", Boolean.valueOf(this.beforeSplit));
@@ -121,12 +121,12 @@ public final class ShardDescrNew implements ShardDescr {
         open.field("want_merge", Boolean.valueOf(this.wantMerge));
         open.field("nx_cc_updated", Boolean.valueOf(this.nxCcUpdated));
         open.field("flags", Integer.valueOf(this.flags));
-        open.field("next_catchain_seqno", UInt.m1971boximpl(this.nextCatchainSeqno));
-        open.field("next_validator_shard", ULong.m1993boximpl(this.nextValidatorShard));
-        open.field("min_ref_mc_seqno", UInt.m1971boximpl(this.minRefMcSeqno));
-        open.field("gen_utime", UInt.m1971boximpl(this.genUtime));
+        open.field("next_catchain_seqno", UInt.m1973boximpl(this.nextCatchainSeqno));
+        open.field("next_validator_shard", ULong.m1995boximpl(this.nextValidatorShard));
+        open.field("min_ref_mc_seqno", UInt.m1973boximpl(this.minRefMcSeqno));
+        open.field("gen_utime", UInt.m1973boximpl(this.genUtime));
         open.field("split_merge_at", this.splitMergeAt);
-        open.field(this.f2049r1);
+        open.field(this.f2050r1);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }
@@ -153,7 +153,7 @@ public final class ShardDescrNew implements ShardDescr {
         this.minRefMcSeqno = i5;
         this.genUtime = i6;
         this.splitMergeAt = splitMergeAt;
-        this.f2049r1 = r1;
+        this.f2050r1 = r1;
         if (!(rootHash.getSize() == 256)) {
             throw new IllegalArgumentException(("expected rootHash.size == 256, actual: " + rootHash.getSize()).toString());
         }
@@ -167,10 +167,10 @@ public final class ShardDescrNew implements ShardDescr {
         if (262143 != (i & 262143)) {
             PluginExceptionsKt.throwMissingFieldException(i, 262143, ShardDescrNew$$serializer.INSTANCE.getDescriptor());
         }
-        this.seqNo = uInt.m1976unboximpl();
-        this.regMcSeqno = uInt2.m1976unboximpl();
-        this.startLt = uLong.m1998unboximpl();
-        this.endLt = uLong2.m1998unboximpl();
+        this.seqNo = uInt.m1978unboximpl();
+        this.regMcSeqno = uInt2.m1978unboximpl();
+        this.startLt = uLong.m2000unboximpl();
+        this.endLt = uLong2.m2000unboximpl();
         this.rootHash = bitString;
         this.fileHash = bitString2;
         this.beforeSplit = z;
@@ -179,12 +179,12 @@ public final class ShardDescrNew implements ShardDescr {
         this.wantMerge = z4;
         this.nxCcUpdated = z5;
         this.flags = i2;
-        this.nextCatchainSeqno = uInt3.m1976unboximpl();
-        this.nextValidatorShard = uLong3.m1998unboximpl();
-        this.minRefMcSeqno = uInt4.m1976unboximpl();
-        this.genUtime = uInt5.m1976unboximpl();
+        this.nextCatchainSeqno = uInt3.m1978unboximpl();
+        this.nextValidatorShard = uLong3.m2000unboximpl();
+        this.minRefMcSeqno = uInt4.m1978unboximpl();
+        this.genUtime = uInt5.m1978unboximpl();
         this.splitMergeAt = futureSplitMerge;
-        this.f2049r1 = cellRef;
+        this.f2050r1 = cellRef;
         if (!(bitString.getSize() == 256)) {
             throw new IllegalArgumentException(("expected rootHash.size == 256, actual: " + bitString.getSize()).toString());
         }
@@ -197,11 +197,11 @@ public final class ShardDescrNew implements ShardDescr {
     public static final /* synthetic */ void write$Self(ShardDescrNew shardDescrNew, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
         UIntSerializer uIntSerializer = UIntSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1971boximpl(shardDescrNew.seqNo));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1971boximpl(shardDescrNew.regMcSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1973boximpl(shardDescrNew.seqNo));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1973boximpl(shardDescrNew.regMcSeqno));
         ULongSerializer uLongSerializer = ULongSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uLongSerializer, ULong.m1993boximpl(shardDescrNew.startLt));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uLongSerializer, ULong.m1993boximpl(shardDescrNew.endLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uLongSerializer, ULong.m1995boximpl(shardDescrNew.startLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uLongSerializer, ULong.m1995boximpl(shardDescrNew.endLt));
         FiftHexBitStringSerializer fiftHexBitStringSerializer = FiftHexBitStringSerializer.INSTANCE;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 4, fiftHexBitStringSerializer, shardDescrNew.rootHash);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 5, fiftHexBitStringSerializer, shardDescrNew.fileHash);
@@ -211,31 +211,31 @@ public final class ShardDescrNew implements ShardDescr {
         compositeEncoder.encodeBooleanElement(serialDescriptor, 9, shardDescrNew.wantMerge);
         compositeEncoder.encodeBooleanElement(serialDescriptor, 10, shardDescrNew.nxCcUpdated);
         compositeEncoder.encodeIntElement(serialDescriptor, 11, shardDescrNew.flags);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 12, uIntSerializer, UInt.m1971boximpl(shardDescrNew.nextCatchainSeqno));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 13, uLongSerializer, ULong.m1993boximpl(shardDescrNew.nextValidatorShard));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 14, uIntSerializer, UInt.m1971boximpl(shardDescrNew.minRefMcSeqno));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 15, uIntSerializer, UInt.m1971boximpl(shardDescrNew.genUtime));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 12, uIntSerializer, UInt.m1973boximpl(shardDescrNew.nextCatchainSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 13, uLongSerializer, ULong.m1995boximpl(shardDescrNew.nextValidatorShard));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 14, uIntSerializer, UInt.m1973boximpl(shardDescrNew.minRefMcSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 15, uIntSerializer, UInt.m1973boximpl(shardDescrNew.genUtime));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 16, kSerializerArr[16], shardDescrNew.splitMergeAt);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 17, kSerializerArr[17], shardDescrNew.f2049r1);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 17, kSerializerArr[17], shardDescrNew.f2050r1);
     }
 
     /* renamed from: getSeqNo-pVg5ArA  reason: not valid java name */
-    public final int m5170getSeqNopVg5ArA() {
+    public final int m5152getSeqNopVg5ArA() {
         return this.seqNo;
     }
 
     /* renamed from: getRegMcSeqno-pVg5ArA  reason: not valid java name */
-    public final int m5169getRegMcSeqnopVg5ArA() {
+    public final int m5151getRegMcSeqnopVg5ArA() {
         return this.regMcSeqno;
     }
 
     /* renamed from: getStartLt-s-VKNKU  reason: not valid java name */
-    public final long m5171getStartLtsVKNKU() {
+    public final long m5153getStartLtsVKNKU() {
         return this.startLt;
     }
 
     /* renamed from: getEndLt-s-VKNKU  reason: not valid java name */
-    public final long m5164getEndLtsVKNKU() {
+    public final long m5146getEndLtsVKNKU() {
         return this.endLt;
     }
 
@@ -272,22 +272,22 @@ public final class ShardDescrNew implements ShardDescr {
     }
 
     /* renamed from: getNextCatchainSeqno-pVg5ArA  reason: not valid java name */
-    public final int m5167getNextCatchainSeqnopVg5ArA() {
+    public final int m5149getNextCatchainSeqnopVg5ArA() {
         return this.nextCatchainSeqno;
     }
 
     /* renamed from: getNextValidatorShard-s-VKNKU  reason: not valid java name */
-    public final long m5168getNextValidatorShardsVKNKU() {
+    public final long m5150getNextValidatorShardsVKNKU() {
         return this.nextValidatorShard;
     }
 
     /* renamed from: getMinRefMcSeqno-pVg5ArA  reason: not valid java name */
-    public final int m5166getMinRefMcSeqnopVg5ArA() {
+    public final int m5148getMinRefMcSeqnopVg5ArA() {
         return this.minRefMcSeqno;
     }
 
     /* renamed from: getGenUtime-pVg5ArA  reason: not valid java name */
-    public final int m5165getGenUtimepVg5ArA() {
+    public final int m5147getGenUtimepVg5ArA() {
         return this.genUtime;
     }
 
@@ -296,7 +296,7 @@ public final class ShardDescrNew implements ShardDescr {
     }
 
     public final CellRef<ShardDescrAux> getR1() {
-        return this.f2049r1;
+        return this.f2050r1;
     }
 
     public String toString() {

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 2620
+    .line 2623
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$24;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>()V
@@ -35,7 +35,7 @@
 .method public invalidateSelf()V
     .locals 1
 
-    .line 2623
+    .line 2626
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$24;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V

@@ -91,7 +91,7 @@ import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import kotlin.text.StringsKt___StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: WalletSwapProcessPresenter.kt */
 @InjectViewState
@@ -344,12 +344,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                    m1845invoke(result);
+                    m1847invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1845invoke(Result<? extends String> it) {
+                public final void m1847invoke(Result<? extends String> it) {
                     TokenApproveData inputTokenApprovalData;
                     HashMap hashMap;
                     NetworkItem.Crypto crypto;
@@ -429,14 +429,14 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     }
 
     public final void onApprovalInfoClick() {
-        ((WalletSwapProcessView) getViewState()).showApprovalInfoDialog(this.resourceManager.getString(C3634R.string.wallet_swap_process_what_is_approve), this.resourceManager.getString(C3634R.string.wallet_swap_process_what_is_approve_dialog_description));
+        ((WalletSwapProcessView) getViewState()).showApprovalInfoDialog(this.resourceManager.getString(C3632R.string.wallet_swap_process_what_is_approve), this.resourceManager.getString(C3632R.string.wallet_swap_process_what_is_approve_dialog_description));
     }
 
     public final void onApproveClick() {
         WalletSwapProcessView walletSwapProcessView = (WalletSwapProcessView) getViewState();
-        String string = this.resourceManager.getString(C3634R.string.wallet_swap_process_confirm_approve_alert_title);
+        String string = this.resourceManager.getString(C3632R.string.wallet_swap_process_confirm_approve_alert_title);
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3634R.string.wallet_swap_process_confirm_approve_alert_description;
+        int i = C3632R.string.wallet_swap_process_confirm_approve_alert_description;
         Object[] objArr = new Object[1];
         TokenDetailed tokenDetailed = this.inputToken;
         String ticker = tokenDetailed != null ? tokenDetailed.getTicker() : null;
@@ -444,7 +444,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             ticker = "";
         }
         objArr[0] = ticker;
-        walletSwapProcessView.showApprovalConfirmationDialog(new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_swap_process_confirm_approve_alert_action)));
+        walletSwapProcessView.showApprovalConfirmationDialog(new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.wallet_swap_process_confirm_approve_alert_action)));
     }
 
     public final void startSelectTokenScreen(final SwapSide side) {
@@ -489,7 +489,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                 }
             } else if (i == 2) {
                 if (this.inputToken == null) {
-                    ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.wallet_swap_process_give_token_validation));
+                    ((WalletSwapProcessView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.wallet_swap_process_give_token_validation));
                     return;
                 }
                 Pair<String, ? extends List<OutputConvertToken>> pair = this.binanceAvailableOppositeSwapTokens;
@@ -824,7 +824,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     private final void setupSwapInformation() {
         WalletSwapScreenType walletSwapScreenType = this.screenType;
         if (walletSwapScreenType instanceof WalletSwapScreenType.Binance) {
-            ((WalletSwapProcessView) getViewState()).setupScreenForSwap(this.resourceManager.getString(C3634R.string.binance_convert_toolbar_title), this.resourceManager.getString(C3634R.string.binance_convert_description), C3634R.C3636drawable.fork_ic_bnb_logo, false, true);
+            ((WalletSwapProcessView) getViewState()).setupScreenForSwap(this.resourceManager.getString(C3632R.string.binance_convert_toolbar_title), this.resourceManager.getString(C3632R.string.binance_convert_description), C3632R.C3634drawable.fork_ic_bnb_logo, false, true);
         } else if (walletSwapScreenType instanceof WalletSwapScreenType.Crypto) {
             Pair<Boolean, Boolean> networkSwitchState = getNetworkSwitchState();
             boolean booleanValue = networkSwitchState.component1().booleanValue();
@@ -854,12 +854,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1853invoke(result);
+                m1855invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1853invoke(Result<? extends String> it) {
+            public final void m1855invoke(Result<? extends String> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
                 if (result instanceof Result.Success) {
@@ -922,12 +922,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1852invoke(result);
+                m1854invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1852invoke(Result<? extends Boolean> it) {
+            public final void m1854invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
                 if (result instanceof Result.Success) {
@@ -1116,12 +1116,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> result) {
-                m1849invoke(result);
+                m1851invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1849invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> it) {
+            public final void m1851invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> it) {
                 ResourceManager resourceManager;
                 String formatBinanceBalance;
                 Object obj;
@@ -1147,7 +1147,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                     if (binanceTokenBalanceInfo2 != null) {
                         formatBinanceBalance2 = WalletSwapProcessPresenter.this.formatBinanceBalance(binanceTokenBalanceInfo2);
                         resourceManager2 = WalletSwapProcessPresenter.this.resourceManager;
-                        ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showTokenBalance(formatBinanceBalance2, resourceManager2.getString(C3634R.string.common_max));
+                        ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showTokenBalance(formatBinanceBalance2, resourceManager2.getString(C3632R.string.common_max));
                         binanceTokenBalanceInfo = binanceTokenBalanceInfo2;
                     }
                     walletSwapProcessPresenter.binanceTokenBalance = binanceTokenBalanceInfo;
@@ -1199,12 +1199,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
-                m1850invoke(result);
+                m1852invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1850invoke(Result<? extends TokenBalance> it) {
+            public final void m1852invoke(Result<? extends TokenBalance> it) {
                 ResourceManager resourceManager;
                 ResourceManager resourceManager2;
                 ResourceManager resourceManager3;
@@ -1216,14 +1216,14 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                     Result.Success success = (Result.Success) result;
                     WalletSwapProcessPresenter.this.tokenBalance = (TokenBalance) success.getData();
                     resourceManager3 = WalletSwapProcessPresenter.this.resourceManager;
-                    String string = resourceManager3.getString(C3634R.string.wallet_swap_process_max);
+                    String string = resourceManager3.getString(C3632R.string.wallet_swap_process_max);
                     ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showTokenBalance(string + ' ' + TokenBalanceExtKt.getTotalBalanceShortText((TokenBalance) success.getData()), string);
                     publishSubject = WalletSwapProcessPresenter.this.amountSubject;
                     str = WalletSwapProcessPresenter.this.amount;
                     publishSubject.onNext(str);
                 } else if (result instanceof Result.Loading) {
                     resourceManager2 = WalletSwapProcessPresenter.this.resourceManager;
-                    ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showTokenBalance(resourceManager2.getString(C3634R.string.common_progress_state_title), "");
+                    ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showTokenBalance(resourceManager2.getString(C3632R.string.common_progress_state_title), "");
                 } else if (result instanceof Result.Error) {
                     resourceManager = WalletSwapProcessPresenter.this.resourceManager;
                     ((WalletSwapProcessView) WalletSwapProcessPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
@@ -1317,12 +1317,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenInfo>> result) {
-                    m1848invoke(result);
+                    m1850invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1848invoke(Result<? extends List<? extends BinanceTokenInfo>> it) {
+                public final void m1850invoke(Result<? extends List<? extends BinanceTokenInfo>> it) {
                     ResourceManager resourceManager;
                     HashMap hashMap;
                     int collectionSizeOrDefault;
@@ -1441,12 +1441,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends OutputConvertToken>> result) {
-                    m1847invoke(result);
+                    m1849invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1847invoke(Result<? extends List<? extends OutputConvertToken>> it) {
+                public final void m1849invoke(Result<? extends List<? extends OutputConvertToken>> it) {
                     ResourceManager resourceManager;
                     Intrinsics.checkNotNullExpressionValue(it, "it");
                     Result<? extends List<? extends OutputConvertToken>> result = it;
@@ -1573,12 +1573,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TokenApproveData>> result) {
-                    m1846invoke(result);
+                    m1848invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1846invoke(Result<? extends List<? extends TokenApproveData>> it) {
+                public final void m1848invoke(Result<? extends List<? extends TokenApproveData>> it) {
                     HashMap hashMap;
                     List mutableList;
                     HashMap hashMap2;
@@ -1680,7 +1680,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                 ((WalletSwapProcessView) getViewState()).showCommonErrorDialog(error.getError().getMessage(this.resourceManager));
                 resetStateIfNeeded();
             } else if (status == FirebaseFunctionsErrorHandler.CryptoErrorStatus.ERR_AMOUNT_LESS_THAN_MIN) {
-                ((WalletSwapProcessView) getViewState()).setInputError(this.resourceManager.getString(C3634R.string.wallet_swap_process_low_amount));
+                ((WalletSwapProcessView) getViewState()).setInputError(this.resourceManager.getString(C3632R.string.wallet_swap_process_low_amount));
             } else if (status == FirebaseFunctionsErrorHandler.CryptoErrorStatus.ERR_FETCH_TOKEN) {
                 ((WalletSwapProcessView) getViewState()).showCommonErrorDialog(error.getError().getMessage(this.resourceManager));
             } else {
@@ -1923,7 +1923,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3634R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3632R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3632R.string.common_cancel), 6, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1979,7 +1979,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
         /*
             r13 = this;
             com.iMe.storage.domain.utils.system.ResourceManager r0 = r13.resourceManager
-            int r1 = org.telegram.messenger.C3634R.string.wallet_swap_process_confirm_swap_alert_title
+            int r1 = org.telegram.messenger.C3632R.string.wallet_swap_process_confirm_swap_alert_title
             java.lang.String r0 = r0.getString(r1)
             com.iMe.model.wallet.swap.WalletSwapScreenType r1 = r13.screenType
             boolean r2 = r1 instanceof com.iMe.model.wallet.swap.WalletSwapScreenType.Binance
@@ -1993,7 +1993,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             com.iMe.storage.domain.model.binancepay.BinanceConvertQuote r1 = r13.binanceConvertQuote
             if (r1 == 0) goto Lf4
             com.iMe.storage.domain.utils.system.ResourceManager r2 = r13.resourceManager
-            int r8 = org.telegram.messenger.C3634R.string.wallet_swap_process_confirm_binance_swap_alert_description
+            int r8 = org.telegram.messenger.C3632R.string.wallet_swap_process_confirm_binance_swap_alert_description
             java.lang.Object[] r7 = new java.lang.Object[r7]
             double r9 = r1.getInputAmount()
             java.lang.Double r9 = java.lang.Double.valueOf(r9)
@@ -2022,7 +2022,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             com.iMe.storage.domain.model.crypto.swap.CryptoSwapMetadata r1 = r13.swapMetadata
             if (r1 == 0) goto Lf2
             com.iMe.storage.domain.utils.system.ResourceManager r2 = r13.resourceManager
-            int r9 = org.telegram.messenger.C3634R.string.wallet_swap_process_confirm_swap_alert_description
+            int r9 = org.telegram.messenger.C3632R.string.wallet_swap_process_confirm_swap_alert_description
             r10 = 6
             java.lang.Object[] r10 = new java.lang.Object[r10]
             java.math.BigDecimal r11 = r1.getAmountIn()
@@ -2067,10 +2067,10 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
             java.lang.String r8 = ""
         Lf4:
             com.iMe.storage.domain.utils.system.ResourceManager r1 = r13.resourceManager
-            int r2 = org.telegram.messenger.C3634R.string.common_cancel
+            int r2 = org.telegram.messenger.C3632R.string.common_cancel
             java.lang.String r1 = r1.getString(r2)
             com.iMe.storage.domain.utils.system.ResourceManager r2 = r13.resourceManager
-            int r3 = org.telegram.messenger.C3634R.string.wallet_swap_process_confirm_swap_alert_action
+            int r3 = org.telegram.messenger.C3632R.string.wallet_swap_process_confirm_swap_alert_action
             java.lang.String r2 = r2.getString(r3)
             com.iMe.model.dialog.DialogModel r3 = new com.iMe.model.dialog.DialogModel
             r3.<init>(r0, r8, r1, r2)
@@ -2087,11 +2087,11 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
     public final String formatBinanceBalance(BinanceTokenBalanceInfo binanceTokenBalanceInfo) {
         if (binanceTokenBalanceInfo != null) {
             ResourceManager resourceManager = this.resourceManager;
-            int i = C3634R.string.binance_convert_balance;
-            return resourceManager.getString(i, BinanceTokenBalanceExtKt.getSpotBalanceShortText(binanceTokenBalanceInfo) + " (" + this.resourceManager.getString(C3634R.string.common_max) + ')', BinanceTokenBalanceExtKt.getMarginBalanceShortText(binanceTokenBalanceInfo));
+            int i = C3632R.string.binance_convert_balance;
+            return resourceManager.getString(i, BinanceTokenBalanceExtKt.getSpotBalanceShortText(binanceTokenBalanceInfo) + " (" + this.resourceManager.getString(C3632R.string.common_max) + ')', BinanceTokenBalanceExtKt.getMarginBalanceShortText(binanceTokenBalanceInfo));
         }
-        String string = this.resourceManager.getString(C3634R.string.common_progress_state_title);
-        return this.resourceManager.getString(C3634R.string.binance_convert_balance, string, string);
+        String string = this.resourceManager.getString(C3632R.string.common_progress_state_title);
+        return this.resourceManager.getString(C3632R.string.binance_convert_balance, string, string);
     }
 
     private final void resetAmountSubjectSubscription() {
@@ -2176,7 +2176,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                         if (isAvailableBalanceLessThanAmount2) {
                             WalletSwapProcessPresenter walletSwapProcessPresenter2 = WalletSwapProcessPresenter.this;
                             resourceManager2 = walletSwapProcessPresenter2.resourceManager;
-                            walletSwapProcessPresenter2.setInputError(resourceManager2.getString(C3634R.string.wallet_swap_process_insufficient_funds));
+                            walletSwapProcessPresenter2.setInputError(resourceManager2.getString(C3632R.string.wallet_swap_process_insufficient_funds));
                         }
                         z = false;
                         return Boolean.valueOf(z);
@@ -2194,7 +2194,7 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
                         WalletSwapProcessPresenter.this.renderState(new SwapUiState.Idle(false, null, 3, null));
                         WalletSwapProcessPresenter walletSwapProcessPresenter3 = WalletSwapProcessPresenter.this;
                         resourceManager = walletSwapProcessPresenter3.resourceManager;
-                        walletSwapProcessPresenter3.setInputError(resourceManager.getString(C3634R.string.wallet_swap_process_insufficient_funds));
+                        walletSwapProcessPresenter3.setInputError(resourceManager.getString(C3632R.string.wallet_swap_process_insufficient_funds));
                     } else {
                         tokenDetailed2 = WalletSwapProcessPresenter.this.outputToken;
                         if (tokenDetailed2 != null) {
@@ -2259,12 +2259,12 @@ public final class WalletSwapProcessPresenter extends BasePresenter<WalletSwapPr
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SwapUiState.Swap> result) {
-                m1851invoke(result);
+                m1853invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1851invoke(Result<? extends SwapUiState.Swap> it) {
+            public final void m1853invoke(Result<? extends SwapUiState.Swap> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SwapUiState.Swap> result = it;
                 if (result instanceof Result.Success) {

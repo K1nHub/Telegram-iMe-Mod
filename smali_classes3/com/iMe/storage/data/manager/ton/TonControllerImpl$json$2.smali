@@ -58,7 +58,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 47
+    .line 48
     invoke-virtual {p0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$json$2;->invoke()Lkotlinx/serialization/json/Json;
 
     move-result-object v0
@@ -69,7 +69,7 @@
 .method public final invoke()Lkotlinx/serialization/json/Json;
     .locals 3
 
-    .line 47
+    .line 48
     sget-object v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$json$2$1;->INSTANCE:Lcom/iMe/storage/data/manager/ton/TonControllerImpl$json$2$1;
 
     const/4 v1, 0x0

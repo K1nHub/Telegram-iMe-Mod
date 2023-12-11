@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/PeerColorActivity$5;
-.super Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
+.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 .source "PeerColorActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/PeerColorActivity;->showSelectStatusDialog(Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;)V
+    value = Lorg/telegram/ui/PeerColorActivity;->createView(Landroid/content/Context;)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,31 +19,26 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PeerColorActivity;Landroid/view/View;II)V
+.method constructor <init>(Lorg/telegram/ui/PeerColorActivity;)V
     .locals 0
 
-    .line 675
+    .line 340
     iput-object p1, p0, Lorg/telegram/ui/PeerColorActivity$5;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
-    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;-><init>(Landroid/view/View;II)V
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dismiss()V
-    .locals 2
+.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
+    .locals 0
 
-    .line 678
-    invoke-super {p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;->dismiss()V
+    .line 343
+    iget-object p1, p0, Lorg/telegram/ui/PeerColorActivity$5;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
-    .line 679
-    iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$5;->this$0:Lorg/telegram/ui/PeerColorActivity;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/PeerColorActivity;->access$1402(Lorg/telegram/ui/PeerColorActivity;Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
+    invoke-static {p1}, Lorg/telegram/ui/PeerColorActivity;->access$200(Lorg/telegram/ui/PeerColorActivity;)V
 
     return-void
 .end method

@@ -37,7 +37,7 @@ public final class CapturedTypeConstructorImpl implements CapturedTypeConstructo
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getDeclarationDescriptor  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ ClassifierDescriptor mo2051getDeclarationDescriptor() {
+    public /* bridge */ /* synthetic */ ClassifierDescriptor mo2053getDeclarationDescriptor() {
         return (ClassifierDescriptor) getDeclarationDescriptor();
     }
 
@@ -63,7 +63,7 @@ public final class CapturedTypeConstructorImpl implements CapturedTypeConstructo
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getSupertypes */
-    public Collection<KotlinType> mo2052getSupertypes() {
+    public Collection<KotlinType> mo2054getSupertypes() {
         KotlinType nullableAnyType;
         List listOf;
         if (getProjection().getProjectionKind() == Variance.OUT_VARIANCE) {

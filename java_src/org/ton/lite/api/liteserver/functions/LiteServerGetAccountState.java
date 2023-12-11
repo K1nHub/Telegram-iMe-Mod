@@ -25,7 +25,7 @@ public final class LiteServerGetAccountState {
     private final LiteServerAccountId account;
 
     /* renamed from: id */
-    private final TonNodeBlockIdExt f2100id;
+    private final TonNodeBlockIdExt f2101id;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -33,41 +33,41 @@ public final class LiteServerGetAccountState {
         }
         if (obj instanceof LiteServerGetAccountState) {
             LiteServerGetAccountState liteServerGetAccountState = (LiteServerGetAccountState) obj;
-            return Intrinsics.areEqual(this.f2100id, liteServerGetAccountState.f2100id) && Intrinsics.areEqual(this.account, liteServerGetAccountState.account);
+            return Intrinsics.areEqual(this.f2101id, liteServerGetAccountState.f2101id) && Intrinsics.areEqual(this.account, liteServerGetAccountState.account);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.f2100id.hashCode() * 31) + this.account.hashCode();
+        return (this.f2101id.hashCode() * 31) + this.account.hashCode();
     }
 
     public String toString() {
-        return "LiteServerGetAccountState(id=" + this.f2100id + ", account=" + this.account + ')';
+        return "LiteServerGetAccountState(id=" + this.f2101id + ", account=" + this.account + ')';
     }
 
     public /* synthetic */ LiteServerGetAccountState(int i, TonNodeBlockIdExt tonNodeBlockIdExt, LiteServerAccountId liteServerAccountId, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, LiteServerGetAccountState$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2100id = tonNodeBlockIdExt;
+        this.f2101id = tonNodeBlockIdExt;
         this.account = liteServerAccountId;
     }
 
     public LiteServerGetAccountState(TonNodeBlockIdExt id, LiteServerAccountId account) {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(account, "account");
-        this.f2100id = id;
+        this.f2101id = id;
         this.account = account;
     }
 
     public static final /* synthetic */ void write$Self(LiteServerGetAccountState liteServerGetAccountState, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, TonNodeBlockIdExt$$serializer.INSTANCE, liteServerGetAccountState.f2100id);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, TonNodeBlockIdExt$$serializer.INSTANCE, liteServerGetAccountState.f2101id);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, LiteServerAccountId$$serializer.INSTANCE, liteServerGetAccountState.account);
     }
 
     public final TonNodeBlockIdExt getId() {
-        return this.f2100id;
+        return this.f2101id;
     }
 
     public final LiteServerAccountId getAccount() {

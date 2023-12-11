@@ -38,7 +38,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -86,7 +86,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
         super(context, true, resourcesProvider);
         this.path = new Path();
         fixNavigationBar(-14342875);
-        Drawable mutate = context.getResources().getDrawable(C3634R.C3636drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3632R.C3634drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-14342875, PorterDuff.Mode.MULTIPLY));
         final LinearLayout linearLayout = new LinearLayout(context);
@@ -94,7 +94,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
         linearLayout.setPadding(0, AndroidUtilities.m104dp(16), 0, 0);
         ImageView imageView = new ImageView(context);
         this.pipetteView = imageView;
-        imageView.setImageResource(C3634R.C3636drawable.picker);
+        imageView.setImageResource(C3632R.C3634drawable.picker);
         this.pipetteView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         this.pipetteView.setBackground(Theme.createSelectorDrawable(1090519039));
         this.pipetteView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet$$ExternalSyntheticLambda1
@@ -105,7 +105,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
         });
         ImageView imageView2 = new ImageView(context);
         this.doneView = imageView2;
-        imageView2.setImageResource(C3634R.C3636drawable.ic_ab_done);
+        imageView2.setImageResource(C3632R.C3634drawable.ic_ab_done);
         this.doneView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         this.doneView.setBackground(Theme.createSelectorDrawable(1090519039));
         this.doneView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet$$ExternalSyntheticLambda0
@@ -285,11 +285,11 @@ public class ColorPickerBottomSheet extends BottomSheet {
                 public String getItemTitle(int i) {
                     if (i != 1) {
                         if (i != 2) {
-                            return LocaleController.getString(C3634R.string.PaintPaletteGrid).toUpperCase();
+                            return LocaleController.getString(C3632R.string.PaintPaletteGrid).toUpperCase();
                         }
-                        return LocaleController.getString(C3634R.string.PaintPaletteSliders).toUpperCase();
+                        return LocaleController.getString(C3632R.string.PaintPaletteSliders).toUpperCase();
                     }
-                    return LocaleController.getString(C3634R.string.PaintPaletteSpectrum).toUpperCase();
+                    return LocaleController.getString(C3632R.string.PaintPaletteSpectrum).toUpperCase();
                 }
 
                 @Override // org.telegram.p043ui.Components.ViewPagerFixed.Adapter
@@ -535,7 +535,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
             this.outlinePaint.setColor(-1);
             this.outlinePaint.setStyle(Paint.Style.FILL_AND_STROKE);
             this.outlinePaint.setStrokeWidth(AndroidUtilities.m104dp(3));
-            this.shadowDrawable = ContextCompat.getDrawable(context, C3634R.C3636drawable.knob_shadow);
+            this.shadowDrawable = ContextCompat.getDrawable(context, C3632R.C3634drawable.knob_shadow);
         }
 
         @Override // android.view.View
@@ -654,7 +654,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
             TextView textView = new TextView(context);
             textView.setTextColor(-1711276033);
             textView.setTextSize(1, 16.0f);
-            textView.setText(LocaleController.getString(C3634R.string.PaintPaletteSlidersHexColor).toUpperCase());
+            textView.setText(LocaleController.getString(C3632R.string.PaintPaletteSlidersHexColor).toUpperCase());
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 0, 0, 8, 0));
             EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
@@ -666,7 +666,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
             this.hexEdit.setGravity(17);
             this.hexEdit.setSingleLine();
             this.hexEdit.setImeOptions(6);
-            this.hexEdit.setImeActionLabel(LocaleController.getString(C3634R.string.Done), 6);
+            this.hexEdit.setImeActionLabel(LocaleController.getString(C3632R.string.Done), 6);
             this.hexEdit.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.hexEdit.addTextChangedListener(new TextWatcher(ColorPickerBottomSheet.this) { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet.SlidersPickerView.1
                 private Pattern pattern = Pattern.compile("^[0-9a-fA-F]*$");
@@ -784,7 +784,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
                     Ld1:
                         return
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Paint.ColorPickerBottomSheet.SlidersPickerView.C52151.afterTextChanged(android.text.Editable):void");
+                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Paint.ColorPickerBottomSheet.SlidersPickerView.C52121.afterTextChanged(android.text.Editable):void");
                 }
             });
             this.hexEdit.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet$SlidersPickerView$$ExternalSyntheticLambda0
@@ -871,7 +871,7 @@ public class ColorPickerBottomSheet extends BottomSheet {
             this.valueView.setGravity(17);
             this.valueView.setSingleLine();
             this.valueView.setImeOptions(6);
-            this.valueView.setImeActionLabel(LocaleController.getString(C3634R.string.Done), 6);
+            this.valueView.setImeActionLabel(LocaleController.getString(C3632R.string.Done), 6);
             this.valueView.setInputType(2);
             this.valueView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.valueView.addTextChangedListener(new TextWatcher(ColorPickerBottomSheet.this) { // from class: org.telegram.ui.Components.Paint.ColorPickerBottomSheet.SliderCell.1
@@ -940,11 +940,11 @@ public class ColorPickerBottomSheet extends BottomSheet {
             this.mode = i;
             this.sliderView.setMode(i);
             if (i == 0) {
-                this.titleView.setText(LocaleController.getString(C3634R.string.PaintPaletteSlidersRed).toUpperCase());
+                this.titleView.setText(LocaleController.getString(C3632R.string.PaintPaletteSlidersRed).toUpperCase());
             } else if (i == 1) {
-                this.titleView.setText(LocaleController.getString(C3634R.string.PaintPaletteSlidersGreen).toUpperCase());
+                this.titleView.setText(LocaleController.getString(C3632R.string.PaintPaletteSlidersGreen).toUpperCase());
             } else if (i == 2) {
-                this.titleView.setText(LocaleController.getString(C3634R.string.PaintPaletteSlidersBlue).toUpperCase());
+                this.titleView.setText(LocaleController.getString(C3632R.string.PaintPaletteSlidersBlue).toUpperCase());
             }
             invalidateColor();
         }

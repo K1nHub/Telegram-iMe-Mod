@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$117;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 28176
+    .line 28184
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$117$1;->this$1:Lorg/telegram/ui/ChatActivity$117;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/EmojiPacksAlert;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/util/ArrayList;)V
@@ -35,10 +35,10 @@
 .method public dismiss()V
     .locals 2
 
-    .line 28179
+    .line 28187
     invoke-super {p0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->dismiss()V
 
-    .line 28180
+    .line 28188
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$117$1;->this$1:Lorg/telegram/ui/ChatActivity$117;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$117;->this$0:Lorg/telegram/ui/ChatActivity;

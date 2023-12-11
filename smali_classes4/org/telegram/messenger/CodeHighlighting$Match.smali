@@ -26,7 +26,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 480
+    .line 470
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/CodeHighlighting$1;)V
     .locals 0
 
-    .line 480
+    .line 470
     invoke-direct {p0}, Lorg/telegram/messenger/CodeHighlighting$Match;-><init>()V
 
     return-void

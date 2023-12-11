@@ -36,7 +36,7 @@
 .method constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ActionBar/BaseFragment;IJI)V
     .locals 0
 
-    .line 4854
+    .line 4857
     iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     iput p5, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$messageId:I
@@ -53,14 +53,14 @@
 .method private synthetic lambda$onSend$0()V
     .locals 2
 
-    .line 4879
+    .line 4882
     invoke-static {}, Lorg/telegram/ui/Components/BulletinFactory;->global()Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 4881
+    .line 4884
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->createReportSent(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
@@ -78,17 +78,17 @@
 .method public dismissInternal()V
     .locals 2
 
-    .line 4858
+    .line 4861
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
-    .line 4859
+    .line 4862
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     instance-of v1, v0, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v1, :cond_0
 
-    .line 4860
+    .line 4863
     check-cast v0, Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->checkAdjustResize()V
@@ -100,24 +100,24 @@
 .method protected onSend(ILjava/lang/String;)V
     .locals 4
 
-    .line 4866
+    .line 4869
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4867
+    .line 4870
     iget v1, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$messageId:I
 
     if-eqz v1, :cond_0
 
-    .line 4868
+    .line 4871
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4870
+    .line 4873
     :cond_0
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -131,19 +131,19 @@
 
     move-result-object v1
 
-    .line 4871
+    .line 4874
     iget v2, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$storyId:I
 
     invoke-static {v1, p1, p2, v0, v2}, Lorg/telegram/ui/Components/AlertsCreator;->sendReport(Lorg/telegram/tgnet/TLRPC$InputPeer;ILjava/lang/String;Ljava/util/ArrayList;I)V
 
-    .line 4872
+    .line 4875
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$41;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     instance-of p2, p1, Lorg/telegram/ui/ChatActivity;
 
     if-eqz p2, :cond_1
 
-    .line 4873
+    .line 4876
     check-cast p1, Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getUndoView()Lorg/telegram/ui/Components/UndoView;
@@ -158,12 +158,12 @@
 
     const/4 v2, 0x0
 
-    .line 4875
+    .line 4878
     invoke-virtual {p1, v0, v1, p2, v2}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
 
     goto :goto_0
 
-    .line 4878
+    .line 4881
     :cond_1
     new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$41$$ExternalSyntheticLambda0;
 

@@ -27,7 +27,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FingerprintController;
 import timber.log.Timber;
 /* compiled from: EnterWalletPinPresenter.kt */
@@ -87,12 +87,12 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                    m1643invoke(result);
+                    m1644invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1643invoke(Result<? extends String> it) {
+                public final void m1644invoke(Result<? extends String> it) {
                     CryptoPreferenceHelper cryptoPreferenceHelper;
                     ResourceManager resourceManager;
                     CryptoPreferenceHelper cryptoPreferenceHelper2;
@@ -169,7 +169,7 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
             ((EnterWalletPinView) getViewState()).openRestoreWalletScreen(this.cryptoAccessManager.getLastLoggedInAddress(this.cryptoPreferenceHelper.getCurrentBlockchainType()));
         } else if (i != 1) {
         } else {
-            ((EnterWalletPinView) getViewState()).showDeleteWalletDialog(new DialogModel(this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn)));
+            ((EnterWalletPinView) getViewState()).showDeleteWalletDialog(new DialogModel(this.resourceManager.getString(C3632R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3632R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn)));
         }
     }
 
@@ -187,12 +187,12 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1642invoke(result);
+                m1643invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1642invoke(Result<? extends Boolean> it) {
+            public final void m1643invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;

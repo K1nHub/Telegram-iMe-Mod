@@ -27,9 +27,9 @@ final class ConcurrentHashMapParametrizedCache<T> implements ParametrizedSeriali
 
     @Override // kotlinx.serialization.internal.ParametrizedSerializerCache
     /* renamed from: get-gIAlu-s */
-    public Object mo2127getgIAlus(KClass<Object> key, List<? extends KType> types) {
+    public Object mo2129getgIAlus(KClass<Object> key, List<? extends KType> types) {
         int collectionSizeOrDefault;
-        Object m1940constructorimpl;
+        Object m1942constructorimpl;
         ParametrizedCacheEntry<T> putIfAbsent;
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(types, "types");
@@ -50,16 +50,16 @@ final class ConcurrentHashMapParametrizedCache<T> implements ParametrizedSeriali
         if (obj == null) {
             try {
                 Result.Companion companion = Result.Companion;
-                m1940constructorimpl = Result.m1940constructorimpl(this.compute.invoke(key, types));
+                m1942constructorimpl = Result.m1942constructorimpl(this.compute.invoke(key, types));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
+                m1942constructorimpl = Result.m1942constructorimpl(ResultKt.createFailure(th));
             }
-            Result m1939boximpl = Result.m1939boximpl(m1940constructorimpl);
-            Object putIfAbsent2 = access$getSerializers$p.putIfAbsent(arrayList, m1939boximpl);
-            obj = putIfAbsent2 == null ? m1939boximpl : putIfAbsent2;
+            Result m1941boximpl = Result.m1941boximpl(m1942constructorimpl);
+            Object putIfAbsent2 = access$getSerializers$p.putIfAbsent(arrayList, m1941boximpl);
+            obj = putIfAbsent2 == null ? m1941boximpl : putIfAbsent2;
         }
         Intrinsics.checkNotNullExpressionValue(obj, "serializers.getOrPut(wra… { producer() }\n        }");
-        return ((Result) obj).m1948unboximpl();
+        return ((Result) obj).m1950unboximpl();
     }
 }

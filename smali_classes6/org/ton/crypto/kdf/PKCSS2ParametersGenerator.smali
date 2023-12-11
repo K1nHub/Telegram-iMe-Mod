@@ -10,6 +10,25 @@
 
 
 # direct methods
+.method public constructor <init>(Lorg/ton/crypto/digest/Digest;)V
+    .locals 3
+
+    const-string v0, "digest"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    new-array v1, v0, [B
+
+    new-array v2, v0, [B
+
+    .line 20
+    invoke-direct {p0, p1, v1, v2, v0}, Lorg/ton/crypto/kdf/PKCSS2ParametersGenerator;-><init>(Lorg/ton/crypto/digest/Digest;[B[BI)V
+
+    return-void
+.end method
+
 .method public constructor <init>(Lorg/ton/crypto/digest/Digest;[B[BI)V
     .locals 1
 

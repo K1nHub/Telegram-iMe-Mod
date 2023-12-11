@@ -13,7 +13,7 @@ import kotlin.text.StringsKt__StringsJVMKt;
 public final class ClassMapperLite {
 
     /* renamed from: kotlin  reason: collision with root package name */
-    private static final String f2184kotlin;
+    private static final String f2185kotlin;
     private static final Map<String, String> map;
 
     private ClassMapperLite() {
@@ -30,7 +30,7 @@ public final class ClassMapperLite {
         new ClassMapperLite();
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Character[]{'k', 'o', 't', 'l', 'i', 'n'});
         joinToString$default = CollectionsKt___CollectionsKt.joinToString$default(listOf, "", null, null, 0, null, null, 62, null);
-        f2184kotlin = joinToString$default;
+        f2185kotlin = joinToString$default;
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         listOf2 = CollectionsKt__CollectionsKt.listOf((Object[]) new String[]{"Boolean", "Z", "Char", "C", "Byte", "B", "Short", "S", "Int", "I", "Float", "F", "Long", "J", "Double", "D"});
         int progressionLastElement = ProgressionUtilKt.getProgressionLastElement(0, listOf2.size() - 1, 2);
@@ -38,7 +38,7 @@ public final class ClassMapperLite {
             int i2 = 0;
             while (true) {
                 StringBuilder sb = new StringBuilder();
-                String str = f2184kotlin;
+                String str = f2185kotlin;
                 sb.append(str);
                 sb.append('/');
                 sb.append((String) listOf2.get(i2));
@@ -50,7 +50,7 @@ public final class ClassMapperLite {
                 i2 += 2;
             }
         }
-        linkedHashMap.put(f2184kotlin + "/Unit", "V");
+        linkedHashMap.put(f2185kotlin + "/Unit", "V");
         map$lambda$0$add(linkedHashMap, "Any", "java/lang/Object");
         map$lambda$0$add(linkedHashMap, "Nothing", "java/lang/Void");
         map$lambda$0$add(linkedHashMap, "Annotation", "java/lang/annotation/Annotation");
@@ -69,7 +69,7 @@ public final class ClassMapperLite {
         map$lambda$0$add(linkedHashMap, "collections/MutableMap.MutableEntry", "java/util/Map$Entry");
         for (int i3 = 0; i3 < 23; i3++) {
             StringBuilder sb2 = new StringBuilder();
-            String str4 = f2184kotlin;
+            String str4 = f2185kotlin;
             sb2.append(str4);
             sb2.append("/jvm/functions/Function");
             sb2.append(i3);
@@ -78,13 +78,13 @@ public final class ClassMapperLite {
         }
         listOf5 = CollectionsKt__CollectionsKt.listOf((Object[]) new String[]{"Char", "Byte", "Short", "Int", "Float", "Long", "Double", "String", "Enum"});
         for (String str5 : listOf5) {
-            map$lambda$0$add(linkedHashMap, str5 + ".Companion", f2184kotlin + "/jvm/internal/" + str5 + "CompanionObject");
+            map$lambda$0$add(linkedHashMap, str5 + ".Companion", f2185kotlin + "/jvm/internal/" + str5 + "CompanionObject");
         }
         map = linkedHashMap;
     }
 
     private static final void map$lambda$0$add(Map<String, String> map2, String str, String str2) {
-        map2.put(f2184kotlin + '/' + str, 'L' + str2 + ';');
+        map2.put(f2185kotlin + '/' + str, 'L' + str2 + ';');
     }
 
     public static final String mapClass(String classId) {

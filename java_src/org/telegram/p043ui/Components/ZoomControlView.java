@@ -11,7 +11,7 @@ import android.util.Property;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.Components.AnimationProperties;
 /* renamed from: org.telegram.ui.Components.ZoomControlView */
 /* loaded from: classes6.dex */
@@ -65,12 +65,12 @@ public class ZoomControlView extends View {
                 return Float.valueOf(ZoomControlView.this.zoom);
             }
         };
-        this.minusDrawable = context.getResources().getDrawable(C3634R.C3636drawable.zoom_minus);
-        this.plusDrawable = context.getResources().getDrawable(C3634R.C3636drawable.zoom_plus);
-        this.progressDrawable = context.getResources().getDrawable(C3634R.C3636drawable.zoom_slide);
-        this.filledProgressDrawable = context.getResources().getDrawable(C3634R.C3636drawable.zoom_slide_a);
-        this.knobDrawable = context.getResources().getDrawable(C3634R.C3636drawable.zoom_round);
-        this.pressedKnobDrawable = context.getResources().getDrawable(C3634R.C3636drawable.zoom_round_b);
+        this.minusDrawable = context.getResources().getDrawable(C3632R.C3634drawable.zoom_minus);
+        this.plusDrawable = context.getResources().getDrawable(C3632R.C3634drawable.zoom_plus);
+        this.progressDrawable = context.getResources().getDrawable(C3632R.C3634drawable.zoom_slide);
+        this.filledProgressDrawable = context.getResources().getDrawable(C3632R.C3634drawable.zoom_slide_a);
+        this.knobDrawable = context.getResources().getDrawable(C3632R.C3634drawable.zoom_round);
+        this.pressedKnobDrawable = context.getResources().getDrawable(C3632R.C3634drawable.zoom_round_b);
     }
 
     public float getZoom() {

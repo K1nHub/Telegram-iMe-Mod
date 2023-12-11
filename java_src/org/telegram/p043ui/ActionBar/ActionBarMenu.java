@@ -8,7 +8,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Adapters.FiltersView;
 import org.telegram.p043ui.Components.RLottieDrawable;
@@ -19,13 +19,13 @@ public class ActionBarMenu extends LinearLayout {
     private ArrayList<Integer> ids;
     protected boolean isActionMode;
     private Runnable onLayoutListener;
-    protected C3706ActionBar parentActionBar;
+    protected C3704ActionBar parentActionBar;
 
-    public ActionBarMenu(Context context, C3706ActionBar c3706ActionBar) {
+    public ActionBarMenu(Context context, C3704ActionBar c3704ActionBar) {
         super(context);
         this.drawBlur = true;
         setOrientation(0);
-        this.parentActionBar = c3706ActionBar;
+        this.parentActionBar = c3704ActionBar;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -352,7 +352,7 @@ public class ActionBarMenu extends LinearLayout {
     }
 
     public void onItemClick(int i) {
-        C3706ActionBar.ActionBarMenuOnItemClick actionBarMenuOnItemClick = this.parentActionBar.actionBarMenuOnItemClick;
+        C3704ActionBar.ActionBarMenuOnItemClick actionBarMenuOnItemClick = this.parentActionBar.actionBarMenuOnItemClick;
         if (actionBarMenuOnItemClick != null) {
             actionBarMenuOnItemClick.onItemClick(i);
         }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/view/View;II)V
     .locals 0
 
-    .line 5691
+    .line 5688
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;-><init>(Landroid/view/View;II)V
@@ -35,10 +35,10 @@
 .method public dismiss()V
     .locals 2
 
-    .line 5694
+    .line 5691
     invoke-super {p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;->dismiss()V
 
-    .line 5695
+    .line 5692
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$36;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     const/4 v1, 0x0

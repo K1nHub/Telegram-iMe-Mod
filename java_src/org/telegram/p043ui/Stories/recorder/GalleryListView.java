@@ -49,7 +49,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.GenericProvider;
@@ -63,7 +63,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.ActionBarMenu;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AdjustPanLayoutHelper;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AnimatedFloat;
 import org.telegram.p043ui.Components.BackupImageView;
@@ -92,7 +92,7 @@ import org.telegram.tgnet.TLRPC$messages_BotResults;
 /* loaded from: classes6.dex */
 public class GalleryListView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     private static final MediaController.AlbumEntry draftsAlbum = new MediaController.AlbumEntry(-1, null, null);
-    private final C3706ActionBar actionBar;
+    private final C3704ActionBar actionBar;
     private boolean actionBarShown;
     private final AnimatedFloat actionBarT;
     public final Adapter adapter;
@@ -219,18 +219,18 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
                 GalleryListView.this.invalidate();
             }
         });
-        C3706ActionBar c3706ActionBar = new C3706ActionBar(context, resourcesProvider);
-        this.actionBar = c3706ActionBar;
-        c3706ActionBar.setBackgroundColor(-14737633);
-        c3706ActionBar.setTitleColor(-1);
-        c3706ActionBar.setAlpha(BitmapDescriptorFactory.HUE_RED);
-        c3706ActionBar.setVisibility(8);
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setItemsBackgroundColor(436207615, false);
-        c3706ActionBar.setItemsColor(-1, false);
-        addView(c3706ActionBar, LayoutHelper.createFrame(-1, -2, 55));
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Stories.recorder.GalleryListView.6
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = new C3704ActionBar(context, resourcesProvider);
+        this.actionBar = c3704ActionBar;
+        c3704ActionBar.setBackgroundColor(-14737633);
+        c3704ActionBar.setTitleColor(-1);
+        c3704ActionBar.setAlpha(BitmapDescriptorFactory.HUE_RED);
+        c3704ActionBar.setVisibility(8);
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setItemsBackgroundColor(436207615, false);
+        c3704ActionBar.setItemsColor(-1, false);
+        addView(c3704ActionBar, LayoutHelper.createFrame(-1, -2, 55));
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Stories.recorder.GalleryListView.6
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     if (GalleryListView.this.onBackClickListener != null) {
@@ -242,7 +242,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
                 }
             }
         });
-        ActionBarMenu createMenu = c3706ActionBar.createMenu();
+        ActionBarMenu createMenu = c3704ActionBar.createMenu();
         ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(context, createMenu, 0, 0, resourcesProvider) { // from class: org.telegram.ui.Stories.recorder.GalleryListView.7
             @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem, android.view.View
             public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
@@ -252,7 +252,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
         };
         this.dropDownContainer = actionBarMenuItem;
         actionBarMenuItem.setSubMenuOpenSide(1);
-        c3706ActionBar.addView(actionBarMenuItem, 0, LayoutHelper.createFrame(-2, -1, 51, AndroidUtilities.isTablet() ? 64 : 56, 0, 40, 0));
+        c3704ActionBar.addView(actionBarMenuItem, 0, LayoutHelper.createFrame(-2, -1, 51, AndroidUtilities.isTablet() ? 64 : 56, 0, 40, 0));
         actionBarMenuItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -269,7 +269,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTextColor(-1);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        Drawable mutate = context.getResources().getDrawable(C3634R.C3636drawable.ic_arrow_drop_down).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3632R.C3634drawable.ic_arrow_drop_down).mutate();
         this.dropDownDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
         textView.setCompoundDrawablePadding(AndroidUtilities.m104dp(4));
@@ -297,11 +297,11 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
                 super.notifyDataSetChanged();
                 if (TextUtils.isEmpty(this.query)) {
                     GalleryListView.this.searchEmptyView.setStickerType(11);
-                    GalleryListView.this.searchEmptyView.title.setText(LocaleController.getString(C3634R.string.SearchImagesType));
+                    GalleryListView.this.searchEmptyView.title.setText(LocaleController.getString(C3632R.string.SearchImagesType));
                     return;
                 }
                 GalleryListView.this.searchEmptyView.setStickerType(1);
-                GalleryListView.this.searchEmptyView.title.setText(LocaleController.formatString(C3634R.string.NoResultFoundFor, this.query));
+                GalleryListView.this.searchEmptyView.title.setText(LocaleController.formatString(C3632R.string.NoResultFoundFor, this.query));
             }
         };
         this.searchAdapterImages = searchAdapter;
@@ -345,7 +345,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
         stickerEmptyView.title.setTextSize(1, 16.0f);
         stickerEmptyView.title.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, resourcesProvider));
         stickerEmptyView.title.setTypeface(null);
-        stickerEmptyView.title.setText(LocaleController.getString(C3634R.string.SearchImagesType));
+        stickerEmptyView.title.setText(LocaleController.getString(C3632R.string.SearchImagesType));
         this.keyboardNotifier = new KeyboardNotifier(this, new Utilities.Callback() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda4
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
@@ -354,10 +354,10 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
         });
         frameLayout.addView(stickerEmptyView, LayoutHelper.createFrame(-1, -1, 119));
         recyclerListView2.setEmptyView(stickerEmptyView);
-        ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, C3634R.C3636drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new C720212());
+        ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, C3632R.C3634drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new C720012());
         this.searchItem = actionBarMenuItemSearchListener;
         actionBarMenuItemSearchListener.setVisibility(8);
-        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("SearchImagesTitle", C3634R.string.SearchImagesTitle));
+        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("SearchImagesTitle", C3632R.string.SearchImagesTitle));
         recyclerListView2.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$$ExternalSyntheticLambda6
             @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i2) {
@@ -389,7 +389,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
         updateContainsDrafts();
         MediaController.AlbumEntry albumEntry2 = this.selectedAlbum;
         if (albumEntry2 == MediaController.allMediaAlbumEntry) {
-            this.dropDown.setText(LocaleController.getString("ChatGallery", C3634R.string.ChatGallery));
+            this.dropDown.setText(LocaleController.getString("ChatGallery", C3632R.string.ChatGallery));
         } else if (albumEntry2 == draftsAlbum) {
             this.dropDown.setText(LocaleController.getString("StoryDraftsAlbum"));
         } else {
@@ -443,10 +443,10 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.recorder.GalleryListView$12 */
     /* loaded from: classes6.dex */
-    public class C720212 extends ActionBarMenuItem.ActionBarMenuItemSearchListener {
+    public class C720012 extends ActionBarMenuItem.ActionBarMenuItemSearchListener {
         private AnimatorSet animatorSet;
 
-        C720212() {
+        C720012() {
         }
 
         @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
@@ -474,7 +474,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$12$$ExternalSyntheticLambda1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    GalleryListView.C720212.this.lambda$onSearchCollapse$0(valueAnimator);
+                    GalleryListView.C720012.this.lambda$onSearchCollapse$0(valueAnimator);
                 }
             });
             arrayList.add(ofFloat);
@@ -528,7 +528,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$12$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    GalleryListView.C720212.this.lambda$onSearchExpand$1(valueAnimator);
+                    GalleryListView.C720012.this.lambda$onSearchExpand$1(valueAnimator);
                 }
             });
             arrayList.add(ofFloat);
@@ -613,7 +613,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         float pVar = top();
-        boolean z = pVar <= ((float) Math.max(0, (AndroidUtilities.statusBarHeight + C3706ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m104dp(32)));
+        boolean z = pVar <= ((float) Math.max(0, (AndroidUtilities.statusBarHeight + C3704ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m104dp(32)));
         float f = this.actionBarT.set(z);
         float lerp = AndroidUtilities.lerp(pVar, (float) BitmapDescriptorFactory.HUE_RED, f);
         if (z != this.actionBarShown) {
@@ -621,9 +621,9 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
             onFullScreen(z);
             this.listView.getFastScroll().animate().alpha(this.actionBarShown ? 1.0f : 0.0f).start();
         }
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        if (c3706ActionBar != null) {
-            c3706ActionBar.setAlpha(f);
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        if (c3704ActionBar != null) {
+            c3704ActionBar.setAlpha(f);
             int i = f <= BitmapDescriptorFactory.HUE_RED ? 8 : 0;
             if (this.actionBar.getVisibility() != i) {
                 this.actionBar.setVisibility(i);
@@ -649,11 +649,11 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         float f;
-        this.listView.setPinnedSectionOffsetY(AndroidUtilities.statusBarHeight + C3706ActionBar.getCurrentActionBarHeight());
-        this.listView.setPadding(AndroidUtilities.m104dp(6), AndroidUtilities.statusBarHeight + C3706ActionBar.getCurrentActionBarHeight(), AndroidUtilities.m104dp(1), AndroidUtilities.navigationBarHeight);
+        this.listView.setPinnedSectionOffsetY(AndroidUtilities.statusBarHeight + C3704ActionBar.getCurrentActionBarHeight());
+        this.listView.setPadding(AndroidUtilities.m104dp(6), AndroidUtilities.statusBarHeight + C3704ActionBar.getCurrentActionBarHeight(), AndroidUtilities.m104dp(1), AndroidUtilities.navigationBarHeight);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.searchContainer.getLayoutParams();
         layoutParams.leftMargin = 0;
-        layoutParams.topMargin = AndroidUtilities.statusBarHeight + C3706ActionBar.getCurrentActionBarHeight();
+        layoutParams.topMargin = AndroidUtilities.statusBarHeight + C3704ActionBar.getCurrentActionBarHeight();
         layoutParams.rightMargin = 0;
         layoutParams.bottomMargin = AndroidUtilities.navigationBarHeight;
         this.dropDown.setPadding(0, AndroidUtilities.statusBarHeight, AndroidUtilities.m104dp(10), 0);
@@ -758,7 +758,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
         updateContainsDrafts();
         MediaController.AlbumEntry albumEntry2 = this.selectedAlbum;
         if (albumEntry2 == MediaController.allMediaAlbumEntry) {
-            this.dropDown.setText(LocaleController.getString("ChatGallery", C3634R.string.ChatGallery));
+            this.dropDown.setText(LocaleController.getString("ChatGallery", C3632R.string.ChatGallery));
         } else if (albumEntry2 == draftsAlbum) {
             this.dropDown.setText(LocaleController.getString("StoryDraftsAlbum"));
         } else {
@@ -768,11 +768,11 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
         if (z) {
             LinearSmoothScrollerCustom linearSmoothScrollerCustom = new LinearSmoothScrollerCustom(getContext(), 2);
             linearSmoothScrollerCustom.setTargetPosition(1);
-            linearSmoothScrollerCustom.setOffset((-C3706ActionBar.getCurrentActionBarHeight()) + AndroidUtilities.m104dp(16));
+            linearSmoothScrollerCustom.setOffset((-C3704ActionBar.getCurrentActionBarHeight()) + AndroidUtilities.m104dp(16));
             this.layoutManager.startSmoothScroll(linearSmoothScrollerCustom);
             return;
         }
-        this.layoutManager.scrollToPositionWithOffset(1, (-C3706ActionBar.getCurrentActionBarHeight()) + AndroidUtilities.m104dp(16));
+        this.layoutManager.scrollToPositionWithOffset(1, (-C3704ActionBar.getCurrentActionBarHeight()) + AndroidUtilities.m104dp(16));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -849,7 +849,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
             textPaint.setColor(-1);
             textPaint2.setTextSize(AndroidUtilities.m105dp(11.33f));
             textPaint2.setColor(-1);
-            this.durationPlayDrawable = context.getResources().getDrawable(C3634R.C3636drawable.play_mini_video).mutate();
+            this.durationPlayDrawable = context.getResources().getDrawable(C3632R.C3634drawable.play_mini_video).mutate();
         }
 
         @Override // android.view.View
@@ -1331,7 +1331,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
             if (z) {
                 ImageView imageView = new ImageView(context);
                 this.searchButton = imageView;
-                imageView.setImageResource(C3634R.C3636drawable.ic_ab_search);
+                imageView.setImageResource(C3632R.C3634drawable.ic_ab_search);
                 this.searchButton.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 this.searchButton.setBackground(Theme.createSelectorDrawable(436207615));
                 this.searchButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.GalleryListView$HeaderView$$ExternalSyntheticLambda0
@@ -1347,7 +1347,7 @@ public class GalleryListView extends FrameLayout implements NotificationCenter.N
             textView.setTextSize(1, 16.0f);
             this.textView.setTextColor(-1);
             this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.textView.setText(LocaleController.getString(z ? C3634R.string.AddImage : C3634R.string.ChoosePhotoOrVideo));
+            this.textView.setText(LocaleController.getString(z ? C3632R.string.AddImage : C3632R.string.ChoosePhotoOrVideo));
             addView(this.textView, LayoutHelper.createFrame(-1, -1, 119, 0, 0, z ? 32 : 0, 0));
         }
 

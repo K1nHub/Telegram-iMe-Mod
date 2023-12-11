@@ -50,15 +50,15 @@ public final class ExtBlkRef implements TlbObject {
     }
 
     public int hashCode() {
-        return (((((ULong.m1996hashCodeimpl(this.endLt) * 31) + UInt.m1974hashCodeimpl(this.seqNo)) * 31) + this.rootHash.hashCode()) * 31) + this.fileHash.hashCode();
+        return (((((ULong.m1998hashCodeimpl(this.endLt) * 31) + UInt.m1976hashCodeimpl(this.seqNo)) * 31) + this.rootHash.hashCode()) * 31) + this.fileHash.hashCode();
     }
 
     private ExtBlkRef(int i, ULong uLong, UInt uInt, BitString bitString, BitString bitString2, SerializationConstructorMarker serializationConstructorMarker) {
         if (15 != (i & 15)) {
             PluginExceptionsKt.throwMissingFieldException(i, 15, ExtBlkRef$$serializer.INSTANCE.getDescriptor());
         }
-        this.endLt = uLong.m1998unboximpl();
-        this.seqNo = uInt.m1976unboximpl();
+        this.endLt = uLong.m2000unboximpl();
+        this.seqNo = uInt.m1978unboximpl();
         this.rootHash = bitString;
         this.fileHash = bitString2;
         if (!(bitString.getSize() == 256)) {
@@ -85,20 +85,20 @@ public final class ExtBlkRef implements TlbObject {
     }
 
     public static final /* synthetic */ void write$Self(ExtBlkRef extBlkRef, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ULongSerializer.INSTANCE, ULong.m1993boximpl(extBlkRef.endLt));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, UIntSerializer.INSTANCE, UInt.m1971boximpl(extBlkRef.seqNo));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ULongSerializer.INSTANCE, ULong.m1995boximpl(extBlkRef.endLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, UIntSerializer.INSTANCE, UInt.m1973boximpl(extBlkRef.seqNo));
         FiftHexBitStringSerializer fiftHexBitStringSerializer = FiftHexBitStringSerializer.INSTANCE;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 2, fiftHexBitStringSerializer, extBlkRef.rootHash);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 3, fiftHexBitStringSerializer, extBlkRef.fileHash);
     }
 
     /* renamed from: getEndLt-s-VKNKU  reason: not valid java name */
-    public final long m5106getEndLtsVKNKU() {
+    public final long m5088getEndLtsVKNKU() {
         return this.endLt;
     }
 
     /* renamed from: getSeqNo-pVg5ArA  reason: not valid java name */
-    public final int m5107getSeqNopVg5ArA() {
+    public final int m5089getSeqNopVg5ArA() {
         return this.seqNo;
     }
 
@@ -155,8 +155,8 @@ public final class ExtBlkRef implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("ext_blk_ref");
-        open.field("end_lt", ULong.m1993boximpl(this.endLt));
-        open.field("seq_no", UInt.m1971boximpl(this.seqNo));
+        open.field("end_lt", ULong.m1995boximpl(this.endLt));
+        open.field("seq_no", UInt.m1973boximpl(this.seqNo));
         open.field("root_hash", this.rootHash);
         open.field("file_hash", this.fileHash);
         TlbPrettyPrinter.close$default(open, null, 1, null);

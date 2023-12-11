@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;)V
     .locals 0
 
-    .line 1750
+    .line 1808
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter$2;->this$2:Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .method public canPerformActions()Z
     .locals 3
 
-    .line 1763
+    .line 1821
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter$2;->this$2:Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
@@ -63,7 +63,11 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
-    iget-boolean v0, v0, Lorg/telegram/messenger/MessagePreviewParams;->singleLink:Z
+    iget-boolean v1, v0, Lorg/telegram/messenger/MessagePreviewParams;->singleLink:Z
+
+    if-nez v1, :cond_0
+
+    iget-boolean v0, v0, Lorg/telegram/messenger/MessagePreviewParams;->isSecret:Z
 
     if-nez v0, :cond_0
 
@@ -152,6 +156,14 @@
     .locals 0
 
     invoke-static/range {p0 .. p5}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressChannelAvatar(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$Chat;IFF)V
+
+    return-void
+.end method
+
+.method public synthetic didPressCodeCopy(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/messenger/MessageObject$TextLayoutBlock;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressCodeCopy(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/messenger/MessageObject$TextLayoutBlock;)V
 
     return-void
 .end method
@@ -279,7 +291,7 @@
 .method public didPressUrl(Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/text/style/CharacterStyle;Z)V
     .locals 2
 
-    .line 1768
+    .line 1826
     iget-object p3, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter$2;->this$2:Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;
 
     iget-object p3, p3, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
@@ -300,7 +312,7 @@
 
     goto :goto_0
 
-    .line 1771
+    .line 1829
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
@@ -310,7 +322,7 @@
 
     return-void
 
-    .line 1775
+    .line 1833
     :cond_1
     instance-of p3, p2, Landroid/text/style/URLSpan;
 
@@ -318,7 +330,7 @@
 
     return-void
 
-    .line 1778
+    .line 1836
     :cond_2
     move-object p3, p2
 
@@ -328,7 +340,7 @@
 
     move-result-object p3
 
-    .line 1780
+    .line 1838
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter$2;->this$2:Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
@@ -341,10 +353,10 @@
 
     const/4 p2, 0x0
 
-    .line 1781
+    .line 1839
     iput-object p2, v1, Lorg/telegram/messenger/MessagePreviewParams;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    .line 1783
+    .line 1841
     iget-object p2, v0, Lorg/telegram/ui/Components/MessagePreviewView;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     if-eqz p2, :cond_3
@@ -353,10 +365,10 @@
 
     const/4 v0, 0x1
 
-    .line 1784
+    .line 1842
     invoke-virtual {p2, p3, v0}, Lorg/telegram/ui/ChatActivity;->searchLinks(Ljava/lang/CharSequence;Z)V
 
-    .line 1786
+    .line 1844
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter$2;->this$2:Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;
 
@@ -373,6 +385,14 @@
     .locals 0
 
     invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressUserAvatar(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;FF)V
+
+    return-void
+.end method
+
+.method public synthetic didPressUserStatus(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Document;)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressUserStatus(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Document;)V
 
     return-void
 .end method
@@ -450,7 +470,7 @@
 .method public getProgressLoadingLink(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/style/CharacterStyle;
     .locals 2
 
-    .line 1791
+    .line 1849
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter$2;->this$2:Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
@@ -471,7 +491,7 @@
 
     goto :goto_0
 
-    .line 1794
+    .line 1852
     :cond_0
     iget-object p1, p1, Lorg/telegram/messenger/MessagePreviewParams;->currentLink:Landroid/text/style/CharacterStyle;
 
@@ -487,7 +507,7 @@
 .method public getTextSelectionHelper()Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;
     .locals 1
 
-    .line 1753
+    .line 1811
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter$2;->this$2:Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
@@ -546,7 +566,7 @@
 .method public isProgressLoading(Lorg/telegram/ui/Cells/ChatMessageCell;I)Z
     .locals 3
 
-    .line 1799
+    .line 1857
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter$2;->this$2:Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MessagePreviewView$Page$Adapter;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
@@ -573,7 +593,7 @@
 
     goto :goto_0
 
-    .line 1802
+    .line 1860
     :cond_0
     iget-object p1, p1, Lorg/telegram/messenger/MessagePreviewParams;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 

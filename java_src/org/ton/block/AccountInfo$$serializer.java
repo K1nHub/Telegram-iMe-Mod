@@ -23,7 +23,7 @@ public final class AccountInfo$$serializer implements GeneratedSerializer<Accoun
         pluginGeneratedSerialDescriptor.addElement("addr", false);
         pluginGeneratedSerialDescriptor.addElement("storage_stat", false);
         pluginGeneratedSerialDescriptor.addElement("storage", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7523x4da51fa4("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7521x4da51fa4("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

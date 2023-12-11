@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/tgnet/TLRPC$Chat;
+.field public final synthetic f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLRPC$Chat;)V
+.method public synthetic constructor <init>(Ljava/util/concurrent/atomic/AtomicBoolean;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/tgnet/TLRPC$Chat;
+    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda18;->f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/tgnet/TLRPC$Chat;
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda18;->f$0:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$zfxOIZTcRVpGe25xFiaw3xOwXVM(Lorg/telegram/tgnet/TLRPC$Chat;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$EZQkqAiWR8YLTFxl0qmH0xP1tXM(Ljava/util/concurrent/atomic/AtomicBoolean;)V
 
     return-void
 .end method

@@ -12,11 +12,12 @@ import com.google.android.gms.internal.clearcut.zzgt;
 import com.google.android.gms.internal.clearcut.zzt;
 import com.google.android.gms.wallet.WalletConstants;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes.dex */
 public final class zzge {
 
     /* loaded from: classes.dex */
-    public static final class zza extends zzcg<zza, C7788zza> implements zzdq {
+    public static final class zza extends zzcg<zza, C7786zza> implements zzdq {
         private static volatile zzdz<zza> zzbg;
         private static final zza zzsm;
         private zzcn<String> zzsh = zzcg.zzbb();
@@ -27,12 +28,12 @@ public final class zzge {
 
         /* renamed from: com.google.android.gms.internal.clearcut.zzge$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C7788zza extends zzcg.zza<zza, C7788zza> implements zzdq {
-            private C7788zza() {
+        public static final class C7786zza extends zzcg.zza<zza, C7786zza> implements zzdq {
+            private C7786zza() {
                 super(zza.zzsm);
             }
 
-            /* synthetic */ C7788zza(zzgf zzgfVar) {
+            /* synthetic */ C7786zza(zzgf zzgfVar) {
                 this();
             }
         }
@@ -55,7 +56,7 @@ public final class zzge {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C7788zza(null);
+                    return new C7786zza(null);
                 case 3:
                     return zzcg.zza(zzsm, "\u0001\u0005\u0000\u0000\u0001\u0005\u0005\u0006\u0000\u0005\u0000\u0001\u001a\u0002\u001a\u0003\u0016\u0004\u0014\u0005\u0014", new Object[]{"zzsh", "zzsi", "zzsj", "zzsk", "zzsl"});
                 case 4:
@@ -1723,8 +1724,8 @@ public final class zzge {
             ADWORDS_MOBILE_IOS_PRIMES(546),
             ADWORDS_MOBILE_ACX(764),
             LEANBACK_EVENT(TsExtractor.TS_STREAM_TYPE_SPLICE_INFO),
-            ANDROID_GMAIL(135),
-            SAMPLE_SHM(136),
+            ANDROID_GMAIL(TsExtractor.TS_STREAM_TYPE_E_AC3),
+            SAMPLE_SHM(MessagesStorage.LAST_DB_VERSION),
             GPLUS_ANDROID_PRIMES(140),
             GMAIL_ANDROID_PRIMES(ImageReceiver.DEFAULT_CROSSFADE_DURATION),
             CALENDAR_ANDROID_PRIMES(151),
@@ -2651,9 +2652,9 @@ public final class zzge {
                         return ADWORDS_MOBILE;
                     case TsExtractor.TS_STREAM_TYPE_SPLICE_INFO /* 134 */:
                         return LEANBACK_EVENT;
-                    case 135:
+                    case TsExtractor.TS_STREAM_TYPE_E_AC3 /* 135 */:
                         return ANDROID_GMAIL;
-                    case 136:
+                    case MessagesStorage.LAST_DB_VERSION /* 136 */:
                         return SAMPLE_SHM;
                     case 137:
                         return ICORE;

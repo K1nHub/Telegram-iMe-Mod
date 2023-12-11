@@ -44,8 +44,8 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.messenger.C3632R;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -237,13 +237,13 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_toolbar_title));
-        c3706ActionBar.setAllowOverlayTitle(true);
-        c3706ActionBar.createMenu();
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.wallet_swap_transaction_options_toolbar_title));
+        c3704ActionBar.setAllowOverlayTitle(true);
+        c3704ActionBar.createMenu();
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSwapFeeFragment.this.finishFragment();
@@ -365,25 +365,25 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
                 WalletSwapFeeFragment walletSwapFeeFragment = this.this$0;
                 if (holder.getItemViewType() == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL && (view instanceof TextInfoPrivacyCell)) {
                     if (i == walletSwapFeeFragment.slipInfoRow) {
-                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_slip_description));
+                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3632R.string.wallet_swap_transaction_options_slip_description));
                     } else if (i == walletSwapFeeFragment.deadlineInfoRow) {
-                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_deadline_description));
+                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3632R.string.wallet_swap_transaction_options_deadline_description));
                     } else {
                         GasPriceInfo info = walletSwapFeeFragment.getPresenter().getSelectedFee().getInfo();
                         ResourceManager resourceManager = walletSwapFeeFragment.getResourceManager();
-                        int i2 = C3634R.string.wallet_amount_send_fee_format;
+                        int i2 = C3632R.string.wallet_amount_send_fee_format;
                         Double valueOf = Double.valueOf(info.getFeeInFiat().getValue());
                         TokenDetailed.Companion companion = TokenDetailed.Companion;
                         ((TextInfoPrivacyCell) view).setText(resourceManager.getString(i2, Integer.valueOf(info.getDuration()), BalanceFormatter.format(Double.valueOf(info.getFee()), Integer.valueOf(walletSwapFeeFragment.getPresenter().getMetadata().getFeeToken().getDecimals())), walletSwapFeeFragment.getPresenter().getMetadata().getFeeToken().getTicker(), BalanceFormatter.format(valueOf, Integer.valueOf(companion.getUSD().getDecimals())), companion.getUSD().getTicker()));
                     }
-                    ((TextInfoPrivacyCell) view).setBackground(Theme.getThemedDrawable(this.mContext, C3634R.C3636drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    ((TextInfoPrivacyCell) view).setBackground(Theme.getThemedDrawable(this.mContext, C3632R.C3634drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 } else if (holder.getItemViewType() == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
                     if (i == walletSwapFeeFragment.slipHeaderRow) {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_slip_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3632R.string.wallet_swap_transaction_options_slip_header));
                     } else if (i == walletSwapFeeFragment.deadlineHeaderRow) {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_deadline_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3632R.string.wallet_swap_transaction_options_deadline_header));
                     } else {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_fee_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3632R.string.wallet_swap_transaction_options_fee_header));
                     }
                 } else if (holder.getItemViewType() == IdFabric$ViewTypes.SLIDE_CHOOSE && (view instanceof SlideChooseView)) {
                     if (i == walletSwapFeeFragment.slipChooserRow) {

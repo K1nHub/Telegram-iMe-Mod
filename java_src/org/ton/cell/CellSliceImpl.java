@@ -36,20 +36,20 @@ public class CellSliceImpl implements CellSlice {
 
     @Override // org.ton.cell.CellSlice
     /* renamed from: loadUInt16-Mh2AYeg */
-    public short mo5219loadUInt16Mh2AYeg() {
-        return CellSlice.DefaultImpls.m5222loadUInt16Mh2AYeg(this);
+    public short mo5201loadUInt16Mh2AYeg() {
+        return CellSlice.DefaultImpls.m5204loadUInt16Mh2AYeg(this);
     }
 
     @Override // org.ton.cell.CellSlice
     /* renamed from: loadUInt32-pVg5ArA */
-    public int mo5220loadUInt32pVg5ArA() {
-        return CellSlice.DefaultImpls.m5223loadUInt32pVg5ArA(this);
+    public int mo5202loadUInt32pVg5ArA() {
+        return CellSlice.DefaultImpls.m5205loadUInt32pVg5ArA(this);
     }
 
     @Override // org.ton.cell.CellSlice
     /* renamed from: loadUInt64-s-VKNKU */
-    public long mo5221loadUInt64sVKNKU() {
-        return CellSlice.DefaultImpls.m5224loadUInt64sVKNKU(this);
+    public long mo5203loadUInt64sVKNKU() {
+        return CellSlice.DefaultImpls.m5206loadUInt64sVKNKU(this);
     }
 
     @Override // org.ton.cell.CellSlice

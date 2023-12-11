@@ -38,7 +38,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -414,7 +414,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 }
                 Field field = mCursorDrawableResField;
                 if (field != null) {
-                    field.set(this, Integer.valueOf(C3634R.C3636drawable.field_carret_empty));
+                    field.set(this, Integer.valueOf(C3632R.C3634drawable.field_carret_empty));
                 }
             } catch (Throwable unused5) {
             }
@@ -472,7 +472,7 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     public void setLineColors(int i, int i2, int i3) {
         this.lineVisible = true;
-        getContext().getResources().getDrawable(C3634R.C3636drawable.search_dark).getPadding(this.padding);
+        getContext().getResources().getDrawable(C3632R.C3634drawable.search_dark).getPadding(this.padding);
         Rect rect = this.padding;
         setPadding(rect.left, rect.top, rect.right, rect.bottom);
         this.lineColor = i;
@@ -865,8 +865,8 @@ public class EditTextBoldCursor extends EditTextEffects {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x010e A[Catch: all -> 0x0137, TryCatch #1 {all -> 0x0137, blocks: (B:31:0x0063, B:33:0x0067, B:35:0x006b, B:37:0x007d, B:42:0x008b, B:45:0x0091, B:47:0x0098, B:49:0x00a0, B:54:0x00c6, B:56:0x010e, B:58:0x0111, B:59:0x0116, B:50:0x00b3, B:52:0x00bb, B:41:0x0087), top: B:147:0x0063 }] */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x01c5 A[Catch: all -> 0x01ef, TryCatch #4 {all -> 0x01ef, blocks: (B:69:0x0148, B:71:0x014f, B:73:0x0157, B:78:0x017d, B:80:0x01c5, B:82:0x01c8, B:83:0x01cd, B:74:0x016a, B:76:0x0172), top: B:154:0x0148 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0123 A[Catch: all -> 0x014c, TryCatch #3 {all -> 0x014c, blocks: (B:36:0x0078, B:38:0x007c, B:40:0x0080, B:42:0x0092, B:47:0x00a0, B:50:0x00a6, B:52:0x00ad, B:54:0x00b5, B:59:0x00db, B:61:0x0123, B:63:0x0126, B:64:0x012b, B:55:0x00c8, B:57:0x00d0, B:46:0x009c), top: B:157:0x0078 }] */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01da A[Catch: all -> 0x0204, TryCatch #1 {all -> 0x0204, blocks: (B:74:0x015d, B:76:0x0164, B:78:0x016c, B:83:0x0192, B:85:0x01da, B:87:0x01dd, B:88:0x01e2, B:79:0x017f, B:81:0x0187), top: B:152:0x015d }] */
     @Override // org.telegram.p043ui.Components.EditTextEffects, android.widget.TextView, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -874,7 +874,7 @@ public class EditTextBoldCursor extends EditTextEffects {
     */
     public void onDraw(android.graphics.Canvas r15) {
         /*
-            Method dump skipped, instructions count: 839
+            Method dump skipped, instructions count: 860
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.EditTextBoldCursor.onDraw(android.graphics.Canvas):void");

@@ -97,7 +97,11 @@
 
     iget-object p1, p1, Lcom/iMe/model/wallet/home/SlideItem;->slide:Lcom/iMe/model/wallet/home/BannerSlide;
 
-    if-eq v1, p1, :cond_2
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_2
 
     return v2
 
@@ -128,7 +132,7 @@
 
     iget-object v0, p0, Lcom/iMe/model/wallet/home/SlideItem;->slide:Lcom/iMe/model/wallet/home/BannerSlide;
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 

@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemCatalogCategoryPreviewBinding implements ViewBinding {
     private ForkRecycleItemCatalogCategoryPreviewBinding(LinearLayout linearLayout, RecyclerView recyclerView, AppCompatTextView appCompatTextView) {
@@ -19,7 +19,7 @@ public final class ForkRecycleItemCatalogCategoryPreviewBinding implements ViewB
     }
 
     public static ForkRecycleItemCatalogCategoryPreviewBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_catalog_category_preview, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_recycle_item_catalog_category_preview, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -27,10 +27,10 @@ public final class ForkRecycleItemCatalogCategoryPreviewBinding implements ViewB
     }
 
     public static ForkRecycleItemCatalogCategoryPreviewBinding bind(View view) {
-        int i = C3634R.C3637id.recycle_channels;
+        int i = C3632R.C3635id.recycle_channels;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
-            i = C3634R.C3637id.text_title;
+            i = C3632R.C3635id.text_title;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
                 return new ForkRecycleItemCatalogCategoryPreviewBinding((LinearLayout) view, recyclerView, appCompatTextView);

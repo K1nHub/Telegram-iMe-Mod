@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
     .locals 0
 
-    .line 867
+    .line 868
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$16;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;-><init>()V
@@ -35,7 +35,7 @@
 .method public onEndAnimation()V
     .locals 2
 
-    .line 875
+    .line 876
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$16;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     const/4 v1, 0x0
@@ -48,7 +48,7 @@
 .method public onPreAnimation()V
     .locals 2
 
-    .line 870
+    .line 871
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$16;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     const/4 v1, 0x1

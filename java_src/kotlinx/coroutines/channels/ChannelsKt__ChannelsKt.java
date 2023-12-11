@@ -9,12 +9,12 @@ final /* synthetic */ class ChannelsKt__ChannelsKt {
     /* JADX WARN: Multi-variable type inference failed */
     public static final <E> Object trySendBlocking(SendChannel<? super E> sendChannel, E e) {
         Object runBlocking$default;
-        Object mo2100trySendJP2dKIU = sendChannel.mo2100trySendJP2dKIU(e);
-        if (mo2100trySendJP2dKIU instanceof ChannelResult.Failed) {
+        Object mo2102trySendJP2dKIU = sendChannel.mo2102trySendJP2dKIU(e);
+        if (mo2102trySendJP2dKIU instanceof ChannelResult.Failed) {
             runBlocking$default = BuildersKt__BuildersKt.runBlocking$default(null, new ChannelsKt__ChannelsKt$trySendBlocking$2(sendChannel, e, null), 1, null);
-            return ((ChannelResult) runBlocking$default).m2109unboximpl();
+            return ((ChannelResult) runBlocking$default).m2111unboximpl();
         }
-        Unit unit = (Unit) mo2100trySendJP2dKIU;
-        return ChannelResult.Companion.m2112successJP2dKIU(Unit.INSTANCE);
+        Unit unit = (Unit) mo2102trySendJP2dKIU;
+        return ChannelResult.Companion.m2114successJP2dKIU(Unit.INSTANCE);
     }
 }

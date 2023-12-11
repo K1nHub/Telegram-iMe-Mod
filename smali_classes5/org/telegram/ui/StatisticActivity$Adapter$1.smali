@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity$Adapter;Landroid/content/Context;ILorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;)V
     .locals 0
 
-    .line 885
+    .line 888
     iget-object p1, p1, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/StatisticActivity$ChartCell;-><init>(Lorg/telegram/ui/StatisticActivity;Landroid/content/Context;ILorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;)V
@@ -31,7 +31,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 888
+    .line 891
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result v0
@@ -42,7 +42,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 889
+    .line 892
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -51,7 +51,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 891
+    .line 894
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 

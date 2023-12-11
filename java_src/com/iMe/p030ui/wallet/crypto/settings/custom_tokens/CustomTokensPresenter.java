@@ -167,12 +167,12 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BaseNode>> result) {
-                m1650invoke(result);
+                m1651invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1650invoke(Result<? extends List<? extends BaseNode>> it) {
+            public final void m1651invoke(Result<? extends List<? extends BaseNode>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends BaseNode>> result = it;
                 if (result instanceof Result.Success) {
@@ -327,12 +327,12 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<BaseNode> list) {
-                m1652invoke(list);
+                m1653invoke(list);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1652invoke(List<BaseNode> it) {
+            public final void m1653invoke(List<BaseNode> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 ((CustomTokensView) CustomTokensPresenter.this.getViewState()).renderItems(it);
             }
@@ -471,12 +471,12 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.TokensSettingsChanged tokensSettingsChanged) {
-                m1651invoke(tokensSettingsChanged);
+                m1652invoke(tokensSettingsChanged);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1651invoke(DomainRxEvents.TokensSettingsChanged it) {
+            public final void m1652invoke(DomainRxEvents.TokensSettingsChanged it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 CustomTokensPresenter.this.reload();
             }

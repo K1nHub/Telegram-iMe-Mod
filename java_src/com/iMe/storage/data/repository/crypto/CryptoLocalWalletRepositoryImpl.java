@@ -16,7 +16,6 @@ import com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository;
 import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.extensions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
 import java.util.ArrayList;
 import java.util.List;
@@ -223,36 +222,10 @@ public final class CryptoLocalWalletRepositoryImpl implements CryptoLocalWalletR
     }
 
     @Override // com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository
-    public Observable<Result<Boolean>> isValidSeed(String seed, final BlockchainType blockchainType) {
+    public Observable<Result<Boolean>> isValidSeed(String seed, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(seed, "seed");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable flatMap = this.walletManager.generateAddressByMnemonic(seed, blockchainType).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends String>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.data.repository.crypto.CryptoLocalWalletRepositoryImpl$isValidSeed$$inlined$flatMapSuccess$1
-            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            {
-                super(1);
-            }
-
-            @Override // kotlin.jvm.functions.Function1
-            public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends String> result) {
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    if (result instanceof Result.Error) {
-                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
-                        return Observable.just(error$default);
-                    }
-                    return Observable.empty();
-                }
-                CryptoLocalWalletRepositoryImpl cryptoLocalWalletRepositoryImpl = CryptoLocalWalletRepositoryImpl.this;
-                String data = result.getData();
-                if (data == null) {
-                    data = "";
-                }
-                return cryptoLocalWalletRepositoryImpl.isValidAddress(data, blockchainType);
-            }
-        }));
-        Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        return flatMap;
+        return this.walletManager.isValidMnemonic(seed, blockchainType);
     }
 
     @Override // com.iMe.storage.domain.repository.crypto.CryptoLocalWalletRepository

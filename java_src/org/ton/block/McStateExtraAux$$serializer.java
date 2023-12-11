@@ -118,7 +118,7 @@ public final class McStateExtraAux$$serializer implements GeneratedSerializer<Mc
         }
         beginStructure.endStructure(descriptor2);
         OldMcBlocksInfo oldMcBlocksInfo = (OldMcBlocksInfo) obj;
-        return new McStateExtraAux(i2, i, (ValidatorInfo) obj3, oldMcBlocksInfo != null ? oldMcBlocksInfo.m5138unboximpl() : null, z, (Maybe) obj4, (BlockCreateStats) obj2, null, null);
+        return new McStateExtraAux(i2, i, (ValidatorInfo) obj3, oldMcBlocksInfo != null ? oldMcBlocksInfo.m5120unboximpl() : null, z, (Maybe) obj4, (BlockCreateStats) obj2, null, null);
     }
 
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy

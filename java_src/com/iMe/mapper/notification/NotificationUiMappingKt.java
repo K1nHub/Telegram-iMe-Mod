@@ -21,24 +21,24 @@ public final class NotificationUiMappingKt {
         if (notification instanceof Notification.Unsupported) {
             return new PushNotificationModel.Unsupported(notification.getUserId(), notification.getType().toString());
         }
-        if (notification instanceof Notification.CryptoTransfer.C1963In) {
-            Notification.CryptoTransfer.C1963In c1963In = (Notification.CryptoTransfer.C1963In) notification;
-            String tokenCode = c1963In.getTokenCode();
-            String amount = c1963In.getAmount();
-            String toAddress = c1963In.getToAddress();
-            return new PushNotificationModel.CryptoTransfer.C1536In(notification.getUserId(), notification.getType().name(), tokenCode, c1963In.getFromAddress(), toAddress, amount);
+        if (notification instanceof Notification.CryptoTransfer.C1960In) {
+            Notification.CryptoTransfer.C1960In c1960In = (Notification.CryptoTransfer.C1960In) notification;
+            String tokenCode = c1960In.getTokenCode();
+            String amount = c1960In.getAmount();
+            String toAddress = c1960In.getToAddress();
+            return new PushNotificationModel.CryptoTransfer.C1536In(notification.getUserId(), notification.getType().name(), tokenCode, c1960In.getFromAddress(), toAddress, amount);
         } else if (notification instanceof Notification.CryptoTransfer.Out) {
             Notification.CryptoTransfer.Out out = (Notification.CryptoTransfer.Out) notification;
             String tokenCode2 = out.getTokenCode();
             String amount2 = out.getAmount();
             String toAddress2 = out.getToAddress();
             return new PushNotificationModel.CryptoTransfer.Out(notification.getUserId(), notification.getType().name(), ((Notification.CryptoTransfer.Out) notification).getStatus().name(), tokenCode2, out.getFromAddress(), toAddress2, amount2);
-        } else if (notification instanceof Notification.Donation.C1964In) {
-            Notification.Donation.C1964In c1964In = (Notification.Donation.C1964In) notification;
-            String tokenCode3 = c1964In.getTokenCode();
-            String amount3 = c1964In.getAmount();
-            String toAddress3 = c1964In.getToAddress();
-            return new PushNotificationModel.Donation.C1537In(notification.getUserId(), notification.getType().name(), tokenCode3, c1964In.getFromAddress(), toAddress3, amount3);
+        } else if (notification instanceof Notification.Donation.C1961In) {
+            Notification.Donation.C1961In c1961In = (Notification.Donation.C1961In) notification;
+            String tokenCode3 = c1961In.getTokenCode();
+            String amount3 = c1961In.getAmount();
+            String toAddress3 = c1961In.getToAddress();
+            return new PushNotificationModel.Donation.C1537In(notification.getUserId(), notification.getType().name(), tokenCode3, c1961In.getFromAddress(), toAddress3, amount3);
         } else if (notification instanceof Notification.Donation.Out) {
             Notification.Donation.Out out2 = (Notification.Donation.Out) notification;
             String tokenCode4 = out2.getTokenCode();

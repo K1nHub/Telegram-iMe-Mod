@@ -20,7 +20,7 @@ import androidx.core.content.ContextCompat;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageReceiver;
@@ -109,12 +109,12 @@ public class StorageDiagramView extends View implements NotificationCenter.Notif
         this.avatarImageReceiver = imageReceiver;
         imageReceiver.setParentView(this);
         if (z) {
-            this.dialogText = LocaleController.getString("ArchivedChats", C3634R.string.ArchivedChats);
-            CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m104dp(90), Theme.getColor(Theme.key_chats_archiveBackground)), ContextCompat.getDrawable(context, C3634R.C3636drawable.fork_fab_archive));
+            this.dialogText = LocaleController.getString("ArchivedChats", C3632R.string.ArchivedChats);
+            CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m104dp(90), Theme.getColor(Theme.key_chats_archiveBackground)), ContextCompat.getDrawable(context, C3632R.C3634drawable.fork_fab_archive));
             combinedDrawable.setIconSize(AndroidUtilities.m104dp(30), AndroidUtilities.m104dp(30));
             this.avatarImageReceiver.setImageBitmap(combinedDrawable);
         } else if (j == Long.MAX_VALUE) {
-            this.dialogText = LocaleController.getString("CacheOtherChats", C3634R.string.CacheOtherChats);
+            this.dialogText = LocaleController.getString("CacheOtherChats", C3632R.string.CacheOtherChats);
             this.avatarDrawable.setAvatarType(14);
             this.avatarImageReceiver.setForUserOrChat(null, this.avatarDrawable);
         } else {

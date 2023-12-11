@@ -289,7 +289,7 @@ public class MatroskaExtractor implements Extractor {
     protected int getElementType(int i) {
         switch (i) {
             case ID_TRACK_TYPE /* 131 */:
-            case ID_FLAG_DEFAULT /* 136 */:
+            case 136:
             case ID_BLOCK_DURATION /* 155 */:
             case ID_CHANNELS /* 159 */:
             case ID_PIXEL_WIDTH /* 176 */:
@@ -632,7 +632,7 @@ public class MatroskaExtractor implements Extractor {
                 case ID_TRACK_TYPE /* 131 */:
                     getCurrentTrack(i).type = (int) j;
                     return;
-                case ID_FLAG_DEFAULT /* 136 */:
+                case 136:
                     getCurrentTrack(i).flagDefault = j == 1;
                     return;
                 case ID_BLOCK_DURATION /* 155 */:

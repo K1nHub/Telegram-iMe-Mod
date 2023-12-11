@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
@@ -195,7 +195,7 @@ public class DownloadButton extends ImageView {
             this.downloadingVideo = false;
             final File generatePicturePath = AndroidUtilities.generatePicturePath(false, "png");
             if (generatePicturePath == null) {
-                this.toast.setDone(C3634R.raw.error, LocaleController.getString("UnknownError"), 3500);
+                this.toast.setDone(C3632R.raw.error, LocaleController.getString("UnknownError"), 3500);
                 this.downloading = false;
                 updateImage();
                 return;
@@ -244,7 +244,7 @@ public class DownloadButton extends ImageView {
         if (!this.downloading || this.currentEntry == null) {
             return;
         }
-        this.toast.setDone(C3634R.raw.ic_save_to_gallery, LocaleController.getString("VideoSavedHint"), 3500);
+        this.toast.setDone(C3632R.raw.ic_save_to_gallery, LocaleController.getString("VideoSavedHint"), 3500);
         this.downloading = false;
         updateImage();
         this.savedToGalleryUri = uri;
@@ -263,7 +263,7 @@ public class DownloadButton extends ImageView {
         if (!this.downloading || this.currentEntry == null) {
             return;
         }
-        this.toast.setDone(C3634R.raw.error, LocaleController.getString("VideoConvertFail"), 3500);
+        this.toast.setDone(C3632R.raw.error, LocaleController.getString("VideoConvertFail"), 3500);
         this.downloading = false;
         updateImage();
     }
@@ -303,7 +303,7 @@ public class DownloadButton extends ImageView {
         }
         PreparingVideoToast preparingVideoToast2 = new PreparingVideoToast(getContext());
         this.toast = preparingVideoToast2;
-        preparingVideoToast2.setDone(C3634R.raw.ic_save_to_gallery, LocaleController.getString("PhotoSavedHint"), DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_MS);
+        preparingVideoToast2.setDone(C3632R.raw.ic_save_to_gallery, LocaleController.getString("PhotoSavedHint"), DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_MS);
         this.container.addView(this.toast);
         this.savedToGalleryUri = uri;
     }
@@ -318,7 +318,7 @@ public class DownloadButton extends ImageView {
             if (z4) {
                 AndroidUtilities.updateImageViewImageAnimated(this, this.progressDrawable);
             } else {
-                AndroidUtilities.updateImageViewImageAnimated(this, C3634R.C3636drawable.media_download);
+                AndroidUtilities.updateImageViewImageAnimated(this, C3632R.C3634drawable.media_download);
             }
         }
         if (this.wasVideoDownloading != (this.downloading && this.downloadingVideo)) {
@@ -345,7 +345,7 @@ public class DownloadButton extends ImageView {
     }
 
     public void showFailedVideo() {
-        showToast(C3634R.raw.error, LocaleController.getString("VideoConvertFail"));
+        showToast(C3632R.raw.error, LocaleController.getString("VideoConvertFail"));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -472,7 +472,7 @@ public class DownloadButton extends ImageView {
         private boolean shown;
 
         /* renamed from: t */
-        private final AnimatedFloat f1985t;
+        private final AnimatedFloat f1986t;
         private final TextPaint textPaint;
         private final TextPaint textPaint2;
         private final RectF toastRect;
@@ -500,7 +500,7 @@ public class DownloadButton extends ImageView {
             this.preparing = true;
             float f2 = BitmapDescriptorFactory.HUE_RED;
             this.progress = BitmapDescriptorFactory.HUE_RED;
-            this.f1985t = new AnimatedFloat(this);
+            this.f1986t = new AnimatedFloat(this);
             this.progressT = new AnimatedFloat(this);
             this.prepareRect = new RectF();
             this.toastRect = new RectF();
@@ -543,7 +543,7 @@ public class DownloadButton extends ImageView {
         protected void onDraw(Canvas canvas) {
             int saveCount = canvas.getSaveCount();
             float f = this.showT.set(this.shown ? 1.0f : 0.0f);
-            float f2 = this.f1985t.set(this.preparing ? 0.0f : 1.0f);
+            float f2 = this.f1986t.set(this.preparing ? 0.0f : 1.0f);
             float f3 = 1.0f - f2;
             this.dimPaint.setAlpha((int) (90.0f * f3 * f));
             canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), getHeight(), this.dimPaint);

@@ -19,7 +19,7 @@ import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
-import p033j$.util.AbstractC2843k;
+import p033j$.util.AbstractC2840k;
 /* renamed from: j$.wrappers.$r8$wrapper$java$util$stream$IntStream$-WRP */
 /* loaded from: classes2.dex */
 public final /* synthetic */ class C$r8$wrapper$java$util$stream$IntStream$WRP implements IntStream {
@@ -40,32 +40,32 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$IntStream$WRP i
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ boolean allMatch(IntPredicate intPredicate) {
-        return this.f1260a.mo331B(C3192S.m231a(intPredicate));
+        return this.f1260a.mo331B(C3189S.m231a(intPredicate));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ boolean anyMatch(IntPredicate intPredicate) {
-        return this.f1260a.mo330E(C3192S.m231a(intPredicate));
+        return this.f1260a.mo330E(C3189S.m231a(intPredicate));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ DoubleStream asDoubleStream() {
-        return C3180I0.m259m0(this.f1260a.asDoubleStream());
+        return C3177I0.m259m0(this.f1260a.asDoubleStream());
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ LongStream asLongStream() {
-        return C3184K0.m240m0(this.f1260a.asLongStream());
+        return C3181K0.m240m0(this.f1260a.asLongStream());
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ OptionalDouble average() {
-        return AbstractC2843k.m592n(this.f1260a.average());
+        return AbstractC2840k.m592n(this.f1260a.average());
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ Stream boxed() {
-        return C3186L0.m238m0(this.f1260a.boxed());
+        return C3183L0.m238m0(this.f1260a.boxed());
     }
 
     @Override // java.util.stream.BaseStream, java.lang.AutoCloseable
@@ -75,7 +75,7 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$IntStream$WRP i
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ Object collect(Supplier supplier, ObjIntConsumer objIntConsumer, BiConsumer biConsumer) {
-        return this.f1260a.mo320j0(C3243v0.m164a(supplier), C3233q0.m174a(objIntConsumer), C3232q.m175a(biConsumer));
+        return this.f1260a.mo320j0(C3240v0.m164a(supplier), C3230q0.m174a(objIntConsumer), C3229q.m175a(biConsumer));
     }
 
     @Override // java.util.stream.IntStream
@@ -90,32 +90,32 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$IntStream$WRP i
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ IntStream filter(IntPredicate intPredicate) {
-        return convert(this.f1260a.mo321h(C3192S.m231a(intPredicate)));
+        return convert(this.f1260a.mo321h(C3189S.m231a(intPredicate)));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ OptionalInt findAny() {
-        return AbstractC2843k.m591o(this.f1260a.findAny());
+        return AbstractC2840k.m591o(this.f1260a.findAny());
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ OptionalInt findFirst() {
-        return AbstractC2843k.m591o(this.f1260a.findFirst());
+        return AbstractC2840k.m591o(this.f1260a.findFirst());
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ IntStream flatMap(IntFunction intFunction) {
-        return convert(this.f1260a.mo326O(C3190P.m233a(intFunction)));
+        return convert(this.f1260a.mo326O(C3187P.m233a(intFunction)));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ void forEach(IntConsumer intConsumer) {
-        this.f1260a.mo325T(C3188N.m236b(intConsumer));
+        this.f1260a.mo325T(C3185N.m236b(intConsumer));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ void forEachOrdered(IntConsumer intConsumer) {
-        this.f1260a.mo329H(C3188N.m236b(intConsumer));
+        this.f1260a.mo329H(C3185N.m236b(intConsumer));
     }
 
     @Override // java.util.stream.BaseStream
@@ -131,7 +131,7 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$IntStream$WRP i
     @Override // java.util.stream.IntStream, java.util.stream.BaseStream
     /* renamed from: iterator */
     public /* synthetic */ Iterator<Integer> iterator2() {
-        return C3206d.m212a(this.f1260a.iterator());
+        return C3203d.m212a(this.f1260a.iterator());
     }
 
     @Override // java.util.stream.IntStream
@@ -141,49 +141,49 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$IntStream$WRP i
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ IntStream map(IntUnaryOperator intUnaryOperator) {
-        return convert(this.f1260a.mo319p(C3198Y.m223b(intUnaryOperator)));
+        return convert(this.f1260a.mo319p(C3195Y.m223b(intUnaryOperator)));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ DoubleStream mapToDouble(IntToDoubleFunction intToDoubleFunction) {
-        return C3180I0.m259m0(this.f1260a.mo317z(C3194U.m227b(intToDoubleFunction)));
+        return C3177I0.m259m0(this.f1260a.mo317z(C3191U.m227b(intToDoubleFunction)));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ LongStream mapToLong(IntToLongFunction intToLongFunction) {
-        return C3184K0.m240m0(this.f1260a.mo322f(C3196W.m226a(intToLongFunction)));
+        return C3181K0.m240m0(this.f1260a.mo322f(C3193W.m226a(intToLongFunction)));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ Stream mapToObj(IntFunction intFunction) {
-        return C3186L0.m238m0(this.f1260a.mo328I(C3190P.m233a(intFunction)));
+        return C3183L0.m238m0(this.f1260a.mo328I(C3187P.m233a(intFunction)));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ OptionalInt max() {
-        return AbstractC2843k.m591o(this.f1260a.max());
+        return AbstractC2840k.m591o(this.f1260a.max());
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ OptionalInt min() {
-        return AbstractC2843k.m591o(this.f1260a.min());
+        return AbstractC2840k.m591o(this.f1260a.min());
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ boolean noneMatch(IntPredicate intPredicate) {
-        return this.f1260a.mo318u(C3192S.m231a(intPredicate));
+        return this.f1260a.mo318u(C3189S.m231a(intPredicate));
     }
 
     /* JADX WARN: Type inference failed for: r2v2, types: [java.util.stream.IntStream, java.util.stream.BaseStream] */
     @Override // java.util.stream.BaseStream
     public /* synthetic */ IntStream onClose(Runnable runnable) {
-        return C3172E0.m286m0(this.f1260a.onClose(runnable));
+        return C3169E0.m286m0(this.f1260a.onClose(runnable));
     }
 
     /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.IntStream, java.util.stream.BaseStream] */
     @Override // java.util.stream.IntStream, java.util.stream.BaseStream
     public /* synthetic */ IntStream parallel() {
-        return C3172E0.m286m0(this.f1260a.parallel());
+        return C3169E0.m286m0(this.f1260a.parallel());
     }
 
     @Override // java.util.stream.IntStream, java.util.stream.BaseStream
@@ -194,23 +194,23 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$IntStream$WRP i
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ IntStream peek(IntConsumer intConsumer) {
-        return convert(this.f1260a.mo323b0(C3188N.m236b(intConsumer)));
+        return convert(this.f1260a.mo323b0(C3185N.m236b(intConsumer)));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ int reduce(int i, IntBinaryOperator intBinaryOperator) {
-        return this.f1260a.mo327M(i, C3185L.m239a(intBinaryOperator));
+        return this.f1260a.mo327M(i, C3182L.m239a(intBinaryOperator));
     }
 
     @Override // java.util.stream.IntStream
     public /* synthetic */ OptionalInt reduce(IntBinaryOperator intBinaryOperator) {
-        return AbstractC2843k.m591o(this.f1260a.mo324Z(C3185L.m239a(intBinaryOperator)));
+        return AbstractC2840k.m591o(this.f1260a.mo324Z(C3182L.m239a(intBinaryOperator)));
     }
 
     /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.IntStream, java.util.stream.BaseStream] */
     @Override // java.util.stream.IntStream, java.util.stream.BaseStream
     public /* synthetic */ IntStream sequential() {
-        return C3172E0.m286m0(this.f1260a.sequential());
+        return C3169E0.m286m0(this.f1260a.sequential());
     }
 
     @Override // java.util.stream.IntStream, java.util.stream.BaseStream
@@ -231,13 +231,13 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$IntStream$WRP i
 
     @Override // java.util.stream.IntStream, java.util.stream.BaseStream
     public /* synthetic */ Spliterator<Integer> spliterator() {
-        return C3222l.m189a(this.f1260a.spliterator());
+        return C3219l.m189a(this.f1260a.spliterator());
     }
 
     @Override // java.util.stream.IntStream, java.util.stream.BaseStream
     /* renamed from: spliterator */
     public /* synthetic */ Spliterator<Integer> spliterator2() {
-        return C3214h.m202a(this.f1260a.spliterator());
+        return C3211h.m202a(this.f1260a.spliterator());
     }
 
     @Override // java.util.stream.IntStream
@@ -259,6 +259,6 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$IntStream$WRP i
     /* JADX WARN: Type inference failed for: r0v2, types: [java.util.stream.IntStream, java.util.stream.BaseStream] */
     @Override // java.util.stream.BaseStream
     public /* synthetic */ IntStream unordered() {
-        return C3172E0.m286m0(this.f1260a.unordered());
+        return C3169E0.m286m0(this.f1260a.unordered());
     }
 }

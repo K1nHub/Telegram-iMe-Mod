@@ -22,14 +22,14 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;FLorg/telegram/ui/SelectAnimatedEmojiDialog;)V
     .locals 0
 
-    .line 4426
+    .line 4428
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$5;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/CloseProgressDrawable2;-><init>(F)V
 
     const/4 p1, 0x7
 
-    .line 4428
+    .line 4430
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -44,7 +44,7 @@
 .method protected getCurrentColor()I
     .locals 2
 
-    .line 4433
+    .line 4435
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchIcon:I
 
     iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$5;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;

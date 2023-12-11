@@ -103,7 +103,7 @@ final class TonNodeBlockIdImpl implements TonNodeBlockId {
         sb.append('(');
         sb.append(getWorkchain());
         sb.append(':');
-        padStart = StringsKt__StringsKt.padStart(UStringsKt.m2057toStringJSWoG40(ULong.m1994constructorimpl(Shard.m5072constructorimpl(getShard())), 16), 16, '0');
+        padStart = StringsKt__StringsKt.padStart(UStringsKt.m2059toStringJSWoG40(ULong.m1996constructorimpl(Shard.m5054constructorimpl(getShard())), 16), 16, '0');
         sb.append(padStart);
         sb.append(':');
         sb.append(getSeqno());

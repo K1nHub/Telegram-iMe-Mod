@@ -38,7 +38,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import okhttp3.internal.Util;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import timber.log.Timber;
 /* compiled from: TwitterPresenter.kt */
@@ -238,7 +238,7 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
     }
 
     public final void onResetMenuClicked() {
-        ((TwitterView) getViewState()).showResetTwitterDialog(new DialogModel(this.resourceManager.getString(C3634R.string.social_reset_account_title, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3634R.string.social_reset_account_message, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3634R.string.social_reset_account_negative_button), this.resourceManager.getString(C3634R.string.social_reset_account_positive_button)));
+        ((TwitterView) getViewState()).showResetTwitterDialog(new DialogModel(this.resourceManager.getString(C3632R.string.social_reset_account_title, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3632R.string.social_reset_account_message, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3632R.string.social_reset_account_negative_button), this.resourceManager.getString(C3632R.string.social_reset_account_positive_button)));
     }
 
     public final void onResetConfirmClicked() {

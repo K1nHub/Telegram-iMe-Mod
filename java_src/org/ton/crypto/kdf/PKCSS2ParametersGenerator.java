@@ -34,6 +34,12 @@ public final class PKCSS2ParametersGenerator extends PBEParametersGenerator {
         Intrinsics.checkNotNullParameter(hMac, "hMac");
     }
 
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public PKCSS2ParametersGenerator(Digest digest) {
+        this(digest, new byte[0], new byte[0], 0);
+        Intrinsics.checkNotNullParameter(digest, "digest");
+    }
+
     public byte[] generateDerivedParameters(int i) {
         return generateDerivedKey(i / 8);
     }

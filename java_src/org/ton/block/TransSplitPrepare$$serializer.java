@@ -27,7 +27,7 @@ public final class TransSplitPrepare$$serializer implements GeneratedSerializer<
         pluginGeneratedSerialDescriptor.addElement("action", false);
         pluginGeneratedSerialDescriptor.addElement("aborted", false);
         pluginGeneratedSerialDescriptor.addElement("destroyed", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7619x2f1d0b0a("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7617x2f1d0b0a("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

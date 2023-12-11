@@ -112,13 +112,13 @@
 
     move v5, v4
 
-    .line 1996
+    .line 1999
     :goto_0
     array-length v6, p2
 
     if-ge v1, v6, :cond_1
 
-    .line 1997
+    .line 2000
     aget v6, p2, v1
 
     invoke-virtual {p1, v6}, Landroid/util/SparseIntArray;->indexOfKey(I)I
@@ -129,7 +129,7 @@
 
     goto :goto_1
 
-    .line 2001
+    .line 2004
     :cond_0
     :try_start_0
     aget v6, p2, v1
@@ -138,21 +138,21 @@
 
     move-result v6
 
-    .line 2002
+    .line 2005
     invoke-static {v6}, Landroid/graphics/Color;->red(I)I
 
     move-result v7
 
     add-int/2addr v3, v7
 
-    .line 2003
+    .line 2006
     invoke-static {v6}, Landroid/graphics/Color;->green(I)I
 
     move-result v7
 
     add-int/2addr v4, v7
 
-    .line 2004
+    .line 2007
     invoke-static {v6}, Landroid/graphics/Color;->blue(I)I
 
     move-result v6
@@ -177,7 +177,7 @@
     :cond_2
     const/16 p1, 0xff
 
-    .line 2011
+    .line 2014
     div-int/2addr v3, v2
 
     div-int/2addr v4, v2
@@ -286,131 +286,132 @@
 
     invoke-static {p1, v0}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1967
-    iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
+    const/high16 p1, 0x3f800000    # 1.0f
 
     const/4 v0, 0x1
 
-    aget v1, p1, v0
+    const/4 v1, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x2
 
-    cmpg-float v1, v1, v2
+    if-eqz p2, :cond_0
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/16 p2, 0x40
 
-    const/4 v4, 0x2
+    .line 1969
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
-    if-lez v1, :cond_3
+    aget v4, v3, v0
 
-    aget v1, p1, v4
+    const v5, 0x3da3d70a    # 0.08f
 
-    cmpl-float v1, v1, v3
+    sub-float/2addr v4, v5
 
-    if-gez v1, :cond_3
+    invoke-static {v4, p1, v1}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
-    aget v1, p1, v4
+    move-result p1
 
-    cmpg-float v1, v1, v2
+    aput p1, v3, v0
 
-    if-gtz v1, :cond_0
+    .line 1970
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
+
+    const v0, 0x3cf5c28f    # 0.03f
+
+    aput v0, p1, v2
 
     goto :goto_2
 
-    .line 1970
+    .line 1972
     :cond_0
-    aget v1, p1, v0
+    iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
-    if-eqz p2, :cond_1
+    aget v3, p2, v0
 
-    const v5, -0x41666666    # -0.3f
+    cmpg-float v3, v3, v1
+
+    if-lez v3, :cond_2
+
+    aget v3, p2, v2
+
+    cmpl-float v3, v3, p1
+
+    if-gez v3, :cond_2
+
+    aget v3, p2, v2
+
+    cmpg-float v3, v3, v1
+
+    if-gtz v3, :cond_1
 
     goto :goto_0
 
+    .line 1975
     :cond_1
-    const v5, 0x3e8f5c29    # 0.28f
+    aget v3, p2, v0
 
-    :goto_0
-    add-float/2addr v1, v5
+    const v4, 0x3e8f5c29    # 0.28f
 
-    invoke-static {v3, v1}, Ljava/lang/Math;->min(FF)F
+    add-float/2addr v3, v4
 
-    move-result v1
+    invoke-static {p1, v3}, Ljava/lang/Math;->min(FF)F
 
-    invoke-static {v2, v1}, Ljava/lang/Math;->max(FF)F
+    move-result v3
 
-    move-result v1
+    invoke-static {v1, v3}, Ljava/lang/Math;->max(FF)F
 
-    aput v1, p1, v0
+    move-result v3
 
-    .line 1971
-    iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
+    aput v3, p2, v0
 
-    aget v0, p1, v4
+    .line 1976
+    iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
-    if-eqz p2, :cond_2
+    aget v0, p2, v2
 
-    const v1, 0x3dcccccd    # 0.1f
+    const v3, -0x42333333    # -0.1f
+
+    add-float/2addr v0, v3
+
+    invoke-static {p1, v0}, Ljava/lang/Math;->min(FF)F
+
+    move-result p1
+
+    invoke-static {v1, p1}, Ljava/lang/Math;->max(FF)F
+
+    move-result p1
+
+    aput p1, p2, v2
 
     goto :goto_1
 
+    .line 1973
     :cond_2
-    const v1, -0x42333333    # -0.1f
+    :goto_0
+    aget v0, p2, v2
+
+    const v3, -0x41b33333    # -0.2f
+
+    add-float/2addr v0, v3
+
+    invoke-static {p1, v0}, Ljava/lang/Math;->min(FF)F
+
+    move-result p1
+
+    invoke-static {v1, p1}, Ljava/lang/Math;->max(FF)F
+
+    move-result p1
+
+    aput p1, p2, v2
 
     :goto_1
-    add-float/2addr v0, v1
+    const/16 p2, 0x20
 
-    invoke-static {v3, v0}, Ljava/lang/Math;->min(FF)F
-
-    move-result v0
-
-    invoke-static {v2, v0}, Ljava/lang/Math;->max(FF)F
-
-    move-result v0
-
-    aput v0, p1, v4
-
-    if-eqz p2, :cond_5
-
-    const/16 p1, 0x60
-
-    goto :goto_4
-
-    .line 1968
-    :cond_3
+    .line 1979
     :goto_2
-    aget v0, p1, v4
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
-    if-eqz p2, :cond_4
-
-    const p2, 0x3e99999a    # 0.3f
-
-    goto :goto_3
-
-    :cond_4
-    const p2, -0x41b33333    # -0.2f
-
-    :goto_3
-    add-float/2addr v0, p2
-
-    invoke-static {v3, v0}, Ljava/lang/Math;->min(FF)F
-
-    move-result p2
-
-    invoke-static {v2, p2}, Ljava/lang/Math;->max(FF)F
-
-    move-result p2
-
-    aput p2, p1, v4
-
-    :cond_5
-    const/16 p1, 0x20
-
-    .line 1976
-    :goto_4
-    iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
-
-    invoke-static {p1, p2}, Landroid/graphics/Color;->HSVToColor(I[F)I
+    invoke-static {p2, p1}, Landroid/graphics/Color;->HSVToColor(I[F)I
 
     move-result p1
 
@@ -522,13 +523,13 @@
 
     return p1
 
-    .line 1982
+    .line 1985
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p2, p3}, Landroid/graphics/Color;->colorToHSV(I[F)V
 
-    .line 1983
+    .line 1986
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     const/4 p3, 0x1
@@ -561,7 +562,7 @@
 
     goto :goto_0
 
-    .line 1987
+    .line 1990
     :cond_1
     aget p1, p2, v2
 
@@ -575,7 +576,7 @@
 
     aput p1, p2, v2
 
-    .line 1988
+    .line 1991
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     aget p2, p1, p3
@@ -592,17 +593,17 @@
 
     goto :goto_1
 
-    .line 1984
+    .line 1987
     :cond_2
     :goto_0
     aput p1, p2, v2
 
     const p1, 0x3e4ccccd    # 0.2f
 
-    .line 1985
+    .line 1988
     aput p1, p2, p3
 
-    .line 1990
+    .line 1993
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
@@ -620,7 +621,7 @@
 
     const/16 p1, 0x5a
 
-    .line 1991
+    .line 1994
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
     invoke-static {p1, p2}, Landroid/graphics/Color;->HSVToColor(I[F)I
@@ -2299,7 +2300,7 @@
 
     aget v4, v1, v3
 
-    const v6, 0x3e99999a    # 0.3f
+    const v6, 0x3dcccccd    # 0.1f
 
     add-float/2addr v4, v6
 
@@ -2320,9 +2321,9 @@
 
     aget v8, v1, v4
 
-    const v9, -0x41333333    # -0.4f
+    const v9, 0x3f4ccccd    # 0.8f
 
-    add-float/2addr v8, v9
+    sub-float/2addr v8, v9
 
     invoke-static {v8, v6, v7}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
@@ -2333,7 +2334,7 @@
     .line 1903
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outCodeBackground:I
 
-    const/16 v4, 0x70
+    const/16 v4, 0x40
 
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->tempHSV:[F
 
@@ -2364,7 +2365,7 @@
 .method public getPathToWallpaper()Ljava/io/File;
     .locals 8
 
-    .line 2015
+    .line 2018
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->id:I
 
     const/4 v1, 0x2
@@ -2381,7 +2382,7 @@
 
     if-ge v0, v6, :cond_1
 
-    .line 2016
+    .line 2019
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -2431,7 +2432,7 @@
     :cond_0
     return-object v5
 
-    .line 2018
+    .line 2021
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
@@ -2488,15 +2489,15 @@
 
     move-object/from16 v1, p0
 
-    .line 2023
+    .line 2026
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getSharingDirectory()Ljava/io/File;
 
     move-result-object v0
 
-    .line 2024
+    .line 2027
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 2025
+    .line 2028
     new-instance v2, Ljava/io/File;
 
     sget-object v3, Ljava/util/Locale;->US:Ljava/util/Locale;
@@ -2533,7 +2534,7 @@
 
     invoke-direct {v2, v0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 2027
+    .line 2030
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->parentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->assetName:Ljava/lang/String;
@@ -2544,15 +2545,15 @@
 
     move-result-object v0
 
-    .line 2028
+    .line 2031
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clone()Landroid/util/SparseIntArray;
 
     move-result-object v5
 
-    .line 2029
+    .line 2032
     invoke-virtual {v1, v0, v5}, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->fillAccentColors(Landroid/util/SparseIntArray;Landroid/util/SparseIntArray;)Z
 
-    .line 2033
+    .line 2036
     iget-object v0, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternSlug:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -2561,22 +2562,22 @@
 
     if-nez v0, :cond_c
 
-    .line 2034
+    .line 2037
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2035
+    .line 2038
     iget-boolean v6, v1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->patternMotion:Z
 
     if-eqz v6, :cond_0
 
     const-string v6, "motion"
 
-    .line 2036
+    .line 2039
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2038
+    .line 2041
     :cond_0
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
 
@@ -2588,7 +2589,7 @@
 
     const/4 v6, -0x1
 
-    .line 2042
+    .line 2045
     :cond_1
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
 
@@ -2600,7 +2601,7 @@
 
     move v9, v7
 
-    .line 2046
+    .line 2049
     :cond_2
     sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
 
@@ -2612,7 +2613,7 @@
 
     move v10, v7
 
-    .line 2050
+    .line 2053
     :cond_3
     sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
 
@@ -2624,7 +2625,7 @@
 
     move v11, v7
 
-    .line 2054
+    .line 2057
     :cond_4
     sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_rotation:I
 
@@ -2647,7 +2648,7 @@
 
     and-int/lit16 v15, v15, 0xff
 
-    .line 2058
+    .line 2061
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
@@ -2696,7 +2697,7 @@
 
     and-int/lit16 v3, v3, 0xff
 
-    .line 2059
+    .line 2062
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -2749,7 +2750,7 @@
 
     and-int/lit16 v15, v15, 0xff
 
-    .line 2060
+    .line 2063
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
@@ -2802,7 +2803,7 @@
 
     and-int/lit16 v13, v13, 0xff
 
-    .line 2061
+    .line 2064
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v13
@@ -2853,7 +2854,7 @@
 
     if-eqz v4, :cond_9
 
-    .line 2064
+    .line 2067
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -2878,7 +2879,7 @@
 
     goto :goto_3
 
-    .line 2066
+    .line 2069
     :cond_9
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -2903,7 +2904,7 @@
     :cond_a
     if-eqz v3, :cond_b
 
-    .line 2069
+    .line 2072
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2920,7 +2921,7 @@
 
     move-result-object v3
 
-    .line 2070
+    .line 2073
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2937,7 +2938,7 @@
 
     move-result-object v14
 
-    .line 2072
+    .line 2075
     :cond_b
     :goto_3
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2976,14 +2977,14 @@
 
     move-result-object v3
 
-    .line 2073
+    .line 2076
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
     if-lez v4, :cond_d
 
-    .line 2074
+    .line 2077
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -3009,14 +3010,14 @@
     :cond_c
     const/4 v3, 0x0
 
-    .line 2078
+    .line 2081
     :cond_d
     :goto_4
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2079
+    .line 2082
     :goto_5
     invoke-virtual {v5}, Landroid/util/SparseIntArray;->size()I
 
@@ -3026,19 +3027,19 @@
 
     if-ge v7, v4, :cond_10
 
-    .line 2080
+    .line 2083
     invoke-virtual {v5, v7}, Landroid/util/SparseIntArray;->keyAt(I)I
 
     move-result v4
 
-    .line 2081
+    .line 2084
     invoke-virtual {v5, v7}, Landroid/util/SparseIntArray;->valueAt(I)I
 
     move-result v8
 
     if-eqz v3, :cond_e
 
-    .line 2083
+    .line 2086
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
 
     if-eq v9, v4, :cond_f
@@ -3057,7 +3058,7 @@
 
     goto :goto_6
 
-    .line 2087
+    .line 2090
     :cond_e
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -3075,7 +3076,7 @@
 
     goto :goto_5
 
-    .line 2091
+    .line 2094
     :cond_10
     :try_start_0
     new-instance v4, Ljava/io/FileOutputStream;
@@ -3085,7 +3086,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 2092
+    .line 2095
     :try_start_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -3097,14 +3098,14 @@
 
     invoke-virtual {v4, v0}, Ljava/io/FileOutputStream;->write([B)V
 
-    .line 2093
+    .line 2096
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-nez v0, :cond_11
 
-    .line 2094
+    .line 2097
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3130,7 +3131,7 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2101
+    .line 2104
     :cond_11
     :try_start_2
     invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
@@ -3169,7 +3170,7 @@
 
     const/4 v3, 0x0
 
-    .line 2097
+    .line 2100
     :goto_7
     :try_start_3
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -3178,7 +3179,7 @@
 
     if-eqz v3, :cond_12
 
-    .line 2101
+    .line 2104
     :try_start_4
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
@@ -3191,7 +3192,7 @@
 
     move-object v3, v0
 
-    .line 2104
+    .line 2107
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_12
@@ -3206,7 +3207,7 @@
     :goto_9
     if-eqz v3, :cond_13
 
-    .line 2101
+    .line 2104
     :try_start_5
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_5
@@ -3219,10 +3220,10 @@
 
     move-object v3, v0
 
-    .line 2104
+    .line 2107
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2106
+    .line 2109
     :cond_13
     :goto_a
     throw v2

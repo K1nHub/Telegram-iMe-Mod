@@ -116,9 +116,8 @@ public abstract class zzee<E> extends zzeb<E> implements List<E>, RandomAccess {
         throw new UnsupportedOperationException();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.gms.internal.vision.zzeb
-    public int zza(Object[] objArr, int i) {
+    int zza(Object[] objArr, int i) {
         int size = size();
         for (int i2 = 0; i2 < size; i2++) {
             objArr[i + i2] = get(i2);

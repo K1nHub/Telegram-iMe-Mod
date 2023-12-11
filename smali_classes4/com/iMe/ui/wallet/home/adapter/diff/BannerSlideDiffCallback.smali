@@ -75,7 +75,7 @@
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/home/BannerSlide;->getTitle()I
+    invoke-virtual {p1}, Lcom/iMe/model/wallet/home/BannerSlide;->getTitleResId()I
 
     move-result p1
 
@@ -83,7 +83,7 @@
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/BannerSlide;->getTitle()I
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/home/BannerSlide;->getTitleResId()I
 
     move-result p2
 

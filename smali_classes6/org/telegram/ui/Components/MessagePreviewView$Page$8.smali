@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView$Page;Lorg/telegram/ui/Components/MessagePreviewView;)V
     .locals 0
 
-    .line 709
+    .line 730
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$8;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,12 +35,12 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 1
 
-    .line 712
+    .line 733
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
     const/4 p1, 0x0
 
-    .line 714
+    .line 735
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$8;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
@@ -52,7 +52,7 @@
 
     if-ge p1, p2, :cond_0
 
-    .line 715
+    .line 736
     iget-object p2, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$8;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -63,7 +63,7 @@
 
     check-cast p2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 716
+    .line 737
     iget-object p3, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$8;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget-object p3, p3, Lorg/telegram/ui/Components/MessagePreviewView$Page;->chatPreviewContainer:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 719
+    .line 740
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$8;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
@@ -94,7 +94,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 720
+    .line 741
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;->invalidate()V
 
     :cond_1

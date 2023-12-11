@@ -56,10 +56,10 @@
 .method constructor <init>(Lorg/telegram/ui/EmojiAnimationsOverlay;)V
     .locals 1
 
-    .line 1031
+    .line 1032
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1029
+    .line 1030
     new-instance p1, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p1}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
@@ -68,10 +68,10 @@
 
     const/4 v0, 0x1
 
-    .line 1032
+    .line 1033
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setAllowLoadingOnAttachedOnly(Z)V
 
-    .line 1033
+    .line 1034
     iget-object p1, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$DrawingObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setAllowDrawWhileCacheGenerating(Z)V

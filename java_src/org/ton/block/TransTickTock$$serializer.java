@@ -27,7 +27,7 @@ public final class TransTickTock$$serializer implements GeneratedSerializer<Tran
         pluginGeneratedSerialDescriptor.addElement("action", false);
         pluginGeneratedSerialDescriptor.addElement("aborted", false);
         pluginGeneratedSerialDescriptor.addElement("destroyed", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7621x409a9f17("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7619x409a9f17("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

@@ -12,7 +12,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: GlobalStateProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.GlobalStateProvider */
@@ -44,7 +44,7 @@ public final class GlobalStateProvider extends BaseNodeProvider<GlobalStateItem>
         }
     };
     private final int itemViewType = IdFabric$ViewTypes.GLOBAL_STATE;
-    private final int layoutId = C3634R.layout.fork_recycle_item_global_state;
+    private final int layoutId = C3632R.layout.fork_recycle_item_global_state;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public /* bridge */ /* synthetic */ void convert(BaseViewHolder baseViewHolder, Object obj, List list) {
@@ -107,7 +107,7 @@ public final class GlobalStateProvider extends BaseNodeProvider<GlobalStateItem>
     public void convert(BaseViewHolder helper, final GlobalStateItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(helper, C3634R.C3637id.global_state_layout, new Function1<GlobalStateLayout, Unit>() { // from class: com.iMe.ui.adapter.provider.GlobalStateProvider$convert$1
+        BaseQuickAdapterExtKt.applyForView(helper, C3632R.C3635id.global_state_layout, new Function1<GlobalStateLayout, Unit>() { // from class: com.iMe.ui.adapter.provider.GlobalStateProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {

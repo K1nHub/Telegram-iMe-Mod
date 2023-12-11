@@ -52,7 +52,7 @@ import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -73,7 +73,7 @@ public final class FloatingToolbar {
             return lambda$static$0;
         }
     };
-    public static final List<Integer> premiumOptions = Arrays.asList(Integer.valueOf(C3634R.C3637id.menu_bold), Integer.valueOf(C3634R.C3637id.menu_italic), Integer.valueOf(C3634R.C3637id.menu_strike), Integer.valueOf(C3634R.C3637id.menu_link), Integer.valueOf(C3634R.C3637id.menu_mono), Integer.valueOf(C3634R.C3637id.menu_underline), Integer.valueOf(C3634R.C3637id.menu_spoiler), Integer.valueOf(C3634R.C3637id.menu_quote));
+    public static final List<Integer> premiumOptions = Arrays.asList(Integer.valueOf(C3632R.C3635id.menu_bold), Integer.valueOf(C3632R.C3635id.menu_italic), Integer.valueOf(C3632R.C3635id.menu_strike), Integer.valueOf(C3632R.C3635id.menu_link), Integer.valueOf(C3632R.C3635id.menu_mono), Integer.valueOf(C3632R.C3635id.menu_underline), Integer.valueOf(C3632R.C3635id.menu_spoiler), Integer.valueOf(C3632R.C3635id.menu_quote));
     private int currentStyle;
     private Menu mMenu;
     private final FloatingToolbarPopup mPopup;
@@ -218,7 +218,7 @@ public final class FloatingToolbar {
                 SubMenu subMenu = item.getSubMenu();
                 if (subMenu != null) {
                     arrayList.addAll(getVisibleAndEnabledMenuItems(subMenu));
-                } else if ((item.getItemId() != C3634R.C3637id.menu_quote || (callback0Return = this.quoteShowCallback) == null || callback0Return.run().booleanValue()) && item.getItemId() != 16908353 && (item.getItemId() != C3634R.C3637id.menu_regular || this.premiumLockClickListener == null)) {
+                } else if ((item.getItemId() != C3632R.C3635id.menu_quote || (callback0Return = this.quoteShowCallback) == null || callback0Return.run().booleanValue()) && item.getItemId() != 16908353 && (item.getItemId() != C3632R.C3635id.menu_regular || this.premiumLockClickListener == null)) {
                     arrayList.add(item);
                 }
             }
@@ -324,16 +324,16 @@ public final class FloatingToolbar {
             this.mFastOutSlowInInterpolator = AnimationUtils.loadInterpolator(context, 17563661);
             this.mLinearOutSlowInInterpolator = AnimationUtils.loadInterpolator(context, 17563662);
             this.mFastOutLinearInInterpolator = AnimationUtils.loadInterpolator(context, 17563663);
-            Drawable mutate = context.getDrawable(C3634R.C3636drawable.ft_avd_tooverflow).mutate();
+            Drawable mutate = context.getDrawable(C3632R.C3634drawable.ft_avd_tooverflow).mutate();
             this.mArrow = mutate;
             mutate.setAutoMirrored(true);
-            Drawable mutate2 = context.getDrawable(C3634R.C3636drawable.ft_avd_toarrow).mutate();
+            Drawable mutate2 = context.getDrawable(C3632R.C3634drawable.ft_avd_toarrow).mutate();
             this.mOverflow = mutate2;
             mutate2.setAutoMirrored(true);
-            AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) context.getDrawable(C3634R.C3636drawable.ft_avd_toarrow_animation).mutate();
+            AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) context.getDrawable(C3632R.C3634drawable.ft_avd_toarrow_animation).mutate();
             this.mToArrow = animatedVectorDrawable;
             animatedVectorDrawable.setAutoMirrored(true);
-            AnimatedVectorDrawable animatedVectorDrawable2 = (AnimatedVectorDrawable) context.getDrawable(C3634R.C3636drawable.ft_avd_tooverflow_animation).mutate();
+            AnimatedVectorDrawable animatedVectorDrawable2 = (AnimatedVectorDrawable) context.getDrawable(C3632R.C3634drawable.ft_avd_tooverflow_animation).mutate();
             this.mToOverflow = animatedVectorDrawable2;
             animatedVectorDrawable2.setAutoMirrored(true);
             FrameLayout frameLayout = new FrameLayout(context);
@@ -354,7 +354,7 @@ public final class FloatingToolbar {
             imageButton.setImageDrawable(mutate2);
             TextView textView = new TextView(context);
             this.mOverflowButtonText = textView;
-            textView.setText(LocaleController.getString(C3634R.string.Back));
+            textView.setText(LocaleController.getString(C3632R.string.Back));
             textView.setTextSize(1, 16.0f);
             textView.setAlpha(BitmapDescriptorFactory.HUE_RED);
             View view2 = new View(context);
@@ -410,8 +410,8 @@ public final class FloatingToolbar {
             animationSet2.setAnimationListener(createOverflowAnimationListener);
             this.mShowAnimation = FloatingToolbar.createEnterAnimation(viewGroup);
             ViewGroup viewGroup2 = viewGroup;
-            this.mDismissAnimation = FloatingToolbar.createExitAnimation(viewGroup2, ImageReceiver.DEFAULT_CROSSFADE_DURATION, new C37964(FloatingToolbar.this));
-            this.mHideAnimation = FloatingToolbar.createExitAnimation(viewGroup2, 0, new C37975(FloatingToolbar.this));
+            this.mDismissAnimation = FloatingToolbar.createExitAnimation(viewGroup2, ImageReceiver.DEFAULT_CROSSFADE_DURATION, new C37944(FloatingToolbar.this));
+            this.mHideAnimation = FloatingToolbar.createExitAnimation(viewGroup2, 0, new C37955(FloatingToolbar.this));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -422,8 +422,8 @@ public final class FloatingToolbar {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$4 */
         /* loaded from: classes5.dex */
-        public class C37964 extends AnimatorListenerAdapter {
-            C37964(FloatingToolbar floatingToolbar) {
+        public class C37944 extends AnimatorListenerAdapter {
+            C37944(FloatingToolbar floatingToolbar) {
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -431,7 +431,7 @@ public final class FloatingToolbar {
                 NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$4$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.C37964.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.C37944.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -446,8 +446,8 @@ public final class FloatingToolbar {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$5 */
         /* loaded from: classes5.dex */
-        public class C37975 extends AnimatorListenerAdapter {
-            C37975(FloatingToolbar floatingToolbar) {
+        public class C37955 extends AnimatorListenerAdapter {
+            C37955(FloatingToolbar floatingToolbar) {
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -455,7 +455,7 @@ public final class FloatingToolbar {
                 NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.C37975.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.C37955.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -797,7 +797,7 @@ public final class FloatingToolbar {
                 this.mOverflowPanel.setAlpha(1.0f);
                 this.mOverflowPanel.setVisibility(0);
                 this.mOverflowButtonIcon.setImageDrawable(this.mArrow);
-                this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+                this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
                 if (isInRTLMode()) {
                     this.mContentContainer.setX(this.mMarginHorizontal);
                     this.mMainPanel.setX(BitmapDescriptorFactory.HUE_RED);
@@ -829,7 +829,7 @@ public final class FloatingToolbar {
             this.mOverflowPanel.setAlpha(BitmapDescriptorFactory.HUE_RED);
             this.mOverflowPanel.setVisibility(4);
             this.mOverflowButtonIcon.setImageDrawable(this.mOverflow);
-            this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+            this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
             if (hasOverflow()) {
                 if (isInRTLMode()) {
                     this.mContentContainer.setX(this.mMarginHorizontal);
@@ -1159,12 +1159,12 @@ public final class FloatingToolbar {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$14  reason: invalid class name */
         /* loaded from: classes5.dex */
-        public class animationAnimation$AnimationListenerC379314 implements Animation.AnimationListener {
+        public class animationAnimation$AnimationListenerC379114 implements Animation.AnimationListener {
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationRepeat(Animation animation) {
             }
 
-            animationAnimation$AnimationListenerC379314() {
+            animationAnimation$AnimationListenerC379114() {
             }
 
             @Override // android.view.animation.Animation.AnimationListener
@@ -1179,7 +1179,7 @@ public final class FloatingToolbar {
                 FloatingToolbarPopup.this.mContentContainer.post(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$14$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.animationAnimation$AnimationListenerC379314.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.animationAnimation$AnimationListenerC379114.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -1192,7 +1192,7 @@ public final class FloatingToolbar {
         }
 
         private Animation.AnimationListener createOverflowAnimationListener() {
-            return new animationAnimation$AnimationListenerC379314();
+            return new animationAnimation$AnimationListenerC379114();
         }
 
         private Size measure(View view) {
@@ -1366,7 +1366,7 @@ public final class FloatingToolbar {
         linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, AndroidUtilities.m104dp(48)));
         linearLayout.addView(new Space(context), new LinearLayout.LayoutParams(-1, 1, 1.0f));
         ImageView imageView = new ImageView(context);
-        imageView.setImageResource(C3634R.C3636drawable.msg_mini_lock3);
+        imageView.setImageResource(C3632R.C3634drawable.msg_mini_lock3);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.multAlpha(themedColor, 0.4f), PorterDuff.Mode.SRC_IN));
         imageView.setVisibility(8);

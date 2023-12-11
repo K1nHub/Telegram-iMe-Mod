@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletHomeCryptoPresenter.kt\ncom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter\n*L\n1#1,328:1\n455#2:329\n*E\n"
+    value = "SMAP\nComparisons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Comparisons.kt\nkotlin/comparisons/ComparisonsKt__ComparisonsKt$compareBy$2\n+ 2 WalletHomeCryptoPresenter.kt\ncom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter\n*L\n1#1,328:1\n475#2:329\n*E\n"
 .end annotation
 
 
@@ -53,7 +53,7 @@
     .line 102
     check-cast p1, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 455
+    .line 475
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object p1
@@ -75,7 +75,7 @@
     .line 102
     check-cast p2, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
-    .line 455
+    .line 475
     invoke-virtual {p2}, Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;->getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     move-result-object p2

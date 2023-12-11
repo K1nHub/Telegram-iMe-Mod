@@ -27,7 +27,7 @@ public interface List<E> extends Collection<E> {
 
         public static Spliterator $default$spliterator(java.util.List list) {
             Objects.requireNonNull(list);
-            return new C2770D(list, 16);
+            return new C2767D(list, 16);
         }
     }
 
@@ -92,7 +92,7 @@ public interface List<E> extends Collection<E> {
 
     void sort(Comparator<? super E> comparator);
 
-    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2674e
+    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2671e
     Spliterator<E> spliterator();
 
     java.util.List<E> subList(int i, int i2);

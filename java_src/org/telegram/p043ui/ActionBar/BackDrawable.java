@@ -6,6 +6,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.view.animation.DecelerateInterpolator;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 /* renamed from: org.telegram.ui.ActionBar.BackDrawable */
@@ -112,7 +113,7 @@ public class BackDrawable extends Drawable {
             canvas.rotate((f2 * (this.reverseAngle ? -180 : 180)) + 135.0f);
             f2 = 1.0f;
         } else {
-            canvas.rotate((this.reverseAngle ? -225 : 135) * f2);
+            canvas.rotate((this.reverseAngle ? -225 : TsExtractor.TS_STREAM_TYPE_E_AC3) * f2);
         }
         float f3 = 1.0f - f2;
         canvas.drawLine(AndroidUtilities.m105dp(AndroidUtilities.lerp(-6.75f, -8.0f, f2)), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m104dp(8) - ((this.paint.getStrokeWidth() / 2.0f) * f3), BitmapDescriptorFactory.HUE_RED, this.paint);

@@ -33,10 +33,10 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
@@ -84,7 +84,7 @@ public final class TokenListsBottomSheet extends BottomSheet {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(C3706ActionBar.getCurrentActionBarHeight());
+                return Integer.valueOf(C3704ActionBar.getCurrentActionBarHeight());
             }
         });
         this.actionBarHeight$delegate = lazy;
@@ -103,15 +103,15 @@ public final class TokenListsBottomSheet extends BottomSheet {
             }
         });
         this.topShadow$delegate = lazy2;
-        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<C3706ActionBar>() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$actionBar$2
+        lazy3 = LazyKt__LazyJVMKt.lazy(new Function0<C3704ActionBar>() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$actionBar$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
             }
 
             @Override // kotlin.jvm.functions.Function0
-            public final C3706ActionBar invoke() {
-                C3706ActionBar initActionBar;
+            public final C3704ActionBar invoke() {
+                C3704ActionBar initActionBar;
                 initActionBar = TokenListsBottomSheet.this.initActionBar();
                 return initActionBar;
             }
@@ -165,7 +165,7 @@ public final class TokenListsBottomSheet extends BottomSheet {
         rootView.addView(getUnderlay(), LayoutHelper.createFrame(-1, -1, 48, 0, m103px, 0, 0));
         rootView.addView(getListView(), LayoutHelper.createFrame(-1, -1, 48, 0, m103px, 0, 0));
         rootView.addView(getActionBar(), LayoutHelper.createFrame(-1, m103px, 48));
-        C3706ActionBar actionBar = getActionBar();
+        C3704ActionBar actionBar = getActionBar();
         if (!ViewCompat.isLaidOut(actionBar) || actionBar.isLayoutRequested()) {
             actionBar.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$_init_$lambda$1$$inlined$doOnLayout$1
                 @Override // android.view.View.OnLayoutChangeListener
@@ -191,8 +191,8 @@ public final class TokenListsBottomSheet extends BottomSheet {
         return (View) this.topShadow$delegate.getValue();
     }
 
-    private final C3706ActionBar getActionBar() {
-        return (C3706ActionBar) this.actionBar$delegate.getValue();
+    private final C3704ActionBar getActionBar() {
+        return (C3704ActionBar) this.actionBar$delegate.getValue();
     }
 
     private final FrameLayout getUnderlay() {
@@ -210,17 +210,17 @@ public final class TokenListsBottomSheet extends BottomSheet {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final C3706ActionBar initActionBar() {
-        C3706ActionBar c3706ActionBar = new C3706ActionBar(getContext());
-        c3706ActionBar.setOccupyStatusBar(false);
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(LocaleController.getInternalString(C3634R.string.token_lists_title));
-        c3706ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3634R.C3636drawable.msg_info);
-        c3706ActionBar.setBackgroundColor(0);
+    public final C3704ActionBar initActionBar() {
+        C3704ActionBar c3704ActionBar = new C3704ActionBar(getContext());
+        c3704ActionBar.setOccupyStatusBar(false);
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(LocaleController.getInternalString(C3632R.string.token_lists_title));
+        c3704ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3632R.C3634drawable.msg_info);
+        c3704ActionBar.setBackgroundColor(0);
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3706ActionBar.setTitleColor(getThemedColor(i));
-        c3706ActionBar.setItemsColor(getThemedColor(i), false);
-        return c3706ActionBar;
+        c3704ActionBar.setTitleColor(getThemedColor(i));
+        c3704ActionBar.setItemsColor(getThemedColor(i), false);
+        return c3704ActionBar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -261,8 +261,8 @@ public final class TokenListsBottomSheet extends BottomSheet {
     }
 
     private final void setupListeners() {
-        getActionBar().setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$setupListeners$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        getActionBar().setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.dialog.TokenListsBottomSheet$setupListeners$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 Callbacks$Callback callbacks$Callback;
                 if (i == -1) {
@@ -521,7 +521,7 @@ public final class TokenListsBottomSheet extends BottomSheet {
             Intrinsics.checkNotNullExpressionValue(context, "context");
             ImageTextCheckCell imageTextCheckCell = new ImageTextCheckCell(context, null, 0, 6, null);
             TokenListsBottomSheet tokenListsBottomSheet = TokenListsBottomSheet.this;
-            imageTextCheckCell.setCustomCheckResId(C3634R.C3636drawable.fork_ic_verified);
+            imageTextCheckCell.setCustomCheckResId(C3632R.C3634drawable.fork_ic_verified);
             imageTextCheckCell.setLayoutParams(LayoutHelper.createRecycler(tokenListsBottomSheet.itemWidth, -2));
             return new RecyclerListView.Holder(imageTextCheckCell);
         }

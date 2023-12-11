@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity$BaseChartCell;)V
     .locals 0
 
-    .line 1774
+    .line 1777
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell$4;->this$0:Lorg/telegram/ui/StatisticActivity$BaseChartCell;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1777
+    .line 1780
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell$4;->this$0:Lorg/telegram/ui/StatisticActivity$BaseChartCell;
 
     iget-object v0, p1, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
@@ -44,7 +44,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Charts/BaseChartView;->transitionMode:I
 
-    .line 1778
+    .line 1781
     iget-object p1, p1, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     const/16 v0, 0x8

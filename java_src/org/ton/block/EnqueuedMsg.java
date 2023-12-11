@@ -49,18 +49,18 @@ public final class EnqueuedMsg implements TlbObject {
     }
 
     public int hashCode() {
-        return (ULong.m1996hashCodeimpl(this.enqueuedLt) * 31) + this.outMsg.hashCode();
+        return (ULong.m1998hashCodeimpl(this.enqueuedLt) * 31) + this.outMsg.hashCode();
     }
 
     public String toString() {
-        return "EnqueuedMsg(enqueuedLt=" + ((Object) ULong.m1997toStringimpl(this.enqueuedLt)) + ", outMsg=" + this.outMsg + ')';
+        return "EnqueuedMsg(enqueuedLt=" + ((Object) ULong.m1999toStringimpl(this.enqueuedLt)) + ", outMsg=" + this.outMsg + ')';
     }
 
     private EnqueuedMsg(int i, ULong uLong, CellRef<MsgEnvelope> cellRef, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, EnqueuedMsg$$serializer.INSTANCE.getDescriptor());
         }
-        this.enqueuedLt = uLong.m1998unboximpl();
+        this.enqueuedLt = uLong.m2000unboximpl();
         this.outMsg = cellRef;
     }
 
@@ -72,12 +72,12 @@ public final class EnqueuedMsg implements TlbObject {
 
     public static final /* synthetic */ void write$Self(EnqueuedMsg enqueuedMsg, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ULongSerializer.INSTANCE, ULong.m1993boximpl(enqueuedMsg.enqueuedLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ULongSerializer.INSTANCE, ULong.m1995boximpl(enqueuedMsg.enqueuedLt));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, kSerializerArr[1], enqueuedMsg.outMsg);
     }
 
     /* renamed from: getEnqueuedLt-s-VKNKU  reason: not valid java name */
-    public final long m5105getEnqueuedLtsVKNKU() {
+    public final long m5087getEnqueuedLtsVKNKU() {
         return this.enqueuedLt;
     }
 
@@ -131,7 +131,7 @@ public final class EnqueuedMsg implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("");
-        open.field("enqueued_lt", ULong.m1993boximpl(this.enqueuedLt));
+        open.field("enqueued_lt", ULong.m1995boximpl(this.enqueuedLt));
         open.field("out_msg", this.outMsg);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;

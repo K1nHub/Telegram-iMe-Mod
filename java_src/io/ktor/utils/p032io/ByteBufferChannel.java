@@ -154,7 +154,7 @@ public class ByteBufferChannel implements ByteChannel, ByteReadChannel, ByteWrit
                     if (r1 != 0) goto L38
                     kotlin.Result$Companion r1 = kotlin.Result.Companion
                     kotlin.Unit r1 = kotlin.Unit.INSTANCE
-                    java.lang.Object r1 = kotlin.Result.m1940constructorimpl(r1)
+                    java.lang.Object r1 = kotlin.Result.m1942constructorimpl(r1)
                     r10.resumeWith(r1)
                     goto L6c
                 L38:
@@ -1809,7 +1809,7 @@ public class ByteBufferChannel implements ByteChannel, ByteReadChannel, ByteWrit
 
     @Override // io.ktor.utils.p032io.LookAheadSession
     /* renamed from: consumed */
-    public void mo1930consumed(int i) {
+    public void mo1932consumed(int i) {
         if (!(i >= 0)) {
             throw new IllegalArgumentException("Failed requirement.".toString());
         }
@@ -1941,11 +1941,11 @@ public class ByteBufferChannel implements ByteChannel, ByteReadChannel, ByteWrit
             Throwable cause = closed != null ? closed.getCause() : null;
             if (cause != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m1940constructorimpl(ResultKt.createFailure(cause)));
+                continuation.resumeWith(Result.m1942constructorimpl(ResultKt.createFailure(cause)));
                 return;
             }
             Result.Companion companion2 = Result.Companion;
-            continuation.resumeWith(Result.m1940constructorimpl(Boolean.TRUE));
+            continuation.resumeWith(Result.m1942constructorimpl(Boolean.TRUE));
         }
     }
 
@@ -1973,7 +1973,7 @@ public class ByteBufferChannel implements ByteChannel, ByteReadChannel, ByteWrit
             Result.Companion companion2 = Result.Companion;
             createFailure = ResultKt.createFailure(closed.getSendException());
         }
-        writeOp.resumeWith(Result.m1940constructorimpl(createFailure));
+        writeOp.resumeWith(Result.m1942constructorimpl(createFailure));
     }
 
     private final void resumeClosed(Throwable th) {
@@ -1981,11 +1981,11 @@ public class ByteBufferChannel implements ByteChannel, ByteReadChannel, ByteWrit
         if (continuation != null) {
             if (th != null) {
                 Result.Companion companion = Result.Companion;
-                continuation.resumeWith(Result.m1940constructorimpl(ResultKt.createFailure(th)));
+                continuation.resumeWith(Result.m1942constructorimpl(ResultKt.createFailure(th)));
             } else {
                 Boolean valueOf = Boolean.valueOf(getState().capacity._availableForRead$internal > 0);
                 Result.Companion companion2 = Result.Companion;
-                continuation.resumeWith(Result.m1940constructorimpl(valueOf));
+                continuation.resumeWith(Result.m1942constructorimpl(valueOf));
             }
         }
         Continuation continuation2 = (Continuation) _writeOp$FU.getAndSet(this, null);
@@ -1994,7 +1994,7 @@ public class ByteBufferChannel implements ByteChannel, ByteReadChannel, ByteWrit
             if (th == null) {
                 th = new ClosedWriteChannelException("Byte channel was closed");
             }
-            continuation2.resumeWith(Result.m1940constructorimpl(ResultKt.createFailure(th)));
+            continuation2.resumeWith(Result.m1942constructorimpl(ResultKt.createFailure(th)));
         }
     }
 
@@ -2411,7 +2411,7 @@ public class ByteBufferChannel implements ByteChannel, ByteReadChannel, ByteWrit
             if (r0 != 0) goto L28
             kotlin.Result$Companion r0 = kotlin.Result.Companion
             kotlin.Unit r0 = kotlin.Unit.INSTANCE
-            java.lang.Object r0 = kotlin.Result.m1940constructorimpl(r0)
+            java.lang.Object r0 = kotlin.Result.m1942constructorimpl(r0)
             r7.resumeWith(r0)
             goto L54
         L28:

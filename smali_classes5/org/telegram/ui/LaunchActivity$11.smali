@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    .line 1464
+    .line 1465
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onViewAttachedToWindow(Landroid/view/View;)V
     .locals 1
 
-    .line 1467
+    .line 1468
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {p1}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
@@ -63,7 +63,7 @@
 .method public onViewDetachedFromWindow(Landroid/view/View;)V
     .locals 1
 
-    .line 1472
+    .line 1473
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$11;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {p1}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;

@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;Ljava/lang/CharSequence;)V
     .locals 0
 
-    .line 3553
+    .line 3556
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$3;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$3;->val$text:Ljava/lang/CharSequence;
@@ -42,7 +42,7 @@
 .method public run()V
     .locals 3
 
-    .line 3556
+    .line 3559
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$3;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -53,7 +53,7 @@
 
     if-ne p0, v0, :cond_0
 
-    .line 3557
+    .line 3560
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$3;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -64,7 +64,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ChatActivity;->searchLinks(Ljava/lang/CharSequence;Z)V
 
-    .line 3558
+    .line 3561
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$3;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->this$0:Lorg/telegram/ui/ChatActivity;

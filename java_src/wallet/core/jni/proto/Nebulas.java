@@ -412,7 +412,7 @@ public final class Nebulas {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C77551 c77551) {
+            /* synthetic */ Builder(C77531 c77531) {
                 this();
             }
 
@@ -626,7 +626,7 @@ public final class Nebulas {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77551.f2148xa1df5c61[method.ordinal()]) {
+            switch (C77531.f2149xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -673,40 +673,40 @@ public final class Nebulas {
 
     /* renamed from: wallet.core.jni.proto.Nebulas$1 */
     /* loaded from: classes7.dex */
-    static /* synthetic */ class C77551 {
+    static /* synthetic */ class C77531 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f2148xa1df5c61;
+        static final /* synthetic */ int[] f2149xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f2148xa1df5c61 = iArr;
+            f2149xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f2148xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2149xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f2148xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2149xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f2148xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2149xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f2148xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2149xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f2148xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2149xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f2148xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2149xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -842,7 +842,7 @@ public final class Nebulas {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C77551 c77551) {
+            /* synthetic */ Builder(C77531 c77531) {
                 this();
             }
 
@@ -915,7 +915,7 @@ public final class Nebulas {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77551.f2148xa1df5c61[method.ordinal()]) {
+            switch (C77531.f2149xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:
@@ -1073,7 +1073,7 @@ public final class Nebulas {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Data, Builder> implements DataOrBuilder {
-            /* synthetic */ Builder(C77551 c77551) {
+            /* synthetic */ Builder(C77531 c77531) {
                 this();
             }
 
@@ -1129,7 +1129,7 @@ public final class Nebulas {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77551.f2148xa1df5c61[method.ordinal()]) {
+            switch (C77531.f2149xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Data();
                 case 2:
@@ -1477,7 +1477,7 @@ public final class Nebulas {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<RawTransaction, Builder> implements RawTransactionOrBuilder {
-            /* synthetic */ Builder(C77551 c77551) {
+            /* synthetic */ Builder(C77531 c77531) {
                 this();
             }
 
@@ -1709,7 +1709,7 @@ public final class Nebulas {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77551.f2148xa1df5c61[method.ordinal()]) {
+            switch (C77531.f2149xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new RawTransaction();
                 case 2:

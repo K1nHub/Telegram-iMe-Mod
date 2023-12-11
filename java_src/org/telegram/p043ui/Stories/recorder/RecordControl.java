@@ -16,11 +16,12 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.exoplayer2.C0485C;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.zxing.common.detector.MathUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
@@ -41,10 +42,10 @@ public class RecordControl extends View implements FlashViews.Invertable {
     private Path circlePath;
 
     /* renamed from: cx */
-    private float f2004cx;
+    private float f2005cx;
 
     /* renamed from: cy */
-    private float f2005cy;
+    private float f2006cy;
     private Delegate delegate;
     private boolean discardParentTouch;
     private boolean dual;
@@ -58,16 +59,16 @@ public class RecordControl extends View implements FlashViews.Invertable {
     private final ImageReceiver galleryImage;
 
     /* renamed from: h1 */
-    private final Point f2006h1;
+    private final Point f2007h1;
 
     /* renamed from: h2 */
-    private final Point f2007h2;
+    private final Point f2008h2;
 
     /* renamed from: h3 */
-    private final Point f2008h3;
+    private final Point f2009h3;
 
     /* renamed from: h4 */
-    private final Point f2009h4;
+    private final Point f2010h4;
     private final Paint hintLinePaintBlack;
     private final Paint hintLinePaintWhite;
     private long lastDuration;
@@ -87,16 +88,16 @@ public class RecordControl extends View implements FlashViews.Invertable {
     private float overrideStartModeIsVideoT;
 
     /* renamed from: p1 */
-    private final Point f2010p1;
+    private final Point f2011p1;
 
     /* renamed from: p2 */
-    private final Point f2011p2;
+    private final Point f2012p2;
 
     /* renamed from: p3 */
-    private final Point f2012p3;
+    private final Point f2013p3;
 
     /* renamed from: p4 */
-    private final Point f2013p4;
+    private final Point f2014p4;
     private final Drawable pauseDrawable;
     private final ButtonBounce recordButton;
     private final AnimatedFloat recordCx;
@@ -215,14 +216,14 @@ public class RecordControl extends View implements FlashViews.Invertable {
         };
         this.metaballsPath = new Path();
         this.circlePath = new Path();
-        this.f2010p1 = new Point();
-        this.f2011p2 = new Point();
-        this.f2012p3 = new Point();
-        this.f2013p4 = new Point();
-        this.f2006h1 = new Point();
-        this.f2007h2 = new Point();
-        this.f2008h3 = new Point();
-        this.f2009h4 = new Point();
+        this.f2011p1 = new Point();
+        this.f2012p2 = new Point();
+        this.f2013p3 = new Point();
+        this.f2014p4 = new Point();
+        this.f2007h1 = new Point();
+        this.f2008h2 = new Point();
+        this.f2009h3 = new Point();
+        this.f2010h4 = new Point();
         setWillNotDraw(false);
         RadialGradient radialGradient = new RadialGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m104dp(48), new int[]{-577231, -577231, -1}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.64f, 1.0f}, Shader.TileMode.CLAMP);
         this.redGradient = radialGradient;
@@ -244,27 +245,27 @@ public class RecordControl extends View implements FlashViews.Invertable {
         imageReceiver.setParentView(this);
         imageReceiver.setCrossfadeWithOldImage(true);
         imageReceiver.setRoundRadius(AndroidUtilities.m104dp(6));
-        Drawable mutate = context.getResources().getDrawable(C3634R.C3636drawable.msg_media_gallery).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3632R.C3634drawable.msg_media_gallery).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
         CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createRoundRectDrawable(AndroidUtilities.m104dp(6), -13750737), mutate);
         this.noGalleryDrawable = combinedDrawable;
         combinedDrawable.setFullsize(false);
         combinedDrawable.setIconSize(AndroidUtilities.m104dp(24), AndroidUtilities.m104dp(24));
         Resources resources = context.getResources();
-        int i = C3634R.C3636drawable.msg_photo_switch2;
+        int i = C3632R.C3634drawable.msg_photo_switch2;
         Drawable mutate2 = resources.getDrawable(i).mutate();
         this.flipDrawableWhite = mutate2;
         mutate2.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
         Drawable mutate3 = context.getResources().getDrawable(i).mutate();
         this.flipDrawableBlack = mutate3;
         mutate3.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        Drawable mutate4 = context.getResources().getDrawable(C3634R.C3636drawable.msg_filled_unlockedrecord).mutate();
+        Drawable mutate4 = context.getResources().getDrawable(C3632R.C3634drawable.msg_filled_unlockedrecord).mutate();
         this.unlockDrawable = mutate4;
         mutate4.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        Drawable mutate5 = context.getResources().getDrawable(C3634R.C3636drawable.msg_filled_lockedrecord).mutate();
+        Drawable mutate5 = context.getResources().getDrawable(C3632R.C3634drawable.msg_filled_lockedrecord).mutate();
         this.lockDrawable = mutate5;
         mutate5.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        Drawable mutate6 = context.getResources().getDrawable(C3634R.C3636drawable.msg_round_pause_m).mutate();
+        Drawable mutate6 = context.getResources().getDrawable(C3632R.C3634drawable.msg_round_pause_m).mutate();
         this.pauseDrawable = mutate6;
         mutate6.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
         updateGalleryImage();
@@ -327,21 +328,21 @@ public class RecordControl extends View implements FlashViews.Invertable {
         int size = View.MeasureSpec.getSize(i);
         int m104dp = AndroidUtilities.m104dp(100);
         float f = size;
-        this.f2004cx = f / 2.0f;
-        this.f2005cy = m104dp / 2.0f;
-        float min = Math.min(AndroidUtilities.m104dp(135), f * 0.35f);
-        float f2 = this.f2004cx;
+        this.f2005cx = f / 2.0f;
+        this.f2006cy = m104dp / 2.0f;
+        float min = Math.min(AndroidUtilities.m104dp((int) TsExtractor.TS_STREAM_TYPE_E_AC3), f * 0.35f);
+        float f2 = this.f2005cx;
         this.leftCx = f2 - min;
         float f3 = f2 + min;
         this.rightCx = f3;
-        setDrawableBounds(this.flipDrawableWhite, f3, this.f2005cy, AndroidUtilities.m104dp(14));
-        setDrawableBounds(this.flipDrawableBlack, this.rightCx, this.f2005cy, AndroidUtilities.m104dp(14));
-        setDrawableBounds(this.unlockDrawable, this.leftCx, this.f2005cy);
-        setDrawableBounds(this.lockDrawable, this.leftCx, this.f2005cy);
-        setDrawableBounds(this.pauseDrawable, this.leftCx, this.f2005cy);
-        this.galleryImage.setImageCoords(this.leftCx - AndroidUtilities.m104dp(20), this.f2005cy - AndroidUtilities.m104dp(20), AndroidUtilities.m104dp(40), AndroidUtilities.m104dp(40));
+        setDrawableBounds(this.flipDrawableWhite, f3, this.f2006cy, AndroidUtilities.m104dp(14));
+        setDrawableBounds(this.flipDrawableBlack, this.rightCx, this.f2006cy, AndroidUtilities.m104dp(14));
+        setDrawableBounds(this.unlockDrawable, this.leftCx, this.f2006cy);
+        setDrawableBounds(this.lockDrawable, this.leftCx, this.f2006cy);
+        setDrawableBounds(this.pauseDrawable, this.leftCx, this.f2006cy);
+        this.galleryImage.setImageCoords(this.leftCx - AndroidUtilities.m104dp(20), this.f2006cy - AndroidUtilities.m104dp(20), AndroidUtilities.m104dp(40), AndroidUtilities.m104dp(40));
         this.redMatrix.reset();
-        this.redMatrix.postTranslate(this.f2004cx, this.f2005cy);
+        this.redMatrix.postTranslate(this.f2005cx, this.f2006cy);
         this.redGradient.setLocalMatrix(this.redMatrix);
         setMeasuredDimension(size, m104dp);
     }
@@ -462,16 +463,16 @@ public class RecordControl extends View implements FlashViews.Invertable {
         int action = motionEvent.getAction();
         float clamp = Utilities.clamp(motionEvent.getX() + BitmapDescriptorFactory.HUE_RED, this.rightCx, this.leftCx);
         float y = motionEvent.getY() + BitmapDescriptorFactory.HUE_RED;
-        boolean isPressed = isPressed(clamp, y, this.rightCx, this.f2005cy, AndroidUtilities.m104dp(7), true);
+        boolean isPressed = isPressed(clamp, y, this.rightCx, this.f2006cy, AndroidUtilities.m104dp(7), true);
         boolean z = false;
         if (this.recordingLoading) {
             this.recordButton.setPressed(false);
             this.flipButton.setPressed(false);
             this.lockButton.setPressed(false);
         } else if (action == 0 || this.touch) {
-            this.recordButton.setPressed(isPressed(clamp, y, this.f2004cx, this.f2005cy, AndroidUtilities.m104dp(60), false));
-            this.flipButton.setPressed(isPressed(clamp, y, this.rightCx, this.f2005cy, AndroidUtilities.m104dp(30), true));
-            this.lockButton.setPressed(isPressed(clamp, y, this.leftCx, this.f2005cy, AndroidUtilities.m104dp(30), false));
+            this.recordButton.setPressed(isPressed(clamp, y, this.f2005cx, this.f2006cy, AndroidUtilities.m104dp(60), false));
+            this.flipButton.setPressed(isPressed(clamp, y, this.rightCx, this.f2006cy, AndroidUtilities.m104dp(30), true));
+            this.lockButton.setPressed(isPressed(clamp, y, this.leftCx, this.f2006cy, AndroidUtilities.m104dp(30), false));
         }
         if (action == 0) {
             this.touch = true;
@@ -481,7 +482,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
             this.discardParentTouch = z;
             System.currentTimeMillis();
             this.touchX = clamp;
-            if (Math.abs(clamp - this.f2004cx) < AndroidUtilities.m104dp(50)) {
+            if (Math.abs(clamp - this.f2005cx) < AndroidUtilities.m104dp(50)) {
                 AndroidUtilities.runOnUIThread(this.onRecordLongPressRunnable, ViewConfiguration.getLongPressTimeout());
             }
             if (this.flipButton.isPressed()) {
@@ -498,7 +499,7 @@ public class RecordControl extends View implements FlashViews.Invertable {
                 this.delegate.onFlipClick();
             }
             if (this.recording && this.longpressRecording) {
-                this.delegate.onZoom(Utilities.clamp(((this.f2005cy - AndroidUtilities.m104dp(48)) - y) / (AndroidUtilities.displaySize.y / 2.0f), 1.0f, (float) BitmapDescriptorFactory.HUE_RED));
+                this.delegate.onZoom(Utilities.clamp(((this.f2006cy - AndroidUtilities.m104dp(48)) - y) / (AndroidUtilities.displaySize.y / 2.0f), 1.0f, (float) BitmapDescriptorFactory.HUE_RED));
             }
         } else {
             if (action == 1 || action == 3) {

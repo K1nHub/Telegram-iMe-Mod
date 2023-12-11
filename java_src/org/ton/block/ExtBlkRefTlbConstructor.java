@@ -17,8 +17,8 @@ public final class ExtBlkRefTlbConstructor extends org.ton.tlb.TlbConstructor<Ex
     public void storeTlb(CellBuilder cellBuilder, ExtBlkRef value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5106getEndLtsVKNKU());
-        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5107getSeqNopVg5ArA());
+        cellBuilder.mo5193storeUInt64VKZWuLQ(value.m5088getEndLtsVKNKU());
+        cellBuilder.mo5192storeUInt32WZ4Q5Ns(value.m5089getSeqNopVg5ArA());
         cellBuilder.storeBits(value.getRootHash());
         cellBuilder.storeBits(value.getFileHash());
     }
@@ -26,6 +26,6 @@ public final class ExtBlkRefTlbConstructor extends org.ton.tlb.TlbConstructor<Ex
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public ExtBlkRef loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new ExtBlkRef(cellSlice.mo5221loadUInt64sVKNKU(), cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.loadBits(256), cellSlice.loadBits(256), null);
+        return new ExtBlkRef(cellSlice.mo5203loadUInt64sVKNKU(), cellSlice.mo5202loadUInt32pVg5ArA(), cellSlice.loadBits(256), cellSlice.loadBits(256), null);
     }
 }

@@ -75,15 +75,15 @@ public final class DefinitelyNotNullType extends DelegatingSimpleType implements
                 if (unwrappedType instanceof StubTypeForBuilderInference) {
                     return TypeUtils.isNullableType(unwrappedType);
                 }
-                ClassifierDescriptor mo2051getDeclarationDescriptor = unwrappedType.getConstructor().mo2051getDeclarationDescriptor();
-                TypeParameterDescriptorImpl typeParameterDescriptorImpl = mo2051getDeclarationDescriptor instanceof TypeParameterDescriptorImpl ? (TypeParameterDescriptorImpl) mo2051getDeclarationDescriptor : null;
+                ClassifierDescriptor mo2053getDeclarationDescriptor = unwrappedType.getConstructor().mo2053getDeclarationDescriptor();
+                TypeParameterDescriptorImpl typeParameterDescriptorImpl = mo2053getDeclarationDescriptor instanceof TypeParameterDescriptorImpl ? (TypeParameterDescriptorImpl) mo2053getDeclarationDescriptor : null;
                 if (typeParameterDescriptorImpl != null && !typeParameterDescriptorImpl.isInitialized()) {
                     z2 = true;
                 }
                 if (z2) {
                     return true;
                 }
-                if (z && (unwrappedType.getConstructor().mo2051getDeclarationDescriptor() instanceof TypeParameterDescriptor)) {
+                if (z && (unwrappedType.getConstructor().mo2053getDeclarationDescriptor() instanceof TypeParameterDescriptor)) {
                     return TypeUtils.isNullableType(unwrappedType);
                 }
                 return !NullabilityChecker.INSTANCE.isSubtypeOfAny(unwrappedType);
@@ -92,7 +92,7 @@ public final class DefinitelyNotNullType extends DelegatingSimpleType implements
         }
 
         private final boolean canHaveUndefinedNullability(UnwrappedType unwrappedType) {
-            return (unwrappedType.getConstructor() instanceof NewTypeVariableConstructor) || (unwrappedType.getConstructor().mo2051getDeclarationDescriptor() instanceof TypeParameterDescriptor) || (unwrappedType instanceof NewCapturedType) || (unwrappedType instanceof StubTypeForBuilderInference);
+            return (unwrappedType.getConstructor() instanceof NewTypeVariableConstructor) || (unwrappedType.getConstructor().mo2053getDeclarationDescriptor() instanceof TypeParameterDescriptor) || (unwrappedType instanceof NewCapturedType) || (unwrappedType instanceof StubTypeForBuilderInference);
         }
     }
 
@@ -103,7 +103,7 @@ public final class DefinitelyNotNullType extends DelegatingSimpleType implements
 
     @Override // kotlin.reflect.jvm.internal.impl.types.CustomTypeParameter
     public boolean isTypeParameter() {
-        return (getDelegate().getConstructor() instanceof NewTypeVariableConstructor) || (getDelegate().getConstructor().mo2051getDeclarationDescriptor() instanceof TypeParameterDescriptor);
+        return (getDelegate().getConstructor() instanceof NewTypeVariableConstructor) || (getDelegate().getConstructor().mo2053getDeclarationDescriptor() instanceof TypeParameterDescriptor);
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.types.CustomTypeParameter

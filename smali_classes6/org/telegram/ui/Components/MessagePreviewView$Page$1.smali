@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView$Page;Z)V
     .locals 0
 
-    .line 250
+    .line 252
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$1;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$1;->val$quote:Z
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 253
+    .line 255
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$1;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->access$302(Lorg/telegram/ui/Components/MessagePreviewView$Page;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 254
+    .line 256
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$1;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$1;->val$quote:Z

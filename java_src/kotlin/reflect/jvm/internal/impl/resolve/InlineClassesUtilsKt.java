@@ -45,8 +45,8 @@ public final class InlineClassesUtilsKt {
     public static final KotlinType unsubstitutedUnderlyingType(KotlinType kotlinType) {
         InlineClassRepresentation<SimpleType> inlineClassRepresentation;
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        ClassDescriptor classDescriptor = mo2051getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2051getDeclarationDescriptor : null;
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        ClassDescriptor classDescriptor = mo2053getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2053getDeclarationDescriptor : null;
         if (classDescriptor == null || (inlineClassRepresentation = DescriptorUtilsKt.getInlineClassRepresentation(classDescriptor)) == null) {
             return null;
         }
@@ -55,9 +55,9 @@ public final class InlineClassesUtilsKt {
 
     public static final boolean isInlineClassType(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        if (mo2051getDeclarationDescriptor != null) {
-            return isInlineClass(mo2051getDeclarationDescriptor);
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        if (mo2053getDeclarationDescriptor != null) {
+            return isInlineClass(mo2053getDeclarationDescriptor);
         }
         return false;
     }

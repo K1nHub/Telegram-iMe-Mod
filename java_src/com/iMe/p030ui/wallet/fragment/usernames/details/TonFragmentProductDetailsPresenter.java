@@ -15,7 +15,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import p033j$.util.DesugarTimeZone;
 import timber.log.Timber;
@@ -49,7 +49,7 @@ public final class TonFragmentProductDetailsPresenter extends BasePresenter<TonF
         TonFragmentItem.Product product = this.productItem;
         ((TonFragmentProductDetailsView) getViewState()).renderScreenData(product.getTitle(), product.getUsername(), product.getPriceText());
         if (this.expiresAt < DateExtKt.now()) {
-            String string = LocaleController.getString("Expired", C3634R.string.Expired);
+            String string = LocaleController.getString("Expired", C3632R.string.Expired);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Expired\", R.string.Expired)");
             ((TonFragmentProductDetailsView) getViewState()).renderTimeLeft(string);
             return;
@@ -68,12 +68,12 @@ public final class TonFragmentProductDetailsPresenter extends BasePresenter<TonF
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                m1720invoke(l);
+                m1721invoke(l);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1720invoke(Long it) {
+            public final void m1721invoke(Long it) {
                 long j;
                 String formattedTimeLeft;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -118,7 +118,7 @@ public final class TonFragmentProductDetailsPresenter extends BasePresenter<TonF
     public final String getFormattedTimeLeft() {
         long now = this.expiresAt - DateExtKt.now();
         if (now <= 0) {
-            String string = LocaleController.getString("Expired", C3634R.string.Expired);
+            String string = LocaleController.getString("Expired", C3632R.string.Expired);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Expired\", R.string.Expired)");
             return string;
         }

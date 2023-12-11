@@ -25,7 +25,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectMessageSignBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -159,8 +159,8 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullParameter(peerUrl, "peerUrl");
         ForkContentWalletConnectMessageSignBinding binding = getBinding();
         binding.textMessage.setText(message);
-        binding.textFrom.setTextAndValue(from, getResourceManager().getString(C3634R.string.wallet_connect_transaction_from), true);
-        binding.textPeerUrl.setTextAndValue(peerUrl, getResourceManager().getString(C3634R.string.wallet_connect_transaction_dapp), false);
+        binding.textFrom.setTextAndValue(from, getResourceManager().getString(C3632R.string.wallet_connect_transaction_from), true);
+        binding.textPeerUrl.setTextAndValue(peerUrl, getResourceManager().getString(C3632R.string.wallet_connect_transaction_dapp), false);
     }
 
     @Override // org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
@@ -188,11 +188,11 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
 
     private final void setupViews() {
         ForkContentWalletConnectMessageSignBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3634R.string.wallet_connect_transaction_title));
-        binding.buttonProcess.setText(getResourceManager().getString(C3634R.string.wallet_connect_transaction_button_sign));
+        binding.textTitle.setText(getResourceManager().getString(C3632R.string.wallet_connect_transaction_title));
+        binding.buttonProcess.setText(getResourceManager().getString(C3632R.string.wallet_connect_transaction_button_sign));
         ActionBarMenuItem actionBarMenuItem = binding.buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3634R.C3636drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3632R.C3634drawable.ic_close_white);
     }
 
     private final void setupListeners() {

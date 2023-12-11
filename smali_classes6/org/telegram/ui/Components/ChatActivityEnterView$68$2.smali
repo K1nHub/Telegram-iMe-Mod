@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView$68;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/TrendingStickersLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 10063
+    .line 10062
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$2;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$68;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Components/TrendingStickersAlert;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/TrendingStickersLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,10 +35,10 @@
 .method public dismiss()V
     .locals 2
 
-    .line 10066
+    .line 10065
     invoke-super {p0}, Lorg/telegram/ui/Components/TrendingStickersAlert;->dismiss()V
 
-    .line 10067
+    .line 10066
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$2;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$68;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$68;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -49,7 +49,7 @@
 
     if-ne v0, p0, :cond_0
 
-    .line 10068
+    .line 10067
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$2;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$68;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$68;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -58,7 +58,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$16902(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/TrendingStickersAlert;)Lorg/telegram/ui/Components/TrendingStickersAlert;
 
-    .line 10070
+    .line 10069
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$2;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$68;
 
@@ -70,7 +70,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 10071
+    .line 10070
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$68$2;->this$1:Lorg/telegram/ui/Components/ChatActivityEnterView$68;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatActivityEnterView$68;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;

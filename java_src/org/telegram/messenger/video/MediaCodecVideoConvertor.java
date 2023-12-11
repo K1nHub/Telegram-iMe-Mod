@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SharedConfig;
@@ -591,9 +591,9 @@ public class MediaCodecVideoConvertor {
         String readRes;
         if (z) {
             if (hDRInfo.getHDRType() == 1) {
-                readRes = RLottieDrawable.readRes(null, C3634R.raw.yuv_hlg2rgb);
+                readRes = RLottieDrawable.readRes(null, C3632R.raw.yuv_hlg2rgb);
             } else {
-                readRes = RLottieDrawable.readRes(null, C3634R.raw.yuv_pq2rgb);
+                readRes = RLottieDrawable.readRes(null, C3632R.raw.yuv_pq2rgb);
             }
             String replace = readRes.replace("$dstWidth", i3 + ".0");
             String replace2 = replace.replace("$dstHeight", i4 + ".0");

@@ -22,12 +22,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView$Page;Lorg/telegram/ui/Components/MessagePreviewView;)V
     .locals 0
 
-    .line 366
+    .line 379
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     invoke-direct {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;-><init>()V
 
-    .line 368
+    .line 381
     iget-object p1, p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MessagePreviewView;->access$500(Lorg/telegram/ui/Components/MessagePreviewView;)Lorg/telegram/ui/Components/MessagePreviewView$ResourcesDelegate;
@@ -44,7 +44,7 @@
 .method protected canShowQuote()Z
     .locals 2
 
-    .line 386
+    .line 399
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget v1, v0, Lorg/telegram/ui/Components/MessagePreviewView$Page;->currentTab:I
@@ -55,7 +55,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
-    iget-boolean v0, v0, Lorg/telegram/messenger/MessagePreviewParams;->secret:Z
+    iget-boolean v0, v0, Lorg/telegram/messenger/MessagePreviewParams;->isSecret:Z
 
     if-nez v0, :cond_0
 
@@ -73,7 +73,7 @@
 .method protected getResourcesProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 1
 
-    .line 373
+    .line 386
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object v0
@@ -82,17 +82,17 @@
 .method public invalidate()V
     .locals 1
 
-    .line 378
+    .line 391
     invoke-super {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;->invalidate()V
 
-    .line 379
+    .line 392
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView$Page;->chatListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz v0, :cond_0
 
-    .line 380
+    .line 393
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_0
@@ -102,7 +102,7 @@
 .method public isSelected(Lorg/telegram/messenger/MessageObject;)Z
     .locals 1
 
-    .line 406
+    .line 420
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget v0, p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;->currentTab:I
@@ -113,7 +113,7 @@
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
-    iget-boolean p1, p1, Lorg/telegram/messenger/MessagePreviewParams;->secret:Z
+    iget-boolean p1, p1, Lorg/telegram/messenger/MessagePreviewParams;->isSecret:Z
 
     if-nez p1, :cond_0
 
@@ -135,68 +135,98 @@
 .end method
 
 .method protected onQuoteClick(Lorg/telegram/messenger/MessageObject;IILjava/lang/CharSequence;)V
-    .locals 2
+    .locals 3
 
-    .line 391
-    iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
+    .line 404
+    iget-object p4, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
-    iget-object p4, p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;->textSelectionHelper:Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;
+    iget-object v0, p4, Lorg/telegram/ui/Components/MessagePreviewView$Page;->textSelectionHelper:Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;
 
-    iget v0, p4, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
+    iget v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    iget p4, p4, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
+    iget v0, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    sub-int/2addr v0, p4
+    sub-int/2addr v1, v0
 
-    iget-object p1, p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
+    iget-object p4, p4, Lorg/telegram/ui/Components/MessagePreviewView$Page;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/MessagePreviewView;->access$600(Lorg/telegram/ui/Components/MessagePreviewView;)I
+    invoke-static {p4}, Lorg/telegram/ui/Components/MessagePreviewView;->access$600(Lorg/telegram/ui/Components/MessagePreviewView;)I
 
-    move-result p1
+    move-result p4
 
-    invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {p4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object p1
+    move-result-object p4
 
-    iget p1, p1, Lorg/telegram/messenger/MessagesController;->quoteLengthMax:I
+    iget p4, p4, Lorg/telegram/messenger/MessagesController;->quoteLengthMax:I
 
-    if-le v0, p1, :cond_0
+    if-le v1, p4, :cond_0
 
-    .line 392
+    .line 405
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->access$700(Lorg/telegram/ui/Components/MessagePreviewView$Page;)V
 
     return-void
 
-    .line 395
+    .line 408
     :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
+    iget-object p4, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
-    iget-object p4, p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
+    iget-object v0, p4, Lorg/telegram/ui/Components/MessagePreviewView$Page;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
+
+    iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
+
+    iget-object v1, p4, Lorg/telegram/ui/Components/MessagePreviewView$Page;->textSelectionHelper:Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;
+
+    iget v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
+
+    iput v2, v0, Lorg/telegram/messenger/MessagePreviewParams;->quoteStart:I
+
+    .line 409
+    iget v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
+
+    iput v1, v0, Lorg/telegram/messenger/MessagePreviewParams;->quoteEnd:I
+
+    .line 410
+    invoke-virtual {p4, p1}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->getReplyMessage(Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    .line 411
+    iget-object p4, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
+
+    iget-object p4, p4, Lorg/telegram/ui/Components/MessagePreviewView$Page;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     iget-object p4, p4, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
-    iget-object v0, p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;->textSelectionHelper:Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;
+    iget-object p4, p4, Lorg/telegram/messenger/MessagePreviewParams;->quote:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-    iget v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
+    if-eqz p4, :cond_1
 
-    iput v1, p4, Lorg/telegram/messenger/MessagePreviewParams;->quoteStart:I
+    iget-object p4, p4, Lorg/telegram/ui/ChatActivity$ReplyQuote;->message:Lorg/telegram/messenger/MessageObject;
 
-    .line 396
-    iget v0, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
+    if-eqz p4, :cond_1
 
-    iput v0, p4, Lorg/telegram/messenger/MessagePreviewParams;->quoteEnd:I
+    invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->getId()I
 
-    .line 397
-    iget-object v0, p4, Lorg/telegram/messenger/MessagePreviewParams;->quote:Lorg/telegram/ui/ChatActivity$ReplyQuote;
+    move-result p4
 
-    if-nez v0, :cond_1
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
 
-    .line 398
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->getReplyMessage()Lorg/telegram/messenger/MessageObject;
+    move-result v0
 
-    move-result-object p1
+    if-eq p4, v0, :cond_2
+
+    .line 412
+    :cond_1
+    iget-object p4, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
+
+    iget-object p4, p4, Lorg/telegram/ui/Components/MessagePreviewView$Page;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
+
+    iget-object p4, p4, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
     invoke-static {p1, p2, p3}, Lorg/telegram/ui/ChatActivity$ReplyQuote;->from(Lorg/telegram/messenger/MessageObject;II)Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
@@ -204,15 +234,15 @@
 
     iput-object p1, p4, Lorg/telegram/messenger/MessagePreviewParams;->quote:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-    .line 400
-    :cond_1
+    .line 414
+    :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/MessagePreviewView;->onQuoteSelectedPart()V
 
-    .line 401
+    .line 415
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$4;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;

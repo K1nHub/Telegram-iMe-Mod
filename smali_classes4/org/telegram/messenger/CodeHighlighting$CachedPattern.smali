@@ -26,13 +26,13 @@
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    .line 742
+    .line 732
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 743
+    .line 733
     iput-object p1, p0, Lorg/telegram/messenger/CodeHighlighting$CachedPattern;->patternSource:Ljava/lang/String;
 
-    .line 744
+    .line 734
     iput p2, p0, Lorg/telegram/messenger/CodeHighlighting$CachedPattern;->patternSourceFlags:I
 
     return-void
@@ -41,7 +41,7 @@
 .method static synthetic access$100(Lorg/telegram/messenger/CodeHighlighting$CachedPattern;)Ljava/lang/String;
     .locals 0
 
-    .line 737
+    .line 727
     iget-object p0, p0, Lorg/telegram/messenger/CodeHighlighting$CachedPattern;->patternSource:Ljava/lang/String;
 
     return-object p0
@@ -52,12 +52,12 @@
 .method public getPattern()Ljava/util/regex/Pattern;
     .locals 2
 
-    .line 748
+    .line 738
     iget-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$CachedPattern;->pattern:Ljava/util/regex/Pattern;
 
     if-nez v0, :cond_0
 
-    .line 749
+    .line 739
     iget-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$CachedPattern;->patternSource:Ljava/lang/String;
 
     iget v1, p0, Lorg/telegram/messenger/CodeHighlighting$CachedPattern;->patternSourceFlags:I
@@ -68,7 +68,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$CachedPattern;->pattern:Ljava/util/regex/Pattern;
 
-    .line 751
+    .line 741
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$CachedPattern;->pattern:Ljava/util/regex/Pattern;
 

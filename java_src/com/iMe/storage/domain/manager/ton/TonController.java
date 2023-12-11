@@ -14,6 +14,8 @@ public interface TonController {
 
     Observable<Result<Boolean>> isValidAddress(String str);
 
+    Observable<Result<Boolean>> isValidMnemonic(String str);
+
     Observable<Result<String>> sendTransaction(String str, long j, int i, TonTransactionPayload tonTransactionPayload, int i2);
 
     Observable<Result<byte[]>> signData(byte[] bArr);

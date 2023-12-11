@@ -446,7 +446,7 @@ public final class Ethereum {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-                /* synthetic */ Builder(C77401 c77401) {
+                /* synthetic */ Builder(C77381 c77381) {
                     this();
                 }
 
@@ -491,7 +491,7 @@ public final class Ethereum {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77401.f2129xa1df5c61[method.ordinal()]) {
+                switch (C77381.f2130xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Transfer();
                     case 2:
@@ -649,7 +649,7 @@ public final class Ethereum {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<ERC20Transfer, Builder> implements ERC20TransferOrBuilder {
-                /* synthetic */ Builder(C77401 c77401) {
+                /* synthetic */ Builder(C77381 c77381) {
                     this();
                 }
 
@@ -705,7 +705,7 @@ public final class Ethereum {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77401.f2129xa1df5c61[method.ordinal()]) {
+                switch (C77381.f2130xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new ERC20Transfer();
                     case 2:
@@ -863,7 +863,7 @@ public final class Ethereum {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<ERC20Approve, Builder> implements ERC20ApproveOrBuilder {
-                /* synthetic */ Builder(C77401 c77401) {
+                /* synthetic */ Builder(C77381 c77381) {
                     this();
                 }
 
@@ -919,7 +919,7 @@ public final class Ethereum {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77401.f2129xa1df5c61[method.ordinal()]) {
+                switch (C77381.f2130xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new ERC20Approve();
                     case 2:
@@ -1106,7 +1106,7 @@ public final class Ethereum {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<ERC721Transfer, Builder> implements ERC721TransferOrBuilder {
-                /* synthetic */ Builder(C77401 c77401) {
+                /* synthetic */ Builder(C77381 c77381) {
                     this();
                 }
 
@@ -1190,7 +1190,7 @@ public final class Ethereum {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77401.f2129xa1df5c61[method.ordinal()]) {
+                switch (C77381.f2130xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new ERC721Transfer();
                     case 2:
@@ -1417,7 +1417,7 @@ public final class Ethereum {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<ERC1155Transfer, Builder> implements ERC1155TransferOrBuilder {
-                /* synthetic */ Builder(C77401 c77401) {
+                /* synthetic */ Builder(C77381 c77381) {
                     this();
                 }
 
@@ -1535,7 +1535,7 @@ public final class Ethereum {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77401.f2129xa1df5c61[method.ordinal()]) {
+                switch (C77381.f2130xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new ERC1155Transfer();
                     case 2:
@@ -1685,7 +1685,7 @@ public final class Ethereum {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<ContractGeneric, Builder> implements ContractGenericOrBuilder {
-                /* synthetic */ Builder(C77401 c77401) {
+                /* synthetic */ Builder(C77381 c77381) {
                     this();
                 }
 
@@ -1730,7 +1730,7 @@ public final class Ethereum {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77401.f2129xa1df5c61[method.ordinal()]) {
+                switch (C77381.f2130xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new ContractGeneric();
                     case 2:
@@ -2125,7 +2125,7 @@ public final class Ethereum {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transaction, Builder> implements TransactionOrBuilder {
-            /* synthetic */ Builder(C77401 c77401) {
+            /* synthetic */ Builder(C77381 c77381) {
                 this();
             }
 
@@ -2351,7 +2351,7 @@ public final class Ethereum {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77401.f2129xa1df5c61[method.ordinal()]) {
+            switch (C77381.f2130xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transaction();
                 case 2:
@@ -2398,40 +2398,40 @@ public final class Ethereum {
 
     /* renamed from: wallet.core.jni.proto.Ethereum$1 */
     /* loaded from: classes7.dex */
-    static /* synthetic */ class C77401 {
+    static /* synthetic */ class C77381 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f2129xa1df5c61;
+        static final /* synthetic */ int[] f2130xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f2129xa1df5c61 = iArr;
+            f2130xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f2129xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2130xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f2129xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2130xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f2129xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2130xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f2129xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2130xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f2129xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2130xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f2129xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2130xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -2694,7 +2694,7 @@ public final class Ethereum {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<UserOperation, Builder> implements UserOperationOrBuilder {
-            /* synthetic */ Builder(C77401 c77401) {
+            /* synthetic */ Builder(C77381 c77381) {
                 this();
             }
 
@@ -2885,7 +2885,7 @@ public final class Ethereum {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77401.f2129xa1df5c61[method.ordinal()]) {
+            switch (C77381.f2130xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new UserOperation();
                 case 2:
@@ -3258,7 +3258,7 @@ public final class Ethereum {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C77401 c77401) {
+            /* synthetic */ Builder(C77381 c77381) {
                 this();
             }
 
@@ -3512,7 +3512,7 @@ public final class Ethereum {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77401.f2129xa1df5c61[method.ordinal()]) {
+            switch (C77381.f2130xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -3574,20 +3574,20 @@ public final class Ethereum {
         private int error_;
 
         /* renamed from: r_ */
-        private ByteString f2130r_;
+        private ByteString f2131r_;
 
         /* renamed from: s_ */
-        private ByteString f2131s_;
+        private ByteString f2132s_;
 
         /* renamed from: v_ */
-        private ByteString f2132v_;
+        private ByteString f2133v_;
 
         private SigningOutput() {
             ByteString byteString = ByteString.EMPTY;
             this.encoded_ = byteString;
-            this.f2132v_ = byteString;
-            this.f2130r_ = byteString;
-            this.f2131s_ = byteString;
+            this.f2133v_ = byteString;
+            this.f2131r_ = byteString;
+            this.f2132s_ = byteString;
             this.data_ = byteString;
             this.errorMessage_ = "";
         }
@@ -3610,50 +3610,50 @@ public final class Ethereum {
 
         @Override // wallet.core.jni.proto.Ethereum.SigningOutputOrBuilder
         public ByteString getV() {
-            return this.f2132v_;
+            return this.f2133v_;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void setV(ByteString value) {
             value.getClass();
-            this.f2132v_ = value;
+            this.f2133v_ = value;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void clearV() {
-            this.f2132v_ = getDefaultInstance().getV();
+            this.f2133v_ = getDefaultInstance().getV();
         }
 
         @Override // wallet.core.jni.proto.Ethereum.SigningOutputOrBuilder
         public ByteString getR() {
-            return this.f2130r_;
+            return this.f2131r_;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void setR(ByteString value) {
             value.getClass();
-            this.f2130r_ = value;
+            this.f2131r_ = value;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void clearR() {
-            this.f2130r_ = getDefaultInstance().getR();
+            this.f2131r_ = getDefaultInstance().getR();
         }
 
         @Override // wallet.core.jni.proto.Ethereum.SigningOutputOrBuilder
         public ByteString getS() {
-            return this.f2131s_;
+            return this.f2132s_;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void setS(ByteString value) {
             value.getClass();
-            this.f2131s_ = value;
+            this.f2132s_ = value;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void clearS() {
-            this.f2131s_ = getDefaultInstance().getS();
+            this.f2132s_ = getDefaultInstance().getS();
         }
 
         @Override // wallet.core.jni.proto.Ethereum.SigningOutputOrBuilder
@@ -3783,7 +3783,7 @@ public final class Ethereum {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C77401 c77401) {
+            /* synthetic */ Builder(C77381 c77381) {
                 this();
             }
 
@@ -3935,7 +3935,7 @@ public final class Ethereum {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77401.f2129xa1df5c61[method.ordinal()]) {
+            switch (C77381.f2130xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

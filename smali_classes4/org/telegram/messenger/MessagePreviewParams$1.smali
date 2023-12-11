@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MessagePreviewParams;ILorg/telegram/tgnet/TLRPC$Message;ZZI)V
     .locals 0
 
-    .line 554
+    .line 556
     iput-object p1, p0, Lorg/telegram/messenger/MessagePreviewParams$1;->this$0:Lorg/telegram/messenger/MessagePreviewParams;
 
     iput p6, p0, Lorg/telegram/messenger/MessagePreviewParams$1;->val$msgtype:I
@@ -39,17 +39,17 @@
 .method public generateLayout(Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 1
 
-    .line 571
+    .line 573
     invoke-super {p0, p1}, Lorg/telegram/messenger/MessageObject;->generateLayout(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 572
+    .line 574
     iget p1, p0, Lorg/telegram/messenger/MessagePreviewParams$1;->val$msgtype:I
 
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_0
 
-    .line 573
+    .line 575
     iget-object p1, p0, Lorg/telegram/messenger/MessagePreviewParams$1;->this$0:Lorg/telegram/messenger/MessagePreviewParams;
 
     invoke-virtual {p1, p0}, Lorg/telegram/messenger/MessagePreviewParams;->checkCurrentLink(Lorg/telegram/messenger/MessageObject;)V
@@ -69,7 +69,7 @@
 .method public needDrawForwarded()Z
     .locals 1
 
-    .line 579
+    .line 581
     iget-object v0, p0, Lorg/telegram/messenger/MessagePreviewParams$1;->this$0:Lorg/telegram/messenger/MessagePreviewParams;
 
     iget-boolean v0, v0, Lorg/telegram/messenger/MessagePreviewParams;->hideForwardSendersName:Z
@@ -80,7 +80,7 @@
 
     return v0
 
-    .line 582
+    .line 584
     :cond_0
     invoke-super {p0}, Lorg/telegram/messenger/MessageObject;->needDrawForwarded()Z
 

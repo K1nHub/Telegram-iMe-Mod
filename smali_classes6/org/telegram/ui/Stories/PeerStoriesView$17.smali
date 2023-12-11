@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 7
 
-    .line 2302
+    .line 2299
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     move-object v0, p0
@@ -49,7 +49,7 @@
 .method public dismissInternal()V
     .locals 0
 
-    .line 2308
+    .line 2305
     invoke-super {p0}, Lorg/telegram/ui/Components/ChatAttachAlert;->dismissInternal()V
 
     return-void
@@ -58,7 +58,7 @@
 .method public onDismissAnimationStart()V
     .locals 2
 
-    .line 2313
+    .line 2310
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2314
+    .line 2311
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -78,7 +78,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setFocusable(Z)V
 
-    .line 2316
+    .line 2313
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -92,7 +92,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2317
+    .line 2314
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$17;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;

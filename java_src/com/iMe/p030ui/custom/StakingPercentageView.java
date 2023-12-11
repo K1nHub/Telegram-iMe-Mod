@@ -36,7 +36,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingCompoundBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -129,9 +129,9 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
             return;
         }
         AppCompatTextView appCompatTextView = forkContentStakingCompoundBinding.textApr;
-        appCompatTextView.setText(LocaleController.getInternalString(C3634R.string.staking_programme_apr) + getAnnualPercentageText(stakingAnnualPercentageData.getApr()));
+        appCompatTextView.setText(LocaleController.getInternalString(C3632R.string.staking_programme_apr) + getAnnualPercentageText(stakingAnnualPercentageData.getApr()));
         AppCompatTextView appCompatTextView2 = forkContentStakingCompoundBinding.textApy;
-        appCompatTextView2.setText(LocaleController.getInternalString(C3634R.string.staking_programme_apy) + getAnnualPercentageText(stakingAnnualPercentageData.getApy()));
+        appCompatTextView2.setText(LocaleController.getInternalString(C3632R.string.staking_programme_apy) + getAnnualPercentageText(stakingAnnualPercentageData.getApy()));
         AppCompatTextView appCompatTextView3 = forkContentStakingCompoundBinding.textThresholdValue;
         appCompatTextView3.setText(stakingAnnualPercentageData.getCompoundThreshold() + '+');
     }

@@ -8,12 +8,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class BinaryKt {
     public static final long getLongLE(byte[] bArr, int i) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
-        return ((UByte.m1950constructorimpl(bArr[i + 7]) & 255) << 56) | (UByte.m1950constructorimpl(bArr[i]) & 255) | ((UByte.m1950constructorimpl(bArr[i + 1]) & 255) << 8) | ((UByte.m1950constructorimpl(bArr[i + 2]) & 255) << 16) | ((UByte.m1950constructorimpl(bArr[i + 3]) & 255) << 24) | ((UByte.m1950constructorimpl(bArr[i + 4]) & 255) << 32) | ((UByte.m1950constructorimpl(bArr[i + 5]) & 255) << 40) | ((UByte.m1950constructorimpl(bArr[i + 6]) & 255) << 48);
+        return ((UByte.m1952constructorimpl(bArr[i + 7]) & 255) << 56) | (UByte.m1952constructorimpl(bArr[i]) & 255) | ((UByte.m1952constructorimpl(bArr[i + 1]) & 255) << 8) | ((UByte.m1952constructorimpl(bArr[i + 2]) & 255) << 16) | ((UByte.m1952constructorimpl(bArr[i + 3]) & 255) << 24) | ((UByte.m1952constructorimpl(bArr[i + 4]) & 255) << 32) | ((UByte.m1952constructorimpl(bArr[i + 5]) & 255) << 40) | ((UByte.m1952constructorimpl(bArr[i + 6]) & 255) << 48);
     }
 
     public static final long getULongLE(byte[] bArr, int i) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
-        return ULong.m1994constructorimpl(getLongLE(bArr, i));
+        return ULong.m1996constructorimpl(getLongLE(bArr, i));
     }
 
     public static final byte[] hex(String hexString) {

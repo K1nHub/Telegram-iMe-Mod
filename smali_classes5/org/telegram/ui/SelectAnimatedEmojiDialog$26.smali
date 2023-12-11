@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 4718
+    .line 4720
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$26;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iput-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$26;->val$dismiss:Ljava/lang/Runnable;
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 4721
+    .line 4723
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$26;->val$dismiss:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 4722
+    .line 4724
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$26;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$3100(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;
@@ -53,7 +53,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 4723
+    .line 4725
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$26;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$3100(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;
@@ -62,7 +62,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectStatusDurationDialog;->dismiss()V
 
-    .line 4724
+    .line 4726
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$26;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     const/4 v0, 0x0

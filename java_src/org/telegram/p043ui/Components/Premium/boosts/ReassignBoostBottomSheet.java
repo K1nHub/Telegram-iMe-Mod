@@ -16,13 +16,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.exoplayer2.util.Consumer;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -50,6 +51,7 @@ import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$Peer;
 import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.p042tl.TL_stories$TL_myBoost;
+import org.telegram.tgnet.p042tl.TL_stories$TL_premium_boostsStatus;
 import org.telegram.tgnet.p042tl.TL_stories$TL_premium_myBoosts;
 /* renamed from: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet */
 /* loaded from: classes6.dex */
@@ -122,7 +124,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
         buttonWithCounterView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                ReassignBoostBottomSheet.this.lambda$new$2(tLRPC$Chat, view);
+                ReassignBoostBottomSheet.this.lambda$new$3(tLRPC$Chat, view);
             }
         });
         selectorBtnCell.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 87));
@@ -132,10 +134,10 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
         RecyclerListView recyclerListView = this.recyclerListView;
         int i2 = this.backgroundPaddingLeft;
         recyclerListView.setPadding(i2, 0, i2, AndroidUtilities.m104dp(64));
-        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda3
+        this.recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda4
             @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i3) {
-                ReassignBoostBottomSheet.this.lambda$new$3(tLRPC$Chat, view, i3);
+                ReassignBoostBottomSheet.this.lambda$new$4(tLRPC$Chat, view, i3);
             }
         });
         fixNavigationBar();
@@ -180,7 +182,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$2(TLRPC$Chat tLRPC$Chat, View view) {
+    public /* synthetic */ void lambda$new$3(final TLRPC$Chat tLRPC$Chat, View view) {
         if (this.selectedBoosts.isEmpty() || this.actionButton.isLoading()) {
             return;
         }
@@ -191,37 +193,47 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
             arrayList.add(Integer.valueOf(tL_stories$TL_myBoost.slot));
             hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_stories$TL_myBoost.peer)));
         }
-        BoostRepository.applyBoost(tLRPC$Chat.f1602id, arrayList, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda2
+        BoostRepository.applyBoost(tLRPC$Chat.f1602id, arrayList, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda3
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ReassignBoostBottomSheet.this.lambda$new$0(arrayList, hashSet, (TL_stories$TL_premium_myBoosts) obj);
+                ReassignBoostBottomSheet.this.lambda$new$1(tLRPC$Chat, arrayList, hashSet, (TL_stories$TL_premium_myBoosts) obj);
             }
-        }, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda1
+        }, new Utilities.Callback() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda2
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                ReassignBoostBottomSheet.this.lambda$new$1((TLRPC$TL_error) obj);
+                ReassignBoostBottomSheet.this.lambda$new$2((TLRPC$TL_error) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$0(List list, HashSet hashSet, TL_stories$TL_premium_myBoosts tL_stories$TL_premium_myBoosts) {
-        dismiss();
-        NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.boostedChannelByUser, tL_stories$TL_premium_myBoosts, Integer.valueOf(list.size()), Integer.valueOf(hashSet.size()));
+    public /* synthetic */ void lambda$new$1(TLRPC$Chat tLRPC$Chat, final List list, final HashSet hashSet, final TL_stories$TL_premium_myBoosts tL_stories$TL_premium_myBoosts) {
+        MessagesController.getInstance(this.currentAccount).getBoostsController().getBoostsStats(-tLRPC$Chat.f1602id, new Consumer() { // from class: org.telegram.ui.Components.Premium.boosts.ReassignBoostBottomSheet$$ExternalSyntheticLambda1
+            @Override // com.google.android.exoplayer2.util.Consumer
+            public final void accept(Object obj) {
+                ReassignBoostBottomSheet.this.lambda$new$0(tL_stories$TL_premium_myBoosts, list, hashSet, (TL_stories$TL_premium_boostsStatus) obj);
+            }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$1(TLRPC$TL_error tLRPC$TL_error) {
+    public /* synthetic */ void lambda$new$0(TL_stories$TL_premium_myBoosts tL_stories$TL_premium_myBoosts, List list, HashSet hashSet, TL_stories$TL_premium_boostsStatus tL_stories$TL_premium_boostsStatus) {
+        dismiss();
+        NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.boostedChannelByUser, tL_stories$TL_premium_myBoosts, Integer.valueOf(list.size()), Integer.valueOf(hashSet.size()), tL_stories$TL_premium_boostsStatus);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$2(TLRPC$TL_error tLRPC$TL_error) {
         this.actionButton.setLoading(false);
         BoostDialogs.showToastError(getContext(), tLRPC$TL_error);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$new$3(TLRPC$Chat tLRPC$Chat, View view, int i) {
+    public /* synthetic */ void lambda$new$4(TLRPC$Chat tLRPC$Chat, View view, int i) {
         if (view instanceof SelectorUserCell) {
             SelectorUserCell selectorUserCell = (SelectorUserCell) view;
             if (selectorUserCell.getBoost().cooldown_until_date > 0) {
-                BulletinFactory.m63of(this.container, this.resourcesProvider).createSimpleBulletin(C3634R.raw.chats_infotip, AndroidUtilities.replaceTags(LocaleController.formatString("BoostingWaitWarning", C3634R.string.BoostingWaitWarning, Integer.valueOf(BoostRepository.boostsPerSentGift()))), 5).show(true);
+                BulletinFactory.m63of(this.container, this.resourcesProvider).createSimpleBulletin(C3632R.raw.chats_infotip, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", BoostRepository.boostsPerSentGift(), new Object[0])), 5).show(true);
                 return;
             }
             if (this.selectedBoosts.contains(selectorUserCell.getBoost())) {
@@ -290,9 +302,9 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
     private void updateActionButton(boolean z) {
         this.actionButton.setShowZero(false);
         if (this.selectedBoosts.size() > 1) {
-            this.actionButton.setText(LocaleController.getString("BoostingReassignBoosts", C3634R.string.BoostingReassignBoosts), z);
+            this.actionButton.setText(LocaleController.getString("BoostingReassignBoosts", C3632R.string.BoostingReassignBoosts), z);
         } else {
-            this.actionButton.setText(LocaleController.getString("BoostingReassignBoost", C3634R.string.BoostingReassignBoost), z);
+            this.actionButton.setText(LocaleController.getString("BoostingReassignBoost", C3632R.string.BoostingReassignBoost), z);
         }
         this.actionButton.setCount(this.selectedBoosts.size(), z);
         this.actionButton.setEnabled(this.selectedBoosts.size() > 0);
@@ -300,7 +312,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.p043ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
-        return LocaleController.getString("BoostingReassignBoost", C3634R.string.BoostingReassignBoost);
+        return LocaleController.getString("BoostingReassignBoost", C3632R.string.BoostingReassignBoost);
     }
 
     @Override // org.telegram.p043ui.Components.BottomSheetWithRecyclerListView
@@ -358,7 +370,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
                     HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                     headerCell.setTextSize(15.0f);
                     headerCell.setPadding(0, 0, 0, AndroidUtilities.m104dp(2));
-                    headerCell.setText(LocaleController.getString("BoostingRemoveBoostFrom", C3634R.string.BoostingRemoveBoostFrom));
+                    headerCell.setText(LocaleController.getString("BoostingRemoveBoostFrom", C3632R.string.BoostingRemoveBoostFrom));
                 } else if (viewHolder.getItemViewType() == 0) {
                     ReassignBoostBottomSheet.this.topCell = (TopCell) viewHolder.itemView;
                     ReassignBoostBottomSheet.this.topCell.setData(ReassignBoostBottomSheet.this.currentChat);
@@ -402,7 +414,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
             addView(frameLayout, LayoutHelper.createLinear(-1, 70, 0, 15, 0, 0));
             TextView textView = new TextView(context);
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            textView.setText(LocaleController.getString("BoostingReassignBoost", C3634R.string.BoostingReassignBoost));
+            textView.setText(LocaleController.getString("BoostingReassignBoost", C3632R.string.BoostingReassignBoost));
             textView.setTextSize(1, 20.0f);
             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
             addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 15, 0, 7));
@@ -417,11 +429,10 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
 
         public void setData(TLRPC$Chat tLRPC$Chat) {
             TextView textView = this.description;
-            int i = C3634R.string.BoostingReassignBoostText;
-            Object[] objArr = new Object[2];
+            int boostsPerSentGift = BoostRepository.boostsPerSentGift();
+            Object[] objArr = new Object[1];
             objArr[0] = tLRPC$Chat == null ? "" : tLRPC$Chat.title;
-            objArr[1] = Integer.valueOf(BoostRepository.boostsPerSentGift());
-            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingReassignBoostText", i, objArr)));
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReassignBoostTextPlural", boostsPerSentGift, objArr)));
         }
 
         public void showBoosts(List<TL_stories$TL_myBoost> list, TLRPC$Chat tLRPC$Chat) {
@@ -564,7 +575,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
         public ArrowView(Context context) {
             super(context);
             ImageView imageView = new ImageView(getContext());
-            imageView.setImageResource(C3634R.C3636drawable.msg_arrow_avatar);
+            imageView.setImageResource(C3632R.C3634drawable.msg_arrow_avatar);
             imageView.setColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText7));
             addView(imageView);
         }
@@ -619,7 +630,7 @@ public class ReassignBoostBottomSheet extends BottomSheetWithRecyclerListView {
         public BoostIconView(Context context) {
             super(context);
             this.paint = new Paint(1);
-            this.boostDrawable = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.mini_boost_remove);
+            this.boostDrawable = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.mini_boost_remove);
             this.paint.setColor(Theme.getColor(Theme.key_dialogBackground));
         }
 

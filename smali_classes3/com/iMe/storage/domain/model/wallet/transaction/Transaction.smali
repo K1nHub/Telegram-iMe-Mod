@@ -31,6 +31,8 @@
 
 .field private final id:Ljava/lang/String;
 
+.field private final processingName:Ljava/lang/String;
+
 .field private final processingType:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
 .field private final status:Lcom/iMe/storage/data/network/model/response/base/Status;
@@ -41,7 +43,7 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
+.method private constructor <init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
     .locals 0
 
     .line 11
@@ -72,18 +74,21 @@
     iput-object p8, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->processingType:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
     .line 20
-    iput-object p9, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->feeAmount:Ljava/math/BigDecimal;
+    iput-object p9, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->processingName:Ljava/lang/String;
 
     .line 21
-    iput-object p10, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+    iput-object p10, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->feeAmount:Ljava/math/BigDecimal;
+
+    .line 22
+    iput-object p11, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p10}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
+    invoke-direct/range {p0 .. p11}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;)V
 
     return-void
 .end method
@@ -120,7 +125,7 @@
 .method public getFeeAmount()Ljava/math/BigDecimal;
     .locals 1
 
-    .line 20
+    .line 21
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->feeAmount:Ljava/math/BigDecimal;
 
     return-object v0
@@ -129,7 +134,7 @@
 .method public getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 21
+    .line 22
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
@@ -140,6 +145,15 @@
 
     .line 12
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->id:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getProcessingName()Ljava/lang/String;
+    .locals 1
+
+    .line 20
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->processingName:Ljava/lang/String;
 
     return-object v0
 .end method

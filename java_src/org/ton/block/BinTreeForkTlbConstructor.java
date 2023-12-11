@@ -18,7 +18,7 @@ public final class BinTreeForkTlbConstructor<X> extends org.ton.tlb.TlbConstruct
     private final Lazy binTree$delegate;
 
     /* renamed from: x */
-    private final TlbCodec<X> f2033x;
+    private final TlbCodec<X> f2034x;
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
     public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
@@ -26,7 +26,7 @@ public final class BinTreeForkTlbConstructor<X> extends org.ton.tlb.TlbConstruct
     }
 
     public final TlbCodec<X> getX() {
-        return this.f2033x;
+        return this.f2034x;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -34,7 +34,7 @@ public final class BinTreeForkTlbConstructor<X> extends org.ton.tlb.TlbConstruct
         super("bt_fork$1 {X:Type} left:^(BinTree X) right:^(BinTree X) = BinTree X;", null, 2, null);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(x, "x");
-        this.f2033x = x;
+        this.f2034x = x;
         lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0<TlbCombinator<BinTree<X>>>(this) { // from class: org.ton.block.BinTreeForkTlbConstructor$binTree$2
             final /* synthetic */ BinTreeForkTlbConstructor<X> this$0;
 

@@ -32,8 +32,8 @@ public final class DataCell implements Cell {
 
     @Override // org.ton.cell.Cell
     /* renamed from: getLevelMask-Kat384U */
-    public int mo5206getLevelMaskKat384U() {
-        return Cell.DefaultImpls.m5207getLevelMaskKat384U(this);
+    public int mo5188getLevelMaskKat384U() {
+        return Cell.DefaultImpls.m5189getLevelMaskKat384U(this);
     }
 
     @Override // org.ton.cell.Cell
@@ -58,18 +58,18 @@ public final class DataCell implements Cell {
 
     @Override // org.ton.cell.Cell
     public BitString hash(int i) {
-        byte[] first = this.hashes.get(LevelMask.m5232getHashIndeximpl(LevelMask.m5226applyspGXSBY(mo5206getLevelMaskKat384U(), i))).getFirst();
+        byte[] first = this.hashes.get(LevelMask.m5214getHashIndeximpl(LevelMask.m5208applyspGXSBY(mo5188getLevelMaskKat384U(), i))).getFirst();
         return BitString.Companion.m43of(first, first.length * 8);
     }
 
     @Override // org.ton.cell.Cell
     public int depth(int i) {
-        return this.hashes.get(LevelMask.m5232getHashIndeximpl(LevelMask.m5226applyspGXSBY(mo5206getLevelMaskKat384U(), i))).getSecond().intValue();
+        return this.hashes.get(LevelMask.m5214getHashIndeximpl(LevelMask.m5208applyspGXSBY(mo5188getLevelMaskKat384U(), i))).getSecond().intValue();
     }
 
     @Override // org.ton.cell.Cell
     public Cell virtualize(int i) {
-        return LevelMask.m5235isEmptyimpl(mo5206getLevelMaskKat384U()) ? this : new VirtualCell(this, i);
+        return LevelMask.m5217isEmptyimpl(mo5188getLevelMaskKat384U()) ? this : new VirtualCell(this, i);
     }
 
     public String toString() {

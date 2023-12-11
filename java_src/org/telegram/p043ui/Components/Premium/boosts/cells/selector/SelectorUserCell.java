@@ -3,7 +3,7 @@ package org.telegram.p043ui.Components.Premium.boosts.cells.selector;
 import android.content.Context;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
@@ -110,7 +110,7 @@ public class SelectorUserCell extends BaseCell {
         if (i >= 1) {
             string = LocaleController.formatPluralString("Subscribers", i, new Object[0]);
         } else {
-            string = LocaleController.getString(C3634R.string.DiscussChannel);
+            string = LocaleController.getString(C3632R.string.DiscussChannel);
         }
         setSubtitle(string);
         this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3, this.resourcesProvider));
@@ -126,10 +126,10 @@ public class SelectorUserCell extends BaseCell {
         this.imageView.setForUserOrChat(this.chat, this.avatarDrawable);
         this.titleTextView.setText(this.chat.title);
         this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3, this.resourcesProvider));
-        setSubtitle(LocaleController.formatString("BoostExpireOn", C3634R.string.BoostExpireOn, LocaleController.getInstance().formatterBoostExpired.format(new Date(tL_stories$TL_myBoost.expires * 1000))));
+        setSubtitle(LocaleController.formatString("BoostExpireOn", C3632R.string.BoostExpireOn, LocaleController.getInstance().formatterBoostExpired.format(new Date(tL_stories$TL_myBoost.expires * 1000))));
         int i = tL_stories$TL_myBoost.cooldown_until_date;
         if (i > 0) {
-            setSubtitle(LocaleController.formatString("BoostingAvailableIn", C3634R.string.BoostingAvailableIn, buildCountDownTime((i * 1000) - System.currentTimeMillis())));
+            setSubtitle(LocaleController.formatString("BoostingAvailableIn", C3632R.string.BoostingAvailableIn, buildCountDownTime((i * 1000) - System.currentTimeMillis())));
             this.titleTextView.setAlpha(0.65f);
             this.subtitleTextView.setAlpha(0.65f);
             setCheckboxAlpha(0.3f, false);
@@ -143,13 +143,13 @@ public class SelectorUserCell extends BaseCell {
     public void updateTimer() {
         int i = this.boost.cooldown_until_date;
         if (i > 0) {
-            setSubtitle(LocaleController.formatString("BoostingAvailableIn", C3634R.string.BoostingAvailableIn, buildCountDownTime((i * 1000) - System.currentTimeMillis())));
+            setSubtitle(LocaleController.formatString("BoostingAvailableIn", C3632R.string.BoostingAvailableIn, buildCountDownTime((i * 1000) - System.currentTimeMillis())));
             this.titleTextView.setAlpha(0.65f);
             this.subtitleTextView.setAlpha(0.65f);
             setCheckboxAlpha(0.3f, false);
             return;
         }
-        setSubtitle(LocaleController.formatString("BoostExpireOn", C3634R.string.BoostExpireOn, LocaleController.getInstance().formatterBoostExpired.format(new Date(this.boost.expires * 1000))));
+        setSubtitle(LocaleController.formatString("BoostExpireOn", C3632R.string.BoostExpireOn, LocaleController.getInstance().formatterBoostExpired.format(new Date(this.boost.expires * 1000))));
         if (this.titleTextView.getAlpha() < 1.0f) {
             this.titleTextView.animate().alpha(1.0f).start();
             this.subtitleTextView.animate().alpha(1.0f).start();

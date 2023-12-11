@@ -41,9 +41,9 @@ public final class ReflectJvmMapping {
         Caller<?> caller;
         Intrinsics.checkNotNullParameter(kFunction, "<this>");
         KCallableImpl<?> asKCallableImpl = UtilKt.asKCallableImpl(kFunction);
-        Object mo2043getMember = (asKCallableImpl == null || (caller = asKCallableImpl.getCaller()) == null) ? null : caller.mo2043getMember();
-        if (mo2043getMember instanceof Method) {
-            return (Method) mo2043getMember;
+        Object mo2045getMember = (asKCallableImpl == null || (caller = asKCallableImpl.getCaller()) == null) ? null : caller.mo2045getMember();
+        if (mo2045getMember instanceof Method) {
+            return (Method) mo2045getMember;
         }
         return null;
     }
@@ -52,9 +52,9 @@ public final class ReflectJvmMapping {
         Caller<?> caller;
         Intrinsics.checkNotNullParameter(kFunction, "<this>");
         KCallableImpl<?> asKCallableImpl = UtilKt.asKCallableImpl(kFunction);
-        Object mo2043getMember = (asKCallableImpl == null || (caller = asKCallableImpl.getCaller()) == null) ? null : caller.mo2043getMember();
-        if (mo2043getMember instanceof Constructor) {
-            return (Constructor) mo2043getMember;
+        Object mo2045getMember = (asKCallableImpl == null || (caller = asKCallableImpl.getCaller()) == null) ? null : caller.mo2045getMember();
+        if (mo2045getMember instanceof Constructor) {
+            return (Constructor) mo2045getMember;
         }
         return null;
     }

@@ -17,7 +17,7 @@ import com.google.android.exoplayer2.util.Consumer;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
@@ -104,7 +104,7 @@ public class SelfStoryViewsView extends FrameLayout {
                 storyViewer.cancelSwipeToViews(false);
             }
         };
-        Drawable mutate = context.getResources().getDrawable(C3634R.C3636drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3632R.C3634drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogBackground, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
         this.viewPagerContainer = new ContainerView(context);
@@ -160,9 +160,9 @@ public class SelfStoryViewsView extends FrameLayout {
             }
         });
         ViewPagerInner viewPagerInner2 = this.viewPager;
-        C71224 c71224 = new C71224(storyViewer, context);
-        this.pagerAdapter = c71224;
-        viewPagerInner2.setAdapter(c71224);
+        C71204 c71204 = new C71204(storyViewer, context);
+        this.pagerAdapter = c71204;
+        viewPagerInner2.setAdapter(c71204);
         this.viewPagerContainer.addView(this.viewPager, LayoutHelper.createFrame(-1, -1, 0, 0, 0, 0, 0));
         addView(this.selfStoriesPreviewView, LayoutHelper.createFrame(-1, -1));
         addView(this.viewPagerContainer);
@@ -172,7 +172,7 @@ public class SelfStoryViewsView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.SelfStoryViewsView$4 */
     /* loaded from: classes6.dex */
-    public class C71224 extends PagerAdapter {
+    public class C71204 extends PagerAdapter {
         final /* synthetic */ Context val$context;
         final /* synthetic */ StoryViewer val$storyViewer;
 
@@ -181,7 +181,7 @@ public class SelfStoryViewsView extends FrameLayout {
             return view == obj;
         }
 
-        C71224(StoryViewer storyViewer, Context context) {
+        C71204(StoryViewer storyViewer, Context context) {
             this.val$storyViewer = storyViewer;
             this.val$context = context;
         }
@@ -196,7 +196,7 @@ public class SelfStoryViewsView extends FrameLayout {
             SelfStoryViewsPage selfStoryViewsPage = new SelfStoryViewsPage(this.val$storyViewer, this.val$context, SelfStoryViewsView.this.sharedFilterState, new Consumer() { // from class: org.telegram.ui.Stories.SelfStoryViewsView$4$$ExternalSyntheticLambda0
                 @Override // com.google.android.exoplayer2.util.Consumer
                 public final void accept(Object obj) {
-                    SelfStoryViewsView.C71224.this.lambda$instantiateItem$0((SelfStoryViewsPage) obj);
+                    SelfStoryViewsView.C71204.this.lambda$instantiateItem$0((SelfStoryViewsPage) obj);
                 }
             }) { // from class: org.telegram.ui.Stories.SelfStoryViewsView.4.1
                 @Override // org.telegram.p043ui.Stories.SelfStoryViewsPage

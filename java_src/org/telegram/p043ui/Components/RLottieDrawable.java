@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.DispatchQueuePool;
 import org.telegram.messenger.DispatchQueuePoolBackground;
@@ -166,8 +166,8 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.RLottieDrawable$3 */
     /* loaded from: classes6.dex */
-    public class RunnableC54633 implements Runnable {
-        RunnableC54633() {
+    public class RunnableC54593 implements Runnable {
+        RunnableC54593() {
         }
 
         @Override // java.lang.Runnable
@@ -191,7 +191,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        RLottieDrawable.RunnableC54633.this.lambda$run$0();
+                        RLottieDrawable.RunnableC54593.this.lambda$run$0();
                     }
                 };
                 rLottieDrawable3.cacheGenerateTask = runnable;
@@ -361,7 +361,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC54633();
+        this.uiRunnableGenerateCache = new RunnableC54593();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -390,7 +390,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                     Method dump skipped, instructions count: 754
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.RLottieDrawable.RunnableC54655.run():void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.RLottieDrawable.RunnableC54615.run():void");
             }
         };
         this.rawBackgroundBitmapFrame = -1;
@@ -479,7 +479,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC54633();
+        this.uiRunnableGenerateCache = new RunnableC54593();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -503,7 +503,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                     Method dump skipped, instructions count: 754
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.RLottieDrawable.RunnableC54655.run():void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.RLottieDrawable.RunnableC54615.run():void");
             }
         };
         this.rawBackgroundBitmapFrame = -1;
@@ -624,7 +624,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC54633();
+        this.uiRunnableGenerateCache = new RunnableC54593();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -648,7 +648,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                     Method dump skipped, instructions count: 754
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.RLottieDrawable.RunnableC54655.run():void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.RLottieDrawable.RunnableC54615.run():void");
             }
         };
         this.rawBackgroundBitmapFrame = -1;
@@ -656,10 +656,10 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
         this.height = i2;
         this.isDice = 1;
         if ("🎲".equals(str)) {
-            readRes = readRes(null, C3634R.raw.diceloop);
+            readRes = readRes(null, C3632R.raw.diceloop);
             this.diceSwitchFramesCount = 60;
         } else {
-            readRes = "🎯".equals(str) ? readRes(null, C3634R.raw.dartloop) : null;
+            readRes = "🎯".equals(str) ? readRes(null, C3632R.raw.dartloop) : null;
         }
         getPaint().setFlags(2);
         if (TextUtils.isEmpty(readRes)) {
@@ -830,7 +830,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                 }
             }
         };
-        this.uiRunnableGenerateCache = new RunnableC54633();
+        this.uiRunnableGenerateCache = new RunnableC54593();
         this.uiRunnableCacheFinished = new Runnable() { // from class: org.telegram.ui.Components.RLottieDrawable.4
             @Override // java.lang.Runnable
             public void run() {
@@ -854,7 +854,7 @@ public class RLottieDrawable extends BitmapDrawable implements Animatable, Bitma
                     Method dump skipped, instructions count: 754
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.RLottieDrawable.RunnableC54655.run():void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.RLottieDrawable.RunnableC54615.run():void");
             }
         };
         this.rawBackgroundBitmapFrame = -1;

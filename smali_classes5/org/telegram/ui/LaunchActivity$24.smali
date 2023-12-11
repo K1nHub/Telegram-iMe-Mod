@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    .line 7669
+    .line 7702
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 8
 
-    .line 7672
+    .line 7705
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$2700(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/Runnable;
@@ -49,24 +49,24 @@
 
     const/4 v0, 0x1
 
-    .line 7673
+    .line 7706
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->needShowPasscode(Z)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 7674
+    .line 7707
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "lock app"
 
-    .line 7675
+    .line 7708
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 7677
+    .line 7710
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -84,7 +84,7 @@
 
     invoke-virtual/range {v1 .. v7}, Lorg/telegram/ui/LaunchActivity;->showPasscodeActivity(ZZIILjava/lang/Runnable;Ljava/lang/Runnable;)V
 
-    .line 7679
+    .line 7712
     :try_start_0
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -101,12 +101,12 @@
     :catch_0
     move-exception v0
 
-    .line 7681
+    .line 7714
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    .line 7684
+    .line 7717
     :cond_1
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -114,10 +114,10 @@
 
     const-string v0, "didn\'t pass lock check"
 
-    .line 7685
+    .line 7718
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 7688
+    .line 7721
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;

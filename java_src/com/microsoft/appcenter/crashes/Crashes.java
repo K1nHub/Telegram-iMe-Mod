@@ -59,7 +59,7 @@ public class Crashes extends AbstractAppCenterService {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.microsoft.appcenter.crashes.Crashes$1 */
     /* loaded from: classes4.dex */
-    public class RunnableC25831 implements Runnable {
+    public class RunnableC25801 implements Runnable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -582,7 +582,7 @@ public class Crashes extends AbstractAppCenterService {
                 L102:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.microsoft.appcenter.crashes.Crashes.RunnableC258612.run():void");
+                throw new UnsupportedOperationException("Method not decompiled: com.microsoft.appcenter.crashes.Crashes.RunnableC258312.run():void");
             }
         });
     }
@@ -652,7 +652,7 @@ public class Crashes extends AbstractAppCenterService {
         private DefaultCrashesListener() {
         }
 
-        /* synthetic */ DefaultCrashesListener(RunnableC25831 runnableC25831) {
+        /* synthetic */ DefaultCrashesListener(RunnableC25801 runnableC25801) {
             this();
         }
     }
@@ -663,7 +663,7 @@ public class Crashes extends AbstractAppCenterService {
         private final ManagedErrorLog log;
         private final ErrorReport report;
 
-        /* synthetic */ ErrorLogReport(ManagedErrorLog managedErrorLog, ErrorReport errorReport, RunnableC25831 runnableC25831) {
+        /* synthetic */ ErrorLogReport(ManagedErrorLog managedErrorLog, ErrorReport errorReport, RunnableC25801 runnableC25801) {
             this(managedErrorLog, errorReport);
         }
 

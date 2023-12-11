@@ -20,7 +20,7 @@ public final class LiteServerAccountId {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: id */
-    private final ByteString f2098id;
+    private final ByteString f2099id;
     private final int workchain;
 
     public boolean equals(Object obj) {
@@ -29,17 +29,17 @@ public final class LiteServerAccountId {
         }
         if (obj instanceof LiteServerAccountId) {
             LiteServerAccountId liteServerAccountId = (LiteServerAccountId) obj;
-            return this.workchain == liteServerAccountId.workchain && Intrinsics.areEqual(this.f2098id, liteServerAccountId.f2098id);
+            return this.workchain == liteServerAccountId.workchain && Intrinsics.areEqual(this.f2099id, liteServerAccountId.f2099id);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.workchain * 31) + this.f2098id.hashCode();
+        return (this.workchain * 31) + this.f2099id.hashCode();
     }
 
     public String toString() {
-        return "LiteServerAccountId(workchain=" + this.workchain + ", id=" + this.f2098id + ')';
+        return "LiteServerAccountId(workchain=" + this.workchain + ", id=" + this.f2099id + ')';
     }
 
     public /* synthetic */ LiteServerAccountId(int i, int i2, ByteString byteString, SerializationConstructorMarker serializationConstructorMarker) {
@@ -47,18 +47,18 @@ public final class LiteServerAccountId {
             PluginExceptionsKt.throwMissingFieldException(i, 3, LiteServerAccountId$$serializer.INSTANCE.getDescriptor());
         }
         this.workchain = i2;
-        this.f2098id = byteString;
+        this.f2099id = byteString;
     }
 
     public LiteServerAccountId(int i, ByteString id) {
         Intrinsics.checkNotNullParameter(id, "id");
         this.workchain = i;
-        this.f2098id = id;
+        this.f2099id = id;
     }
 
     public static final /* synthetic */ void write$Self(LiteServerAccountId liteServerAccountId, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeIntElement(serialDescriptor, 0, liteServerAccountId.workchain);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ByteStringSerializer.INSTANCE, liteServerAccountId.f2098id);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ByteStringSerializer.INSTANCE, liteServerAccountId.f2099id);
     }
 
     public final int workchain() {
@@ -67,7 +67,7 @@ public final class LiteServerAccountId {
 
     /* renamed from: id */
     public final ByteString m24id() {
-        return this.f2098id;
+        return this.f2099id;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */

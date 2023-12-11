@@ -22,12 +22,12 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 3205
+    .line 3268
     invoke-direct {p0}, Landroid/graphics/Path;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 3207
+    .line 3270
     iput v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$PathWithSavedBottom;->lastBottom:F
 
     return-void
@@ -36,7 +36,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Cells/TextSelectionHelper$1;)V
     .locals 0
 
-    .line 3205
+    .line 3268
     invoke-direct {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$PathWithSavedBottom;-><init>()V
 
     return-void
@@ -47,17 +47,17 @@
 .method public addRect(FFFFLandroid/graphics/Path$Direction;)V
     .locals 0
 
-    .line 3217
+    .line 3280
     invoke-super/range {p0 .. p5}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 3218
+    .line 3281
     iget p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$PathWithSavedBottom;->lastBottom:F
 
     cmpl-float p1, p4, p1
 
     if-lez p1, :cond_0
 
-    .line 3219
+    .line 3282
     iput p4, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$PathWithSavedBottom;->lastBottom:F
 
     :cond_0
@@ -67,12 +67,12 @@
 .method public reset()V
     .locals 1
 
-    .line 3211
+    .line 3274
     invoke-super {p0}, Landroid/graphics/Path;->reset()V
 
     const/4 v0, 0x0
 
-    .line 3212
+    .line 3275
     iput v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$PathWithSavedBottom;->lastBottom:F
 
     return-void

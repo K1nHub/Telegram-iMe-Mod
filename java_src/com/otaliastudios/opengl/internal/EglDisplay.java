@@ -7,17 +7,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class EglDisplay {
 
     /* renamed from: native  reason: not valid java name */
-    private final EGLDisplay f2171native;
+    private final EGLDisplay f2172native;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof EglDisplay) && Intrinsics.areEqual(this.f2171native, ((EglDisplay) obj).f2171native);
+        return (obj instanceof EglDisplay) && Intrinsics.areEqual(this.f2172native, ((EglDisplay) obj).f2172native);
     }
 
     public int hashCode() {
-        EGLDisplay eGLDisplay = this.f2171native;
+        EGLDisplay eGLDisplay = this.f2172native;
         if (eGLDisplay == null) {
             return 0;
         }
@@ -25,14 +25,14 @@ public final class EglDisplay {
     }
 
     public String toString() {
-        return "EglDisplay(native=" + this.f2171native + ')';
+        return "EglDisplay(native=" + this.f2172native + ')';
     }
 
     public EglDisplay(EGLDisplay eGLDisplay) {
-        this.f2171native = eGLDisplay;
+        this.f2172native = eGLDisplay;
     }
 
     public final EGLDisplay getNative() {
-        return this.f2171native;
+        return this.f2172native;
     }
 }

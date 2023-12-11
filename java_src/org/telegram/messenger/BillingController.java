@@ -91,6 +91,10 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
     }
 
     public String formatCurrency(long j, String str, int i) {
+        return formatCurrency(j, str, i, false);
+    }
+
+    public String formatCurrency(long j, String str, int i, boolean z) {
         if (str.isEmpty()) {
             return String.valueOf(j);
         }
@@ -98,6 +102,9 @@ public class BillingController implements PurchasesUpdatedListener, BillingClien
         if (currency != null) {
             NumberFormat currencyInstance = NumberFormat.getCurrencyInstance();
             currencyInstance.setCurrency(currency);
+            if (z) {
+                return currencyInstance.format(Math.round(j / Math.pow(10.0d, i)));
+            }
             return currencyInstance.format(j / Math.pow(10.0d, i));
         }
         return j + " " + str;

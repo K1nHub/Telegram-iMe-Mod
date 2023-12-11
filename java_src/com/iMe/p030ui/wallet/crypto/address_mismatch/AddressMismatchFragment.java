@@ -40,11 +40,11 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthAddressMismatchBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -149,10 +149,10 @@ public final class AddressMismatchFragment extends WalletAuthBaseFragment implem
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_windowBackgroundWhite;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(c3706ActionBar, i, null, null, null, null, i2), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i2), new ThemeDescription(getBinding().textTitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_chat_messagePanelText), new ThemeDescription(getBinding().textDescription, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getBinding().buttonDelete, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$$ExternalSyntheticLambda2
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(c3704ActionBar, i, null, null, null, null, i2), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i2), new ThemeDescription(getBinding().textTitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_chat_messagePanelText), new ThemeDescription(getBinding().textDescription, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getBinding().buttonDelete, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchFragment$$ExternalSyntheticLambda2
             @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 AddressMismatchFragment.getThemeDescriptions$lambda$0(AddressMismatchFragment.this);
@@ -189,25 +189,25 @@ public final class AddressMismatchFragment extends WalletAuthBaseFragment implem
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        c3706ActionBar.setCastShadows(false);
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        c3704ActionBar.setCastShadows(false);
     }
 
     private final void setupTexts() {
         ForkFragmentWalletEthAddressMismatchBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3634R.string.wallet_eth_address_mismatch_title));
-        binding.buttonDelete.setText(getResourceManager().getString(C3634R.string.wallet_eth_address_mismatch_btn_delete));
-        binding.buttonBackup.setText(getResourceManager().getString(C3634R.string.wallet_eth_address_mismatch_btn_backup));
+        binding.textTitle.setText(getResourceManager().getString(C3632R.string.wallet_eth_address_mismatch_title));
+        binding.buttonDelete.setText(getResourceManager().getString(C3632R.string.wallet_eth_address_mismatch_btn_delete));
+        binding.buttonBackup.setText(getResourceManager().getString(C3632R.string.wallet_eth_address_mismatch_btn_backup));
         AppCompatTextView appCompatTextView = binding.textDescription;
-        appCompatTextView.setText(getResourceManager().getString(C3634R.string.wallet_eth_address_mismatch_description));
+        appCompatTextView.setText(getResourceManager().getString(C3632R.string.wallet_eth_address_mismatch_description));
         appCompatTextView.setMovementMethod(new ScrollingMovementMethod());
     }
 
     private final void setupImage() {
         RLottieImageView rLottieImageView = getBinding().imageLogo;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3634R.raw.fork_address_mismatch, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3632R.raw.fork_address_mismatch, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
     }
 

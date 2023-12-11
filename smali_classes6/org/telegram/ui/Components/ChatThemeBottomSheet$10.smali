@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
     .locals 0
 
-    .line 1136
+    .line 1130
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,14 +52,14 @@
 .method private synthetic lambda$didPressedButton$0()V
     .locals 1
 
-    .line 1159
+    .line 1153
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->dismissInternal()V
 
-    .line 1160
+    .line 1154
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->dismiss()V
@@ -70,14 +70,14 @@
 .method private synthetic lambda$onWallpaperSelected$1()V
     .locals 1
 
-    .line 1175
+    .line 1169
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->dismissInternal()V
 
-    .line 1176
+    .line 1170
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->dismiss()V
@@ -90,7 +90,7 @@
 .method public didPressedButton(IZZIZLjava/lang/String;Z)V
     .locals 0
 
-    .line 1140
+    .line 1134
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
@@ -104,14 +104,14 @@
 
     move-result-object p1
 
-    .line 1141
+    .line 1135
     invoke-virtual {p1}, Ljava/util/HashMap;->isEmpty()Z
 
     move-result p2
 
     if-nez p2, :cond_1
 
-    .line 1142
+    .line 1136
     invoke-virtual {p1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
     move-result-object p1
@@ -126,21 +126,21 @@
 
     check-cast p1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 1144
+    .line 1138
     iget-object p2, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
 
     if-eqz p2, :cond_0
 
     goto :goto_0
 
-    .line 1147
+    .line 1141
     :cond_0
     iget-object p2, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     :goto_0
     if-eqz p2, :cond_1
 
-    .line 1150
+    .line 1144
     new-instance p1, Ljava/io/File;
 
     const/4 p3, 0x4
@@ -171,14 +171,14 @@
 
     invoke-direct {p1, p3, p4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 1151
+    .line 1145
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getRealScreenSize()Landroid/graphics/Point;
 
     move-result-object p3
 
     const/4 p4, 0x0
 
-    .line 1152
+    .line 1146
     iget p5, p3, Landroid/graphics/Point;->x:I
 
     int-to-float p5, p5
@@ -193,19 +193,19 @@
 
     move-result-object p2
 
-    .line 1153
+    .line 1147
     new-instance p3, Ljava/io/FileOutputStream;
 
     invoke-direct {p3, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 1154
+    .line 1148
     sget-object p4, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 p5, 0x57
 
     invoke-virtual {p2, p4, p5, p3}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 1156
+    .line 1150
     new-instance p3, Lorg/telegram/ui/ThemePreviewActivity;
 
     new-instance p4, Lorg/telegram/ui/WallpapersListActivity$FileWallpaper;
@@ -216,7 +216,7 @@
 
     invoke-direct {p3, p4, p2}, Lorg/telegram/ui/ThemePreviewActivity;-><init>(Ljava/lang/Object;Landroid/graphics/Bitmap;)V
 
-    .line 1157
+    .line 1151
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2200(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/ChatActivity;
@@ -229,14 +229,14 @@
 
     invoke-virtual {p3, p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->setDialogId(J)V
 
-    .line 1158
+    .line 1152
     new-instance p1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;)V
 
     invoke-virtual {p3, p1}, Lorg/telegram/ui/ThemePreviewActivity;->setDelegate(Lorg/telegram/ui/ThemePreviewActivity$WallpaperActivityDelegate;)V
 
-    .line 1162
+    .line 1156
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {p1, p3}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2300(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Lorg/telegram/ui/ThemePreviewActivity;)V
@@ -248,7 +248,7 @@
     :catchall_0
     move-exception p1
 
-    .line 1166
+    .line 1160
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -293,7 +293,7 @@
 .method public onWallpaperSelected(Ljava/lang/Object;)V
     .locals 4
 
-    .line 1172
+    .line 1166
     new-instance v0, Lorg/telegram/ui/ThemePreviewActivity;
 
     const/4 v1, 0x0
@@ -304,7 +304,7 @@
 
     invoke-direct {v0, p1, v1, v2, v3}, Lorg/telegram/ui/ThemePreviewActivity;-><init>(Ljava/lang/Object;Landroid/graphics/Bitmap;ZZ)V
 
-    .line 1173
+    .line 1167
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2200(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/ChatActivity;
@@ -317,14 +317,14 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ThemePreviewActivity;->setDialogId(J)V
 
-    .line 1174
+    .line 1168
     new-instance p1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;)V
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ThemePreviewActivity;->setDelegate(Lorg/telegram/ui/ThemePreviewActivity$WallpaperActivityDelegate;)V
 
-    .line 1178
+    .line 1172
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2300(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Lorg/telegram/ui/ThemePreviewActivity;)V

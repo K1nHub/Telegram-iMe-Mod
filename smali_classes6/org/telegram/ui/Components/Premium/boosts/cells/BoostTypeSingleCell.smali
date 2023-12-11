@@ -24,7 +24,7 @@
 .end method
 
 .method public setGiveaway(Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;)V
-    .locals 5
+    .locals 6
 
     .line 25
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/BaseCell;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -64,37 +64,27 @@
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     .line 28
-    sget v0, Lorg/telegram/messenger/R$string;->BoostingPreparedGiveawaySubscriptions:I
+    iget v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;->quantity:I
 
-    const/4 v1, 0x2
+    const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    iget v3, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;->quantity:I
+    iget v3, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;->months:I
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-array v4, v2, [Ljava/lang/Object;
+
+    const-string v5, "Months"
+
+    invoke-static {v5, v3, v4}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
     aput-object v3, v1, v2
 
-    iget v3, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;->months:I
+    const-string v2, "BoostingPreparedGiveawaySubscriptionsPlural"
 
-    new-array v2, v2, [Ljava/lang/Object;
-
-    const-string v4, "Months"
-
-    invoke-static {v4, v3, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x1
-
-    aput-object v2, v1, v3
-
-    const-string v2, "BoostingPreparedGiveawaySubscriptions"
-
-    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

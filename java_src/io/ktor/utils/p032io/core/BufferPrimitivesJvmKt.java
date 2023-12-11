@@ -11,11 +11,11 @@ public final class BufferPrimitivesJvmKt {
         Intrinsics.checkNotNullParameter(buffer, "<this>");
         Intrinsics.checkNotNullParameter(source, "source");
         int remaining = source.remaining();
-        ByteBuffer m1917getMemorySK3TCg8 = buffer.m1917getMemorySK3TCg8();
+        ByteBuffer m1919getMemorySK3TCg8 = buffer.m1919getMemorySK3TCg8();
         int writePosition = buffer.getWritePosition();
         int limit = buffer.getLimit() - writePosition;
         if (limit >= remaining) {
-            MemoryJvmKt.m1916copyToSG11BkQ(source, m1917getMemorySK3TCg8, writePosition);
+            MemoryJvmKt.m1918copyToSG11BkQ(source, m1919getMemorySK3TCg8, writePosition);
             buffer.commitWritten(remaining);
             return;
         }

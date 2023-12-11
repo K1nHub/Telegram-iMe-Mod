@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -163,7 +163,7 @@ public class TextPaintView extends EntityView {
     /* JADX INFO: Access modifiers changed from: private */
     public void updateHint() {
         if (this.editText.getText().length() <= 0) {
-            this.editText.setHint(LocaleController.getString(C3634R.string.TextPlaceholder));
+            this.editText.setHint(LocaleController.getString(C3632R.string.TextPlaceholder));
             this.editText.setHintTextColor(1627389951);
             return;
         }

@@ -6,7 +6,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
@@ -37,7 +37,7 @@ public final class FragmentPreviewMenu extends ActionBarPopupWindow.ActionBarPop
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FragmentPreviewMenu(BaseFragment parentFragment, BaseFragment previewFragment, Theme.ResourcesProvider resourcesProvider) {
-        super(parentFragment.getParentActivity(), C3634R.C3636drawable.popup_fixed_alert, resourcesProvider);
+        super(parentFragment.getParentActivity(), C3632R.C3634drawable.popup_fixed_alert, resourcesProvider);
         Lazy lazy;
         Lazy lazy2;
         Lazy lazy3;
@@ -93,7 +93,7 @@ public final class FragmentPreviewMenu extends ActionBarPopupWindow.ActionBarPop
         setFitItems(true);
         if (previewFragment instanceof DialogsActivity) {
             ActionBarPopupWindow.GapView gapView = new ActionBarPopupWindow.GapView(getContext(), resourcesProvider);
-            gapView.setTag(C3634R.C3637id.fit_width_tag, 1);
+            gapView.setTag(C3632R.C3635id.fit_width_tag, 1);
             addView((View) gapView, LayoutHelper.createLinear(-1, 8));
             addView(getLogoutItem());
         }
@@ -115,7 +115,7 @@ public final class FragmentPreviewMenu extends ActionBarPopupWindow.ActionBarPop
     public final ActionBarMenuSubItem initOpenItem() {
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), true, false, this.resourcesProvider);
         actionBarMenuSubItem.setMinimumWidth(160);
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Open", C3634R.string.Open), C3634R.C3636drawable.msg_message);
+        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Open", C3632R.string.Open), C3632R.C3634drawable.msg_message);
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.FragmentPreviewMenu$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -138,7 +138,7 @@ public final class FragmentPreviewMenu extends ActionBarPopupWindow.ActionBarPop
     public final ActionBarMenuSubItem initCloseItem() {
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), false, true, this.resourcesProvider);
         actionBarMenuSubItem.setMinimumWidth(160);
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Back", C3634R.string.Back), C3634R.C3636drawable.ic_ab_back);
+        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("Back", C3632R.string.Back), C3632R.C3634drawable.ic_ab_back);
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.FragmentPreviewMenu$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -161,7 +161,7 @@ public final class FragmentPreviewMenu extends ActionBarPopupWindow.ActionBarPop
         int i = Theme.key_text_RedRegular;
         actionBarMenuSubItem.setColors(Theme.getColor(i), Theme.getColor(i));
         actionBarMenuSubItem.setSelectorColor(Theme.multAlpha(Theme.getColor(i), 0.12f));
-        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("LogOut", C3634R.string.LogOut), C3634R.C3636drawable.msg_leave);
+        actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("LogOut", C3632R.string.LogOut), C3632R.C3634drawable.msg_leave);
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.FragmentPreviewMenu$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

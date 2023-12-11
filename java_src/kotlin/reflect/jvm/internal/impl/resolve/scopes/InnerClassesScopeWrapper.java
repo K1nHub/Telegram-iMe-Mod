@@ -31,17 +31,17 @@ public final class InnerClassesScopeWrapper extends MemberScopeImpl {
 
     @Override // kotlin.reflect.jvm.internal.impl.resolve.scopes.MemberScopeImpl, kotlin.reflect.jvm.internal.impl.resolve.scopes.ResolutionScope
     /* renamed from: getContributedClassifier */
-    public ClassifierDescriptor mo2053getContributedClassifier(Name name, LookupLocation location) {
+    public ClassifierDescriptor mo2055getContributedClassifier(Name name, LookupLocation location) {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(location, "location");
-        ClassifierDescriptor mo2053getContributedClassifier = this.workerScope.mo2053getContributedClassifier(name, location);
-        if (mo2053getContributedClassifier != null) {
-            ClassDescriptor classDescriptor = mo2053getContributedClassifier instanceof ClassDescriptor ? (ClassDescriptor) mo2053getContributedClassifier : null;
+        ClassifierDescriptor mo2055getContributedClassifier = this.workerScope.mo2055getContributedClassifier(name, location);
+        if (mo2055getContributedClassifier != null) {
+            ClassDescriptor classDescriptor = mo2055getContributedClassifier instanceof ClassDescriptor ? (ClassDescriptor) mo2055getContributedClassifier : null;
             if (classDescriptor != null) {
                 return classDescriptor;
             }
-            if (mo2053getContributedClassifier instanceof TypeAliasDescriptor) {
-                return (TypeAliasDescriptor) mo2053getContributedClassifier;
+            if (mo2055getContributedClassifier instanceof TypeAliasDescriptor) {
+                return (TypeAliasDescriptor) mo2055getContributedClassifier;
             }
             return null;
         }

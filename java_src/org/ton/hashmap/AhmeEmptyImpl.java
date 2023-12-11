@@ -15,7 +15,7 @@ public final class AhmeEmptyImpl<X, Y> implements HashmapAugE.AhmeEmpty<X, Y> {
     private final Y extra;
 
     /* renamed from: n */
-    private final int f2071n;
+    private final int f2072n;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -23,7 +23,7 @@ public final class AhmeEmptyImpl<X, Y> implements HashmapAugE.AhmeEmpty<X, Y> {
         }
         if (obj instanceof AhmeEmptyImpl) {
             AhmeEmptyImpl ahmeEmptyImpl = (AhmeEmptyImpl) obj;
-            return this.f2071n == ahmeEmptyImpl.f2071n && Intrinsics.areEqual(this.extra, ahmeEmptyImpl.extra);
+            return this.f2072n == ahmeEmptyImpl.f2072n && Intrinsics.areEqual(this.extra, ahmeEmptyImpl.extra);
         }
         return false;
     }
@@ -35,13 +35,13 @@ public final class AhmeEmptyImpl<X, Y> implements HashmapAugE.AhmeEmpty<X, Y> {
     }
 
     public int hashCode() {
-        int i = this.f2071n * 31;
+        int i = this.f2072n * 31;
         Y y = this.extra;
         return i + (y == null ? 0 : y.hashCode());
     }
 
     public AhmeEmptyImpl(int i, Y y) {
-        this.f2071n = i;
+        this.f2072n = i;
         this.extra = y;
     }
 
@@ -52,7 +52,7 @@ public final class AhmeEmptyImpl<X, Y> implements HashmapAugE.AhmeEmpty<X, Y> {
 
     @Override // org.ton.hashmap.HashmapAugE.AhmeEmpty
     public int getN() {
-        return this.f2071n;
+        return this.f2072n;
     }
 
     @Override // org.ton.hashmap.HashmapAugE.AhmeEmpty

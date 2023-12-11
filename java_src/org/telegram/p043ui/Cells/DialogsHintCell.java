@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -47,7 +47,7 @@ public class DialogsHintCell extends FrameLayout {
         this.contentView.addView(this.messageView, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 48));
         ImageView imageView = new ImageView(context);
         this.chevronView = imageView;
-        imageView.setImageResource(C3634R.C3636drawable.arrow_newchat);
+        imageView.setImageResource(C3632R.C3634drawable.arrow_newchat);
         addView(this.chevronView, LayoutHelper.createFrame(16, 16, (LocaleController.isRTL ? 3 : 5) | 16));
         updateColors();
     }

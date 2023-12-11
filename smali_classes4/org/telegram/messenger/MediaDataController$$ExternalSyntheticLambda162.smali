@@ -39,7 +39,7 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_topPeer;
 
-    invoke-static {p1, p2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$0xRp5IMbbh9ubYDBI02UmZjfTAE(Lorg/telegram/tgnet/TLRPC$TL_topPeer;Lorg/telegram/tgnet/TLRPC$TL_topPeer;)I
+    invoke-static {p1, p2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$a2uJzZ8EdJ67wCPckvzTYu43QvU(Lorg/telegram/tgnet/TLRPC$TL_topPeer;Lorg/telegram/tgnet/TLRPC$TL_topPeer;)I
 
     move-result p1
 

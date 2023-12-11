@@ -22,7 +22,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
@@ -135,7 +135,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
         if (rLottieDrawable == null) {
             return;
         }
-        showLoading$default(this, C3634R.string.custom_avatar_processing, null, 2, null);
+        showLoading$default(this, C3632R.string.custom_avatar_processing, null, 2, null);
         if (z) {
             prepareAvatarEditing();
         }
@@ -173,7 +173,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             this.notificationCenter.addObserver(this, this.fileLoadingObserver);
             this.loadingFileUrl = nftTokenUrl;
             getImageLoader().loadHttpFile(nftTokenUrl, ext, this.currentAccount);
-            showLoading(C3634R.string.custom_avatar_downloading, new Function0<Unit>() { // from class: com.iMe.manager.common.MediaEditManager$setNftAvatar$1
+            showLoading(C3632R.string.custom_avatar_downloading, new Function0<Unit>() { // from class: com.iMe.manager.common.MediaEditManager$setNftAvatar$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -365,7 +365,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             r4.convertGifNft(r5)
             goto L77
         L67:
-            int r5 = org.telegram.messenger.C3634R.string.ImportErrorFileFormatInvalid
+            int r5 = org.telegram.messenger.C3632R.string.ImportErrorFileFormatInvalid
             java.lang.String r0 = "ImportErrorFileFormatInvalid"
             java.lang.String r5 = org.telegram.messenger.LocaleController.getString(r0, r5)
             java.lang.String r0 = "getString(\n             …lid\n                    )"
@@ -405,7 +405,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             }
         }).compress();
         Intrinsics.checkNotNullExpressionValue(compress, "private fun convertGifNf…cel(true)\n        }\n    }");
-        showLoading(C3634R.string.custom_avatar_processing, new Function0<Unit>() { // from class: com.iMe.manager.common.MediaEditManager$convertGifNft$1
+        showLoading(C3632R.string.custom_avatar_processing, new Function0<Unit>() { // from class: com.iMe.manager.common.MediaEditManager$convertGifNft$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -497,7 +497,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
                 MediaEditManager.changeAvatar$lambda$9(MediaEditManager.this, str, tLRPC$PhotoSize2, tLRPC$PhotoSize, tLObject, tLRPC$TL_error);
             }
         });
-        showLoading(C3634R.string.custom_avatar_upload, new Function0<Unit>() { // from class: com.iMe.manager.common.MediaEditManager$changeAvatar$1
+        showLoading(C3632R.string.custom_avatar_upload, new Function0<Unit>() { // from class: com.iMe.manager.common.MediaEditManager$changeAvatar$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -563,7 +563,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             messagesStorage.clearUserPhotos(user.f1749id);
             arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(user);
             messagesStorage.putUsersAndChats(arrayListOf, null, false, true);
-            String internalString = LocaleController.getInternalString(C3634R.string.custom_avatar_success);
+            String internalString = LocaleController.getInternalString(C3632R.string.custom_avatar_success);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.custom_avatar_success)");
             ContextExtKt.toast(internalString);
         }
@@ -621,7 +621,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
     }
 
     private final void onCommonError() {
-        String string = LocaleController.getString("ErrorOccurred", C3634R.string.ErrorOccurred);
+        String string = LocaleController.getString("ErrorOccurred", C3632R.string.ErrorOccurred);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"ErrorOccurred\", R.string.ErrorOccurred)");
         ContextExtKt.toast(string);
     }

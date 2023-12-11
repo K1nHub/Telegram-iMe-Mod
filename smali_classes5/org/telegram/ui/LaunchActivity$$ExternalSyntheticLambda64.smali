@@ -10,13 +10,21 @@
 
 .field public final synthetic f$1:Ljava/lang/Runnable;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$2:I
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_error;
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$User;
+
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;
+
+.field public final synthetic f$5:Ljava/lang/String;
+
+.field public final synthetic f$6:Z
+
+.field public final synthetic f$7:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;ILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;Ljava/lang/String;ZZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +33,17 @@
 
     iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$1:Ljava/lang/Runnable;
 
-    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$2:Lorg/telegram/tgnet/TLObject;
+    iput p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$2:I
 
-    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$3:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$3:Lorg/telegram/tgnet/TLRPC$User;
+
+    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$4:Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;
+
+    iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$5:Ljava/lang/String;
+
+    iput-boolean p7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$6:Z
+
+    iput-boolean p8, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$7:Z
 
     return-void
 .end method
@@ -35,17 +51,25 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$0:Lorg/telegram/ui/LaunchActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$1:Ljava/lang/Runnable;
 
-    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$2:Lorg/telegram/tgnet/TLObject;
+    iget v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$2:I
 
-    iget-object v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$3:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iget-object v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$3:Lorg/telegram/tgnet/TLRPC$User;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$-x5PfFU-G5ioQC_oE2sB6yTep6s(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$4:Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;
+
+    iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$5:Ljava/lang/String;
+
+    iget-boolean v6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$6:Z
+
+    iget-boolean v7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda64;->f$7:Z
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$tQu3OhPFRGZqfoR1AjWSTR9FVKM(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;ILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;Ljava/lang/String;ZZ)V
 
     return-void
 .end method

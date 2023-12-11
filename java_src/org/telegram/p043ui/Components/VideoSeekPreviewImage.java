@@ -21,7 +21,7 @@ import com.google.android.gms.measurement.api.AppMeasurementSdk;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageReceiver;
@@ -81,7 +81,7 @@ public class VideoSeekPreviewImage extends View {
         this.matrix = new Matrix();
         this.ytPath = new Path();
         setVisibility(4);
-        this.frameDrawable = context.getResources().getDrawable(C3634R.C3636drawable.videopreview);
+        this.frameDrawable = context.getResources().getDrawable(C3632R.C3634drawable.videopreview);
         this.textPaint.setTextSize(AndroidUtilities.m104dp(13));
         this.textPaint.setColor(-1);
         this.delegate = videoSeekPreviewImageDelegate;

@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity$MemberData;Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;Z[Z)V
     .locals 0
 
-    .line 2835
+    .line 2838
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$MemberData$2;->val$finalCurrentParticipant:Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     iput-boolean p3, p0, Lorg/telegram/ui/StatisticActivity$MemberData$2;->val$finalIsAdmin:Z
@@ -54,7 +54,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2839
+    .line 2842
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$MemberData$2;->val$finalCurrentParticipant:Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;->channelParticipant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
@@ -65,12 +65,12 @@
 
     const-string p2, ""
 
-    .line 2840
+    .line 2843
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->rank:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 2842
+    .line 2845
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$MemberData$2;->val$finalCurrentParticipant:Lorg/telegram/tgnet/TLRPC$TL_chatChannelParticipant;
 
@@ -78,15 +78,15 @@
 
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
-    .line 2843
+    .line 2846
     iput-object p4, p1, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;->rank:Ljava/lang/String;
 
-    .line 2844
+    .line 2847
     iget-boolean p1, p0, Lorg/telegram/ui/StatisticActivity$MemberData$2;->val$finalIsAdmin:Z
 
     if-eqz p1, :cond_1
 
-    .line 2845
+    .line 2848
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$MemberData$2;->val$needShowBulletin:[Z
 
     const/4 p2, 0x0

@@ -9,6 +9,7 @@ import java.util.List;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.runtime.internal.Conversions;
 import org.aspectj.runtime.reflect.Factory;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes4.dex */
 public final class AvcConfigurationBox extends AbstractBox {
     private static final /* synthetic */ JoinPoint.StaticPart ajc$tjp_10 = null;
@@ -48,7 +49,7 @@ public final class AvcConfigurationBox extends AbstractBox {
         factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "getSequenceParameterSetExts", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "", "java.util.List"), 124);
         factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "setSequenceParameterSetExts", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "java.util.List", "sequenceParameterSetExts", "", "void"), 128);
         factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "hasExts", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "", "boolean"), 132);
-        factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "setHasExts", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "boolean", "hasExts", "", "void"), 136);
+        factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "setHasExts", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "boolean", "hasExts", "", "void"), MessagesStorage.LAST_DB_VERSION);
         ajc$tjp_24 = factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "getContentSize", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "", "long"), 147);
         ajc$tjp_25 = factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "getContent", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "java.nio.ByteBuffer", "byteBuffer", "", "void"), 153);
         factory.makeSJP("method-execution", factory.makeMethodSig(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, "getSPS", "com.mp4parser.iso14496.part15.AvcConfigurationBox", "", "", "", "[Ljava.lang.String;"), 158);

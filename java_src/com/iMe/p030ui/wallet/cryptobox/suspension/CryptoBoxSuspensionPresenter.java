@@ -57,12 +57,12 @@ public final class CryptoBoxSuspensionPresenter extends BasePresenter<CryptoBoxS
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1701invoke(result);
+                m1702invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1701invoke(Result<? extends String> it) {
+            public final void m1702invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;

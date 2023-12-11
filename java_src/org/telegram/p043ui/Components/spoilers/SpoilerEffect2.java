@@ -19,7 +19,7 @@ import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.egl.EGLDisplay;
 import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
@@ -92,13 +92,13 @@ public class SpoilerEffect2 {
         int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
         if (devicePerformanceClass == 1) {
             Point point = AndroidUtilities.displaySize;
-            return Math.min(512, (int) (Math.min(point.x, point.y) * 0.95f));
+            return Math.min(900, (int) (Math.min(point.x, point.y) * 0.8f));
         } else if (devicePerformanceClass == 2) {
             Point point2 = AndroidUtilities.displaySize;
             return Math.min(900, (int) (Math.min(point2.x, point2.y) * 1.0f));
         } else {
             Point point3 = AndroidUtilities.displaySize;
-            return Math.min(400, (int) (Math.min(point3.x, point3.y) * 0.85f));
+            return Math.min(720, (int) (Math.min(point3.x, point3.y) * 0.7f));
         }
     }
 
@@ -394,7 +394,7 @@ public class SpoilerEffect2 {
                         this.running = false;
                         return;
                     }
-                    GLES31.glShaderSource(glCreateShader, RLottieDrawable.readRes(null, C3634R.raw.spoiler_vertex) + "\n// " + Math.random());
+                    GLES31.glShaderSource(glCreateShader, RLottieDrawable.readRes(null, C3632R.raw.spoiler_vertex) + "\n// " + Math.random());
                     GLES31.glCompileShader(glCreateShader);
                     int[] iArr = new int[1];
                     GLES31.glGetShaderiv(glCreateShader, 35713, iArr, 0);
@@ -404,7 +404,7 @@ public class SpoilerEffect2 {
                         this.running = false;
                         return;
                     }
-                    GLES31.glShaderSource(glCreateShader2, RLottieDrawable.readRes(null, C3634R.raw.spoiler_fragment) + "\n// " + Math.random());
+                    GLES31.glShaderSource(glCreateShader2, RLottieDrawable.readRes(null, C3632R.raw.spoiler_fragment) + "\n// " + Math.random());
                     GLES31.glCompileShader(glCreateShader2);
                     GLES31.glGetShaderiv(glCreateShader2, 35713, iArr, 0);
                     if (iArr[0] == 0) {

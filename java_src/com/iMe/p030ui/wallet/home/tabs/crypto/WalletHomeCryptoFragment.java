@@ -29,6 +29,7 @@ import com.iMe.model.wallet.crypto.TokensScreenType;
 import com.iMe.model.wallet.crypto.create.WalletCreationType;
 import com.iMe.model.wallet.details.TokenDetailsArgs;
 import com.iMe.model.wallet.home.AccountItem;
+import com.iMe.model.wallet.home.BannerSlide;
 import com.iMe.model.wallet.home.CryptoAddTokensItem;
 import com.iMe.model.wallet.home.NetworkChoosePurpose;
 import com.iMe.model.wallet.home.TokenSortingData;
@@ -87,7 +88,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeCryptoBinding;
@@ -423,7 +424,7 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
                 return IdFabric$CustomType.QR_BOTTOM_SHEET_WALLET_RECEIVE;
             }
         };
-        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3634R.string.wallet_receive_dialog_title), getResourceManager().getString(C3634R.string.wallet_receive_dialog_btn_text), address);
+        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3632R.string.wallet_receive_dialog_title), getResourceManager().getString(C3632R.string.wallet_receive_dialog_btn_text), address);
         showDialog(qRCodeBottomSheet);
     }
 
@@ -457,6 +458,18 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
     public void openWalletDetails(TokenDetailsArgs tokenDetailsArgs) {
         Intrinsics.checkNotNullParameter(tokenDetailsArgs, "tokenDetailsArgs");
         presentFragment(WalletTokenDetailsFragment.Companion.newInstance(tokenDetailsArgs));
+    }
+
+    @Override // com.iMe.p030ui.wallet.home.tabs.crypto.WalletHomeCryptoView
+    public void openActionIntroScreen(BannerSlide bannerSlide) {
+        Intrinsics.checkNotNullParameter(bannerSlide, "bannerSlide");
+        presentFragment(new ActionIntroActivity(108, null, null, null, bannerSlide, null));
+    }
+
+    @Override // com.iMe.p030ui.wallet.home.tabs.crypto.WalletHomeCryptoView
+    public void openBrowserUrl(String url) {
+        Intrinsics.checkNotNullParameter(url, "url");
+        Browser.openUrl(getParentActivity(), url);
     }
 
     @Override // com.iMe.p030ui.wallet.home.tabs.crypto.WalletHomeCryptoView
@@ -514,11 +527,11 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
 
     private final void setupListeners() {
         final BalancesRecycleAdapter balancesRecycleAdapter = getBalancesRecycleAdapter();
-        BannerProvider bannerProvider = balancesRecycleAdapter.getBannerProvider();
-        bannerProvider.setBannerOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda4
+        final BannerProvider bannerProvider = balancesRecycleAdapter.getBannerProvider();
+        bannerProvider.setBannerOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda5
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                WalletHomeCryptoFragment.setupListeners$lambda$21$lambda$14$lambda$12(BalancesRecycleAdapter.this, this, baseQuickAdapter, view, i);
+                WalletHomeCryptoFragment.setupListeners$lambda$21$lambda$14$lambda$12(WalletHomeCryptoFragment.this, bannerProvider, baseQuickAdapter, view, i);
             }
         });
         bannerProvider.setBannerOnItemLongClickListener(new OnItemLongClickListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda7
@@ -561,7 +574,7 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
                 WalletHomeCryptoPresenter.loadScreenInfo$default(presenter, true, false, 2, null);
             }
         });
-        balancesRecycleAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda5
+        balancesRecycleAdapter.setOnItemClickListener(new OnItemClickListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda4
             @Override // com.chad.library.adapter.base.listener.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 WalletHomeCryptoFragment.setupListeners$lambda$21$lambda$18(BalancesRecycleAdapter.this, this, baseQuickAdapter, view, i);
@@ -584,12 +597,12 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$21$lambda$14$lambda$12(BalancesRecycleAdapter this_with, WalletHomeCryptoFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.checkNotNullParameter(this_with, "$this_with");
+    public static final void setupListeners$lambda$21$lambda$14$lambda$12(WalletHomeCryptoFragment this$0, BannerProvider this_with, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
+        Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
-        this$0.presentFragment(new ActionIntroActivity(108, null, null, null, this_with.getBannerProvider().getBannersRecycleAdapter().getItem(i).getSlide(), null));
+        this$0.getPresenter().onBannerClick(this_with.getBannersRecycleAdapter().getItem(i).getSlide());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -643,13 +656,13 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3634R.C3637id.network_type_view) {
+        if (id == C3632R.C3635id.network_type_view) {
             WalletHomeCryptoPresenter.startChooseNetworkDialog$default(this$0.getPresenter(), null, 1, null);
-        } else if (id == C3634R.C3637id.image_wallet_crypto_eye) {
+        } else if (id == C3632R.C3635id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
-        } else if (id == C3634R.C3637id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3632R.C3635id.image_wallet_crypto_tokens_settings) {
             this$0.getPresenter().openTokenSettingsScreen();
-        } else if (id == C3634R.C3637id.image_wallet_order_tokens) {
+        } else if (id == C3632R.C3635id.image_wallet_order_tokens) {
             this$0.getPresenter().onSelectTokensSortingClicked();
         }
     }

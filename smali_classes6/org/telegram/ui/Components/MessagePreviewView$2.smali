@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1963
+    .line 2021
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$2;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/ViewPagerFixed;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method protected onScrollEnd()V
     .locals 3
 
-    .line 1978
+    .line 2036
     iget-object v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     const/4 v1, 0x0
@@ -46,7 +46,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1979
+    .line 2037
     aget-object v0, v0, v1
 
     check-cast v0, Lorg/telegram/ui/Components/MessagePreviewView$Page;
@@ -62,7 +62,7 @@
 .method protected onTabAnimationUpdate(Z)V
     .locals 2
 
-    .line 1966
+    .line 2024
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$2;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
@@ -75,7 +75,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/MessagePreviewView$TabsView;->setSelectedTab(F)V
 
-    .line 1968
+    .line 2026
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
     const/4 v0, 0x0
@@ -86,7 +86,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1969
+    .line 2027
     aget-object p1, p1, v0
 
     check-cast p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;
@@ -95,7 +95,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->onParentScrolled()V
 
-    .line 1971
+    .line 2029
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->viewPages:[Landroid/view/View;
 
@@ -107,7 +107,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1972
+    .line 2030
     aget-object p1, p1, v0
 
     check-cast p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;
@@ -123,7 +123,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 1985
+    .line 2043
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$2;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MessagePreviewView;->isTouchedHandle()Z
@@ -136,7 +136,7 @@
 
     return p1
 
-    .line 1988
+    .line 2046
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->onTouchEvent(Landroid/view/MotionEvent;)Z
 

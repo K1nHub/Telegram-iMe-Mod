@@ -15,6 +15,12 @@
 
 
 # virtual methods
+.method public abstract openActionIntroScreen(Lcom/iMe/model/wallet/home/BannerSlide;)V
+.end method
+
+.method public abstract openBrowserUrl(Ljava/lang/String;)V
+.end method
+
 .method public abstract openHistoryScreen()V
 .end method
 

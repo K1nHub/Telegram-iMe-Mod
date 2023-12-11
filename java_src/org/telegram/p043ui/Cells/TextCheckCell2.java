@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AnimatedTextView;
@@ -49,7 +49,7 @@ public class TextCheckCell2 extends FrameLayout {
             this.animatedTextView.setAnimationProperties(0.4f, 0L, 320L, CubicBezierInterpolator.EASE_OUT_QUINT);
             this.collapseViewContainer.addView(this.animatedTextView, LayoutHelper.createFrame(-2, 20));
             this.collapsedArrow = new View(getContext());
-            Drawable mutate = getContext().getResources().getDrawable(C3634R.C3636drawable.arrow_more).mutate();
+            Drawable mutate = getContext().getResources().getDrawable(C3632R.C3634drawable.arrow_more).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
             this.collapsedArrow.setBackground(mutate);
             this.collapseViewContainer.addView(this.collapsedArrow, LayoutHelper.createLinear(16, 16, 16));

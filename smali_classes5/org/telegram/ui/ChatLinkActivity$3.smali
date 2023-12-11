@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatLinkActivity;)V
     .locals 0
 
-    .line 395
+    .line 399
     iput-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$3;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method public didFinishChatCreation(Lorg/telegram/ui/GroupCreateFinalActivity;J)V
     .locals 2
 
-    .line 403
+    .line 407
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$3;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;

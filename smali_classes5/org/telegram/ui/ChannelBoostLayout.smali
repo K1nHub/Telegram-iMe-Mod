@@ -226,18 +226,18 @@
 
     const-string v1, ""
 
-    .line 471
+    .line 472
     iput-object v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->lastBoostsOffset:Ljava/lang/String;
 
-    .line 472
+    .line 473
     iput-object v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->lastGiftsOffset:Ljava/lang/String;
 
     const/4 v1, 0x5
 
-    .line 473
+    .line 474
     iput v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->limitGifts:I
 
-    .line 474
+    .line 475
     iput v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->limitBoosts:I
 
     .line 330
@@ -322,39 +322,39 @@
 
     invoke-virtual {v1, v8}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 380
+    .line 381
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 382
+    .line 383
     invoke-direct {p0}, Lorg/telegram/ui/ChannelBoostLayout;->loadStatistic()V
 
-    .line 383
+    .line 384
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object p2, p0, Lorg/telegram/ui/ChannelBoostLayout;->adapter:Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 384
+    .line 385
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ChannelBoostLayout;->updateRows(Z)V
 
-    .line 385
+    .line 386
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ChannelBoostLayout;->createEmptyView(Landroid/content/Context;)V
 
-    .line 386
+    .line 387
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->progressLayout:Landroid/widget/LinearLayout;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->setAlpha(F)V
 
-    .line 387
+    .line 388
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->progressLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -488,7 +488,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 519
+    .line 520
     invoke-virtual {p1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     :cond_0
@@ -496,13 +496,13 @@
 
     const/16 p1, 0x14
 
-    .line 522
+    .line 523
     iput p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->limitBoosts:I
 
-    .line 523
+    .line 524
     check-cast p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;
 
-    .line 524
+    .line 525
     iget p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -515,19 +515,19 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 525
+    .line 526
     iget-object p1, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;->next_offset:Ljava/lang/String;
 
     iput-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->lastBoostsOffset:Ljava/lang/String;
 
-    .line 526
+    .line 527
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->boosters:Ljava/util/ArrayList;
 
     iget-object v0, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;->boosts:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 528
+    .line 529
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->boosters:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -551,7 +551,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
 
-    .line 529
+    .line 530
     iget v2, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->multiplier:I
 
     if-lez v2, :cond_1
@@ -563,7 +563,7 @@
 
     goto :goto_0
 
-    .line 531
+    .line 532
     :cond_2
     iget p1, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;->count:I
 
@@ -575,7 +575,7 @@
 
     iput p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->nextBoostRemaining:I
 
-    .line 532
+    .line 533
     iget-object p1, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;->next_offset:Ljava/lang/String;
 
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -593,14 +593,14 @@
     :cond_3
     iput-boolean v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->hasBoostsNext:Z
 
-    .line 533
+    .line 534
     iget p1, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;->count:I
 
     iput p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->totalBoosts:I
 
     if-eqz p3, :cond_4
 
-    .line 535
+    .line 536
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
     :cond_4
@@ -610,7 +610,7 @@
 .method private synthetic lambda$loadOnlyBoosts$8(Ljava/util/concurrent/CountDownLatch;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 517
+    .line 518
     new-instance p4, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda6;
 
     invoke-direct {p4, p0, p1, p3, p2}, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ChannelBoostLayout;Ljava/util/concurrent/CountDownLatch;Lorg/telegram/tgnet/TLObject;Ljava/lang/Runnable;)V
@@ -623,7 +623,7 @@
 .method private synthetic lambda$loadOnlyGifts$10(Ljava/util/concurrent/CountDownLatch;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 548
+    .line 549
     new-instance p4, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda5;
 
     invoke-direct {p4, p0, p1, p3, p2}, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/ChannelBoostLayout;Ljava/util/concurrent/CountDownLatch;Lorg/telegram/tgnet/TLObject;Ljava/lang/Runnable;)V
@@ -638,7 +638,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 550
+    .line 551
     invoke-virtual {p1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     :cond_0
@@ -646,13 +646,13 @@
 
     const/16 p1, 0x14
 
-    .line 553
+    .line 554
     iput p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->limitGifts:I
 
-    .line 554
+    .line 555
     check-cast p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;
 
-    .line 555
+    .line 556
     iget p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -665,19 +665,19 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 556
+    .line 557
     iget-object p1, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;->next_offset:Ljava/lang/String;
 
     iput-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->lastGiftsOffset:Ljava/lang/String;
 
-    .line 557
+    .line 558
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->gifts:Ljava/util/ArrayList;
 
     iget-object v0, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;->boosts:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 559
+    .line 560
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->gifts:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -701,7 +701,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
 
-    .line 560
+    .line 561
     iget v2, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->multiplier:I
 
     if-lez v2, :cond_1
@@ -713,7 +713,7 @@
 
     goto :goto_0
 
-    .line 562
+    .line 563
     :cond_2
     iget p1, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;->count:I
 
@@ -725,7 +725,7 @@
 
     iput p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->nextGiftsRemaining:I
 
-    .line 563
+    .line 564
     iget-object p1, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;->next_offset:Ljava/lang/String;
 
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -743,14 +743,14 @@
     :cond_3
     iput-boolean v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->hasGiftsNext:Z
 
-    .line 564
+    .line 565
     iget p1, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsList;->count:I
 
     iput p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->totalGifts:I
 
     if-eqz p3, :cond_4
 
-    .line 566
+    .line 567
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
     :cond_4
@@ -760,10 +760,10 @@
 .method private synthetic lambda$loadStatistic$1(Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
     .locals 2
 
-    .line 458
+    .line 459
     iput-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->boostsStatus:Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;
 
-    .line 459
+    .line 460
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->progressLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -772,7 +772,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 460
+    .line 461
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->progressLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -805,12 +805,12 @@
 
     const/4 p1, 0x1
 
-    .line 466
+    .line 467
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ChannelBoostLayout;->updateRows(Z)V
 
     const/4 p1, 0x0
 
-    .line 467
+    .line 468
     invoke-direct {p0, p1}, Lorg/telegram/ui/ChannelBoostLayout;->loadUsers(Ljava/lang/Boolean;)V
 
     return-void
@@ -819,7 +819,7 @@
 .method private synthetic lambda$loadStatistic$2(Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
     .locals 1
 
-    .line 457
+    .line 458
     new-instance v0, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda7;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/ChannelBoostLayout;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
@@ -834,12 +834,12 @@
 
     const/4 v0, 0x0
 
-    .line 494
+    .line 495
     iput-boolean v0, p0, Lorg/telegram/ui/ChannelBoostLayout;->usersLoading:Z
 
     const/4 v0, 0x1
 
-    .line 495
+    .line 496
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ChannelBoostLayout;->updateRows(Z)V
 
     return-void
@@ -848,7 +848,7 @@
 .method private synthetic lambda$loadUsers$4()V
     .locals 2
 
-    .line 485
+    .line 486
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
     const/4 v1, 0x2
@@ -857,19 +857,19 @@
 
     const/4 v1, 0x0
 
-    .line 486
+    .line 487
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/ChannelBoostLayout;->loadOnlyBoosts(Ljava/util/concurrent/CountDownLatch;Ljava/lang/Runnable;)V
 
-    .line 487
+    .line 488
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/ChannelBoostLayout;->loadOnlyGifts(Ljava/util/concurrent/CountDownLatch;Ljava/lang/Runnable;)V
 
-    .line 489
+    .line 490
     :try_start_0
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 493
+    .line 494
     :catch_0
     new-instance v0, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda1;
 
@@ -885,12 +885,12 @@
 
     const/4 v0, 0x0
 
-    .line 500
+    .line 501
     iput-boolean v0, p0, Lorg/telegram/ui/ChannelBoostLayout;->usersLoading:Z
 
     const/4 v0, 0x1
 
-    .line 501
+    .line 502
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ChannelBoostLayout;->updateRows(Z)V
 
     return-void
@@ -901,12 +901,12 @@
 
     const/4 v0, 0x0
 
-    .line 505
+    .line 506
     iput-boolean v0, p0, Lorg/telegram/ui/ChannelBoostLayout;->usersLoading:Z
 
     const/4 v0, 0x1
 
-    .line 506
+    .line 507
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ChannelBoostLayout;->updateRows(Z)V
 
     return-void
@@ -965,7 +965,7 @@
 
     goto :goto_0
 
-    .line 359
+    .line 360
     :cond_2
     iget-boolean v6, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->giveaway:Z
 
@@ -977,7 +977,7 @@
 
     if-nez v2, :cond_3
 
-    .line 360
+    .line 361
     new-instance v1, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -990,7 +990,7 @@
 
     invoke-direct {v1, v2, v3}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 361
+    .line 362
     sget v2, Lorg/telegram/messenger/R$raw;->chats_infotip:I
 
     new-array v3, v9, [Ljava/lang/String;
@@ -999,7 +999,7 @@
 
     invoke-virtual {v1, v2, v4, v4, v3}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
-    .line 362
+    .line 363
     iget-object v2, v1, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->BoostingRecipientWillBeSelected:I
@@ -1012,12 +1012,12 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 363
+    .line 364
     iget-object v2, v1, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v2, v9}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 364
+    .line 365
     iget-object v2, v1, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v3, 0x2
@@ -1026,7 +1026,7 @@
 
     const/16 v2, 0xabe
 
-    .line 365
+    .line 366
     invoke-static {p1, v1, v2}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v1
@@ -1040,7 +1040,7 @@
 
     if-nez v6, :cond_6
 
-    .line 367
+    .line 368
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/UserCell;->getDialogId()J
 
     move-result-wide v1
@@ -1120,13 +1120,18 @@
     .line 354
     iput-wide v4, v6, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->to_id:J
 
+    const/4 v1, -0x1
+
+    .line 355
+    iput v1, v6, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->flags:I
+
     goto :goto_1
 
-    .line 356
+    .line 357
     :cond_5
     iput-object v2, v6, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->boost:Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
 
-    .line 358
+    .line 359
     :goto_1
     new-instance v10, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
@@ -1148,23 +1153,23 @@
 
     invoke-virtual {v10}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
-    .line 370
+    .line 371
     :cond_6
     :goto_2
     instance-of v1, v8, Lorg/telegram/ui/Cells/TextCell;
 
     if-eqz v1, :cond_7
 
-    .line 371
+    .line 372
     invoke-static/range {p1 .. p4}, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;->show(Lorg/telegram/ui/ActionBar/BaseFragment;JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 373
+    .line 374
     :cond_7
     instance-of v1, v8, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiveawayCell;
 
     if-eqz v1, :cond_8
 
-    .line 374
+    .line 375
     move-object v1, v8
 
     check-cast v1, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiveawayCell;
@@ -1179,7 +1184,7 @@
 
     invoke-static {p1, v4, v2, v3, v1}, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;->show(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;JLorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;)V
 
-    .line 376
+    .line 377
     :cond_8
     iget-object v1, v0, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
@@ -1197,7 +1202,7 @@
 
     if-ne v1, v2, :cond_a
 
-    .line 377
+    .line 378
     iget v1, v0, Lorg/telegram/ui/ChannelBoostLayout;->selectedTab:I
 
     const/4 v2, 0x1
@@ -1220,22 +1225,22 @@
 .method private loadOnlyBoosts(Ljava/util/concurrent/CountDownLatch;Ljava/lang/Runnable;)V
     .locals 4
 
-    .line 512
+    .line 513
     new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;-><init>()V
 
-    .line 513
+    .line 514
     iget v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->limitBoosts:I
 
     iput v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;->limit:I
 
-    .line 514
+    .line 515
     iget-object v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->lastBoostsOffset:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;->offset:Ljava/lang/String;
 
-    .line 515
+    .line 516
     iget v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1250,7 +1255,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 517
+    .line 518
     iget v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1271,27 +1276,27 @@
 .method private loadOnlyGifts(Ljava/util/concurrent/CountDownLatch;Ljava/lang/Runnable;)V
     .locals 4
 
-    .line 542
+    .line 543
     new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;-><init>()V
 
-    .line 543
+    .line 544
     iget v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->limitGifts:I
 
     iput v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;->limit:I
 
     const/4 v1, 0x1
 
-    .line 544
+    .line 545
     iput-boolean v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;->gifts:Z
 
-    .line 545
+    .line 546
     iget-object v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->lastGiftsOffset:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;->offset:Ljava/lang/String;
 
-    .line 546
+    .line 547
     iget v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1306,7 +1311,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_getBoostsList;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 548
+    .line 549
     iget v1, p0, Lorg/telegram/ui/ChannelBoostLayout;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1327,7 +1332,7 @@
 .method private loadStatistic()V
     .locals 4
 
-    .line 457
+    .line 458
     iget v0, p0, Lorg/telegram/ui/ChannelBoostLayout;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1352,7 +1357,7 @@
 .method private loadUsers(Ljava/lang/Boolean;)V
     .locals 1
 
-    .line 479
+    .line 480
     iget-boolean v0, p0, Lorg/telegram/ui/ChannelBoostLayout;->usersLoading:Z
 
     if-eqz v0, :cond_0
@@ -1362,12 +1367,12 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 482
+    .line 483
     iput-boolean v0, p0, Lorg/telegram/ui/ChannelBoostLayout;->usersLoading:Z
 
     if-nez p1, :cond_1
 
-    .line 484
+    .line 485
     sget-object p1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v0, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda4;
@@ -1378,7 +1383,7 @@
 
     goto :goto_0
 
-    .line 498
+    .line 499
     :cond_1
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -1388,7 +1393,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 499
+    .line 500
     new-instance p1, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ChannelBoostLayout;)V
@@ -1397,7 +1402,7 @@
 
     goto :goto_0
 
-    .line 504
+    .line 505
     :cond_2
     new-instance p1, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda2;
 
@@ -1414,7 +1419,7 @@
 .method public createEmptyView(Landroid/content/Context;)V
     .locals 11
 
-    .line 623
+    .line 624
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -1423,47 +1428,47 @@
 
     const/4 v1, 0x1
 
-    .line 624
+    .line 625
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 626
+    .line 627
     new-instance v0, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
-    .line 627
+    .line 628
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 628
+    .line 629
     sget v2, Lorg/telegram/messenger/R$raw;->statistic_preload:I
 
     const/16 v3, 0x78
 
     invoke-virtual {v0, v2, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 629
+    .line 630
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 632
+    .line 633
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const/high16 v3, 0x41a00000    # 20.0f
 
-    .line 633
+    .line 634
     invoke-virtual {v2, v1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v3, "fonts/rmedium.ttf"
 
-    .line 634
+    .line 635
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v3
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 635
+    .line 636
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarTitle:I
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1472,14 +1477,14 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 636
+    .line 637
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 637
+    .line 638
     sget v3, Lorg/telegram/messenger/R$string;->LoadingStats:I
 
     const-string v4, "LoadingStats"
@@ -1490,20 +1495,20 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 638
+    .line 639
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 640
+    .line 641
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const/high16 p1, 0x41700000    # 15.0f
 
-    .line 641
+    .line 642
     invoke-virtual {v3, v1, p1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 642
+    .line 643
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarSubtitle:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1512,14 +1517,14 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 643
+    .line 644
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
     invoke-virtual {v3, p1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 644
+    .line 645
     sget p1, Lorg/telegram/messenger/R$string;->LoadingStatsDescription:I
 
     const-string v4, "LoadingStatsDescription"
@@ -1530,10 +1535,10 @@
 
     invoke-virtual {v3, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 645
+    .line 646
     invoke-virtual {v3, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 647
+    .line 648
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->progressLayout:Landroid/widget/LinearLayout;
 
     const/16 v4, 0x78
@@ -1556,7 +1561,7 @@
 
     invoke-virtual {p1, v0, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 648
+    .line 649
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->progressLayout:Landroid/widget/LinearLayout;
 
     const/4 v4, -0x2
@@ -1571,7 +1576,7 @@
 
     invoke-virtual {p1, v2, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 649
+    .line 650
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->progressLayout:Landroid/widget/LinearLayout;
 
     const/4 v0, -0x2
@@ -1582,7 +1587,7 @@
 
     invoke-virtual {p1, v3, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 651
+    .line 652
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout;->progressLayout:Landroid/widget/LinearLayout;
 
     const/16 v0, 0xf0
@@ -1613,24 +1618,24 @@
 
     move-object/from16 v6, p0
 
-    .line 391
+    .line 392
     new-instance v7, Ljava/util/ArrayList;
 
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     invoke-direct {v7, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 392
+    .line 393
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 393
+    .line 394
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->boostsStatus:Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;
 
     if-eqz v0, :cond_c
 
-    .line 394
+    .line 395
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1643,7 +1648,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 395
+    .line 396
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1662,7 +1667,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 396
+    .line 397
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1671,7 +1676,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 397
+    .line 398
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1682,7 +1687,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 399
+    .line 400
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->boostsStatus:Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;
 
     iget-object v0, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;->prepaid_giveaways:Ljava/util/ArrayList;
@@ -1695,7 +1700,7 @@
 
     if-lez v0, :cond_2
 
-    .line 400
+    .line 401
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1716,7 +1721,7 @@
 
     move v0, v8
 
-    .line 401
+    .line 402
     :goto_0
     iget-object v1, v6, Lorg/telegram/ui/ChannelBoostLayout;->boostsStatus:Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;
 
@@ -1728,7 +1733,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 402
+    .line 403
     iget-object v1, v6, Lorg/telegram/ui/ChannelBoostLayout;->boostsStatus:Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;
 
     iget-object v1, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;->prepaid_giveaways:Ljava/util/ArrayList;
@@ -1739,7 +1744,7 @@
 
     check-cast v1, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;
 
-    .line 403
+    .line 404
     iget-object v3, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v4, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1774,7 +1779,7 @@
 
     goto :goto_0
 
-    .line 405
+    .line 406
     :cond_1
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
@@ -1792,7 +1797,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 408
+    .line 409
     :cond_2
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
@@ -1812,7 +1817,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 409
+    .line 410
     iget v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->selectedTab:I
 
     const-string v11, "BoostersInfoDescription"
@@ -1825,7 +1830,7 @@
 
     if-nez v0, :cond_7
 
-    .line 410
+    .line 411
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->boosters:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1834,7 +1839,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 411
+    .line 412
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v3, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1843,7 +1848,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 412
+    .line 413
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1857,7 +1862,7 @@
     :cond_3
     move v14, v8
 
-    .line 414
+    .line 415
     :goto_2
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->boosters:Ljava/util/ArrayList;
 
@@ -1867,7 +1872,7 @@
 
     if-ge v14, v0, :cond_5
 
-    .line 415
+    .line 416
     iget-object v15, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1928,13 +1933,13 @@
 
     goto :goto_2
 
-    .line 417
+    .line 418
     :cond_5
     iget-boolean v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->hasBoostsNext:Z
 
     if-eqz v0, :cond_6
 
-    .line 418
+    .line 419
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1945,7 +1950,7 @@
 
     goto :goto_4
 
-    .line 420
+    .line 421
     :cond_6
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
@@ -1955,7 +1960,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 422
+    .line 423
     :goto_4
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
@@ -1975,7 +1980,7 @@
 
     goto/16 :goto_8
 
-    .line 425
+    .line 426
     :cond_7
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->gifts:Ljava/util/ArrayList;
 
@@ -1985,7 +1990,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 426
+    .line 427
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v3, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -1994,7 +1999,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 427
+    .line 428
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -2008,7 +2013,7 @@
     :cond_8
     move v10, v8
 
-    .line 429
+    .line 430
     :goto_5
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->gifts:Ljava/util/ArrayList;
 
@@ -2018,7 +2023,7 @@
 
     if-ge v10, v0, :cond_a
 
-    .line 430
+    .line 431
     iget-object v14, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v15, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -2071,13 +2076,13 @@
 
     goto :goto_5
 
-    .line 432
+    .line 433
     :cond_a
     iget-boolean v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->hasGiftsNext:Z
 
     if-eqz v0, :cond_b
 
-    .line 433
+    .line 434
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -2088,7 +2093,7 @@
 
     goto :goto_7
 
-    .line 435
+    .line 436
     :cond_b
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
@@ -2098,7 +2103,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 437
+    .line 438
     :goto_7
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
@@ -2116,7 +2121,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 441
+    .line 442
     :goto_8
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
@@ -2134,7 +2139,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 442
+    .line 443
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -2149,7 +2154,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 443
+    .line 444
     iget v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2176,7 +2181,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 444
+    .line 445
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -2195,7 +2200,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 445
+    .line 446
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -2206,7 +2211,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 446
+    .line 447
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
@@ -2228,7 +2233,7 @@
     :cond_c
     if-eqz p1, :cond_d
 
-    .line 450
+    .line 451
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->adapter:Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;
 
     iget-object v1, v6, Lorg/telegram/ui/ChannelBoostLayout;->items:Ljava/util/ArrayList;
@@ -2237,7 +2242,7 @@
 
     goto :goto_9
 
-    .line 452
+    .line 453
     :cond_d
     iget-object v0, v6, Lorg/telegram/ui/ChannelBoostLayout;->adapter:Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;
 

@@ -53,7 +53,7 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentStakingProgrammesBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -348,15 +348,15 @@ public final class StakingProgrammesFragment extends WalletAuthBaseFragment impl
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3634R.C3637id.image_header_right_button) {
+        if (id == C3632R.C3635id.image_header_right_button) {
             this$0.getPresenter().showSelectStakingOrderTypeDialog();
-        } else if (id == C3634R.C3637id.image_info) {
+        } else if (id == C3632R.C3635id.image_info) {
             this$0.showStakingFiltersInfoDialog();
         }
     }
 
     private final void showStakingFiltersInfoDialog() {
-        showDialog(DialogsFactoryKt.createDialogInfoWithAnimation$default(this, 0, getResourceManager().getString(C3634R.string.staking_programmes_filters_info_title), getResourceManager().getString(C3634R.string.staking_programmes_filters_info_description), 8388611, null, null, 49, null));
+        showDialog(DialogsFactoryKt.createDialogInfoWithAnimation$default(this, 0, getResourceManager().getString(C3632R.string.staking_programmes_filters_info_title), getResourceManager().getString(C3632R.string.staking_programmes_filters_info_description), 8388611, null, null, 49, null));
     }
 
     /* compiled from: StakingProgrammesFragment.kt */

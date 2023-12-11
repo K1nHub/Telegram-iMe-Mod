@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.widget.NestedScrollView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -82,7 +82,7 @@ public class JoinGroupAlert extends BottomSheet {
         ImageView imageView = new ImageView(context);
         imageView.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
         imageView.setColorFilter(getThemedColor(Theme.key_sheet_other));
-        imageView.setImageResource(C3634R.C3636drawable.ic_layer_close);
+        imageView.setImageResource(C3632R.C3634drawable.ic_layer_close);
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinGroupAlert$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -164,9 +164,9 @@ public class JoinGroupAlert extends BottomSheet {
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         if (z6) {
-            lowerCase = LocaleController.getString("ChannelPrivate", C3634R.string.ChannelPrivate).toLowerCase();
+            lowerCase = LocaleController.getString("ChannelPrivate", C3632R.string.ChannelPrivate).toLowerCase();
         } else {
-            lowerCase = LocaleController.getString("MegaPrivate", C3634R.string.MegaPrivate).toLowerCase();
+            lowerCase = LocaleController.getString("MegaPrivate", C3632R.string.MegaPrivate).toLowerCase();
         }
         textView.setText(lowerCase);
         linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 49, 10, 0, 10, z7 ? 0 : 20));
@@ -197,10 +197,10 @@ public class JoinGroupAlert extends BottomSheet {
             this.requestTextView.setSingleLine(true);
             TextView textView4 = this.requestTextView;
             if (z6) {
-                i3 = C3634R.string.RequestToJoinChannel;
+                i3 = C3632R.string.RequestToJoinChannel;
                 str3 = "RequestToJoinChannel";
             } else {
-                i3 = C3634R.string.RequestToJoinGroup;
+                i3 = C3632R.string.RequestToJoinGroup;
                 str3 = "RequestToJoinGroup";
             }
             textView4.setText(LocaleController.getString(str3, i3));
@@ -218,10 +218,10 @@ public class JoinGroupAlert extends BottomSheet {
             textView5.setGravity(17);
             textView5.setTextSize(1, 14.0f);
             if (z6) {
-                i4 = C3634R.string.RequestToJoinChannelDescription;
+                i4 = C3632R.string.RequestToJoinChannelDescription;
                 str4 = "RequestToJoinChannelDescription";
             } else {
-                i4 = C3634R.string.RequestToJoinGroupDescription;
+                i4 = C3632R.string.RequestToJoinGroupDescription;
                 str4 = "RequestToJoinGroupDescription";
             }
             textView5.setText(LocaleController.getString(str4, i4));
@@ -253,10 +253,10 @@ public class JoinGroupAlert extends BottomSheet {
                 } else {
                     z4 = false;
                     if (min == 2) {
-                        format = LocaleController.formatString("RequestToJoinMembersTwo", C3634R.string.RequestToJoinMembersTwo, ellipsize(textView6, this.chatInvite, 0), ellipsize(textView6, this.chatInvite, 1));
+                        format = LocaleController.formatString("RequestToJoinMembersTwo", C3632R.string.RequestToJoinMembersTwo, ellipsize(textView6, this.chatInvite, 0), ellipsize(textView6, this.chatInvite, 1));
                     } else {
                         if (i2 == 3) {
-                            format = LocaleController.formatString("RequestToJoinMembersThree", C3634R.string.RequestToJoinMembersThree, ellipsize(textView6, this.chatInvite, 0), ellipsize(textView6, this.chatInvite, 1), ellipsize(textView6, this.chatInvite, 2));
+                            format = LocaleController.formatString("RequestToJoinMembersThree", C3632R.string.RequestToJoinMembersThree, ellipsize(textView6, this.chatInvite, 0), ellipsize(textView6, this.chatInvite, 1), ellipsize(textView6, this.chatInvite, 2));
                             z3 = false;
                         } else {
                             int max = Math.max(i2 - min, 2);
@@ -279,10 +279,10 @@ public class JoinGroupAlert extends BottomSheet {
             textView7.setGravity(17);
             textView7.setSingleLine(true);
             if (z8) {
-                i5 = C3634R.string.ProfileJoinChannel;
+                i5 = C3632R.string.ProfileJoinChannel;
                 str5 = "ProfileJoinChannel";
             } else {
-                i5 = C3634R.string.ProfileJoinGroup;
+                i5 = C3632R.string.ProfileJoinGroup;
                 str5 = "ProfileJoinGroup";
             }
             textView7.setText(LocaleController.getString(str5, i5));
@@ -471,12 +471,12 @@ public class JoinGroupAlert extends BottomSheet {
             return;
         }
         Bulletin.TwoLineLottieLayout twoLineLottieLayout = new Bulletin.TwoLineLottieLayout(context, baseFragment.getResourceProvider());
-        twoLineLottieLayout.imageView.setAnimation(C3634R.raw.timer_3, 28, 28);
-        twoLineLottieLayout.titleTextView.setText(LocaleController.getString("RequestToJoinSent", C3634R.string.RequestToJoinSent));
+        twoLineLottieLayout.imageView.setAnimation(C3632R.raw.timer_3, 28, 28);
+        twoLineLottieLayout.titleTextView.setText(LocaleController.getString("RequestToJoinSent", C3632R.string.RequestToJoinSent));
         if (z) {
-            string = LocaleController.getString("RequestToJoinChannelSentDescription", C3634R.string.RequestToJoinChannelSentDescription);
+            string = LocaleController.getString("RequestToJoinChannelSentDescription", C3632R.string.RequestToJoinChannelSentDescription);
         } else {
-            string = LocaleController.getString("RequestToJoinGroupSentDescription", C3634R.string.RequestToJoinGroupSentDescription);
+            string = LocaleController.getString("RequestToJoinGroupSentDescription", C3632R.string.RequestToJoinGroupSentDescription);
         }
         twoLineLottieLayout.subtitleTextView.setText(string);
         Bulletin.make(baseFragment, twoLineLottieLayout, 2750).show();

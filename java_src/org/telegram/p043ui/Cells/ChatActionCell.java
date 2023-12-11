@@ -36,7 +36,7 @@ import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.DownloadController;
@@ -437,9 +437,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if (!z) {
             formatDateChat = LocaleController.formatDateChat(i);
         } else if (i == 2147483646) {
-            formatDateChat = LocaleController.getString("MessageScheduledUntilOnline", C3634R.string.MessageScheduledUntilOnline);
+            formatDateChat = LocaleController.getString("MessageScheduledUntilOnline", C3632R.string.MessageScheduledUntilOnline);
         } else {
-            formatDateChat = LocaleController.formatString("MessageScheduledOn", C3634R.string.MessageScheduledOn, LocaleController.formatDateChat(i));
+            formatDateChat = LocaleController.formatString("MessageScheduledOn", C3632R.string.MessageScheduledOn, LocaleController.formatDateChat(i));
         }
         this.customDate = i;
         CharSequence charSequence = this.customText;
@@ -982,9 +982,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if (messageObject != null) {
             if (messageObject.isExpiredStory()) {
                 if (messageObject.messageOwner.media.user_id != UserConfig.getInstance(this.currentAccount).getClientUserId()) {
-                    charSequence = StoriesUtilities.createExpiredStoryString(true, "ExpiredStoryMention", C3634R.string.ExpiredStoryMention, new Object[0]);
+                    charSequence = StoriesUtilities.createExpiredStoryString(true, "ExpiredStoryMention", C3632R.string.ExpiredStoryMention, new Object[0]);
                 } else {
-                    charSequence = StoriesUtilities.createExpiredStoryString(true, "ExpiredStoryMentioned", C3634R.string.ExpiredStoryMentioned, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId())).first_name);
+                    charSequence = StoriesUtilities.createExpiredStoryString(true, "ExpiredStoryMentioned", C3632R.string.ExpiredStoryMentioned, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId())).first_name);
                 }
             } else {
                 charSequence = (this.delegate.getTopicId() == 0 && MessageObject.isTopicActionMessage(messageObject)) ? ForumUtilities.createActionTextWithTopic(MessagesController.getInstance(this.currentAccount).getTopicsController().findTopic(-messageObject.getDialogId(), MessageObject.getTopicId(messageObject.messageOwner, true)), messageObject) : null;
@@ -993,11 +993,11 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 TLRPC$Message tLRPC$Message = messageObject.messageOwner;
                 if (tLRPC$Message != null && (tLRPC$MessageMedia = tLRPC$Message.media) != null && tLRPC$MessageMedia.ttl_seconds != 0) {
                     if (tLRPC$MessageMedia.photo != null) {
-                        charSequence = LocaleController.getString("AttachPhotoExpired", C3634R.string.AttachPhotoExpired);
+                        charSequence = LocaleController.getString("AttachPhotoExpired", C3632R.string.AttachPhotoExpired);
                     } else {
                         TLRPC$Document tLRPC$Document = tLRPC$MessageMedia.document;
                         if ((tLRPC$Document instanceof TLRPC$TL_documentEmpty) || ((tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaDocument) && tLRPC$Document == null)) {
-                            charSequence = LocaleController.getString("AttachVideoExpired", C3634R.string.AttachVideoExpired);
+                            charSequence = LocaleController.getString("AttachVideoExpired", C3632R.string.AttachVideoExpired);
                         } else {
                             charSequence = AnimatedEmojiSpan.cloneSpans(messageObject.messageText);
                         }
@@ -1018,7 +1018,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
             } else if (i == 25) {
                 createGiftPremiumChannelLayouts();
             } else if (i == 18) {
-                createGiftPremiumLayouts(LocaleController.getString(C3634R.string.ActionGiftPremiumTitle), LocaleController.formatString(C3634R.string.ActionGiftPremiumSubtitle, LocaleController.formatPluralString("Months", messageObject.messageOwner.action.months, new Object[0])), LocaleController.getString(C3634R.string.ActionGiftPremiumView), this.giftRectSize);
+                createGiftPremiumLayouts(LocaleController.getString(C3632R.string.ActionGiftPremiumTitle), LocaleController.formatString(C3632R.string.ActionGiftPremiumSubtitle, LocaleController.formatPluralString("Months", messageObject.messageOwner.action.months, new Object[0])), LocaleController.getString(C3632R.string.ActionGiftPremiumView), this.giftRectSize);
             } else {
                 if (i != 21) {
                     if (i == 22) {
@@ -1027,7 +1027,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                             string = null;
                         } else {
                             charSequence2 = messageObject.messageText;
-                            string = LocaleController.getString("ViewWallpaperAction", C3634R.string.ViewWallpaperAction);
+                            string = LocaleController.getString("ViewWallpaperAction", C3632R.string.ViewWallpaperAction);
                         }
                         createGiftPremiumLayouts(null, charSequence2, string, this.giftRectSize);
                         this.textLayout = null;
@@ -1036,7 +1036,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                         return;
                     } else if (messageObject.isStoryMention()) {
                         TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.messageOwner.media.user_id));
-                        createGiftPremiumLayouts(null, user.self ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryYouMentionedTitle", C3634R.string.StoryYouMentionedTitle, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId())).first_name)) : AndroidUtilities.replaceTags(LocaleController.formatString("StoryMentionedTitle", C3634R.string.StoryMentionedTitle, user.first_name)), LocaleController.getString("StoryMentionedAction", C3634R.string.StoryMentionedAction), this.giftRectSize);
+                        createGiftPremiumLayouts(null, user.self ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryYouMentionedTitle", C3632R.string.StoryYouMentionedTitle, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId())).first_name)) : AndroidUtilities.replaceTags(LocaleController.formatString("StoryMentionedTitle", C3632R.string.StoryMentionedTitle, user.first_name)), LocaleController.getString("StoryMentionedAction", C3632R.string.StoryMentionedAction), this.giftRectSize);
                         this.textLayout = null;
                         this.textHeight = 0;
                         this.textY = 0;
@@ -1051,19 +1051,19 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 if (user2.f1749id == UserConfig.getInstance(this.currentAccount).clientUserId) {
                     TLRPC$User user3 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId()));
                     if (z) {
-                        formatString = LocaleController.formatString("ActionSuggestVideoFromYouDescription", C3634R.string.ActionSuggestVideoFromYouDescription, user3.first_name);
+                        formatString = LocaleController.formatString("ActionSuggestVideoFromYouDescription", C3632R.string.ActionSuggestVideoFromYouDescription, user3.first_name);
                     } else {
-                        formatString = LocaleController.formatString("ActionSuggestPhotoFromYouDescription", C3634R.string.ActionSuggestPhotoFromYouDescription, user3.first_name);
+                        formatString = LocaleController.formatString("ActionSuggestPhotoFromYouDescription", C3632R.string.ActionSuggestPhotoFromYouDescription, user3.first_name);
                     }
                 } else if (z) {
-                    formatString = LocaleController.formatString("ActionSuggestVideoToYouDescription", C3634R.string.ActionSuggestVideoToYouDescription, user2.first_name);
+                    formatString = LocaleController.formatString("ActionSuggestVideoToYouDescription", C3632R.string.ActionSuggestVideoToYouDescription, user2.first_name);
                 } else {
-                    formatString = LocaleController.formatString("ActionSuggestPhotoToYouDescription", C3634R.string.ActionSuggestPhotoToYouDescription, user2.first_name);
+                    formatString = LocaleController.formatString("ActionSuggestPhotoToYouDescription", C3632R.string.ActionSuggestPhotoToYouDescription, user2.first_name);
                 }
                 if (tLRPC$TL_messageActionSuggestProfilePhoto.video || ((arrayList = tLRPC$TL_messageActionSuggestProfilePhoto.photo.video_sizes) != null && !arrayList.isEmpty())) {
-                    string2 = LocaleController.getString("ViewVideoAction", C3634R.string.ViewVideoAction);
+                    string2 = LocaleController.getString("ViewVideoAction", C3632R.string.ViewVideoAction);
                 } else {
-                    string2 = LocaleController.getString("ViewPhotoAction", C3634R.string.ViewPhotoAction);
+                    string2 = LocaleController.getString("ViewPhotoAction", C3632R.string.ViewPhotoAction);
                 }
                 createGiftPremiumLayouts(null, formatString, string2, this.giftRectSize);
                 this.textLayout = null;
@@ -1085,27 +1085,27 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         String str = chat == null ? null : chat.title;
         boolean z = tLRPC$TL_messageActionGiftCode.via_giveaway;
         if (tLRPC$TL_messageActionGiftCode.unclaimed) {
-            string = LocaleController.getString("BoostingUnclaimedPrize", C3634R.string.BoostingUnclaimedPrize);
+            string = LocaleController.getString("BoostingUnclaimedPrize", C3632R.string.BoostingUnclaimedPrize);
         } else {
-            string = LocaleController.getString("BoostingCongratulations", C3634R.string.BoostingCongratulations);
+            string = LocaleController.getString("BoostingCongratulations", C3632R.string.BoostingCongratulations);
         }
         String formatPluralString = i == 12 ? LocaleController.formatPluralString("BoldYears", 1, new Object[0]) : LocaleController.formatPluralString("BoldMonths", i, new Object[0]);
         if (z) {
             if (tLRPC$TL_messageActionGiftCode.unclaimed) {
-                spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingYouHaveUnclaimedPrize", C3634R.string.BoostingYouHaveUnclaimedPrize, str)));
+                spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingYouHaveUnclaimedPrize", C3632R.string.BoostingYouHaveUnclaimedPrize, str)));
                 spannableStringBuilder.append((CharSequence) "\n\n");
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("BoostingUnclaimedPrizeDuration", C3634R.string.BoostingUnclaimedPrizeDuration, formatPluralString)));
+                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("BoostingUnclaimedPrizeDuration", C3632R.string.BoostingUnclaimedPrizeDuration, formatPluralString)));
             } else {
-                spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingReceivedPrizeFrom", C3634R.string.BoostingReceivedPrizeFrom, str)));
+                spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingReceivedPrizeFrom", C3632R.string.BoostingReceivedPrizeFrom, str)));
                 spannableStringBuilder.append((CharSequence) "\n\n");
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("BoostingReceivedPrizeDuration", C3634R.string.BoostingReceivedPrizeDuration, formatPluralString)));
+                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("BoostingReceivedPrizeDuration", C3632R.string.BoostingReceivedPrizeDuration, formatPluralString)));
             }
         } else {
-            spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(str == null ? LocaleController.getString("BoostingReceivedGiftNoName", C3634R.string.BoostingReceivedGiftNoName) : LocaleController.formatString("BoostingReceivedGiftFrom", C3634R.string.BoostingReceivedGiftFrom, str)));
+            spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(str == null ? LocaleController.getString("BoostingReceivedGiftNoName", C3632R.string.BoostingReceivedGiftNoName) : LocaleController.formatString("BoostingReceivedGiftFrom", C3632R.string.BoostingReceivedGiftFrom, str)));
             spannableStringBuilder.append((CharSequence) "\n\n");
-            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("BoostingReceivedGiftDuration", C3634R.string.BoostingReceivedGiftDuration, formatPluralString)));
+            spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("BoostingReceivedGiftDuration", C3632R.string.BoostingReceivedGiftDuration, formatPluralString)));
         }
-        String string2 = LocaleController.getString("BoostingReceivedGiftOpenBtn", C3634R.string.BoostingReceivedGiftOpenBtn);
+        String string2 = LocaleController.getString("BoostingReceivedGiftOpenBtn", C3632R.string.BoostingReceivedGiftOpenBtn);
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
         valueOf.setSpan(new TypefaceSpan(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM)), 0, valueOf.length(), 33);
         this.giftPremiumTitleLayout = new StaticLayout(valueOf, this.giftTitlePaint, m104dp, Layout.Alignment.ALIGN_CENTER, 1.1f, BitmapDescriptorFactory.HUE_RED, false);

@@ -30,7 +30,7 @@
 
     move-object v5, p6
 
-    .line 924
+    .line 937
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -41,7 +41,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 927
+    .line 940
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getVisibility()I
 
     move-result v0
@@ -60,7 +60,7 @@
 
     goto :goto_0
 
-    .line 930
+    .line 943
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -80,7 +80,7 @@
 
     const/4 v0, 0x0
 
-    .line 935
+    .line 948
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void

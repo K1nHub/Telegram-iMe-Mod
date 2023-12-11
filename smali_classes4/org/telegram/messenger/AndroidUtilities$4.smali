@@ -1,11 +1,14 @@
 .class Lorg/telegram/messenger/AndroidUtilities$4;
-.super Landroid/text/style/ClickableSpan;
+.super Ljava/lang/Object;
 .source "AndroidUtilities.java"
+
+# interfaces
+.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/messenger/AndroidUtilities;->replaceLinks(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/text/SpannableStringBuilder;
+    value = Lorg/telegram/messenger/AndroidUtilities;->doOnLayout(Landroid/view/View;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,58 +18,39 @@
 
 
 # instance fields
-.field final synthetic val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.field final synthetic val$runnable:Ljava/lang/Runnable;
 
-.field final synthetic val$url:Ljava/lang/String;
+.field final synthetic val$view:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method constructor <init>(Landroid/view/View;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 3022
-    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$4;->val$url:Ljava/lang/String;
+    .line 998
+    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$4;->val$view:Landroid/view/View;
 
-    iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$4;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$4;->val$runnable:Ljava/lang/Runnable;
 
-    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .locals 1
+.method public onLayoutChange(Landroid/view/View;IIIIIIII)V
+    .locals 0
 
-    .line 3025
-    sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
+    .line 1001
+    iget-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$4;->val$view:Landroid/view/View;
 
-    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$4;->val$url:Ljava/lang/String;
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    invoke-static {p1, v0}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
+    .line 1002
+    iget-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$4;->val$runnable:Ljava/lang/Runnable;
 
-    return-void
-.end method
-
-.method public updateDrawState(Landroid/text/TextPaint;)V
-    .locals 2
-
-    .line 3029
-    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkIn:I
-
-    iget-object v1, p0, Lorg/telegram/messenger/AndroidUtilities$4;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setColor(I)V
-
-    const/4 v0, 0x0
-
-    .line 3030
-    invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
 .end method

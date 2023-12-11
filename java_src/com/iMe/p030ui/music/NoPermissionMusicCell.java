@@ -14,7 +14,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -63,7 +63,7 @@ public final class NoPermissionMusicCell extends LinearLayout {
                 int m105dp = AndroidUtilities.m105dp(100.0f);
                 i2 = noPermissionMusicCell.iconCircleColor;
                 imageView.setBackground(Theme.createCircleDrawable(m105dp, Theme.getColor(i2)));
-                imageView.setImageResource(C3634R.C3636drawable.fork_music_device_no_storage_permission);
+                imageView.setImageResource(C3632R.C3634drawable.fork_music_device_no_storage_permission);
                 return imageView;
             }
         });
@@ -82,7 +82,7 @@ public final class NoPermissionMusicCell extends LinearLayout {
                 TextView textView = new TextView(context);
                 NoPermissionMusicCell noPermissionMusicCell = this;
                 textView.setGravity(17);
-                textView.setText(LocaleController.getInternalString(C3634R.string.music_device_no_permission_title));
+                textView.setText(LocaleController.getInternalString(C3632R.string.music_device_no_permission_title));
                 textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 i = noPermissionMusicCell.titleColor;
                 textView.setTextColor(Theme.getColor(i));
@@ -105,7 +105,7 @@ public final class NoPermissionMusicCell extends LinearLayout {
                 TextView textView = new TextView(context);
                 NoPermissionMusicCell noPermissionMusicCell = this;
                 textView.setGravity(17);
-                textView.setText(LocaleController.getInternalString(C3634R.string.music_device_no_permission_subtitle));
+                textView.setText(LocaleController.getInternalString(C3632R.string.music_device_no_permission_subtitle));
                 i = noPermissionMusicCell.subtitleColor;
                 textView.setTextColor(Theme.getColor(i));
                 textView.setTextSize(1, 14.0f);

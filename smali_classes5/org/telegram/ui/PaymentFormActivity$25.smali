@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/PaymentFormActivity;)V
     .locals 0
 
-    .line 3732
+    .line 3735
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,12 +44,12 @@
 .method private synthetic lambda$onSuccess$0()V
     .locals 3
 
-    .line 3739
+    .line 3742
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$200(Lorg/telegram/ui/PaymentFormActivity;)V
 
-    .line 3740
+    .line 3743
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     const/4 v1, 0x1
@@ -58,7 +58,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/PaymentFormActivity;->access$2500(Lorg/telegram/ui/PaymentFormActivity;ZZ)V
 
-    .line 3741
+    .line 3744
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/PaymentFormActivity;->access$600(Lorg/telegram/ui/PaymentFormActivity;Z)V
@@ -71,7 +71,7 @@
 .method public onError(Ljava/lang/Exception;)V
     .locals 3
 
-    .line 3746
+    .line 3749
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$4100(Lorg/telegram/ui/PaymentFormActivity;)Z
@@ -82,7 +82,7 @@
 
     return-void
 
-    .line 3749
+    .line 3752
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
@@ -92,12 +92,12 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/PaymentFormActivity;->access$2500(Lorg/telegram/ui/PaymentFormActivity;ZZ)V
 
-    .line 3750
+    .line 3753
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/PaymentFormActivity;->access$600(Lorg/telegram/ui/PaymentFormActivity;Z)V
 
-    .line 3751
+    .line 3754
     instance-of v0, p1, Lcom/stripe/android/exception/APIConnectionException;
 
     if-nez v0, :cond_2
@@ -108,7 +108,7 @@
 
     goto :goto_0
 
-    .line 3754
+    .line 3757
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
@@ -120,7 +120,7 @@
 
     goto :goto_1
 
-    .line 3752
+    .line 3755
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
@@ -142,7 +142,7 @@
 .method public onSuccess(Lcom/stripe/android/model/Token;)V
     .locals 5
 
-    .line 3734
+    .line 3737
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PaymentFormActivity;->access$4100(Lorg/telegram/ui/PaymentFormActivity;)Z
@@ -153,7 +153,7 @@
 
     return-void
 
-    .line 3737
+    .line 3740
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$25;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
@@ -187,7 +187,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/PaymentFormActivity;->access$002(Lorg/telegram/ui/PaymentFormActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 3738
+    .line 3741
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$25$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/PaymentFormActivity$25$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PaymentFormActivity$25;)V

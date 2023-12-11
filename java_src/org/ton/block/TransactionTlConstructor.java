@@ -23,10 +23,10 @@ public final class TransactionTlConstructor extends org.ton.tlb.TlbConstructor<T
     public Transaction loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
         BitString loadBits = cellSlice.loadBits(256);
-        long mo5221loadUInt64sVKNKU = cellSlice.mo5221loadUInt64sVKNKU();
+        long mo5203loadUInt64sVKNKU = cellSlice.mo5203loadUInt64sVKNKU();
         BitString loadBits2 = cellSlice.loadBits(256);
-        long mo5221loadUInt64sVKNKU2 = cellSlice.mo5221loadUInt64sVKNKU();
-        int mo5220loadUInt32pVg5ArA = cellSlice.mo5220loadUInt32pVg5ArA();
+        long mo5203loadUInt64sVKNKU2 = cellSlice.mo5203loadUInt64sVKNKU();
+        int mo5202loadUInt32pVg5ArA = cellSlice.mo5202loadUInt32pVg5ArA();
         int intValue = cellSlice.loadUInt(15).intValue();
         AccountStatus.Companion companion = AccountStatus.Companion;
         AccountStatus loadTlb = companion.loadTlb(cellSlice);
@@ -34,7 +34,7 @@ public final class TransactionTlConstructor extends org.ton.tlb.TlbConstructor<T
         TransactionAux.Companion companion2 = TransactionAux.Companion;
         Cell loadRef = cellSlice.loadRef();
         CellRef.Companion companion3 = CellRef.Companion;
-        return new Transaction(loadBits, mo5221loadUInt64sVKNKU, loadBits2, mo5221loadUInt64sVKNKU2, mo5220loadUInt32pVg5ArA, intValue, loadTlb, loadTlb2, companion3.valueOf(loadRef, (TlbCodec) companion2), CurrencyCollection.Companion.loadTlb(cellSlice), companion3.valueOf(cellSlice.loadRef(), (TlbCodec) HashUpdate.Companion), companion3.valueOf(cellSlice.loadRef(), (TlbCodec) TransactionDescr.Companion), null);
+        return new Transaction(loadBits, mo5203loadUInt64sVKNKU, loadBits2, mo5203loadUInt64sVKNKU2, mo5202loadUInt32pVg5ArA, intValue, loadTlb, loadTlb2, companion3.valueOf(loadRef, (TlbCodec) companion2), CurrencyCollection.Companion.loadTlb(cellSlice), companion3.valueOf(cellSlice.loadRef(), (TlbCodec) HashUpdate.Companion), companion3.valueOf(cellSlice.loadRef(), (TlbCodec) TransactionDescr.Companion), null);
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
@@ -42,10 +42,10 @@ public final class TransactionTlConstructor extends org.ton.tlb.TlbConstructor<T
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeBits(value.accountAddr());
-        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m36lt());
+        cellBuilder.mo5193storeUInt64VKZWuLQ(value.m36lt());
         cellBuilder.storeBits(value.prevTransHash());
-        cellBuilder.mo5211storeUInt64VKZWuLQ(value.prevTransLt());
-        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.now());
+        cellBuilder.mo5193storeUInt64VKZWuLQ(value.prevTransLt());
+        cellBuilder.mo5192storeUInt32WZ4Q5Ns(value.now());
         cellBuilder.storeUInt(value.outMsgCnt(), 15);
         AccountStatus.Companion companion = AccountStatus.Companion;
         companion.storeTlb(cellBuilder, (CellBuilder) value.origStatus());

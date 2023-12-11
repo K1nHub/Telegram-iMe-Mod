@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p030ui.custom.BigActionButton;
 import com.iMe.p030ui.custom.FeeView;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.Cells.TextDetailCell;
 /* loaded from: classes4.dex */
@@ -47,7 +47,7 @@ public final class ForkContentWalletConnectTransactionBinding implements ViewBin
     }
 
     public static ForkContentWalletConnectTransactionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_content_wallet_connect_transaction, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_content_wallet_connect_transaction, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -55,32 +55,32 @@ public final class ForkContentWalletConnectTransactionBinding implements ViewBin
     }
 
     public static ForkContentWalletConnectTransactionBinding bind(View view) {
-        int i = C3634R.C3637id.button_close;
+        int i = C3632R.C3635id.button_close;
         ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
         if (actionBarMenuItem != null) {
-            i = C3634R.C3637id.button_process;
+            i = C3632R.C3635id.button_process;
             BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
             if (bigActionButton != null) {
-                i = C3634R.C3637id.fee_view;
+                i = C3632R.C3635id.fee_view;
                 FeeView feeView = (FeeView) ViewBindings.findChildViewById(view, i);
                 if (feeView != null) {
                     LinearLayout linearLayout = (LinearLayout) view;
-                    i = C3634R.C3637id.text_from;
+                    i = C3632R.C3635id.text_from;
                     TextDetailCell textDetailCell = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                     if (textDetailCell != null) {
-                        i = C3634R.C3637id.text_network;
+                        i = C3632R.C3635id.text_network;
                         TextDetailCell textDetailCell2 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                         if (textDetailCell2 != null) {
-                            i = C3634R.C3637id.text_peer_url;
+                            i = C3632R.C3635id.text_peer_url;
                             TextDetailCell textDetailCell3 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                             if (textDetailCell3 != null) {
-                                i = C3634R.C3637id.text_title;
+                                i = C3632R.C3635id.text_title;
                                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView != null) {
-                                    i = C3634R.C3637id.text_to;
+                                    i = C3632R.C3635id.text_to;
                                     TextDetailCell textDetailCell4 = (TextDetailCell) ViewBindings.findChildViewById(view, i);
                                     if (textDetailCell4 != null) {
-                                        i = C3634R.C3637id.text_transaction_amount;
+                                        i = C3632R.C3635id.text_transaction_amount;
                                         AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                         if (appCompatTextView2 != null) {
                                             return new ForkContentWalletConnectTransactionBinding(linearLayout, actionBarMenuItem, bigActionButton, feeView, linearLayout, textDetailCell, textDetailCell2, textDetailCell3, appCompatTextView, textDetailCell4, appCompatTextView2);

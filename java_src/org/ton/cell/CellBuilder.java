@@ -22,7 +22,7 @@ public interface CellBuilder {
     void setExotic(boolean z);
 
     /* renamed from: setLevelMask-fuO3_sE  reason: not valid java name */
-    void mo5208setLevelMaskfuO3_sE(LevelMask levelMask);
+    void mo5190setLevelMaskfuO3_sE(LevelMask levelMask);
 
     CellBuilder storeBit(boolean z);
 
@@ -49,13 +49,13 @@ public interface CellBuilder {
     CellBuilder storeUInt(BigInteger bigInteger, int i);
 
     /* renamed from: storeUInt16-xj2QHRw  reason: not valid java name */
-    CellBuilder mo5209storeUInt16xj2QHRw(short s);
+    CellBuilder mo5191storeUInt16xj2QHRw(short s);
 
     /* renamed from: storeUInt32-WZ4Q5Ns  reason: not valid java name */
-    CellBuilder mo5210storeUInt32WZ4Q5Ns(int i);
+    CellBuilder mo5192storeUInt32WZ4Q5Ns(int i);
 
     /* renamed from: storeUInt64-VKZWuLQ  reason: not valid java name */
-    CellBuilder mo5211storeUInt64VKZWuLQ(long j);
+    CellBuilder mo5193storeUInt64VKZWuLQ(long j);
 
     CellBuilder storeUIntLeq(int i, int i2);
 
@@ -81,17 +81,17 @@ public interface CellBuilder {
         }
 
         /* renamed from: storeUInt16-xj2QHRw  reason: not valid java name */
-        public static CellBuilder m5212storeUInt16xj2QHRw(CellBuilder cellBuilder, short s) {
+        public static CellBuilder m5194storeUInt16xj2QHRw(CellBuilder cellBuilder, short s) {
             return cellBuilder.storeInt(s, 16);
         }
 
         /* renamed from: storeUInt32-WZ4Q5Ns  reason: not valid java name */
-        public static CellBuilder m5213storeUInt32WZ4Q5Ns(CellBuilder cellBuilder, int i) {
+        public static CellBuilder m5195storeUInt32WZ4Q5Ns(CellBuilder cellBuilder, int i) {
             return cellBuilder.storeInt(i, 32);
         }
 
         /* renamed from: storeUInt64-VKZWuLQ  reason: not valid java name */
-        public static CellBuilder m5214storeUInt64VKZWuLQ(CellBuilder cellBuilder, long j) {
+        public static CellBuilder m5196storeUInt64VKZWuLQ(CellBuilder cellBuilder, long j) {
             return cellBuilder.storeInt(j, 64);
         }
 

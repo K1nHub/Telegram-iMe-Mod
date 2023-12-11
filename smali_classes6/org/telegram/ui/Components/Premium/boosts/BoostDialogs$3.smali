@@ -32,7 +32,7 @@
 .method constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
     .locals 0
 
-    .line 180
+    .line 181
     iput-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->val$datePickerColors:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->val$dayPicker:Lorg/telegram/ui/Components/NumberPicker;
@@ -45,10 +45,10 @@
 
     const/4 p1, 0x0
 
-    .line 182
+    .line 183
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->ignoreLayout:Z
 
-    .line 183
+    .line 184
     new-instance p3, Landroid/text/TextPaint;
 
     const/4 p4, 0x1
@@ -57,12 +57,12 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->paint:Landroid/text/TextPaint;
 
-    .line 186
+    .line 187
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setWillNotDraw(Z)V
 
     const/16 p1, 0x14
 
-    .line 187
+    .line 188
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -73,14 +73,14 @@
 
     const-string p1, "fonts/rmedium.ttf"
 
-    .line 188
+    .line 189
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object p1
 
     invoke-virtual {p3, p1}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 189
+    .line 190
     iget p1, p2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {p3, p1}, Landroid/text/TextPaint;->setColor(I)V
@@ -93,10 +93,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 213
+    .line 214
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 214
+    .line 215
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->val$hourPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getRight()I
@@ -147,10 +147,10 @@
 
     const/4 v0, 0x1
 
-    .line 194
+    .line 195
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->ignoreLayout:Z
 
-    .line 196
+    .line 197
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -166,23 +166,23 @@
     :cond_0
     const/4 v0, 0x5
 
-    .line 201
+    .line 202
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->val$dayPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 202
+    .line 203
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->val$hourPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 203
+    .line 204
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->val$minutePicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 204
+    .line 205
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->val$dayPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -199,7 +199,7 @@
 
     iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 205
+    .line 206
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->val$hourPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -214,7 +214,7 @@
 
     iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 206
+    .line 207
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->val$minutePicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -231,10 +231,10 @@
 
     const/4 v0, 0x0
 
-    .line 207
+    .line 208
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->ignoreLayout:Z
 
-    .line 208
+    .line 209
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     return-void
@@ -243,14 +243,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 219
+    .line 220
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$3;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 222
+    .line 223
     :cond_0
     invoke-super {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 

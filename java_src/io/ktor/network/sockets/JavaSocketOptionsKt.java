@@ -37,11 +37,11 @@ public final class JavaSocketOptionsKt {
         Intrinsics.checkNotNullParameter(selectableChannel, "<this>");
         Intrinsics.checkNotNullParameter(options, "options");
         if (selectableChannel instanceof SocketChannel) {
-            if (!TypeOfService.m1906equalsimpl0(options.m1904getTypeOfServicezieKYfw(), TypeOfService.Companion.m1907getUNDEFINEDzieKYfw())) {
+            if (!TypeOfService.m1908equalsimpl0(options.m1906getTypeOfServicezieKYfw(), TypeOfService.Companion.m1909getUNDEFINEDzieKYfw())) {
                 if (java7NetworkApisAvailable) {
-                    ((SocketChannel) selectableChannel).setOption((SocketOption<SocketOption>) StandardSocketOptions.IP_TOS, (SocketOption) Integer.valueOf(options.m1904getTypeOfServicezieKYfw() & 255));
+                    ((SocketChannel) selectableChannel).setOption((SocketOption<SocketOption>) StandardSocketOptions.IP_TOS, (SocketOption) Integer.valueOf(options.m1906getTypeOfServicezieKYfw() & 255));
                 } else {
-                    ((SocketChannel) selectableChannel).socket().setTrafficClass(options.m1904getTypeOfServicezieKYfw() & 255);
+                    ((SocketChannel) selectableChannel).socket().setTrafficClass(options.m1906getTypeOfServicezieKYfw() & 255);
                 }
             }
             if (options.getReuseAddress()) {
@@ -124,11 +124,11 @@ public final class JavaSocketOptionsKt {
             }
         }
         if (selectableChannel instanceof DatagramChannel) {
-            if (!TypeOfService.m1906equalsimpl0(options.m1904getTypeOfServicezieKYfw(), TypeOfService.Companion.m1907getUNDEFINEDzieKYfw())) {
+            if (!TypeOfService.m1908equalsimpl0(options.m1906getTypeOfServicezieKYfw(), TypeOfService.Companion.m1909getUNDEFINEDzieKYfw())) {
                 if (java7NetworkApisAvailable) {
-                    ((DatagramChannel) selectableChannel).setOption((SocketOption<SocketOption>) StandardSocketOptions.IP_TOS, (SocketOption) Integer.valueOf(options.m1904getTypeOfServicezieKYfw() & 255));
+                    ((DatagramChannel) selectableChannel).setOption((SocketOption<SocketOption>) StandardSocketOptions.IP_TOS, (SocketOption) Integer.valueOf(options.m1906getTypeOfServicezieKYfw() & 255));
                 } else {
-                    ((DatagramChannel) selectableChannel).socket().setTrafficClass(options.m1904getTypeOfServicezieKYfw() & 255);
+                    ((DatagramChannel) selectableChannel).socket().setTrafficClass(options.m1906getTypeOfServicezieKYfw() & 255);
                 }
             }
             if (options.getReuseAddress()) {

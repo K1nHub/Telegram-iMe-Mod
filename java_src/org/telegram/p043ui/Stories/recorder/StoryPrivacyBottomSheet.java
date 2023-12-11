@@ -50,7 +50,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -489,7 +489,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                                     performHapticFeedback(3, 1);
                                 } catch (Throwable unused) {
                                 }
-                                new AlertDialog.Builder(getContext(), ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider).setTitle(LocaleController.getString("GroupTooLarge", C3634R.string.GroupTooLarge)).setMessage(LocaleController.getString("GroupTooLargeMessage", C3634R.string.GroupTooLargeMessage)).setPositiveButton(LocaleController.getString("OK", C3634R.string.OK), null).show();
+                                new AlertDialog.Builder(getContext(), ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider).setTitle(LocaleController.getString("GroupTooLarge", C3632R.string.GroupTooLarge)).setMessage(LocaleController.getString("GroupTooLargeMessage", C3632R.string.GroupTooLargeMessage)).setPositiveButton(LocaleController.getString("OK", C3632R.string.OK), null).show();
                             } else if (!this.selectedUsersByGroup.containsKey(Long.valueOf(j))) {
                                 final TLRPC$Chat chat = MessagesController.getInstance(((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount).getChat(Long.valueOf(j));
                                 TLRPC$ChatFull chatFull = MessagesController.getInstance(((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount).getChatFull(j);
@@ -580,10 +580,10 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     StoryPrivacyBottomSheet.this.allowScreenshots = textCell.isChecked();
                     boolean z = StoryPrivacyBottomSheet.this.selectedType == 4;
                     if (StoryPrivacyBottomSheet.this.allowScreenshots) {
-                        BulletinFactory.m63of(((BottomSheet) StoryPrivacyBottomSheet.this).container, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider).createSimpleBulletin(C3634R.raw.ic_save_to_gallery, LocaleController.getString(z ? C3634R.string.StoryEnabledScreenshotsShare : C3634R.string.StoryEnabledScreenshots), 4).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show(true);
+                        BulletinFactory.m63of(((BottomSheet) StoryPrivacyBottomSheet.this).container, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider).createSimpleBulletin(C3632R.raw.ic_save_to_gallery, LocaleController.getString(z ? C3632R.string.StoryEnabledScreenshotsShare : C3632R.string.StoryEnabledScreenshots), 4).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show(true);
                         return;
                     } else {
-                        BulletinFactory.m63of(((BottomSheet) StoryPrivacyBottomSheet.this).container, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider).createSimpleBulletin(C3634R.raw.passcode_lock_close, LocaleController.getString(z ? C3634R.string.StoryDisabledScreenshotsShare : C3634R.string.StoryDisabledScreenshots), 4).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show(true);
+                        BulletinFactory.m63of(((BottomSheet) StoryPrivacyBottomSheet.this).container, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider).createSimpleBulletin(C3632R.raw.passcode_lock_close, LocaleController.getString(z ? C3632R.string.StoryDisabledScreenshotsShare : C3632R.string.StoryDisabledScreenshots), 4).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show(true);
                         return;
                     }
                 }
@@ -591,9 +591,9 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 StoryPrivacyBottomSheet storyPrivacyBottomSheet = StoryPrivacyBottomSheet.this;
                 boolean z2 = storyPrivacyBottomSheet.selectedPeer instanceof TLRPC$TL_inputPeerChannel;
                 if (storyPrivacyBottomSheet.keepOnMyPage) {
-                    BulletinFactory.m63of(((BottomSheet) StoryPrivacyBottomSheet.this).container, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider).createSimpleBulletin(C3634R.raw.msg_story_keep, LocaleController.getString(z2 ? C3634R.string.StoryChannelEnableKeep : C3634R.string.StoryEnableKeep), 4).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show(true);
+                    BulletinFactory.m63of(((BottomSheet) StoryPrivacyBottomSheet.this).container, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider).createSimpleBulletin(C3632R.raw.msg_story_keep, LocaleController.getString(z2 ? C3632R.string.StoryChannelEnableKeep : C3632R.string.StoryEnableKeep), 4).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show(true);
                 } else {
-                    BulletinFactory.m63of(((BottomSheet) StoryPrivacyBottomSheet.this).container, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider).createSimpleBulletin(C3634R.raw.fire_on, LocaleController.getString(z2 ? C3634R.string.StoryChannelDisableKeep : C3634R.string.StoryDisableKeep), 4).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show(true);
+                    BulletinFactory.m63of(((BottomSheet) StoryPrivacyBottomSheet.this).container, ((BottomSheet) StoryPrivacyBottomSheet.this).resourcesProvider).createSimpleBulletin(C3632R.raw.fire_on, LocaleController.getString(z2 ? C3632R.string.StoryChannelDisableKeep : C3632R.string.StoryDisableKeep), 4).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show(true);
                 }
             }
         }
@@ -1366,13 +1366,13 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 if (StoryPrivacyBottomSheet.this.isEdit) {
                     this.button.setText(LocaleController.getString("StoryPrivacyButtonSave"), z);
                 } else {
-                    this.button.setText(LocaleController.getString("StoryPrivacyButtonPost", C3634R.string.StoryPrivacyButtonPost), z);
+                    this.button.setText(LocaleController.getString("StoryPrivacyButtonPost", C3632R.string.StoryPrivacyButtonPost), z);
                 }
                 this.button2.setVisibility(StoryPrivacyBottomSheet.this.sendAsMessageEnabled ? 0 : 8);
             } else if (i == 1) {
                 this.button.setShowZero(false);
                 this.button.setEnabled(true);
-                this.button.setText(LocaleController.getString("StoryPrivacyButtonSaveCloseFriends", C3634R.string.StoryPrivacyButtonSaveCloseFriends), z);
+                this.button.setText(LocaleController.getString("StoryPrivacyButtonSaveCloseFriends", C3632R.string.StoryPrivacyButtonSaveCloseFriends), z);
                 this.button.setCount(this.selectedUsers.size(), z);
                 this.button2.setVisibility(8);
             } else if (i == 3) {
@@ -1391,7 +1391,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     this.button.setText(LocaleController.getString("StoryPrivacyButtonSave"), z);
                     this.button.setCount(0, z);
                 } else {
-                    this.button.setText(LocaleController.getString("StoryPrivacyButtonExcludeContacts", C3634R.string.StoryPrivacyButtonExcludeContacts), z);
+                    this.button.setText(LocaleController.getString("StoryPrivacyButtonExcludeContacts", C3632R.string.StoryPrivacyButtonExcludeContacts), z);
                     this.button.setCount(this.selectedUsers.size(), z);
                 }
                 this.button2.setVisibility(8);
@@ -1414,7 +1414,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             } else {
                 this.button.setShowZero(false);
                 this.button.setEnabled(true);
-                this.button.setText(LocaleController.getString("StoryPrivacyButtonSaveCloseFriends", C3634R.string.StoryPrivacyButtonSaveCloseFriends), z);
+                this.button.setText(LocaleController.getString("StoryPrivacyButtonSaveCloseFriends", C3632R.string.StoryPrivacyButtonSaveCloseFriends), z);
                 StoriesController storiesController = MessagesController.getInstance(((BottomSheet) StoryPrivacyBottomSheet.this).currentAccount).getStoriesController();
                 if (storiesController.blocklistFull) {
                     this.button.setCount(this.selectedUsers.size(), z);
@@ -1435,7 +1435,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 return;
             }
             if (StoryPrivacyBottomSheet.this.mergeUsers(this.selectedUsers, this.selectedUsersByGroup).size() > 0) {
-                this.sectionCell.setRightText(LocaleController.getString(C3634R.string.UsersDeselectAll), true, new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda4
+                this.sectionCell.setRightText(LocaleController.getString(C3632R.string.UsersDeselectAll), true, new View.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$Page$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         StoryPrivacyBottomSheet.Page.this.lambda$updateSectionCell$16(view);
@@ -1714,8 +1714,8 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                     view.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground, this.resourcesProvider));
                 } else if (i == 5) {
                     StickerEmptyView stickerEmptyView = new StickerEmptyView(this.context, null, 1, this.resourcesProvider);
-                    stickerEmptyView.title.setText(LocaleController.getString("NoResult", C3634R.string.NoResult));
-                    stickerEmptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3634R.string.SearchEmptyViewFilteredSubtitle2));
+                    stickerEmptyView.title.setText(LocaleController.getString("NoResult", C3632R.string.NoResult));
+                    stickerEmptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3632R.string.SearchEmptyViewFilteredSubtitle2));
                     stickerEmptyView.linearLayout.setTranslationY(AndroidUtilities.m104dp(24));
                     view = stickerEmptyView;
                 } else if (i == 6) {
@@ -2138,12 +2138,12 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 spannableString.setSpan(new TypefaceSpan(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM)), 0, spannableString.length(), 33);
                 spannableStringBuilder.append((CharSequence) spannableString);
             }
-            new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString(C3634R.string.StoryRestrictions)).setMessage(AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(C3634R.string.StoryRestrictionsInfo), spannableStringBuilder)).setPositiveButton(LocaleController.getString(C3634R.string.Proceed), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$$ExternalSyntheticLambda0
+            new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString(C3632R.string.StoryRestrictions)).setMessage(AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(C3632R.string.StoryRestrictionsInfo), spannableStringBuilder)).setPositiveButton(LocaleController.getString(C3632R.string.Proceed), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i3) {
                     StoryPrivacyBottomSheet.this.lambda$done$2(storyPrivacy, runnable, dialogInterface, i3);
                 }
-            }).setNegativeButton(LocaleController.getString(C3634R.string.Cancel), null).show();
+            }).setNegativeButton(LocaleController.getString(C3632R.string.Cancel), null).show();
             return;
         }
         View[] viewPages = this.viewPager.getViewPages();
@@ -2804,7 +2804,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             boolean[] zArr = this.isOnline;
             zArr[0] = false;
             if (this.sendAs) {
-                setSubtitle(LocaleController.getString(C3634R.string.VoipGroupPersonalAccount));
+                setSubtitle(LocaleController.getString(C3632R.string.VoipGroupPersonalAccount));
                 this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3, this.resourcesProvider));
             } else {
                 setSubtitle(LocaleController.formatUserStatus(UserConfig.selectedAccount, tLRPC$User, zArr));
@@ -2829,24 +2829,24 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 if (i >= 1) {
                     lowerCase = LocaleController.formatPluralString("Subscribers", i, new Object[0]);
                 } else {
-                    lowerCase = LocaleController.getString(C3634R.string.DiscussChannel);
+                    lowerCase = LocaleController.getString(C3632R.string.DiscussChannel);
                 }
             } else if (!ChatObject.isChannel(tLRPC$Chat) || tLRPC$Chat.megagroup) {
                 if (i >= 1) {
                     lowerCase = LocaleController.formatPluralStringComma("Members", i - 1);
                 } else if (tLRPC$Chat.has_geo) {
-                    lowerCase = LocaleController.getString("MegaLocation", C3634R.string.MegaLocation);
+                    lowerCase = LocaleController.getString("MegaLocation", C3632R.string.MegaLocation);
                 } else if (!ChatObject.isPublic(tLRPC$Chat)) {
-                    lowerCase = LocaleController.getString("MegaPrivate", C3634R.string.MegaPrivate).toLowerCase();
+                    lowerCase = LocaleController.getString("MegaPrivate", C3632R.string.MegaPrivate).toLowerCase();
                 } else {
-                    lowerCase = LocaleController.getString("MegaPublic", C3634R.string.MegaPublic).toLowerCase();
+                    lowerCase = LocaleController.getString("MegaPublic", C3632R.string.MegaPublic).toLowerCase();
                 }
             } else if (i >= 1) {
                 lowerCase = LocaleController.formatPluralStringComma("Subscribers", i - 1);
             } else if (!ChatObject.isPublic(tLRPC$Chat)) {
-                lowerCase = LocaleController.getString("ChannelPrivate", C3634R.string.ChannelPrivate).toLowerCase();
+                lowerCase = LocaleController.getString("ChannelPrivate", C3632R.string.ChannelPrivate).toLowerCase();
             } else {
-                lowerCase = LocaleController.getString("ChannelPublic", C3634R.string.ChannelPublic).toLowerCase();
+                lowerCase = LocaleController.getString("ChannelPublic", C3632R.string.ChannelPublic).toLowerCase();
             }
             setSubtitle(lowerCase);
             this.subtitleTextView.setTextColor(Theme.getColor(this.isOnline[0] ? Theme.key_dialogTextBlue2 : Theme.key_dialogTextGray3, this.resourcesProvider));
@@ -2857,7 +2857,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
 
         private CharSequence withArrow(CharSequence charSequence) {
             SpannableString spannableString = new SpannableString(">");
-            Drawable drawable = getContext().getResources().getDrawable(C3634R.C3636drawable.attach_arrow_right);
+            Drawable drawable = getContext().getResources().getDrawable(C3632R.C3634drawable.attach_arrow_right);
             ColoredImageSpan coloredImageSpan = new ColoredImageSpan(drawable, 2);
             drawable.setBounds(0, AndroidUtilities.m104dp(1), AndroidUtilities.m104dp(11), AndroidUtilities.m104dp(12));
             spannableString.setSpan(coloredImageSpan, 0, spannableString.length(), 33);
@@ -2868,49 +2868,49 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
 
         public void setType(int i, int i2, TLRPC$User tLRPC$User) {
             if (i == 4) {
-                this.titleTextView.setText(LocaleController.getString("StoryPrivacyOptionEveryone", C3634R.string.StoryPrivacyOptionEveryone));
+                this.titleTextView.setText(LocaleController.getString("StoryPrivacyOptionEveryone", C3632R.string.StoryPrivacyOptionEveryone));
                 if (i2 == 1 && tLRPC$User != null) {
-                    setSubtitle(withArrow(Emoji.replaceEmoji(LocaleController.formatString(C3634R.string.StoryPrivacyOptionExcludePerson, UserObject.getUserName(tLRPC$User)), this.subtitleTextView.getPaint().getFontMetricsInt(), false)));
+                    setSubtitle(withArrow(Emoji.replaceEmoji(LocaleController.formatString(C3632R.string.StoryPrivacyOptionExcludePerson, UserObject.getUserName(tLRPC$User)), this.subtitleTextView.getPaint().getFontMetricsInt(), false)));
                 } else if (i2 > 0) {
                     setSubtitle(withArrow(LocaleController.formatPluralString("StoryPrivacyOptionExcludePeople", i2, new Object[0])));
                 } else {
-                    setSubtitle(withArrow(LocaleController.getString("StoryPrivacyOptionContactsDetail", C3634R.string.StoryPrivacyOptionContactsDetail)));
+                    setSubtitle(withArrow(LocaleController.getString("StoryPrivacyOptionContactsDetail", C3632R.string.StoryPrivacyOptionContactsDetail)));
                 }
                 this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2, this.resourcesProvider));
                 this.avatarDrawable.setAvatarType(7);
                 this.avatarDrawable.setColor(-15292942, -15630089);
             } else if (i == 2) {
-                this.titleTextView.setText(LocaleController.getString("StoryPrivacyOptionContacts", C3634R.string.StoryPrivacyOptionContacts));
+                this.titleTextView.setText(LocaleController.getString("StoryPrivacyOptionContacts", C3632R.string.StoryPrivacyOptionContacts));
                 if (i2 == 1 && tLRPC$User != null) {
-                    setSubtitle(withArrow(Emoji.replaceEmoji(LocaleController.formatString(C3634R.string.StoryPrivacyOptionExcludePerson, UserObject.getUserName(tLRPC$User)), this.subtitleTextView.getPaint().getFontMetricsInt(), false)));
+                    setSubtitle(withArrow(Emoji.replaceEmoji(LocaleController.formatString(C3632R.string.StoryPrivacyOptionExcludePerson, UserObject.getUserName(tLRPC$User)), this.subtitleTextView.getPaint().getFontMetricsInt(), false)));
                 } else if (i2 > 0) {
                     setSubtitle(withArrow(LocaleController.formatPluralString("StoryPrivacyOptionExcludePeople", i2, new Object[0])));
                 } else {
-                    setSubtitle(withArrow(LocaleController.getString("StoryPrivacyOptionContactsDetail", C3634R.string.StoryPrivacyOptionContactsDetail)));
+                    setSubtitle(withArrow(LocaleController.getString("StoryPrivacyOptionContactsDetail", C3632R.string.StoryPrivacyOptionContactsDetail)));
                 }
                 this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2, this.resourcesProvider));
                 this.avatarDrawable.setAvatarType(4);
                 this.avatarDrawable.setColor(-3905294, -6923014);
             } else if (i == 1) {
-                this.titleTextView.setText(LocaleController.getString("StoryPrivacyOptionCloseFriends", C3634R.string.StoryPrivacyOptionCloseFriends));
+                this.titleTextView.setText(LocaleController.getString("StoryPrivacyOptionCloseFriends", C3632R.string.StoryPrivacyOptionCloseFriends));
                 if (i2 == 1 && tLRPC$User != null) {
                     setSubtitle(withArrow(Emoji.replaceEmoji(UserObject.getUserName(tLRPC$User), this.subtitleTextView.getPaint().getFontMetricsInt(), false)));
                 } else if (i2 > 0) {
                     setSubtitle(withArrow(LocaleController.formatPluralString("StoryPrivacyOptionPeople", i2, new Object[0])));
                 } else {
-                    setSubtitle(withArrow(LocaleController.getString("StoryPrivacyOptionCloseFriendsDetail", C3634R.string.StoryPrivacyOptionCloseFriendsDetail)));
+                    setSubtitle(withArrow(LocaleController.getString("StoryPrivacyOptionCloseFriendsDetail", C3632R.string.StoryPrivacyOptionCloseFriendsDetail)));
                 }
                 this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2, this.resourcesProvider));
                 this.avatarDrawable.setAvatarType(15);
                 this.avatarDrawable.setColor(-7808710, -13781445);
             } else if (i == 3) {
-                this.titleTextView.setText(LocaleController.getString("StoryPrivacyOptionSelectedContacts", C3634R.string.StoryPrivacyOptionSelectedContacts));
+                this.titleTextView.setText(LocaleController.getString("StoryPrivacyOptionSelectedContacts", C3632R.string.StoryPrivacyOptionSelectedContacts));
                 if (i2 == 1 && tLRPC$User != null) {
                     setSubtitle(withArrow(Emoji.replaceEmoji(UserObject.getUserName(tLRPC$User), this.subtitleTextView.getPaint().getFontMetricsInt(), false)));
                 } else if (i2 > 0) {
                     setSubtitle(withArrow(LocaleController.formatPluralString("StoryPrivacyOptionPeople", i2, new Object[0])));
                 } else {
-                    setSubtitle(withArrow(LocaleController.getString("StoryPrivacyOptionSelectedContactsDetail", C3634R.string.StoryPrivacyOptionSelectedContactsDetail)));
+                    setSubtitle(withArrow(LocaleController.getString("StoryPrivacyOptionSelectedContactsDetail", C3632R.string.StoryPrivacyOptionSelectedContactsDetail)));
                 }
                 this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2, this.resourcesProvider));
                 this.avatarDrawable.setAvatarType(6);
@@ -3191,7 +3191,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             this.editText.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
             this.spansContainer.addView(this.editText);
             EditTextBoldCursor editTextBoldCursor3 = this.editText;
-            int i2 = C3634R.string.Search;
+            int i2 = C3632R.string.Search;
             editTextBoldCursor3.setHintText(LocaleController.getString("Search", i2));
             this.hintTextWidth = (int) this.editText.getPaint().measureText(LocaleController.getString("Search", i2));
             this.editText.addTextChangedListener(new TextWatcher(storyPrivacyBottomSheet) { // from class: org.telegram.ui.Stories.recorder.StoryPrivacyBottomSheet.SearchUsersCell.2
@@ -3789,7 +3789,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 return LocaleController.formatPluralString("StoryPrivacyRecipients", this.sendToUsers.size(), new Object[0]);
             }
             if (this.rules.isEmpty()) {
-                return LocaleController.getString("StoryPrivacyNone", C3634R.string.StoryPrivacyNone);
+                return LocaleController.getString("StoryPrivacyNone", C3632R.string.StoryPrivacyNone);
             }
             TLRPC$InputPrivacyRule tLRPC$InputPrivacyRule2 = this.rules.get(0);
             int i = this.type;
@@ -3798,9 +3798,9 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                 if ((tLRPC$InputPrivacyRule instanceof TLRPC$TL_inputPrivacyValueDisallowUsers) && (size = ((TLRPC$TL_inputPrivacyValueDisallowUsers) tLRPC$InputPrivacyRule).users.size()) > 0) {
                     return LocaleController.formatPluralString("StoryPrivacyEveryoneExclude", size, new Object[0]);
                 }
-                return LocaleController.getString("StoryPrivacyEveryone", C3634R.string.StoryPrivacyEveryone);
+                return LocaleController.getString("StoryPrivacyEveryone", C3632R.string.StoryPrivacyEveryone);
             } else if (i == 1) {
-                return LocaleController.getString("StoryPrivacyCloseFriends", C3634R.string.StoryPrivacyCloseFriends);
+                return LocaleController.getString("StoryPrivacyCloseFriends", C3632R.string.StoryPrivacyCloseFriends);
             } else {
                 if (i == 3 && (tLRPC$InputPrivacyRule2 instanceof TLRPC$TL_inputPrivacyValueAllowUsers)) {
                     return LocaleController.formatPluralString("StoryPrivacyContacts", ((TLRPC$TL_inputPrivacyValueAllowUsers) tLRPC$InputPrivacyRule2).users.size(), new Object[0]);
@@ -3812,20 +3812,20 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
                         if (size2 > 0) {
                             return LocaleController.formatPluralString("StoryPrivacyContactsExclude", size2, new Object[0]);
                         }
-                        return LocaleController.getString("StoryPrivacyAllContacts", C3634R.string.StoryPrivacyAllContacts);
+                        return LocaleController.getString("StoryPrivacyAllContacts", C3632R.string.StoryPrivacyAllContacts);
                     }
-                    return LocaleController.getString("StoryPrivacyAllContacts", C3634R.string.StoryPrivacyAllContacts);
+                    return LocaleController.getString("StoryPrivacyAllContacts", C3632R.string.StoryPrivacyAllContacts);
                 } else if (i == 0) {
                     if (tLRPC$InputPrivacyRule2 instanceof TLRPC$TL_inputPrivacyValueAllowUsers) {
                         int size3 = ((TLRPC$TL_inputPrivacyValueAllowUsers) tLRPC$InputPrivacyRule2).users.size();
                         if (size3 <= 0) {
-                            return LocaleController.getString("StoryPrivacyNone", C3634R.string.StoryPrivacyNone);
+                            return LocaleController.getString("StoryPrivacyNone", C3632R.string.StoryPrivacyNone);
                         }
                         return LocaleController.formatPluralString("StoryPrivacyContacts", size3, new Object[0]);
                     }
-                    return LocaleController.getString("StoryPrivacyNone", C3634R.string.StoryPrivacyNone);
+                    return LocaleController.getString("StoryPrivacyNone", C3632R.string.StoryPrivacyNone);
                 } else {
-                    return LocaleController.getString("StoryPrivacyNone", C3634R.string.StoryPrivacyNone);
+                    return LocaleController.getString("StoryPrivacyNone", C3632R.string.StoryPrivacyNone);
                 }
             }
         }
@@ -4169,7 +4169,7 @@ public class StoryPrivacyBottomSheet extends BottomSheet implements Notification
             textView.setPadding(this.backgroundPaddingLeft + AndroidUtilities.m104dp(22), AndroidUtilities.m104dp(2), this.backgroundPaddingLeft + AndroidUtilities.m104dp(22), AndroidUtilities.m104dp(14));
             textView.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground, resourcesProvider));
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            textView.setText(LocaleController.getString(C3634R.string.StoryPrivacyPublishAs));
+            textView.setText(LocaleController.getString(C3632R.string.StoryPrivacyPublishAs));
             this.containerView.addView(textView, LayoutHelper.createFrame(-1, -2));
         }
 

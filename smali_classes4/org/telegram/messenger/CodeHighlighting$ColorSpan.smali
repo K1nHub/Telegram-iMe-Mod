@@ -22,10 +22,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 119
+    .line 109
     invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
-    .line 120
+    .line 110
     iput p1, p0, Lorg/telegram/messenger/CodeHighlighting$ColorSpan;->group:I
 
     return-void
@@ -36,7 +36,7 @@
 .method public getColorKey()I
     .locals 1
 
-    .line 124
+    .line 114
     iget v0, p0, Lorg/telegram/messenger/CodeHighlighting$ColorSpan;->group:I
 
     packed-switch v0, :pswitch_data_0
@@ -45,43 +45,43 @@
 
     return v0
 
-    .line 131
+    .line 121
     :pswitch_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_code_function:I
 
     return v0
 
-    .line 130
+    .line 120
     :pswitch_1
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_code_comment:I
 
     return v0
 
-    .line 129
+    .line 119
     :pswitch_2
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_code_number:I
 
     return v0
 
-    .line 128
+    .line 118
     :pswitch_3
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_code_string:I
 
     return v0
 
-    .line 127
+    .line 117
     :pswitch_4
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_code_constant:I
 
     return v0
 
-    .line 126
+    .line 116
     :pswitch_5
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_code_operator:I
 
     return v0
 
-    .line 125
+    .line 115
     :pswitch_6
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_code_keyword:I
 
@@ -102,7 +102,7 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 138
+    .line 128
     invoke-virtual {p0}, Lorg/telegram/messenger/CodeHighlighting$ColorSpan;->getColorKey()I
 
     move-result v0

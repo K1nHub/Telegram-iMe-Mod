@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Z)V
     .locals 0
 
-    .line 8426
+    .line 8429
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$51;->val$visible:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 8429
+    .line 8432
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$39300(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/messenger/AnimationNotificationsLocker;
@@ -48,14 +48,14 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
-    .line 8430
+    .line 8433
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$17402(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 8431
+    .line 8434
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-boolean v1, p0, Lorg/telegram/ui/DialogsActivity$51;->val$visible:Z
@@ -74,16 +74,26 @@
     :goto_0
     invoke-static {p1, v1}, Lorg/telegram/ui/DialogsActivity;->access$17302(Lorg/telegram/ui/DialogsActivity;F)F
 
-    .line 8432
+    .line 8435
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$42200(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
 
     move-result-object p1
 
+    if-eqz p1, :cond_1
+
+    .line 8436
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$42300(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
+
+    move-result-object p1
+
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
 
-    .line 8433
+    .line 8438
+    :cond_1
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -96,7 +106,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;->requestLayout()V
 
-    .line 8434
+    .line 8439
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -109,12 +119,12 @@
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
-    .line 8435
+    .line 8440
     iget-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$51;->val$visible:Z
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_2
 
-    .line 8436
+    .line 8441
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$51;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$7000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Cells/UnconfirmedAuthHintCell;
@@ -125,6 +135,6 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    :cond_1
+    :cond_2
     return-void
 .end method

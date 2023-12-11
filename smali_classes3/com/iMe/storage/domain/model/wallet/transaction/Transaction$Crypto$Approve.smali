@@ -27,6 +27,8 @@
 
 .field private final id:Ljava/lang/String;
 
+.field private final processingName:Ljava/lang/String;
+
 .field private final processingType:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
 .field private final status:Lcom/iMe/storage/data/network/model/response/base/Status;
@@ -39,7 +41,7 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
     .locals 1
 
     const-string v0, "id"
@@ -74,61 +76,68 @@
 
     invoke-static {p8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeAmount"
+    const-string v0, "processingName"
 
     invoke-static {p9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeToken"
+    const-string v0, "feeAmount"
 
     invoke-static {p10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "txHash"
+    const-string v0, "feeToken"
 
     invoke-static {p11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 297
-    invoke-direct/range {p0 .. p11}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
+    const-string v0, "txHash"
 
-    .line 286
+    invoke-static {p12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 319
+    invoke-direct/range {p0 .. p12}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
+
+    .line 307
     iput-object p1, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->id:Ljava/lang/String;
 
-    .line 287
+    .line 308
     iput-object p2, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->amount:Ljava/math/BigDecimal;
 
-    .line 288
+    .line 309
     iput-object p3, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->type:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;
 
-    .line 289
+    .line 310
     iput-object p4, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->direction:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;
 
-    .line 290
+    .line 311
     iput-object p5, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->createdAt:Ljava/lang/String;
 
-    .line 291
+    .line 312
     iput-object p6, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
-    .line 292
+    .line 313
     iput-object p7, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->status:Lcom/iMe/storage/data/network/model/response/base/Status;
 
-    .line 293
+    .line 314
     iput-object p8, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->processingType:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
-    .line 294
-    iput-object p9, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->feeAmount:Ljava/math/BigDecimal;
+    .line 315
+    iput-object p9, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->processingName:Ljava/lang/String;
 
-    .line 295
-    iput-object p10, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+    .line 316
+    iput-object p10, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->feeAmount:Ljava/math/BigDecimal;
 
-    .line 296
-    iput-object p11, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->txHash:Ljava/lang/String;
+    .line 317
+    iput-object p11, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    .line 318
+    iput-object p12, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->txHash:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
-    .locals 11
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
+    .locals 12
 
-    move/from16 v0, p12
+    move/from16 v0, p13
 
     and-int/lit8 v1, v0, 0x1
 
@@ -183,7 +192,7 @@
     goto :goto_3
 
     :cond_3
-    move-object v4, p4
+    move-object/from16 v4, p4
 
     :goto_3
     and-int/lit8 v5, v0, 0x10
@@ -246,7 +255,7 @@
 
     if-eqz v9, :cond_8
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeAmount()Ljava/math/BigDecimal;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getProcessingName()Ljava/lang/String;
 
     move-result-object v9
 
@@ -260,7 +269,7 @@
 
     if-eqz v10, :cond_9
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeAmount()Ljava/math/BigDecimal;
 
     move-result-object v10
 
@@ -270,27 +279,41 @@
     move-object/from16 v10, p10
 
     :goto_9
-    and-int/lit16 v0, v0, 0x400
+    and-int/lit16 v11, v0, 0x400
 
-    if-eqz v0, :cond_a
+    if-eqz v11, :cond_a
+
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v11
+
+    goto :goto_a
+
+    :cond_a
+    move-object/from16 v11, p11
+
+    :goto_a
+    and-int/lit16 v0, v0, 0x800
+
+    if-eqz v0, :cond_b
 
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getTxHash()Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_a
+    goto :goto_b
 
-    :cond_a
-    move-object/from16 v0, p11
+    :cond_b
+    move-object/from16 v0, p12
 
-    :goto_a
+    :goto_b
     move-object p1, v1
 
     move-object p2, v2
 
     move-object p3, v3
 
-    move-object p4, v4
+    move-object/from16 p4, v4
 
     move-object/from16 p5, v5
 
@@ -304,9 +327,11 @@
 
     move-object/from16 p10, v10
 
-    move-object/from16 p11, v0
+    move-object/from16 p11, v11
 
-    invoke-virtual/range {p0 .. p11}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->copy(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
+    move-object/from16 p12, v0
+
+    invoke-virtual/range {p0 .. p12}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->copy(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
 
     move-result-object v0
 
@@ -325,7 +350,17 @@
     return-object v0
 .end method
 
-.method public final component10()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+.method public final component10()Ljava/math/BigDecimal;
+    .locals 1
+
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeAmount()Ljava/math/BigDecimal;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final component11()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
@@ -335,7 +370,7 @@
     return-object v0
 .end method
 
-.method public final component11()Ljava/lang/String;
+.method public final component12()Ljava/lang/String;
     .locals 1
 
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getTxHash()Ljava/lang/String;
@@ -415,18 +450,18 @@
     return-object v0
 .end method
 
-.method public final component9()Ljava/math/BigDecimal;
+.method public final component9()Ljava/lang/String;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeAmount()Ljava/math/BigDecimal;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getProcessingName()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
-    .locals 13
+.method public final copy(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
+    .locals 14
 
     const-string v0, "id"
 
@@ -436,9 +471,9 @@
 
     const-string v0, "amount"
 
-    move-object v3, p2
+    move-object/from16 v3, p2
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "type"
 
@@ -476,29 +511,35 @@
 
     invoke-static {v9, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeAmount"
+    const-string v0, "processingName"
 
     move-object/from16 v10, p9
 
     invoke-static {v10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "feeToken"
+    const-string v0, "feeAmount"
 
     move-object/from16 v11, p10
 
     invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "txHash"
+    const-string v0, "feeToken"
 
     move-object/from16 v12, p11
 
     invoke-static {v12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "txHash"
+
+    move-object/from16 v13, p12
+
+    invoke-static {v13, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance v0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;
 
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v12}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v13}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;-><init>(Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;Ljava/lang/String;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Lcom/iMe/storage/data/network/model/response/base/Status;Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;Ljava/lang/String;Ljava/math/BigDecimal;Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -644,11 +685,11 @@
     return v2
 
     :cond_9
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeAmount()Ljava/math/BigDecimal;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getProcessingName()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeAmount()Ljava/math/BigDecimal;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getProcessingName()Ljava/lang/String;
 
     move-result-object v3
 
@@ -661,11 +702,11 @@
     return v2
 
     :cond_a
-    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeAmount()Ljava/math/BigDecimal;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeAmount()Ljava/math/BigDecimal;
 
     move-result-object v3
 
@@ -678,6 +719,23 @@
     return v2
 
     :cond_b
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_c
+
+    return v2
+
+    :cond_c
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getTxHash()Ljava/lang/String;
 
     move-result-object v1
@@ -690,18 +748,18 @@
 
     move-result p1
 
-    if-nez p1, :cond_c
+    if-nez p1, :cond_d
 
     return v2
 
-    :cond_c
+    :cond_d
     return v0
 .end method
 
 .method public getAmount()Ljava/math/BigDecimal;
     .locals 1
 
-    .line 287
+    .line 308
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->amount:Ljava/math/BigDecimal;
 
     return-object v0
@@ -710,7 +768,7 @@
 .method public getCreatedAt()Ljava/lang/String;
     .locals 1
 
-    .line 290
+    .line 311
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->createdAt:Ljava/lang/String;
 
     return-object v0
@@ -719,7 +777,7 @@
 .method public getDirection()Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;
     .locals 1
 
-    .line 289
+    .line 310
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->direction:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionDirection;
 
     return-object v0
@@ -728,7 +786,7 @@
 .method public getFeeAmount()Ljava/math/BigDecimal;
     .locals 1
 
-    .line 294
+    .line 316
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->feeAmount:Ljava/math/BigDecimal;
 
     return-object v0
@@ -737,7 +795,7 @@
 .method public getFeeToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 295
+    .line 317
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->feeToken:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
@@ -746,8 +804,17 @@
 .method public getId()Ljava/lang/String;
     .locals 1
 
-    .line 286
+    .line 307
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->id:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getProcessingName()Ljava/lang/String;
+    .locals 1
+
+    .line 315
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->processingName:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -755,7 +822,7 @@
 .method public getProcessingType()Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
     .locals 1
 
-    .line 293
+    .line 314
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->processingType:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
     return-object v0
@@ -764,7 +831,7 @@
 .method public getStatus()Lcom/iMe/storage/data/network/model/response/base/Status;
     .locals 1
 
-    .line 292
+    .line 313
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->status:Lcom/iMe/storage/data/network/model/response/base/Status;
 
     return-object v0
@@ -773,7 +840,7 @@
 .method public getToken()Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
     .locals 1
 
-    .line 291
+    .line 312
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->token:Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;
 
     return-object v0
@@ -782,7 +849,7 @@
 .method public getTxHash()Ljava/lang/String;
     .locals 1
 
-    .line 296
+    .line 318
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->txHash:Ljava/lang/String;
 
     return-object v0
@@ -791,7 +858,7 @@
 .method public getType()Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;
     .locals 1
 
-    .line 288
+    .line 309
     iget-object v0, p0, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->type:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionType;
 
     return-object v0
@@ -887,6 +954,18 @@
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getProcessingName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v1
 
@@ -1017,6 +1096,16 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", processingName="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction$Crypto$Approve;->getProcessingName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", feeAmount="
 

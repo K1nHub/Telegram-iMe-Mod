@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.GraySectionCell;
@@ -101,9 +101,9 @@ public class LocationActivitySearchAdapter extends BaseLocationAdapter {
             locationCell.setLocation(tLRPC$TL_messageMediaVenue, i2, z);
         } else if (viewHolder.getItemViewType() == 1) {
             if (i == 0 && !this.locations.isEmpty()) {
-                ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString("LocationOnMap", C3634R.string.LocationOnMap));
+                ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString("LocationOnMap", C3632R.string.LocationOnMap));
             } else {
-                ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString("NearbyVenue", C3634R.string.NearbyVenue));
+                ((GraySectionCell) viewHolder.itemView).setText(LocaleController.getString("NearbyVenue", C3632R.string.NearbyVenue));
             }
         }
     }

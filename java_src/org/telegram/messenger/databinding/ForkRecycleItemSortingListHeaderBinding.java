@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemSortingListHeaderBinding implements ViewBinding {
     private ForkRecycleItemSortingListHeaderBinding(LinearLayoutCompat linearLayoutCompat, AppCompatImageView appCompatImageView, LinearLayoutCompat linearLayoutCompat2, AppCompatTextView appCompatTextView) {
@@ -19,7 +19,7 @@ public final class ForkRecycleItemSortingListHeaderBinding implements ViewBindin
     }
 
     public static ForkRecycleItemSortingListHeaderBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_sorting_list_header, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_recycle_item_sorting_list_header, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -27,11 +27,11 @@ public final class ForkRecycleItemSortingListHeaderBinding implements ViewBindin
     }
 
     public static ForkRecycleItemSortingListHeaderBinding bind(View view) {
-        int i = C3634R.C3637id.image_order;
+        int i = C3632R.C3635id.image_order;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
             LinearLayoutCompat linearLayoutCompat = (LinearLayoutCompat) view;
-            int i2 = C3634R.C3637id.text_header;
+            int i2 = C3632R.C3635id.text_header;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i2);
             if (appCompatTextView != null) {
                 return new ForkRecycleItemSortingListHeaderBinding(linearLayoutCompat, appCompatImageView, linearLayoutCompat, appCompatTextView);

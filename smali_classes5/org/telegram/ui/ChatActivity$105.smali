@@ -28,7 +28,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;ZZZ)V
     .locals 0
 
-    .line 25108
+    .line 25116
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$105;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$105;->val$showClosed:Z
@@ -47,14 +47,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 25111
+    .line 25119
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$105;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$45902(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 25113
+    .line 25121
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$105;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$46000(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
@@ -79,7 +79,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 25114
+    .line 25122
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$105;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$46100(Lorg/telegram/ui/ChatActivity;)Landroid/widget/ImageView;
@@ -100,7 +100,7 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 25115
+    .line 25123
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$105;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$46200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RadialProgressView;

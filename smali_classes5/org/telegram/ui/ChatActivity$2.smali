@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MessagePreviewParams;JLcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    .line 586
+    .line 589
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$params:Lorg/telegram/messenger/MessagePreviewParams;
 
     iput-wide p2, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
@@ -54,30 +54,30 @@
         }
     .end annotation
 
-    .line 589
+    .line 592
     new-instance v0, Lorg/telegram/messenger/MessagePreviewParams;
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$2;->val$params:Lorg/telegram/messenger/MessagePreviewParams;
 
-    iget-boolean v2, v1, Lorg/telegram/messenger/MessagePreviewParams;->secret:Z
+    iget-boolean v2, v1, Lorg/telegram/messenger/MessagePreviewParams;->isSecret:Z
 
     iget-boolean v1, v1, Lorg/telegram/messenger/MessagePreviewParams;->noforwards:Z
 
     invoke-direct {v0, v2, v1}, Lorg/telegram/messenger/MessagePreviewParams;-><init>(ZZ)V
 
-    .line 590
+    .line 593
     iget-wide v1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
 
     invoke-virtual {v0, p1, v1, v2}, Lorg/telegram/messenger/MessagePreviewParams;->updateForward(Ljava/util/ArrayList;J)V
 
     const/4 p1, 0x1
 
-    .line 591
+    .line 594
     iput-boolean p1, v0, Lorg/telegram/messenger/MessagePreviewParams;->hideForwardSendersName:Z
 
     iput-boolean p1, v0, Lorg/telegram/messenger/MessagePreviewParams;->isAuthorHiddenForce:Z
 
-    .line 592
+    .line 595
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-interface {p1, v0}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V

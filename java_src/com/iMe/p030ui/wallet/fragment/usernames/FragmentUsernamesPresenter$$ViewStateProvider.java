@@ -4,7 +4,7 @@ import moxy.MvpView;
 import moxy.ViewStateProvider;
 import moxy.viewstate.MvpViewState;
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesPresenter$$ViewStateProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public class FragmentUsernamesPresenter$$ViewStateProvider extends ViewStateProvider {
     @Override // moxy.ViewStateProvider
     public MvpViewState<? extends MvpView> getViewState() {

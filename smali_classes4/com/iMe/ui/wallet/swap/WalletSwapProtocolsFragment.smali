@@ -339,7 +339,7 @@
     const/4 v4, 0x0
 
     .line 155
-    sget-object v5, Lcom/iMe/model/wallet/home/BannerSlide;->ASCENDEEX:Lcom/iMe/model/wallet/home/BannerSlide;
+    sget-object v5, Lcom/iMe/model/wallet/home/BannerSlide$Crypto$AscendeEX;->INSTANCE:Lcom/iMe/model/wallet/home/BannerSlide$Crypto$AscendeEX;
 
     const/4 v6, 0x0
 
@@ -366,7 +366,7 @@
     const/4 v11, 0x0
 
     .line 146
-    sget-object v12, Lcom/iMe/model/wallet/home/BannerSlide;->GATE:Lcom/iMe/model/wallet/home/BannerSlide;
+    sget-object v12, Lcom/iMe/model/wallet/home/BannerSlide$Crypto$Gate;->INSTANCE:Lcom/iMe/model/wallet/home/BannerSlide$Crypto$Gate;
 
     const/4 v13, 0x0
 

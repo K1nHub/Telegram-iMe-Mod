@@ -252,7 +252,7 @@ public final class LazyJavaPackageScope extends LazyJavaStaticScope {
 
     @Override // kotlin.reflect.jvm.internal.impl.resolve.scopes.MemberScopeImpl, kotlin.reflect.jvm.internal.impl.resolve.scopes.ResolutionScope
     /* renamed from: getContributedClassifier */
-    public ClassDescriptor mo2053getContributedClassifier(Name name, LookupLocation location) {
+    public ClassDescriptor mo2055getContributedClassifier(Name name, LookupLocation location) {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(location, "location");
         return findClassifier(name, null);

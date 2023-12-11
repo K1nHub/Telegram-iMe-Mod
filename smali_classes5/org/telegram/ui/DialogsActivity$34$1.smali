@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$34;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 6835
+    .line 6838
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$34$1;->this$1:Lorg/telegram/ui/DialogsActivity$34;
 
     iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$34$1;->val$runnable:Ljava/lang/Runnable;
@@ -42,7 +42,7 @@
 .method public onPreDraw()Z
     .locals 4
 
-    .line 6838
+    .line 6841
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$34$1;->this$1:Lorg/telegram/ui/DialogsActivity$34;
 
     iget-object v0, v0, Lorg/telegram/ui/DialogsActivity$34;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 6839
+    .line 6842
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$34$1;->val$runnable:Ljava/lang/Runnable;
 
     const-wide/16 v2, 0x64

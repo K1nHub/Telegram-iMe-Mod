@@ -34,7 +34,7 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 1011
+    .line 1015
     new-instance v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;
 
     const-string v1, "TITLE"
@@ -63,7 +63,7 @@
 
     aput-object v1, v3, v4
 
-    .line 1010
+    .line 1014
     sput-object v3, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;->$VALUES:[Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;
 
     return-void
@@ -77,7 +77,7 @@
         }
     .end annotation
 
-    .line 1010
+    .line 1014
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -86,7 +86,7 @@
 .method public static valueOf(Ljava/lang/String;)Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;
     .locals 1
 
-    .line 1010
+    .line 1014
     const-class v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -101,7 +101,7 @@
 .method public static values()[Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;
     .locals 1
 
-    .line 1010
+    .line 1014
     sget-object v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;->$VALUES:[Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;
 
     invoke-virtual {v0}, [Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;->clone()Ljava/lang/Object;

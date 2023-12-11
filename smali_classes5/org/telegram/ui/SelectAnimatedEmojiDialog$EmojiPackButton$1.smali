@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;Landroid/content/Context;Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
     .locals 0
 
-    .line 2524
+    .line 2525
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimatedTextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public invalidate()V
     .locals 1
 
-    .line 2527
+    .line 2528
     invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
 
     move-result v0
@@ -38,7 +38,7 @@
 
     return-void
 
-    .line 2530
+    .line 2531
     :cond_0
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 
@@ -48,7 +48,7 @@
 .method public invalidate(IIII)V
     .locals 1
 
-    .line 2535
+    .line 2536
     invoke-static {p0}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->grab(Landroid/view/View;)Z
 
     move-result v0
@@ -57,7 +57,7 @@
 
     return-void
 
-    .line 2538
+    .line 2539
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->invalidate(IIII)V
 

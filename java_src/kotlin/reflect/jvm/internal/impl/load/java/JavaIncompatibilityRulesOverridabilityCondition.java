@@ -142,8 +142,8 @@ public final class JavaIncompatibilityRulesOverridabilityCondition implements Ex
             }
             List<ValueParameterDescriptor> valueParameters = functionDescriptor.getValueParameters();
             Intrinsics.checkNotNullExpressionValue(valueParameters, "f.valueParameters");
-            ClassifierDescriptor mo2051getDeclarationDescriptor = ((ValueParameterDescriptor) CollectionsKt.single((List<? extends Object>) valueParameters)).getType().getConstructor().mo2051getDeclarationDescriptor();
-            ClassDescriptor classDescriptor2 = mo2051getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2051getDeclarationDescriptor : null;
+            ClassifierDescriptor mo2053getDeclarationDescriptor = ((ValueParameterDescriptor) CollectionsKt.single((List<? extends Object>) valueParameters)).getType().getConstructor().mo2053getDeclarationDescriptor();
+            ClassDescriptor classDescriptor2 = mo2053getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2053getDeclarationDescriptor : null;
             if (classDescriptor2 == null) {
                 return false;
             }

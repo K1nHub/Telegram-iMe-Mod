@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import androidx.core.widget.NestedScrollView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkContentSeedListBinding implements ViewBinding {
     private ForkContentSeedListBinding(NestedScrollView nestedScrollView, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3) {
@@ -18,7 +18,7 @@ public final class ForkContentSeedListBinding implements ViewBinding {
     }
 
     public static ForkContentSeedListBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_content_seed_list, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_content_seed_list, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -26,13 +26,13 @@ public final class ForkContentSeedListBinding implements ViewBinding {
     }
 
     public static ForkContentSeedListBinding bind(View view) {
-        int i = C3634R.C3637id.linear_root;
+        int i = C3632R.C3635id.linear_root;
         LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
         if (linearLayout != null) {
-            i = C3634R.C3637id.linear_seed_first_part;
+            i = C3632R.C3635id.linear_seed_first_part;
             LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
             if (linearLayout2 != null) {
-                i = C3634R.C3637id.linear_seed_second_part;
+                i = C3632R.C3635id.linear_seed_second_part;
                 LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                 if (linearLayout3 != null) {
                     return new ForkContentSeedListBinding((NestedScrollView) view, linearLayout, linearLayout2, linearLayout3);

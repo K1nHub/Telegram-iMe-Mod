@@ -8,7 +8,7 @@
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 3119
+    .line 3122
     invoke-static {p1, p2, p3, p4}, Lorg/telegram/ui/ActionBar/Theme;->applyServiceShaderMatrix(IIFF)V
 
     return-void
@@ -18,7 +18,7 @@
     .locals 1
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 3123
+    .line 3126
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_animatedEmojiTextColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
     return-object v0
@@ -28,7 +28,7 @@
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 3097
+    .line 3100
     invoke-interface {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
     move-result p1
@@ -40,7 +40,7 @@
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 3101
+    .line 3104
     invoke-interface {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
     move-result p1
@@ -60,7 +60,7 @@
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 3111
+    .line 3114
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getThemePaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
     move-result-object p1

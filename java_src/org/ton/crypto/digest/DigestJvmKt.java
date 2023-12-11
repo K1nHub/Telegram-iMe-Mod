@@ -9,7 +9,7 @@ public final class DigestJvmKt {
         Intrinsics.checkNotNullParameter(algorithm, "algorithm");
         MessageDigest messageDigest = MessageDigest.getInstance(algorithm);
         Intrinsics.checkNotNullExpressionValue(messageDigest, "getInstance(algorithm)");
-        return DigestImpl.m5241boximpl(DigestImpl.m5243constructorimpl(messageDigest));
+        return DigestImpl.m5223boximpl(DigestImpl.m5225constructorimpl(messageDigest));
     }
 
     public static final byte[] sha256(byte[] bytes) {

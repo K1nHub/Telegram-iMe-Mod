@@ -14,13 +14,13 @@ public final class BufferAppendKt {
         if (buffer.getLimit() - buffer.getWritePosition() <= min) {
             writeBufferAppendUnreserve(buffer, min);
         }
-        ByteBuffer m1917getMemorySK3TCg8 = buffer.m1917getMemorySK3TCg8();
+        ByteBuffer m1919getMemorySK3TCg8 = buffer.m1919getMemorySK3TCg8();
         int writePosition = buffer.getWritePosition();
         buffer.getLimit();
-        ByteBuffer m1917getMemorySK3TCg82 = other.m1917getMemorySK3TCg8();
+        ByteBuffer m1919getMemorySK3TCg82 = other.m1919getMemorySK3TCg8();
         int readPosition = other.getReadPosition();
         other.getWritePosition();
-        Memory.m1911copyToJT6ljtQ(m1917getMemorySK3TCg82, m1917getMemorySK3TCg8, readPosition, min, writePosition);
+        Memory.m1913copyToJT6ljtQ(m1919getMemorySK3TCg82, m1919getMemorySK3TCg8, readPosition, min, writePosition);
         other.discardExact(min);
         buffer.commitWritten(min);
         return min;

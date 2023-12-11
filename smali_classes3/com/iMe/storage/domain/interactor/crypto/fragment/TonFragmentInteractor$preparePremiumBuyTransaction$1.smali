@@ -30,6 +30,10 @@
     }
 .end annotation
 
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nTonFragmentInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$preparePremiumBuyTransaction$1\n+ 2 base64.kt\norg/ton/crypto/Base64Kt\n*L\n1#1,199:1\n12#2:200\n*S KotlinDebug\n*F\n+ 1 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$preparePremiumBuyTransaction$1\n*L\n168#1:200\n*E\n"
+.end annotation
+
 
 # instance fields
 .field final synthetic $recipient:Ljava/lang/String;
@@ -55,7 +59,7 @@
 
 # virtual methods
 .method public final invoke([B)Lio/reactivex/ObservableSource;
-    .locals 3
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B)",
@@ -71,26 +75,34 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 169
+    .line 166
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$preparePremiumBuyTransaction$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;
 
     invoke-static {v0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->access$getTonFragmentRepository$p(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
 
     move-result-object v0
 
-    .line 170
+    .line 167
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$preparePremiumBuyTransaction$1;->$recipient:Ljava/lang/String;
 
-    .line 171
-    invoke-static {p1}, Lcom/google/android/gms/common/util/Base64Utils;->encodeUrlSafe([B)Ljava/lang/String;
+    .line 12
+    sget-object v2, Lkotlin/io/encoding/Base64;->Default:Lkotlin/io/encoding/Base64$Default;
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x6
+
+    const/4 v7, 0x0
+
+    move-object v3, p1
+
+    invoke-static/range {v2 .. v7}, Lkotlin/io/encoding/Base64;->encode$default(Lkotlin/io/encoding/Base64;[BIIILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    const-string v2, "encodeUrlSafe(publicKeyBytes)"
-
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 169
+    .line 166
     invoke-interface {v0, v1, p1}, Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;->preparePremiumBuyTransaction(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -101,7 +113,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 168
+    .line 165
     check-cast p1, [B
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$preparePremiumBuyTransaction$1;->invoke([B)Lio/reactivex/ObservableSource;

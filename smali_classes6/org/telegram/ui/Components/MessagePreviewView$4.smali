@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView;Z)V
     .locals 0
 
-    .line 2083
+    .line 2141
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$4;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/MessagePreviewView$4;->val$canShowKeyboard:Z
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2086
+    .line 2144
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$4;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2087
+    .line 2145
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$4;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -57,12 +57,12 @@
 
     check-cast p1, Landroid/view/ViewGroup;
 
-    .line 2088
+    .line 2146
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$4;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 2090
+    .line 2148
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$4;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 

@@ -120,36 +120,9 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.BlockchainCryptoWalletManager
-    public Observable<Result<String>> generateAddressByMnemonic(String mnemonic) {
+    public Observable<Result<Boolean>> isValidMnemonic(String mnemonic) {
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
-        Observable<Result<Wallet.TON>> subscribeOn = this.tonController.importWallet(StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo1011io());
-        Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
-        Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Wallet.TON>, Result<? extends String>>() { // from class: com.iMe.storage.data.manager.crypto.blockchains.TONBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$$inlined$mapSuccess$1
-            /* JADX WARN: Multi-variable type inference failed */
-            @Override // kotlin.jvm.functions.Function1
-            public final Result<? extends String> invoke(Result<? extends Wallet.TON> result) {
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    if (result instanceof Result.Error) {
-                        Result<? extends String> error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.mapSuccess");
-                        return error$default;
-                    } else if (result instanceof Object) {
-                        return result;
-                    } else {
-                        return null;
-                    }
-                }
-                Wallet.TON ton = (Wallet.TON) result.getData();
-                String address = ton != null ? ton.getAddress() : null;
-                if (address == null) {
-                    address = "";
-                }
-                return Result.Companion.success(address);
-            }
-        }));
-        Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
-        return map;
+        return this.tonController.isValidMnemonic(mnemonic);
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.BlockchainCryptoWalletManager

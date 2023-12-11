@@ -21,7 +21,7 @@ public final class Nothing$$serializer<X> implements GeneratedSerializer<Nothing
     private Nothing$$serializer() {
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("nothing", this, 1);
         pluginGeneratedSerialDescriptor.addElement(AppMeasurementSdk.ConditionalUserProperty.VALUE, true);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7565x6b9840d7("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7563x6b9840d7("@type"));
         this.descriptor = pluginGeneratedSerialDescriptor;
     }
 

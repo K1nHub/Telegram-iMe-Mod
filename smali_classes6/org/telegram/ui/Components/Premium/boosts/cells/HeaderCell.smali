@@ -578,7 +578,7 @@
 
     const-string v0, "**"
 
-    const-string v1, "**%1s**"
+    const-string v1, "**%1$s**"
 
     .line 178
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;->titleView:Landroid/widget/TextView;
@@ -617,7 +617,7 @@
 
     move-result v5
 
-    add-int/lit8 v5, v5, 0x7
+    add-int/lit8 v5, v5, 0x8
 
     invoke-virtual {v3, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
@@ -628,7 +628,7 @@
 
     move-result v6
 
-    add-int/lit8 v6, v6, 0x7
+    add-int/lit8 v6, v6, 0x8
 
     invoke-virtual {v3, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 

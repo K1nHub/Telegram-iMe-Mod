@@ -126,7 +126,7 @@ public final class CryptoAccountItem extends NoChildNode {
             r1 = r3
         L17:
             if (r1 == 0) goto L2a
-            int r1 = org.telegram.messenger.C3634R.string.wallet_home_crypto_account_telegram_id
+            int r1 = org.telegram.messenger.C3632R.string.wallet_home_crypto_account_telegram_id
             java.lang.Object[] r3 = new java.lang.Object[r3]
             long r4 = r0.f1749id
             java.lang.Long r0 = java.lang.Long.valueOf(r4)

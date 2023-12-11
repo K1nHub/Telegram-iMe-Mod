@@ -382,7 +382,7 @@ public final class ProtoBuf$VersionRequirement extends GeneratedMessageLite impl
 
         @Override // kotlin.reflect.jvm.internal.impl.protobuf.GeneratedMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo2049clone() {
+        public Builder mo2051clone() {
             return create().mergeFrom(buildPartial());
         }
 

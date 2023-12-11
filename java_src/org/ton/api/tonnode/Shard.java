@@ -13,7 +13,7 @@ public final class Shard {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static long m5072constructorimpl(long j) {
+    public static long m5054constructorimpl(long j) {
         return j;
     }
 
@@ -32,7 +32,7 @@ public final class Shard {
             List<? extends Cell> emptyList;
             Intrinsics.checkNotNullParameter(bits, "bits");
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            return CellSlice.Companion.m31of(bits, emptyList).mo5221loadUInt64sVKNKU();
+            return CellSlice.Companion.m31of(bits, emptyList).mo5203loadUInt64sVKNKU();
         }
 
         private Companion() {
@@ -40,6 +40,6 @@ public final class Shard {
     }
 
     static {
-        m5072constructorimpl(Long.MIN_VALUE);
+        m5054constructorimpl(Long.MIN_VALUE);
     }
 }

@@ -16,7 +16,7 @@ public final class AhmeRootImpl<X, Y> implements HashmapAugE.AhmeRoot<X, Y> {
     private final Y extra;
 
     /* renamed from: n */
-    private final int f2074n;
+    private final int f2075n;
     private final CellRef<HashmapAug<X, Y>> root;
 
     public boolean equals(Object obj) {
@@ -25,13 +25,13 @@ public final class AhmeRootImpl<X, Y> implements HashmapAugE.AhmeRoot<X, Y> {
         }
         if (obj instanceof AhmeRootImpl) {
             AhmeRootImpl ahmeRootImpl = (AhmeRootImpl) obj;
-            return this.f2074n == ahmeRootImpl.f2074n && Intrinsics.areEqual(this.root, ahmeRootImpl.root) && Intrinsics.areEqual(this.extra, ahmeRootImpl.extra);
+            return this.f2075n == ahmeRootImpl.f2075n && Intrinsics.areEqual(this.root, ahmeRootImpl.root) && Intrinsics.areEqual(this.extra, ahmeRootImpl.extra);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((this.f2074n * 31) + this.root.hashCode()) * 31;
+        int hashCode = ((this.f2075n * 31) + this.root.hashCode()) * 31;
         Y y = this.extra;
         return hashCode + (y == null ? 0 : y.hashCode());
     }
@@ -39,7 +39,7 @@ public final class AhmeRootImpl<X, Y> implements HashmapAugE.AhmeRoot<X, Y> {
     /* JADX WARN: Multi-variable type inference failed */
     public AhmeRootImpl(int i, CellRef<? extends HashmapAug<X, Y>> root, Y y) {
         Intrinsics.checkNotNullParameter(root, "root");
-        this.f2074n = i;
+        this.f2075n = i;
         this.root = root;
         this.extra = y;
     }
@@ -51,7 +51,7 @@ public final class AhmeRootImpl<X, Y> implements HashmapAugE.AhmeRoot<X, Y> {
 
     @Override // org.ton.hashmap.HashmapAugE.AhmeRoot
     public int getN() {
-        return this.f2074n;
+        return this.f2075n;
     }
 
     @Override // org.ton.hashmap.HashmapAugE.AhmeRoot

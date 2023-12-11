@@ -30,7 +30,7 @@ import com.iMe.fork.controller.FormattingTextController;
 import com.iMe.fork.enums.FormattingPanelType;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.CodeHighlighting;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -202,7 +202,7 @@ public class EditTextCaption extends EditTextBoldCursor {
         } else {
             builder = new AlertDialog.Builder(getContext(), this.resourcesProvider);
         }
-        builder.setTitle(LocaleController.getString("CreateLink", C3634R.string.CreateLink));
+        builder.setTitle(LocaleController.getString("CreateLink", C3632R.string.CreateLink));
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(this, getContext()) { // from class: org.telegram.ui.Components.EditTextCaption.2
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p043ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
@@ -216,7 +216,7 @@ public class EditTextCaption extends EditTextBoldCursor {
             editTextBoldCursor.setText((str == null || str.isEmpty()) ? "https://" : "https://");
         }
         editTextBoldCursor.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
-        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3634R.string.URL));
+        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3632R.string.URL));
         editTextBoldCursor.setHeaderHintColor(getThemedColor(Theme.key_windowBackgroundWhiteBlueHeader));
         editTextBoldCursor.setSingleLine(true);
         editTextBoldCursor.setFocusable(true);
@@ -237,13 +237,13 @@ public class EditTextCaption extends EditTextBoldCursor {
         }
         final int i2 = i;
         final int i3 = selectionEnd;
-        builder.setPositiveButton(LocaleController.getString("OK", C3634R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda0
+        builder.setPositiveButton(LocaleController.getString("OK", C3632R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i4) {
                 EditTextCaption.this.lambda$makeSelectedUrl$0(i2, i3, formattingTextController, editTextBoldCursor, dialogInterface, i4);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
         if (this.adaptiveCreateLinkDialog) {
             AlertDialog create = builder.create();
             this.creationLinkDialog = create;
@@ -495,31 +495,31 @@ public class EditTextCaption extends EditTextBoldCursor {
     }
 
     public boolean performMenuAction(int i) {
-        if (i == C3634R.C3637id.menu_regular) {
+        if (i == C3632R.C3635id.menu_regular) {
             makeSelectedRegular();
             return true;
-        } else if (i == C3634R.C3637id.menu_bold) {
+        } else if (i == C3632R.C3635id.menu_bold) {
             makeSelectedBold();
             return true;
-        } else if (i == C3634R.C3637id.menu_italic) {
+        } else if (i == C3632R.C3635id.menu_italic) {
             makeSelectedItalic();
             return true;
-        } else if (i == C3634R.C3637id.menu_mono) {
+        } else if (i == C3632R.C3635id.menu_mono) {
             makeSelectedMono();
             return true;
-        } else if (i == C3634R.C3637id.menu_link) {
+        } else if (i == C3632R.C3635id.menu_link) {
             makeSelectedUrl();
             return true;
-        } else if (i == C3634R.C3637id.menu_strike) {
+        } else if (i == C3632R.C3635id.menu_strike) {
             makeSelectedStrike();
             return true;
-        } else if (i == C3634R.C3637id.menu_underline) {
+        } else if (i == C3632R.C3635id.menu_underline) {
             makeSelectedUnderline();
             return true;
-        } else if (i == C3634R.C3637id.menu_spoiler) {
+        } else if (i == C3632R.C3635id.menu_spoiler) {
             makeSelectedSpoiler();
             return true;
-        } else if (i == C3634R.C3637id.menu_quote) {
+        } else if (i == C3632R.C3635id.menu_quote) {
             makeSelectedQuote();
             return true;
         } else {
@@ -637,14 +637,14 @@ public class EditTextCaption extends EditTextBoldCursor {
             i++;
         }
         if (hasSelection()) {
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3634R.C3637id.menu_spoiler, LocaleController.getString("Spoiler", C3634R.string.Spoiler)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3634R.C3637id.menu_bold, LocaleController.getString("Bold", C3634R.string.Bold)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3634R.C3637id.menu_italic, LocaleController.getString("Italic", C3634R.string.Italic)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3634R.C3637id.menu_mono, LocaleController.getString("Mono", C3634R.string.Mono)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3634R.C3637id.menu_strike, LocaleController.getString("Strike", C3634R.string.Strike)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3634R.C3637id.menu_underline, LocaleController.getString("Underline", C3634R.string.Underline)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3634R.C3637id.menu_link, LocaleController.getString("CreateLink", C3634R.string.CreateLink)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3634R.C3637id.menu_regular, LocaleController.getString("Regular", C3634R.string.Regular)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3632R.C3635id.menu_spoiler, LocaleController.getString("Spoiler", C3632R.string.Spoiler)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3632R.C3635id.menu_bold, LocaleController.getString("Bold", C3632R.string.Bold)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3632R.C3635id.menu_italic, LocaleController.getString("Italic", C3632R.string.Italic)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3632R.C3635id.menu_mono, LocaleController.getString("Mono", C3632R.string.Mono)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3632R.C3635id.menu_strike, LocaleController.getString("Strike", C3632R.string.Strike)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3632R.C3635id.menu_underline, LocaleController.getString("Underline", C3632R.string.Underline)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3632R.C3635id.menu_link, LocaleController.getString("CreateLink", C3632R.string.CreateLink)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3632R.C3635id.menu_regular, LocaleController.getString("Regular", C3632R.string.Regular)));
         }
     }
 
@@ -672,7 +672,18 @@ public class EditTextCaption extends EditTextBoldCursor {
                         }
                     }
                     int max = Math.max(0, getSelectionStart());
-                    setText(getText().replace(max, Math.min(getText().length(), getSelectionEnd()), fromHTML));
+                    int min = Math.min(getText().length(), getSelectionEnd());
+                    QuoteSpan.QuoteStyleSpan[] quoteStyleSpanArr = (QuoteSpan.QuoteStyleSpan[]) getText().getSpans(max, min, QuoteSpan.QuoteStyleSpan.class);
+                    if (quoteStyleSpanArr != null && quoteStyleSpanArr.length > 0) {
+                        QuoteSpan.QuoteStyleSpan[] quoteStyleSpanArr2 = (QuoteSpan.QuoteStyleSpan[]) fromHTML.getSpans(0, fromHTML.length(), QuoteSpan.QuoteStyleSpan.class);
+                        for (int i2 = 0; i2 < quoteStyleSpanArr2.length; i2++) {
+                            fromHTML.removeSpan(quoteStyleSpanArr2[i2]);
+                            fromHTML.removeSpan(quoteStyleSpanArr2[i2].span);
+                        }
+                    } else {
+                        QuoteSpan.normalizeQuotes(fromHTML);
+                    }
+                    setText(getText().replace(max, min, fromHTML));
                     setSelection(fromHTML.length() + max, max + fromHTML.length());
                     return true;
                 } catch (Exception e) {
@@ -686,14 +697,14 @@ public class EditTextCaption extends EditTextBoldCursor {
                     return true;
                 } else if (i == 16908320) {
                     int max2 = Math.max(0, getSelectionStart());
-                    int min = Math.min(getText().length(), getSelectionEnd());
-                    AndroidUtilities.addToClipboard(getText().subSequence(max2, min));
+                    int min2 = Math.min(getText().length(), getSelectionEnd());
+                    AndroidUtilities.addToClipboard(getText().subSequence(max2, min2));
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     if (max2 != 0) {
                         spannableStringBuilder.append(getText().subSequence(0, max2));
                     }
-                    if (min != getText().length()) {
-                        spannableStringBuilder.append(getText().subSequence(min, getText().length()));
+                    if (min2 != getText().length()) {
+                        spannableStringBuilder.append(getText().subSequence(min2, getText().length()));
                     }
                     setText(spannableStringBuilder);
                     setSelection(max2, max2);

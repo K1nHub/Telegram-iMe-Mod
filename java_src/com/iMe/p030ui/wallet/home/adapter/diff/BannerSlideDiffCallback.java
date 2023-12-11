@@ -11,7 +11,7 @@ public final class BannerSlideDiffCallback extends DiffUtil.ItemCallback<SlideIt
     public boolean areItemsTheSame(SlideItem oldItem, SlideItem newItem) {
         Intrinsics.checkNotNullParameter(oldItem, "oldItem");
         Intrinsics.checkNotNullParameter(newItem, "newItem");
-        return oldItem.getSlide().getTitle() == newItem.getSlide().getTitle();
+        return oldItem.getSlide().getTitleResId() == newItem.getSlide().getTitleResId();
     }
 
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback

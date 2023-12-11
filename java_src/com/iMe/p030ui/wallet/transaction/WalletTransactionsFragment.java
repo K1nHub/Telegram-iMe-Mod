@@ -57,10 +57,10 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentWalletTransactionsBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -340,12 +340,12 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_transactions_toolbar_title));
-        c3706ActionBar.setAllowOverlayTitle(true);
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.wallet_transactions_toolbar_title));
+        c3704ActionBar.setAllowOverlayTitle(true);
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletTransactionsPresenter presenter;
                 if (i == -1) {
@@ -359,7 +359,7 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-        ActionBarMenuItem setupActionBar$lambda$3$lambda$2 = c3706ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        ActionBarMenuItem setupActionBar$lambda$3$lambda$2 = c3704ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
         setupActionBar$lambda$3$lambda$2.disableRipple();
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$3$lambda$2, "setupActionBar$lambda$3$lambda$2");
         ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$3$lambda$2, AndroidUtilities.m104dp(14));

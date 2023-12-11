@@ -113,13 +113,13 @@ public final class SignatureEnhancement {
         return TypeUtils.contains(kotlinType, new Function1<UnwrappedType, Boolean>() { // from class: kotlin.reflect.jvm.internal.impl.load.java.typeEnhancement.SignatureEnhancement$containsFunctionN$1
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(UnwrappedType unwrappedType) {
-                ClassifierDescriptor mo2051getDeclarationDescriptor = unwrappedType.getConstructor().mo2051getDeclarationDescriptor();
-                if (mo2051getDeclarationDescriptor == null) {
+                ClassifierDescriptor mo2053getDeclarationDescriptor = unwrappedType.getConstructor().mo2053getDeclarationDescriptor();
+                if (mo2053getDeclarationDescriptor == null) {
                     return Boolean.FALSE;
                 }
-                Name name = mo2051getDeclarationDescriptor.getName();
+                Name name = mo2053getDeclarationDescriptor.getName();
                 JavaToKotlinClassMap javaToKotlinClassMap = JavaToKotlinClassMap.INSTANCE;
-                return Boolean.valueOf(Intrinsics.areEqual(name, javaToKotlinClassMap.getFUNCTION_N_FQ_NAME().shortName()) && Intrinsics.areEqual(DescriptorUtilsKt.fqNameOrNull(mo2051getDeclarationDescriptor), javaToKotlinClassMap.getFUNCTION_N_FQ_NAME()));
+                return Boolean.valueOf(Intrinsics.areEqual(name, javaToKotlinClassMap.getFUNCTION_N_FQ_NAME().shortName()) && Intrinsics.areEqual(DescriptorUtilsKt.fqNameOrNull(mo2053getDeclarationDescriptor), javaToKotlinClassMap.getFUNCTION_N_FQ_NAME()));
             }
         });
     }

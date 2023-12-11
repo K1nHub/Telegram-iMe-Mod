@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView;Landroid/content/Context;)V
     .locals 0
 
-    .line 2009
+    .line 2067
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$3;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/MessagePreviewView$3;->val$context:Landroid/content/Context;
@@ -39,7 +39,7 @@
 .method public bindView(Landroid/view/View;II)V
     .locals 0
 
-    .line 2027
+    .line 2085
     check-cast p1, Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->bind()V
@@ -50,7 +50,7 @@
 .method public createView(I)Landroid/view/View;
     .locals 3
 
-    .line 2022
+    .line 2080
     new-instance v0, Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/MessagePreviewView$3;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
@@ -65,7 +65,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 2012
+    .line 2070
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$3;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
@@ -82,7 +82,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 2017
+    .line 2075
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$3;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;

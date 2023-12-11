@@ -35,7 +35,7 @@ import org.koin.core.scope.Scope;
 import org.koin.java.KoinJavaComponent;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkContentWordSwitcherBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BackupWordSwitcher.kt */
@@ -204,7 +204,7 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
     }
 
     public void setupTitle(int i) {
-        this.binding.textTitle.setText(getResourceManager().getString(C3634R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
+        this.binding.textTitle.setText(getResourceManager().getString(C3632R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
     }
 
     public void setupBackupWords(List<String> words) {

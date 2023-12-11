@@ -381,7 +381,7 @@ public final class MultiversX {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<GenericAction, Builder> implements GenericActionOrBuilder {
-            /* synthetic */ Builder(C77501 c77501) {
+            /* synthetic */ Builder(C77481 c77481) {
                 this();
             }
 
@@ -516,7 +516,7 @@ public final class MultiversX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77501.f2143xa1df5c61[method.ordinal()]) {
+            switch (C77481.f2144xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new GenericAction();
                 case 2:
@@ -563,40 +563,40 @@ public final class MultiversX {
 
     /* renamed from: wallet.core.jni.proto.MultiversX$1 */
     /* loaded from: classes7.dex */
-    static /* synthetic */ class C77501 {
+    static /* synthetic */ class C77481 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f2143xa1df5c61;
+        static final /* synthetic */ int[] f2144xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f2143xa1df5c61 = iArr;
+            f2144xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2144xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2144xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2144xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2144xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2144xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f2143xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2144xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -732,7 +732,7 @@ public final class MultiversX {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<EGLDTransfer, Builder> implements EGLDTransferOrBuilder {
-            /* synthetic */ Builder(C77501 c77501) {
+            /* synthetic */ Builder(C77481 c77481) {
                 this();
             }
 
@@ -805,7 +805,7 @@ public final class MultiversX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77501.f2143xa1df5c61[method.ordinal()]) {
+            switch (C77481.f2144xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new EGLDTransfer();
                 case 2:
@@ -1009,7 +1009,7 @@ public final class MultiversX {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<ESDTTransfer, Builder> implements ESDTTransferOrBuilder {
-            /* synthetic */ Builder(C77501 c77501) {
+            /* synthetic */ Builder(C77481 c77481) {
                 this();
             }
 
@@ -1110,7 +1110,7 @@ public final class MultiversX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77501.f2143xa1df5c61[method.ordinal()]) {
+            switch (C77481.f2144xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new ESDTTransfer();
                 case 2:
@@ -1331,7 +1331,7 @@ public final class MultiversX {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<ESDTNFTTransfer, Builder> implements ESDTNFTTransferOrBuilder {
-            /* synthetic */ Builder(C77501 c77501) {
+            /* synthetic */ Builder(C77481 c77481) {
                 this();
             }
 
@@ -1449,7 +1449,7 @@ public final class MultiversX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77501.f2143xa1df5c61[method.ordinal()]) {
+            switch (C77481.f2144xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new ESDTNFTTransfer();
                 case 2:
@@ -1693,7 +1693,7 @@ public final class MultiversX {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Accounts, Builder> implements AccountsOrBuilder {
-            /* synthetic */ Builder(C77501 c77501) {
+            /* synthetic */ Builder(C77481 c77481) {
                 this();
             }
 
@@ -1833,7 +1833,7 @@ public final class MultiversX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77501.f2143xa1df5c61[method.ordinal()]) {
+            switch (C77481.f2144xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Accounts();
                 case 2:
@@ -2241,7 +2241,7 @@ public final class MultiversX {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C77501 c77501) {
+            /* synthetic */ Builder(C77481 c77481) {
                 this();
             }
 
@@ -2478,7 +2478,7 @@ public final class MultiversX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77501.f2143xa1df5c61[method.ordinal()]) {
+            switch (C77481.f2144xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -2647,7 +2647,7 @@ public final class MultiversX {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C77501 c77501) {
+            /* synthetic */ Builder(C77481 c77481) {
                 this();
             }
 
@@ -2714,7 +2714,7 @@ public final class MultiversX {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77501.f2143xa1df5c61[method.ordinal()]) {
+            switch (C77481.f2144xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

@@ -17,7 +17,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.ChatActivityEnterView;
 import org.telegram.p043ui.Components.EditTextCaption;
@@ -295,7 +295,7 @@ public final class FormattingMessagesWeb extends LinearLayout {
         int m104dp = AndroidUtilities.m104dp(8);
         imageView.setPadding(m104dp, m104dp, m104dp, m104dp);
         imageView.setColorFilter(Theme.getColor(this.buttonTextColor));
-        imageView.setImageResource(C3634R.C3636drawable.pip_close);
+        imageView.setImageResource(C3632R.C3634drawable.pip_close);
         return imageView;
     }
 
@@ -369,7 +369,7 @@ public final class FormattingMessagesWeb extends LinearLayout {
         setGravity(16);
         int m104dp = AndroidUtilities.m104dp(12);
         imageView.setPadding(m104dp, m104dp, m104dp, m104dp);
-        imageView.setImageResource(C3634R.C3636drawable.fork_wallet_crypto_cipher_eye);
+        imageView.setImageResource(C3632R.C3634drawable.fork_wallet_crypto_cipher_eye);
         return imageView;
     }
 
@@ -381,7 +381,7 @@ public final class FormattingMessagesWeb extends LinearLayout {
         imageView.setPadding(m104dp, m104dp, m104dp, m104dp);
         setGravity(16);
         imageView.setColorFilter(Theme.getColor(this.buttonTextColor));
-        imageView.setImageResource(C3634R.C3636drawable.msg_link_folder);
+        imageView.setImageResource(C3632R.C3634drawable.msg_link_folder);
         return imageView;
     }
 

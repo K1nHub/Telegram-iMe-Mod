@@ -50,7 +50,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -198,7 +198,7 @@ public class ActionBarMenuItem extends FrameLayout {
 
     public static ActionBarPopupWindow.GapView addColoredGap(ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout, Theme.ResourcesProvider resourcesProvider) {
         ActionBarPopupWindow.GapView gapView = new ActionBarPopupWindow.GapView(actionBarPopupWindowLayout.getContext(), resourcesProvider, Theme.key_actionBarDefaultSubmenuSeparator);
-        gapView.setTag(C3634R.C3637id.fit_width_tag, 1);
+        gapView.setTag(C3632R.C3635id.fit_width_tag, 1);
         actionBarPopupWindowLayout.addView((View) gapView, LayoutHelper.createLinear(-1, 8));
         return gapView;
     }
@@ -235,7 +235,7 @@ public class ActionBarMenuItem extends FrameLayout {
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
         textView.setPadding(AndroidUtilities.m104dp(13), AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(13), AndroidUtilities.m104dp(8));
         textView.setText(str);
-        textView.setTag(C3634R.C3637id.fit_width_tag, 1);
+        textView.setTag(C3632R.C3635id.fit_width_tag, 1);
         textView.setMaxWidth(AndroidUtilities.m104dp(200));
         actionBarPopupWindowLayout.addView((View) textView, LayoutHelper.createLinear(-1, -2));
     }
@@ -471,7 +471,7 @@ public class ActionBarMenuItem extends FrameLayout {
         }
         this.rect = new Rect();
         this.location = new int[2];
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), C3634R.C3636drawable.popup_fixed_alert2, this.resourcesProvider, 1);
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext(), C3632R.C3634drawable.popup_fixed_alert2, this.resourcesProvider, 1);
         this.popupLayout = actionBarPopupWindowLayout;
         actionBarPopupWindowLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ActionBar.ActionBarMenuItem$$ExternalSyntheticLambda9
             @Override // android.view.View.OnTouchListener
@@ -614,7 +614,7 @@ public class ActionBarMenuItem extends FrameLayout {
             }
             this.processedPopupClick = true;
             if (!this.allowCloseAnimation) {
-                this.popupWindow.setAnimationStyle(C3634R.style.PopupAnimation);
+                this.popupWindow.setAnimationStyle(C3632R.style.PopupAnimation);
             }
             this.popupWindow.dismiss(this.allowCloseAnimation);
         }
@@ -646,7 +646,7 @@ public class ActionBarMenuItem extends FrameLayout {
         View view = new View(getContext());
         view.setMinimumWidth(AndroidUtilities.m104dp(196));
         view.setTag(Integer.valueOf(i));
-        view.setTag(C3634R.C3637id.object_tag, 1);
+        view.setTag(C3632R.C3635id.object_tag, 1);
         this.popupLayout.addView(view);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) view.getLayoutParams();
         if (LocaleController.isRTL) {
@@ -711,7 +711,7 @@ public class ActionBarMenuItem extends FrameLayout {
         final ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), false, false, false, this.resourcesProvider);
         actionBarMenuSubItem.setTextAndIcon(str, i, drawable);
         actionBarMenuSubItem.setMinimumWidth(AndroidUtilities.m104dp(196));
-        actionBarMenuSubItem.setRightIcon(C3634R.C3636drawable.msg_arrowright);
+        actionBarMenuSubItem.setRightIcon(C3632R.C3634drawable.msg_arrowright);
         this.popupLayout.addView(actionBarMenuSubItem);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) actionBarMenuSubItem.getLayoutParams();
         if (LocaleController.isRTL) {
@@ -836,14 +836,14 @@ public class ActionBarMenuItem extends FrameLayout {
     public void toggleSubMenu(final View view, View view2) {
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout;
         View childAt;
-        C3706ActionBar c3706ActionBar;
+        C3704ActionBar c3704ActionBar;
         ActionBarPopupWindow actionBarPopupWindow = this.popupWindow;
         if (actionBarPopupWindow == null || !actionBarPopupWindow.isShowing()) {
             layoutLazyItems();
         }
         if (this.popupLayout != null) {
             ActionBarMenu actionBarMenu = this.parentMenu;
-            if (actionBarMenu == null || !actionBarMenu.isActionMode || (c3706ActionBar = actionBarMenu.parentActionBar) == null || c3706ActionBar.isActionModeShowed()) {
+            if (actionBarMenu == null || !actionBarMenu.isActionMode || (c3704ActionBar = actionBarMenu.parentActionBar) == null || c3704ActionBar.isActionModeShowed()) {
                 Runnable runnable = this.showMenuRunnable;
                 FrameLayout frameLayout = null;
                 if (runnable != null) {
@@ -885,7 +885,7 @@ public class ActionBarMenuItem extends FrameLayout {
                         ((ViewGroup) view.getParent()).removeView(view);
                     }
                     if ((view instanceof ActionBarMenuSubItem) || (view instanceof LinearLayout)) {
-                        Drawable mutate = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.popup_fixed_alert2).mutate();
+                        Drawable mutate = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.popup_fixed_alert2).mutate();
                         mutate.setColorFilter(new PorterDuffColorFilter(this.popupLayout.getBackgroundColor(), PorterDuff.Mode.MULTIPLY));
                         frameLayout.setBackground(mutate);
                     }
@@ -903,7 +903,7 @@ public class ActionBarMenuItem extends FrameLayout {
                 if (this.animationEnabled && Build.VERSION.SDK_INT >= 19) {
                     actionBarPopupWindow3.setAnimationStyle(0);
                 } else {
-                    actionBarPopupWindow3.setAnimationStyle(C3634R.style.PopupAnimation);
+                    actionBarPopupWindow3.setAnimationStyle(C3632R.style.PopupAnimation);
                 }
                 boolean z = this.animationEnabled;
                 if (!z) {
@@ -1721,7 +1721,7 @@ public class ActionBarMenuItem extends FrameLayout {
                     ActionBarMenuItem.this.lambda$checkCreateSearchField$13(view);
                 }
             });
-            this.clearButton.setContentDescription(LocaleController.getString("ClearButton", C3634R.string.ClearButton));
+            this.clearButton.setContentDescription(LocaleController.getString("ClearButton", C3632R.string.ClearButton));
             if (this.wrapSearchInScrollView) {
                 this.wrappedSearchFrameLayout.addView(this.clearButton, LayoutHelper.createFrame(48, -1, 21));
             } else {
@@ -2003,26 +2003,26 @@ public class ActionBarMenuItem extends FrameLayout {
         }
         ActionBarMenu actionBarMenu2 = this.parentMenu;
         if (actionBarMenu2 != null) {
-            C3706ActionBar c3706ActionBar = actionBarMenu2.parentActionBar;
+            C3704ActionBar c3704ActionBar = actionBarMenu2.parentActionBar;
             if (this.subMenuOpenSide == 0) {
                 if (z) {
-                    this.popupWindow.showAsDropDown(c3706ActionBar, (((view.getLeft() + this.parentMenu.getLeft()) + view.getMeasuredWidth()) - this.popupWindow.getContentView().getMeasuredWidth()) + ((int) getTranslationX()), i3);
+                    this.popupWindow.showAsDropDown(c3704ActionBar, (((view.getLeft() + this.parentMenu.getLeft()) + view.getMeasuredWidth()) - this.popupWindow.getContentView().getMeasuredWidth()) + ((int) getTranslationX()), i3);
                 }
                 if (z2) {
-                    this.popupWindow.update(c3706ActionBar, (((view.getLeft() + this.parentMenu.getLeft()) + view.getMeasuredWidth()) - this.popupWindow.getContentView().getMeasuredWidth()) + ((int) getTranslationX()), i3, -1, -1);
+                    this.popupWindow.update(c3704ActionBar, (((view.getLeft() + this.parentMenu.getLeft()) + view.getMeasuredWidth()) - this.popupWindow.getContentView().getMeasuredWidth()) + ((int) getTranslationX()), i3, -1, -1);
                     return;
                 }
                 return;
             }
             if (z) {
                 if (this.forceSmoothKeyboard) {
-                    this.popupWindow.showAtLocation(c3706ActionBar, 51, (getLeft() - AndroidUtilities.m104dp(8)) + ((int) getTranslationX()), i3);
+                    this.popupWindow.showAtLocation(c3704ActionBar, 51, (getLeft() - AndroidUtilities.m104dp(8)) + ((int) getTranslationX()), i3);
                 } else {
-                    this.popupWindow.showAsDropDown(c3706ActionBar, (getLeft() - AndroidUtilities.m104dp(8)) + ((int) getTranslationX()), i3);
+                    this.popupWindow.showAsDropDown(c3704ActionBar, (getLeft() - AndroidUtilities.m104dp(8)) + ((int) getTranslationX()), i3);
                 }
             }
             if (z2) {
-                this.popupWindow.update(c3706ActionBar, (getLeft() - AndroidUtilities.m104dp(8)) + ((int) getTranslationX()), i3, -1, -1);
+                this.popupWindow.update(c3704ActionBar, (getLeft() - AndroidUtilities.m104dp(8)) + ((int) getTranslationX()), i3, -1, -1);
                 return;
             }
             return;
@@ -2230,7 +2230,7 @@ public class ActionBarMenuItem extends FrameLayout {
             addView(backupImageView, LayoutHelper.createFrame(32, 32));
             ImageView imageView = new ImageView(context);
             this.closeIconView = imageView;
-            imageView.setImageResource(C3634R.C3636drawable.ic_close_white);
+            imageView.setImageResource(C3632R.C3634drawable.ic_close_white);
             addView(this.closeIconView, LayoutHelper.createFrame(24, 24, 16, 8, 0, 0, 0));
             TextView textView = new TextView(context);
             this.titleView = textView;
@@ -2281,7 +2281,7 @@ public class ActionBarMenuItem extends FrameLayout {
             int i2 = mediaFilterData.filterType;
             if (i2 != 4) {
                 if (i2 == 7) {
-                    CombinedDrawable createCircleDrawableWithIcon2 = Theme.createCircleDrawableWithIcon(AndroidUtilities.m104dp(32), C3634R.C3636drawable.chats_archive);
+                    CombinedDrawable createCircleDrawableWithIcon2 = Theme.createCircleDrawableWithIcon(AndroidUtilities.m104dp(32), C3632R.C3634drawable.chats_archive);
                     createCircleDrawableWithIcon2.setIconSize(AndroidUtilities.m104dp(16), AndroidUtilities.m104dp(16));
                     Theme.setCombinedDrawableColor(createCircleDrawableWithIcon2, getThemedColor(Theme.key_avatar_backgroundArchived), false);
                     Theme.setCombinedDrawableColor(createCircleDrawableWithIcon2, getThemedColor(i), true);
@@ -2295,7 +2295,7 @@ public class ActionBarMenuItem extends FrameLayout {
             if (tLObject instanceof TLRPC$User) {
                 TLRPC$User tLRPC$User = (TLRPC$User) tLObject;
                 if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().f1749id == tLRPC$User.f1749id) {
-                    CombinedDrawable createCircleDrawableWithIcon3 = Theme.createCircleDrawableWithIcon(AndroidUtilities.m104dp(32), C3634R.C3636drawable.chats_saved);
+                    CombinedDrawable createCircleDrawableWithIcon3 = Theme.createCircleDrawableWithIcon(AndroidUtilities.m104dp(32), C3632R.C3634drawable.chats_saved);
                     createCircleDrawableWithIcon3.setIconSize(AndroidUtilities.m104dp(16), AndroidUtilities.m104dp(16));
                     Theme.setCombinedDrawableColor(createCircleDrawableWithIcon3, getThemedColor(Theme.key_avatar_backgroundSaved), false);
                     Theme.setCombinedDrawableColor(createCircleDrawableWithIcon3, getThemedColor(i), true);
@@ -2379,7 +2379,7 @@ public class ActionBarMenuItem extends FrameLayout {
         if (i != -1) {
             gapView.setTag(Integer.valueOf(i));
         }
-        gapView.setTag(C3634R.C3637id.fit_width_tag, 1);
+        gapView.setTag(C3632R.C3635id.fit_width_tag, 1);
         this.popupLayout.addView((View) gapView, LayoutHelper.createLinear(-1, 8));
         return gapView;
     }
@@ -2471,14 +2471,14 @@ public class ActionBarMenuItem extends FrameLayout {
                     this.view = actionBarMenuSubItem;
                 } else if (i == 1) {
                     ActionBarPopupWindow.GapView gapView = new ActionBarPopupWindow.GapView(actionBarMenuItem.getContext(), actionBarMenuItem.resourcesProvider, Theme.key_actionBarDefaultSubmenuSeparator);
-                    gapView.setTag(C3634R.C3637id.fit_width_tag, 1);
+                    gapView.setTag(C3632R.C3635id.fit_width_tag, 1);
                     actionBarMenuItem.popupLayout.addView((View) gapView, LayoutHelper.createLinear(-1, 8));
                     this.view = gapView;
                 } else if (i == 2) {
                     final ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(actionBarMenuItem.getContext(), false, false, false, actionBarMenuItem.resourcesProvider);
                     actionBarMenuSubItem2.setTextAndIcon(this.text, this.icon, this.iconDrawable);
                     actionBarMenuSubItem2.setMinimumWidth(AndroidUtilities.m104dp(196));
-                    actionBarMenuSubItem2.setRightIcon(C3634R.C3636drawable.msg_arrowright);
+                    actionBarMenuSubItem2.setRightIcon(C3632R.C3634drawable.msg_arrowright);
                     actionBarMenuSubItem2.getRightIcon().setVisibility(this.rightIconVisibility);
                     actionBarMenuItem.popupLayout.addView(actionBarMenuSubItem2);
                     LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) actionBarMenuSubItem2.getLayoutParams();

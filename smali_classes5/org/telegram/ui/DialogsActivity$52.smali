@@ -121,7 +121,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
-    .line 8612
+    .line 8617
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/DialogsActivity$52;->val$progress:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -134,7 +134,7 @@
 .method private static synthetic lambda$didFinishChatCreation$0(Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Long;)V
     .locals 0
 
-    .line 8632
+    .line 8637
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -143,7 +143,7 @@
 .method private synthetic lambda$didFinishChatCreation$1(J[Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;)V
     .locals 3
 
-    .line 8626
+    .line 8631
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$34700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/tgnet/TLRPC$RequestPeerType;
@@ -168,7 +168,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 8627
+    .line 8632
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
@@ -177,15 +177,15 @@
 
     const/4 v2, 0x1
 
-    .line 8628
+    .line 8633
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     const-string v1, "chat_id"
 
-    .line 8629
+    .line 8634
     invoke-virtual {v0, v1, p1, p2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 8630
+    .line 8635
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$34700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/tgnet/TLRPC$RequestPeerType;
@@ -202,29 +202,29 @@
 
     invoke-virtual {v0, p2, p1}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 8631
+    .line 8636
     new-instance p1, Lorg/telegram/ui/ChannelCreateActivity;
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/ChannelCreateActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 8632
+    .line 8637
     new-instance p2, Lorg/telegram/ui/DialogsActivity$52$$ExternalSyntheticLambda4;
 
     invoke-direct {p2, p4}, Lorg/telegram/ui/DialogsActivity$52$$ExternalSyntheticLambda4;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ChannelCreateActivity;->setOnFinishListener(Lorg/telegram/messenger/Utilities$Callback2;)V
 
-    .line 8633
+    .line 8638
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/DialogsActivity;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 8634
+    .line 8639
     aput-object p1, p3, v2
 
     goto :goto_0
 
-    .line 8636
+    .line 8641
     :cond_0
     invoke-interface {p4}, Ljava/lang/Runnable;->run()V
 
@@ -235,10 +235,10 @@
 .method private synthetic lambda$didFinishChatCreation$10(Lorg/telegram/ui/ActionBar/AlertDialog;J[Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;)V
     .locals 7
 
-    .line 8686
+    .line 8691
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
-    .line 8687
+    .line 8692
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -251,40 +251,40 @@
 
     invoke-virtual {p1, p5}, Lorg/telegram/messenger/MessagesController;->loadChannelParticipants(Ljava/lang/Long;)V
 
-    .line 8688
+    .line 8693
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$31700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
 
     move-result-object v0
 
-    .line 8689
+    .line 8694
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
     const/4 p1, 0x1
 
-    .line 8690
+    .line 8695
     aget-object p5, p4, p1
 
     const/4 v1, 0x0
 
     if-eqz p5, :cond_0
 
-    .line 8691
+    .line 8696
     aget-object p5, p4, v1
 
     invoke-virtual {p5}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
-    .line 8692
+    .line 8697
     aget-object p1, p4, p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_0
 
-    .line 8694
+    .line 8699
     :cond_0
     aget-object p1, p4, v1
 
@@ -293,21 +293,21 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 8697
+    .line 8702
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     neg-long p1, p2
 
-    .line 8698
+    .line 8703
     invoke-static {p1, p2, v1}, Lorg/telegram/messenger/MessagesStorage$TopicKey;->of(JI)Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
     move-result-object p1
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 8699
+    .line 8704
     iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v3, 0x0
@@ -327,33 +327,33 @@
 .method private synthetic lambda$didFinishChatCreation$2([Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 3
 
-    .line 8642
+    .line 8647
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
     const/4 v0, 0x1
 
-    .line 8643
+    .line 8648
     aget-object v1, p1, v0
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
-    .line 8644
+    .line 8649
     aget-object v1, p1, v2
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
-    .line 8645
+    .line 8650
     aget-object p1, p1, v0
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_0
 
-    .line 8647
+    .line 8652
     :cond_0
     aget-object p1, p1, v2
 
@@ -366,7 +366,7 @@
 .method private synthetic lambda$didFinishChatCreation$3(J[Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 8640
+    .line 8645
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -381,7 +381,7 @@
 
     move-result-object p1
 
-    .line 8641
+    .line 8646
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     new-instance v0, Lorg/telegram/ui/DialogsActivity$52$$ExternalSyntheticLambda0;
@@ -396,7 +396,7 @@
 .method private static synthetic lambda$didFinishChatCreation$4(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
     .locals 0
 
-    .line 8656
+    .line 8661
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     const/4 p0, 0x1
@@ -409,10 +409,10 @@
 
     const-wide/16 v0, 0x96
 
-    .line 8652
+    .line 8657
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->showDelayed(J)V
 
-    .line 8653
+    .line 8658
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$34700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/tgnet/TLRPC$RequestPeerType;
@@ -437,7 +437,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 8654
+    .line 8659
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -458,7 +458,7 @@
 
     move-result-object v4
 
-    .line 8655
+    .line 8660
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -485,7 +485,7 @@
 
     goto :goto_0
 
-    .line 8660
+    .line 8665
     :cond_0
     invoke-interface {p4}, Ljava/lang/Runnable;->run()V
 
@@ -496,7 +496,7 @@
 .method private static synthetic lambda$didFinishChatCreation$6(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
     .locals 0
 
-    .line 8667
+    .line 8672
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     const/4 p0, 0x1
@@ -509,7 +509,7 @@
 
     move-object/from16 v0, p0
 
-    .line 8664
+    .line 8669
     iget-object v1, v0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$34700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/tgnet/TLRPC$RequestPeerType;
@@ -520,7 +520,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 8665
+    .line 8670
     iget-object v1, v0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -541,7 +541,7 @@
 
     move-result-object v6
 
-    .line 8666
+    .line 8671
     iget-object v1, v0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -619,7 +619,7 @@
     :cond_2
     move-object/from16 v1, p3
 
-    .line 8671
+    .line 8676
     invoke-interface/range {p3 .. p3}, Ljava/lang/Runnable;->run()V
 
     :goto_2
@@ -629,7 +629,7 @@
 .method private static synthetic lambda$didFinishChatCreation$8(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
     .locals 0
 
-    .line 8678
+    .line 8683
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     const/4 p0, 0x1
@@ -642,7 +642,7 @@
 
     move-object/from16 v0, p0
 
-    .line 8675
+    .line 8680
     iget-object v1, v0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$34700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/tgnet/TLRPC$RequestPeerType;
@@ -653,7 +653,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 8676
+    .line 8681
     iget-object v1, v0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -668,7 +668,7 @@
 
     move-result-object v1
 
-    .line 8677
+    .line 8682
     iget-object v2, v0, Lorg/telegram/ui/DialogsActivity$52;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -732,7 +732,7 @@
     :cond_0
     move-object/from16 v1, p3
 
-    .line 8682
+    .line 8687
     invoke-interface/range {p3 .. p3}, Ljava/lang/Runnable;->run()V
 
     :goto_0
@@ -768,7 +768,7 @@
 
     new-array p1, p1, [Lorg/telegram/messenger/Utilities$Callback;
 
-    .line 8624
+    .line 8629
     new-instance v3, Lorg/telegram/ui/DialogsActivity$52$$ExternalSyntheticLambda8;
 
     invoke-direct {v3, p0, p2, p3, v6}, Lorg/telegram/ui/DialogsActivity$52$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/DialogsActivity$52;J[Lorg/telegram/ui/ActionBar/BaseFragment;)V

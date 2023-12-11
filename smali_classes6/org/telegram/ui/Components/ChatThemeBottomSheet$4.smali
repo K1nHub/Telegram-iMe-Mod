@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
     .locals 0
 
-    .line 279
+    .line 273
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$4;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 0
 
-    .line 282
+    .line 276
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$4;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$100(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V

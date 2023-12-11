@@ -345,6 +345,9 @@
 .method public abstract setTokensPositiveBalances(Z)V
 .end method
 
+.method public abstract setTonConfigJsonString(Ljava/lang/String;)V
+.end method
+
 .method public abstract setTonFragmentProductsSortingType(Lcom/iMe/storage/domain/model/crypto/ton/TonFragmentProductsSortingType;)V
 .end method
 

@@ -28,7 +28,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: BinancePayProcessManager.kt */
 /* loaded from: classes3.dex */
@@ -205,17 +205,17 @@ public final class BinancePayProcessManager {
                 ResourceManager resourceManager3;
                 viewState = BinancePayProcessManager.this.getViewState();
                 resourceManager = BinancePayProcessManager.this.resourceManager;
-                String string = resourceManager.getString(C3634R.string.wallet_binance_pay_request_paid_success_dialog_title);
+                String string = resourceManager.getString(C3632R.string.wallet_binance_pay_request_paid_success_dialog_title);
                 resourceManager2 = BinancePayProcessManager.this.resourceManager;
-                String string2 = resourceManager2.getString(C3634R.string.wallet_binance_pay_request_paid_success_dialog_description, BalanceFormatter.format(Double.valueOf(binanceTransaction.getAmount()), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())), binanceTransaction.getAsset(), binanceTransaction.getInitiatorUserId());
+                String string2 = resourceManager2.getString(C3632R.string.wallet_binance_pay_request_paid_success_dialog_description, BalanceFormatter.format(Double.valueOf(binanceTransaction.getAmount()), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())), binanceTransaction.getAsset(), binanceTransaction.getInitiatorUserId());
                 resourceManager3 = BinancePayProcessManager.this.resourceManager;
-                viewState.showSuccessPaymentProcessedDialog(string, string2, resourceManager3.getString(C3634R.string.common_ok));
+                viewState.showSuccessPaymentProcessedDialog(string, string2, resourceManager3.getString(C3632R.string.common_ok));
             }
         });
     }
 
     private final DialogModel getConfirmPayDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_binance_pay_transaction_direction_in_title), this.resourceManager.getString(C3634R.string.wallet_binance_pay_confirm_pay_dialog_description, str), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_binance_pay_action_pay));
+        return new DialogModel(this.resourceManager.getString(C3632R.string.wallet_binance_pay_transaction_direction_in_title), this.resourceManager.getString(C3632R.string.wallet_binance_pay_confirm_pay_dialog_description, str), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.wallet_binance_pay_action_pay));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

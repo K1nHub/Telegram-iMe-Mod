@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity$Adapter;Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$ChatFull;)V
     .locals 0
 
-    .line 896
+    .line 899
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Cells/StatisticPostInfoCell;-><init>(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$ChatFull;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 899
+    .line 902
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result v0
@@ -40,7 +40,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 900
+    .line 903
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -49,7 +49,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 902
+    .line 905
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 

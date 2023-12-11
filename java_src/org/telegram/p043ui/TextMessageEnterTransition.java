@@ -393,25 +393,25 @@ public class TextMessageEnterTransition implements MessageEnterTransitionContain
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:107:0x0474, code lost:
-        if (android.text.TextUtils.isEmpty(r6.caption) != false) goto L235;
+        if (android.text.TextUtils.isEmpty(r6.caption) != false) goto L250;
      */
     /* JADX WARN: Code restructure failed: missing block: B:111:0x0490, code lost:
-        if ((org.telegram.messenger.MessageObject.getMedia(r46.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC$TL_messageMediaInvoice) != false) goto L235;
+        if ((org.telegram.messenger.MessageObject.getMedia(r49.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC$TL_messageMediaInvoice) != false) goto L250;
      */
     /* JADX WARN: Code restructure failed: missing block: B:87:0x040d, code lost:
-        if (android.text.TextUtils.isEmpty(r5.caption) != false) goto L216;
+        if (android.text.TextUtils.isEmpty(r5.caption) != false) goto L231;
      */
     /* JADX WARN: Code restructure failed: missing block: B:91:0x0429, code lost:
-        if ((org.telegram.messenger.MessageObject.getMedia(r46.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC$TL_messageMediaInvoice) != false) goto L216;
+        if ((org.telegram.messenger.MessageObject.getMedia(r49.currentMessageObject.replyMessageObject.messageOwner) instanceof org.telegram.tgnet.TLRPC$TL_messageMediaInvoice) != false) goto L231;
      */
     @Override // org.telegram.p043ui.MessageEnterTransitionContainer.Transition
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void onDraw(android.graphics.Canvas r47) {
+    public void onDraw(android.graphics.Canvas r50) {
         /*
-            Method dump skipped, instructions count: 2993
+            Method dump skipped, instructions count: 3090
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.TextMessageEnterTransition.onDraw(android.graphics.Canvas):void");

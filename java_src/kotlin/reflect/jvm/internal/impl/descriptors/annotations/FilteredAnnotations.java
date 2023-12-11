@@ -40,10 +40,10 @@ public final class FilteredAnnotations implements Annotations {
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.annotations.Annotations
     /* renamed from: findAnnotation */
-    public AnnotationDescriptor mo2046findAnnotation(FqName fqName) {
+    public AnnotationDescriptor mo2048findAnnotation(FqName fqName) {
         Intrinsics.checkNotNullParameter(fqName, "fqName");
         if (this.fqNameFilter.invoke(fqName).booleanValue()) {
-            return this.delegate.mo2046findAnnotation(fqName);
+            return this.delegate.mo2048findAnnotation(fqName);
         }
         return null;
     }

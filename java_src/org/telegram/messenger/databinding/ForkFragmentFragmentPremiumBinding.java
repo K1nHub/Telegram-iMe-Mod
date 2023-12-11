@@ -12,7 +12,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.Components.BackupImageView;
 /* loaded from: classes4.dex */
@@ -62,7 +62,7 @@ public final class ForkFragmentFragmentPremiumBinding implements ViewBinding {
     }
 
     public static ForkFragmentFragmentPremiumBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_fragment_fragment_premium, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_fragment_fragment_premium, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -70,49 +70,49 @@ public final class ForkFragmentFragmentPremiumBinding implements ViewBinding {
     }
 
     public static ForkFragmentFragmentPremiumBinding bind(View view) {
-        int i = C3634R.C3637id.button_back;
+        int i = C3632R.C3635id.button_back;
         ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
         if (actionBarMenuItem != null) {
-            i = C3634R.C3637id.card_view;
+            i = C3632R.C3635id.card_view;
             CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
             if (cardView != null) {
-                i = C3634R.C3637id.frame_button_container;
+                i = C3632R.C3635id.frame_button_container;
                 FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
                 if (frameLayout != null) {
-                    i = C3634R.C3637id.frame_premium_star_container;
+                    i = C3632R.C3635id.frame_premium_star_container;
                     FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(view, i);
                     if (frameLayout2 != null) {
-                        i = C3634R.C3637id.image_recipient_icon;
+                        i = C3632R.C3635id.image_recipient_icon;
                         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                         if (appCompatImageView != null) {
-                            i = C3634R.C3637id.image_user_avatar;
+                            i = C3632R.C3635id.image_user_avatar;
                             BackupImageView backupImageView = (BackupImageView) ViewBindings.findChildViewById(view, i);
                             if (backupImageView != null) {
-                                i = C3634R.C3637id.nested_root;
+                                i = C3632R.C3635id.nested_root;
                                 NestedScrollView nestedScrollView = (NestedScrollView) ViewBindings.findChildViewById(view, i);
                                 if (nestedScrollView != null) {
-                                    i = C3634R.C3637id.recycler_products;
+                                    i = C3632R.C3635id.recycler_products;
                                     RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
                                     if (recyclerView != null) {
-                                        i = C3634R.C3637id.text_balance;
+                                        i = C3632R.C3635id.text_balance;
                                         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                                         if (textView != null) {
-                                            i = C3634R.C3637id.text_duration_title;
+                                            i = C3632R.C3635id.text_duration_title;
                                             TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                             if (textView2 != null) {
-                                                i = C3634R.C3637id.text_recipient_title;
+                                                i = C3632R.C3635id.text_recipient_title;
                                                 TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                                                 if (textView3 != null) {
-                                                    i = C3634R.C3637id.text_recipient_value;
+                                                    i = C3632R.C3635id.text_recipient_value;
                                                     TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                                                     if (textView4 != null) {
-                                                        i = C3634R.C3637id.text_subtitle;
+                                                        i = C3632R.C3635id.text_subtitle;
                                                         TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
                                                         if (textView5 != null) {
-                                                            i = C3634R.C3637id.text_title;
+                                                            i = C3632R.C3635id.text_title;
                                                             TextView textView6 = (TextView) ViewBindings.findChildViewById(view, i);
                                                             if (textView6 != null) {
-                                                                i = C3634R.C3637id.view_recipient;
+                                                                i = C3632R.C3635id.view_recipient;
                                                                 LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                                                 if (linearLayout != null) {
                                                                     return new ForkFragmentFragmentPremiumBinding((FrameLayout) view, actionBarMenuItem, cardView, frameLayout, frameLayout2, appCompatImageView, backupImageView, nestedScrollView, recyclerView, textView, textView2, textView3, textView4, textView5, textView6, linearLayout);

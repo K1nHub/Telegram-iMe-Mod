@@ -16,7 +16,7 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
@@ -110,11 +110,11 @@ public class ForumUtilities {
         public GeneralTopicDrawable(Context context, float f, int i, boolean z) {
             if (z) {
                 if (ForumUtilities.dialogGeneralIcon == null) {
-                    ForumUtilities.dialogGeneralIcon = context.getResources().getDrawable(C3634R.C3636drawable.msg_filled_general).mutate();
+                    ForumUtilities.dialogGeneralIcon = context.getResources().getDrawable(C3632R.C3634drawable.msg_filled_general).mutate();
                 }
                 this.icon = ForumUtilities.dialogGeneralIcon;
             } else {
-                this.icon = context.getResources().getDrawable(C3634R.C3636drawable.msg_filled_general).mutate();
+                this.icon = context.getResources().getDrawable(C3632R.C3634drawable.msg_filled_general).mutate();
             }
             this.scale = f;
             setColor(i);
@@ -296,7 +296,7 @@ public class ForumUtilities {
         }
         TLRPC$MessageAction tLRPC$MessageAction = messageObject.messageOwner.action;
         if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionTopicCreate) {
-            return AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(C3634R.string.TopicWasCreatedAction), getTopicSpannedName(tLRPC$TL_forumTopic, null, false));
+            return AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(C3632R.string.TopicWasCreatedAction), getTopicSpannedName(tLRPC$TL_forumTopic, null, false));
         }
         if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionTopicEdit) {
             TLRPC$TL_messageActionTopicEdit tLRPC$TL_messageActionTopicEdit = (TLRPC$TL_messageActionTopicEdit) tLRPC$MessageAction;
@@ -315,22 +315,22 @@ public class ForumUtilities {
             }
             int i = tLRPC$TL_messageActionTopicEdit.flags;
             if ((i & 8) != 0) {
-                return AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(tLRPC$TL_messageActionTopicEdit.hidden ? C3634R.string.TopicHidden2 : C3634R.string.TopicShown2), str);
+                return AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(tLRPC$TL_messageActionTopicEdit.hidden ? C3632R.string.TopicHidden2 : C3632R.string.TopicShown2), str);
             } else if ((i & 4) != 0) {
-                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(tLRPC$TL_messageActionTopicEdit.closed ? C3634R.string.TopicWasClosedAction : C3634R.string.TopicWasReopenedAction), getTopicSpannedName(tLRPC$TL_forumTopic, null, false)), str);
+                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(tLRPC$TL_messageActionTopicEdit.closed ? C3632R.string.TopicWasClosedAction : C3632R.string.TopicWasReopenedAction), getTopicSpannedName(tLRPC$TL_forumTopic, null, false)), str);
             } else if ((i & 1) != 0 && (i & 2) != 0) {
                 TLRPC$TL_forumTopic tLRPC$TL_forumTopic2 = new TLRPC$TL_forumTopic();
                 tLRPC$TL_forumTopic2.icon_emoji_id = tLRPC$TL_messageActionTopicEdit.icon_emoji_id;
                 tLRPC$TL_forumTopic2.title = tLRPC$TL_messageActionTopicEdit.title;
-                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3634R.string.TopicWasRenamedToAction2), getTopicSpannedName(tLRPC$TL_forumTopic2, null, false)), str);
+                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3632R.string.TopicWasRenamedToAction2), getTopicSpannedName(tLRPC$TL_forumTopic2, null, false)), str);
             } else if ((i & 1) != 0) {
-                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3634R.string.TopicWasRenamedToAction), tLRPC$TL_messageActionTopicEdit.title), str);
+                return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3632R.string.TopicWasRenamedToAction), tLRPC$TL_messageActionTopicEdit.title), str);
             } else {
                 if ((i & 2) != 0) {
                     TLRPC$TL_forumTopic tLRPC$TL_forumTopic3 = new TLRPC$TL_forumTopic();
                     tLRPC$TL_forumTopic3.icon_emoji_id = tLRPC$TL_messageActionTopicEdit.icon_emoji_id;
                     tLRPC$TL_forumTopic3.title = "";
-                    return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3634R.string.TopicWasIconChangedToAction), getTopicSpannedName(tLRPC$TL_forumTopic3, null, false)), str);
+                    return AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceCharSequence("%2$s", LocaleController.getString(C3632R.string.TopicWasIconChangedToAction), getTopicSpannedName(tLRPC$TL_forumTopic3, null, false)), str);
                 }
             }
         }

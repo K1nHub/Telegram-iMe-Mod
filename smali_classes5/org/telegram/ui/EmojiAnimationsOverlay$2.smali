@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/EmojiAnimationsOverlay;Lorg/telegram/ui/Components/Bulletin;)V
     .locals 0
 
-    .line 454
+    .line 455
     iput-object p1, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$2;->this$0:Lorg/telegram/ui/EmojiAnimationsOverlay;
 
     iput-object p2, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$2;->val$bulletin:Lorg/telegram/ui/Components/Bulletin;
@@ -42,12 +42,12 @@
 .method public run()V
     .locals 2
 
-    .line 457
+    .line 458
     iget-object v0, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$2;->val$bulletin:Lorg/telegram/ui/Components/Bulletin;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    .line 458
+    .line 459
     iget-object v0, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$2;->this$0:Lorg/telegram/ui/EmojiAnimationsOverlay;
 
     const/4 v1, 0x0

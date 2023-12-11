@@ -13,21 +13,21 @@ import org.ton.tlb.TlbNegatedResult;
 final class HashMapLabelLongTlbConstructor extends TlbNegatedConstructor<HmlLong> {
 
     /* renamed from: ID */
-    private static final BitString f2084ID;
+    private static final BitString f2085ID;
 
     /* renamed from: m */
-    private final int f2085m;
+    private final int f2086m;
 
     public HashMapLabelLongTlbConstructor(int i) {
-        super("hml_long$10 {m:#} n:(#<= m) s:(n * Bit) = HmLabel ~n m;", f2084ID);
-        this.f2085m = i;
+        super("hml_long$10 {m:#} n:(#<= m) s:(n * Bit) = HmLabel ~n m;", f2085ID);
+        this.f2086m = i;
     }
 
     @Override // org.ton.tlb.TlbNegatedStorer
     public int storeNegatedTlb(CellBuilder cellBuilder, HmlLong value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.storeUIntLeq(value.getN(), this.f2085m);
+        cellBuilder.storeUIntLeq(value.getN(), this.f2086m);
         cellBuilder.storeBits(value.getS());
         return value.getN();
     }
@@ -35,7 +35,7 @@ final class HashMapLabelLongTlbConstructor extends TlbNegatedConstructor<HmlLong
     @Override // org.ton.tlb.TlbNegatedLoader
     public TlbNegatedResult<HmlLong> loadNegatedTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        int intValue = cellSlice.loadUIntLeq(this.f2085m).intValue();
+        int intValue = cellSlice.loadUIntLeq(this.f2086m).intValue();
         return new TlbNegatedResult<>(intValue, new HmlLong(intValue, cellSlice.loadBits(intValue)));
     }
 
@@ -52,6 +52,6 @@ final class HashMapLabelLongTlbConstructor extends TlbNegatedConstructor<HmlLong
 
     static {
         new Companion(null);
-        f2084ID = BitString.Companion.m42of(Arrays.copyOf(new boolean[]{true, false}, 2));
+        f2085ID = BitString.Companion.m42of(Arrays.copyOf(new boolean[]{true, false}, 2));
     }
 }

@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -175,25 +175,7 @@ public class AvatarDrawable extends Drawable {
     }
 
     public static String colorName(int i) {
-        return LocaleController.getString(new int[]{C3634R.string.ColorRed, C3634R.string.ColorOrange, C3634R.string.ColorViolet, C3634R.string.ColorGreen, C3634R.string.ColorCyan, C3634R.string.ColorBlue, C3634R.string.ColorPink}[i % 7]);
-    }
-
-    public static int getNameColorKey1For(int i) {
-        int length = i % (Theme.keys_avatar_nameInMessage.length + Theme.keys_avatar_composite_nameInMessage.length);
-        if (length >= 0) {
-            int[] iArr = Theme.keys_avatar_nameInMessage;
-            if (length < iArr.length) {
-                return iArr[length];
-            }
-        }
-        int length2 = length - Theme.keys_avatar_nameInMessage.length;
-        if (length2 >= 0) {
-            int[] iArr2 = Theme.keys_avatar_composite_nameInMessage;
-            if (length2 < iArr2.length) {
-                return iArr2[length2];
-            }
-        }
-        return Theme.keys_avatar_nameInMessage[0];
+        return LocaleController.getString(new int[]{C3632R.string.ColorRed, C3632R.string.ColorOrange, C3632R.string.ColorViolet, C3632R.string.ColorGreen, C3632R.string.ColorCyan, C3632R.string.ColorBlue, C3632R.string.ColorPink}[i % 7]);
     }
 
     public void setInfo(TLRPC$User tLRPC$User) {
@@ -487,12 +469,12 @@ public class AvatarDrawable extends Drawable {
             canvas.restore();
         } else if (i2 != 0) {
             if (i2 == 101) {
-                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3634R.C3636drawable.fork_templates_filled);
+                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3632R.C3634drawable.fork_templates_filled);
                 if (drawable != null) {
                     drawable.setBounds(0, 0, width, width);
                 }
             } else if (i2 == 100) {
-                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3634R.C3636drawable.fork_filter_icon_lock_filled);
+                drawable = AppCompatResources.getDrawable(ApplicationLoader.applicationContext, C3632R.C3634drawable.fork_filter_icon_lock_filled);
                 if (drawable != null) {
                     drawable.setBounds(0, 0, width, width);
                 }

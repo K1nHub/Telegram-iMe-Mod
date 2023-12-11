@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentMap;
-import p033j$.lang.AbstractC2673d;
+import p033j$.lang.AbstractC2670d;
 import p033j$.util.function.BiConsumer;
 import p033j$.util.function.BiFunction;
 import p033j$.util.function.Function;
@@ -99,7 +99,7 @@ public interface Map<K, V> {
 
         public static boolean $default$remove(java.util.Map map, Object obj, Object obj2) {
             Object obj3 = map.get(obj);
-            if (AbstractC2843k.m589q(obj3, obj2)) {
+            if (AbstractC2840k.m589q(obj3, obj2)) {
                 if (obj3 != null || map.containsKey(obj)) {
                     map.remove(obj);
                     return true;
@@ -116,7 +116,7 @@ public interface Map<K, V> {
 
         public static boolean $default$replace(java.util.Map map, Object obj, Object obj2, Object obj3) {
             Object obj4 = map.get(obj);
-            if (AbstractC2843k.m589q(obj4, obj2)) {
+            if (AbstractC2840k.m589q(obj4, obj2)) {
                 if (obj4 != null || map.containsKey(obj)) {
                     map.put(obj, obj3);
                     return true;
@@ -149,7 +149,7 @@ public interface Map<K, V> {
             if (map instanceof Map) {
                 ((Map) map).forEach(biConsumer);
             } else if (map instanceof ConcurrentMap) {
-                AbstractC2673d.m991b((ConcurrentMap) map, biConsumer);
+                AbstractC2670d.m991b((ConcurrentMap) map, biConsumer);
             } else {
                 CC.$default$forEach(map, biConsumer);
             }

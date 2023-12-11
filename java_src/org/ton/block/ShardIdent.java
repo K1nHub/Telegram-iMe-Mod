@@ -48,7 +48,7 @@ public final class ShardIdent implements TlbObject {
     }
 
     public int hashCode() {
-        return (((this.shardPfxBits * 31) + this.workchainId) * 31) + ULong.m1996hashCodeimpl(this.shardPrefix);
+        return (((this.shardPfxBits * 31) + this.workchainId) * 31) + ULong.m1998hashCodeimpl(this.shardPrefix);
     }
 
     private ShardIdent(int i, int i2, int i3, ULong uLong, SerializationConstructorMarker serializationConstructorMarker) {
@@ -57,7 +57,7 @@ public final class ShardIdent implements TlbObject {
         }
         this.shardPfxBits = i2;
         this.workchainId = i3;
-        this.shardPrefix = uLong.m1998unboximpl();
+        this.shardPrefix = uLong.m2000unboximpl();
         if (i2 <= 60) {
             return;
         }
@@ -77,7 +77,7 @@ public final class ShardIdent implements TlbObject {
     public static final /* synthetic */ void write$Self(ShardIdent shardIdent, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeIntElement(serialDescriptor, 0, shardIdent.shardPfxBits);
         compositeEncoder.encodeIntElement(serialDescriptor, 1, shardIdent.workchainId);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, ULongSerializer.INSTANCE, ULong.m1993boximpl(shardIdent.shardPrefix));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, ULongSerializer.INSTANCE, ULong.m1995boximpl(shardIdent.shardPrefix));
     }
 
     public final int getShardPfxBits() {
@@ -89,7 +89,7 @@ public final class ShardIdent implements TlbObject {
     }
 
     /* renamed from: getShardPrefix-s-VKNKU  reason: not valid java name */
-    public final long m5196getShardPrefixsVKNKU() {
+    public final long m5178getShardPrefixsVKNKU() {
         return this.shardPrefix;
     }
 
@@ -140,7 +140,7 @@ public final class ShardIdent implements TlbObject {
         TlbPrettyPrinter open = printer.open("shard_ident");
         open.field("shard_pfx_bits", Integer.valueOf(this.shardPfxBits));
         open.field("workchain_id", Integer.valueOf(this.workchainId));
-        open.field("shard_prefix", ULong.m1993boximpl(this.shardPrefix));
+        open.field("shard_prefix", ULong.m1995boximpl(this.shardPrefix));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

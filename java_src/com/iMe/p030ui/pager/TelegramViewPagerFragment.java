@@ -43,10 +43,10 @@ import kotlin.math.MathKt__MathJVMKt;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.AnimationProperties;
@@ -346,16 +346,16 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getToolbarTitle());
-        c3706ActionBar.setExtraHeight(AndroidUtilities.m105dp(getAdditionalActionBarHeight() + 44.0f));
-        c3706ActionBar.setAllowOverlayTitle(false);
-        c3706ActionBar.setAddToContainer(false);
-        c3706ActionBar.setClipContent(true);
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getToolbarTitle());
+        c3704ActionBar.setExtraHeight(AndroidUtilities.m105dp(getAdditionalActionBarHeight() + 44.0f));
+        c3704ActionBar.setAllowOverlayTitle(false);
+        c3704ActionBar.setAddToContainer(false);
+        c3704ActionBar.setClipContent(true);
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     TelegramViewPagerFragment.this.finishFragment();
@@ -365,10 +365,10 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             }
         });
         ViewExtKt.visible$default(getScrollSlidingTextTabStrip(), false, 1, null);
-        ViewParent parent = c3706ActionBar.getParent();
+        ViewParent parent = c3704ActionBar.getParent();
         ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
         if (viewGroup != null) {
-            viewGroup.removeView(c3706ActionBar);
+            viewGroup.removeView(c3704ActionBar);
         }
     }
 
@@ -538,7 +538,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
                     if (i != 1) {
                         int i2 = (int) (-((BaseFragment) TelegramViewPagerFragment.this).actionBar.getTranslationY());
-                        int currentActionBarHeight = C3706ActionBar.getCurrentActionBarHeight();
+                        int currentActionBarHeight = C3704ActionBar.getCurrentActionBarHeight();
                         if (i2 == 0 || i2 == currentActionBarHeight) {
                             return;
                         }
@@ -556,8 +556,8 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     if (recyclerView == TelegramViewPagerFragment.this.getViewPages()[0].getListView()) {
                         float translationY = ((BaseFragment) TelegramViewPagerFragment.this).actionBar.getTranslationY();
                         float f = translationY - i2;
-                        if (f < (-C3706ActionBar.getCurrentActionBarHeight())) {
-                            f = -C3706ActionBar.getCurrentActionBarHeight();
+                        if (f < (-C3704ActionBar.getCurrentActionBarHeight())) {
+                            f = -C3704ActionBar.getCurrentActionBarHeight();
                         } else if (f > BitmapDescriptorFactory.HUE_RED) {
                             f = 0.0f;
                         }

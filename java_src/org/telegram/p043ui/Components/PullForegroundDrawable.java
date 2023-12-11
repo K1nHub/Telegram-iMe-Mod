@@ -20,7 +20,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Stories.recorder.HintView2;
@@ -154,7 +154,7 @@ public class PullForegroundDrawable {
         this.pullTooltipText = charSequence;
         this.releaseTooltipText = charSequence2;
         try {
-            this.generalTopicDrawable = ApplicationLoader.applicationContext.getResources().getDrawable(C3634R.C3636drawable.msg_filled_general).mutate();
+            this.generalTopicDrawable = ApplicationLoader.applicationContext.getResources().getDrawable(C3632R.C3634drawable.msg_filled_general).mutate();
         } catch (Exception unused) {
         }
     }

@@ -52,7 +52,7 @@ public final class ShardAccount implements TlbObject {
     }
 
     public int hashCode() {
-        return (((this.account.hashCode() * 31) + this.lastTransHash.hashCode()) * 31) + ULong.m1996hashCodeimpl(this.lastTransLt);
+        return (((this.account.hashCode() * 31) + this.lastTransHash.hashCode()) * 31) + ULong.m1998hashCodeimpl(this.lastTransLt);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -62,7 +62,7 @@ public final class ShardAccount implements TlbObject {
         }
         this.account = cellRef;
         this.lastTransHash = bitString;
-        this.lastTransLt = uLong.m1998unboximpl();
+        this.lastTransLt = uLong.m2000unboximpl();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -77,7 +77,7 @@ public final class ShardAccount implements TlbObject {
     public static final /* synthetic */ void write$Self(ShardAccount shardAccount, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, $childSerializers[0], shardAccount.account);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, FiftHexBitStringSerializer.INSTANCE, shardAccount.lastTransHash);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, ULongSerializer.INSTANCE, ULong.m1993boximpl(shardAccount.lastTransLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, ULongSerializer.INSTANCE, ULong.m1995boximpl(shardAccount.lastTransLt));
     }
 
     public final CellRef<Account> getAccount() {
@@ -89,7 +89,7 @@ public final class ShardAccount implements TlbObject {
     }
 
     /* renamed from: getLastTransLt-s-VKNKU  reason: not valid java name */
-    public final long m5148getLastTransLtsVKNKU() {
+    public final long m5130getLastTransLtsVKNKU() {
         return this.lastTransLt;
     }
 
@@ -145,7 +145,7 @@ public final class ShardAccount implements TlbObject {
         TlbPrettyPrinter open = printer.open("account_descr");
         open.field("account", this.account);
         open.field("last_trans_hash", this.lastTransHash);
-        open.field("last_trans_lt", ULong.m1993boximpl(this.lastTransLt));
+        open.field("last_trans_lt", ULong.m1995boximpl(this.lastTransLt));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

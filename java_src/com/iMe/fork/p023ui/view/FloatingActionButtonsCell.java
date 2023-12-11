@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -96,7 +96,7 @@ public final class FloatingActionButtonsCell extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final SimpleTextView initTextView() {
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
-        simpleTextView.setText(LocaleController.getInternalString(C3634R.string.create_folder_change_fab_title));
+        simpleTextView.setText(LocaleController.getInternalString(C3632R.string.create_folder_change_fab_title));
         simpleTextView.setTextSize(16);
         return simpleTextView;
     }

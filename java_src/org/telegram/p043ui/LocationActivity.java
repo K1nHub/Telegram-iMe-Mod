@@ -61,7 +61,7 @@ import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
@@ -79,7 +79,7 @@ import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Adapters.BaseLocationAdapter;
@@ -203,7 +203,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
     private ArrayList<VenueLocation> placeMarkers = new ArrayList<>();
     private boolean checkPermission = true;
     private boolean checkBackgroundPermission = true;
-    private int overScrollHeight = (AndroidUtilities.displaySize.x - C3706ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m104dp(66);
+    private int overScrollHeight = (AndroidUtilities.displaySize.x - C3704ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m104dp(66);
     private boolean isSharingAllowed = true;
     private Bitmap[] bitmapCache = new Bitmap[7];
 
@@ -313,7 +313,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             FrameLayout frameLayout = new FrameLayout(context);
             addView(frameLayout, LayoutHelper.createFrame(-2, 114));
             LocationActivity.this.lastPressedMarkerView = new FrameLayout(context);
-            LocationActivity.this.lastPressedMarkerView.setBackgroundResource(C3634R.C3636drawable.venue_tooltip);
+            LocationActivity.this.lastPressedMarkerView.setBackgroundResource(C3632R.C3634drawable.venue_tooltip);
             LocationActivity.this.lastPressedMarkerView.getBackground().setColorFilter(new PorterDuffColorFilter(LocationActivity.this.getThemedColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
             frameLayout.addView(LocationActivity.this.lastPressedMarkerView, LayoutHelper.createFrame(-2, 71));
             LocationActivity.this.lastPressedMarkerView.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -341,7 +341,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             textView2.setGravity(LocaleController.isRTL ? 5 : 3);
             LocationActivity.this.lastPressedMarkerView.addView(textView2, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 48, 18, 32, 18, 0));
             textView.setText(venueLocation.venue.title);
-            textView2.setText(LocaleController.getString("TapToSendLocation", C3634R.string.TapToSendLocation));
+            textView2.setText(LocaleController.getString("TapToSendLocation", C3632R.string.TapToSendLocation));
             final FrameLayout frameLayout2 = new FrameLayout(context);
             frameLayout2.setBackground(Theme.createCircleDrawable(AndroidUtilities.m104dp(36), LocationCell.getColorForIndex(venueLocation.num)));
             frameLayout.addView(frameLayout2, LayoutHelper.createFrame(36, 36, 81, 0, 0, 0, 4));
@@ -550,22 +550,22 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         }
         int i3 = Build.VERSION.SDK_INT;
         this.locationDenied = (i3 < 23 || getParentActivity() == null || getParentActivity().checkSelfPermission("android.permission.ACCESS_COARSE_LOCATION") == 0) ? false : true;
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i4 = Theme.key_dialogBackground;
-        c3706ActionBar.setBackgroundColor(getThemedColor(i4));
-        C3706ActionBar c3706ActionBar2 = this.actionBar;
+        c3704ActionBar.setBackgroundColor(getThemedColor(i4));
+        C3704ActionBar c3704ActionBar2 = this.actionBar;
         int i5 = Theme.key_dialogTextBlack;
-        c3706ActionBar2.setTitleColor(getThemedColor(i5));
+        c3704ActionBar2.setTitleColor(getThemedColor(i5));
         this.actionBar.setItemsColor(getThemedColor(i5), false);
         this.actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_dialogButtonSelector), false);
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAddToContainer(false);
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LocationActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LocationActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i6) {
                 if (i6 == -1) {
                     LocationActivity.this.finishFragment();
@@ -589,35 +589,35 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         });
         ActionBarMenu createMenu = this.actionBar.createMenu();
         if (this.chatLocation != null) {
-            this.actionBar.setTitle(LocaleController.getString("ChatLocation", C3634R.string.ChatLocation));
+            this.actionBar.setTitle(LocaleController.getString("ChatLocation", C3632R.string.ChatLocation));
         } else {
             MessageObject messageObject = this.messageObject;
             if (messageObject != null) {
                 if (messageObject.isLiveLocation()) {
-                    this.actionBar.setTitle(LocaleController.getString("AttachLiveLocation", C3634R.string.AttachLiveLocation));
-                    ActionBarMenuItem addItem = createMenu.addItem(0, C3634R.C3636drawable.ic_ab_other, getResourceProvider());
+                    this.actionBar.setTitle(LocaleController.getString("AttachLiveLocation", C3632R.string.AttachLiveLocation));
+                    ActionBarMenuItem addItem = createMenu.addItem(0, C3632R.C3634drawable.ic_ab_other, getResourceProvider());
                     this.otherItem = addItem;
-                    addItem.addSubItem(6, C3634R.C3636drawable.navigate, LocaleController.getString("GetDirections", C3634R.string.GetDirections));
+                    addItem.addSubItem(6, C3632R.C3634drawable.navigate, LocaleController.getString("GetDirections", C3632R.string.GetDirections));
                 } else {
                     String str = this.messageObject.messageOwner.media.title;
                     if (str != null && str.length() > 0) {
-                        this.actionBar.setTitle(LocaleController.getString("SharedPlace", C3634R.string.SharedPlace));
+                        this.actionBar.setTitle(LocaleController.getString("SharedPlace", C3632R.string.SharedPlace));
                     } else {
-                        this.actionBar.setTitle(LocaleController.getString("ChatLocation", C3634R.string.ChatLocation));
+                        this.actionBar.setTitle(LocaleController.getString("ChatLocation", C3632R.string.ChatLocation));
                     }
-                    ActionBarMenuItem addItem2 = createMenu.addItem(0, C3634R.C3636drawable.ic_ab_other, getResourceProvider());
+                    ActionBarMenuItem addItem2 = createMenu.addItem(0, C3632R.C3634drawable.ic_ab_other, getResourceProvider());
                     this.otherItem = addItem2;
-                    addItem2.addSubItem(1, C3634R.C3636drawable.msg_openin, LocaleController.getString("OpenInExternalApp", C3634R.string.OpenInExternalApp));
+                    addItem2.addSubItem(1, C3632R.C3634drawable.msg_openin, LocaleController.getString("OpenInExternalApp", C3632R.string.OpenInExternalApp));
                     if (!getLocationController().isSharingLocation(this.dialogId) && this.isSharingAllowed) {
-                        this.otherItem.addSubItem(5, C3634R.C3636drawable.msg_location, LocaleController.getString("SendLiveLocationMenu", C3634R.string.SendLiveLocationMenu));
+                        this.otherItem.addSubItem(5, C3632R.C3634drawable.msg_location, LocaleController.getString("SendLiveLocationMenu", C3632R.string.SendLiveLocationMenu));
                     }
-                    this.otherItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+                    this.otherItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
                 }
             } else {
-                this.actionBar.setTitle(LocaleController.getString("ShareLocation", C3634R.string.ShareLocation));
+                this.actionBar.setTitle(LocaleController.getString("ShareLocation", C3632R.string.ShareLocation));
                 if (this.locationType != 4) {
                     this.overlayView = new MapOverlayView(context);
-                    ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, C3634R.C3636drawable.ic_ab_search, getResourceProvider()).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.LocationActivity.2
+                    ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, C3632R.C3634drawable.ic_ab_search, getResourceProvider()).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.LocationActivity.2
                         @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
                         public void onSearchExpand() {
                             LocationActivity.this.searching = true;
@@ -665,7 +665,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                         }
                     });
                     this.searchItem = actionBarMenuItemSearchListener;
-                    int i6 = C3634R.string.Search;
+                    int i6 = C3632R.string.Search;
                     actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", i6));
                     this.searchItem.setContentDescription(LocaleController.getString("Search", i6));
                     EditTextBoldCursor searchField = this.searchItem.getSearchField();
@@ -701,7 +701,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.fragmentView = frameLayout;
         FrameLayout frameLayout2 = frameLayout;
         frameLayout.setBackgroundColor(getThemedColor(i4));
-        Drawable mutate = context.getResources().getDrawable(C3634R.C3636drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3632R.C3634drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i4), PorterDuff.Mode.MULTIPLY));
         final Rect rect = new Rect();
@@ -732,7 +732,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             searchButton.setTranslationX(-AndroidUtilities.m104dp(80));
             Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(40), getThemedColor(Theme.key_location_actionBackground), getThemedColor(Theme.key_location_actionPressedBackground));
             if (i3 < 21) {
-                Drawable mutate2 = context.getResources().getDrawable(C3634R.C3636drawable.places_btn).mutate();
+                Drawable mutate2 = context.getResources().getDrawable(C3632R.C3634drawable.places_btn).mutate();
                 mutate2.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
                 CombinedDrawable combinedDrawable = new CombinedDrawable(mutate2, createSimpleSelectorRoundRectDrawable, AndroidUtilities.m104dp(2), AndroidUtilities.m104dp(2));
                 combinedDrawable.setFullsize(true);
@@ -755,7 +755,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             this.searchAreaButton.setTextColor(getThemedColor(Theme.key_location_actionActiveIcon));
             this.searchAreaButton.setTextSize(1, 14.0f);
             this.searchAreaButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            this.searchAreaButton.setText(LocaleController.getString("PlacesInThisArea", C3634R.string.PlacesInThisArea));
+            this.searchAreaButton.setText(LocaleController.getString("PlacesInThisArea", C3632R.string.PlacesInThisArea));
             this.searchAreaButton.setGravity(17);
             this.searchAreaButton.setPadding(AndroidUtilities.m104dp(20), 0, AndroidUtilities.m104dp(20), 0);
             i8 = 21;
@@ -775,17 +775,17 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.mapTypeButton.setSubMenuOpenSide(2);
         this.mapTypeButton.setAdditionalXOffset(AndroidUtilities.m104dp(10));
         this.mapTypeButton.setAdditionalYOffset(-AndroidUtilities.m104dp(10));
-        this.mapTypeButton.addSubItem(2, C3634R.C3636drawable.msg_map, LocaleController.getString("Map", C3634R.string.Map), getResourceProvider());
-        this.mapTypeButton.addSubItem(3, C3634R.C3636drawable.msg_satellite, LocaleController.getString("Satellite", C3634R.string.Satellite), getResourceProvider());
-        this.mapTypeButton.addSubItem(4, C3634R.C3636drawable.msg_hybrid, LocaleController.getString("Hybrid", C3634R.string.Hybrid), getResourceProvider());
-        this.mapTypeButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+        this.mapTypeButton.addSubItem(2, C3632R.C3634drawable.msg_map, LocaleController.getString("Map", C3632R.string.Map), getResourceProvider());
+        this.mapTypeButton.addSubItem(3, C3632R.C3634drawable.msg_satellite, LocaleController.getString("Satellite", C3632R.string.Satellite), getResourceProvider());
+        this.mapTypeButton.addSubItem(4, C3632R.C3634drawable.msg_hybrid, LocaleController.getString("Hybrid", C3632R.string.Hybrid), getResourceProvider());
+        this.mapTypeButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
         int m104dp = AndroidUtilities.m104dp(40);
         int i11 = Theme.key_location_actionBackground;
         int themedColor = getThemedColor(i11);
         int i12 = Theme.key_location_actionPressedBackground;
         Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(m104dp, themedColor, getThemedColor(i12));
         if (i3 < i10) {
-            Drawable mutate3 = context.getResources().getDrawable(C3634R.C3636drawable.floating_shadow_profile).mutate();
+            Drawable mutate3 = context.getResources().getDrawable(C3632R.C3634drawable.floating_shadow_profile).mutate();
             mutate3.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable2 = new CombinedDrawable(mutate3, createSimpleSelectorCircleDrawable, 0, 0);
             combinedDrawable2.setIconSize(AndroidUtilities.m104dp(40), AndroidUtilities.m104dp(40));
@@ -805,7 +805,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             });
         }
         this.mapTypeButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable);
-        this.mapTypeButton.setIcon(C3634R.C3636drawable.msg_map_type);
+        this.mapTypeButton.setIcon(C3632R.C3634drawable.msg_map_type);
         this.mapViewClip.addView(this.mapTypeButton, LayoutHelper.createFrame(i3 >= 21 ? 40 : 44, i3 >= 21 ? 40 : 44, 53, 0, 12, 12, 0));
         this.mapTypeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
@@ -822,7 +822,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.locationButton = new ImageView(context);
         Drawable createSimpleSelectorCircleDrawable2 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m104dp(40), getThemedColor(i11), getThemedColor(i12));
         if (i3 < 21) {
-            Drawable mutate4 = context.getResources().getDrawable(C3634R.C3636drawable.floating_shadow_profile).mutate();
+            Drawable mutate4 = context.getResources().getDrawable(C3632R.C3634drawable.floating_shadow_profile).mutate();
             mutate4.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable3 = new CombinedDrawable(mutate4, createSimpleSelectorCircleDrawable2, 0, 0);
             combinedDrawable3.setIconSize(AndroidUtilities.m104dp(40), AndroidUtilities.m104dp(40));
@@ -842,13 +842,13 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             });
         }
         this.locationButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable2);
-        this.locationButton.setImageResource(C3634R.C3636drawable.msg_current_location);
+        this.locationButton.setImageResource(C3632R.C3634drawable.msg_current_location);
         this.locationButton.setScaleType(ImageView.ScaleType.CENTER);
         ImageView imageView2 = this.locationButton;
         int i13 = Theme.key_location_actionActiveIcon;
         imageView2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i13), PorterDuff.Mode.MULTIPLY));
         this.locationButton.setTag(Integer.valueOf(i13));
-        this.locationButton.setContentDescription(LocaleController.getString("AccDescrMyLocation", C3634R.string.AccDescrMyLocation));
+        this.locationButton.setContentDescription(LocaleController.getString("AccDescrMyLocation", C3632R.string.AccDescrMyLocation));
         FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(i3 >= 21 ? 40 : 44, i3 >= 21 ? 40 : 44, 85, 0, 0, 12, 12);
         createFrame.bottomMargin += layoutParams2.height - rect.top;
         this.mapViewClip.addView(this.locationButton, createFrame);
@@ -861,7 +861,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.proximityButton = new ImageView(context);
         Drawable createSimpleSelectorCircleDrawable3 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m104dp(40), getThemedColor(i11), getThemedColor(i12));
         if (i3 < 21) {
-            Drawable mutate5 = context.getResources().getDrawable(C3634R.C3636drawable.floating_shadow_profile).mutate();
+            Drawable mutate5 = context.getResources().getDrawable(C3632R.C3634drawable.floating_shadow_profile).mutate();
             mutate5.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable4 = new CombinedDrawable(mutate5, createSimpleSelectorCircleDrawable3, 0, 0);
             combinedDrawable4.setIconSize(AndroidUtilities.m104dp(40), AndroidUtilities.m104dp(40));
@@ -883,7 +883,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.proximityButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i9), PorterDuff.Mode.MULTIPLY));
         this.proximityButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable3);
         this.proximityButton.setScaleType(ImageView.ScaleType.CENTER);
-        this.proximityButton.setContentDescription(LocaleController.getString("AccDescrLocationNotify", C3634R.string.AccDescrLocationNotify));
+        this.proximityButton.setContentDescription(LocaleController.getString("AccDescrLocationNotify", C3632R.string.AccDescrLocationNotify));
         this.mapViewClip.addView(this.proximityButton, LayoutHelper.createFrame(i3 >= 21 ? 40 : 44, i3 >= 21 ? 40 : 44, 53, 0, 62, 12, 0));
         this.proximityButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
@@ -895,11 +895,11 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         MessageObject messageObject2 = this.messageObject;
         if (messageObject2 == null || !messageObject2.isLiveLocation() || this.messageObject.isExpiredLiveLocation(getConnectionsManager().getCurrentTime()) || (ChatObject.isChannel(chat) && !chat.megagroup)) {
             this.proximityButton.setVisibility(8);
-            this.proximityButton.setImageResource(C3634R.C3636drawable.msg_location_alert);
+            this.proximityButton.setImageResource(C3632R.C3634drawable.msg_location_alert);
         } else {
             LocationController.SharingLocationInfo sharingLocationInfo = getLocationController().getSharingLocationInfo(this.dialogId);
             if (sharingLocationInfo != null && sharingLocationInfo.proximityMeters > 0) {
-                this.proximityButton.setImageResource(C3634R.C3636drawable.msg_location_alert2);
+                this.proximityButton.setImageResource(C3632R.C3634drawable.msg_location_alert2);
             } else {
                 if (DialogObject.isUserDialog(this.dialogId) && this.messageObject.getFromChatId() == getUserConfig().getClientUserId()) {
                     this.proximityButton.setVisibility(4);
@@ -907,7 +907,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                     this.proximityButton.setScaleX(0.4f);
                     this.proximityButton.setScaleY(0.4f);
                 }
-                this.proximityButton.setImageResource(C3634R.C3636drawable.msg_location_alert);
+                this.proximityButton.setImageResource(C3632R.C3634drawable.msg_location_alert);
             }
         }
         HintView hintView = new HintView(context, 6, true);
@@ -932,7 +932,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         });
         ImageView imageView4 = new ImageView(context);
         this.emptyImageView = imageView4;
-        imageView4.setImageResource(C3634R.C3636drawable.location_empty);
+        imageView4.setImageResource(C3632R.C3634drawable.location_empty);
         this.emptyImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogEmptyImage), PorterDuff.Mode.MULTIPLY));
         this.emptyView.addView(this.emptyImageView, LayoutHelper.createLinear(-2, -2));
         TextView textView = new TextView(context);
@@ -942,7 +942,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.emptyTitleTextView.setGravity(17);
         this.emptyTitleTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.emptyTitleTextView.setTextSize(1, 17.0f);
-        this.emptyTitleTextView.setText(LocaleController.getString("NoPlacesFound", C3634R.string.NoPlacesFound));
+        this.emptyTitleTextView.setText(LocaleController.getString("NoPlacesFound", C3632R.string.NoPlacesFound));
         this.emptyView.addView(this.emptyTitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 11, 0, 0));
         TextView textView2 = new TextView(context);
         this.emptySubtitleTextView = textView2;
@@ -1077,7 +1077,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         if (messageObject3 == null && this.chatLocation == null) {
             if (chat != null && this.locationType == 4 && this.dialogId != 0) {
                 FrameLayout frameLayout4 = new FrameLayout(context);
-                frameLayout4.setBackgroundResource(C3634R.C3636drawable.livepin);
+                frameLayout4.setBackgroundResource(C3632R.C3634drawable.livepin);
                 this.mapViewClip.addView(frameLayout4, LayoutHelper.createFrame(62, 76, 49));
                 BackupImageView backupImageView = new BackupImageView(context);
                 backupImageView.setRoundRadius(AndroidUtilities.m104dp(26));
@@ -1088,7 +1088,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             }
             if (this.markerImageView == null) {
                 ImageView imageView5 = new ImageView(context);
-                imageView5.setImageResource(C3634R.C3636drawable.map_pin2);
+                imageView5.setImageResource(C3632R.C3634drawable.map_pin2);
                 this.mapViewClip.addView(imageView5, LayoutHelper.createFrame(28, 48, 49));
                 this.markerImageView = imageView5;
             }
@@ -1104,7 +1104,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                         LocationActivity.this.searchItem.setShowSearchProgress(LocationActivity.this.searchAdapter.isSearching());
                     }
                     if (LocationActivity.this.emptySubtitleTextView != null) {
-                        LocationActivity.this.emptySubtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", C3634R.string.NoPlacesFoundInfo, LocationActivity.this.searchAdapter.getLastSearchString())));
+                        LocationActivity.this.emptySubtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", C3632R.string.NoPlacesFoundInfo, LocationActivity.this.searchAdapter.getLastSearchString())));
                     }
                     super.notifyDataSetChanged();
                 }
@@ -1269,7 +1269,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             this.undoView[0].hide(true, 1);
         }
         if (sharingLocationInfo != null && sharingLocationInfo.proximityMeters > 0) {
-            this.proximityButton.setImageResource(C3634R.C3636drawable.msg_location_alert);
+            this.proximityButton.setImageResource(C3632R.C3634drawable.msg_location_alert);
             IMapsProvider.ICircle iCircle = this.proximityCircle;
             if (iCircle != null) {
                 iCircle.remove();
@@ -1300,7 +1300,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$5(LocationController.SharingLocationInfo sharingLocationInfo) {
-        this.proximityButton.setImageResource(C3634R.C3636drawable.msg_location_alert2);
+        this.proximityButton.setImageResource(C3632R.C3634drawable.msg_location_alert2);
         createCircle(sharingLocationInfo.proximityMeters);
         this.canUndo = false;
     }
@@ -1319,7 +1319,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(context);
                 ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem((Context) getParentActivity(), true, true, getResourceProvider());
                 actionBarMenuSubItem.setMinimumWidth(AndroidUtilities.m104dp(200));
-                actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("GetDirections", C3634R.string.GetDirections), C3634R.C3636drawable.navigate);
+                actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("GetDirections", C3632R.string.GetDirections), C3632R.C3634drawable.navigate);
                 actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda8
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
@@ -1690,7 +1690,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
 
     private int getMapThemeResId() {
         if (AndroidUtilities.computePerceivedBrightness(getThemedColor(Theme.key_windowBackgroundWhite)) < 0.721f) {
-            return C3634R.raw.mapstyle_night;
+            return C3632R.raw.mapstyle_night;
         }
         return 0;
     }
@@ -1800,7 +1800,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         try {
             createBitmap.eraseColor(0);
             Canvas canvas = new Canvas(createBitmap);
-            Drawable drawable = ApplicationLoader.applicationContext.getResources().getDrawable(C3634R.C3636drawable.map_pin_photo);
+            Drawable drawable = ApplicationLoader.applicationContext.getResources().getDrawable(C3632R.C3634drawable.map_pin_photo);
             drawable.setBounds(0, 0, AndroidUtilities.m104dp(62), AndroidUtilities.m104dp(85));
             drawable.draw(canvas);
             Paint paint = new Paint(1);
@@ -1922,20 +1922,20 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
     public /* synthetic */ boolean lambda$openProximityAlert$29(final TLRPC$User tLRPC$User, boolean z, final int i) {
         if (getLocationController().getSharingLocationInfo(this.dialogId) == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-            builder.setTitle(LocaleController.getString("ShareLocationAlertTitle", C3634R.string.ShareLocationAlertTitle));
-            builder.setMessage(LocaleController.getString("ShareLocationAlertText", C3634R.string.ShareLocationAlertText));
-            builder.setPositiveButton(LocaleController.getString("ShareLocationAlertButton", C3634R.string.ShareLocationAlertButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda3
+            builder.setTitle(LocaleController.getString("ShareLocationAlertTitle", C3632R.string.ShareLocationAlertTitle));
+            builder.setMessage(LocaleController.getString("ShareLocationAlertText", C3632R.string.ShareLocationAlertText));
+            builder.setPositiveButton(LocaleController.getString("ShareLocationAlertButton", C3632R.string.ShareLocationAlertButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda3
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
                     LocationActivity.this.lambda$openProximityAlert$28(tLRPC$User, i, dialogInterface, i2);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
             showDialog(builder.create());
             return false;
         }
         this.proximitySheet.setRadiusSet();
-        this.proximityButton.setImageResource(C3634R.C3636drawable.msg_location_alert2);
+        this.proximityButton.setImageResource(C3632R.C3634drawable.msg_location_alert2);
         getUndoView().showWithAction(0L, 24, Integer.valueOf(i), tLRPC$User, (Runnable) null, (Runnable) null);
         getLocationController().setProximityLocation(this.dialogId, i, true);
         return true;
@@ -2019,7 +2019,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         this.delegate.didSelectLocation(tLRPC$TL_messageMediaGeoLive, this.locationType, true, 0, null);
         if (i2 > 0) {
             this.proximitySheet.setRadiusSet();
-            this.proximityButton.setImageResource(C3634R.C3636drawable.msg_location_alert2);
+            this.proximityButton.setImageResource(C3632R.C3634drawable.msg_location_alert2);
             ProximitySheet proximitySheet = this.proximitySheet;
             if (proximitySheet != null) {
                 proximitySheet.dismiss();
@@ -2122,11 +2122,11 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                         int i = tLRPC$Message.media.heading;
                         if (i != 0) {
                             addMarker.setRotation(i);
-                            liveLocation.directionMarker.setIcon(C3634R.C3636drawable.map_pin_cone2);
+                            liveLocation.directionMarker.setIcon(C3632R.C3634drawable.map_pin_cone2);
                             liveLocation.hasRotation = true;
                         } else {
                             addMarker.setRotation(0);
-                            liveLocation.directionMarker.setIcon(C3634R.C3636drawable.map_pin_circle);
+                            liveLocation.directionMarker.setIcon(C3632R.C3634drawable.map_pin_circle);
                             liveLocation.hasRotation = false;
                         }
                     }
@@ -2173,7 +2173,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 liveLocation.marker = this.map.addMarker(position);
                 if (!UserObject.isUserSelf(liveLocation.user)) {
                     IMapsProvider.IMarkerOptions flat = ApplicationLoader.getMapsProvider().onCreateMarkerOptions().position(latLng).flat(true);
-                    flat.icon(C3634R.C3636drawable.map_pin_circle);
+                    flat.icon(C3632R.C3634drawable.map_pin_circle);
                     flat.anchor(0.5f, 0.5f);
                     liveLocation.directionMarker = this.map.addMarker(flat);
                 }
@@ -2208,7 +2208,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                 } else {
                     IMapsProvider.LatLng latLng = new IMapsProvider.LatLng(this.userLocation.getLatitude(), this.userLocation.getLongitude());
                     try {
-                        this.map.addMarker(ApplicationLoader.getMapsProvider().onCreateMarkerOptions().position(latLng).icon(C3634R.C3636drawable.map_pin2));
+                        this.map.addMarker(ApplicationLoader.getMapsProvider().onCreateMarkerOptions().position(latLng).icon(C3632R.C3634drawable.map_pin2));
                     } catch (Exception e) {
                         FileLog.m99e(e);
                     }
@@ -2359,15 +2359,15 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             try {
                 if (!((LocationManager) ApplicationLoader.applicationContext.getSystemService("location")).isProviderEnabled("gps")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                    builder.setTopAnimation(C3634R.raw.permission_request_location, 72, false, getThemedColor(Theme.key_dialogTopBackground));
-                    builder.setMessage(LocaleController.getString("GpsDisabledAlertText", C3634R.string.GpsDisabledAlertText));
-                    builder.setPositiveButton(LocaleController.getString("ConnectingToProxyEnable", C3634R.string.ConnectingToProxyEnable), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda1
+                    builder.setTopAnimation(C3632R.raw.permission_request_location, 72, false, getThemedColor(Theme.key_dialogTopBackground));
+                    builder.setMessage(LocaleController.getString("GpsDisabledAlertText", C3632R.string.GpsDisabledAlertText));
+                    builder.setPositiveButton(LocaleController.getString("ConnectingToProxyEnable", C3632R.string.ConnectingToProxyEnable), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda1
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
                             LocationActivity.this.lambda$checkGpsEnabled$37(dialogInterface, i);
                         }
                     });
-                    builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+                    builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
                     showDialog(builder.create());
                     return false;
                 }
@@ -2425,19 +2425,19 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTopAnimation(C3634R.raw.permission_request_location, 72, false, getThemedColor(Theme.key_dialogTopBackground));
+        builder.setTopAnimation(C3632R.raw.permission_request_location, 72, false, getThemedColor(Theme.key_dialogTopBackground));
         if (z) {
-            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString("PermissionNoLocationNavigation", C3634R.string.PermissionNoLocationNavigation)));
+            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString("PermissionNoLocationNavigation", C3632R.string.PermissionNoLocationNavigation)));
         } else {
-            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString("PermissionNoLocationFriends", C3634R.string.PermissionNoLocationFriends)));
+            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.getString("PermissionNoLocationFriends", C3632R.string.PermissionNoLocationFriends)));
         }
-        builder.setNegativeButton(LocaleController.getString("PermissionOpenSettings", C3634R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda2
+        builder.setNegativeButton(LocaleController.getString("PermissionOpenSettings", C3632R.string.PermissionOpenSettings), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LocationActivity$$ExternalSyntheticLambda2
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 LocationActivity.this.lambda$showPermissionAlert$38(dialogInterface, i);
             }
         });
-        builder.setPositiveButton(LocaleController.getString("OK", C3634R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", C3632R.string.OK), null);
         showDialog(builder.create());
     }
 
@@ -2499,9 +2499,9 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         }
         globalMainSettings.edit().putInt("proximityhint", i + 1).commit();
         if (DialogObject.isUserDialog(this.dialogId)) {
-            this.hintView.setOverrideText(LocaleController.formatString("ProximityTooltioUser", C3634R.string.ProximityTooltioUser, UserObject.getFirstName(getMessagesController().getUser(Long.valueOf(this.dialogId)))));
+            this.hintView.setOverrideText(LocaleController.formatString("ProximityTooltioUser", C3632R.string.ProximityTooltioUser, UserObject.getFirstName(getMessagesController().getUser(Long.valueOf(this.dialogId)))));
         } else {
-            this.hintView.setOverrideText(LocaleController.getString("ProximityTooltioGroup", C3634R.string.ProximityTooltioGroup));
+            this.hintView.setOverrideText(LocaleController.getString("ProximityTooltioGroup", C3632R.string.ProximityTooltioGroup));
         }
         this.hintView.showForView(this.proximityButton, true);
     }
@@ -2601,7 +2601,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         if (this.listView == null || this.fragmentView == null) {
             return;
         }
-        int currentActionBarHeight = (this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + C3706ActionBar.getCurrentActionBarHeight();
+        int currentActionBarHeight = (this.actionBar.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0) + C3704ActionBar.getCurrentActionBarHeight();
         int measuredHeight = this.fragmentView.getMeasuredHeight();
         if (measuredHeight == 0) {
             return;
@@ -2990,7 +2990,7 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                     addUserMarker(messageObject.messageOwner);
                     z = true;
                 } else if ((messageObject.messageOwner.action instanceof TLRPC$TL_messageActionGeoProximityReached) && DialogObject.isUserDialog(messageObject.getDialogId())) {
-                    this.proximityButton.setImageResource(C3634R.C3636drawable.msg_location_alert);
+                    this.proximityButton.setImageResource(C3632R.C3634drawable.msg_location_alert);
                     IMapsProvider.ICircle iCircle = this.proximityCircle;
                     if (iCircle != null) {
                         iCircle.remove();
@@ -3030,12 +3030,12 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
                             if (i5 != 0) {
                                 liveLocation.directionMarker.setRotation(i5);
                                 if (!liveLocation.hasRotation) {
-                                    liveLocation.directionMarker.setIcon(C3634R.C3636drawable.map_pin_cone2);
+                                    liveLocation.directionMarker.setIcon(C3632R.C3634drawable.map_pin_cone2);
                                     liveLocation.hasRotation = true;
                                 }
                             } else if (liveLocation.hasRotation) {
                                 liveLocation.directionMarker.setRotation(0);
-                                liveLocation.directionMarker.setIcon(C3634R.C3636drawable.map_pin_circle);
+                                liveLocation.directionMarker.setIcon(C3632R.C3634drawable.map_pin_circle);
                                 liveLocation.hasRotation = false;
                             }
                         }
@@ -3269,10 +3269,10 @@ public class LocationActivity extends BaseFragment implements NotificationCenter
         arrayList.add(new ThemeDescription(view, i6, null, null, null, themeDescriptionDelegate, i7));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i7));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i7));
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i8 = ThemeDescription.FLAG_AB_ITEMSCOLOR;
         int i9 = Theme.key_dialogTextBlack;
-        arrayList.add(new ThemeDescription(c3706ActionBar, i8, null, null, null, null, i9));
+        arrayList.add(new ThemeDescription(c3704ActionBar, i8, null, null, null, null, i9));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, i9));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_dialogButtonSelector));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCH, null, null, null, null, i9));

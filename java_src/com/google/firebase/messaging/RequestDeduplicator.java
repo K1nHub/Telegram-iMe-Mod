@@ -13,9 +13,10 @@ public class RequestDeduplicator {
     private final Executor executor;
     private final Map<String, Task<String>> getTokenRequests = new ArrayMap();
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
     /* loaded from: classes3.dex */
-    interface GetTokenRequest {
+    public interface GetTokenRequest {
         Task<String> start();
     }
 

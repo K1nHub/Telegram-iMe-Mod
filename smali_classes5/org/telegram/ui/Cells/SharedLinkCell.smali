@@ -644,18 +644,18 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 738
+    .line 740
     iget p1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkY:I
 
     return p1
 
-    .line 742
+    .line 744
     :cond_0
     iget p1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->description2Y:I
 
     return p1
 
-    .line 740
+    .line 742
     :cond_1
     iget p1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionY:I
 
@@ -665,29 +665,29 @@
 .method private synthetic lambda$startSpoilerRipples$0()V
     .locals 2
 
-    .line 677
+    .line 679
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lorg/telegram/messenger/MessageObject;->isSpoilersRevealed:Z
 
-    .line 678
+    .line 680
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkSpoilers:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
 
-    .line 679
+    .line 681
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayoutSpoilers:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 680
+    .line 682
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2Spoilers:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 681
+    .line 683
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -696,7 +696,7 @@
 .method private synthetic lambda$startSpoilerRipples$1()V
     .locals 1
 
-    .line 676
+    .line 678
     new-instance v0, Lorg/telegram/ui/Cells/SharedLinkCell$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Cells/SharedLinkCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Cells/SharedLinkCell;)V
@@ -709,7 +709,7 @@
 .method private startSpoilerRipples(III)V
     .locals 10
 
-    .line 673
+    .line 675
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_0
@@ -726,13 +726,13 @@
 
     move-result v0
 
-    .line 674
+    .line 676
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/SharedLinkCell;->resetPressedLink()V
 
-    .line 675
+    .line 677
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerPressed:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 676
+    .line 678
     new-instance v2, Lorg/telegram/ui/Cells/SharedLinkCell$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Cells/SharedLinkCell$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Cells/SharedLinkCell;)V
@@ -741,7 +741,7 @@
 
     sub-int/2addr p1, v0
 
-    .line 685
+    .line 687
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0
@@ -774,7 +774,7 @@
 
     const/4 v1, 0x0
 
-    .line 687
+    .line 689
     iget v2, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerTypePressed:I
 
     const/4 v3, 0x0
@@ -791,7 +791,7 @@
 
     goto/16 :goto_5
 
-    .line 702
+    .line 704
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2Spoilers:Ljava/util/List;
 
@@ -814,7 +814,7 @@
 
     int-to-float v2, p1
 
-    .line 703
+    .line 705
     invoke-direct {p0, v4}, Lorg/telegram/ui/Cells/SharedLinkCell;->getYOffsetForType(I)I
 
     move-result v6
@@ -827,7 +827,7 @@
 
     goto :goto_1
 
-    .line 698
+    .line 700
     :cond_2
     iget-object p3, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayoutSpoilers:Ljava/util/List;
 
@@ -850,7 +850,7 @@
 
     int-to-float v2, p1
 
-    .line 699
+    .line 701
     invoke-direct {p0, v5}, Lorg/telegram/ui/Cells/SharedLinkCell;->getYOffsetForType(I)I
 
     move-result v6
@@ -866,7 +866,7 @@
     :cond_3
     move v2, v3
 
-    .line 689
+    .line 691
     :goto_3
     iget-object v6, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
@@ -876,7 +876,7 @@
 
     if-ge v2, v6, :cond_5
 
-    .line 690
+    .line 692
     iget-object v6, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -885,7 +885,7 @@
 
     check-cast v6, Landroid/text/Layout;
 
-    .line 691
+    .line 693
     invoke-virtual {v6}, Landroid/text/Layout;->getLineCount()I
 
     move-result v7
@@ -900,7 +900,7 @@
 
     add-float/2addr v1, v6
 
-    .line 692
+    .line 694
     iget-object v6, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkSpoilers:Landroid/util/SparseArray;
 
     invoke-virtual {v6, v2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -928,7 +928,7 @@
 
     int-to-float v8, p1
 
-    .line 693
+    .line 695
     invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/SharedLinkCell;->getYOffsetForType(I)I
 
     move-result v9
@@ -957,7 +957,7 @@
     :goto_6
     if-gt p1, v4, :cond_b
 
-    .line 707
+    .line 709
     iget p2, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerTypePressed:I
 
     if-eq p1, p2, :cond_a
@@ -970,7 +970,7 @@
 
     goto/16 :goto_b
 
-    .line 723
+    .line 725
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2Spoilers:Ljava/util/List;
 
@@ -991,7 +991,7 @@
 
     check-cast p3, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 724
+    .line 726
     invoke-virtual {p3}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
@@ -1016,7 +1016,7 @@
 
     goto :goto_7
 
-    .line 719
+    .line 721
     :cond_7
     iget-object p2, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayoutSpoilers:Ljava/util/List;
 
@@ -1037,7 +1037,7 @@
 
     check-cast p3, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 720
+    .line 722
     invoke-virtual {p3}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
@@ -1065,7 +1065,7 @@
     :cond_8
     move p2, v3
 
-    .line 710
+    .line 712
     :goto_9
     iget-object p3, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
@@ -1075,7 +1075,7 @@
 
     if-ge p2, p3, :cond_a
 
-    .line 711
+    .line 713
     iget-object p3, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1084,7 +1084,7 @@
 
     check-cast p3, Landroid/text/Layout;
 
-    .line 712
+    .line 714
     invoke-virtual {p3}, Landroid/text/Layout;->getLineCount()I
 
     move-result v1
@@ -1093,7 +1093,7 @@
 
     invoke-virtual {p3, v1}, Landroid/text/Layout;->getLineBottom(I)I
 
-    .line 713
+    .line 715
     iget-object p3, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkSpoilers:Landroid/util/SparseArray;
 
     invoke-virtual {p3, p2}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1119,7 +1119,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 714
+    .line 716
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
@@ -1158,12 +1158,12 @@
     :cond_b
     const/4 p1, -0x1
 
-    .line 730
+    .line 732
     iput p1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerTypePressed:I
 
     const/4 p1, 0x0
 
-    .line 731
+    .line 733
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerPressed:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     return-void
@@ -1205,7 +1205,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 747
+    .line 749
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->links:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1216,7 +1216,7 @@
 
     goto :goto_0
 
-    .line 750
+    .line 752
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->links:Ljava/util/ArrayList;
 
@@ -1242,7 +1242,7 @@
 .method public getLinkImageView()Lorg/telegram/messenger/ImageReceiver;
     .locals 1
 
-    .line 526
+    .line 528
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
 
     return-object v0
@@ -1251,7 +1251,7 @@
 .method public getMessage()Lorg/telegram/messenger/MessageObject;
     .locals 1
 
-    .line 534
+    .line 536
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
 
     return-object v0
@@ -1260,20 +1260,20 @@
 .method protected onAttachedToWindow()V
     .locals 4
 
-    .line 548
+    .line 550
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 549
+    .line 551
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->drawLinkImageView:Z
 
     if-eqz v0, :cond_0
 
-    .line 550
+    .line 552
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 552
+    .line 554
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayoutEmojis:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
@@ -1299,20 +1299,20 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 539
+    .line 541
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 540
+    .line 542
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->drawLinkImageView:Z
 
     if-eqz v0, :cond_0
 
-    .line 541
+    .line 543
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 543
+    .line 545
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayoutEmojis:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
@@ -1328,14 +1328,14 @@
 
     move-object/from16 v10, p1
 
-    .line 771
+    .line 773
     iget v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->viewType:I
 
     const/4 v11, 0x1
 
     if-ne v0, v11, :cond_0
 
-    .line 772
+    .line 774
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->description2TextPaint:Landroid/text/TextPaint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText3:I
@@ -1348,7 +1348,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 774
+    .line 776
     :cond_0
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->dateLayout:Landroid/text/StaticLayout;
 
@@ -1358,10 +1358,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 775
+    .line 777
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 776
+    .line 778
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_1
@@ -1400,24 +1400,24 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 777
+    .line 779
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->dateLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 778
+    .line 780
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 780
+    .line 782
     :cond_3
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->titleLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_7
 
-    .line 781
+    .line 783
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 782
+    .line 784
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_4
@@ -1436,12 +1436,12 @@
 
     int-to-float v0, v0
 
-    .line 783
+    .line 785
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_6
 
-    .line 784
+    .line 786
     iget-object v1, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->dateLayout:Landroid/text/StaticLayout;
 
     if-nez v1, :cond_5
@@ -1468,7 +1468,7 @@
     :goto_3
     add-float/2addr v0, v1
 
-    .line 786
+    .line 788
     :cond_6
     iget v1, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->titleY:I
 
@@ -1476,21 +1476,21 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 787
+    .line 789
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->titleLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 788
+    .line 790
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 791
+    .line 793
     :cond_7
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->captionLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_9
 
-    .line 792
+    .line 794
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->captionTextPaint:Landroid/text/TextPaint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -1503,10 +1503,10 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 793
+    .line 795
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 794
+    .line 796
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_8
@@ -1531,15 +1531,15 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 795
+    .line 797
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->captionLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 796
+    .line 798
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 798
+    .line 800
     :cond_9
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout:Landroid/text/StaticLayout;
 
@@ -1547,7 +1547,7 @@
 
     if-eqz v0, :cond_b
 
-    .line 799
+    .line 801
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionTextPaint:Landroid/text/TextPaint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -1560,10 +1560,10 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 800
+    .line 802
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 801
+    .line 803
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_a
@@ -1590,7 +1590,7 @@
 
     const/4 v1, 0x0
 
-    .line 802
+    .line 804
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getColor()I
@@ -1617,16 +1617,16 @@
 
     invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->renderWithRipple(Landroid/view/View;ZIILjava/util/concurrent/atomic/AtomicReference;Landroid/text/Layout;Ljava/util/List;Landroid/graphics/Canvas;Z)V
 
-    .line 803
+    .line 805
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 806
+    .line 808
     :cond_b
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_d
 
-    .line 807
+    .line 809
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionTextPaint:Landroid/text/TextPaint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -1639,10 +1639,10 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 808
+    .line 810
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 809
+    .line 811
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_c
@@ -1669,7 +1669,7 @@
 
     const/4 v1, 0x0
 
-    .line 810
+    .line 812
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getColor()I
@@ -1696,10 +1696,10 @@
 
     invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->renderWithRipple(Landroid/view/View;ZIILjava/util/concurrent/atomic/AtomicReference;Landroid/text/Layout;Ljava/util/List;Landroid/graphics/Canvas;Z)V
 
-    .line 811
+    .line 813
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 814
+    .line 816
     :cond_d
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
@@ -1709,7 +1709,7 @@
 
     if-nez v0, :cond_14
 
-    .line 815
+    .line 817
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionTextPaint:Landroid/text/TextPaint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
@@ -1726,7 +1726,7 @@
 
     move v1, v0
 
-    .line 817
+    .line 819
     :goto_7
     iget-object v2, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
@@ -1736,7 +1736,7 @@
 
     if-ge v0, v2, :cond_13
 
-    .line 818
+    .line 820
     iget-object v2, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1745,7 +1745,7 @@
 
     check-cast v2, Landroid/text/StaticLayout;
 
-    .line 819
+    .line 821
     iget-object v3, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->linkSpoilers:Landroid/util/SparseArray;
 
     invoke-virtual {v3, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -1754,17 +1754,17 @@
 
     check-cast v3, Ljava/util/List;
 
-    .line 820
+    .line 822
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v4
 
     if-lez v4, :cond_12
 
-    .line 821
+    .line 823
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 822
+    .line 824
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v4, :cond_e
@@ -1791,14 +1791,14 @@
 
     invoke-virtual {v10, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 824
+    .line 826
     iget-object v4, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->path:Landroid/graphics/Path;
 
     invoke-virtual {v4}, Landroid/graphics/Path;->rewind()V
 
     if-eqz v3, :cond_f
 
-    .line 826
+    .line 828
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -1816,12 +1816,12 @@
 
     check-cast v5, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 827
+    .line 829
     invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v5
 
-    .line 828
+    .line 830
     iget-object v14, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->path:Landroid/graphics/Path;
 
     iget v6, v5, Landroid/graphics/Rect;->left:I
@@ -1852,46 +1852,46 @@
 
     goto :goto_9
 
-    .line 831
+    .line 833
     :cond_f
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 832
+    .line 834
     iget-object v4, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->path:Landroid/graphics/Path;
 
     sget-object v5, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
 
     invoke-virtual {v10, v4, v5}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
 
-    .line 833
+    .line 835
     invoke-virtual {v2, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 834
+    .line 836
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 836
+    .line 838
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 837
+    .line 839
     iget-object v4, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->path:Landroid/graphics/Path;
 
     invoke-virtual {v10, v4}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 838
+    .line 840
     iget-object v4, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->path:Landroid/graphics/Path;
 
     invoke-virtual {v4}, Landroid/graphics/Path;->rewind()V
 
     if-eqz v3, :cond_10
 
-    .line 839
+    .line 841
     invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
 
     move-result v4
 
     if-nez v4, :cond_10
 
-    .line 840
+    .line 842
     invoke-interface {v3, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1902,21 +1902,21 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->getRipplePath(Landroid/graphics/Path;)V
 
-    .line 841
+    .line 843
     :cond_10
     iget-object v4, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->path:Landroid/graphics/Path;
 
     invoke-virtual {v10, v4}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 842
+    .line 844
     invoke-virtual {v2, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 843
+    .line 845
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     if-eqz v3, :cond_11
 
-    .line 846
+    .line 848
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -1938,11 +1938,11 @@
 
     goto :goto_a
 
-    .line 848
+    .line 850
     :cond_11
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 849
+    .line 851
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v3
@@ -1960,7 +1960,7 @@
 
     goto/16 :goto_7
 
-    .line 853
+    .line 855
     :cond_13
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->linksCollector:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
@@ -1970,19 +1970,19 @@
 
     if-eqz v0, :cond_14
 
-    .line 854
+    .line 856
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 858
+    .line 860
     :cond_14
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_16
 
-    .line 859
+    .line 861
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 860
+    .line 862
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_15
@@ -2005,12 +2005,12 @@
 
     invoke-virtual {v10, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 861
+    .line 863
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 862
+    .line 864
     iget-object v1, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayout:Landroid/text/StaticLayout;
 
     iget-object v2, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayoutEmojis:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
@@ -2031,39 +2031,39 @@
 
     invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFF)V
 
-    .line 863
+    .line 865
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 865
+    .line 867
     :cond_16
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->letterDrawable:Lorg/telegram/ui/Components/LetterDrawable;
 
     invoke-virtual {v0, v10}, Lorg/telegram/ui/Components/LetterDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 866
+    .line 868
     iget-boolean v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->drawLinkImageView:Z
 
     if-eqz v0, :cond_17
 
-    .line 867
+    .line 869
     iget-object v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, v10}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 870
+    .line 872
     :cond_17
     iget-boolean v0, v9, Lorg/telegram/ui/Cells/SharedLinkCell;->needDivider:Z
 
     if-eqz v0, :cond_19
 
-    .line 871
+    .line 873
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_18
 
     const/4 v1, 0x0
 
-    .line 872
+    .line 874
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -2102,7 +2102,7 @@
 
     goto :goto_c
 
-    .line 874
+    .line 876
     :cond_18
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->leftBaseline:I
 
@@ -2148,27 +2148,27 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 3
 
-    .line 881
+    .line 883
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 882
+    .line 884
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 883
+    .line 885
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->titleLayout:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_0
 
-    .line 884
+    .line 886
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 886
+    .line 888
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout:Landroid/text/StaticLayout;
 
@@ -2176,10 +2176,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 887
+    .line 889
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 888
+    .line 890
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
@@ -2188,16 +2188,16 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 890
+    .line 892
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_2
 
-    .line 891
+    .line 893
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 892
+    .line 894
     iget-object v1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
@@ -2206,7 +2206,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 894
+    .line 896
     :cond_2
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -2214,7 +2214,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 895
+    .line 897
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBox2;->isChecked()Z
@@ -2225,10 +2225,10 @@
 
     const/4 v0, 0x1
 
-    .line 896
+    .line 898
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setChecked(Z)V
 
-    .line 897
+    .line 899
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
     :cond_3
@@ -4006,7 +4006,7 @@
 
     const/4 v3, 0x2
 
-    if-eqz v15, :cond_33
+    if-eqz v15, :cond_34
 
     .line 462
     iget-object v7, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
@@ -4037,16 +4037,19 @@
     :cond_31
     const/4 v9, -0x1
 
-    .line 467
+    if-eqz v7, :cond_32
+
+    .line 468
     iput v9, v7, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
-    if-eqz v8, :cond_32
-
-    .line 469
-    iput v9, v8, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
+    :cond_32
+    if-eqz v8, :cond_33
 
     .line 471
-    :cond_32
+    iput v9, v8, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
+
+    .line 473
+    :cond_33
     iget-object v9, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
 
     int-to-float v2, v2
@@ -4061,10 +4064,10 @@
 
     invoke-virtual {v9, v2, v6, v10, v10}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 472
+    .line 474
     invoke-static {v7}, Lorg/telegram/messenger/FileLoader;->getAttachFileName(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
 
-    .line 473
+    .line 475
     sget-object v2, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     new-array v6, v3, [Ljava/lang/Object;
@@ -4093,7 +4096,7 @@
 
     new-array v6, v3, [Ljava/lang/Object;
 
-    .line 474
+    .line 476
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
@@ -4112,7 +4115,7 @@
 
     move-result-object v21
 
-    .line 475
+    .line 477
     iget-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
@@ -4147,21 +4150,21 @@
 
     const/4 v2, 0x1
 
-    .line 476
+    .line 478
     iput-boolean v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->drawLinkImageView:Z
 
     goto :goto_1d
 
-    :cond_33
+    :cond_34
     const/4 v2, 0x1
 
-    .line 479
+    .line 481
     :goto_1d
     iget v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->viewType:I
 
-    if-ne v0, v2, :cond_34
+    if-ne v0, v2, :cond_35
 
-    .line 480
+    .line 482
     iget-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
 
     iget-object v6, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->description2TextPaint:Landroid/text/TextPaint;
@@ -4186,7 +4189,7 @@
 
     iput-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayout:Landroid/text/StaticLayout;
 
-    .line 481
+    .line 483
     iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayoutEmojis:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     const/4 v3, 0x1
@@ -4203,19 +4206,19 @@
 
     iput-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayoutEmojis:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    .line 485
-    :cond_34
+    .line 487
+    :cond_35
     iget-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->titleLayout:Landroid/text/StaticLayout;
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_36
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v0
 
-    if-eqz v0, :cond_35
+    if-eqz v0, :cond_36
 
-    .line 486
+    .line 488
     iget-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->titleLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
@@ -4244,24 +4247,24 @@
 
     goto :goto_1e
 
-    :cond_35
+    :cond_36
     const/4 v7, 0x0
 
     move v0, v7
 
-    .line 488
+    .line 490
     :goto_1e
     iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->captionLayout:Landroid/text/StaticLayout;
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_37
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v2
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_37
 
-    .line 489
+    .line 491
     iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->captionLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
@@ -4284,55 +4287,20 @@
 
     add-int/2addr v0, v2
 
-    .line 491
-    :cond_36
+    .line 493
+    :cond_37
     iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout:Landroid/text/StaticLayout;
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_38
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v2
 
-    if-eqz v2, :cond_37
-
-    .line 492
-    iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout:Landroid/text/StaticLayout;
-
-    invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
-
-    move-result v3
-
-    const/4 v5, 0x1
-
-    sub-int/2addr v3, v5
-
-    invoke-virtual {v2, v3}, Landroid/text/StaticLayout;->getLineBottom(I)I
-
-    move-result v2
-
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    add-int/2addr v0, v2
+    if-eqz v2, :cond_38
 
     .line 494
-    :cond_37
-    iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2:Landroid/text/StaticLayout;
-
-    if-eqz v2, :cond_38
-
-    invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
-
-    move-result v2
-
-    if-eqz v2, :cond_38
-
-    .line 495
-    iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2:Landroid/text/StaticLayout;
+    iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
 
@@ -4355,21 +4323,56 @@
     add-int/2addr v0, v2
 
     .line 496
-    iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout:Landroid/text/StaticLayout;
+    :cond_38
+    iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2:Landroid/text/StaticLayout;
 
-    if-eqz v2, :cond_38
+    if-eqz v2, :cond_39
+
+    invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
+
+    move-result v2
+
+    if-eqz v2, :cond_39
 
     .line 497
+    iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2:Landroid/text/StaticLayout;
+
+    invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
+
+    move-result v3
+
+    const/4 v5, 0x1
+
+    sub-int/2addr v3, v5
+
+    invoke-virtual {v2, v3}, Landroid/text/StaticLayout;->getLineBottom(I)I
+
+    move-result v2
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    add-int/2addr v0, v2
+
+    .line 498
+    iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout:Landroid/text/StaticLayout;
+
+    if-eqz v2, :cond_39
+
+    .line 499
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     add-int/2addr v0, v2
 
-    :cond_38
+    :cond_39
     move v2, v7
 
-    .line 501
+    .line 503
     :goto_1f
     iget-object v3, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
@@ -4377,9 +4380,9 @@
 
     move-result v3
 
-    if-ge v2, v3, :cond_3a
+    if-ge v2, v3, :cond_3b
 
-    .line 502
+    .line 504
     iget-object v3, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4388,14 +4391,14 @@
 
     check-cast v3, Landroid/text/StaticLayout;
 
-    .line 503
+    .line 505
     invoke-virtual {v3}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v5
 
-    if-lez v5, :cond_39
+    if-lez v5, :cond_3a
 
-    .line 504
+    .line 506
     invoke-virtual {v3}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v5
@@ -4410,20 +4413,20 @@
 
     add-int/2addr v7, v3
 
-    :cond_39
+    :cond_3a
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1f
 
-    :cond_3a
+    :cond_3b
     add-int/2addr v0, v7
 
-    .line 509
+    .line 511
     iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayout:Landroid/text/StaticLayout;
 
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_3c
 
-    .line 510
+    .line 512
     iget v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkY:I
 
     add-int/2addr v2, v7
@@ -4436,7 +4439,7 @@
 
     iput v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayoutY:I
 
-    .line 511
+    .line 513
     iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->fromInfoLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getLineCount()I
@@ -4459,8 +4462,8 @@
 
     add-int/2addr v0, v2
 
-    .line 513
-    :cond_3b
+    .line 515
+    :cond_3c
     iget-object v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v3, 0x18
@@ -4485,7 +4488,7 @@
 
     invoke-virtual {v2, v4, v3}, Landroid/view/View;->measure(II)V
 
-    .line 514
+    .line 516
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
@@ -4522,7 +4525,7 @@
 
     move-object/from16 v1, p0
 
-    .line 558
+    .line 560
     iget-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
 
     const/4 v2, 0x0
@@ -4549,7 +4552,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 559
+    .line 561
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -4573,7 +4576,7 @@
 
     goto :goto_0
 
-    .line 663
+    .line 665
     :cond_1
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -4583,12 +4586,12 @@
 
     if-ne v0, v4, :cond_18
 
-    .line 664
+    .line 666
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/SharedLinkCell;->resetPressedLink()V
 
     goto/16 :goto_9
 
-    .line 560
+    .line 562
     :cond_2
     :goto_0
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
@@ -4597,7 +4600,7 @@
 
     float-to-int v4, v0
 
-    .line 561
+    .line 563
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -4608,7 +4611,7 @@
 
     move v6, v0
 
-    .line 564
+    .line 566
     :goto_1
     iget-object v7, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
@@ -4618,7 +4621,7 @@
 
     if-ge v0, v7, :cond_10
 
-    .line 565
+    .line 567
     iget-object v7, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkLayout:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4627,14 +4630,14 @@
 
     check-cast v7, Landroid/text/StaticLayout;
 
-    .line 566
+    .line 568
     invoke-virtual {v7}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v9
 
     if-lez v9, :cond_f
 
-    .line 567
+    .line 569
     invoke-virtual {v7}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v9
@@ -4645,7 +4648,7 @@
 
     move-result v9
 
-    .line 568
+    .line 570
     sget-boolean v10, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v10, :cond_3
@@ -4666,7 +4669,7 @@
 
     int-to-float v12, v10
 
-    .line 570
+    .line 572
     invoke-virtual {v7, v2}, Landroid/text/StaticLayout;->getLineLeft(I)F
 
     move-result v13
@@ -4699,7 +4702,7 @@
 
     if-gt v5, v11, :cond_e
 
-    .line 574
+    .line 576
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v9
@@ -4708,10 +4711,10 @@
 
     if-nez v9, :cond_8
 
-    .line 576
+    .line 578
     iput-object v11, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerPressed:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 577
+    .line 579
     iget-object v9, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkSpoilers:Landroid/util/SparseArray;
 
     invoke-virtual {v9, v0, v11}, Landroid/util/SparseArray;->get(ILjava/lang/Object;)Ljava/lang/Object;
@@ -4720,7 +4723,7 @@
 
     if-eqz v9, :cond_5
 
-    .line 578
+    .line 580
     iget-object v9, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkSpoilers:Landroid/util/SparseArray;
 
     invoke-virtual {v9, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -4746,7 +4749,7 @@
 
     check-cast v13, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 579
+    .line 581
     invoke-virtual {v13}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v14
@@ -4765,16 +4768,16 @@
 
     if-eqz v8, :cond_4
 
-    .line 580
+    .line 582
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/SharedLinkCell;->resetPressedLink()V
 
-    .line 581
+    .line 583
     iput-object v13, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerPressed:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 582
+    .line 584
     iput v2, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerTypePressed:I
 
-    .line 588
+    .line 590
     :cond_5
     iget-object v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerPressed:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
@@ -4782,7 +4785,7 @@
 
     goto/16 :goto_4
 
-    .line 591
+    .line 593
     :cond_6
     iget v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->pressedLinkIndex:I
 
@@ -4796,14 +4799,14 @@
 
     if-nez v8, :cond_c
 
-    .line 592
+    .line 594
     :cond_7
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/SharedLinkCell;->resetPressedLink()V
 
-    .line 593
+    .line 595
     iput v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->pressedLinkIndex:I
 
-    .line 594
+    .line 596
     new-instance v0, Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     iget-object v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -4824,25 +4827,25 @@
 
     iput-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
-    .line 595
+    .line 597
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LinkSpanDrawable;->obtainNewPath()Lorg/telegram/ui/Components/LinkPath;
 
     move-result-object v0
 
-    .line 596
+    .line 598
     iput-boolean v3, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkPreviewPressed:Z
 
-    .line 597
+    .line 599
     iget-object v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linksCollector:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     iget-object v9, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->addLink(Lorg/telegram/ui/Components/LinkSpanDrawable;)V
 
-    .line 598
+    .line 600
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/SharedLinkCell;->startCheckLongPress()V
 
-    .line 600
+    .line 602
     :try_start_0
     iget v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkY:I
 
@@ -4852,7 +4855,7 @@
 
     invoke-virtual {v0, v7, v2, v12, v6}, Lorg/telegram/ui/Components/LinkPath;->setCurrentLayout(Landroid/text/Layout;IFF)V
 
-    .line 601
+    .line 603
     invoke-virtual {v7}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v6
@@ -4870,18 +4873,18 @@
     :catch_0
     move-exception v0
 
-    .line 603
+    .line 605
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_4
 
-    .line 608
+    .line 610
     :cond_8
     iget-boolean v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->linkPreviewPressed:Z
 
     if-eqz v0, :cond_b
 
-    .line 610
+    .line 612
     :try_start_1
     iget v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->pressedLinkIndex:I
 
@@ -4900,7 +4903,7 @@
     :cond_9
     if-eqz v11, :cond_a
 
-    .line 611
+    .line 613
     iget-object v0, v11, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_url:Ljava/lang/String;
 
     if-eqz v0, :cond_a
@@ -4911,7 +4914,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 612
+    .line 614
     iget-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->delegate:Lorg/telegram/ui/Cells/SharedLinkCell$SharedLinkCellDelegate;
 
     iget-object v6, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
@@ -4920,7 +4923,7 @@
 
     goto :goto_3
 
-    .line 614
+    .line 616
     :cond_a
     iget-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->delegate:Lorg/telegram/ui/Cells/SharedLinkCell$SharedLinkCellDelegate;
 
@@ -4947,22 +4950,22 @@
     :catch_1
     move-exception v0
 
-    .line 617
+    .line 619
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 619
+    .line 621
     :goto_3
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/SharedLinkCell;->resetPressedLink()V
 
     goto :goto_4
 
-    .line 621
+    .line 623
     :cond_b
     iget-object v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerPressed:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     if-eqz v0, :cond_d
 
-    .line 622
+    .line 624
     invoke-direct {v1, v4, v5, v6}, Lorg/telegram/ui/Cells/SharedLinkCell;->startSpoilerRipples(III)V
 
     :cond_c
@@ -4992,7 +4995,7 @@
     :goto_5
     move v6, v0
 
-    .line 630
+    .line 632
     :goto_6
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -5000,7 +5003,7 @@
 
     if-nez v7, :cond_15
 
-    .line 631
+    .line 633
     sget-boolean v7, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v7, :cond_11
@@ -5017,7 +5020,7 @@
 
     move-result v7
 
-    .line 632
+    .line 634
     iget-object v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout:Landroid/text/StaticLayout;
 
     if-eqz v8, :cond_13
@@ -5046,7 +5049,7 @@
 
     if-gt v5, v8, :cond_13
 
-    .line 633
+    .line 635
     iget-object v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayoutSpoilers:Ljava/util/List;
 
     invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -5066,7 +5069,7 @@
 
     check-cast v9, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 634
+    .line 636
     invoke-virtual {v9}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v10
@@ -5083,17 +5086,17 @@
 
     if-eqz v10, :cond_12
 
-    .line 635
+    .line 637
     iput-object v9, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerPressed:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 636
+    .line 638
     iput v3, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerTypePressed:I
 
     move v0, v3
 
     move v6, v0
 
-    .line 643
+    .line 645
     :cond_13
     iget-object v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2:Landroid/text/StaticLayout;
 
@@ -5123,7 +5126,7 @@
 
     if-gt v5, v8, :cond_16
 
-    .line 644
+    .line 646
     iget-object v8, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->descriptionLayout2Spoilers:Ljava/util/List;
 
     invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -5143,7 +5146,7 @@
 
     check-cast v9, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 645
+    .line 647
     invoke-virtual {v9}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v10
@@ -5160,17 +5163,17 @@
 
     if-eqz v10, :cond_14
 
-    .line 646
+    .line 648
     iput-object v9, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerPressed:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     const/4 v0, 0x2
 
-    .line 647
+    .line 649
     iput v0, v1, Lorg/telegram/ui/Cells/SharedLinkCell;->spoilerTypePressed:I
 
     goto :goto_8
 
-    .line 654
+    .line 656
     :cond_15
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -5182,7 +5185,7 @@
 
     if-eqz v7, :cond_16
 
-    .line 655
+    .line 657
     invoke-direct {v1, v4, v5, v2}, Lorg/telegram/ui/Cells/SharedLinkCell;->startSpoilerRipples(III)V
 
     :goto_8
@@ -5193,12 +5196,12 @@
     :cond_16
     if-nez v6, :cond_19
 
-    .line 661
+    .line 663
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/SharedLinkCell;->resetPressedLink()V
 
     goto :goto_a
 
-    .line 667
+    .line 669
     :cond_17
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/SharedLinkCell;->resetPressedLink()V
 
@@ -5210,7 +5213,7 @@
     :goto_a
     if-nez v0, :cond_1a
 
-    .line 669
+    .line 671
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -5227,7 +5230,7 @@
 .method protected resetPressedLink()V
     .locals 2
 
-    .line 754
+    .line 756
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linksCollector:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     const/4 v1, 0x1
@@ -5236,23 +5239,23 @@
 
     const/4 v0, -0x1
 
-    .line 755
+    .line 757
     iput v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->pressedLinkIndex:I
 
     const/4 v0, 0x0
 
-    .line 756
+    .line 758
     iput-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->pressedLink:Lorg/telegram/ui/Components/LinkSpanDrawable;
 
     const/4 v0, 0x0
 
-    .line 757
+    .line 759
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->linkPreviewPressed:Z
 
-    .line 758
+    .line 760
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/SharedLinkCell;->cancelCheckLongPress()V
 
-    .line 759
+    .line 761
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -5261,7 +5264,7 @@
 .method public setChecked(ZZ)V
     .locals 2
 
-    .line 763
+    .line 765
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -5270,14 +5273,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 764
+    .line 766
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 766
+    .line 768
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
@@ -5289,7 +5292,7 @@
 .method public setDelegate(Lorg/telegram/ui/Cells/SharedLinkCell$SharedLinkCellDelegate;)V
     .locals 0
 
-    .line 530
+    .line 532
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->delegate:Lorg/telegram/ui/Cells/SharedLinkCell$SharedLinkCellDelegate;
 
     return-void
@@ -5298,16 +5301,16 @@
 .method public setLink(Lorg/telegram/messenger/MessageObject;Z)V
     .locals 0
 
-    .line 518
+    .line 520
     iput-boolean p2, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->needDivider:Z
 
-    .line 519
+    .line 521
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/SharedLinkCell;->resetPressedLink()V
 
-    .line 520
+    .line 522
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedLinkCell;->message:Lorg/telegram/messenger/MessageObject;
 
-    .line 522
+    .line 524
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
     return-void

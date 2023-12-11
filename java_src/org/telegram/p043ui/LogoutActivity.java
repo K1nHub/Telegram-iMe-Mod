@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -21,7 +21,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -92,14 +92,14 @@ public class LogoutActivity extends BaseFragment {
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString("LogOutTitle", C3634R.string.LogOutTitle));
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString("LogOutTitle", C3632R.string.LogOutTitle));
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LogoutActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LogoutActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     LogoutActivity.this.finishFragment();
@@ -171,8 +171,8 @@ public class LogoutActivity extends BaseFragment {
 
     public static AlertDialog makeLogOutDialog(Context context, final int i) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage(LocaleController.getString("AreYouSureLogout", C3634R.string.AreYouSureLogout));
-        int i2 = C3634R.string.LogOut;
+        builder.setMessage(LocaleController.getString("AreYouSureLogout", C3632R.string.AreYouSureLogout));
+        int i2 = C3632R.string.LogOut;
         builder.setTitle(LocaleController.getString("LogOut", i2));
         builder.setPositiveButton(LocaleController.getString("LogOut", i2), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LogoutActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
@@ -180,7 +180,7 @@ public class LogoutActivity extends BaseFragment {
                 LogoutActivity.lambda$makeLogOutDialog$1(i, dialogInterface, i3);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
         AlertDialog create = builder.create();
         TextView textView = (TextView) create.getButton(-1);
         if (textView != null) {
@@ -229,20 +229,20 @@ public class LogoutActivity extends BaseFragment {
             if (itemViewType == 0) {
                 HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                 if (i == LogoutActivity.this.alternativeHeaderRow) {
-                    headerCell.setText(LocaleController.getString("AlternativeOptions", C3634R.string.AlternativeOptions));
+                    headerCell.setText(LocaleController.getString("AlternativeOptions", C3632R.string.AlternativeOptions));
                 }
             } else if (itemViewType != 1) {
                 if (itemViewType == 3) {
                     TextSettingsCell textSettingsCell = (TextSettingsCell) viewHolder.itemView;
                     if (i == LogoutActivity.this.logoutRow) {
                         textSettingsCell.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
-                        textSettingsCell.setText(LocaleController.getString("LogOutTitle", C3634R.string.LogOutTitle), false);
+                        textSettingsCell.setText(LocaleController.getString("LogOutTitle", C3632R.string.LogOutTitle), false);
                     }
                 } else if (itemViewType != 4) {
                 } else {
                     TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
                     if (i == LogoutActivity.this.logoutSectionRow) {
-                        textInfoPrivacyCell.setText(LocaleController.getString("LogOutInfo", C3634R.string.LogOutInfo));
+                        textInfoPrivacyCell.setText(LocaleController.getString("LogOutInfo", C3632R.string.LogOutInfo));
                     }
                 }
             } else {
@@ -252,21 +252,21 @@ public class LogoutActivity extends BaseFragment {
                         if (i != LogoutActivity.this.cacheRow) {
                             if (i != LogoutActivity.this.phoneRow) {
                                 if (i == LogoutActivity.this.supportRow) {
-                                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ContactSupport", C3634R.string.ContactSupport), LocaleController.getString("ContactSupportInfo", C3634R.string.ContactSupportInfo), C3634R.C3636drawable.msg_help, false);
+                                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ContactSupport", C3632R.string.ContactSupport), LocaleController.getString("ContactSupportInfo", C3632R.string.ContactSupportInfo), C3632R.C3634drawable.msg_help, false);
                                     return;
                                 }
                                 return;
                             }
-                            textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ChangePhoneNumber", C3634R.string.ChangePhoneNumber), LocaleController.getString("ChangePhoneNumberInfo", C3634R.string.ChangePhoneNumberInfo), C3634R.C3636drawable.msg_newphone, true);
+                            textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ChangePhoneNumber", C3632R.string.ChangePhoneNumber), LocaleController.getString("ChangePhoneNumberInfo", C3632R.string.ChangePhoneNumberInfo), C3632R.C3634drawable.msg_newphone, true);
                             return;
                         }
-                        textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ClearCache", C3634R.string.ClearCache), LocaleController.getString("ClearCacheInfo", C3634R.string.ClearCacheInfo), C3634R.C3636drawable.msg_clearcache, true);
+                        textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("ClearCache", C3632R.string.ClearCache), LocaleController.getString("ClearCacheInfo", C3632R.string.ClearCacheInfo), C3632R.C3634drawable.msg_clearcache, true);
                         return;
                     }
-                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("SetPasscode", C3634R.string.SetPasscode), LocaleController.getString("SetPasscodeInfo", C3634R.string.SetPasscodeInfo), C3634R.C3636drawable.msg_permissions, true);
+                    textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("SetPasscode", C3632R.string.SetPasscode), LocaleController.getString("SetPasscodeInfo", C3632R.string.SetPasscodeInfo), C3632R.C3634drawable.msg_permissions, true);
                     return;
                 }
-                textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("AddAnotherAccount", C3634R.string.AddAnotherAccount), LocaleController.getString("AddAnotherAccountInfo", C3634R.string.AddAnotherAccountInfo), C3634R.C3636drawable.msg_contact_add, true);
+                textDetailSettingsCell.setTextAndValueAndIcon(LocaleController.getString("AddAnotherAccount", C3632R.string.AddAnotherAccount), LocaleController.getString("AddAnotherAccountInfo", C3632R.string.AddAnotherAccountInfo), C3632R.C3634drawable.msg_contact_add, true);
             }
         }
 
@@ -294,7 +294,7 @@ public class LogoutActivity extends BaseFragment {
                 headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else {
                 headerCell = new TextInfoPrivacyCell(this.mContext);
-                headerCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3634R.C3636drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                headerCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3632R.C3634drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
             }
             headerCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
             return new RecyclerListView.Holder(headerCell);
@@ -320,10 +320,10 @@ public class LogoutActivity extends BaseFragment {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, HeaderCell.class, TextDetailSettingsCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3706ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(c3704ActionBar, i, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

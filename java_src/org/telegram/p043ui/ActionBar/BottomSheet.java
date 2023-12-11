@@ -41,7 +41,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -980,7 +980,7 @@ public class BottomSheet extends Dialog {
     }
 
     public BottomSheet(Context context, boolean z, Theme.ResourcesProvider resourcesProvider) {
-        super(context, C3634R.style.TransparentDialog);
+        super(context, C3632R.style.TransparentDialog);
         this.currentAccount = UserConfig.selectedAccount;
         this.allowDrawContent = true;
         this.useHardwareLayer = true;
@@ -1021,7 +1021,7 @@ public class BottomSheet extends Dialog {
         }
         this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         Rect rect = new Rect();
-        Drawable mutate = context.getResources().getDrawable(C3634R.C3636drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3632R.C3634drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i), PorterDuff.Mode.MULTIPLY));
         this.shadowDrawable.getPadding(rect);
@@ -1159,7 +1159,7 @@ public class BottomSheet extends Dialog {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Window window = getWindow();
-        window.setWindowAnimations(C3634R.style.DialogNoAnimation);
+        window.setWindowAnimations(C3632R.style.DialogNoAnimation);
         setContentView(this.container, new ViewGroup.LayoutParams(-1, -1));
         if (this.useLightStatusBar && Build.VERSION.SDK_INT >= 23 && Theme.getColor(Theme.key_actionBarDefault, null, true) == -1) {
             this.container.setSystemUiVisibility(this.container.getSystemUiVisibility() | 8192);
@@ -1693,7 +1693,7 @@ public class BottomSheet extends Dialog {
         animatorSet.playTogether(animatorArr);
         this.currentSheetAnimation.setDuration(180L);
         this.currentSheetAnimation.setInterpolator(CubicBezierInterpolator.EASE_OUT);
-        this.currentSheetAnimation.addListener(new C37767(i));
+        this.currentSheetAnimation.addListener(new C37747(i));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.currentSheetAnimation.start();
     }
@@ -1701,10 +1701,10 @@ public class BottomSheet extends Dialog {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ActionBar.BottomSheet$7 */
     /* loaded from: classes5.dex */
-    public class C37767 extends AnimatorListenerAdapter {
+    public class C37747 extends AnimatorListenerAdapter {
         final /* synthetic */ int val$item;
 
-        C37767(int i) {
+        C37747(int i) {
             this.val$item = i;
         }
 
@@ -1721,7 +1721,7 @@ public class BottomSheet extends Dialog {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.BottomSheet$7$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BottomSheet.C37767.this.lambda$onAnimationEnd$0();
+                        BottomSheet.C37747.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -1804,8 +1804,8 @@ public class BottomSheet extends Dialog {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ActionBar.BottomSheet$8 */
     /* loaded from: classes5.dex */
-    public class C37778 extends AnimatorListenerAdapter {
-        C37778() {
+    public class C37758 extends AnimatorListenerAdapter {
+        C37758() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -1818,7 +1818,7 @@ public class BottomSheet extends Dialog {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ActionBar.BottomSheet$8$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BottomSheet.C37778.this.lambda$onAnimationEnd$0();
+                        BottomSheet.C37758.this.lambda$onAnimationEnd$0();
                     }
                 });
             }

@@ -74,12 +74,12 @@ public final class StakingCalculatorProgrammesPresenter extends BasePresenter<St
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingProgrammes> result) {
-                m1814invoke(result);
+                m1816invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1814invoke(Result<? extends StakingProgrammes> it) {
+            public final void m1816invoke(Result<? extends StakingProgrammes> it) {
                 List list;
                 List list2;
                 List<BaseNode> list3;

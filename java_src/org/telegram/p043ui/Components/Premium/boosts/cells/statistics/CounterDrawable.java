@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import androidx.core.content.ContextCompat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* renamed from: org.telegram.ui.Components.Premium.boosts.cells.statistics.CounterDrawable */
 /* loaded from: classes6.dex */
 public class CounterDrawable extends Drawable {
@@ -44,7 +44,7 @@ public class CounterDrawable extends Drawable {
         textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textPaint.setTextSize(AndroidUtilities.m104dp(12));
         textPaint2.setColor(-6915073);
-        this.icon = ContextCompat.getDrawable(context, C3634R.C3636drawable.mini_boost_badge);
+        this.icon = ContextCompat.getDrawable(context, C3632R.C3634drawable.mini_boost_badge);
     }
 
     public void setText(String str) {

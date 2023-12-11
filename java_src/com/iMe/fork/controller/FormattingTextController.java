@@ -27,7 +27,7 @@ import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.p043ui.ActionBar.AlertDialog;
@@ -202,8 +202,8 @@ public final class FormattingTextController extends BaseController implements Ko
     public final AlertDialog createChooseSelectedFormattingPanelType(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(LocaleController.getInternalString(C3634R.string.settings_messages_formatting_title));
-        builder.setNegativeButton(LocaleController.getInternalString(C3634R.string.common_cancel), null);
+        builder.setTitle(LocaleController.getInternalString(C3632R.string.settings_messages_formatting_title));
+        builder.setNegativeButton(LocaleController.getInternalString(C3632R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         FormattingPanelType[] values = FormattingPanelType.values();

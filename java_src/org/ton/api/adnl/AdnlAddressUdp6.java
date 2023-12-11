@@ -22,7 +22,7 @@ public final class AdnlAddressUdp6 implements AdnlAddress {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: ip */
-    private final byte[] f2026ip;
+    private final byte[] f2027ip;
     private final int port;
 
     public boolean equals(Object obj) {
@@ -31,30 +31,30 @@ public final class AdnlAddressUdp6 implements AdnlAddress {
         }
         if (obj instanceof AdnlAddressUdp6) {
             AdnlAddressUdp6 adnlAddressUdp6 = (AdnlAddressUdp6) obj;
-            return Intrinsics.areEqual(this.f2026ip, adnlAddressUdp6.f2026ip) && this.port == adnlAddressUdp6.port;
+            return Intrinsics.areEqual(this.f2027ip, adnlAddressUdp6.f2027ip) && this.port == adnlAddressUdp6.port;
         }
         return false;
     }
 
     public int hashCode() {
-        return (Arrays.hashCode(this.f2026ip) * 31) + this.port;
+        return (Arrays.hashCode(this.f2027ip) * 31) + this.port;
     }
 
     public String toString() {
-        return "AdnlAddressUdp6(ip=" + Arrays.toString(this.f2026ip) + ", port=" + this.port + ')';
+        return "AdnlAddressUdp6(ip=" + Arrays.toString(this.f2027ip) + ", port=" + this.port + ')';
     }
 
     public /* synthetic */ AdnlAddressUdp6(int i, byte[] bArr, int i2, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, AdnlAddressUdp6$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2026ip = bArr;
+        this.f2027ip = bArr;
         this.port = i2;
     }
 
     public AdnlAddressUdp6(byte[] ip, int i) {
         Intrinsics.checkNotNullParameter(ip, "ip");
-        this.f2026ip = ip;
+        this.f2027ip = ip;
         this.port = i;
     }
 
@@ -64,7 +64,7 @@ public final class AdnlAddressUdp6 implements AdnlAddress {
     }
 
     public byte[] getIp() {
-        return this.f2026ip;
+        return this.f2027ip;
     }
 
     public int getPort() {

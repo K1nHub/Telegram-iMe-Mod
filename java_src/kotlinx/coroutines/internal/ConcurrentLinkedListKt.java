@@ -9,11 +9,11 @@ public final class ConcurrentLinkedListKt {
     public static final <S extends Segment<S>> Object findSegmentInternal(S s, long j, Function2<? super Long, ? super S, ? extends S> function2) {
         while (true) {
             if (s.f1399id >= j && !s.isRemoved()) {
-                return SegmentOrClosed.m2121constructorimpl(s);
+                return SegmentOrClosed.m2123constructorimpl(s);
             }
             Object nextOrClosed = s.getNextOrClosed();
             if (nextOrClosed == CLOSED) {
-                return SegmentOrClosed.m2121constructorimpl(CLOSED);
+                return SegmentOrClosed.m2123constructorimpl(CLOSED);
             }
             S s2 = (S) ((ConcurrentLinkedListNode) nextOrClosed);
             if (s2 == null) {

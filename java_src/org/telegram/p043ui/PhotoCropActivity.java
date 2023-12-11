@@ -14,12 +14,12 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.PhotoCropActivity;
 /* renamed from: org.telegram.ui.PhotoCropActivity */
 /* loaded from: classes5.dex */
@@ -295,11 +295,11 @@ public class PhotoCropActivity extends BaseFragment {
         this.actionBar.setItemsBackgroundColor(-12763843, false);
         this.actionBar.setTitleColor(-1);
         this.actionBar.setItemsColor(-1, false);
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("CropImage", C3634R.string.CropImage));
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PhotoCropActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("CropImage", C3632R.string.CropImage));
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PhotoCropActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     PhotoCropActivity.this.finishFragment();
@@ -316,7 +316,7 @@ public class PhotoCropActivity extends BaseFragment {
                 }
             }
         });
-        this.actionBar.createMenu().addItemWithWidth(1, C3634R.C3636drawable.ic_ab_done, AndroidUtilities.m104dp(56), LocaleController.getString("Done", C3634R.string.Done));
+        this.actionBar.createMenu().addItemWithWidth(1, C3632R.C3634drawable.ic_ab_done, AndroidUtilities.m104dp(56), LocaleController.getString("Done", C3632R.string.Done));
         PhotoCropView photoCropView = new PhotoCropView(context);
         this.view = photoCropView;
         this.fragmentView = photoCropView;

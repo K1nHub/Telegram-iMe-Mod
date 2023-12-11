@@ -7,7 +7,7 @@ public abstract class IStoryPart {
     public int height;
 
     /* renamed from: id */
-    public int f1992id;
+    public int f1993id;
     public final Matrix matrix = new Matrix();
     public int width;
 }

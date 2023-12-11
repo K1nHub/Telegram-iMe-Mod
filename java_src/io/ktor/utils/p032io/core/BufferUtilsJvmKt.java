@@ -18,19 +18,19 @@ public final class BufferUtilsJvmKt {
         Memory.Companion companion = Memory.Companion;
         ByteBuffer order = buffer.slice().order(ByteOrder.BIG_ENDIAN);
         Intrinsics.checkNotNullExpressionValue(order, "buffer.slice().order(ByteOrder.BIG_ENDIAN)");
-        return new ChunkBuffer(Memory.m1910constructorimpl(order), null, objectPool, null);
+        return new ChunkBuffer(Memory.m1912constructorimpl(order), null, objectPool, null);
     }
 
     public static final void readFully(Buffer buffer, ByteBuffer dst, int i) {
         Intrinsics.checkNotNullParameter(buffer, "<this>");
         Intrinsics.checkNotNullParameter(dst, "dst");
-        ByteBuffer m1917getMemorySK3TCg8 = buffer.m1917getMemorySK3TCg8();
+        ByteBuffer m1919getMemorySK3TCg8 = buffer.m1919getMemorySK3TCg8();
         int readPosition = buffer.getReadPosition();
         if (buffer.getWritePosition() - readPosition >= i) {
             int limit = dst.limit();
             try {
                 dst.limit(dst.position() + i);
-                MemoryJvmKt.m1914copyTo62zg_DM(m1917getMemorySK3TCg8, dst, readPosition);
+                MemoryJvmKt.m1916copyTo62zg_DM(m1919getMemorySK3TCg8, dst, readPosition);
                 dst.limit(limit);
                 Unit unit = Unit.INSTANCE;
                 buffer.discardExact(i);

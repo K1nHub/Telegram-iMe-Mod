@@ -3329,6 +3329,43 @@
     return-void
 .end method
 
+.method public setTonConfigJsonString(Ljava/lang/String;)V
+    .locals 4
+
+    const-string v0, "value"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 435
+    invoke-virtual {p0}, Lcom/iMe/storage/data/locale/prefs/impl/BasePreference;->getMPref()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const-string v1, "ton_config_json_string"
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x2
+
+    .line 436
+    invoke-static {p0, v1, v2, v3, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper$-CC;->withGuid$default(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    .line 437
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    return-void
+.end method
+
 .method public setTonFragmentProductsSortingType(Lcom/iMe/storage/domain/model/crypto/ton/TonFragmentProductsSortingType;)V
     .locals 4
 

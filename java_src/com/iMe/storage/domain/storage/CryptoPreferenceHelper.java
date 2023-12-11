@@ -169,6 +169,8 @@ public interface CryptoPreferenceHelper extends BasePreferenceHelper {
 
     void setTokensPositiveBalances(boolean z);
 
+    void setTonConfigJsonString(String str);
+
     void setTonFragmentProductsSortingType(TonFragmentProductsSortingType tonFragmentProductsSortingType);
 
     void setWalletInfoMetadata(CryptoWalletInformationMetadata cryptoWalletInformationMetadata);

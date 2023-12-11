@@ -30,7 +30,7 @@ public final class TransMergeInstall$$serializer implements GeneratedSerializer<
         pluginGeneratedSerialDescriptor.addElement("action", false);
         pluginGeneratedSerialDescriptor.addElement("aborted", false);
         pluginGeneratedSerialDescriptor.addElement("destroyed", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7615xc1d40114("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7613xc1d40114("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

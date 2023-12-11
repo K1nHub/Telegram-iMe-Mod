@@ -174,7 +174,7 @@
     goto :goto_2
 
     :pswitch_8
-    const-string v18, "isSpecialType"
+    const-string/jumbo v18, "isSpecialType"
 
     aput-object v18, v15, v17
 
@@ -414,14 +414,14 @@
     goto/16 :goto_4
 
     :pswitch_1d
-    const-string v16, "isReifiedTypeParameter"
+    const-string/jumbo v16, "isReifiedTypeParameter"
 
     aput-object v16, v15, v14
 
     goto/16 :goto_4
 
     :pswitch_1e
-    const-string v16, "isTypeParameter"
+    const-string/jumbo v16, "isTypeParameter"
 
     aput-object v16, v15, v14
 
@@ -634,8 +634,6 @@
 
     :goto_5
     throw v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x38

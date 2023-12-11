@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 846
+    .line 847
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$7;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setPadding(IIII)V
     .locals 1
 
-    .line 849
+    .line 850
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 850
+    .line 851
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$7;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$1500(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/StickerEmptyView;
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 851
+    .line 852
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$7;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$1500(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/StickerEmptyView;

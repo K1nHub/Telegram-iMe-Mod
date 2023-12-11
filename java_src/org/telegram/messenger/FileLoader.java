@@ -582,7 +582,7 @@ public class FileLoader extends BaseController {
         if (z2) {
             fileUploadOperation.setForceSmallFile();
         }
-        fileUploadOperation.setDelegate(new C35741(z, str, z3));
+        fileUploadOperation.setDelegate(new C35721(z, str, z3));
         if (z3) {
             int i3 = this.currentUploadSmallOperationsCount;
             if (i3 < 1) {
@@ -605,12 +605,12 @@ public class FileLoader extends BaseController {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.FileLoader$1 */
     /* loaded from: classes4.dex */
-    public class C35741 implements FileUploadOperation.FileUploadOperationDelegate {
+    public class C35721 implements FileUploadOperation.FileUploadOperationDelegate {
         final /* synthetic */ boolean val$encrypted;
         final /* synthetic */ String val$location;
         final /* synthetic */ boolean val$small;
 
-        C35741(boolean z, String str, boolean z2) {
+        C35721(boolean z, String str, boolean z2) {
             this.val$encrypted = z;
             this.val$location = str;
             this.val$small = z2;
@@ -625,7 +625,7 @@ public class FileLoader extends BaseController {
             dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLoader$1$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FileLoader.C35741.this.lambda$didFinishUploadingFile$0(z, str, z2, tLRPC$InputFile, tLRPC$InputEncryptedFile, bArr, bArr2, fileUploadOperation);
+                    FileLoader.C35721.this.lambda$didFinishUploadingFile$0(z, str, z2, tLRPC$InputFile, tLRPC$InputEncryptedFile, bArr, bArr2, fileUploadOperation);
                 }
             });
         }
@@ -666,7 +666,7 @@ public class FileLoader extends BaseController {
             dispatchQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLoader$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FileLoader.C35741.this.lambda$didFailedUploadingFile$1(z, str, z2);
+                    FileLoader.C35721.this.lambda$didFailedUploadingFile$1(z, str, z2);
                 }
             });
         }
@@ -942,7 +942,7 @@ public class FileLoader extends BaseController {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.FileLoader$2 */
     /* loaded from: classes4.dex */
-    public class C35752 implements FileLoadOperation.FileLoadOperationDelegate {
+    public class C35732 implements FileLoadOperation.FileLoadOperationDelegate {
         final /* synthetic */ Uri val$customDirectoryUri;
         final /* synthetic */ String val$customFileName;
         final /* synthetic */ TLRPC$Document val$document;
@@ -950,7 +950,7 @@ public class FileLoader extends BaseController {
         final /* synthetic */ int val$finalType;
         final /* synthetic */ Object val$parentObject;
 
-        C35752(Object obj, TLRPC$Document tLRPC$Document, String str, int i, String str2, Uri uri) {
+        C35732(Object obj, TLRPC$Document tLRPC$Document, String str, int i, String str2, Uri uri) {
             this.val$parentObject = obj;
             this.val$document = tLRPC$Document;
             this.val$fileName = str;
@@ -965,7 +965,7 @@ public class FileLoader extends BaseController {
             FileLoader.fileLoaderQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.FileLoader$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FileLoader.C35752.lambda$didPreFinishLoading$0(FileLoadOperation.this, queue);
+                    FileLoader.C35732.lambda$didPreFinishLoading$0(FileLoadOperation.this, queue);
                 }
             });
         }
@@ -1980,7 +1980,7 @@ public class FileLoader extends BaseController {
         private LoadOperationUIObject() {
         }
 
-        /* synthetic */ LoadOperationUIObject(C35741 c35741) {
+        /* synthetic */ LoadOperationUIObject(C35721 c35721) {
             this();
         }
     }

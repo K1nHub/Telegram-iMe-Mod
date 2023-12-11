@@ -19,7 +19,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -209,12 +209,12 @@ public final class MovingReactionCell extends FrameLayout {
         Intrinsics.checkNotNullParameter(urlButton, "urlButton");
         this.urlButton = urlButton;
         if (urlButton.getTitle().length() == 0) {
-            getEditText().setHint(LocaleController.getInternalString(C3634R.string.chat_reaction_enter_the_title));
+            getEditText().setHint(LocaleController.getInternalString(C3632R.string.chat_reaction_enter_the_title));
         }
         TextView valueTextView = getValueTextView();
         String url = urlButton.getUrl();
         if (url.length() == 0) {
-            url = LocaleController.getInternalString(C3634R.string.chat_reaction_link_not_added);
+            url = LocaleController.getInternalString(C3632R.string.chat_reaction_link_not_added);
         }
         valueTextView.setText(url);
         ImageView linkImageView = getLinkImageView();
@@ -281,7 +281,7 @@ public final class MovingReactionCell extends FrameLayout {
         r1.setBackground(null);
         r1.setImeOptions(r1.getImeOptions() | 268435456);
         r1.setInputType(r1.getInputType() | 16384);
-        r1.setHint(LocaleController.getInternalString(C3634R.string.chat_reaction_enter_the_title));
+        r1.setHint(LocaleController.getInternalString(C3632R.string.chat_reaction_enter_the_title));
         r1.setTextSize(1, 16.0f);
         r1.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         r1.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
@@ -295,7 +295,7 @@ public final class MovingReactionCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3634R.C3636drawable.poll_reorder);
+        imageView.setImageResource(C3632R.C3634drawable.poll_reorder);
         return imageView;
     }
 
@@ -305,7 +305,7 @@ public final class MovingReactionCell extends FrameLayout {
         ViewExtKt.singleLine(textView);
         textView.setGravity(8388611);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setText(LocaleController.getInternalString(C3634R.string.chat_reaction_link_not_added));
+        textView.setText(LocaleController.getInternalString(C3632R.string.chat_reaction_link_not_added));
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         textView.setTextSize(1, 12.0f);
         return textView;
@@ -318,7 +318,7 @@ public final class MovingReactionCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
         imageView.setClickable(true);
-        imageView.setImageResource(C3634R.C3636drawable.delete);
+        imageView.setImageResource(C3632R.C3634drawable.delete);
         return imageView;
     }
 
@@ -330,7 +330,7 @@ public final class MovingReactionCell extends FrameLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader), PorterDuff.Mode.MULTIPLY));
         imageView.setVisibility(this.linkIconShow ? 0 : 8);
-        imageView.setImageResource(C3634R.C3636drawable.msg_link);
+        imageView.setImageResource(C3632R.C3634drawable.msg_link);
         return imageView;
     }
 

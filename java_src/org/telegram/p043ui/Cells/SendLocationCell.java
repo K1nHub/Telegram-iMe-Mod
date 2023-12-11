@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.UserConfig;
@@ -72,7 +72,7 @@ public class SendLocationCell extends FrameLayout {
             AndroidUtilities.runOnUIThread(this.invalidateRunnable, 1000L);
             setWillNotDraw(false);
         } else {
-            Drawable mutate = getResources().getDrawable(C3634R.C3636drawable.pin).mutate();
+            Drawable mutate = getResources().getDrawable(C3632R.C3634drawable.pin).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_location_sendLocationIcon), PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable2 = new CombinedDrawable(createSimpleSelectorCircleDrawable, mutate);
             combinedDrawable2.setCustomSize(AndroidUtilities.m104dp(42), AndroidUtilities.m104dp(42));
@@ -152,13 +152,13 @@ public class SendLocationCell extends FrameLayout {
     public void checkText() {
         LocationController.SharingLocationInfo sharingLocationInfo = LocationController.getInstance(this.currentAccount).getSharingLocationInfo(this.dialogId);
         if (sharingLocationInfo != null) {
-            String string = LocaleController.getString("StopLiveLocation", C3634R.string.StopLiveLocation);
+            String string = LocaleController.getString("StopLiveLocation", C3632R.string.StopLiveLocation);
             TLRPC$Message tLRPC$Message = sharingLocationInfo.messageObject.messageOwner;
             int i = tLRPC$Message.edit_date;
             setText(string, LocaleController.formatLocationUpdateDate(i != 0 ? i : tLRPC$Message.date));
             return;
         }
-        setText(LocaleController.getString("SendLiveLocation", C3634R.string.SendLiveLocation), LocaleController.getString("SendLiveLocationInfo", C3634R.string.SendLiveLocationInfo));
+        setText(LocaleController.getString("SendLiveLocation", C3632R.string.SendLiveLocation), LocaleController.getString("SendLiveLocationInfo", C3632R.string.SendLiveLocationInfo));
     }
 
     @Override // android.view.View

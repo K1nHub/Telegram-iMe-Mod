@@ -22,7 +22,7 @@ public abstract class TypeSubstitution {
     }
 
     /* renamed from: get */
-    public abstract TypeProjection mo2056get(KotlinType kotlinType);
+    public abstract TypeProjection mo2058get(KotlinType kotlinType);
 
     public boolean isEmpty() {
         return false;
@@ -64,7 +64,7 @@ public abstract class TypeSubstitution {
 
             @Override // kotlin.reflect.jvm.internal.impl.types.TypeSubstitution
             /* renamed from: get  reason: collision with other method in class */
-            public /* bridge */ /* synthetic */ TypeProjection mo2056get(KotlinType kotlinType) {
+            public /* bridge */ /* synthetic */ TypeProjection mo2058get(KotlinType kotlinType) {
                 return (TypeProjection) get(kotlinType);
             }
         };
@@ -90,9 +90,9 @@ public abstract class TypeSubstitution {
 
             @Override // kotlin.reflect.jvm.internal.impl.types.TypeSubstitution
             /* renamed from: get */
-            public TypeProjection mo2056get(KotlinType key) {
+            public TypeProjection mo2058get(KotlinType key) {
                 Intrinsics.checkNotNullParameter(key, "key");
-                return TypeSubstitution.this.mo2056get(key);
+                return TypeSubstitution.this.mo2058get(key);
             }
 
             @Override // kotlin.reflect.jvm.internal.impl.types.TypeSubstitution

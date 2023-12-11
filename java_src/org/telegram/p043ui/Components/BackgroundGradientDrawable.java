@@ -383,7 +383,7 @@ public class BackgroundGradientDrawable extends GradientDrawable {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.BackgroundGradientDrawable$2 */
     /* loaded from: classes6.dex */
-    public static /* synthetic */ class C44972 {
+    public static /* synthetic */ class C44942 {
 
         /* renamed from: $SwitchMap$android$graphics$drawable$GradientDrawable$Orientation */
         static final /* synthetic */ int[] f1813x8f1352bc;
@@ -424,7 +424,7 @@ public class BackgroundGradientDrawable extends GradientDrawable {
 
     public static Rect getGradientPoints(GradientDrawable.Orientation orientation, int i, int i2) {
         Rect rect = new Rect();
-        switch (C44972.f1813x8f1352bc[orientation.ordinal()]) {
+        switch (C44942.f1813x8f1352bc[orientation.ordinal()]) {
             case 1:
                 int i3 = i / 2;
                 rect.left = i3;

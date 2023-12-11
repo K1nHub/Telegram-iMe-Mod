@@ -95,7 +95,7 @@
         }
     .end annotation
 
-    const/16 v0, 0xb
+    const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/chad/library/adapter/base/entity/node/BaseNode;
 
@@ -160,51 +160,29 @@
 
     aput-object v1, v0, v2
 
-    .line 80
+    .line 87
     new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
-    .line 81
-    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->CHANNELS:Lcom/iMe/model/wallet/home/ServicesCategory;
+    .line 88
+    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->NEUROBOTS:Lcom/iMe/model/wallet/home/ServicesCategory;
 
-    .line 82
-    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_channels_catalog:I
+    .line 89
+    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_neurobots_store:I
 
-    .line 83
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_channels_catalog_title:I
+    .line 90
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_neurobots_store_title:I
 
-    .line 84
-    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_channels_catalog_subtitle:I
+    .line 91
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_neurobots_store_subtitle:I
 
-    .line 80
+    .line 87
     invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
 
     const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
-    .line 86
-    new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
-
-    .line 87
-    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->NEUROBOTS:Lcom/iMe/model/wallet/home/ServicesCategory;
-
-    .line 88
-    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_neurobots_store:I
-
-    .line 89
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_neurobots_store_title:I
-
-    .line 90
-    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_neurobots_store_subtitle:I
-
-    .line 86
-    invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
-
-    const/4 v2, 0x4
-
-    aput-object v1, v0, v2
-
-    .line 92
+    .line 93
     new-instance v1, Lcom/iMe/model/wallet/home/HeaderItem;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -217,55 +195,55 @@
 
     invoke-direct {v1, v2}, Lcom/iMe/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
 
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
+    .line 94
+    new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
+
+    .line 95
+    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->TELEGRAM_PREMIUM:Lcom/iMe/model/wallet/home/ServicesCategory;
+
+    .line 96
+    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_telegram_premium:I
+
+    .line 97
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_telegram_premium_title:I
+
+    .line 98
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_telegram_premium_subtitle:I
+
+    .line 94
+    invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
+
     const/4 v2, 0x5
 
     aput-object v1, v0, v2
 
-    .line 93
+    .line 100
     new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
-    .line 94
-    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->TELEGRAM_PREMIUM:Lcom/iMe/model/wallet/home/ServicesCategory;
+    .line 101
+    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->TELEGRAM_USERNAMES:Lcom/iMe/model/wallet/home/ServicesCategory;
 
-    .line 95
-    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_telegram_premium:I
+    .line 102
+    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_telegram_usernames:I
 
-    .line 96
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_telegram_premium_title:I
+    .line 103
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_telegram_usernames_title:I
 
-    .line 97
-    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_telegram_premium_subtitle:I
+    .line 104
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_telegram_usernames_subtitle:I
 
-    .line 93
+    .line 100
     invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
 
     const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
-    .line 99
-    new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
-
-    .line 100
-    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->TELEGRAM_USERNAMES:Lcom/iMe/model/wallet/home/ServicesCategory;
-
-    .line 101
-    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_telegram_usernames:I
-
-    .line 102
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_telegram_usernames_title:I
-
-    .line 103
-    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_telegram_usernames_subtitle:I
-
-    .line 99
-    invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
-
-    const/4 v2, 0x7
-
-    aput-object v1, v0, v2
-
-    .line 105
+    .line 106
     new-instance v1, Lcom/iMe/model/wallet/home/HeaderItem;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -278,51 +256,51 @@
 
     invoke-direct {v1, v2}, Lcom/iMe/model/wallet/home/HeaderItem;-><init>(Ljava/lang/String;)V
 
+    const/4 v2, 0x7
+
+    aput-object v1, v0, v2
+
+    .line 107
+    new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
+
+    .line 108
+    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->PREMIUM:Lcom/iMe/model/wallet/home/ServicesCategory;
+
+    .line 109
+    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_premium_account:I
+
+    .line 110
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_premium_account_title:I
+
+    .line 111
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_premium_account_subtitle:I
+
+    .line 107
+    invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
+
     const/16 v2, 0x8
 
     aput-object v1, v0, v2
 
-    .line 106
+    .line 113
     new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
 
-    .line 107
-    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->PREMIUM:Lcom/iMe/model/wallet/home/ServicesCategory;
+    .line 114
+    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->ADS:Lcom/iMe/model/wallet/home/ServicesCategory;
 
-    .line 108
-    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_premium_account:I
+    .line 115
+    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_ads:I
 
-    .line 109
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_premium_account_title:I
+    .line 116
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_ads_title:I
 
-    .line 110
-    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_premium_account_subtitle:I
+    .line 117
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_ads_subtitle:I
 
-    .line 106
+    .line 113
     invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
 
     const/16 v2, 0x9
-
-    aput-object v1, v0, v2
-
-    .line 112
-    new-instance v1, Lcom/iMe/model/wallet/home/ServicesBasicItem;
-
-    .line 113
-    sget-object v2, Lcom/iMe/model/wallet/home/ServicesCategory;->ADS:Lcom/iMe/model/wallet/home/ServicesCategory;
-
-    .line 114
-    sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_internal_point_ads:I
-
-    .line 115
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_internal_point_ads_title:I
-
-    .line 116
-    sget v5, Lorg/telegram/messenger/R$string;->wallet_internal_point_ads_subtitle:I
-
-    .line 112
-    invoke-direct {v1, v2, v3, v4, v5}, Lcom/iMe/model/wallet/home/ServicesBasicItem;-><init>(Lcom/iMe/model/wallet/home/ServicesCategory;III)V
-
-    const/16 v2, 0xa
 
     aput-object v1, v0, v2
 
@@ -432,7 +410,7 @@
 .method private final runWithWalletCheck(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 1
 
-    .line 124
+    .line 125
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/services/WalletHomeServicesPresenter;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isWalletCreated(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Z
@@ -441,12 +419,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 125
+    .line 126
     invoke-interface {p2}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     goto :goto_0
 
-    .line 127
+    .line 128
     :cond_0
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 

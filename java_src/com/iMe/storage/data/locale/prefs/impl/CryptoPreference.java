@@ -522,6 +522,12 @@ public final class CryptoPreference extends BasePreference implements CryptoPref
     }
 
     @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
+    public void setTonConfigJsonString(String value) {
+        Intrinsics.checkNotNullParameter(value, "value");
+        getMPref().edit().putString(CryptoPreferenceHelper.CC.withGuid$default(this, "ton_config_json_string", null, 2, null), value).apply();
+    }
+
+    @Override // com.iMe.storage.domain.storage.CryptoPreferenceHelper
     public TonFragmentProductsSortingType getTonFragmentProductsSortingType() {
         return TonFragmentProductsSortingType.Companion.map(getMPref().getString(BasePreferenceHelper.CC.withTgAccount$default(this, "ton_fragment_products_sorting_type", null, 2, null), TonFragmentProductsSortingType.PRICE_DESCENDING.name()));
     }

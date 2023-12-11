@@ -415,14 +415,16 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 2
+    .locals 1
 
     .line 328
-    iget v0, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;->val$type:I
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
 
-    const/4 v1, 0x3
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$100(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Z
 
-    if-ne v0, v1, :cond_0
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     .line 329
     invoke-super {p0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->onTouchEvent(Landroid/view/MotionEvent;)Z

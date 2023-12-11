@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;)V
     .locals 0
 
-    .line 198
+    .line 201
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1$1;->this$1:Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 201
+    .line 204
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1$1;->this$1:Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
@@ -48,7 +48,7 @@
 
     return-void
 
-    .line 204
+    .line 207
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1$1;->this$1:Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;
 
@@ -58,7 +58,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$202(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
-    .line 205
+    .line 208
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1$1;->this$1:Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;

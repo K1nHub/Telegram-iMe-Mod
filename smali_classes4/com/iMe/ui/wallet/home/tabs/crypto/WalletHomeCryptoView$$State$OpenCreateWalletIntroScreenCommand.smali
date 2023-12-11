@@ -34,20 +34,20 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;)V
     .locals 1
 
-    .line 758
+    .line 821
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "openCreateWalletIntroScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 760
+    .line 823
     iput-object p2, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$OpenCreateWalletIntroScreenCommand;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 761
+    .line 824
     iput-object p3, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$OpenCreateWalletIntroScreenCommand;->linkedWalletAddress:Ljava/lang/String;
 
-    .line 762
+    .line 825
     iput-object p4, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$OpenCreateWalletIntroScreenCommand;->walletCreationType:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;
 
     return-void
@@ -58,7 +58,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V
     .locals 3
 
-    .line 767
+    .line 830
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$OpenCreateWalletIntroScreenCommand;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$OpenCreateWalletIntroScreenCommand;->linkedWalletAddress:Ljava/lang/String;
@@ -73,7 +73,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 749
+    .line 812
     check-cast p1, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$OpenCreateWalletIntroScreenCommand;->apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V

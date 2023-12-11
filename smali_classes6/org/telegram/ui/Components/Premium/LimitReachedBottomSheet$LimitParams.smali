@@ -32,29 +32,29 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 1696
+    .line 1689
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 1697
+    .line 1690
     iput v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;->icon:I
 
     const/4 v1, 0x0
 
-    .line 1698
+    .line 1691
     iput-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;->descriptionStr:Ljava/lang/String;
 
-    .line 1699
+    .line 1692
     iput-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;->descriptionStrPremium:Ljava/lang/String;
 
-    .line 1700
+    .line 1693
     iput-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;->descriptionStrLocked:Ljava/lang/String;
 
-    .line 1701
+    .line 1694
     iput v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;->defaultLimit:I
 
-    .line 1702
+    .line 1695
     iput v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$LimitParams;->premiumLimit:I
 
     return-void

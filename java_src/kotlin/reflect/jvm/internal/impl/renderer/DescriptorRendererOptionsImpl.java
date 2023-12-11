@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.MutablePropertyReference1Impl;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
-import kotlin.properties.C3256Delegates;
+import kotlin.properties.C3253Delegates;
 import kotlin.properties.ObservableProperty;
 import kotlin.properties.ReadWriteProperty;
 import kotlin.reflect.KClass;
@@ -191,7 +191,7 @@ public final class DescriptorRendererOptionsImpl implements DescriptorRendererOp
     }
 
     private final <T> ReadWriteProperty<DescriptorRendererOptionsImpl, T> property(final T t) {
-        C3256Delegates c3256Delegates = C3256Delegates.INSTANCE;
+        C3253Delegates c3253Delegates = C3253Delegates.INSTANCE;
         return new ObservableProperty<T>(t) { // from class: kotlin.reflect.jvm.internal.impl.renderer.DescriptorRendererOptionsImpl$property$$inlined$vetoable$1
             @Override // kotlin.properties.ObservableProperty
             protected boolean beforeChange(KProperty<?> property, T t2, T t3) {

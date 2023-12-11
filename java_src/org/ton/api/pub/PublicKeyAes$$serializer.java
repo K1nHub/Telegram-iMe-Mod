@@ -23,7 +23,7 @@ public final class PublicKeyAes$$serializer implements GeneratedSerializer<Publi
         INSTANCE = publicKeyAes$$serializer;
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("pub.aes", publicKeyAes$$serializer, 1);
         pluginGeneratedSerialDescriptor.addElement("key", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7514x79401cc9("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7512x79401cc9("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

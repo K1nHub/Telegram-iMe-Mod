@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 7
 
-    .line 12146
+    .line 12156
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$77;->this$0:Lorg/telegram/ui/ChatActivity;
 
     move-object v0, p0
@@ -49,7 +49,7 @@
 .method public dismissInternal()V
     .locals 3
 
-    .line 12149
+    .line 12159
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$77;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -62,7 +62,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 12150
+    .line 12160
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$77;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -77,11 +77,11 @@
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
 
-    .line 12152
+    .line 12162
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/ChatAttachAlert;->dismissInternal()V
 
-    .line 12153
+    .line 12163
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$77;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x0
@@ -96,7 +96,7 @@
 .method public onDismissAnimationStart()V
     .locals 3
 
-    .line 12158
+    .line 12168
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$77;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -105,10 +105,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 12159
+    .line 12169
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setFocusable(Z)V
 
-    .line 12161
+    .line 12171
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$77;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -122,7 +122,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 12162
+    .line 12172
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$77;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -133,7 +133,7 @@
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 12164
+    .line 12174
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$77;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -147,7 +147,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 12165
+    .line 12175
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$77;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -162,7 +162,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
 
-    .line 12167
+    .line 12177
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$77;->this$0:Lorg/telegram/ui/ChatActivity;
 

@@ -36,7 +36,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;ZLjava/lang/Runnable;)V
     .locals 0
 
-    .line 36226
+    .line 36303
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$139;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/ChatActivity$139;->val$isOpen:Z
@@ -51,10 +51,10 @@
 .method private synthetic lambda$onAnimationEnd$0()V
     .locals 2
 
-    .line 36247
+    .line 36324
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$139;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$61600(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$61800(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v0
 
@@ -74,53 +74,53 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 36238
+    .line 36315
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$139;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v0, 0x1
 
     iput-boolean v0, p1, Lorg/telegram/ui/ChatActivity;->fragmentOpened:Z
 
-    .line 36239
-    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$61402(Lorg/telegram/ui/ChatActivity;Z)Z
+    .line 36316
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$61602(Lorg/telegram/ui/ChatActivity;Z)Z
 
-    .line 36240
+    .line 36317
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$139;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$1602(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 36241
+    .line 36318
     iget-boolean p1, p0, Lorg/telegram/ui/ChatActivity$139;->val$isOpen:Z
 
     if-eqz p1, :cond_0
 
-    .line 36242
+    .line 36319
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$139;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$37302(Lorg/telegram/ui/ChatActivity;Z)Z
 
-    .line 36244
+    .line 36321
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$139;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$61500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$61700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 36245
+    .line 36322
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$139;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 36246
+    .line 36323
     new-instance p1, Lorg/telegram/ui/ChatActivity$139$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChatActivity$139$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$139;)V
@@ -129,7 +129,7 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 36249
+    .line 36326
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$139;->val$callback:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
@@ -140,13 +140,13 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 36232
+    .line 36309
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationStart(Landroid/animation/Animator;)V
 
-    .line 36233
+    .line 36310
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$139;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$61300(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$61500(Lorg/telegram/ui/ChatActivity;)I
 
     move-result p1
 

@@ -447,7 +447,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Asset, Builder> implements AssetOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -514,7 +514,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Asset();
                 case 2:
@@ -561,40 +561,40 @@ public final class Stellar {
 
     /* renamed from: wallet.core.jni.proto.Stellar$1 */
     /* loaded from: classes7.dex */
-    static /* synthetic */ class C77641 {
+    static /* synthetic */ class C77621 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f2156xa1df5c61;
+        static final /* synthetic */ int[] f2157xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f2156xa1df5c61 = iArr;
+            f2157xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f2156xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2157xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f2156xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2157xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f2156xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2157xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f2156xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2157xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f2156xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2157xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f2156xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2157xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -712,7 +712,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationCreateAccount, Builder> implements OperationCreateAccountOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -768,7 +768,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationCreateAccount();
                 case 2:
@@ -960,7 +960,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationPayment, Builder> implements OperationPaymentOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -1050,7 +1050,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationPayment();
                 case 2:
@@ -1213,7 +1213,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationChangeTrust, Builder> implements OperationChangeTrustOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -1275,7 +1275,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationChangeTrust();
                 case 2:
@@ -1443,7 +1443,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Claimant, Builder> implements ClaimantOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -1510,7 +1510,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Claimant();
                 case 2:
@@ -1744,7 +1744,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationCreateClaimableBalance, Builder> implements OperationCreateClaimableBalanceOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -1875,7 +1875,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationCreateClaimableBalance();
                 case 2:
@@ -2004,7 +2004,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<OperationClaimClaimableBalance, Builder> implements OperationClaimClaimableBalanceOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -2032,7 +2032,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new OperationClaimClaimableBalance();
                 case 2:
@@ -2143,7 +2143,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<MemoVoid, Builder> implements MemoVoidOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -2154,7 +2154,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new MemoVoid();
                 case 2:
@@ -2294,7 +2294,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<MemoText, Builder> implements MemoTextOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -2333,7 +2333,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new MemoText();
                 case 2:
@@ -2461,7 +2461,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<MemoId, Builder> implements MemoIdOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -2489,7 +2489,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new MemoId();
                 case 2:
@@ -2618,7 +2618,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<MemoHash, Builder> implements MemoHashOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -2646,7 +2646,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new MemoHash();
                 case 2:
@@ -3385,7 +3385,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -3865,7 +3865,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -4005,7 +4005,7 @@ public final class Stellar {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C77641 c77641) {
+            /* synthetic */ Builder(C77621 c77621) {
                 this();
             }
 
@@ -4044,7 +4044,7 @@ public final class Stellar {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77641.f2156xa1df5c61[method.ordinal()]) {
+            switch (C77621.f2157xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

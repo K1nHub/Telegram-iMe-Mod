@@ -38,13 +38,13 @@ public final class OldMcBlocksInfo$$serializer implements GeneratedSerializer<Ol
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public /* bridge */ /* synthetic */ Object deserialize(Decoder decoder) {
-        return OldMcBlocksInfo.m5131boximpl(m5139deserializea38pvyo(decoder));
+        return OldMcBlocksInfo.m5113boximpl(m5121deserializea38pvyo(decoder));
     }
 
     /* renamed from: deserialize-a38pvyo  reason: not valid java name */
-    public HashmapAugE<KeyExtBlkRef, KeyMaxLt> m5139deserializea38pvyo(Decoder decoder) {
+    public HashmapAugE<KeyExtBlkRef, KeyMaxLt> m5121deserializea38pvyo(Decoder decoder) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
-        return OldMcBlocksInfo.m5132constructorimpl((HashmapAugE) decoder.decodeInline(getDescriptor()).decodeSerializableValue(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(HashmapAugE.class), new Annotation[]{new C7589xa42a768e("@type")})));
+        return OldMcBlocksInfo.m5114constructorimpl((HashmapAugE) decoder.decodeInline(getDescriptor()).decodeSerializableValue(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(HashmapAugE.class), new Annotation[]{new C7587xa42a768e("@type")})));
     }
 
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
@@ -54,18 +54,18 @@ public final class OldMcBlocksInfo$$serializer implements GeneratedSerializer<Ol
 
     @Override // kotlinx.serialization.SerializationStrategy
     public /* bridge */ /* synthetic */ void serialize(Encoder encoder, Object obj) {
-        m5140serializet0Hynxs(encoder, ((OldMcBlocksInfo) obj).m5138unboximpl());
+        m5122serializet0Hynxs(encoder, ((OldMcBlocksInfo) obj).m5120unboximpl());
     }
 
     /* renamed from: serialize-t0Hynxs  reason: not valid java name */
-    public void m5140serializet0Hynxs(Encoder encoder, HashmapAugE<KeyExtBlkRef, KeyMaxLt> value) {
+    public void m5122serializet0Hynxs(Encoder encoder, HashmapAugE<KeyExtBlkRef, KeyMaxLt> value) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
         Intrinsics.checkNotNullParameter(value, "value");
         Encoder encodeInline = encoder.encodeInline(getDescriptor());
         if (encodeInline == null) {
             return;
         }
-        encodeInline.encodeSerializableValue(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(HashmapAugE.class), new Annotation[]{new C7589xa42a768e("@type")}), value);
+        encodeInline.encodeSerializableValue(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(HashmapAugE.class), new Annotation[]{new C7587xa42a768e("@type")}), value);
     }
 
     @Override // kotlinx.serialization.internal.GeneratedSerializer

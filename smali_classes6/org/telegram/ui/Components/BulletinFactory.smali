@@ -72,18 +72,18 @@
 .method private constructor <init>(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 172
+    .line 173
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 173
+    .line 174
     iput-object p1, p0, Lorg/telegram/ui/Components/BulletinFactory;->containerLayout:Landroid/widget/FrameLayout;
 
     const/4 p1, 0x0
 
-    .line 174
+    .line 175
     iput-object p1, p0, Lorg/telegram/ui/Components/BulletinFactory;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 175
+    .line 176
     iput-object p2, p0, Lorg/telegram/ui/Components/BulletinFactory;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
@@ -92,14 +92,14 @@
 .method private constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 2
 
-    .line 160
+    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
     if-eqz p1, :cond_0
 
-    .line 161
+    .line 162
     iget-object v1, p1, Lorg/telegram/ui/ActionBar/BaseFragment;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     if-eqz v1, :cond_0
@@ -110,10 +110,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 162
+    .line 163
     iput-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 163
+    .line 164
     iget-object v0, p1, Lorg/telegram/ui/ActionBar/BaseFragment;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoryViewer;->getContainerForBulletin()Landroid/widget/FrameLayout;
@@ -122,7 +122,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory;->containerLayout:Landroid/widget/FrameLayout;
 
-    .line 164
+    .line 165
     iget-object p1, p1, Lorg/telegram/ui/ActionBar/BaseFragment;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -133,18 +133,18 @@
 
     goto :goto_1
 
-    .line 166
+    .line 167
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/Components/BulletinFactory;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 167
+    .line 168
     iput-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory;->containerLayout:Landroid/widget/FrameLayout;
 
     if-nez p1, :cond_1
 
     goto :goto_0
 
-    .line 168
+    .line 169
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
@@ -160,7 +160,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/BulletinFactory;)Lorg/telegram/ui/ActionBar/BaseFragment;
     .locals 0
 
-    .line 47
+    .line 48
     iget-object p0, p0, Lorg/telegram/ui/Components/BulletinFactory;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-object p0
@@ -171,7 +171,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 58
+    .line 59
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -198,19 +198,19 @@
 .method private create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
     .locals 1
 
-    .line 780
+    .line 781
     iget-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v0, :cond_0
 
-    .line 781
+    .line 782
     invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
     return-object p1
 
-    .line 783
+    .line 784
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory;->containerLayout:Landroid/widget/FrameLayout;
 
@@ -224,7 +224,7 @@
 .method public static createAddedAsAdminBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Lorg/telegram/ui/Components/Bulletin;
     .locals 5
 
-    .line 951
+    .line 952
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -237,7 +237,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 952
+    .line 953
     sget v1, Lorg/telegram/messenger/R$raw;->ic_admin:I
 
     const-string v2, "Shield"
@@ -248,7 +248,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 953
+    .line 954
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->UserAddedAsAdminHint:I
@@ -275,7 +275,7 @@
 
     const/16 p1, 0x5dc
 
-    .line 954
+    .line 955
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -286,7 +286,7 @@
 .method public static createBanBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Lorg/telegram/ui/Components/Bulletin;
     .locals 6
 
-    .line 1057
+    .line 1058
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -301,7 +301,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1060
+    .line 1061
     sget p1, Lorg/telegram/messenger/R$raw;->ic_ban:I
 
     const-string v1, "Hand"
@@ -312,7 +312,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 1061
+    .line 1062
     sget p1, Lorg/telegram/messenger/R$string;->UserBlocked:I
 
     const-string v1, "UserBlocked"
@@ -323,7 +323,7 @@
 
     goto :goto_0
 
-    .line 1063
+    .line 1064
     :cond_0
     sget p1, Lorg/telegram/messenger/R$raw;->ic_unban:I
 
@@ -343,7 +343,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 1064
+    .line 1065
     sget p1, Lorg/telegram/messenger/R$string;->UserUnblocked:I
 
     const-string v1, "UserUnblocked"
@@ -352,7 +352,7 @@
 
     move-result-object p1
 
-    .line 1066
+    .line 1067
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -364,7 +364,7 @@
 
     const/16 p1, 0x5dc
 
-    .line 1067
+    .line 1068
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -377,7 +377,7 @@
 
     const/4 v0, 0x0
 
-    .line 1092
+    .line 1093
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object p0
@@ -392,7 +392,7 @@
 .method public static createCopyLinkBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/Bulletin;
     .locals 0
 
-    .line 1087
+    .line 1088
     invoke-static {p0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object p0
@@ -407,7 +407,7 @@
 .method public static createForwardedBulletin(Landroid/content/Context;Landroid/widget/FrameLayout;IJIII)Lorg/telegram/ui/Components/Bulletin;
     .locals 5
 
-    .line 993
+    .line 994
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     const/4 v1, 0x0
@@ -424,7 +424,7 @@
 
     if-gt p2, v1, :cond_5
 
-    .line 997
+    .line 998
     sget p2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -439,7 +439,7 @@
 
     if-gt p5, v1, :cond_0
 
-    .line 999
+    .line 1000
     sget p0, Lorg/telegram/messenger/R$string;->FwdMessageToSavedMessages:I
 
     const-string p2, "FwdMessageToSavedMessages"
@@ -454,7 +454,7 @@
 
     goto :goto_0
 
-    .line 1001
+    .line 1002
     :cond_0
     sget p0, Lorg/telegram/messenger/R$string;->FwdMessagesToSavedMessages:I
 
@@ -468,7 +468,7 @@
 
     move-result-object p0
 
-    .line 1003
+    .line 1004
     :goto_0
     sget p2, Lorg/telegram/messenger/R$raw;->saved_messages:I
 
@@ -480,7 +480,7 @@
 
     goto/16 :goto_4
 
-    .line 1005
+    .line 1006
     :cond_1
     invoke-static {p3, p4}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
 
@@ -488,7 +488,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 1006
+    .line 1007
     sget p2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -507,7 +507,7 @@
 
     if-gt p5, v1, :cond_2
 
-    .line 1008
+    .line 1009
     sget p3, Lorg/telegram/messenger/R$string;->FwdMessageToGroup:I
 
     new-array p4, v1, [Ljava/lang/Object;
@@ -528,7 +528,7 @@
 
     goto :goto_1
 
-    .line 1010
+    .line 1011
     :cond_2
     sget p3, Lorg/telegram/messenger/R$string;->FwdMessagesToGroup:I
 
@@ -550,7 +550,7 @@
 
     goto :goto_1
 
-    .line 1013
+    .line 1014
     :cond_3
     sget p2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -568,7 +568,7 @@
 
     if-gt p5, v1, :cond_4
 
-    .line 1015
+    .line 1016
     sget p3, Lorg/telegram/messenger/R$string;->FwdMessageToUser:I
 
     new-array p4, v1, [Ljava/lang/Object;
@@ -591,7 +591,7 @@
 
     goto :goto_1
 
-    .line 1017
+    .line 1018
     :cond_4
     sget p3, Lorg/telegram/messenger/R$string;->FwdMessagesToUser:I
 
@@ -613,7 +613,7 @@
 
     move-result-object p2
 
-    .line 1020
+    .line 1021
     :goto_1
     sget p3, Lorg/telegram/messenger/R$raw;->forward:I
 
@@ -630,7 +630,7 @@
 
     const-string p4, "FwdMessageToManyChats"
 
-    .line 1025
+    .line 1026
     invoke-static {p4, p2, p3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
@@ -646,7 +646,7 @@
 
     const-string p4, "FwdMessagesToManyChats"
 
-    .line 1027
+    .line 1028
     invoke-static {p4, p2, p3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
@@ -655,7 +655,7 @@
 
     move-result-object p2
 
-    .line 1029
+    .line 1030
     :goto_2
     sget p3, Lorg/telegram/messenger/R$raw;->forward:I
 
@@ -670,7 +670,7 @@
 
     move-object p0, v4
 
-    .line 1032
+    .line 1033
     :goto_4
     iget-object p3, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -678,7 +678,7 @@
 
     if-lez p2, :cond_7
 
-    .line 1034
+    .line 1035
     new-instance p0, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda2;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/Bulletin$LottieLayout;)V
@@ -690,7 +690,7 @@
     :cond_7
     const/16 p0, 0x5dc
 
-    .line 1038
+    .line 1039
     invoke-static {p1, v0, p0}, Lorg/telegram/ui/Components/Bulletin;->make(Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -701,7 +701,7 @@
 .method public static createInviteSentBulletin(Landroid/content/Context;Landroid/widget/FrameLayout;IJIII)Lorg/telegram/ui/Components/Bulletin;
     .locals 4
 
-    .line 959
+    .line 960
     new-instance p5, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     const/4 v0, 0x0
@@ -718,7 +718,7 @@
 
     if-gt p2, p6, :cond_2
 
-    .line 963
+    .line 964
     sget p2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -731,7 +731,7 @@
 
     if-nez p2, :cond_0
 
-    .line 964
+    .line 965
     sget p0, Lorg/telegram/messenger/R$string;->InvLinkToSavedMessages:I
 
     const-string p2, "InvLinkToSavedMessages"
@@ -744,7 +744,7 @@
 
     move-result-object p0
 
-    .line 965
+    .line 966
     sget p2, Lorg/telegram/messenger/R$raw;->saved_messages:I
 
     new-array p3, v0, [Ljava/lang/String;
@@ -755,7 +755,7 @@
 
     goto/16 :goto_2
 
-    .line 967
+    .line 968
     :cond_0
     invoke-static {p3, p4}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
 
@@ -763,7 +763,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 968
+    .line 969
     sget p2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -780,7 +780,7 @@
 
     move-result-object p2
 
-    .line 969
+    .line 970
     sget p3, Lorg/telegram/messenger/R$string;->InvLinkToGroup:I
 
     new-array p4, p6, [Ljava/lang/Object;
@@ -801,7 +801,7 @@
 
     goto :goto_0
 
-    .line 971
+    .line 972
     :cond_1
     sget p2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -817,7 +817,7 @@
 
     move-result-object p2
 
-    .line 972
+    .line 973
     sget p3, Lorg/telegram/messenger/R$string;->InvLinkToUser:I
 
     new-array p4, p6, [Ljava/lang/Object;
@@ -838,7 +838,7 @@
 
     move-result-object p2
 
-    .line 974
+    .line 975
     :goto_0
     sget p3, Lorg/telegram/messenger/R$raw;->forward:I
 
@@ -848,7 +848,7 @@
 
     goto :goto_1
 
-    .line 978
+    .line 979
     :cond_2
     sget p3, Lorg/telegram/messenger/R$string;->InvLinkToChats:I
 
@@ -874,7 +874,7 @@
 
     move-result-object p2
 
-    .line 979
+    .line 980
     sget p3, Lorg/telegram/messenger/R$raw;->forward:I
 
     new-array p4, v0, [Ljava/lang/String;
@@ -888,7 +888,7 @@
 
     move-object p0, v3
 
-    .line 982
+    .line 983
     :goto_2
     iget-object p3, p5, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -896,7 +896,7 @@
 
     if-lez p2, :cond_3
 
-    .line 984
+    .line 985
     new-instance p0, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda3;
 
     invoke-direct {p0, p5}, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/Bulletin$LottieLayout;)V
@@ -908,7 +908,7 @@
     :cond_3
     const/16 p0, 0x5dc
 
-    .line 988
+    .line 989
     invoke-static {p1, p5, p0}, Lorg/telegram/ui/Components/Bulletin;->make(Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -923,7 +923,7 @@
 
     const/4 v1, 0x0
 
-    .line 807
+    .line 808
     invoke-static {p0, p1, v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->createMuteBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -934,7 +934,7 @@
 .method public static createMuteBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 6
 
-    .line 812
+    .line 813
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -971,7 +971,7 @@
 
     if-ne p1, p3, :cond_0
 
-    .line 820
+    .line 821
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsMutedForHint:I
 
     new-array p3, v3, [Ljava/lang/Object;
@@ -990,7 +990,7 @@
 
     goto :goto_1
 
-    .line 845
+    .line 846
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -998,7 +998,7 @@
 
     throw p0
 
-    .line 841
+    .line 842
     :cond_1
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsUnmutedHint:I
 
@@ -1014,7 +1014,7 @@
 
     goto :goto_1
 
-    .line 837
+    .line 838
     :cond_2
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsMutedHint:I
 
@@ -1026,7 +1026,7 @@
 
     goto :goto_0
 
-    .line 833
+    .line 834
     :cond_3
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsMutedForHint:I
 
@@ -1048,7 +1048,7 @@
 
     goto :goto_0
 
-    .line 829
+    .line 830
     :cond_4
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsMutedForHint:I
 
@@ -1070,7 +1070,7 @@
 
     goto :goto_0
 
-    .line 825
+    .line 826
     :cond_5
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsMutedForHint:I
 
@@ -1096,7 +1096,7 @@
     :goto_1
     if-eqz v3, :cond_6
 
-    .line 849
+    .line 850
     sget p2, Lorg/telegram/messenger/R$raw;->mute_for:I
 
     new-array p3, v2, [Ljava/lang/String;
@@ -1108,7 +1108,7 @@
     :cond_6
     if-eqz p2, :cond_7
 
-    .line 851
+    .line 852
     sget p2, Lorg/telegram/messenger/R$raw;->ic_mute:I
 
     const-string p3, "Body Main"
@@ -1129,7 +1129,7 @@
 
     goto :goto_2
 
-    .line 853
+    .line 854
     :cond_7
     sget p2, Lorg/telegram/messenger/R$raw;->ic_unmute:I
 
@@ -1147,7 +1147,7 @@
 
     invoke-virtual {v0, p2, p3}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 856
+    .line 857
     :goto_2
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -1155,7 +1155,7 @@
 
     const/16 p1, 0x5dc
 
-    .line 857
+    .line 858
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -1166,7 +1166,7 @@
 .method public static createMuteBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;ZILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 4
 
-    .line 862
+    .line 863
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1175,7 +1175,7 @@
 
     invoke-direct {v0, v1, p3}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 863
+    .line 864
     iget-object p3, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v1, 0x0
@@ -1186,7 +1186,7 @@
 
     const-string v2, "NotificationsMutedHintChats"
 
-    .line 865
+    .line 866
     invoke-static {v2, p2, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
@@ -1198,18 +1198,18 @@
 
     const-string v2, "NotificationsUnmutedHintChats"
 
-    .line 866
+    .line 867
     invoke-static {v2, p2, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 863
+    .line 864
     :goto_0
     invoke-virtual {p3, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     if-eqz p1, :cond_1
 
-    .line 869
+    .line 870
     sget p1, Lorg/telegram/messenger/R$raw;->ic_mute:I
 
     const-string p2, "Body Main"
@@ -1230,7 +1230,7 @@
 
     goto :goto_1
 
-    .line 871
+    .line 872
     :cond_1
     sget p1, Lorg/telegram/messenger/R$raw;->ic_unmute:I
 
@@ -1251,7 +1251,7 @@
     :goto_1
     const/16 p1, 0x5dc
 
-    .line 873
+    .line 874
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -1274,7 +1274,7 @@
     :goto_0
     const/4 v0, 0x0
 
-    .line 878
+    .line 879
     invoke-static {p0, p1, v0, p2}, Lorg/telegram/ui/Components/BulletinFactory;->createMuteBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -1297,7 +1297,7 @@
 
     move v5, p2
 
-    .line 1097
+    .line 1098
     invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/BulletinFactory;->createPinMessageBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;ZLjava/lang/Runnable;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -1308,7 +1308,7 @@
 .method private static createPinMessageBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;ZLjava/lang/Runnable;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)Lorg/telegram/ui/Components/Bulletin;
     .locals 4
 
-    .line 1107
+    .line 1108
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1319,7 +1319,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1108
+    .line 1109
     sget v1, Lorg/telegram/messenger/R$raw;->ic_pin:I
 
     goto :goto_0
@@ -1346,7 +1346,7 @@
 
     if-le p5, v1, :cond_1
 
-    .line 1111
+    .line 1112
     iget-object v2, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->plural_messages_pinned:I
@@ -1359,7 +1359,7 @@
 
     goto :goto_3
 
-    .line 1113
+    .line 1114
     :cond_1
     iget-object p5, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -1392,7 +1392,7 @@
     :goto_3
     if-nez p1, :cond_4
 
-    .line 1115
+    .line 1116
     new-instance p5, Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1421,7 +1421,7 @@
     :cond_5
     const/16 p1, 0x1388
 
-    .line 1117
+    .line 1118
     :goto_4
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
@@ -1433,7 +1433,7 @@
 .method public static createPromoteToAdminBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Lorg/telegram/ui/Components/Bulletin;
     .locals 5
 
-    .line 943
+    .line 944
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1446,7 +1446,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 944
+    .line 945
     sget v1, Lorg/telegram/messenger/R$raw;->ic_admin:I
 
     const-string v2, "Shield"
@@ -1457,7 +1457,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 945
+    .line 946
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->UserSetAsAdminHint:I
@@ -1484,7 +1484,7 @@
 
     const/16 p1, 0x5dc
 
-    .line 946
+    .line 947
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -1495,7 +1495,7 @@
 .method public static createRemoveFromChatBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;)Lorg/telegram/ui/Components/Bulletin;
     .locals 5
 
-    .line 1043
+    .line 1044
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1508,7 +1508,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1044
+    .line 1045
     sget v1, Lorg/telegram/messenger/R$raw;->ic_ban:I
 
     const-string v2, "Hand"
@@ -1519,14 +1519,14 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 1046
+    .line 1047
     iget-boolean v1, p1, Lorg/telegram/tgnet/TLRPC$User;->deleted:Z
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
-    .line 1047
+    .line 1048
     sget p1, Lorg/telegram/messenger/R$string;->HiddenName:I
 
     new-array v1, v2, [Ljava/lang/Object;
@@ -1539,11 +1539,11 @@
 
     goto :goto_0
 
-    .line 1049
+    .line 1050
     :cond_0
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 1051
+    .line 1052
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -1573,7 +1573,7 @@
 
     const/16 p1, 0x5dc
 
-    .line 1052
+    .line 1053
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -1586,7 +1586,7 @@
 
     const/4 v0, 0x0
 
-    .line 938
+    .line 939
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object p0
@@ -1629,7 +1629,7 @@
 
     const/4 v0, 0x0
 
-    .line 933
+    .line 934
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object p0
@@ -1656,7 +1656,7 @@
 .method public static createSaveToGalleryBulletin(Landroid/widget/FrameLayout;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 0
 
-    .line 928
+    .line 929
     invoke-static {p0, p2}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object p0
@@ -1681,7 +1681,7 @@
 .method public static createSaveToGalleryBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 0
 
-    .line 923
+    .line 924
     invoke-static {p0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object p0
@@ -1706,7 +1706,7 @@
 .method public static createSoundEnabledBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 1122
+    .line 1123
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1723,7 +1723,7 @@
 
     if-ne p1, p2, :cond_0
 
-    .line 1133
+    .line 1134
     sget p1, Lorg/telegram/messenger/R$string;->SoundOffHint:I
 
     const-string p2, "SoundOffHint"
@@ -1736,7 +1736,7 @@
 
     goto :goto_0
 
-    .line 1137
+    .line 1138
     :cond_0
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -1744,7 +1744,7 @@
 
     throw p0
 
-    .line 1129
+    .line 1130
     :cond_1
     sget p1, Lorg/telegram/messenger/R$string;->SoundOnHint:I
 
@@ -1757,7 +1757,7 @@
     :goto_0
     if-eqz p2, :cond_2
 
-    .line 1141
+    .line 1142
     sget p2, Lorg/telegram/messenger/R$raw;->sound_on:I
 
     new-array v1, v1, [Ljava/lang/String;
@@ -1766,7 +1766,7 @@
 
     goto :goto_1
 
-    .line 1143
+    .line 1144
     :cond_2
     sget p2, Lorg/telegram/messenger/R$raw;->sound_off:I
 
@@ -1774,7 +1774,7 @@
 
     invoke-virtual {v0, p2, v1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 1146
+    .line 1147
     :goto_1
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -1782,7 +1782,7 @@
 
     const/16 p1, 0x5dc
 
-    .line 1147
+    .line 1148
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -1793,7 +1793,7 @@
 .method public static createUnpinAllMessagesBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;IZLjava/lang/Runnable;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 5
 
-    .line 891
+    .line 892
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -1802,7 +1802,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 893
+    .line 894
     invoke-interface {p4}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -1810,7 +1810,7 @@
 
     return-object p0
 
-    .line 905
+    .line 906
     :cond_1
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
@@ -1820,7 +1820,7 @@
 
     invoke-direct {v0, v1, p5}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 906
+    .line 907
     sget v1, Lorg/telegram/messenger/R$raw;->ic_unpin:I
 
     const-string v2, "Pin"
@@ -1835,7 +1835,7 @@
 
     invoke-virtual {v0, v1, v3, v3, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
-    .line 907
+    .line 908
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v2, 0x0
@@ -1852,7 +1852,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 910
+    .line 911
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->pinned_messages_pin_panel_hidden_bulletin:I
@@ -1863,19 +1863,19 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 911
+    .line 912
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 912
+    .line 913
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 p2, 0x2
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 917
+    .line 918
     :cond_2
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
@@ -1899,7 +1899,7 @@
 
     const/16 p1, 0x1388
 
-    .line 918
+    .line 919
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/Bulletin;->make(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -1922,7 +1922,7 @@
 
     move-object v4, p3
 
-    .line 1102
+    .line 1103
     invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/BulletinFactory;->createPinMessageBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;ZLjava/lang/Runnable;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -1933,19 +1933,19 @@
 .method private getContext()Landroid/content/Context;
     .locals 2
 
-    .line 789
+    .line 790
     iget-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v0, :cond_0
 
-    .line 790
+    .line 791
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     if-nez v0, :cond_2
 
-    .line 791
+    .line 792
     iget-object v1, p0, Lorg/telegram/ui/Components/BulletinFactory;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLayoutContainer()Landroid/widget/FrameLayout;
@@ -1954,7 +1954,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 792
+    .line 793
     iget-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getLayoutContainer()Landroid/widget/FrameLayout;
@@ -1967,13 +1967,13 @@
 
     goto :goto_0
 
-    .line 794
+    .line 795
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory;->containerLayout:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_1
 
-    .line 795
+    .line 796
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1987,7 +1987,7 @@
     :goto_0
     if-nez v0, :cond_3
 
-    .line 798
+    .line 799
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     :cond_3
@@ -1997,7 +1997,7 @@
 .method public static global()Lorg/telegram/ui/Components/BulletinFactory;
     .locals 1
 
-    .line 65
+    .line 66
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
@@ -2008,7 +2008,7 @@
 
     return-object v0
 
-    .line 69
+    .line 70
     :cond_0
     invoke-static {v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
 
@@ -2020,7 +2020,7 @@
 .method private static synthetic lambda$createContainsEmojiBulletin$0(Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/tgnet/TLRPC$InputStickerSet;)V
     .locals 0
 
-    .line 564
+    .line 565
     invoke-interface {p0, p1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     return-void
@@ -2029,7 +2029,7 @@
 .method private static synthetic lambda$createContainsEmojiBulletin$1(Lorg/telegram/ui/Components/Bulletin;Ljava/lang/CharSequence;)V
     .locals 0
 
-    .line 582
+    .line 583
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Bulletin;->onLoaded(Ljava/lang/CharSequence;)V
 
     return-void
@@ -2040,7 +2040,7 @@
 
     if-eqz p4, :cond_2
 
-    .line 570
+    .line 571
     iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     if-eqz p4, :cond_2
@@ -2051,7 +2051,7 @@
 
     if-ne p0, v1, :cond_0
 
-    .line 572
+    .line 573
     sget p0, Lorg/telegram/messenger/R$string;->TopicContainsEmojiPackSingle:I
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -2077,7 +2077,7 @@
 
     if-ne p0, v2, :cond_1
 
-    .line 574
+    .line 575
     sget p0, Lorg/telegram/messenger/R$string;->StoryContainsEmojiPackSingle:I
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -2098,7 +2098,7 @@
 
     goto :goto_0
 
-    .line 576
+    .line 577
     :cond_1
     sget p0, Lorg/telegram/messenger/R$string;->MessageContainsEmojiPackSingle:I
 
@@ -2120,7 +2120,7 @@
 
     goto :goto_0
 
-    .line 579
+    .line 580
     :cond_2
     sget p0, Lorg/telegram/messenger/R$string;->AddEmojiNotFound:I
 
@@ -2130,7 +2130,7 @@
 
     move-result-object p0
 
-    .line 581
+    .line 582
     :goto_0
     new-instance p4, Lorg/telegram/ui/Components/BulletinFactory$$ExternalSyntheticLambda4;
 
@@ -2140,7 +2140,7 @@
 
     const-wide/16 v0, 0x2ee
 
-    .line 583
+    .line 584
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -2153,7 +2153,7 @@
 
     move-result-wide p0
 
-    .line 581
+    .line 582
     invoke-static {p4, p0, p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
@@ -2162,7 +2162,7 @@
 .method private static synthetic lambda$createContainsEmojiBulletin$3(Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/tgnet/TLRPC$InputStickerSet;)V
     .locals 0
 
-    .line 595
+    .line 596
     invoke-interface {p0, p1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     return-void
@@ -2175,7 +2175,7 @@
 
     const/4 v1, 0x2
 
-    .line 1035
+    .line 1036
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->performHapticFeedback(II)Z
 
     return-void
@@ -2188,7 +2188,7 @@
 
     const/4 v1, 0x2
 
-    .line 985
+    .line 986
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->performHapticFeedback(II)Z
 
     return-void
@@ -2197,7 +2197,7 @@
 .method public static of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
     .locals 1
 
-    .line 54
+    .line 55
     new-instance v0, Lorg/telegram/ui/Components/BulletinFactory;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/BulletinFactory;-><init>(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -2208,7 +2208,7 @@
 .method public static of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
     .locals 1
 
-    .line 50
+    .line 51
     new-instance v0, Lorg/telegram/ui/Components/BulletinFactory;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/BulletinFactory;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -2219,7 +2219,7 @@
 .method public static showForError(Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 3
 
-    .line 73
+    .line 74
     invoke-static {}, Lorg/telegram/ui/Components/BulletinFactory;->global()Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object v0
@@ -2228,13 +2228,13 @@
 
     return-void
 
-    .line 77
+    .line 78
     :cond_0
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v1, :cond_1
 
-    .line 78
+    .line 79
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2263,7 +2263,7 @@
 
     goto :goto_0
 
-    .line 80
+    .line 81
     :cond_1
     sget p0, Lorg/telegram/messenger/R$string;->UnknownError:I
 
@@ -2288,7 +2288,7 @@
 .method public createBanBulletin(Z)Lorg/telegram/ui/Components/Bulletin;
     .locals 6
 
-    .line 1072
+    .line 1073
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -2301,7 +2301,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1075
+    .line 1076
     sget p1, Lorg/telegram/messenger/R$raw;->ic_ban:I
 
     const-string v1, "Hand"
@@ -2312,7 +2312,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 1076
+    .line 1077
     sget p1, Lorg/telegram/messenger/R$string;->UserBlocked:I
 
     const-string v1, "UserBlocked"
@@ -2323,7 +2323,7 @@
 
     goto :goto_0
 
-    .line 1078
+    .line 1079
     :cond_0
     sget p1, Lorg/telegram/messenger/R$raw;->ic_unban:I
 
@@ -2343,7 +2343,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 1079
+    .line 1080
     sget p1, Lorg/telegram/messenger/R$string;->UserUnblocked:I
 
     const-string v1, "UserUnblocked"
@@ -2352,7 +2352,7 @@
 
     move-result-object p1
 
-    .line 1081
+    .line 1082
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -2364,7 +2364,7 @@
 
     const/16 p1, 0x5dc
 
-    .line 1082
+    .line 1083
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -2375,7 +2375,7 @@
 .method public createCaptionLimitBulletin(ILjava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
     .locals 7
 
-    .line 669
+    .line 670
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -2386,7 +2386,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 670
+    .line 671
     sget v1, Lorg/telegram/messenger/R$raw;->caption_limit:I
 
     const/4 v2, 0x0
@@ -2399,12 +2399,12 @@
 
     const-string v3, "ChannelCaptionLimitPremiumPromo"
 
-    .line 671
+    .line 672
     invoke-static {v3, p1, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 672
+    .line 673
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v1
@@ -2415,7 +2415,7 @@
 
     const/16 v3, 0x2a
 
-    .line 673
+    .line 674
     invoke-virtual {p1, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v4
@@ -2428,14 +2428,14 @@
 
     add-int/lit8 v6, v3, 0x1
 
-    .line 674
+    .line 675
     invoke-virtual {p1, v5, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
     invoke-virtual {v1, v4, v6, p1}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 675
+    .line 676
     new-instance p1, Lorg/telegram/ui/Components/BulletinFactory$1;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Components/BulletinFactory$1;-><init>(Lorg/telegram/ui/Components/BulletinFactory;Ljava/lang/Runnable;)V
@@ -2446,17 +2446,17 @@
 
     invoke-virtual {v1, p1, v4, v3, p2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 687
+    .line 688
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 688
+    .line 689
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 689
+    .line 690
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 p2, 0x3
@@ -2465,7 +2465,7 @@
 
     const/16 p1, 0x1388
 
-    .line 690
+    .line 691
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -2488,7 +2488,7 @@
         }
     .end annotation
 
-    .line 395
+    .line 396
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -2519,7 +2519,7 @@
 
     move v4, v1
 
-    .line 398
+    .line 399
     :goto_1
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -2533,7 +2533,7 @@
 
     goto :goto_2
 
-    .line 401
+    .line 402
     :cond_1
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2543,14 +2543,14 @@
 
     if-eqz v5, :cond_2
 
-    .line 403
+    .line 404
     iget-object v6, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     add-int/lit8 v4, v4, 0x1
 
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/AvatarsImageView;->setCount(I)V
 
-    .line 404
+    .line 405
     iget-object v6, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     add-int/lit8 v7, v4, -0x1
@@ -2564,7 +2564,7 @@
 
     goto :goto_1
 
-    .line 407
+    .line 408
     :cond_3
     :goto_2
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -2573,7 +2573,7 @@
 
     if-ne p1, v3, :cond_4
 
-    .line 408
+    .line 409
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     const/4 v1, 0x4
@@ -2586,21 +2586,21 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 409
+    .line 410
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     const v1, 0x3f99999a    # 1.2f
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 410
+    .line 411
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setScaleY(F)V
 
     goto :goto_3
 
-    .line 412
+    .line 413
     :cond_4
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
@@ -2608,7 +2608,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setScaleX(F)V
 
-    .line 413
+    .line 414
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setScaleY(F)V
@@ -2618,7 +2618,7 @@
     :cond_5
     move v4, v2
 
-    .line 416
+    .line 417
     :goto_3
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
@@ -2626,37 +2626,37 @@
 
     if-eqz p3, :cond_7
 
-    .line 419
-    iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
-
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
-
     .line 420
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setMaxLines(I)V
+    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 421
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 422
-    iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
+    iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 423
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
+    invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 424
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setMaxLines(I)V
+    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 425
+    iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
+
+    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setMaxLines(I)V
+
+    .line 426
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2673,17 +2673,17 @@
 
     rsub-int/lit8 p1, p1, 0x4a
 
-    .line 426
+    .line 427
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 427
+    .line 428
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p2, :cond_6
 
-    .line 428
+    .line 429
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p2}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2696,7 +2696,7 @@
 
     goto :goto_4
 
-    .line 430
+    .line 431
     :cond_6
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->linearLayout:Landroid/widget/LinearLayout;
 
@@ -2710,25 +2710,25 @@
 
     goto :goto_4
 
-    .line 434
+    .line 435
     :cond_7
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 435
+    .line 436
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     const/4 p3, 0x2
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 436
+    .line 437
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 437
+    .line 438
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2745,17 +2745,17 @@
 
     rsub-int/lit8 p1, p1, 0x4a
 
-    .line 438
+    .line 439
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 439
+    .line 440
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p2, :cond_8
 
-    .line 440
+    .line 441
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2768,7 +2768,7 @@
 
     goto :goto_4
 
-    .line 442
+    .line 443
     :cond_8
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
@@ -2780,14 +2780,14 @@
 
     iput p1, p2, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 446
+    .line 447
     :cond_9
     :goto_4
     sget-boolean p1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p1, :cond_a
 
-    .line 447
+    .line 448
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     sub-int/2addr v4, v3
@@ -2807,7 +2807,7 @@
     :cond_a
     const/16 p1, 0x1388
 
-    .line 450
+    .line 451
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -2829,7 +2829,7 @@
         }
     .end annotation
 
-    .line 538
+    .line 539
     invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->getInputStickerSet(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
     move-result-object v0
@@ -2840,7 +2840,7 @@
 
     return-object v1
 
-    .line 542
+    .line 543
     :cond_0
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -2868,7 +2868,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 543
+    .line 544
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->set:Lorg/telegram/tgnet/TLRPC$StickerSet;
 
     if-nez v2, :cond_1
@@ -2878,7 +2878,7 @@
     :cond_1
     if-ne p2, v3, :cond_2
 
-    .line 589
+    .line 590
     sget p2, Lorg/telegram/messenger/R$string;->TopicContainsEmojiPackSingle:I
 
     new-array v1, v3, [Ljava/lang/Object;
@@ -2900,7 +2900,7 @@
     :cond_2
     if-ne p2, v8, :cond_3
 
-    .line 591
+    .line 592
     sget p2, Lorg/telegram/messenger/R$string;->StoryContainsEmojiPackSingle:I
 
     new-array v1, v3, [Ljava/lang/Object;
@@ -2919,7 +2919,7 @@
 
     goto :goto_0
 
-    .line 593
+    .line 594
     :cond_3
     sget p2, Lorg/telegram/messenger/R$string;->MessageContainsEmojiPackSingle:I
 
@@ -2937,7 +2937,7 @@
 
     move-result-object p2
 
-    .line 595
+    .line 596
     :goto_0
     sget v1, Lorg/telegram/messenger/R$string;->ViewAction:I
 
@@ -2961,7 +2961,7 @@
 
     if-ne p2, v3, :cond_5
 
-    .line 547
+    .line 548
     new-instance v5, Landroid/text/SpannableStringBuilder;
 
     sget v6, Lorg/telegram/messenger/R$string;->TopicContainsEmojiPackSingle:I
@@ -2985,7 +2985,7 @@
     :cond_5
     if-ne p2, v8, :cond_6
 
-    .line 549
+    .line 550
     new-instance v6, Landroid/text/SpannableStringBuilder;
 
     sget v7, Lorg/telegram/messenger/R$string;->StoryContainsEmojiPackSingle:I
@@ -3008,7 +3008,7 @@
 
     goto :goto_2
 
-    .line 551
+    .line 552
     :cond_6
     new-instance v5, Landroid/text/SpannableStringBuilder;
 
@@ -3028,7 +3028,7 @@
 
     invoke-direct {v5, v3}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 555
+    .line 556
     :goto_2
     invoke-virtual {v5}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
 
@@ -3040,7 +3040,7 @@
 
     if-ltz v2, :cond_7
 
-    .line 556
+    .line 557
     new-instance v3, Lorg/telegram/ui/Components/LoadingSpan;
 
     const/16 v6, 0x64
@@ -3063,12 +3063,12 @@
 
     invoke-virtual {v5, v3, v2, v6, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 557
+    .line 558
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_undo_infoColor:I
 
     iget-object v6, p0, Lorg/telegram/ui/Components/BulletinFactory;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 558
+    .line 559
     invoke-static {v2, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v6
@@ -3081,7 +3081,7 @@
 
     iget-object v7, p0, Lorg/telegram/ui/Components/BulletinFactory;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 559
+    .line 560
     invoke-static {v2, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
@@ -3092,7 +3092,7 @@
 
     move-result v2
 
-    .line 557
+    .line 558
     invoke-virtual {v3, v6, v2}, Lorg/telegram/ui/Components/LoadingSpan;->setColors(II)V
 
     goto :goto_3
@@ -3100,13 +3100,13 @@
     :cond_7
     move-object v3, v1
 
-    .line 562
+    .line 563
     :goto_3
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    .line 564
+    .line 565
     sget v2, Lorg/telegram/messenger/R$string;->ViewAction:I
 
     invoke-static {v4, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -3123,7 +3123,7 @@
 
     if-eqz v3, :cond_8
 
-    .line 565
+    .line 566
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->getLayout()Lorg/telegram/ui/Components/Bulletin$Layout;
 
     move-result-object p3
@@ -3132,7 +3132,7 @@
 
     if-eqz p3, :cond_8
 
-    .line 566
+    .line 567
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->getLayout()Lorg/telegram/ui/Components/Bulletin$Layout;
 
     move-result-object p3
@@ -3143,7 +3143,7 @@
 
     invoke-virtual {v3, p3}, Lorg/telegram/ui/Components/LoadingSpan;->setView(Landroid/view/View;)V
 
-    .line 568
+    .line 569
     :cond_8
     sget p3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -3165,7 +3165,7 @@
 
     const/4 v0, 0x0
 
-    .line 735
+    .line 736
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createCopyBulletin(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3176,21 +3176,21 @@
 .method public createCopyBulletin(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 4
 
-    .line 740
+    .line 741
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->shouldShowClipboardToast()Z
 
     move-result p2
 
     if-nez p2, :cond_0
 
-    .line 741
+    .line 742
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$EmptyBulletin;
 
     invoke-direct {p1}, Lorg/telegram/ui/Components/Bulletin$EmptyBulletin;-><init>()V
 
     return-object p1
 
-    .line 743
+    .line 744
     :cond_0
     new-instance p2, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
@@ -3202,7 +3202,7 @@
 
     invoke-direct {p2, v0, v1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 744
+    .line 745
     sget v0, Lorg/telegram/messenger/R$raw;->copy:I
 
     const-string v1, "NULL ROTATION"
@@ -3219,14 +3219,14 @@
 
     invoke-virtual {p2, v0, v2, v2, v1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
-    .line 745
+    .line 746
     iget-object v0, p2, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/16 p1, 0x5dc
 
-    .line 746
+    .line 747
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3237,7 +3237,7 @@
 .method public createCopyLinkBulletin()Lorg/telegram/ui/Components/Bulletin;
     .locals 2
 
-    .line 730
+    .line 731
     iget-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     const/4 v1, 0x0
@@ -3252,21 +3252,21 @@
 .method public createCopyLinkBulletin(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 770
+    .line 771
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->shouldShowClipboardToast()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 771
+    .line 772
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$EmptyBulletin;
 
     invoke-direct {p1}, Lorg/telegram/ui/Components/Bulletin$EmptyBulletin;-><init>()V
 
     return-object p1
 
-    .line 773
+    .line 774
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
@@ -3276,7 +3276,7 @@
 
     invoke-direct {v0, v1, p2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 774
+    .line 775
     sget p2, Lorg/telegram/messenger/R$raw;->voip_invite:I
 
     const-string v1, "Wibe"
@@ -3291,14 +3291,14 @@
 
     invoke-virtual {v0, p2, v2, v2, v1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
-    .line 775
+    .line 776
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/16 p1, 0x5dc
 
-    .line 776
+    .line 777
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3309,14 +3309,14 @@
 .method public createCopyLinkBulletin(ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 5
 
-    .line 751
+    .line 752
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->shouldShowClipboardToast()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 752
+    .line 753
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$EmptyBulletin;
 
     invoke-direct {p1}, Lorg/telegram/ui/Components/Bulletin$EmptyBulletin;-><init>()V
@@ -3334,7 +3334,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 755
+    .line 756
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -3343,7 +3343,7 @@
 
     invoke-direct {p1, v4, p2}, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 756
+    .line 757
     sget p2, Lorg/telegram/messenger/R$raw;->voip_invite:I
 
     filled-new-array {v2, v1}, [Ljava/lang/String;
@@ -3352,7 +3352,7 @@
 
     invoke-virtual {p1, p2, v3, v3, v1}, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
-    .line 757
+    .line 758
     iget-object p2, p1, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->titleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->LinkCopied:I
@@ -3363,7 +3363,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 758
+    .line 759
     iget-object p2, p1, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->subtitleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->LinkCopiedPrivateInfo:I
@@ -3378,14 +3378,14 @@
 
     const/16 p2, 0xabe
 
-    .line 759
+    .line 760
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
     return-object p1
 
-    .line 761
+    .line 762
     :cond_1
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
@@ -3395,7 +3395,7 @@
 
     invoke-direct {p1, v4, p2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 762
+    .line 763
     sget p2, Lorg/telegram/messenger/R$raw;->voip_invite:I
 
     filled-new-array {v2, v1}, [Ljava/lang/String;
@@ -3404,7 +3404,7 @@
 
     invoke-virtual {p1, p2, v3, v3, v1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
-    .line 763
+    .line 764
     iget-object p2, p1, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->LinkCopied:I
@@ -3417,7 +3417,7 @@
 
     const/16 p2, 0x5dc
 
-    .line 764
+    .line 765
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3428,7 +3428,7 @@
 .method public createDownloadBulletin(Lorg/telegram/ui/Components/BulletinFactory$FileType;)Lorg/telegram/ui/Components/Bulletin;
     .locals 1
 
-    .line 601
+    .line 602
     iget-object v0, p0, Lorg/telegram/ui/Components/BulletinFactory;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createDownloadBulletin(Lorg/telegram/ui/Components/BulletinFactory$FileType;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
@@ -3453,7 +3453,7 @@
 
     move v4, p4
 
-    .line 623
+    .line 624
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Components/BulletinFactory;->createDownloadBulletin(Lorg/telegram/ui/Components/BulletinFactory$FileType;IIILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3468,7 +3468,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 630
+    .line 631
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -3479,7 +3479,7 @@
 
     goto :goto_0
 
-    .line 632
+    .line 633
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
@@ -3489,7 +3489,7 @@
 
     invoke-direct {v0, p3, p5}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 634
+    .line 635
     :goto_0
     invoke-static {p1}, Lorg/telegram/ui/Components/BulletinFactory$FileType;->access$000(Lorg/telegram/ui/Components/BulletinFactory$FileType;)Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
@@ -3509,7 +3509,7 @@
 
     invoke-virtual {v0, p3, p4}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 635
+    .line 636
     iget-object p3, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/BulletinFactory$FileType;->access$300(Lorg/telegram/ui/Components/BulletinFactory$FileType;I)Ljava/lang/String;
@@ -3518,7 +3518,7 @@
 
     invoke-virtual {p3, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 636
+    .line 637
     invoke-static {p1}, Lorg/telegram/ui/Components/BulletinFactory$FileType;->access$000(Lorg/telegram/ui/Components/BulletinFactory$FileType;)Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     move-result-object p2
@@ -3529,7 +3529,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 637
+    .line 638
     invoke-static {p1}, Lorg/telegram/ui/Components/BulletinFactory$FileType;->access$000(Lorg/telegram/ui/Components/BulletinFactory$FileType;)Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     move-result-object p1
@@ -3543,7 +3543,7 @@
     :cond_1
     const/16 p1, 0x5dc
 
-    .line 639
+    .line 640
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3566,7 +3566,7 @@
 
     move-object v5, p3
 
-    .line 611
+    .line 612
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Components/BulletinFactory;->createDownloadBulletin(Lorg/telegram/ui/Components/BulletinFactory$FileType;IIILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3579,7 +3579,7 @@
 
     const/4 v0, 0x1
 
-    .line 606
+    .line 607
     invoke-virtual {p0, p1, v0, p2}, Lorg/telegram/ui/Components/BulletinFactory;->createDownloadBulletin(Lorg/telegram/ui/Components/BulletinFactory$FileType;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3590,7 +3590,7 @@
 .method public createEmojiBulletin(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
     .locals 5
 
-    .line 500
+    .line 501
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -3601,14 +3601,14 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 501
+    .line 502
     invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->isTextColorEmoji(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 502
+    .line 503
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
@@ -3632,10 +3632,10 @@
 
     const/16 v3, 0x24
 
-    .line 504
+    .line 505
     invoke-virtual {v0, p1, v3, v3, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(Lorg/telegram/tgnet/TLRPC$Document;II[Ljava/lang/String;)V
 
-    .line 505
+    .line 506
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -3644,7 +3644,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 506
+    .line 507
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -3659,13 +3659,13 @@
 
     invoke-virtual {p1, v2}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 508
+    .line 509
     :cond_1
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 509
+    .line 510
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/high16 p2, 0x41600000    # 14.0f
@@ -3674,19 +3674,19 @@
 
     invoke-virtual {p1, v2, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 510
+    .line 511
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 511
+    .line 512
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 p2, 0x3
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 512
+    .line 513
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -3709,7 +3709,7 @@
 
     const/16 p1, 0xabe
 
-    .line 513
+    .line 514
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3720,7 +3720,7 @@
 .method public createEmojiLoadingBulletin(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
     .locals 5
 
-    .line 517
+    .line 518
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LoadingLottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -3731,14 +3731,14 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LoadingLottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 518
+    .line 519
     invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->isTextColorEmoji(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 519
+    .line 520
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
@@ -3762,10 +3762,10 @@
 
     const/16 v3, 0x24
 
-    .line 521
+    .line 522
     invoke-virtual {v0, p1, v3, v3, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(Lorg/telegram/tgnet/TLRPC$Document;II[Ljava/lang/String;)V
 
-    .line 522
+    .line 523
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v2, 0x1
@@ -3774,39 +3774,39 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 523
+    .line 524
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 524
+    .line 525
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v4, 0x3
 
     invoke-virtual {p1, v4}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 525
+    .line 526
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LoadingLottieLayout;->textLoadingView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 526
+    .line 527
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LoadingLottieLayout;->textLoadingView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 527
+    .line 528
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LoadingLottieLayout;->textLoadingView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 528
+    .line 529
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LoadingLottieLayout;->textLoadingView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v4}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 529
+    .line 530
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -3829,7 +3829,7 @@
 
     const/16 p1, 0xabe
 
-    .line 530
+    .line 531
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3842,7 +3842,7 @@
 
     const/4 v0, 0x0
 
-    .line 643
+    .line 644
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createErrorBulletin(Ljava/lang/CharSequence;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3853,7 +3853,7 @@
 .method public createErrorBulletin(Ljava/lang/CharSequence;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 647
+    .line 648
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -3862,7 +3862,7 @@
 
     invoke-direct {v0, v1, p2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 648
+    .line 649
     sget p2, Lorg/telegram/messenger/R$raw;->chats_infotip:I
 
     const/4 v1, 0x0
@@ -3871,17 +3871,17 @@
 
     invoke-virtual {v0, p2, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 649
+    .line 650
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 650
+    .line 651
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 651
+    .line 652
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 p2, 0x2
@@ -3890,7 +3890,7 @@
 
     const/16 p1, 0x5dc
 
-    .line 652
+    .line 653
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3901,7 +3901,7 @@
 .method public createErrorBulletinSubtitle(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 2
 
-    .line 721
+    .line 722
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -3910,7 +3910,7 @@
 
     invoke-direct {v0, v1, p3}, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 722
+    .line 723
     sget p3, Lorg/telegram/messenger/R$raw;->chats_infotip:I
 
     const/4 v1, 0x0
@@ -3919,19 +3919,19 @@
 
     invoke-virtual {v0, p3, v1}, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 723
+    .line 724
     iget-object p3, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->titleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p3, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 724
+    .line 725
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->subtitleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/16 p1, 0x5dc
 
-    .line 725
+    .line 726
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3942,7 +3942,7 @@
 .method public createReportSent(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 615
+    .line 616
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -3951,7 +3951,7 @@
 
     invoke-direct {v0, v1, p1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 616
+    .line 617
     sget p1, Lorg/telegram/messenger/R$raw;->chats_infotip:I
 
     const/4 v1, 0x0
@@ -3960,7 +3960,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 617
+    .line 618
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->ReportChatSent:I
@@ -3975,7 +3975,7 @@
 
     const/16 p1, 0x5dc
 
-    .line 618
+    .line 619
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -3986,7 +3986,7 @@
 .method public createRestrictVoiceMessagesPremiumBulletin()Lorg/telegram/ui/Components/Bulletin;
     .locals 8
 
-    .line 694
+    .line 695
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -3997,7 +3997,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 695
+    .line 696
     sget v1, Lorg/telegram/messenger/R$raw;->voip_muted:I
 
     const/4 v2, 0x0
@@ -4006,21 +4006,21 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 696
+    .line 697
     sget v1, Lorg/telegram/messenger/R$string;->PrivacyVoiceMessagesPremiumOnly:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 697
+    .line 698
     new-instance v3, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v3, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const/16 v4, 0x2a
 
-    .line 698
+    .line 699
     invoke-virtual {v1, v4}, Ljava/lang/String;->indexOf(I)I
 
     move-result v5
@@ -4035,14 +4035,14 @@
 
     add-int/lit8 v7, v5, 0x1
 
-    .line 700
+    .line 701
     invoke-virtual {v1, v7, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v3, v5, v6, v1}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 701
+    .line 702
     new-instance v1, Lorg/telegram/ui/Components/BulletinFactory$2;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/BulletinFactory$2;-><init>(Lorg/telegram/ui/Components/BulletinFactory;)V
@@ -4053,18 +4053,18 @@
 
     invoke-virtual {v3, v1, v5, v4, v6}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 714
+    .line 715
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 715
+    .line 716
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 716
+    .line 717
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v2, 0x2
@@ -4073,7 +4073,7 @@
 
     const/16 v1, 0xabe
 
-    .line 717
+    .line 718
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
@@ -4086,7 +4086,7 @@
 
     const/16 v0, 0x24
 
-    .line 179
+    .line 180
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createSimpleBulletinWithIconSize(ILjava/lang/CharSequence;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -4097,7 +4097,7 @@
 .method public createSimpleBulletin(ILjava/lang/CharSequence;I)Lorg/telegram/ui/Components/Bulletin;
     .locals 8
 
-    .line 203
+    .line 204
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4114,17 +4114,17 @@
 
     const/16 v3, 0x24
 
-    .line 204
+    .line 205
     invoke-virtual {v0, p1, v3, v3, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
     if-eqz p2, :cond_3
 
-    .line 206
+    .line 207
     invoke-interface {p2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 207
+    .line 208
     instance-of v2, p2, Landroid/text/SpannableStringBuilder;
 
     if-eqz v2, :cond_0
@@ -4143,7 +4143,7 @@
     :goto_0
     const/16 v3, 0xa
 
-    .line 208
+    .line 209
     invoke-virtual {p1, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v4
@@ -4165,7 +4165,7 @@
 
     const-string v7, " "
 
-    .line 210
+    .line 211
     invoke-virtual {v2, v4, v6, v7}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     :cond_1
@@ -4173,7 +4173,7 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    .line 208
+    .line 209
     invoke-virtual {p1, v3, v4}, Ljava/lang/String;->indexOf(II)I
 
     move-result v4
@@ -4183,23 +4183,23 @@
     :cond_2
     move-object p2, v2
 
-    .line 215
+    .line 216
     :cond_3
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 216
+    .line 217
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 217
+    .line 218
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 218
+    .line 219
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
@@ -4226,7 +4226,7 @@
 .method public createSimpleBulletin(ILjava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 222
+    .line 223
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4243,20 +4243,20 @@
 
     const/16 v2, 0x24
 
-    .line 223
+    .line 224
     invoke-virtual {v0, p1, v2, v2, v1}, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
-    .line 224
+    .line 225
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->titleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 225
+    .line 226
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->subtitleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 226
+    .line 227
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
@@ -4289,7 +4289,7 @@
 .method public createSimpleBulletin(ILjava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
     .locals 4
 
-    .line 243
+    .line 244
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4308,12 +4308,12 @@
 
     const/16 v3, 0x24
 
-    .line 245
+    .line 246
     invoke-virtual {v0, p1, v3, v3, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 247
+    .line 248
     :cond_0
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -4321,7 +4321,7 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 248
+    .line 249
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -4338,7 +4338,7 @@
 
     iput v2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 250
+    .line 251
     :goto_0
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -4348,31 +4348,31 @@
 
     invoke-virtual {p1, v3, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 251
+    .line 252
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v2, 0x5
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTextDirection(I)V
 
-    .line 252
+    .line 253
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 253
+    .line 254
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v1, 0x3
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 254
+    .line 255
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 255
+    .line 256
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4393,7 +4393,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->setButton(Lorg/telegram/ui/Components/Bulletin$Button;)V
 
-    .line 256
+    .line 257
     invoke-direct {p0, v0, p4}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -4404,7 +4404,7 @@
 .method public createSimpleBulletin(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 234
+    .line 235
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4421,20 +4421,20 @@
 
     const/16 v2, 0x24
 
-    .line 235
+    .line 236
     invoke-virtual {v0, p1, v2, v2, v1}, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
-    .line 236
+    .line 237
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->titleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 237
+    .line 238
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->subtitleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 238
+    .line 239
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4459,7 +4459,7 @@
 
     const/16 p1, 0x1388
 
-    .line 239
+    .line 240
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -4470,7 +4470,7 @@
 .method public createSimpleBulletin(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
     .locals 7
 
-    .line 230
+    .line 231
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -4509,7 +4509,7 @@
 .method public createSimpleBulletin(Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 270
+    .line 271
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4520,24 +4520,24 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 271
+    .line 272
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v1, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 272
+    .line 273
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 273
+    .line 274
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 274
+    .line 275
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 p2, 0x2
@@ -4546,7 +4546,7 @@
 
     const/16 p1, 0xabe
 
-    .line 275
+    .line 276
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -4557,7 +4557,7 @@
 .method public createSimpleBulletin(Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 279
+    .line 280
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4568,24 +4568,24 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 280
+    .line 281
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v1, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 281
+    .line 282
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->titleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 282
+    .line 283
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->subtitleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/16 p1, 0xabe
 
-    .line 283
+    .line 284
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -4596,7 +4596,7 @@
 .method public createSimpleBulletin(Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 295
+    .line 296
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4607,22 +4607,22 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 296
+    .line 297
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v1, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 297
+    .line 298
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->titleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 298
+    .line 299
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLottieLayout;->subtitleTextView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 299
+    .line 300
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4647,7 +4647,7 @@
 
     const/16 p1, 0xabe
 
-    .line 300
+    .line 301
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -4658,7 +4658,7 @@
 .method public createSimpleBulletinWithIconSize(ILjava/lang/CharSequence;I)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 183
+    .line 184
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4673,27 +4673,27 @@
 
     new-array v2, v1, [Ljava/lang/String;
 
-    .line 184
-    invoke-virtual {v0, p1, p3, p3, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
-
     .line 185
-    iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
-
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p1, p3, p3, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(III[Ljava/lang/String;)V
 
     .line 186
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 187
+    iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+
+    invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
+
+    .line 188
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 p3, 0x2
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 188
+    .line 189
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
@@ -4720,7 +4720,7 @@
 .method public createSimpleLargeBulletin(ILjava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 192
+    .line 193
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4731,29 +4731,29 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 193
+    .line 194
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImageResource(I)V
 
-    .line 194
+    .line 195
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 196
+    .line 197
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 197
+    .line 198
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 198
+    .line 199
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     const/4 p2, 0x5
@@ -4762,7 +4762,7 @@
 
     const/16 p1, 0x1388
 
-    .line 199
+    .line 200
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -4775,7 +4775,7 @@
 
     const/4 v0, 0x0
 
-    .line 656
+    .line 657
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createSuccessBulletin(Ljava/lang/CharSequence;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -4786,7 +4786,7 @@
 .method public createSuccessBulletin(Ljava/lang/CharSequence;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
     .locals 3
 
-    .line 660
+    .line 661
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4795,7 +4795,7 @@
 
     invoke-direct {v0, v1, p2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 661
+    .line 662
     sget p2, Lorg/telegram/messenger/R$raw;->contact_check:I
 
     const/4 v1, 0x0
@@ -4804,17 +4804,17 @@
 
     invoke-virtual {v0, p2, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->setAnimation(I[Ljava/lang/String;)V
 
-    .line 662
+    .line 663
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 663
+    .line 664
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 664
+    .line 665
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 p2, 0x2
@@ -4823,7 +4823,7 @@
 
     const/16 p1, 0x5dc
 
-    .line 665
+    .line 666
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -4834,7 +4834,7 @@
 .method public createUndoBulletin(Ljava/lang/CharSequence;Ljava/lang/Runnable;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
     .locals 4
 
-    .line 313
+    .line 314
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4845,29 +4845,29 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin$LottieLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 314
+    .line 315
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 315
+    .line 316
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 316
+    .line 317
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$LottieLayout;->textView:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v1, 0x2
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 317
+    .line 318
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin$ButtonLayout;->setTimer()V
 
-    .line 318
+    .line 319
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -4904,7 +4904,7 @@
 
     const/16 p1, 0x1388
 
-    .line 319
+    .line 320
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -4928,7 +4928,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 455
+    .line 456
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -4937,7 +4937,7 @@
 
     goto/16 :goto_0
 
-    .line 457
+    .line 458
     :cond_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -4949,7 +4949,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 458
+    .line 459
     invoke-static {p2}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p2
@@ -4958,7 +4958,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 459
+    .line 460
     sget p2, Lorg/telegram/messenger/R$string;->HasBeenAddedToChannel:I
 
     new-array v1, v1, [Ljava/lang/Object;
@@ -5001,7 +5001,7 @@
 
     goto :goto_1
 
-    .line 461
+    .line 462
     :cond_1
     sget p2, Lorg/telegram/messenger/R$string;->HasBeenAddedToGroup:I
 
@@ -5045,7 +5045,7 @@
 
     goto :goto_1
 
-    .line 464
+    .line 465
     :cond_2
     invoke-static {p2}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -5053,7 +5053,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 465
+    .line 466
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result p2
@@ -5072,7 +5072,7 @@
 
     goto :goto_1
 
-    .line 467
+    .line 468
     :cond_3
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -5096,7 +5096,7 @@
     :goto_0
     const/4 p2, 0x0
 
-    .line 470
+    .line 471
     :goto_1
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/BulletinFactory;->createUsersBulletin(Ljava/util/List;Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
 
@@ -5122,7 +5122,7 @@
 
     const/4 v0, 0x0
 
-    .line 323
+    .line 324
     invoke-virtual {p0, p1, p2, v0, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createUsersBulletin(Ljava/util/List;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/telegram/ui/Components/BulletinFactory$UndoObject;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
@@ -5147,7 +5147,7 @@
         }
     .end annotation
 
-    .line 327
+    .line 328
     new-instance v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -5180,7 +5180,7 @@
 
     move v5, v4
 
-    .line 330
+    .line 331
     :goto_1
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -5194,7 +5194,7 @@
 
     goto :goto_2
 
-    .line 333
+    .line 334
     :cond_1
     invoke-interface {p1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -5204,14 +5204,14 @@
 
     if-eqz v6, :cond_2
 
-    .line 335
+    .line 336
     iget-object v7, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     add-int/lit8 v5, v5, 0x1
 
     invoke-virtual {v7, v5}, Lorg/telegram/ui/Components/AvatarsImageView;->setCount(I)V
 
-    .line 336
+    .line 337
     iget-object v7, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     add-int/lit8 v8, v5, -0x1
@@ -5225,7 +5225,7 @@
 
     goto :goto_1
 
-    .line 339
+    .line 340
     :cond_3
     :goto_2
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -5234,7 +5234,7 @@
 
     if-ne p1, v3, :cond_4
 
-    .line 340
+    .line 341
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -5245,21 +5245,21 @@
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 341
+    .line 342
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     const v4, 0x3f99999a    # 1.2f
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 342
+    .line 343
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setScaleY(F)V
 
     goto :goto_3
 
-    .line 344
+    .line 345
     :cond_4
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
@@ -5267,7 +5267,7 @@
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 345
+    .line 346
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     invoke-virtual {p1, v4}, Landroid/view/View;->setScaleY(F)V
@@ -5277,7 +5277,7 @@
     :cond_5
     move v5, v2
 
-    .line 348
+    .line 349
     :goto_3
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
 
@@ -5285,37 +5285,37 @@
 
     if-eqz p3, :cond_8
 
-    .line 352
-    iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
-
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
-
     .line 353
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setMaxLines(I)V
+    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 354
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setMaxLines(I)V
 
     .line 355
-    iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
+    iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 356
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
+    invoke-virtual {p1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 357
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
 
-    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setMaxLines(I)V
+    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     .line 358
+    iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->subtitleView:Landroid/widget/TextView;
+
+    invoke-virtual {p1, v3}, Landroid/widget/TextView;->setMaxLines(I)V
+
+    .line 359
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5332,27 +5332,27 @@
 
     rsub-int/lit8 p1, p1, 0x46
 
-    .line 359
+    .line 360
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     if-ne v5, v3, :cond_6
 
-    .line 361
+    .line 362
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     add-int/2addr p1, p2
 
-    .line 363
+    .line 364
     :cond_6
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p2, :cond_7
 
-    .line 364
+    .line 365
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p2}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5365,7 +5365,7 @@
 
     goto :goto_4
 
-    .line 366
+    .line 367
     :cond_7
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->linearLayout:Landroid/widget/LinearLayout;
 
@@ -5379,25 +5379,25 @@
 
     goto :goto_4
 
-    .line 370
+    .line 371
     :cond_8
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 371
+    .line 372
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     const/4 p3, 0x2
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 372
+    .line 373
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 373
+    .line 374
     iget-object p1, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5414,14 +5414,14 @@
 
     rsub-int/lit8 p1, p1, 0x46
 
-    .line 374
+    .line 375
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     if-ne v5, v3, :cond_9
 
-    .line 376
+    .line 377
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -5434,20 +5434,20 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 377
+    .line 378
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     add-int/2addr p1, p2
 
-    .line 379
+    .line 380
     :cond_9
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p2, :cond_a
 
-    .line 380
+    .line 381
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5460,7 +5460,7 @@
 
     goto :goto_4
 
-    .line 382
+    .line 383
     :cond_a
     iget-object p2, v0, Lorg/telegram/ui/Components/Bulletin$UsersLayout;->textView:Landroid/widget/TextView;
 
@@ -5476,7 +5476,7 @@
     :goto_4
     if-eqz p4, :cond_c
 
-    .line 388
+    .line 389
     new-instance p1, Lorg/telegram/ui/Components/Bulletin$UndoButton;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/BulletinFactory;->getContext()Landroid/content/Context;
@@ -5516,7 +5516,7 @@
     :cond_c
     const/16 p1, 0x1388
 
-    .line 391
+    .line 392
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/BulletinFactory;->create(Lorg/telegram/ui/Components/Bulletin$Layout;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1

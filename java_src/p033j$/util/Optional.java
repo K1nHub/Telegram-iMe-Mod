@@ -39,7 +39,7 @@ public final class Optional<T> {
             return true;
         }
         if (obj instanceof Optional) {
-            return AbstractC2843k.m589q(this.f698a, ((Optional) obj).f698a);
+            return AbstractC2840k.m589q(this.f698a, ((Optional) obj).f698a);
         }
         return false;
     }

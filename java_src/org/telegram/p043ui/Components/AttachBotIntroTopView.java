@@ -12,7 +12,7 @@ import android.view.View;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
@@ -46,7 +46,7 @@ public class AttachBotIntroTopView extends View {
                 ImageReceiver.ImageReceiverDelegate.CC.$default$onAnimationReady(this, imageReceiver2);
             }
         });
-        this.attachDrawable = ContextCompat.getDrawable(context, C3634R.C3636drawable.input_attach).mutate().getConstantState().newDrawable();
+        this.attachDrawable = ContextCompat.getDrawable(context, C3632R.C3634drawable.input_attach).mutate().getConstantState().newDrawable();
         this.paint.setStyle(Paint.Style.STROKE);
         this.paint.setStrokeWidth(AndroidUtilities.m104dp(3));
         this.paint.setStrokeCap(Paint.Cap.ROUND);

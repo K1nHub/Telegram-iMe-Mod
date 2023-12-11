@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 28405
+    .line 28413
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$122;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
 .method public run()V
     .locals 2
 
-    .line 28410
+    .line 28418
     iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$122;->clicked:Z
 
     if-eqz v0, :cond_0
@@ -50,10 +50,10 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 28413
+    .line 28421
     iput-boolean v0, p0, Lorg/telegram/ui/ChatActivity$122;->clicked:Z
 
-    .line 28414
+    .line 28422
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$122;->this$0:Lorg/telegram/ui/ChatActivity;
 
     new-instance v1, Lorg/telegram/ui/NotificationsSettingsActivity;

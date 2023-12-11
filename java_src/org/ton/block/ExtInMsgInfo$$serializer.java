@@ -23,7 +23,7 @@ public final class ExtInMsgInfo$$serializer implements GeneratedSerializer<ExtIn
         pluginGeneratedSerialDescriptor.addElement("src", false);
         pluginGeneratedSerialDescriptor.addElement("dest", false);
         pluginGeneratedSerialDescriptor.addElement("import_fee", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7552x717c34d6("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7550x717c34d6("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

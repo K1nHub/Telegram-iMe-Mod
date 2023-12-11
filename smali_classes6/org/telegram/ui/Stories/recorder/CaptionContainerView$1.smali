@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Lorg/telegram/ui/ActionBar/BaseFragment;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/BlurringShader$BlurManager;)V
     .locals 7
 
-    .line 141
+    .line 144
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iput-object p8, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->val$blurManager:Lorg/telegram/ui/Components/BlurringShader$BlurManager;
@@ -55,17 +55,17 @@
 .method protected createEmojiView()V
     .locals 3
 
-    .line 154
+    .line 157
     invoke-super {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->createEmojiView()V
 
-    .line 155
+    .line 158
     invoke-virtual {p0}, Lorg/telegram/ui/Components/EditTextEmoji;->getEmojiView()Lorg/telegram/ui/Components/EmojiView;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 156
+    .line 159
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->getEditTextStyle()I
@@ -78,30 +78,30 @@
 
     const/4 v1, 0x0
 
-    .line 157
+    .line 160
     iput-boolean v1, v0, Lorg/telegram/ui/Components/EmojiView;->shouldLightenBackground:Z
 
-    .line 158
+    .line 161
     iput-boolean v1, v0, Lorg/telegram/ui/Components/EmojiView;->fixBottomTabContainerTranslation:Z
 
-    .line 159
+    .line 162
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setShouldDrawBackground(Z)V
 
-    .line 160
+    .line 163
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     instance-of v2, v2, Lorg/telegram/ui/Components/CaptionPhotoViewer;
 
     if-eqz v2, :cond_0
 
-    .line 161
+    .line 164
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->navigationBarHeight:I
 
     invoke-virtual {v0, v1, v1, v1, v2}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
     const/4 v1, 0x3
 
-    .line 162
+    .line 165
     iput v1, v0, Lorg/telegram/ui/Components/EmojiView;->emojiCacheType:I
 
     :cond_0
@@ -111,7 +111,7 @@
 .method protected drawEmojiBackground(Landroid/graphics/Canvas;Landroid/view/View;)V
     .locals 12
 
-    .line 171
+    .line 174
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$000(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/graphics/RectF;
@@ -134,7 +134,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 172
+    .line 175
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->customBlur()Z
@@ -143,12 +143,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 173
+    .line 176
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->blurDrawer:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     if-nez v0, :cond_0
 
-    .line 174
+    .line 177
     new-instance v0, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->val$blurManager:Lorg/telegram/ui/Components/BlurringShader$BlurManager;
@@ -159,7 +159,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->blurDrawer:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
-    .line 176
+    .line 179
     :cond_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
@@ -191,7 +191,7 @@
 
     goto :goto_0
 
-    .line 178
+    .line 181
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
@@ -216,7 +216,7 @@
 .method protected onEmojiKeyboardUpdate()V
     .locals 1
 
-    .line 144
+    .line 147
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->keyboardNotifier:Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
@@ -229,7 +229,7 @@
 .method protected onScrollYChange(I)Z
     .locals 7
 
-    .line 184
+    .line 187
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$200(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/animation/ObjectAnimator;
@@ -260,13 +260,13 @@
 
     return v1
 
-    .line 187
+    .line 190
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 188
+    .line 191
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->waitingForScrollYChange:Z
@@ -275,10 +275,10 @@
 
     if-eqz v2, :cond_3
 
-    .line 189
+    .line 192
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->waitingForScrollYChange:Z
 
-    .line 190
+    .line 193
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->beforeScrollY:I
 
     if-eq v2, p1, :cond_3
@@ -307,7 +307,7 @@
 
     if-eq p1, v0, :cond_3
 
-    .line 191
+    .line 194
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
@@ -317,7 +317,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 192
+    .line 195
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$200(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/animation/ObjectAnimator;
@@ -326,7 +326,7 @@
 
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
 
-    .line 194
+    .line 197
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
@@ -342,7 +342,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setScrollY(I)V
 
-    .line 195
+    .line 198
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->editText:Lorg/telegram/ui/Components/EditTextEmoji;
@@ -373,7 +373,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$202(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;Landroid/animation/ObjectAnimator;)Landroid/animation/ObjectAnimator;
 
-    .line 196
+    .line 199
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$200(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/animation/ObjectAnimator;
@@ -384,7 +384,7 @@
 
     invoke-virtual {p1, v2, v3}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 197
+    .line 200
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$200(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/animation/ObjectAnimator;
@@ -395,7 +395,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 198
+    .line 201
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$200(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/animation/ObjectAnimator;
@@ -408,7 +408,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 208
+    .line 211
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->access$200(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;)Landroid/animation/ObjectAnimator;
@@ -426,7 +426,7 @@
 .method protected onWaitingForKeyboard()V
     .locals 1
 
-    .line 149
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->keyboardNotifier:Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;

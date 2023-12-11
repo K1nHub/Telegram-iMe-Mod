@@ -32,10 +32,10 @@
 
     const/4 p1, 0x0
 
-    .line 581
+    .line 582
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 582
+    .line 583
     iput-object p3, p0, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;->title:Ljava/lang/String;
 
     return-void
@@ -46,16 +46,16 @@
 
     const/4 p1, 0x1
 
-    .line 586
+    .line 587
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 587
+    .line 588
     iput-object p3, p0, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;->booster:Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
 
-    .line 588
+    .line 589
     iput-boolean p4, p0, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;->isLast:Z
 
-    .line 589
+    .line 590
     iput p5, p0, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;->tab:I
 
     return-void
@@ -66,13 +66,13 @@
 
     const/4 p1, 0x1
 
-    .line 593
+    .line 594
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 594
+    .line 595
     iput-object p3, p0, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;->prepaidGiveaway:Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;
 
-    .line 595
+    .line 596
     iput-boolean p4, p0, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;->isLast:Z
 
     return-void
@@ -81,7 +81,7 @@
 .method public constructor <init>(Lorg/telegram/ui/ChannelBoostLayout;IZ)V
     .locals 0
 
-    .line 599
+    .line 600
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     return-void
@@ -103,7 +103,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 605
+    .line 606
     const-class v2, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -114,11 +114,11 @@
 
     goto :goto_2
 
-    .line 606
+    .line 607
     :cond_1
     check-cast p1, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;
 
-    .line 607
+    .line 608
     iget-object v2, p0, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;->prepaidGiveaway:Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;
 
     if-eqz v2, :cond_3
@@ -127,7 +127,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 608
+    .line 609
     iget-wide v4, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;->id:J
 
     iget-wide v2, v3, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;->id:J
@@ -150,7 +150,7 @@
     :goto_0
     return v0
 
-    .line 609
+    .line 610
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;->booster:Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
 
@@ -160,7 +160,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 610
+    .line 611
     iget-object v2, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->id:Ljava/lang/String;
 
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
@@ -210,7 +210,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 618
+    .line 619
     iget-object v1, p0, Lorg/telegram/ui/ChannelBoostLayout$ItemInternal;->title:Ljava/lang/String;
 
     const/4 v2, 0x0

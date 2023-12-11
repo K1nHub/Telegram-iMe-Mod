@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import org.telegram.PhoneFormat.C3549PhoneFormat;
+import org.telegram.PhoneFormat.C3546PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.CodeFieldContainer */
@@ -141,7 +141,7 @@ public class CodeFieldContainer extends LinearLayout {
         while (true) {
             CodeNumberField[] codeNumberFieldArr = this.codeField;
             if (i < codeNumberFieldArr.length) {
-                sb.append(C3549PhoneFormat.stripExceptNumbers(codeNumberFieldArr[i].getText().toString()));
+                sb.append(C3546PhoneFormat.stripExceptNumbers(codeNumberFieldArr[i].getText().toString()));
                 i++;
             } else {
                 return sb.toString();

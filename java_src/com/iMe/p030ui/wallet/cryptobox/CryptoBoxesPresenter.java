@@ -54,7 +54,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$Chat;
 import timber.log.Timber;
@@ -169,7 +169,7 @@ public final class CryptoBoxesPresenter extends BasePresenter<CryptoBoxesView> {
 
     public final void onSelectOrderClick() {
         CryptoBoxesView cryptoBoxesView = (CryptoBoxesView) getViewState();
-        DialogModel dialogModel = new DialogModel(this.resourceManager.getString(C3634R.string.choose_tokens_order_type_dialog_title), null, null, this.resourceManager.getString(C3634R.string.common_cancel), 6, null);
+        DialogModel dialogModel = new DialogModel(this.resourceManager.getString(C3632R.string.choose_tokens_order_type_dialog_title), null, null, this.resourceManager.getString(C3632R.string.common_cancel), 6, null);
         CryptoBoxOrderType[] values = CryptoBoxOrderType.values();
         ArrayList arrayList = new ArrayList(values.length);
         for (CryptoBoxOrderType cryptoBoxOrderType : values) {
@@ -241,12 +241,12 @@ public final class CryptoBoxesPresenter extends BasePresenter<CryptoBoxesView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends CryptoBoxInfo>> result) {
-                m1677invoke(result);
+                m1678invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1677invoke(Result<? extends List<? extends CryptoBoxInfo>> it) {
+            public final void m1678invoke(Result<? extends List<? extends CryptoBoxInfo>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends CryptoBoxInfo>> result = it;
                 if (result instanceof Result.Success) {
@@ -310,12 +310,12 @@ public final class CryptoBoxesPresenter extends BasePresenter<CryptoBoxesView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1676invoke(rxEvent);
+                m1677invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1676invoke(RxEvent it) {
+            public final void m1677invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (rxEvent instanceof AppRxEvents.UpdateWalletScreen ? true : rxEvent instanceof DomainRxEvents.CryptoBoxCreated) {
@@ -383,7 +383,7 @@ public final class CryptoBoxesPresenter extends BasePresenter<CryptoBoxesView> {
     public final List<BaseNode> initRootItems() {
         List<BaseNode> listOfNotNull;
         NoChildNode[] noChildNodeArr = new NoChildNode[2];
-        noChildNodeArr[0] = new AnimatedHeaderItem(C3634R.raw.fork_cryptoboxes, this.resourceManager.getString(C3634R.string.cryptoboxes_description), new AnimatedHeaderItem.Button(this.resourceManager.getString(C3634R.string.cryptoboxes_create_new), Integer.valueOf(C3634R.C3636drawable.fork_ic_add)));
+        noChildNodeArr[0] = new AnimatedHeaderItem(C3632R.raw.fork_cryptoboxes, this.resourceManager.getString(C3632R.string.cryptoboxes_description), new AnimatedHeaderItem.Button(this.resourceManager.getString(C3632R.string.cryptoboxes_create_new), Integer.valueOf(C3632R.C3634drawable.fork_ic_add)));
         TLRPC$Chat tLRPC$Chat = this.chat;
         noChildNodeArr[1] = tLRPC$Chat != null ? new CryptoBoxesChatItem(tLRPC$Chat) : null;
         listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) noChildNodeArr);
@@ -391,7 +391,7 @@ public final class CryptoBoxesPresenter extends BasePresenter<CryptoBoxesView> {
     }
 
     private final String initCryptoBoxesListHeaderTitle() {
-        return this.resourceManager.getString(this.chat != null ? C3634R.string.cryptoboxes_last_list_title : C3634R.string.cryptoboxes_all_list_title);
+        return this.resourceManager.getString(this.chat != null ? C3632R.string.cryptoboxes_last_list_title : C3632R.string.cryptoboxes_all_list_title);
     }
 
     private final void renderItems(BaseNode[] baseNodeArr, boolean z) {
@@ -427,18 +427,18 @@ public final class CryptoBoxesPresenter extends BasePresenter<CryptoBoxesView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
-                m1678invoke(bool);
+                m1679invoke(bool);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1678invoke(Boolean it) {
+            public final void m1679invoke(Boolean it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Boolean bool = it;
                 if (!TLRPC$Chat.this.creator) {
                     resourceManager = this.resourceManager;
-                    ((CryptoBoxesView) this.getViewState()).showToast(resourceManager.getString(C3634R.string.cryptobox_create_user_not_owner));
+                    ((CryptoBoxesView) this.getViewState()).showToast(resourceManager.getString(C3632R.string.cryptobox_create_user_not_owner));
                 } else if (bool.booleanValue()) {
                     this.openCryptoBoxCreationScreen();
                 } else {
@@ -482,7 +482,7 @@ public final class CryptoBoxesPresenter extends BasePresenter<CryptoBoxesView> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void onWalletBotAdminRightsRequired(final TLRPC$Chat tLRPC$Chat) {
-        ((CryptoBoxesView) getViewState()).showConfirmDialog(new DialogModel(this.resourceManager.getString(C3634R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_title), this.resourceManager.getString(C3634R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_description), this.resourceManager.getString(C3634R.string.common_cancel), LocaleController.getString(RtspHeaders.ALLOW, C3634R.string.Allow)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.cryptobox.CryptoBoxesPresenter$$ExternalSyntheticLambda0
+        ((CryptoBoxesView) getViewState()).showConfirmDialog(new DialogModel(this.resourceManager.getString(C3632R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_title), this.resourceManager.getString(C3632R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_description), this.resourceManager.getString(C3632R.string.common_cancel), LocaleController.getString(RtspHeaders.ALLOW, C3632R.string.Allow)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.cryptobox.CryptoBoxesPresenter$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 CryptoBoxesPresenter.onWalletBotAdminRightsRequired$lambda$11(CryptoBoxesPresenter.this, tLRPC$Chat);

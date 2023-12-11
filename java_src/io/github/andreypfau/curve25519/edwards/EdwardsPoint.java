@@ -93,9 +93,9 @@ public final class EdwardsPoint {
         projectivePoint.set(t);
         int i2 = i - 1;
         for (int i3 = 0; i3 < i2; i3++) {
-            projectivePoint.set(completedPoint.m1901double(projectivePoint));
+            projectivePoint.set(completedPoint.m1903double(projectivePoint));
         }
-        set(completedPoint.m1901double(projectivePoint));
+        set(completedPoint.m1903double(projectivePoint));
     }
 
     public final EdwardsPoint mulBasepoint(EdwardsBasepointTable basepoint, Scalar scalar) {

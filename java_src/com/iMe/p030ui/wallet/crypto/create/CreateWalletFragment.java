@@ -105,7 +105,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MrzRecognizer;
@@ -114,7 +114,7 @@ import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.ActionBar.BackDrawable;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -847,7 +847,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             sorted = CollectionsKt___CollectionsKt.sorted(take);
             list.addAll(sorted);
             TextView descriptionText = getDescriptionText();
-            int i2 = C3634R.string.wallet_backup_test_time_info;
+            int i2 = C3632R.string.wallet_backup_test_time_info;
             List<Integer> list2 = this.checkWordIndices;
             collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(list2, 10);
             ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
@@ -928,7 +928,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     @Override // com.iMe.p030ui.wallet.crypto.create.CreateWalletView
     public void showActionError(String message) {
         Intrinsics.checkNotNullParameter(message, "message");
-        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3634R.string.common_error), message, getResourceManager().getString(C3634R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3632R.string.common_error), message, getResourceManager().getString(C3632R.string.common_ok), null, 8, null);
     }
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
@@ -937,12 +937,12 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         View view = this.fragmentView;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_windowBackgroundWhite;
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i3 = ThemeDescription.FLAG_AB_TITLECOLOR;
         int i4 = Theme.key_windowBackgroundWhiteBlackText;
         LinearLayout editTextContainer = getEditTextContainer();
         int i5 = Theme.key_windowBackgroundWhiteHintText;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(view, i, i2), new ThemeDescription(c3706ActionBar, i3, i4), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, i4), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, Theme.key_actionBarWhiteSelector), new ThemeDescription(getActionBarBackground(), 0, i2), new ThemeDescription(getHintListView(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{TextView.class}, null, null, null, Theme.key_actionBarDefaultSubmenuItem), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericEditText.class}, new String[]{"editText"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_CURSORCOLOR, new Class[]{NumericEditText.class}, new String[]{"editText"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_IMAGECOLOR, new Class[]{NumericEditText.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText7), new ThemeDescription(editTextContainer, 0, i5), new ThemeDescription(getLeftColumn(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericTextView.class}, null, null, null, i4), new ThemeDescription(getRightColumn(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericTextView.class}, null, null, null, i4), new ThemeDescription(getLeftColumn(), 0, new Class[]{NumericTextView.class}, null, null, null, i5), new ThemeDescription(getRightColumn(), 0, new Class[]{NumericTextView.class}, null, null, null, i5), new ThemeDescription(getTitleTextView(), ThemeDescription.FLAG_TEXTCOLOR, i4), new ThemeDescription(getDescriptionText(), ThemeDescription.FLAG_TEXTCOLOR, Theme.key_windowBackgroundWhiteGrayText6), new ThemeDescription(getDescriptionText2(), ThemeDescription.FLAG_LINKCOLOR, Theme.key_windowBackgroundWhiteBlueText2), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_TEXTCOLOR, Theme.key_featuredStickers_buttonText), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE, Theme.key_featuredStickers_addButton), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, Theme.key_featuredStickers_addButtonPressed));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(view, i, i2), new ThemeDescription(c3704ActionBar, i3, i4), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, i4), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, Theme.key_actionBarWhiteSelector), new ThemeDescription(getActionBarBackground(), 0, i2), new ThemeDescription(getHintListView(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{TextView.class}, null, null, null, Theme.key_actionBarDefaultSubmenuItem), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericEditText.class}, new String[]{"editText"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_CURSORCOLOR, new Class[]{NumericEditText.class}, new String[]{"editText"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getEditTextContainer(), ThemeDescription.FLAG_IMAGECOLOR, new Class[]{NumericEditText.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText7), new ThemeDescription(editTextContainer, 0, i5), new ThemeDescription(getLeftColumn(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericTextView.class}, null, null, null, i4), new ThemeDescription(getRightColumn(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{NumericTextView.class}, null, null, null, i4), new ThemeDescription(getLeftColumn(), 0, new Class[]{NumericTextView.class}, null, null, null, i5), new ThemeDescription(getRightColumn(), 0, new Class[]{NumericTextView.class}, null, null, null, i5), new ThemeDescription(getTitleTextView(), ThemeDescription.FLAG_TEXTCOLOR, i4), new ThemeDescription(getDescriptionText(), ThemeDescription.FLAG_TEXTCOLOR, Theme.key_windowBackgroundWhiteGrayText6), new ThemeDescription(getDescriptionText2(), ThemeDescription.FLAG_LINKCOLOR, Theme.key_windowBackgroundWhiteBlueText2), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_TEXTCOLOR, Theme.key_featuredStickers_buttonText), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE, Theme.key_featuredStickers_addButton), new ThemeDescription(getActionButton(), ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, Theme.key_featuredStickers_addButtonPressed));
         return arrayListOf;
     }
 
@@ -959,7 +959,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             ViewGroup viewGroup = new ViewGroup(parentActivity) { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createContainer$2
                 @Override // android.view.View
                 protected void onMeasure(int i, int i2) {
-                    C3706ActionBar c3706ActionBar;
+                    C3704ActionBar c3704ActionBar;
                     RLottieImageView imageView;
                     TextView titleTextView;
                     TextView descriptionText;
@@ -970,8 +970,8 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                     TextView descriptionText23;
                     int size = View.MeasureSpec.getSize(i);
                     int size2 = View.MeasureSpec.getSize(i2);
-                    c3706ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3706ActionBar.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), i2);
+                    c3704ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3704ActionBar.measure(View.MeasureSpec.makeMeasureSpec(size, 1073741824), i2);
                     if (size > size2) {
                         imageView2 = CreateWalletFragment.this.getImageView();
                         float f = size;
@@ -1000,8 +1000,8 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
 
                 @Override // android.view.ViewGroup, android.view.View
                 protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-                    C3706ActionBar c3706ActionBar;
-                    C3706ActionBar c3706ActionBar2;
+                    C3704ActionBar c3704ActionBar;
+                    C3704ActionBar c3704ActionBar2;
                     RLottieImageView imageView;
                     RLottieImageView imageView2;
                     RLottieImageView imageView3;
@@ -1027,9 +1027,9 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                     TextView descriptionText25;
                     TextView descriptionText26;
                     TextView descriptionText27;
-                    c3706ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3706ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3706ActionBar.layout(0, 0, i3, c3706ActionBar2.getMeasuredHeight());
+                    c3704ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3704ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3704ActionBar.layout(0, 0, i3, c3704ActionBar2.getMeasuredHeight());
                     int i5 = i3 - i;
                     int i6 = i4 - i2;
                     if (i3 > i4) {
@@ -1124,18 +1124,18 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             ViewGroup viewGroup2 = new ViewGroup(parentActivity2) { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createContainer$5
                 @Override // android.view.View
                 protected void onMeasure(int i2, int i3) {
-                    C3706ActionBar c3706ActionBar;
+                    C3704ActionBar c3704ActionBar;
                     View actionBarBackground;
-                    C3706ActionBar c3706ActionBar2;
+                    C3704ActionBar c3704ActionBar2;
                     ScrollView scrollView;
                     int size = View.MeasureSpec.getSize(i2);
                     int size2 = View.MeasureSpec.getSize(i3);
                     int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, 1073741824);
-                    c3706ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3706ActionBar.measure(makeMeasureSpec, i3);
+                    c3704ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3704ActionBar.measure(makeMeasureSpec, i3);
                     actionBarBackground = CreateWalletFragment.this.getActionBarBackground();
-                    c3706ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    actionBarBackground.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(c3706ActionBar2.getMeasuredHeight() + AndroidUtilities.m104dp(3), 1073741824));
+                    c3704ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    actionBarBackground.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(c3704ActionBar2.getMeasuredHeight() + AndroidUtilities.m104dp(3), 1073741824));
                     scrollView = CreateWalletFragment.this.getScrollView();
                     scrollView.measure(makeMeasureSpec, i3);
                     setMeasuredDimension(size, size2);
@@ -1143,20 +1143,20 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
 
                 @Override // android.view.ViewGroup, android.view.View
                 protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
-                    C3706ActionBar c3706ActionBar;
-                    C3706ActionBar c3706ActionBar2;
-                    C3706ActionBar c3706ActionBar3;
+                    C3704ActionBar c3704ActionBar;
+                    C3704ActionBar c3704ActionBar2;
+                    C3704ActionBar c3704ActionBar3;
                     View actionBarBackground;
                     View actionBarBackground2;
                     View actionBarBackground3;
                     ScrollView scrollView;
                     ScrollView scrollView2;
                     ScrollView scrollView3;
-                    c3706ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3706ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    int measuredWidth = c3706ActionBar2.getMeasuredWidth();
-                    c3706ActionBar3 = ((BaseFragment) CreateWalletFragment.this).actionBar;
-                    c3706ActionBar.layout(0, 0, measuredWidth, c3706ActionBar3.getMeasuredHeight());
+                    c3704ActionBar = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3704ActionBar2 = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    int measuredWidth = c3704ActionBar2.getMeasuredWidth();
+                    c3704ActionBar3 = ((BaseFragment) CreateWalletFragment.this).actionBar;
+                    c3704ActionBar.layout(0, 0, measuredWidth, c3704ActionBar3.getMeasuredHeight());
                     actionBarBackground = CreateWalletFragment.this.getActionBarBackground();
                     actionBarBackground2 = CreateWalletFragment.this.getActionBarBackground();
                     int measuredWidth2 = actionBarBackground2.getMeasuredWidth();
@@ -1299,7 +1299,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     public final ActionBarPopupWindow createHintPopupWindow() {
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(getHintPopupLayout(), -2, -2);
         actionBarPopupWindow.setAnimationEnabled(false);
-        actionBarPopupWindow.setAnimationStyle(C3634R.style.PopupAnimation);
+        actionBarPopupWindow.setAnimationStyle(C3632R.style.PopupAnimation);
         actionBarPopupWindow.setClippingEnabled(true);
         actionBarPopupWindow.setInputMethodMode(2);
         actionBarPopupWindow.setSoftInputMode(0);
@@ -1356,7 +1356,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         CreateWalletScreenType createWalletScreenType = this.screenType;
         Intrinsics.checkNotNull(createWalletScreenType, "null cannot be cast to non-null type com.iMe.model.wallet.crypto.create.CreateWalletScreenType.SecretWords");
         final String joinBySpace = StringExtKt.joinBySpace(((CreateWalletScreenType.SecretWords) createWalletScreenType).getSecretWords());
-        final String string = getResourceManager().getString(C3634R.string.wallet_backup_secret_words_qr_description);
+        final String string = getResourceManager().getString(C3632R.string.wallet_backup_secret_words_qr_description);
         return new QRCodeBottomSheet(parentActivity, joinBySpace, string) { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createQRCodeBottomSheet$1
             @Override // org.telegram.p043ui.Components.QRCodeBottomSheet
             public int getType() {
@@ -1365,7 +1365,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
 
             @Override // org.telegram.p043ui.Components.QRCodeBottomSheet
             public int getCustomQrCenterImageRes() {
-                return C3634R.C3636drawable.fork_ic_internal_logo;
+                return C3632R.C3634drawable.fork_ic_internal_logo;
             }
         };
     }
@@ -1375,8 +1375,8 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         SecretWordsActionButton secretWordsActionButton = new SecretWordsActionButton(parentActivity, null, 0, 6, null);
-        int i = C3634R.C3636drawable.msg_copy_filled;
-        String string = LocaleController.getString("Copy", C3634R.string.Copy);
+        int i = C3632R.C3634drawable.msg_copy_filled;
+        String string = LocaleController.getString("Copy", C3632R.string.Copy);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Copy\", R.string.Copy)");
         secretWordsActionButton.setupView(i, string);
         ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createCopyButton$1$1
@@ -1408,7 +1408,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         SecretWordsActionButton secretWordsActionButton = new SecretWordsActionButton(parentActivity, null, 0, 6, null);
-        secretWordsActionButton.setupView(C3634R.C3636drawable.fork_ic_paste_24, getResourceManager().getString(C3634R.string.wallet_import_paste));
+        secretWordsActionButton.setupView(C3632R.C3634drawable.fork_ic_paste_24, getResourceManager().getString(C3632R.string.wallet_import_paste));
         ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createPasteButton$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -1438,8 +1438,8 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         SecretWordsActionButton secretWordsActionButton = new SecretWordsActionButton(parentActivity, null, 0, 6, null);
-        int i = C3634R.C3636drawable.msg_qrcode;
-        String string = LocaleController.getString("GetQRCode", C3634R.string.GetQRCode);
+        int i = C3632R.C3634drawable.msg_qrcode;
+        String string = LocaleController.getString("GetQRCode", C3632R.string.GetQRCode);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"GetQRCode\", R.string.GetQRCode)");
         secretWordsActionButton.setupView(i, string);
         ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createQRButton$1$1
@@ -1462,7 +1462,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                 CreateWalletFragment createWalletFragment = CreateWalletFragment.this;
                 qrCodeBottomSheet = createWalletFragment.getQrCodeBottomSheet();
                 resourceManager = CreateWalletFragment.this.getResourceManager();
-                qrCodeBottomSheet.setupWalletTypeBackup(resourceManager.getString(C3634R.string.wallet_backup_secret_words_qr_title), LocaleController.getString("Close", C3634R.string.Close));
+                qrCodeBottomSheet.setupWalletTypeBackup(resourceManager.getString(C3632R.string.wallet_backup_secret_words_qr_title), LocaleController.getString("Close", C3632R.string.Close));
                 createWalletFragment.showDialog(qrCodeBottomSheet);
             }
         }, 1, null);
@@ -1474,7 +1474,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         SecretWordsActionButton secretWordsActionButton = new SecretWordsActionButton(parentActivity, null, 0, 6, null);
-        secretWordsActionButton.setupView(C3634R.C3636drawable.msg_qrcode, getResourceManager().getString(C3634R.string.wallet_backup_scan_qr));
+        secretWordsActionButton.setupView(C3632R.C3634drawable.msg_qrcode, getResourceManager().getString(C3632R.string.wallet_backup_scan_qr));
         ViewExtKt.safeThrottledClick$default(secretWordsActionButton, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createScanQRButton$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -1558,38 +1558,38 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     private final void setupViewsContents() {
         CreateWalletScreenType createWalletScreenType = this.screenType;
         if (createWalletScreenType instanceof CreateWalletScreenType.SecretWords) {
-            getImageView().setAnimation(C3634R.raw.fork_wallet_note, 112, 112);
-            this.actionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_backup_secret_words_title));
-            getTitleTextView().setText(getResourceManager().getString(C3634R.string.wallet_backup_secret_words));
-            getDescriptionText().setText(getResourceManager().getString(C3634R.string.wallet_backup_secret_words_info));
-            getActionButton().setText(getResourceManager().getString(C3634R.string.wallet_backup_done));
+            getImageView().setAnimation(C3632R.raw.fork_wallet_note, 112, 112);
+            this.actionBar.setTitle(getResourceManager().getString(C3632R.string.wallet_backup_secret_words_title));
+            getTitleTextView().setText(getResourceManager().getString(C3632R.string.wallet_backup_secret_words));
+            getDescriptionText().setText(getResourceManager().getString(C3632R.string.wallet_backup_secret_words_info));
+            getActionButton().setText(getResourceManager().getString(C3632R.string.wallet_backup_done));
             this.actionBar.getTitleTextView().setAlpha(BitmapDescriptorFactory.HUE_RED);
         } else if (createWalletScreenType instanceof CreateWalletScreenType.WordsCheck) {
-            getImageView().setAnimation(C3634R.raw.wallet_science, 104, 104);
-            this.actionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_backup_test_time_title));
-            getTitleTextView().setText(getResourceManager().getString(C3634R.string.wallet_backup_test_time));
-            getActionButton().setText(getResourceManager().getString(C3634R.string.wallet_backup_continue));
+            getImageView().setAnimation(C3632R.raw.wallet_science, 104, 104);
+            this.actionBar.setTitle(getResourceManager().getString(C3632R.string.wallet_backup_test_time_title));
+            getTitleTextView().setText(getResourceManager().getString(C3632R.string.wallet_backup_test_time));
+            getActionButton().setText(getResourceManager().getString(C3632R.string.wallet_backup_continue));
             this.actionBar.getTitleTextView().setAlpha(BitmapDescriptorFactory.HUE_RED);
         } else if (createWalletScreenType instanceof CreateWalletScreenType.Ready) {
-            getImageView().setAnimation(C3634R.raw.wallet_allset, TsExtractor.TS_STREAM_TYPE_HDMV_DTS, TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
+            getImageView().setAnimation(C3632R.raw.wallet_allset, TsExtractor.TS_STREAM_TYPE_HDMV_DTS, TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
             getImageView().setPadding(AndroidUtilities.m104dp(27), 0, 0, 0);
-            getTitleTextView().setText(getResourceManager().getString(C3634R.string.wallet_backup_ready));
-            getDescriptionText().setText(getResourceManager().getString(C3634R.string.wallet_backup_ready_info));
-            getActionButton().setText(getResourceManager().getString(C3634R.string.wallet_backup_view));
+            getTitleTextView().setText(getResourceManager().getString(C3632R.string.wallet_backup_ready));
+            getDescriptionText().setText(getResourceManager().getString(C3632R.string.wallet_backup_ready_info));
+            getActionButton().setText(getResourceManager().getString(C3632R.string.wallet_backup_view));
         } else if (createWalletScreenType instanceof CreateWalletScreenType.Import) {
-            getImageView().setAnimation(C3634R.raw.fork_wallet_note, 112, 112);
-            C3706ActionBar c3706ActionBar = this.actionBar;
+            getImageView().setAnimation(C3632R.raw.fork_wallet_note, 112, 112);
+            C3704ActionBar c3704ActionBar = this.actionBar;
             ResourceManager resourceManager = getResourceManager();
-            int i = C3634R.string.wallet_import_secret_words;
-            c3706ActionBar.setTitle(resourceManager.getString(i));
+            int i = C3632R.string.wallet_import_secret_words;
+            c3704ActionBar.setTitle(resourceManager.getString(i));
             getTitleTextView().setText(getResourceManager().getString(i));
-            getDescriptionText().setText(getResourceManager().getString(C3634R.string.wallet_import_info));
-            getActionButton().setText(getResourceManager().getString(C3634R.string.wallet_backup_continue));
+            getDescriptionText().setText(getResourceManager().getString(C3632R.string.wallet_import_info));
+            getActionButton().setText(getResourceManager().getString(C3632R.string.wallet_backup_continue));
             this.actionBar.getTitleTextView().setAlpha(BitmapDescriptorFactory.HUE_RED);
             getDescriptionText2().setVisibility(0);
             TextView descriptionText2 = getDescriptionText2();
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) createClickableText(C3634R.string.wallet_import_dont_have, new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$1$1
+            spannableStringBuilder.append((CharSequence) createClickableText(C3632R.string.wallet_import_dont_have, new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
@@ -1610,7 +1610,7 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
                 }
             }));
             if (getCryptoPreferenceHelper().getCurrentBlockchainType().isBip39PhraseBased()) {
-                StringsKt.append(spannableStringBuilder, "\n", "\n", createClickableText(C3634R.string.wallet_import_change_words_count, new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$1$2
+                StringsKt.append(spannableStringBuilder, "\n", "\n", createClickableText(C3632R.string.wallet_import_change_words_count, new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$1$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     {
                         super(0);
@@ -1631,12 +1631,12 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             descriptionText2.setText(spannableStringBuilder);
         } else if (createWalletScreenType instanceof CreateWalletScreenType.TooBad) {
             getImageView().setAutoRepeat(true);
-            getImageView().setAnimation(C3634R.raw.fork_wallet_too_bad, 120, 120);
-            getTitleTextView().setText(getResourceManager().getString(C3634R.string.wallet_import_too_bad));
-            getDescriptionText().setText(getResourceManager().getString(C3634R.string.wallet_import_too_bad_info));
-            getActionButton().setText(getResourceManager().getString(C3634R.string.wallet_import_too_bad_enter));
+            getImageView().setAnimation(C3632R.raw.fork_wallet_too_bad, 120, 120);
+            getTitleTextView().setText(getResourceManager().getString(C3632R.string.wallet_import_too_bad));
+            getDescriptionText().setText(getResourceManager().getString(C3632R.string.wallet_import_too_bad_info));
+            getActionButton().setText(getResourceManager().getString(C3632R.string.wallet_import_too_bad_enter));
             getDescriptionText2().setVisibility(0);
-            getDescriptionText2().setText(createClickableText(C3634R.string.wallet_import_too_bad_create, new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$2
+            getDescriptionText2().setText(createClickableText(C3632R.string.wallet_import_too_bad_create, new Function0<Unit>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
@@ -1657,30 +1657,30 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         if (canGoBack()) {
-            c3706ActionBar.setBackButtonDrawable(new BackDrawable(false));
+            c3704ActionBar.setBackButtonDrawable(new BackDrawable(false));
         }
-        c3706ActionBar.setBackgroundColor(0);
+        c3704ActionBar.setBackgroundColor(0);
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3706ActionBar.setTitleColor(getThemedColor(i));
-        c3706ActionBar.setItemsColor(getThemedColor(i), false);
-        c3706ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarWhiteSelector), false);
-        c3706ActionBar.setCastShadows(false);
-        c3706ActionBar.setOccupyStatusBar(false);
-        c3706ActionBar.setY(c3706ActionBar.getY() + AndroidUtilities.statusBarHeight);
-        c3706ActionBar.setExtraHeight(AndroidUtilities.statusBarHeight);
-        c3706ActionBar.setAddToContainer(false);
+        c3704ActionBar.setTitleColor(getThemedColor(i));
+        c3704ActionBar.setItemsColor(getThemedColor(i), false);
+        c3704ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarWhiteSelector), false);
+        c3704ActionBar.setCastShadows(false);
+        c3704ActionBar.setOccupyStatusBar(false);
+        c3704ActionBar.setY(c3704ActionBar.getY() + AndroidUtilities.statusBarHeight);
+        c3704ActionBar.setExtraHeight(AndroidUtilities.statusBarHeight);
+        c3704ActionBar.setAddToContainer(false);
         if (!AndroidUtilities.isTablet()) {
-            c3706ActionBar.showActionModeTop();
+            c3704ActionBar.showActionModeTop();
         }
         if (this.screenType instanceof CreateWalletScreenType.SecretWords) {
-            ActionBarMenuItem addItem = c3706ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3634R.C3636drawable.ic_ab_other);
-            addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
-            addItem.addSubItem(IdFabric$Menu.PDF, C3634R.C3636drawable.fork_ic_pdf_24, getResourceManager().getString(C3634R.string.wallet_backup_secret_words_pdf));
+            ActionBarMenuItem addItem = c3704ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3632R.C3634drawable.ic_ab_other);
+            addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
+            addItem.addSubItem(IdFabric$Menu.PDF, C3632R.C3634drawable.fork_ic_pdf_24, getResourceManager().getString(C3632R.string.wallet_backup_secret_words_pdf));
         }
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupActionBar$1$2
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     CreateWalletFragment.this.finishFragment();
@@ -1702,12 +1702,12 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
-                m1626invoke(cryptoEvent);
+                m1627invoke(cryptoEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1626invoke(DomainRxEvents.CryptoEvent it) {
+            public final void m1627invoke(DomainRxEvents.CryptoEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.CryptoEvent cryptoEvent = it;
                 if (Intrinsics.areEqual(cryptoEvent, DomainRxEvents.SuccessRecreateWalletByPassword.INSTANCE) ? true : Intrinsics.areEqual(cryptoEvent, DomainRxEvents.WalletReset.INSTANCE)) {
@@ -2158,13 +2158,13 @@ public final class CreateWalletFragment extends WalletCreationBaseFragment imple
             ImageView imageView = new ImageView(context);
             imageView.setFocusable(false);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3634R.C3636drawable.miniplayer_close);
+            imageView.setImageResource(C3632R.C3634drawable.miniplayer_close);
             imageView.setAlpha(BitmapDescriptorFactory.HUE_RED);
             imageView.setScaleX(BitmapDescriptorFactory.HUE_RED);
             imageView.setScaleY(BitmapDescriptorFactory.HUE_RED);
             imageView.setRotation(45.0f);
             imageView.setColorFilter(new PorterDuffColorFilter(createWalletFragment.getThemedColor(Theme.key_windowBackgroundWhiteGrayText7), PorterDuff.Mode.MULTIPLY));
-            imageView.setContentDescription(LocaleController.getString("ClearButton", C3634R.string.ClearButton));
+            imageView.setContentDescription(LocaleController.getString("ClearButton", C3632R.string.ClearButton));
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$NumericEditText$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {

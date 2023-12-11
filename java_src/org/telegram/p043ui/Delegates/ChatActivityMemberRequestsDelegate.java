@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -61,7 +61,7 @@ public class ChatActivityMemberRequestsDelegate {
         if (this.root == null) {
             FrameLayout frameLayout = new FrameLayout(this.fragment.getParentActivity());
             this.root = frameLayout;
-            frameLayout.setBackgroundResource(C3634R.C3636drawable.blockpanel);
+            frameLayout.setBackgroundResource(C3632R.C3634drawable.blockpanel);
             this.root.getBackground().mutate().setColorFilter(new PorterDuffColorFilter(this.fragment.getThemedColor(Theme.key_chat_topPanelBackground), PorterDuff.Mode.MULTIPLY));
             this.root.setVisibility(8);
             this.pendingRequestsEnterOffset = -getViewHeight();
@@ -104,8 +104,8 @@ public class ChatActivityMemberRequestsDelegate {
                 imageView.setBackground(Theme.createSelectorDrawable(this.fragment.getThemedColor(Theme.key_inappPlayerClose) & 436207615, 1, AndroidUtilities.m104dp(14)));
             }
             this.closeView.setColorFilter(new PorterDuffColorFilter(this.fragment.getThemedColor(Theme.key_chat_topPanelClose), PorterDuff.Mode.MULTIPLY));
-            this.closeView.setContentDescription(LocaleController.getString("Close", C3634R.string.Close));
-            this.closeView.setImageResource(C3634R.C3636drawable.miniplayer_close);
+            this.closeView.setContentDescription(LocaleController.getString("Close", C3632R.string.Close));
+            this.closeView.setImageResource(C3632R.C3634drawable.miniplayer_close);
             this.closeView.setScaleType(ImageView.ScaleType.CENTER);
             this.closeView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Delegates.ChatActivityMemberRequestsDelegate$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener

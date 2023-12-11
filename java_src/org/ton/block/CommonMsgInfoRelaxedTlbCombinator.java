@@ -40,8 +40,8 @@ public final class CommonMsgInfoRelaxedTlbCombinator extends TlbCombinator<Commo
             Coins.Companion companion = Coins.Companion;
             companion.storeTlb(cellBuilder, (CellBuilder) value.getIhrFee());
             companion.storeTlb(cellBuilder, (CellBuilder) value.getFwdFee());
-            cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5100getCreatedLtsVKNKU());
-            cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5099getCreatedAtpVg5ArA());
+            cellBuilder.mo5193storeUInt64VKZWuLQ(value.m5082getCreatedLtsVKNKU());
+            cellBuilder.mo5192storeUInt32WZ4Q5Ns(value.m5081getCreatedAtpVg5ArA());
         }
 
         @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
@@ -54,7 +54,7 @@ public final class CommonMsgInfoRelaxedTlbCombinator extends TlbCombinator<Commo
             MsgAddressInt loadTlb2 = MsgAddressInt.Companion.loadTlb(cellSlice);
             CurrencyCollection loadTlb3 = CurrencyCollection.Companion.loadTlb(cellSlice);
             Coins.Companion companion = Coins.Companion;
-            return new CommonMsgInfoRelaxed.IntMsgInfoRelaxed(loadBit, loadBit2, loadBit3, loadTlb, loadTlb2, loadTlb3, companion.loadTlb(cellSlice), companion.loadTlb(cellSlice), cellSlice.mo5221loadUInt64sVKNKU(), cellSlice.mo5220loadUInt32pVg5ArA(), null);
+            return new CommonMsgInfoRelaxed.IntMsgInfoRelaxed(loadBit, loadBit2, loadBit3, loadTlb, loadTlb2, loadTlb3, companion.loadTlb(cellSlice), companion.loadTlb(cellSlice), cellSlice.mo5203loadUInt64sVKNKU(), cellSlice.mo5202loadUInt32pVg5ArA(), null);
         }
     }
 
@@ -73,14 +73,14 @@ public final class CommonMsgInfoRelaxedTlbCombinator extends TlbCombinator<Commo
             Intrinsics.checkNotNullParameter(value, "value");
             MsgAddress.Companion.storeTlb(cellBuilder, (CellBuilder) value.getSrc());
             MsgAddressExt.Companion.storeTlb(cellBuilder, (CellBuilder) value.getDest());
-            cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5098getCreatedLtsVKNKU());
-            cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5097getCreatedAtpVg5ArA());
+            cellBuilder.mo5193storeUInt64VKZWuLQ(value.m5080getCreatedLtsVKNKU());
+            cellBuilder.mo5192storeUInt32WZ4Q5Ns(value.m5079getCreatedAtpVg5ArA());
         }
 
         @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
         public CommonMsgInfoRelaxed.ExtOutMsgInfoRelaxed loadTlb(CellSlice cellSlice) {
             Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-            return new CommonMsgInfoRelaxed.ExtOutMsgInfoRelaxed(MsgAddress.Companion.loadTlb(cellSlice), MsgAddressExt.Companion.loadTlb(cellSlice), cellSlice.mo5221loadUInt64sVKNKU(), cellSlice.mo5220loadUInt32pVg5ArA(), null);
+            return new CommonMsgInfoRelaxed.ExtOutMsgInfoRelaxed(MsgAddress.Companion.loadTlb(cellSlice), MsgAddressExt.Companion.loadTlb(cellSlice), cellSlice.mo5203loadUInt64sVKNKU(), cellSlice.mo5202loadUInt32pVg5ArA(), null);
         }
     }
 }

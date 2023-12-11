@@ -86,7 +86,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/BannerSlide;->getAnimatedIcon()I
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/BannerSlide;->getAnimatedIconResId()I
 
     move-result v0
 

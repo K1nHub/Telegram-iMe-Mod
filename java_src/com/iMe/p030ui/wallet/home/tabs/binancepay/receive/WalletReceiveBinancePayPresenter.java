@@ -44,7 +44,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import moxy.InjectViewState;
 import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ManageLinksActivity;
@@ -164,7 +164,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
             double parseDouble = Double.parseDouble(amount);
             TokenDetailed tokenDetailed = this.selectedToken;
             Intrinsics.checkNotNull(tokenDetailed);
-            Observable<R> flatMap = binanceInternalInteractor.createCollection(j, parseDouble, tokenDetailed.getTicker()).flatMap(new C2346xde1d1050(new Function1<Result<? extends BinanceCollectionOrder>, ObservableSource<? extends Result<? extends TLRPC$messages_BotResults>>>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$createCollection$$inlined$flatMapSuccess$1
+            Observable<R> flatMap = binanceInternalInteractor.createCollection(j, parseDouble, tokenDetailed.getTicker()).flatMap(new C2343xde1d1050(new Function1<Result<? extends BinanceCollectionOrder>, ObservableSource<? extends Result<? extends TLRPC$messages_BotResults>>>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$createCollection$$inlined$flatMapSuccess$1
                 {
                     super(1);
                 }
@@ -239,7 +239,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
  com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$createCollection$lambda$0$$inlined$wrapAsResult$1.INSTANCE com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$createCollection$lambda$0$$inlined$wrapAsResult$1
                                     return
                                 */
-                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2342x2f859284.<clinit>():void");
+                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2339x2f859284.<clinit>():void");
                             }
 
                             {
@@ -249,7 +249,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                                     r1.<init>(r0)
                                     return
                                 */
-                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2342x2f859284.<init>():void");
+                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2339x2f859284.<init>():void");
                             }
 
                             @Override // kotlin.jvm.functions.Function1
@@ -260,7 +260,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                                     com.iMe.storage.domain.model.Result r2 = r0.success(r2)
                                     return r2
                                 */
-                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2342x2f859284.invoke(java.lang.Object):com.iMe.storage.domain.model.Result");
+                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2339x2f859284.invoke(java.lang.Object):com.iMe.storage.domain.model.Result");
                             }
 
                             @Override // kotlin.jvm.functions.Function1
@@ -270,7 +270,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                                     com.iMe.storage.domain.model.Result r1 = r0.invoke(r1)
                                     return r1
                                 */
-                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2342x2f859284.invoke(java.lang.Object):java.lang.Object");
+                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2339x2f859284.invoke(java.lang.Object):java.lang.Object");
                             }
                         }
                         com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$inlined$sam$i$io_reactivex_functions_Function$0 r1 = new com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$inlined$sam$i$io_reactivex_functions_Function$0
@@ -287,7 +287,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
  com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$createCollection$lambda$0$$inlined$wrapAsResult$2.INSTANCE com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$createCollection$lambda$0$$inlined$wrapAsResult$2
                                     return
                                 */
-                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2343x2f859285.<clinit>():void");
+                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2340x2f859285.<clinit>():void");
                             }
 
                             {
@@ -297,7 +297,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                                     r1.<init>(r0)
                                     return
                                 */
-                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2343x2f859285.<init>():void");
+                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2340x2f859285.<init>():void");
                             }
 
                             @Override // kotlin.jvm.functions.Function1
@@ -315,7 +315,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                                     com.iMe.storage.domain.model.Result r4 = com.iMe.storage.domain.model.Result.Companion.error$default(r4, r0, r1, r2, r1)
                                     return r4
                                 */
-                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2343x2f859285.invoke(java.lang.Throwable):com.iMe.storage.domain.model.Result");
+                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2340x2f859285.invoke(java.lang.Throwable):com.iMe.storage.domain.model.Result");
                             }
 
                             @Override // kotlin.jvm.functions.Function1
@@ -326,7 +326,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                                     com.iMe.storage.domain.model.Result r1 = r0.invoke(r1)
                                     return r1
                                 */
-                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2343x2f859285.invoke(java.lang.Object):java.lang.Object");
+                                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2340x2f859285.invoke(java.lang.Object):java.lang.Object");
                             }
                         }
                         com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$inlined$sam$i$io_reactivex_functions_Function$0 r1 = new com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$inlined$sam$i$io_reactivex_functions_Function$0
@@ -339,7 +339,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                         com.iMe.storage.data.network.model.error.ErrorModel r10 = new com.iMe.storage.data.network.model.error.ErrorModel
                         com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter r0 = com.iMe.p030ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter.this
                         com.iMe.storage.domain.utils.system.ResourceManager r0 = com.iMe.p030ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter.access$getResourceManager$p(r0)
-                        int r3 = org.telegram.messenger.C3634R.string.wallet_recipient_validation_chat_with_user_first_error
+                        int r3 = org.telegram.messenger.C3632R.string.wallet_recipient_validation_chat_with_user_first_error
                         java.lang.String r4 = r0.getString(r3)
                         com.iMe.storage.data.network.handlers.impl.ApiErrorHandler$ErrorStatus r5 = com.iMe.storage.data.network.handlers.impl.ApiErrorHandler.ErrorStatus.BAD_RESPONSE
                         r6 = 0
@@ -369,7 +369,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                     Ld7:
                         return r10
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2339x1b3c7af8.invoke(com.iMe.storage.domain.model.Result):io.reactivex.ObservableSource");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.home.tabs.binancepay.receive.C2336x1b3c7af8.invoke(com.iMe.storage.domain.model.Result):io.reactivex.ObservableSource");
                 }
             }));
             Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
@@ -387,12 +387,12 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TLRPC$messages_BotResults> result) {
-                    m1753invoke(result);
+                    m1754invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1753invoke(Result<? extends TLRPC$messages_BotResults> it) {
+                public final void m1754invoke(Result<? extends TLRPC$messages_BotResults> it) {
                     ResourceManager resourceManager;
                     TelegramGateway telegramGateway;
                     HashMap formatBotRequestParams;
@@ -420,13 +420,13 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                         j2 = this.chatId;
                         SendMessagesHelper.prepareSendingBotContextResult(baseFragment, accountInstance, tLRPC$BotInlineResult, formatBotRequestParams, j2, null, null, null, null, true, 0, null);
                         resourceManager2 = this.resourceManager;
-                        String string = resourceManager2.getString(C3634R.string.wallet_binance_pay_request_send_success_dialog_title);
+                        String string = resourceManager2.getString(C3632R.string.wallet_binance_pay_request_send_success_dialog_title);
                         resourceManager3 = this.resourceManager;
-                        int i = C3634R.string.wallet_binance_pay_request_send_success_dialog_description;
+                        int i = C3632R.string.wallet_binance_pay_request_send_success_dialog_description;
                         l = this.recipientId;
                         String string2 = resourceManager3.getString(i, String.valueOf(l));
                         resourceManager4 = this.resourceManager;
-                        String string3 = resourceManager4.getString(C3634R.string.common_ok);
+                        String string3 = resourceManager4.getString(C3632R.string.common_ok);
                         final WalletReceiveBinancePayPresenter walletReceiveBinancePayPresenter2 = this;
                         ((WalletReceiveBinancePayView) this.getViewState()).showCreatedCollectionSuccessDialog(string, string2, string3, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.receive.WalletReceiveBinancePayPresenter$createCollection$2$1
                             @Override // com.iMe.fork.utils.Callbacks$Callback
@@ -537,12 +537,12 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenInfo>> result) {
-                m1754invoke(result);
+                m1755invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1754invoke(Result<? extends List<? extends BinanceTokenInfo>> it) {
+            public final void m1755invoke(Result<? extends List<? extends BinanceTokenInfo>> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends BinanceTokenInfo>> result = it;
@@ -604,9 +604,9 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
         Double doubleOrNull;
         Double doubleOrNull2;
         if (this.selectedUser == null) {
-            ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.wallet_binance_receive_selected_user_is_empty));
+            ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.wallet_binance_receive_selected_user_is_empty));
         } else if (this.selectedToken == null) {
-            ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.wallet_binance_receive_selected_token_is_empty));
+            ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.wallet_binance_receive_selected_token_is_empty));
         } else {
             List<BinanceTokenInfo> list = this.availablePaymentTokens;
             if (!(list instanceof Collection) || !list.isEmpty()) {
@@ -621,7 +621,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
             }
             z = false;
             if (!z) {
-                ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.wallet_binance_receive_selected_token_is_unsupported));
+                ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.wallet_binance_receive_selected_token_is_unsupported));
             } else {
                 doubleOrNull = StringsKt__StringNumberConversionsJVMKt.toDoubleOrNull(str);
                 if (doubleOrNull != null) {
@@ -630,7 +630,7 @@ public final class WalletReceiveBinancePayPresenter extends BasePresenter<Wallet
                         return true;
                     }
                 }
-                ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.wallet_binance_receive_amount_is_empty_or_zero));
+                ((WalletReceiveBinancePayView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.wallet_binance_receive_amount_is_empty_or_zero));
             }
         }
         return false;

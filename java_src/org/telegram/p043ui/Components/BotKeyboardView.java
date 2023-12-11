@@ -9,7 +9,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$KeyboardButton;
@@ -141,7 +141,7 @@ public class BotKeyboardView extends LinearLayout {
                 ImageView imageView = new ImageView(getContext());
                 imageView.setColorFilter(getThemedColor(Theme.key_chat_botKeyboardButtonText));
                 if ((tLRPC$KeyboardButton instanceof TLRPC$TL_keyboardButtonWebView) || (tLRPC$KeyboardButton instanceof TLRPC$TL_keyboardButtonSimpleWebView)) {
-                    imageView.setImageResource(C3634R.C3636drawable.bot_webview);
+                    imageView.setImageResource(C3632R.C3634drawable.bot_webview);
                     i = 0;
                     imageView.setVisibility(0);
                 } else {

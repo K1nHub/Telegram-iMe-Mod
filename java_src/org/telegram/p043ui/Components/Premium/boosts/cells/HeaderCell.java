@@ -16,7 +16,7 @@ import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -143,39 +143,39 @@ public class HeaderCell extends FrameLayout {
         marginLayoutParams.topMargin = -AndroidUtilities.m104dp(6);
         setLayoutParams(marginLayoutParams);
         setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray, this.resourcesProvider));
-        this.titleView.setText(LocaleController.formatString("BoostingBoostsViaGifts", C3634R.string.BoostingBoostsViaGifts, new Object[0]));
-        this.subtitleView.setText(LocaleController.formatString("BoostingGetMoreBoost", C3634R.string.BoostingGetMoreBoost, new Object[0]));
+        this.titleView.setText(LocaleController.formatString("BoostingBoostsViaGifts", C3632R.string.BoostingBoostsViaGifts, new Object[0]));
+        this.subtitleView.setText(LocaleController.formatString("BoostingGetMoreBoost", C3632R.string.BoostingGetMoreBoost, new Object[0]));
         this.subtitleView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3, this.resourcesProvider));
     }
 
     public void setUsedGiftLinkText() {
-        this.titleView.setText(LocaleController.formatString("BoostingUsedGiftLink", C3634R.string.BoostingUsedGiftLink, new Object[0]));
-        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkUsed", C3634R.string.BoostingLinkUsed, new Object[0])));
+        this.titleView.setText(LocaleController.formatString("BoostingUsedGiftLink", C3632R.string.BoostingUsedGiftLink, new Object[0]));
+        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkUsed", C3632R.string.BoostingLinkUsed, new Object[0])));
     }
 
     public void setGiftLinkText() {
-        this.titleView.setText(LocaleController.formatString("BoostingGiftLink", C3634R.string.BoostingGiftLink, new Object[0]));
-        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllows", C3634R.string.BoostingLinkAllows, new Object[0])));
+        this.titleView.setText(LocaleController.formatString("BoostingGiftLink", C3632R.string.BoostingGiftLink, new Object[0]));
+        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllows", C3632R.string.BoostingLinkAllows, new Object[0])));
     }
 
     public void setUnclaimedText() {
-        this.titleView.setText(LocaleController.formatString("BoostingGiftLink", C3634R.string.BoostingGiftLink, new Object[0]));
-        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllowsAnyone", C3634R.string.BoostingLinkAllowsAnyone, new Object[0])));
+        this.titleView.setText(LocaleController.formatString("BoostingGiftLink", C3632R.string.BoostingGiftLink, new Object[0]));
+        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("BoostingLinkAllowsAnyone", C3632R.string.BoostingLinkAllowsAnyone, new Object[0])));
     }
 
     public void setGiftLinkToUserText(long j, final Utilities.Callback<TLObject> callback) {
-        this.titleView.setText(LocaleController.formatString("BoostingGiftLink", C3634R.string.BoostingGiftLink, new Object[0]));
+        this.titleView.setText(LocaleController.formatString("BoostingGiftLink", C3632R.string.BoostingGiftLink, new Object[0]));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         try {
-            String string = LocaleController.getString("BoostingLinkAllowsToUser", C3634R.string.BoostingLinkAllowsToUser);
-            String substring = string.substring(0, string.indexOf("**%1s**") + 7);
-            String substring2 = string.substring(string.indexOf("**%1s**") + 7);
+            String string = LocaleController.getString("BoostingLinkAllowsToUser", C3632R.string.BoostingLinkAllowsToUser);
+            String substring = string.substring(0, string.indexOf("**%1$s**") + 8);
+            String substring2 = string.substring(string.indexOf("**%1$s**") + 8);
             final TLRPC$User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(j));
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             spannableStringBuilder2.append((CharSequence) "**");
             spannableStringBuilder2.append(Emoji.replaceEmoji((CharSequence) UserObject.getUserName(user), this.subtitleView.getPaint().getFontMetricsInt(), AndroidUtilities.m104dp(12), false));
             spannableStringBuilder2.append((CharSequence) "**");
-            SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(substring.toString().replace("**%1s**", spannableStringBuilder2), Theme.key_chat_messageLinkIn, 0, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.cells.HeaderCell$$ExternalSyntheticLambda0
+            SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(substring.toString().replace("**%1$s**", spannableStringBuilder2), Theme.key_chat_messageLinkIn, 0, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.cells.HeaderCell$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     Utilities.Callback.this.run(user);

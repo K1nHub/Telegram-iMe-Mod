@@ -894,12 +894,12 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 272
+    .line 266
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->currentWallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     if-nez v2, :cond_2
 
-    .line 273
+    .line 267
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chooseBackgroundTextView:Landroid/widget/TextView;
 
     sget v6, Lorg/telegram/messenger/R$string;->ChooseBackgroundFromGallery:I
@@ -914,7 +914,7 @@
 
     goto :goto_2
 
-    .line 275
+    .line 269
     :cond_2
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chooseBackgroundTextView:Landroid/widget/TextView;
 
@@ -928,7 +928,7 @@
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 278
+    .line 272
     :goto_2
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chooseBackgroundTextView:Landroid/widget/TextView;
 
@@ -936,7 +936,7 @@
 
     invoke-virtual {v2, v4, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 279
+    .line 273
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chooseBackgroundTextView:Landroid/widget/TextView;
 
     new-instance v8, Lorg/telegram/ui/Components/ChatThemeBottomSheet$4;
@@ -945,7 +945,7 @@
 
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 285
+    .line 279
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->rootLayout:Landroid/widget/FrameLayout;
 
     iget-object v8, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chooseBackgroundTextView:Landroid/widget/TextView;
@@ -970,7 +970,7 @@
 
     invoke-virtual {v2, v8, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 287
+    .line 281
     new-instance v2, Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -981,22 +981,22 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
-    .line 288
+    .line 282
     invoke-virtual {v2}, Lorg/telegram/ui/Components/AnimatedTextView;->getDrawable()Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     move-result-object v2
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setEllipsizeByGradient(Z)V
 
-    .line 289
+    .line 283
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     iput-boolean v7, v2, Lorg/telegram/ui/Components/AnimatedTextView;->adaptWidth:Z
 
-    .line 290
+    .line 284
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 291
+    .line 285
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
@@ -1007,7 +1007,7 @@
 
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 292
+    .line 286
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v8, 0xf
@@ -1020,7 +1020,7 @@
 
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 293
+    .line 287
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -1029,7 +1029,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AnimatedTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 294
+    .line 288
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->rootLayout:Landroid/widget/FrameLayout;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -1052,12 +1052,12 @@
 
     invoke-virtual {v2, v3, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 297
+    .line 291
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->currentWallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     if-eqz v2, :cond_3
 
-    .line 298
+    .line 292
     new-instance v2, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -1068,27 +1068,27 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
-    .line 299
+    .line 293
     sget-object v3, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 300
+    .line 294
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 301
+    .line 295
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 302
+    .line 296
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 303
+    .line 297
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->RestToDefaultBackground:I
@@ -1101,12 +1101,12 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 305
+    .line 299
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 306
+    .line 300
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     new-instance v3, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda6;
@@ -1115,7 +1115,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 316
+    .line 310
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->rootLayout:Landroid/widget/FrameLayout;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
@@ -1140,7 +1140,7 @@
 
     invoke-virtual {v2, v3, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 318
+    .line 312
     new-instance v2, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -1151,27 +1151,27 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
-    .line 319
+    .line 313
     sget-object v3, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 320
+    .line 314
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 321
+    .line 315
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 322
+    .line 316
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 323
+    .line 317
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->ChatThemeApplyHint:I
@@ -1194,12 +1194,12 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 324
+    .line 318
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v4, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 325
+    .line 319
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->rootLayout:Landroid/widget/FrameLayout;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
@@ -1212,11 +1212,11 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 327
+    .line 321
     :cond_3
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->updateButtonColors()V
 
-    .line 328
+    .line 322
     invoke-direct {v0, v7}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->updateState(Z)V
 
     return-void
@@ -1563,7 +1563,7 @@
 .method private applySelectedTheme()V
     .locals 14
 
-    .line 842
+    .line 836
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->selectedItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
@@ -1572,12 +1572,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 843
+    .line 837
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     if-eq v1, v0, :cond_6
 
-    .line 845
+    .line 839
     iget-boolean v0, v1, Lorg/telegram/ui/ActionBar/EmojiThemes;->showAsDefaultStub:Z
 
     if-nez v0, :cond_0
@@ -1591,7 +1591,7 @@
     :cond_0
     move-object v0, v2
 
-    .line 846
+    .line 840
     :goto_0
     iget v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -1609,7 +1609,7 @@
 
     invoke-virtual {v3, v4, v5, v6}, Lorg/telegram/messenger/ChatThemeController;->clearWallpaper(JZ)V
 
-    .line 847
+    .line 841
     iget v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/ChatThemeController;->getInstance(I)Lorg/telegram/messenger/ChatThemeController;
@@ -1626,7 +1626,7 @@
 
     invoke-virtual {v3, v4, v5, v0, v7}, Lorg/telegram/messenger/ChatThemeController;->setDialogTheme(JLjava/lang/String;Z)V
 
-    .line 848
+    .line 842
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hasChanges()Z
 
     move-result v3
@@ -1644,13 +1644,13 @@
 
     move-result-object v3
 
-    .line 849
+    .line 843
     :goto_1
     iget-boolean v4, v1, Lorg/telegram/ui/ActionBar/EmojiThemes;->showAsDefaultStub:Z
 
     if-nez v4, :cond_2
 
-    .line 850
+    .line 844
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
     iget-boolean v5, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->originalIsDark:Z
@@ -1663,7 +1663,7 @@
 
     goto :goto_2
 
-    .line 852
+    .line 846
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
@@ -1675,11 +1675,11 @@
 
     invoke-virtual {v1, v2, v3, v7, v4}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->setCurrentTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;Lorg/telegram/tgnet/TLRPC$WallPaper;ZLjava/lang/Boolean;)V
 
-    .line 854
+    .line 848
     :goto_2
     iput-boolean v7, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->isApplyClicked:Z
 
-    .line 856
+    .line 850
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
@@ -1688,12 +1688,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 857
+    .line 851
     iget-boolean v3, v1, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
     if-nez v3, :cond_6
 
-    .line 859
+    .line 853
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
@@ -1712,7 +1712,7 @@
     :goto_3
     if-eqz v0, :cond_4
 
-    .line 863
+    .line 857
     iget v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -1730,7 +1730,7 @@
     :cond_4
     move-object v12, v2
 
-    .line 864
+    .line 858
     :goto_4
     new-instance v0, Lorg/telegram/ui/Components/StickerSetBulletinLayout;
 
@@ -1752,7 +1752,7 @@
 
     invoke-direct/range {v8 .. v13}, Lorg/telegram/ui/Components/StickerSetBulletinLayout;-><init>(Landroid/content/Context;Lorg/telegram/tgnet/TLObject;ILorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 865
+    .line 859
     iget-object v4, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->subtitleTextView:Landroid/widget/TextView;
 
     const/16 v5, 0x8
@@ -1761,7 +1761,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 867
+    .line 861
     iget-object v3, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->ThemeAlsoDisabledForHint:I
@@ -1786,7 +1786,7 @@
 
     goto :goto_5
 
-    .line 869
+    .line 863
     :cond_5
     iget-object v3, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
@@ -1810,13 +1810,13 @@
 
     invoke-virtual {v3, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 871
+    .line 865
     :goto_5
     iget-object v1, v0, Lorg/telegram/ui/Components/Bulletin$TwoLineLayout;->titleTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 872
+    .line 866
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     const/16 v2, 0xabe
@@ -1825,13 +1825,13 @@
 
     move-result-object v2
 
-    .line 875
+    .line 869
     :cond_6
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->dismiss()V
 
     if-eqz v2, :cond_7
 
-    .line 877
+    .line 871
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
     :cond_7
@@ -1841,7 +1841,7 @@
 .method private fixColorsAfterAnotherWindow()V
     .locals 8
 
-    .line 1227
+    .line 1221
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
 
     move-result v0
@@ -1857,10 +1857,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1230
+    .line 1224
     sput-boolean v0, Lorg/telegram/ui/ActionBar/Theme;->disallowChangeServiceMessageColor:Z
 
-    .line 1231
+    .line 1225
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hasChanges()Z
 
     move-result v1
@@ -1881,7 +1881,7 @@
     :goto_0
     move-object v4, v1
 
-    .line 1232
+    .line 1226
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->selectedItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
     iget-object v3, v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;->chatTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
@@ -1890,7 +1890,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 1233
+    .line 1227
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
     const/4 v3, 0x0
@@ -1909,7 +1909,7 @@
 
     goto :goto_1
 
-    .line 1235
+    .line 1229
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
@@ -1925,29 +1925,29 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->setCurrentTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;Lorg/telegram/tgnet/TLRPC$WallPaper;ZLjava/lang/Boolean;Z)V
 
-    .line 1237
+    .line 1231
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     if-eqz v1, :cond_4
 
-    .line 1238
+    .line 1232
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->colorsLayout:Lorg/telegram/ui/Components/ChatAttachAlertColorsLayout;
 
     if-eqz v1, :cond_3
 
-    .line 1239
+    .line 1233
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->forceDark:Z
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ChatAttachAlertColorsLayout;->updateColors(Z)V
 
-    .line 1241
+    .line 1235
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->checkColors()V
 
-    .line 1243
+    .line 1237
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
@@ -1957,7 +1957,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 1244
+    .line 1238
     :goto_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
@@ -1969,7 +1969,7 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 1245
+    .line 1239
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->items:Ljava/util/List;
@@ -1988,7 +1988,7 @@
 
     goto :goto_2
 
-    .line 1247
+    .line 1241
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
@@ -2002,7 +2002,7 @@
 .method private hasChanges()Z
     .locals 4
 
-    .line 882
+    .line 876
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->selectedItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
     if-nez v0, :cond_0
@@ -2011,7 +2011,7 @@
 
     return v0
 
-    .line 885
+    .line 879
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
@@ -2028,7 +2028,7 @@
     :cond_1
     move-object v0, v1
 
-    .line 886
+    .line 880
     :goto_0
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2040,7 +2040,7 @@
 
     move-object v0, v3
 
-    .line 889
+    .line 883
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->selectedItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
@@ -2052,7 +2052,7 @@
 
     move-result-object v1
 
-    .line 890
+    .line 884
     :cond_3
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2065,7 +2065,7 @@
     :cond_4
     move-object v3, v1
 
-    .line 893
+    .line 887
     :goto_1
     invoke-static {v0, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -2079,7 +2079,7 @@
 .method private synthetic lambda$close$6(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 505
+    .line 499
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applySelectedTheme()V
 
     return-void
@@ -2088,7 +2088,7 @@
 .method private synthetic lambda$close$7(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 506
+    .line 500
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->dismiss()V
 
     return-void
@@ -2097,7 +2097,7 @@
 .method private synthetic lambda$didReceivedNotification$8()V
     .locals 1
 
-    .line 518
+    .line 512
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
@@ -2286,20 +2286,20 @@
 .method private synthetic lambda$new$4(Lorg/telegram/ui/ChatActivity;Landroid/view/View;)V
     .locals 2
 
-    .line 307
+    .line 301
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->currentWallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
     if-eqz p2, :cond_0
 
     const/4 p2, 0x0
 
-    .line 308
+    .line 302
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->currentWallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-    .line 309
+    .line 303
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->dismiss()V
 
-    .line 310
+    .line 304
     iget p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/ChatThemeController;->getInstance(I)Lorg/telegram/messenger/ChatThemeController;
@@ -2316,7 +2316,7 @@
 
     goto :goto_0
 
-    .line 312
+    .line 306
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->dismiss()V
 
@@ -2327,7 +2327,7 @@
 .method private synthetic lambda$onCreate$5()V
     .locals 3
 
-    .line 448
+    .line 442
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hintView:Lorg/telegram/ui/Components/HintView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -2342,7 +2342,7 @@
 .method private synthetic lambda$openGalleryForBackground$11(Landroid/view/View;)V
     .locals 2
 
-    .line 1210
+    .line 1204
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getCurrentAttachLayout()Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;
@@ -2357,7 +2357,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1211
+    .line 1205
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachButtonText:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->ChooseBackgroundFromGallery:I
@@ -2370,12 +2370,12 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1212
+    .line 1206
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->openColorsLayout()V
 
-    .line 1213
+    .line 1207
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->colorsLayout:Lorg/telegram/ui/Components/ChatAttachAlertColorsLayout;
@@ -2386,7 +2386,7 @@
 
     goto :goto_0
 
-    .line 1215
+    .line 1209
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachButtonText:Lorg/telegram/ui/Components/AnimatedTextView;
 
@@ -2400,7 +2400,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1216
+    .line 1210
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getPhotoLayout()Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -2416,7 +2416,7 @@
 .method private synthetic lambda$setupLightDarkTheme$10(Z)V
     .locals 5
 
-    .line 667
+    .line 661
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     if-eqz v0, :cond_5
@@ -2436,20 +2436,20 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 670
+    .line 664
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->setForceDark(ZZ)V
 
-    .line 671
+    .line 665
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->selectedItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_3
 
-    .line 672
+    .line 666
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->isLightDarkChangeAnimation:Z
 
-    .line 673
+    .line 667
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hasChanges()Z
 
     move-result v0
@@ -2469,7 +2469,7 @@
 
     move-result-object v0
 
-    .line 674
+    .line 668
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->selectedItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
@@ -2479,7 +2479,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 675
+    .line 669
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -2490,7 +2490,7 @@
 
     goto :goto_1
 
-    .line 677
+    .line 671
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
@@ -2500,7 +2500,7 @@
 
     invoke-virtual {v1, v3, v0, v2, v4}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->setCurrentTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;Lorg/telegram/tgnet/TLRPC$WallPaper;ZLjava/lang/Boolean;)V
 
-    .line 680
+    .line 674
     :cond_3
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
@@ -2511,7 +2511,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 681
+    .line 675
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
@@ -2523,7 +2523,7 @@
 
     if-ge v2, v0, :cond_4
 
-    .line 682
+    .line 676
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->items:Ljava/util/List;
@@ -2540,7 +2540,7 @@
 
     goto :goto_2
 
-    .line 684
+    .line 678
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
@@ -2562,7 +2562,7 @@
 .method private static synthetic lambda$showAsSheet$12()V
     .locals 2
 
-    .line 1281
+    .line 1275
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v0
@@ -2577,7 +2577,7 @@
 .method private synthetic lambda$showAsSheet$13()V
     .locals 0
 
-    .line 1284
+    .line 1278
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->fixColorsAfterAnotherWindow()V
 
     return-void
@@ -2588,7 +2588,7 @@
 
     const/4 v0, 0x0
 
-    .line 1287
+    .line 1281
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->overlayFragment:Lorg/telegram/ui/ThemePreviewActivity;
 
     return-void
@@ -2599,7 +2599,7 @@
 
     const/4 v0, 0x0
 
-    .line 804
+    .line 798
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->isLightDarkChangeAnimation:Z
 
     return-void
@@ -2608,7 +2608,7 @@
 .method private onAnimationStart()V
     .locals 3
 
-    .line 793
+    .line 787
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     if-eqz v0, :cond_0
@@ -2617,7 +2617,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 794
+    .line 788
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2635,14 +2635,14 @@
 
     check-cast v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
-    .line 795
+    .line 789
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->forceDark:Z
 
     iput v2, v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;->themeIndex:I
 
     goto :goto_0
 
-    .line 798
+    .line 792
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->isLightDarkChangeAnimation:Z
 
@@ -2650,7 +2650,7 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 799
+    .line 793
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->setItemsAnimationProgress(F)V
 
     :cond_1
@@ -2670,7 +2670,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 708
+    .line 702
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -2682,10 +2682,10 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 712
+    .line 706
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->dataLoaded:Z
 
-    .line 713
+    .line 707
     new-instance v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
     const/4 v2, 0x0
@@ -2698,7 +2698,7 @@
 
     invoke-direct {v1, v3}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;-><init>(Lorg/telegram/ui/ActionBar/EmojiThemes;)V
 
-    .line 714
+    .line 708
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -2707,7 +2707,7 @@
 
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 715
+    .line 709
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
     invoke-virtual {v4}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getCurrentTheme()Lorg/telegram/ui/ActionBar/EmojiThemes;
@@ -2716,15 +2716,15 @@
 
     iput-object v4, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    .line 717
+    .line 711
     invoke-interface {v3, v2, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 718
+    .line 712
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->selectedItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
     move v1, v0
 
-    .line 738
+    .line 732
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -2732,50 +2732,50 @@
 
     if-ge v1, v4, :cond_1
 
-    .line 739
+    .line 733
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/ui/ActionBar/EmojiThemes;
 
-    .line 740
+    .line 734
     new-instance v5, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
     invoke-direct {v5, v4}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;-><init>(Lorg/telegram/ui/ActionBar/EmojiThemes;)V
 
-    .line 742
+    .line 736
     iget v6, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-virtual {v4, v6}, Lorg/telegram/ui/ActionBar/EmojiThemes;->loadPreviewColors(I)V
 
-    .line 744
+    .line 738
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->forceDark:Z
 
     iput v4, v5, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;->themeIndex:I
 
-    .line 745
+    .line 739
     invoke-interface {v3, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 747
+    .line 741
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->setItems(Ljava/util/List;)V
 
-    .line 749
+    .line 743
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 751
+    .line 745
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->resetToPrimaryState(Z)V
 
-    .line 752
+    .line 746
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2796,7 +2796,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 753
+    .line 747
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->updateState(Z)V
 
     :cond_2
@@ -2807,7 +2807,7 @@
 .method private openGalleryForBackground()V
     .locals 8
 
-    .line 1133
+    .line 1127
     new-instance v7, Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
@@ -2836,10 +2836,10 @@
 
     const/4 v0, 0x1
 
-    .line 1134
+    .line 1128
     iput-boolean v0, v7, Lorg/telegram/ui/ActionBar/BottomSheet;->drawNavigationBar:Z
 
-    .line 1135
+    .line 1129
     sget v1, Lorg/telegram/messenger/R$string;->ChooseBackground:I
 
     const-string v2, "ChooseBackground"
@@ -2850,7 +2850,7 @@
 
     invoke-virtual {v7, v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->setupPhotoPicker(Ljava/lang/String;)V
 
-    .line 1136
+    .line 1130
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     new-instance v2, Lorg/telegram/ui/Components/ChatThemeBottomSheet$10;
@@ -2859,19 +2859,19 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ChatAttachAlert;->setDelegate(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;)V
 
-    .line 1181
+    .line 1175
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/Components/ChatAttachAlert;->setMaxSelectedPhotos(IZ)V
 
-    .line 1182
+    .line 1176
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->init()V
 
-    .line 1183
+    .line 1177
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getPhotoLayout()Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -2880,12 +2880,12 @@
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->loadGalleryPhotos()V
 
-    .line 1184
+    .line 1178
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->show()V
 
-    .line 1186
+    .line 1180
     new-instance v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$11;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2896,7 +2896,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachButton:Landroid/widget/FrameLayout;
 
-    .line 1202
+    .line 1196
     new-instance v1, Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2909,7 +2909,7 @@
 
     const/16 v0, 0xe
 
-    .line 1203
+    .line 1197
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -2918,7 +2918,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 1204
+    .line 1198
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachButtonText:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->SetColorAsBackground:I
@@ -2931,14 +2931,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1205
+    .line 1199
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachButtonText:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 1206
+    .line 1200
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachButtonText:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
@@ -2949,7 +2949,7 @@
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 1207
+    .line 1201
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachButton:Landroid/widget/FrameLayout;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachButtonText:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -2964,7 +2964,7 @@
 
     invoke-virtual {v0, v4, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1208
+    .line 1202
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachButton:Landroid/widget/FrameLayout;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2993,7 +2993,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1209
+    .line 1203
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachButton:Landroid/widget/FrameLayout;
 
     new-instance v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda5;
@@ -3002,7 +3002,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1223
+    .line 1217
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->sizeNotifierFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -3023,7 +3023,7 @@
 .method private previewSelectedTheme()V
     .locals 5
 
-    .line 352
+    .line 346
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
 
     move-result v0
@@ -3039,15 +3039,15 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 355
+    .line 349
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->isLightDarkChangeAnimation:Z
 
-    .line 356
+    .line 350
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     iput-boolean v0, v1, Lorg/telegram/ui/ChatActivity;->forceDisallowApplyWallpeper:Z
 
-    .line 357
+    .line 351
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hasChanges()Z
 
     move-result v0
@@ -3063,7 +3063,7 @@
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->currentWallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-    .line 358
+    .line 352
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->selectedItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
@@ -3075,7 +3075,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 359
+    .line 353
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
     iget-boolean v3, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->forceDark:Z
@@ -3088,7 +3088,7 @@
 
     goto :goto_1
 
-    .line 361
+    .line 355
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
@@ -3108,12 +3108,12 @@
 .method private resetToPrimaryState(Z)V
     .locals 6
 
-    .line 757
+    .line 751
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->items:Ljava/util/List;
 
-    .line 758
+    .line 752
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->currentTheme:Lorg/telegram/ui/ActionBar/EmojiThemes;
 
     const/4 v2, 0x0
@@ -3122,7 +3122,7 @@
 
     move v1, v2
 
-    .line 760
+    .line 754
     :goto_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -3132,7 +3132,7 @@
 
     if-eq v1, v3, :cond_1
 
-    .line 761
+    .line 755
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -3157,7 +3157,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 762
+    .line 756
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -3179,17 +3179,17 @@
     :goto_1
     if-eq v1, v4, :cond_6
 
-    .line 768
+    .line 762
     iput v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->prevSelectedPosition:I
 
-    .line 769
+    .line 763
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->setSelectedItem(I)V
 
     if-lez v1, :cond_2
 
-    .line 770
+    .line 764
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -3200,7 +3200,7 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 773
+    .line 767
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
@@ -3218,14 +3218,14 @@
 
     if-eqz p1, :cond_3
 
-    .line 775
+    .line 769
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollToPosition(I)V
 
     goto :goto_2
 
-    .line 777
+    .line 771
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
@@ -3233,7 +3233,7 @@
 
     goto :goto_2
 
-    .line 781
+    .line 775
     :cond_4
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -3243,27 +3243,27 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->selectedItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
-    .line 782
+    .line 776
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->setSelectedItem(I)V
 
     if-eqz p1, :cond_5
 
-    .line 784
+    .line 778
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, v2}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollToPosition(I)V
 
     goto :goto_2
 
-    .line 786
+    .line 780
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1, v2, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 789
+    .line 783
     :cond_6
     :goto_2
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->previewSelectedTheme()V
@@ -3274,14 +3274,14 @@
 .method private setForceDark(ZZ)V
     .locals 2
 
-    .line 815
+    .line 809
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->forceDark:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 818
+    .line 812
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->forceDark:Z
 
@@ -3289,7 +3289,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 820
+    .line 814
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz p1, :cond_1
@@ -3301,12 +3301,12 @@
     :cond_1
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 821
+    .line 815
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
     if-eqz p1, :cond_4
 
-    .line 822
+    .line 816
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
     goto :goto_1
@@ -3316,7 +3316,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 825
+    .line 819
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->getFramesCount()I
@@ -3330,23 +3330,23 @@
     :cond_3
     move p1, v0
 
-    .line 826
+    .line 820
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v1, p1, v0, p2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZZ)V
 
-    .line 827
+    .line 821
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 828
+    .line 822
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
     if-eqz p1, :cond_4
 
-    .line 829
+    .line 823
     invoke-virtual {p1}, Landroid/widget/ImageView;->invalidate()V
 
     :cond_4
@@ -3359,7 +3359,7 @@
 
     const/4 v0, 0x0
 
-    .line 835
+    .line 829
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
@@ -3369,7 +3369,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 836
+    .line 830
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->adapter:Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->items:Ljava/util/List;
@@ -3393,22 +3393,22 @@
 .method private showAsSheet(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 2
 
-    .line 1252
+    .line 1246
     new-instance v0, Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;
 
     invoke-direct {v0}, Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;-><init>()V
 
     const/4 v1, 0x1
 
-    .line 1253
+    .line 1247
     iput-boolean v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;->transitionFromLeft:Z
 
     const/4 v1, 0x0
 
-    .line 1254
+    .line 1248
     iput-boolean v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;->allowNestedScroll:Z
 
-    .line 1255
+    .line 1249
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -3417,36 +3417,36 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->setResourceProvider(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1256
+    .line 1250
     new-instance v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$12;-><init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ThemePreviewActivity;->setOnSwitchDayNightDelegate(Lorg/telegram/ui/ThemePreviewActivity$DayNightSwitchDelegate;)V
 
-    .line 1280
+    .line 1274
     sget-object v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda13;->INSTANCE:Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda13;
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;->onOpenAnimationFinished:Ljava/lang/Runnable;
 
-    .line 1283
+    .line 1277
     new-instance v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda9;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;->onPreFinished:Ljava/lang/Runnable;
 
-    .line 1286
+    .line 1280
     new-instance v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda11;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
 
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;->onDismiss:Ljava/lang/Runnable;
 
-    .line 1289
+    .line 1283
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->overlayFragment:Lorg/telegram/ui/ThemePreviewActivity;
 
-    .line 1290
+    .line 1284
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1, p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showAsSheet(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;)[Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -3457,7 +3457,7 @@
 .method private updateButtonColors()V
     .locals 8
 
-    .line 332
+    .line 326
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
     const/16 v1, 0x4c
@@ -3468,7 +3468,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 333
+    .line 327
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray:I
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -3477,7 +3477,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 334
+    .line 328
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3500,13 +3500,13 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 336
+    .line 330
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_1
 
-    .line 337
+    .line 331
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -3515,7 +3515,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 338
+    .line 332
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3536,7 +3536,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 340
+    .line 334
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->backButtonView:Landroid/widget/ImageView;
 
@@ -3560,7 +3560,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 341
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->backButtonDrawable:Lorg/telegram/ui/ActionBar/BackDrawable;
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -3569,7 +3569,7 @@
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/BackDrawable;->setColor(I)V
 
-    .line 342
+    .line 336
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->backButtonDrawable:Lorg/telegram/ui/ActionBar/BackDrawable;
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -3578,12 +3578,12 @@
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotatedColor(I)V
 
-    .line 343
+    .line 337
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->backButtonView:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 345
+    .line 339
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
@@ -3602,7 +3602,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 346
+    .line 340
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chooseBackgroundTextView:Landroid/widget/TextView;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue:I
@@ -3613,7 +3613,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 347
+    .line 341
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chooseBackgroundTextView:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -3640,7 +3640,7 @@
 .method private updateState(Z)V
     .locals 6
 
-    .line 366
+    .line 360
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->dataLoaded:Z
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -3653,99 +3653,99 @@
 
     if-nez v0, :cond_0
 
-    .line 367
+    .line 361
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->backButtonDrawable:Lorg/telegram/ui/ActionBar/BackDrawable;
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
 
-    .line 368
+    .line 362
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyButton:Landroid/view/View;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 369
+    .line 363
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chooseBackgroundTextView:Landroid/widget/TextView;
 
     invoke-static {v0, v4, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 370
+    .line 364
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     invoke-static {v0, v4, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 371
+    .line 365
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyButton:Landroid/view/View;
 
     invoke-static {v0, v4, v1, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 372
+    .line 366
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v0, v4, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 373
+    .line 367
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
     invoke-static {v0, v4, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 374
+    .line 368
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->progressView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     invoke-static {v0, v2, v1, v2, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
     goto/16 :goto_0
 
-    .line 376
+    .line 370
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->progressView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     invoke-static {v0, v4, v1, v2, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 377
+    .line 371
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hasChanges()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 378
+    .line 372
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->backButtonDrawable:Lorg/telegram/ui/ActionBar/BackDrawable;
 
     const/4 v5, 0x0
 
     invoke-virtual {v0, v5, p1}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
 
-    .line 379
+    .line 373
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyButton:Landroid/view/View;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 380
+    .line 374
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chooseBackgroundTextView:Landroid/widget/TextView;
 
     invoke-static {v0, v4, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 381
+    .line 375
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     invoke-static {v0, v4, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 382
+    .line 376
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyButton:Landroid/view/View;
 
     invoke-static {v0, v2, v1, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 383
+    .line 377
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v0, v2, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 384
+    .line 378
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
     invoke-static {v0, v2, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 385
+    .line 379
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->selectedItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
     if-eqz p1, :cond_1
@@ -3762,7 +3762,7 @@
 
     if-nez p1, :cond_1
 
-    .line 386
+    .line 380
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->ChatResetTheme:I
@@ -3777,7 +3777,7 @@
 
     goto :goto_0
 
-    .line 388
+    .line 382
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
@@ -3793,38 +3793,38 @@
 
     goto :goto_0
 
-    .line 391
+    .line 385
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->backButtonDrawable:Lorg/telegram/ui/ActionBar/BackDrawable;
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/ActionBar/BackDrawable;->setRotation(FZ)V
 
-    .line 392
+    .line 386
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyButton:Landroid/view/View;
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setEnabled(Z)V
 
-    .line 393
+    .line 387
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chooseBackgroundTextView:Landroid/widget/TextView;
 
     invoke-static {v0, v2, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 394
+    .line 388
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->cancelOrResetTextView:Landroid/widget/TextView;
 
     invoke-static {v0, v2, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 395
+    .line 389
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyButton:Landroid/view/View;
 
     invoke-static {v0, v4, v1, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 396
+    .line 390
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v0, v4, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
 
-    .line 397
+    .line 391
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeHintTextView:Landroid/widget/TextView;
 
     invoke-static {v0, v4, v3, v4, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZZ)V
@@ -3838,14 +3838,14 @@
 .method public close()V
     .locals 3
 
-    .line 501
+    .line 495
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hasChanges()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 502
+    .line 496
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -3856,7 +3856,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 503
+    .line 497
     sget v1, Lorg/telegram/messenger/R$string;->ChatThemeSaveDialogTitle:I
 
     const-string v2, "ChatThemeSaveDialogTitle"
@@ -3867,7 +3867,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 504
+    .line 498
     sget v1, Lorg/telegram/messenger/R$string;->ChatThemeSaveDialogText:I
 
     const-string v2, "ChatThemeSaveDialogText"
@@ -3878,7 +3878,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setSubtitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 505
+    .line 499
     sget v1, Lorg/telegram/messenger/R$string;->ChatThemeSaveDialogApply:I
 
     const-string v2, "ChatThemeSaveDialogApply"
@@ -3893,7 +3893,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 506
+    .line 500
     sget v1, Lorg/telegram/messenger/R$string;->ChatThemeSaveDialogDiscard:I
 
     const-string v2, "ChatThemeSaveDialogDiscard"
@@ -3908,12 +3908,12 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 507
+    .line 501
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     goto :goto_0
 
-    .line 509
+    .line 503
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->dismiss()V
 
@@ -3924,12 +3924,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 516
+    .line 510
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     if-ne p1, p2, :cond_0
 
-    .line 517
+    .line 511
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3949,7 +3949,7 @@
 .method public dismiss()V
     .locals 6
 
-    .line 469
+    .line 463
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -3958,22 +3958,22 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 470
+    .line 464
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 471
+    .line 465
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lorg/telegram/ui/ChatActivity;->forceDisallowApplyWallpeper:Z
 
-    .line 472
+    .line 466
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->isApplyClicked:Z
 
     if-nez v0, :cond_1
 
-    .line 473
+    .line 467
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getCurrentWallpaper()Lorg/telegram/tgnet/TLRPC$WallPaper;
@@ -3982,10 +3982,10 @@
 
     if-nez v0, :cond_0
 
-    .line 475
+    .line 469
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->currentWallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-    .line 477
+    .line 471
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
@@ -4001,7 +4001,7 @@
 
     invoke-virtual {v2, v3, v0, v4, v5}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->setCurrentTheme(Lorg/telegram/ui/ActionBar/EmojiThemes;Lorg/telegram/tgnet/TLRPC$WallPaper;ZLjava/lang/Boolean;)V
 
-    .line 479
+    .line 473
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->forceDark:Z
 
@@ -4009,7 +4009,7 @@
 
     if-eq v0, v2, :cond_8
 
-    .line 481
+    .line 475
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
@@ -4022,14 +4022,14 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 482
+    .line 476
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getActiveTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
 
     goto :goto_2
 
-    .line 484
+    .line 478
     :cond_2
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -4043,12 +4043,12 @@
 
     const-string v3, "Blue"
 
-    .line 485
+    .line 479
     invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 486
+    .line 480
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v4
@@ -4076,12 +4076,12 @@
 
     const-string v4, "Dark Blue"
 
-    .line 489
+    .line 483
     invoke-interface {v0, v2, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 490
+    .line 484
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getTheme(Ljava/lang/String;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v2
@@ -4103,7 +4103,7 @@
     :cond_5
     move-object v4, v0
 
-    .line 493
+    .line 487
     :cond_6
     :goto_1
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->originalIsDark:Z
@@ -4121,7 +4121,7 @@
 
     move-result-object v0
 
-    .line 496
+    .line 490
     :goto_2
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->originalIsDark:Z
 
@@ -4144,17 +4144,17 @@
 
     move-object/from16 v0, p0
 
-    .line 525
+    .line 519
     new-instance v7, Lorg/telegram/ui/Components/ChatThemeBottomSheet$6;
 
     invoke-direct {v7, v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$6;-><init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
 
-    .line 557
+    .line 551
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
-    .line 558
+    .line 552
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
     iget-boolean v1, v1, Lorg/telegram/ui/ChatActivity;->forceDisallowRedrawThemeDescriptions:Z
@@ -4165,7 +4165,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 559
+    .line 553
     invoke-virtual {v1}, Lorg/telegram/ui/ThemePreviewActivity;->getThemeDescriptionsInternal()Ljava/util/ArrayList;
 
     move-result-object v1
@@ -4174,20 +4174,20 @@
 
     return-object v9
 
-    .line 562
+    .line 556
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatAttachAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     if-eqz v1, :cond_1
 
-    .line 563
+    .line 557
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getThemeDescriptions()Ljava/util/ArrayList;
 
     move-result-object v1
 
     invoke-virtual {v9, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 565
+    .line 559
     :cond_1
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
@@ -4217,7 +4217,7 @@
 
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 566
+    .line 560
     new-instance v1, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->titleView:Landroid/widget/TextView;
@@ -4240,7 +4240,7 @@
 
     invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 567
+    .line 561
     new-instance v1, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->recyclerView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4271,7 +4271,7 @@
 
     invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 568
+    .line 562
     new-instance v1, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v11, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyButton:Landroid/view/View;
@@ -4292,7 +4292,7 @@
 
     invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 569
+    .line 563
     new-instance v1, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->applyButton:Landroid/view/View;
@@ -4321,7 +4321,7 @@
 
     invoke-virtual {v9, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 570
+    .line 564
     invoke-virtual {v9}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -4339,7 +4339,7 @@
 
     check-cast v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 571
+    .line 565
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
     iput-object v3, v2, Lorg/telegram/ui/ActionBar/ThemeDescription;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -4353,7 +4353,7 @@
 .method public onBackPressed()V
     .locals 0
 
-    .line 464
+    .line 458
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->close()V
 
     return-void
@@ -4366,7 +4366,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 691
+    .line 685
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hasChanges()Z
 
     move-result v1
@@ -4375,7 +4375,7 @@
 
     goto :goto_1
 
-    .line 694
+    .line 688
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -4383,14 +4383,14 @@
 
     float-to-int v1, v1
 
-    .line 695
+    .line 689
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
     float-to-int v2, v2
 
-    .line 696
+    .line 690
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getTop()I
@@ -4403,7 +4403,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    .line 697
+    .line 691
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getLeft()I
 
     move-result v2
@@ -4412,7 +4412,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    .line 698
+    .line 692
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getRight()I
 
     move-result v2
@@ -4431,7 +4431,7 @@
 
     return v0
 
-    .line 702
+    .line 696
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
@@ -4451,12 +4451,12 @@
 .method public onContainerTranslationYChanged(F)V
     .locals 0
 
-    .line 457
+    .line 451
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hintView:Lorg/telegram/ui/Components/HintView;
 
     if-eqz p1, :cond_0
 
-    .line 458
+    .line 452
     invoke-virtual {p1}, Lorg/telegram/ui/Components/HintView;->hide()V
 
     :cond_0
@@ -4466,10 +4466,10 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 8
 
-    .line 404
+    .line 398
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->onCreate(Landroid/os/Bundle;)V
 
-    .line 405
+    .line 399
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/ChatThemeController;->getInstance(I)Lorg/telegram/messenger/ChatThemeController;
@@ -4478,21 +4478,21 @@
 
     const/4 v0, 0x1
 
-    .line 406
+    .line 400
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ChatThemeController;->preloadAllWallpaperThumbs(Z)V
 
     const/4 v1, 0x0
 
-    .line 407
+    .line 401
     invoke-virtual {p1, v1}, Lorg/telegram/messenger/ChatThemeController;->preloadAllWallpaperThumbs(Z)V
 
-    .line 408
+    .line 402
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ChatThemeController;->preloadAllWallpaperImages(Z)V
 
-    .line 409
+    .line 403
     invoke-virtual {p1, v1}, Lorg/telegram/messenger/ChatThemeController;->preloadAllWallpaperImages(Z)V
 
-    .line 410
+    .line 404
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v2
@@ -4501,10 +4501,10 @@
 
     invoke-virtual {v2, p0, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 412
+    .line 406
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->isApplyClicked:Z
 
-    .line 413
+    .line 407
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity$ThemeDelegate;->getCachedThemes()Ljava/util/List;
@@ -4513,7 +4513,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 414
+    .line 408
     invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
 
     move-result v3
@@ -4522,13 +4522,13 @@
 
     goto :goto_0
 
-    .line 432
+    .line 426
     :cond_0
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->onDataLoaded(Ljava/util/List;)V
 
     goto :goto_1
 
-    .line 415
+    .line 409
     :cond_1
     :goto_0
     new-instance v2, Lorg/telegram/ui/Components/ChatThemeBottomSheet$5;
@@ -4537,7 +4537,7 @@
 
     invoke-virtual {p1, v2, v0}, Lorg/telegram/messenger/ChatThemeController;->requestAllChatThemes(Lorg/telegram/tgnet/ResultCallback;Z)V
 
-    .line 436
+    .line 430
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
@@ -4561,14 +4561,14 @@
 
     if-nez p1, :cond_3
 
-    .line 437
+    .line 431
     sget p1, Lorg/telegram/messenger/SharedConfig;->dayNightThemeSwitchHintCount:I
 
     sub-int/2addr p1, v0
 
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->updateDayNightThemeSwitchHintCount(I)V
 
-    .line 438
+    .line 432
     new-instance p1, Lorg/telegram/ui/Components/HintView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -4589,17 +4589,17 @@
 
     const/4 v0, 0x4
 
-    .line 439
+    .line 433
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 440
+    .line 434
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hintView:Lorg/telegram/ui/Components/HintView;
 
     const-wide/16 v2, 0x1388
 
     invoke-virtual {p1, v2, v3}, Lorg/telegram/ui/Components/HintView;->setShowingDuration(J)V
 
-    .line 441
+    .line 435
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hintView:Lorg/telegram/ui/Components/HintView;
 
     const/16 v0, 0x8
@@ -4612,12 +4612,12 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/HintView;->setBottomOffset(I)V
 
-    .line 442
+    .line 436
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->forceDark:Z
 
     if-eqz p1, :cond_2
 
-    .line 443
+    .line 437
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hintView:Lorg/telegram/ui/Components/HintView;
 
     sget v0, Lorg/telegram/messenger/R$string;->ChatThemeDaySwitchTooltip:I
@@ -4638,7 +4638,7 @@
 
     goto :goto_2
 
-    .line 445
+    .line 439
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hintView:Lorg/telegram/ui/Components/HintView;
 
@@ -4658,7 +4658,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/HintView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 447
+    .line 441
     :goto_2
     new-instance p1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda8;
 
@@ -4668,7 +4668,7 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 451
+    .line 445
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->hintView:Lorg/telegram/ui/Components/HintView;
@@ -4702,7 +4702,7 @@
 
     move-object/from16 v13, p0
 
-    .line 579
+    .line 573
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->isDismissed()Z
 
     move-result v0
@@ -4711,16 +4711,16 @@
 
     return-void
 
-    .line 582
+    .line 576
     :cond_0
     iget-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->changeDayNightViewAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 583
+    .line 577
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 585
+    .line 579
     :cond_1
     iget-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
@@ -4738,7 +4738,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout;
 
-    .line 586
+    .line 580
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -4751,7 +4751,7 @@
 
     check-cast v14, Landroid/widget/FrameLayout;
 
-    .line 587
+    .line 581
     invoke-virtual {v14}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
@@ -4766,32 +4766,32 @@
 
     move-result-object v9
 
-    .line 588
+    .line 582
     new-instance v4, Landroid/graphics/Canvas;
 
     invoke-direct {v4, v9}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 589
+    .line 583
     iget-object v1, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v15, 0x0
 
     invoke-virtual {v1, v15}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 590
+    .line 584
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 591
+    .line 585
     invoke-virtual {v14, v4}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 592
+    .line 586
     iget-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 594
+    .line 588
     new-instance v8, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -4800,10 +4800,10 @@
 
     const/high16 v1, -0x1000000
 
-    .line 595
+    .line 589
     invoke-virtual {v8, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 596
+    .line 590
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -4812,36 +4812,36 @@
 
     invoke-virtual {v8, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 598
+    .line 592
     new-instance v10, Landroid/graphics/Paint;
 
     invoke-direct {v10, v0}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 599
+    .line 593
     invoke-virtual {v10, v0}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
     const/4 v12, 0x2
 
     new-array v1, v12, [I
 
-    .line 601
+    .line 595
     iget-object v2, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->getLocationInWindow([I)V
 
     const/4 v2, 0x0
 
-    .line 602
+    .line 596
     aget v2, v1, v2
 
     int-to-float v11, v2
 
-    .line 603
+    .line 597
     aget v0, v1, v0
 
     int-to-float v7, v0
 
-    .line 604
+    .line 598
     iget-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getMeasuredWidth()I
@@ -4856,7 +4856,7 @@
 
     add-float v5, v11, v0
 
-    .line 605
+    .line 599
     iget-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->darkThemeView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getMeasuredHeight()I
@@ -4869,7 +4869,7 @@
 
     add-float v6, v7, v0
 
-    .line 607
+    .line 601
     invoke-virtual {v9}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v0
@@ -4888,17 +4888,17 @@
 
     mul-float v16, v0, v1
 
-    .line 609
+    .line 603
     new-instance v0, Landroid/graphics/BitmapShader;
 
     sget-object v1, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
     invoke-direct {v0, v9, v1, v1}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
 
-    .line 610
+    .line 604
     invoke-virtual {v10, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 611
+    .line 605
     new-instance v3, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -4927,19 +4927,19 @@
 
     iput-object v15, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->changeDayNightView:Landroid/view/View;
 
-    .line 629
+    .line 623
     sget-object v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda7;->INSTANCE:Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda7;
 
     invoke-virtual {v15, v0}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     const/4 v0, 0x0
 
-    .line 630
+    .line 624
     iput v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->changeDayNightViewProgress:F
 
     new-array v0, v14, [F
 
-    .line 631
+    .line 625
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -4948,14 +4948,14 @@
 
     iput-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->changeDayNightViewAnimator:Landroid/animation/ValueAnimator;
 
-    .line 632
+    .line 626
     new-instance v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$8;
 
     invoke-direct {v1, v13}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$8;-><init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 647
+    .line 641
     iget-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->changeDayNightViewAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$9;
@@ -4964,26 +4964,26 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 660
+    .line 654
     iget-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->changeDayNightViewAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x190
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 661
+    .line 655
     iget-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->changeDayNightViewAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v1, Lorg/telegram/ui/Components/Easings;->easeInOutQuad:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 662
+    .line 656
     iget-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->changeDayNightViewAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 664
+    .line 658
     iget-object v0, v13, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->changeDayNightView:Landroid/view/View;
 
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
@@ -4996,7 +4996,7 @@
 
     invoke-virtual {v2, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 666
+    .line 660
     new-instance v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda12;
 
     move/from16 v1, p1

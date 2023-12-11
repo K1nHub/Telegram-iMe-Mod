@@ -26,7 +26,7 @@ public final class AddrStd$$serializer implements GeneratedSerializer<AddrStd> {
         pluginGeneratedSerialDescriptor.addElement("anycast", false);
         pluginGeneratedSerialDescriptor.addElement("workchainId", false);
         pluginGeneratedSerialDescriptor.addElement("address", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7534xaf8cfd0d("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7532xaf8cfd0d("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

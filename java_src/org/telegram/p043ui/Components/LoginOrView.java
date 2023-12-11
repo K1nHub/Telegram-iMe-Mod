@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.LoginOrView */
@@ -24,7 +24,7 @@ public class LoginOrView extends View {
         this.textPaint = new TextPaint(1);
         this.linePaint = new Paint(1);
         this.textBounds = new Rect();
-        this.string = LocaleController.getString(C3634R.string.LoginOrSingInWithGoogle);
+        this.string = LocaleController.getString(C3632R.string.LoginOrSingInWithGoogle);
         this.textPaint.setTextSize(AndroidUtilities.m104dp(14));
         updateColors();
     }

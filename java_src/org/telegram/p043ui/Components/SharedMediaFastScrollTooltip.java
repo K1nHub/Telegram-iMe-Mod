@@ -15,7 +15,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.SharedMediaFastScrollTooltip */
@@ -24,7 +24,7 @@ public class SharedMediaFastScrollTooltip extends FrameLayout {
     public SharedMediaFastScrollTooltip(Context context) {
         super(context);
         TextView textView = new TextView(context);
-        textView.setText(LocaleController.getString("SharedMediaFastScrollHint", C3634R.string.SharedMediaFastScrollHint));
+        textView.setText(LocaleController.getString("SharedMediaFastScrollHint", C3632R.string.SharedMediaFastScrollHint));
         textView.setTextSize(1, 14.0f);
         textView.setMaxLines(3);
         textView.setTextColor(Theme.getColor(Theme.key_chat_gifSaveHintText));

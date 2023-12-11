@@ -13,12 +13,12 @@ import org.ton.tlb.TlbCodec;
 public final class JustConstructor<X> extends org.ton.tlb.TlbConstructor<Just<X>> {
 
     /* renamed from: ID */
-    private static final BitString f2041ID;
+    private static final BitString f2042ID;
     private final TlbCodec<X> typeCodec;
 
     static {
         new Companion(null);
-        f2041ID = BitString.Companion.m42of(Arrays.copyOf(new boolean[]{true}, 1));
+        f2042ID = BitString.Companion.m42of(Arrays.copyOf(new boolean[]{true}, 1));
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
@@ -28,7 +28,7 @@ public final class JustConstructor<X> extends org.ton.tlb.TlbConstructor<Just<X>
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public JustConstructor(TlbCodec<X> typeCodec) {
-        super("just$1 {X:Type} value:X = Maybe X;", f2041ID);
+        super("just$1 {X:Type} value:X = Maybe X;", f2042ID);
         Intrinsics.checkNotNullParameter(typeCodec, "typeCodec");
         this.typeCodec = typeCodec;
     }

@@ -20,7 +20,7 @@ public final class TerminatedLookAhead implements LookAheadSuspendSession {
 
     @Override // io.ktor.utils.p032io.LookAheadSession
     /* renamed from: consumed */
-    public void mo1930consumed(int i) {
+    public void mo1932consumed(int i) {
         if (i <= 0) {
             return;
         }

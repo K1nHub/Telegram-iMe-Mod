@@ -32,7 +32,7 @@ import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
@@ -308,7 +308,6 @@ public class CaptionContainerView extends FrameLayout {
             }
         };
         this.editText = editTextEmoji;
-        editTextEmoji.getEditText().wrapCanvasToFixClipping = true;
         editTextEmoji.setFocusable(true);
         editTextEmoji.setFocusableInTouchMode(true);
         editTextEmoji.getEditText().hintLayoutYFix = true;
@@ -321,17 +320,17 @@ public class CaptionContainerView extends FrameLayout {
         editTextEmoji.getEditText().setSupportRtlHint(true);
         this.captionBlur = new BlurringShader.StoryBlurDrawer(blurManager, editTextEmoji.getEditText(), customBlur() ? 1 : 2);
         editTextEmoji.getEditText().setHintColor(-2130706433);
-        editTextEmoji.getEditText().setHintText(LocaleController.getString(C3634R.string.AddCaption), false);
+        editTextEmoji.getEditText().setHintText(LocaleController.getString(C3632R.string.AddCaption), false);
         paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         editTextEmoji.getEditText().setTranslationX(AndroidUtilities.m104dp(-22));
         editTextEmoji.getEmojiButton().setAlpha(BitmapDescriptorFactory.HUE_RED);
-        editTextEmoji.getEditText().addTextChangedListener(new C71682());
+        editTextEmoji.getEditText().addTextChangedListener(new C71662());
         editTextEmoji.getEditText().setLinkTextColor(-1);
         addView(editTextEmoji, LayoutHelper.createFrame(-1, -2, 87, 12, 12, 12, 12));
         BounceableImageView bounceableImageView = new BounceableImageView(context);
         this.applyButton = bounceableImageView;
         ScaleStateListAnimator.apply(bounceableImageView, 0.05f, 1.25f);
-        Drawable mutate = context.getResources().getDrawable(C3634R.C3636drawable.input_done).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3632R.C3634drawable.input_done).mutate();
         this.applyButtonCheck = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogFloatingIcon), PorterDuff.Mode.SRC_IN));
         CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m104dp(16), Theme.getColor(Theme.key_dialogFloatingButton, resourcesProvider)), this.applyButtonCheck, 0, AndroidUtilities.m104dp(1));
@@ -368,11 +367,11 @@ public class CaptionContainerView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.recorder.CaptionContainerView$2 */
     /* loaded from: classes6.dex */
-    public class C71682 implements TextWatcher {
+    public class C71662 implements TextWatcher {
         private int lastLength;
         private boolean lastOverLimit;
 
-        C71682() {
+        C71662() {
         }
 
         @Override // android.text.TextWatcher
@@ -431,7 +430,7 @@ public class CaptionContainerView extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.CaptionContainerView$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CaptionContainerView.C71682.this.lambda$afterTextChanged$0();
+                    CaptionContainerView.C71662.this.lambda$afterTextChanged$0();
                 }
             });
         }
@@ -1095,7 +1094,7 @@ public class CaptionContainerView extends FrameLayout {
             }
             this.hintTextPaint.setColor(-16777216);
             this.hintTextPaint.setTextSize(AndroidUtilities.m104dp(16));
-            String string = LocaleController.getString(C3634R.string.AddCaption);
+            String string = LocaleController.getString(C3632R.string.AddCaption);
             this.hintTextBitmap = Bitmap.createBitmap((int) Math.ceil(this.hintTextPaint.measureText(string)), (int) Math.ceil(this.hintTextPaint.getFontMetrics().descent - this.hintTextPaint.getFontMetrics().ascent), Bitmap.Config.ARGB_8888);
             new Canvas(this.hintTextBitmap).drawText(string, BitmapDescriptorFactory.HUE_RED, -((int) this.hintTextPaint.getFontMetrics().ascent), this.hintTextPaint);
         }

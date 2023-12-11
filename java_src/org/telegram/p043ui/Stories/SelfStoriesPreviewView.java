@@ -19,7 +19,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.Components.ColoredImageSpan;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
@@ -509,14 +509,14 @@ public abstract class SelfStoriesPreviewView extends View {
         int i = tL_stories$StoryViews == null ? 0 : tL_stories$StoryViews.views_count;
         if (i > 0) {
             spannableStringBuilder.append("d");
-            spannableStringBuilder.setSpan(new ColoredImageSpan(C3634R.C3636drawable.msg_views), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.setSpan(new ColoredImageSpan(C3632R.C3634drawable.msg_views), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
             spannableStringBuilder.append(" ").append((CharSequence) AndroidUtilities.formatWholeNumber(i, 0));
             if (tL_stories$StoryViews == null || tL_stories$StoryViews.reactions_count <= 0) {
                 return;
             }
             spannableStringBuilder.append((CharSequence) (z ? "\n" : "  "));
             spannableStringBuilder.append("d");
-            spannableStringBuilder.setSpan(new ColoredImageSpan(C3634R.C3636drawable.mini_like_filled), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.setSpan(new ColoredImageSpan(C3632R.C3634drawable.mini_like_filled), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
             spannableStringBuilder.append(" ").append((CharSequence) AndroidUtilities.formatWholeNumber(tL_stories$StoryViews.reactions_count, 0));
         }
     }

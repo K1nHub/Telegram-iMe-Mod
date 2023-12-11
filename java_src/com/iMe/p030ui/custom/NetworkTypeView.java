@@ -28,7 +28,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkContentNetworkTypeBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: NetworkTypeView.kt */
@@ -124,7 +124,7 @@ public final class NetworkTypeView extends FrameLayout implements KoinComponent 
     private final int getNetworkColor() {
         NetworkItem networkItem = this.network;
         if (networkItem instanceof NetworkItem.All) {
-            return getResourceManager().getColor(C3634R.C3635color.wallet_network_all);
+            return getResourceManager().getColor(C3632R.C3633color.wallet_network_all);
         }
         if (networkItem instanceof NetworkItem.Crypto) {
             return Color.parseColor(((NetworkItem.Crypto) networkItem).getColorHex());
@@ -145,8 +145,8 @@ public final class NetworkTypeView extends FrameLayout implements KoinComponent 
         ForkContentNetworkTypeBinding forkContentNetworkTypeBinding = this.binding;
         NetworkItem networkItem = this.network;
         if (networkItem instanceof NetworkItem.All) {
-            str = getResourceManager().getString(C3634R.string.networks_all);
-            forkContentNetworkTypeBinding.imageNetwork.setImageResource(C3634R.C3636drawable.fork_ic_all_networks_small);
+            str = getResourceManager().getString(C3632R.string.networks_all);
+            forkContentNetworkTypeBinding.imageNetwork.setImageResource(C3632R.C3634drawable.fork_ic_all_networks_small);
         } else if (networkItem instanceof NetworkItem.Crypto) {
             NetworkItem.Crypto crypto = (NetworkItem.Crypto) networkItem;
             String fullName = crypto.getFullName();
@@ -163,7 +163,7 @@ public final class NetworkTypeView extends FrameLayout implements KoinComponent 
         if (this.isImmutable) {
             return;
         }
-        updateView$lambda$2$lambda$1.setCompoundDrawablesWithIntrinsicBounds(0, 0, C3634R.C3636drawable.fork_ic_arrow_down_16, 0);
+        updateView$lambda$2$lambda$1.setCompoundDrawablesWithIntrinsicBounds(0, 0, C3632R.C3634drawable.fork_ic_arrow_down_16, 0);
         updateView$lambda$2$lambda$1.setCompoundDrawablePadding(AndroidUtilities.m104dp(4));
         Intrinsics.checkNotNullExpressionValue(updateView$lambda$2$lambda$1, "updateView$lambda$2$lambda$1");
         ViewExtKt.setCompoundDrawablesColor(updateView$lambda$2$lambda$1, -1);

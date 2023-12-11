@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
@@ -286,7 +286,7 @@ public class SharingLiveLocationCell extends FrameLayout {
             if (!TextUtils.isEmpty(messageObject.messageOwner.media.title)) {
                 str = messageObject.messageOwner.media.title;
             }
-            Drawable drawable = getResources().getDrawable(C3634R.C3636drawable.pin);
+            Drawable drawable = getResources().getDrawable(C3632R.C3634drawable.pin);
             drawable.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_location_sendLocationIcon), PorterDuff.Mode.MULTIPLY));
             int themedColor = getThemedColor(Theme.key_location_placeLocationBackground);
             CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m104dp(42), themedColor, themedColor), drawable);
@@ -307,7 +307,7 @@ public class SharingLiveLocationCell extends FrameLayout {
         } else if (str2 != null) {
             this.distanceTextView.setText(str2);
         } else if (!z) {
-            this.distanceTextView.setText(LocaleController.getString("Loading", C3634R.string.Loading));
+            this.distanceTextView.setText(LocaleController.getString("Loading", C3632R.string.Loading));
         } else {
             this.distanceTextView.setText("");
         }

@@ -12,6 +12,6 @@ public final /* synthetic */ class TimelineView$VideoThumbsLoader$$ExternalSynth
 
     @Override // java.lang.Runnable
     public final void run() {
-        TimelineView.VideoThumbsLoader.m4971$r8$lambda$bN6eXgmfeiJhYuzEanlE5dKz1c(this.f$0);
+        this.f$0.retrieveFrame();
     }
 }

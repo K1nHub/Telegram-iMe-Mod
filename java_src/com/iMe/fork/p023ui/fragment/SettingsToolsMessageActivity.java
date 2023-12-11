@@ -28,11 +28,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.RadioColorCell;
@@ -140,11 +140,11 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
         int i3 = Theme.key_windowBackgroundWhiteBlackText;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3706ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, TextCell.class, TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3704ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, TextCell.class, TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked));
         return arrayListOf;
     }
 
@@ -157,21 +157,21 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
 
     private final String getHint(int i) {
         if (i == this.sendPopupTranslateRow) {
-            return LocaleController.getInternalString(C3634R.string.settings_tools_send_popup_translate_hint);
+            return LocaleController.getInternalString(C3632R.string.settings_tools_send_popup_translate_hint);
         }
         if (i == this.messagesSilentSendingRow) {
-            return LocaleController.getInternalString(C3634R.string.settings_tools_silent_sending);
+            return LocaleController.getInternalString(C3632R.string.settings_tools_silent_sending);
         }
         if (i == this.combineMessagesRow) {
-            return LocaleController.getInternalString(C3634R.string.settings_tools_combine_messages_hint);
+            return LocaleController.getInternalString(C3632R.string.settings_tools_combine_messages_hint);
         }
         return null;
     }
 
     private final AlertDialog createChooseSentMessageFontDialog(Context context) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(LocaleController.getInternalString(C3634R.string.settings_tools_sent_message_font));
-        builder.setNegativeButton(LocaleController.getInternalString(C3634R.string.common_cancel), null);
+        builder.setTitle(LocaleController.getInternalString(C3632R.string.settings_tools_sent_message_font));
+        builder.setNegativeButton(LocaleController.getInternalString(C3632R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         SentMessageFont[] values = SentMessageFont.values();
@@ -216,7 +216,7 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
     private final void showHintDialog(String str) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         builder.setMessage(str);
-        builder.setPositiveButton(LocaleController.getString("OK", C3634R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", C3632R.string.OK), null);
         showDialog(builder.create());
     }
 
@@ -288,17 +288,17 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
 
     private final void setupActionBar() {
         String internalString;
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setAllowOverlayTitle(true);
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setAllowOverlayTitle(true);
         if (this.position == 0) {
-            internalString = LocaleController.getInternalString(C3634R.string.settings_tools_translator);
+            internalString = LocaleController.getInternalString(C3632R.string.settings_tools_translator);
         } else {
-            internalString = LocaleController.getInternalString(C3634R.string.sending_settings_send);
+            internalString = LocaleController.getInternalString(C3632R.string.sending_settings_send);
         }
-        c3706ActionBar.setTitle(internalString);
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.SettingsToolsMessageActivity$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        c3704ActionBar.setTitle(internalString);
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.SettingsToolsMessageActivity$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SettingsToolsMessageActivity.this.finishFragment();
@@ -364,23 +364,23 @@ public final class SettingsToolsMessageActivity extends MvpFragment {
                         if (i != SettingsToolsMessageActivity.this.sendPopupTranslateRow) {
                             if (i != SettingsToolsMessageActivity.this.messagesSilentSendingRow) {
                                 if (i == SettingsToolsMessageActivity.this.combineMessagesRow) {
-                                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_tools_combine_messages), SharedConfig.isCombineMessagesEnabled, z);
+                                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_tools_combine_messages), SharedConfig.isCombineMessagesEnabled, z);
                                     return;
                                 }
                                 return;
                             }
-                            textCheckCell.setTextAndCheck(LocaleController.getString("SendWithoutSound", C3634R.string.SendWithoutSound), SettingsToolsMessageActivity.this.getToolsController().isSilentSendingEnabled(), z);
+                            textCheckCell.setTextAndCheck(LocaleController.getString("SendWithoutSound", C3632R.string.SendWithoutSound), SettingsToolsMessageActivity.this.getToolsController().isSilentSendingEnabled(), z);
                             return;
                         }
-                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_tools_send_popup_translate), SharedConfig.isTranslateInSendPopupEnabled, z);
+                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_tools_send_popup_translate), SharedConfig.isTranslateInSendPopupEnabled, z);
                         return;
                     }
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_tools_bot_help_translate), SharedConfig.isBotHelpTranslateEnabled, z);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_tools_bot_help_translate), SharedConfig.isBotHelpTranslateEnabled, z);
                     return;
                 }
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_tools_message_quick_translate), SharedConfig.isMessageQuickTranslateEnabled, z);
+                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_tools_message_quick_translate), SharedConfig.isMessageQuickTranslateEnabled, z);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_SETTINGS_CELL && (view instanceof TextSettingsCell) && i == SettingsToolsMessageActivity.this.sentMessageTextFont) {
-                ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3634R.string.settings_tools_sent_message_font), SettingsToolsMessageActivity.this.getToolsController().getSelectedSentMessageFont().getTitle(), z);
+                ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3632R.string.settings_tools_sent_message_font), SettingsToolsMessageActivity.this.getToolsController().getSelectedSentMessageFont().getTitle(), z);
             }
         }
 

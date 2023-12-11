@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MediaController$PhotoEntry;Z)V
     .locals 0
 
-    .line 14509
+    .line 14511
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$66;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$66;->val$chatPhotoProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
@@ -45,7 +45,7 @@
 
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;-><init>()V
 
-    .line 14511
+    .line 14513
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$8700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object p1
@@ -64,7 +64,7 @@
 
     move-object/from16 v0, p0
 
-    .line 14551
+    .line 14553
     iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$66;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$12600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
@@ -75,7 +75,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 14552
+    .line 14554
     iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$66;->val$finalMessageObject:Lorg/telegram/messenger/MessageObject;
 
     goto :goto_0
@@ -86,7 +86,7 @@
     :goto_0
     if-eqz v1, :cond_1
 
-    .line 14553
+    .line 14555
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer$66;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     iget-object v2, v2, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
@@ -97,19 +97,19 @@
 
     if-nez v2, :cond_1
 
-    .line 14554
+    .line 14556
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer$66;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     iget-object v3, v2, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
     iput-object v3, v1, Lorg/telegram/messenger/MessageObject;->editingMessage:Ljava/lang/CharSequence;
 
-    .line 14555
+    .line 14557
     iget-object v2, v2, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
     iput-object v2, v1, Lorg/telegram/messenger/MessageObject;->editingMessageEntities:Ljava/util/ArrayList;
 
-    .line 14557
+    .line 14559
     :cond_1
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer$66;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
@@ -119,7 +119,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 14559
+    .line 14561
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer$66;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$12600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
@@ -206,7 +206,7 @@
 
     goto/16 :goto_1
 
-    .line 14561
+    .line 14563
     :cond_2
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer$66;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -294,13 +294,13 @@
 
     goto/16 :goto_1
 
-    .line 14564
+    .line 14566
     :cond_3
     iget-object v3, v2, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
 
     if-eqz v3, :cond_4
 
-    .line 14565
+    .line 14567
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer$66;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$12600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
@@ -399,13 +399,13 @@
 
     goto :goto_1
 
-    .line 14566
+    .line 14568
     :cond_4
     iget-object v2, v2, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     if-eqz v2, :cond_5
 
-    .line 14567
+    .line 14569
     iget-object v2, v0, Lorg/telegram/ui/PhotoViewer$66;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$12600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
@@ -520,7 +520,7 @@
 .method public canReplace(I)Z
     .locals 0
 
-    .line 14537
+    .line 14539
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$66;->val$chatPhotoProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
 
     if-eqz p1, :cond_0
@@ -543,7 +543,7 @@
 .method public getEditingMessageObject()Lorg/telegram/messenger/MessageObject;
     .locals 1
 
-    .line 14542
+    .line 14544
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$66;->val$finalMessageObject:Lorg/telegram/messenger/MessageObject;
 
     return-object v0
@@ -552,7 +552,7 @@
 .method public getPlaceForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;IZ)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
     .locals 1
 
-    .line 14515
+    .line 14517
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$66;->val$chatPhotoProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
 
     const/4 p2, 0x0
@@ -574,7 +574,7 @@
 .method public getThumbForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;I)Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
     .locals 0
 
-    .line 14520
+    .line 14522
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$66;->thumbHolder:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     return-object p1
@@ -583,7 +583,7 @@
 .method public replaceButtonPressed(ILorg/telegram/messenger/VideoEditedInfo;)V
     .locals 7
 
-    .line 14530
+    .line 14532
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$66;->val$photoEntry:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     iget-boolean v0, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->isCropped:Z
@@ -623,7 +623,7 @@
 
     move-object v1, p2
 
-    .line 14531
+    .line 14533
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/PhotoViewer$66;->sendMedia(Lorg/telegram/messenger/VideoEditedInfo;ZIZZLjava/lang/String;)V
 
     :cond_1
@@ -647,7 +647,7 @@
 
     move-object v6, p6
 
-    .line 14525
+    .line 14527
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/PhotoViewer$66;->sendMedia(Lorg/telegram/messenger/VideoEditedInfo;ZIZZLjava/lang/String;)V
 
     return-void

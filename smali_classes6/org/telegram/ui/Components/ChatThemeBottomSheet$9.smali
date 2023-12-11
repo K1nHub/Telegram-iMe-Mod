@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
     .locals 0
 
-    .line 647
+    .line 641
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$9;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 650
+    .line 644
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$9;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2000(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Landroid/view/View;
@@ -46,7 +46,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 651
+    .line 645
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$9;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2000(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Landroid/view/View;
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 652
+    .line 646
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$9;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2000(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Landroid/view/View;
@@ -80,19 +80,19 @@
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 654
+    .line 648
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$9;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2002(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Landroid/view/View;)Landroid/view/View;
 
-    .line 656
+    .line 650
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$9;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2102(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 657
+    .line 651
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
     return-void

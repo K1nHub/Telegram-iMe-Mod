@@ -12,7 +12,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CryptoBoxStatusInfoRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.adapter.CryptoBoxStatusInfoRecycleAdapter */
@@ -22,7 +22,7 @@ public final class CryptoBoxStatusInfoRecycleAdapter extends BaseQuickAdapter<Cr
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CryptoBoxStatusInfoRecycleAdapter(ResourceManager resourceManager) {
-        super(C3634R.layout.fork_recycle_item_cryptobox_status, null, 2, null);
+        super(C3632R.layout.fork_recycle_item_cryptobox_status, null, 2, null);
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
     }
@@ -32,8 +32,8 @@ public final class CryptoBoxStatusInfoRecycleAdapter extends BaseQuickAdapter<Cr
     public void convert(BaseViewHolder holder, final CryptoBoxStatus item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3634R.C3637id.text_description;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setThemedTextColor(holder, i, Theme.key_windowBackgroundWhiteBlackText), C3634R.C3637id.view_divider, !RecycleViewExtKt.isLastItem(holder, this)).setText(i, AndroidUtilities.replaceTags(this.resourceManager.getString(item.getDescriptionResId()))), C3634R.C3637id.image_check, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.wallet.cryptobox.statuses_description.adapter.CryptoBoxStatusInfoRecycleAdapter$convert$1
+        int i = C3632R.C3635id.text_description;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(BaseQuickAdapterExtKt.setThemedTextColor(holder, i, Theme.key_windowBackgroundWhiteBlackText), C3632R.C3635id.view_divider, !RecycleViewExtKt.isLastItem(holder, this)).setText(i, AndroidUtilities.replaceTags(this.resourceManager.getString(item.getDescriptionResId()))), C3632R.C3635id.image_check, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.wallet.cryptobox.statuses_description.adapter.CryptoBoxStatusInfoRecycleAdapter$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {

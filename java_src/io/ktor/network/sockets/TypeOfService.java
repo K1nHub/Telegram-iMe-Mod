@@ -5,15 +5,15 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: classes4.dex */
 public final class TypeOfService {
     public static final Companion Companion = new Companion(null);
-    private static final byte UNDEFINED = m1905constructorimpl((byte) 0);
+    private static final byte UNDEFINED = m1907constructorimpl((byte) 0);
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static byte m1905constructorimpl(byte b) {
+    public static byte m1907constructorimpl(byte b) {
         return b;
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1906equalsimpl0(byte b, byte b2) {
+    public static final boolean m1908equalsimpl0(byte b, byte b2) {
         return b == b2;
     }
 
@@ -28,15 +28,15 @@ public final class TypeOfService {
         }
 
         /* renamed from: getUNDEFINED-zieKYfw  reason: not valid java name */
-        public final byte m1907getUNDEFINEDzieKYfw() {
+        public final byte m1909getUNDEFINEDzieKYfw() {
             return TypeOfService.UNDEFINED;
         }
     }
 
     static {
-        m1905constructorimpl((byte) 2);
-        m1905constructorimpl((byte) 4);
-        m1905constructorimpl((byte) 8);
-        m1905constructorimpl((byte) 16);
+        m1907constructorimpl((byte) 2);
+        m1907constructorimpl((byte) 4);
+        m1907constructorimpl((byte) 8);
+        m1907constructorimpl((byte) 16);
     }
 }

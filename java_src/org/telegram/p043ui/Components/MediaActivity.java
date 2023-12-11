@@ -26,7 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -37,7 +37,7 @@ import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BackDrawable;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -233,11 +233,11 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
 
     /* renamed from: org.telegram.ui.Components.MediaActivity$1 */
     /* loaded from: classes6.dex */
-    class C51581 extends C3706ActionBar.ActionBarMenuOnItemClick {
-        C51581() {
+    class C51551 extends C3704ActionBar.ActionBarMenuOnItemClick {
+        C51551() {
         }
 
-        @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
         public void onItemClick(int i) {
             int i2;
             String str;
@@ -264,22 +264,22 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(MediaActivity.this.getContext(), MediaActivity.this.getResourceProvider());
                 if (arrayList.size() > 1) {
-                    i2 = C3634R.string.DeleteStoriesTitle;
+                    i2 = C3632R.string.DeleteStoriesTitle;
                     str = "DeleteStoriesTitle";
                 } else {
-                    i2 = C3634R.string.DeleteStoryTitle;
+                    i2 = C3632R.string.DeleteStoryTitle;
                     str = "DeleteStoryTitle";
                 }
                 builder.setTitle(LocaleController.getString(str, i2));
                 builder.setMessage(LocaleController.formatPluralString("DeleteStoriesSubtitle", arrayList.size(), new Object[0]));
-                builder.setPositiveButton(LocaleController.getString("Delete", C3634R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.MediaActivity.1.1
+                builder.setPositiveButton(LocaleController.getString("Delete", C3632R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.MediaActivity.1.1
                     @Override // android.content.DialogInterface.OnClickListener
                     public void onClick(DialogInterface dialogInterface, int i4) {
                         MediaActivity.this.getMessagesController().getStoriesController().deleteStories(MediaActivity.this.dialogId, arrayList);
                         MediaActivity.this.sharedMediaLayout.closeActionMode(false);
                     }
                 });
-                builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.MediaActivity$1$$ExternalSyntheticLambda0
+                builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.MediaActivity$1$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i4) {
                         dialogInterface.dismiss();
@@ -421,9 +421,9 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
             }
         };
         if (z) {
-            show = BulletinFactory.m62of(this).createSimpleBulletin(C3634R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), runnable2).show();
+            show = BulletinFactory.m62of(this).createSimpleBulletin(C3632R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), runnable2).show();
         } else {
-            show = BulletinFactory.m62of(this).createSimpleBulletin(C3634R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i, new Object[0]), LocaleController.getString("Undo"), DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS, runnable2).show();
+            show = BulletinFactory.m62of(this).createSimpleBulletin(C3632R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i, new Object[0]), LocaleController.getString("Undo"), DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS, runnable2).show();
         }
         show.setOnHideListener(new Runnable() { // from class: org.telegram.ui.Components.MediaActivity$$ExternalSyntheticLambda15
             @Override // java.lang.Runnable
@@ -698,9 +698,9 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
     /* JADX INFO: Access modifiers changed from: private */
     public void updateColors() {
         this.actionBar.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3706ActionBar.setItemsColor(Theme.getColor(i), false);
+        c3704ActionBar.setItemsColor(Theme.getColor(i), false);
         this.actionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_actionBarActionModeDefaultSelector), false);
         this.actionBar.setTitleColor(Theme.getColor(i));
         this.nameTextView[0].setTextColor(Theme.getColor(i));
@@ -790,7 +790,7 @@ public class MediaActivity extends BaseFragment implements SharedMediaLayout.Sha
 
         @Override // org.telegram.p043ui.Components.BottomPagerTabs
         public BottomPagerTabs.Tab[] createTabs() {
-            BottomPagerTabs.Tab[] tabArr = {new BottomPagerTabs.Tab(0, C3634R.raw.msg_stories_saved, LocaleController.getString("ProfileMyStoriesTab", C3634R.string.ProfileMyStoriesTab)), new BottomPagerTabs.Tab(1, C3634R.raw.msg_stories_archive, LocaleController.getString("ProfileStoriesArchiveTab", C3634R.string.ProfileStoriesArchiveTab)), new BottomPagerTabs.Tab(2, C3634R.raw.fork_stories_settings, LocaleController.getString("Settings", C3634R.string.Settings))};
+            BottomPagerTabs.Tab[] tabArr = {new BottomPagerTabs.Tab(0, C3632R.raw.msg_stories_saved, LocaleController.getString("ProfileMyStoriesTab", C3632R.string.ProfileMyStoriesTab)), new BottomPagerTabs.Tab(1, C3632R.raw.msg_stories_archive, LocaleController.getString("ProfileStoriesArchiveTab", C3632R.string.ProfileStoriesArchiveTab)), new BottomPagerTabs.Tab(2, C3632R.raw.fork_stories_settings, LocaleController.getString("Settings", C3632R.string.Settings))};
             tabArr[0].customEndFrameMid = 20;
             tabArr[0].customEndFrameEnd = 40;
             return tabArr;

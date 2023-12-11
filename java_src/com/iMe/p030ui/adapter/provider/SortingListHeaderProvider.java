@@ -7,14 +7,14 @@ import com.iMe.model.cryptobox.SortingListHeaderItem;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: SortingListHeaderProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.SortingListHeaderProvider */
 /* loaded from: classes3.dex */
 public final class SortingListHeaderProvider extends BaseNodeProvider<SortingListHeaderItem> {
     private final int itemViewType = IdFabric$ViewTypes.SORTING_LIST_HEADER;
-    private final int layoutId = C3634R.layout.fork_recycle_item_sorting_list_header;
+    private final int layoutId = C3632R.layout.fork_recycle_item_sorting_list_header;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public /* bridge */ /* synthetic */ void convert(BaseViewHolder baseViewHolder, Object obj, List list) {
@@ -35,10 +35,10 @@ public final class SortingListHeaderProvider extends BaseNodeProvider<SortingLis
     public void convert(BaseViewHolder helper, SortingListHeaderItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3634R.C3637id.linear_root, Theme.key_windowBackgroundWhite);
-        int i = C3634R.C3637id.text_header;
+        BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3632R.C3635id.linear_root, Theme.key_windowBackgroundWhite);
+        int i = C3632R.C3635id.text_header;
         BaseViewHolder mediumTypeface = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedBackgroundColor, i, Theme.key_windowBackgroundWhiteBlueText), i);
-        int i2 = C3634R.C3637id.image_order;
+        int i2 = C3632R.C3635id.image_order;
         BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(mediumTypeface, i2, Theme.key_windowBackgroundWhiteGrayIcon), i2).setText(i, item.getTitleText()).setVisible(i2, item.isSortingVisible());
     }
 
@@ -46,6 +46,6 @@ public final class SortingListHeaderProvider extends BaseNodeProvider<SortingLis
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        helper.setVisible(C3634R.C3637id.image_order, item.isSortingVisible());
+        helper.setVisible(C3632R.C3635id.image_order, item.isSortingVisible());
     }
 }

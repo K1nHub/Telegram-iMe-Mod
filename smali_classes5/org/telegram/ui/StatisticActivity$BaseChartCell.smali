@@ -102,7 +102,7 @@
 
     const/4 v0, 0x0
 
-    .line 1336
+    .line 1339
     invoke-direct {p0, p1, p2, p3, v0}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;Landroid/util/AttributeSet;)V
 
     return-void
@@ -111,10 +111,10 @@
 .method public constructor <init>(Landroid/content/Context;ILorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;Landroid/util/AttributeSet;)V
     .locals 11
 
-    .line 1356
+    .line 1359
     invoke-direct {p0, p1, p4}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 1349
+    .line 1352
     new-instance p4, Ljava/util/ArrayList;
 
     invoke-direct {p4}, Ljava/util/ArrayList;-><init>()V
@@ -123,30 +123,30 @@
 
     const/4 p4, 0x0
 
-    .line 1357
+    .line 1360
     invoke-virtual {p0, p4}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 1358
+    .line 1361
     iput p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartType:I
 
-    .line 1359
+    .line 1362
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v1, 0x1
 
-    .line 1360
+    .line 1363
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1361
+    .line 1364
     new-instance v2, Lorg/telegram/ui/StatisticActivity$BaseChartCell$1;
 
     invoke-direct {v2, p0, p1}, Lorg/telegram/ui/StatisticActivity$BaseChartCell$1;-><init>(Lorg/telegram/ui/StatisticActivity$BaseChartCell;Landroid/content/Context;)V
 
     iput-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkboxContainer:Landroid/view/ViewGroup;
 
-    .line 1397
+    .line 1400
     new-instance v2, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -157,7 +157,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
-    .line 1398
+    .line 1401
     iget-object v2, v2, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->back:Landroid/widget/TextView;
 
     new-instance v3, Lorg/telegram/ui/Components/RecyclerListView$FoucsableOnTouchListener;
@@ -166,7 +166,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 1399
+    .line 1402
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
     iget-object v2, v2, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->back:Landroid/widget/TextView;
@@ -191,7 +191,7 @@
 
     if-eq p2, v2, :cond_0
 
-    .line 1423
+    .line 1426
     new-instance p2, Lorg/telegram/ui/Charts/LinearChartView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -202,7 +202,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
-    .line 1424
+    .line 1427
     new-instance p2, Lorg/telegram/ui/Charts/LinearChartView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -213,14 +213,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
-    .line 1425
+    .line 1428
     iget-object p2, p2, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
     iput-boolean v1, p2, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->useHour:Z
 
     goto :goto_0
 
-    .line 1418
+    .line 1421
     :cond_0
     new-instance p2, Lorg/telegram/ui/Charts/StackLinearChartView;
 
@@ -232,12 +232,12 @@
 
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
-    .line 1419
+    .line 1422
     iget-object p2, p2, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
     iput-boolean v1, p2, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->showPercentage:Z
 
-    .line 1420
+    .line 1423
     new-instance p2, Lorg/telegram/ui/Charts/PieChartView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -250,7 +250,7 @@
 
     goto :goto_0
 
-    .line 1413
+    .line 1416
     :cond_1
     new-instance p2, Lorg/telegram/ui/Charts/BarChartView;
 
@@ -262,7 +262,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
-    .line 1414
+    .line 1417
     new-instance p2, Lorg/telegram/ui/Charts/LinearChartView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -273,14 +273,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
-    .line 1415
+    .line 1418
     iget-object p2, p2, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
     iput-boolean v1, p2, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->useHour:Z
 
     goto :goto_0
 
-    .line 1408
+    .line 1411
     :cond_2
     new-instance p2, Lorg/telegram/ui/Charts/StackBarChartView;
 
@@ -292,7 +292,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
-    .line 1409
+    .line 1412
     new-instance p2, Lorg/telegram/ui/Charts/StackBarChartView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -303,14 +303,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
-    .line 1410
+    .line 1413
     iget-object p2, p2, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
     iput-boolean v1, p2, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->useHour:Z
 
     goto :goto_0
 
-    .line 1403
+    .line 1406
     :cond_3
     new-instance p2, Lorg/telegram/ui/Charts/DoubleLinearChartView;
 
@@ -322,7 +322,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
-    .line 1404
+    .line 1407
     new-instance p2, Lorg/telegram/ui/Charts/DoubleLinearChartView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -333,40 +333,40 @@
 
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
-    .line 1405
+    .line 1408
     iget-object p2, p2, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
     iput-boolean v1, p2, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->useHour:Z
 
-    .line 1429
+    .line 1432
     :goto_0
     new-instance p2, Landroid/widget/FrameLayout;
 
     invoke-direct {p2, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1431
+    .line 1434
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput-object p3, v3, Lorg/telegram/ui/Charts/BaseChartView;->sharedUiComponents:Lorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;
 
-    .line 1432
+    .line 1435
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput-object p3, v3, Lorg/telegram/ui/Charts/BaseChartView;->sharedUiComponents:Lorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;
 
-    .line 1433
+    .line 1436
     new-instance p3, Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-direct {p3, p1}, Lorg/telegram/ui/Components/RadialProgressView;-><init>(Landroid/content/Context;)V
 
     iput-object p3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    .line 1434
+    .line 1437
     iget-object p3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1435
+    .line 1438
     iget-object p3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p3, p3, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -375,19 +375,19 @@
 
     invoke-virtual {p2, p3, v3, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;II)V
 
-    .line 1436
+    .line 1439
     iget-object p3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1437
+    .line 1440
     iget-object p3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p3, p3, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
     invoke-virtual {p2, p3, v3, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;II)V
 
-    .line 1438
+    .line 1441
     iget-object p3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     const/16 v4, 0x2c
@@ -410,7 +410,7 @@
 
     invoke-virtual {p2, p3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1440
+    .line 1443
     new-instance p3, Landroid/widget/TextView;
 
     invoke-direct {p3, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -419,10 +419,10 @@
 
     const/high16 p1, 0x41700000    # 15.0f
 
-    .line 1441
+    .line 1444
     invoke-virtual {p3, v1, p1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1442
+    .line 1445
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
     const/4 v4, -0x2
@@ -437,14 +437,14 @@
 
     invoke-virtual {p2, p1, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1443
+    .line 1446
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     const/16 p3, 0x8
 
     invoke-virtual {p1, p3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1445
+    .line 1448
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
     sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray4:I
@@ -455,7 +455,7 @@
 
     invoke-virtual {p1, p3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1448
+    .line 1451
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     new-instance p3, Lorg/telegram/ui/StatisticActivity$BaseChartCell$$ExternalSyntheticLambda5;
@@ -464,14 +464,14 @@
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Charts/BaseChartView;->setDateSelectionListener(Lorg/telegram/ui/Charts/BaseChartView$DateSelectionListener;)V
 
-    .line 1453
+    .line 1456
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p1, p1, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
     invoke-virtual {p1, p4, p4}, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->showProgress(ZZ)V
 
-    .line 1454
+    .line 1457
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p1, p1, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -482,7 +482,7 @@
 
     invoke-virtual {p1, p3}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 1455
+    .line 1458
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p1, p1, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -493,7 +493,7 @@
 
     invoke-virtual {p1, p3}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1456
+    .line 1459
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p1, p1, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -504,24 +504,24 @@
 
     invoke-virtual {p1, p3}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1457
+    .line 1460
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p1, p4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1458
+    .line 1461
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1459
+    .line 1462
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Charts/BaseChartView;->setHeader(Lorg/telegram/ui/Charts/view_data/ChartHeaderView;)V
 
-    .line 1461
+    .line 1464
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
     const/16 p3, 0x34
@@ -534,14 +534,14 @@
 
     invoke-virtual {v0, p1, p3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1462
+    .line 1465
     invoke-static {v1, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
 
     invoke-virtual {v0, p2, p1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1463
+    .line 1466
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkboxContainer:Landroid/view/ViewGroup;
 
     const/4 v3, -0x1
@@ -558,24 +558,24 @@
 
     invoke-virtual {v0, p1, p3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1465
+    .line 1468
     iget p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartType:I
 
     if-ne p1, v2, :cond_4
 
-    .line 1466
+    .line 1469
     invoke-virtual {p2, p4}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 1467
+    .line 1470
     invoke-virtual {p2, p4}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
 
-    .line 1468
+    .line 1471
     invoke-virtual {v0, p4}, Landroid/widget/LinearLayout;->setClipChildren(Z)V
 
-    .line 1469
+    .line 1472
     invoke-virtual {v0, p4}, Landroid/widget/LinearLayout;->setClipToPadding(Z)V
 
-    .line 1472
+    .line 1475
     :cond_4
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
@@ -585,7 +585,7 @@
 .method private createTransitionAnimator(JZ)Landroid/animation/ValueAnimator;
     .locals 7
 
-    .line 1633
+    .line 1636
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -600,34 +600,34 @@
 
     invoke-virtual {v0, v1, v1}, Landroid/view/Window;->setFlags(II)V
 
-    .line 1636
+    .line 1639
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lorg/telegram/ui/Charts/BaseChartView;->enabled:Z
 
-    .line 1637
+    .line 1640
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput-boolean v1, v2, Lorg/telegram/ui/Charts/BaseChartView;->enabled:Z
 
     const/4 v3, 0x2
 
-    .line 1638
+    .line 1641
     iput v3, v0, Lorg/telegram/ui/Charts/BaseChartView;->transitionMode:I
 
     const/4 v0, 0x1
 
-    .line 1639
+    .line 1642
     iput v0, v2, Lorg/telegram/ui/Charts/BaseChartView;->transitionMode:I
 
-    .line 1641
+    .line 1644
     new-instance v2, Lorg/telegram/ui/Charts/view_data/TransitionParams;
 
     invoke-direct {v2}, Lorg/telegram/ui/Charts/view_data/TransitionParams;-><init>()V
 
-    .line 1642
+    .line 1645
     iget-object v4, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v4, v4, Lorg/telegram/ui/Charts/BaseChartView;->pickerDelegate:Lorg/telegram/ui/Charts/ChartPickerDelegate;
@@ -636,12 +636,12 @@
 
     iput v5, v2, Lorg/telegram/ui/Charts/view_data/TransitionParams;->pickerEndOut:F
 
-    .line 1643
+    .line 1646
     iget v4, v4, Lorg/telegram/ui/Charts/ChartPickerDelegate;->pickerStart:F
 
     iput v4, v2, Lorg/telegram/ui/Charts/view_data/TransitionParams;->pickerStartOut:F
 
-    .line 1647
+    .line 1650
     iget-object v4, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v4, v4, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
@@ -654,7 +654,7 @@
 
     if-gez p1, :cond_0
 
-    .line 1649
+    .line 1652
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object p1, p1, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
@@ -665,7 +665,7 @@
 
     sub-int/2addr p1, v0
 
-    .line 1651
+    .line 1654
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
@@ -677,17 +677,17 @@
 
     iput p2, v2, Lorg/telegram/ui/Charts/view_data/TransitionParams;->xPercentage:F
 
-    .line 1654
+    .line 1657
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1655
+    .line 1658
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput-object v2, p2, Lorg/telegram/ui/Charts/BaseChartView;->transitionParams:Lorg/telegram/ui/Charts/view_data/TransitionParams;
 
-    .line 1656
+    .line 1659
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput-object v2, p2, Lorg/telegram/ui/Charts/BaseChartView;->transitionParams:Lorg/telegram/ui/Charts/view_data/TransitionParams;
@@ -698,7 +698,7 @@
 
     move v5, v4
 
-    .line 1660
+    .line 1663
     :goto_0
     iget-object v6, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
@@ -712,7 +712,7 @@
 
     if-ge v4, v6, :cond_3
 
-    .line 1661
+    .line 1664
     iget-object v6, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v6, v6, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
@@ -731,7 +731,7 @@
 
     if-le v6, v5, :cond_1
 
-    .line 1662
+    .line 1665
     iget-object v5, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v5, v5, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
@@ -748,7 +748,7 @@
 
     aget v5, v5, p1
 
-    .line 1663
+    .line 1666
     :cond_1
     iget-object v6, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
@@ -768,7 +768,7 @@
 
     if-ge v6, p2, :cond_2
 
-    .line 1664
+    .line 1667
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object p2, p2, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
@@ -799,7 +799,7 @@
 
     add-float/2addr p1, p2
 
-    .line 1666
+    .line 1669
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget v4, p2, Lorg/telegram/ui/Charts/BaseChartView;->currentMinHeight:F
@@ -812,10 +812,10 @@
 
     div-float/2addr p1, v5
 
-    .line 1669
+    .line 1672
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Charts/BaseChartView;->fillTransitionParams(Lorg/telegram/ui/Charts/view_data/TransitionParams;)V
 
-    .line 1670
+    .line 1673
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Charts/BaseChartView;->fillTransitionParams(Lorg/telegram/ui/Charts/view_data/TransitionParams;)V
@@ -845,12 +845,12 @@
     :cond_5
     aput v3, p2, v0
 
-    .line 1671
+    .line 1674
     invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p2
 
-    .line 1672
+    .line 1675
     new-instance p3, Lorg/telegram/ui/StatisticActivity$BaseChartCell$$ExternalSyntheticLambda1;
 
     invoke-direct {p3, p0, v2, p1}, Lorg/telegram/ui/StatisticActivity$BaseChartCell$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/StatisticActivity$BaseChartCell;Lorg/telegram/ui/Charts/view_data/TransitionParams;F)V
@@ -859,10 +859,10 @@
 
     const-wide/16 v0, 0x190
 
-    .line 1685
+    .line 1688
     invoke-virtual {p2, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1686
+    .line 1689
     new-instance p1, Landroidx/interpolator/view/animation/FastOutSlowInInterpolator;
 
     invoke-direct {p1}, Landroidx/interpolator/view/animation/FastOutSlowInInterpolator;-><init>()V
@@ -875,7 +875,7 @@
 .method private synthetic lambda$createTransitionAnimator$4(Lorg/telegram/ui/Charts/view_data/TransitionParams;FLandroid/animation/ValueAnimator;)V
     .locals 4
 
-    .line 1673
+    .line 1676
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget v1, v0, Lorg/telegram/ui/Charts/BaseChartView;->chartWidth:F
@@ -892,12 +892,12 @@
 
     mul-float/2addr v1, v2
 
-    .line 1674
+    .line 1677
     sget v2, Lorg/telegram/ui/Charts/BaseChartView;->HORIZONTAL_PADDING:F
 
     sub-float/2addr v1, v2
 
-    .line 1676
+    .line 1679
     iget-object v0, v0, Lorg/telegram/ui/Charts/BaseChartView;->chartArea:Landroid/graphics/RectF;
 
     iget v2, v0, Landroid/graphics/RectF;->top:F
@@ -916,7 +916,7 @@
 
     iput v2, p1, Lorg/telegram/ui/Charts/view_data/TransitionParams;->pY:F
 
-    .line 1677
+    .line 1680
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget p2, p2, Lorg/telegram/ui/Charts/BaseChartView;->chartFullWidth:F
@@ -929,7 +929,7 @@
 
     iput p2, p1, Lorg/telegram/ui/Charts/view_data/TransitionParams;->pX:F
 
-    .line 1679
+    .line 1682
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -942,17 +942,17 @@
 
     iput p2, p1, Lorg/telegram/ui/Charts/view_data/TransitionParams;->progress:F
 
-    .line 1680
+    .line 1683
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p2}, Landroid/view/View;->invalidate()V
 
-    .line 1681
+    .line 1684
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Charts/BaseChartView;->fillTransitionParams(Lorg/telegram/ui/Charts/view_data/TransitionParams;)V
 
-    .line 1682
+    .line 1685
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -965,7 +965,7 @@
 
     const/4 p1, 0x1
 
-    .line 1399
+    .line 1402
     invoke-direct {p0, p1}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomOut(Z)V
 
     return-void
@@ -974,10 +974,10 @@
 .method private synthetic lambda$new$1(J)V
     .locals 0
 
-    .line 1449
+    .line 1452
     invoke-virtual {p0}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomCanceled()V
 
-    .line 1450
+    .line 1453
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p1, p1, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -992,7 +992,7 @@
 .method private synthetic lambda$new$2(Landroid/view/View;)V
     .locals 0
 
-    .line 1455
+    .line 1458
     invoke-virtual {p0}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->onZoomed()V
 
     return-void
@@ -1001,7 +1001,7 @@
 .method private synthetic lambda$new$3(Landroid/view/View;)V
     .locals 1
 
-    .line 1456
+    .line 1459
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     const/4 v0, 0x0
@@ -1014,7 +1014,7 @@
 .method private synthetic lambda$updateData$5(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 1768
+    .line 1771
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1025,7 +1025,7 @@
 
     move-result p1
 
-    .line 1769
+    .line 1772
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1034,19 +1034,19 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RadialProgressView;->setAlpha(F)V
 
-    .line 1770
+    .line 1773
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v0, v0, Lorg/telegram/ui/Charts/BaseChartView;->transitionParams:Lorg/telegram/ui/Charts/view_data/TransitionParams;
 
     iput p1, v0, Lorg/telegram/ui/Charts/view_data/TransitionParams;->progress:F
 
-    .line 1771
+    .line 1774
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 1772
+    .line 1775
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -1057,7 +1057,7 @@
 .method private zoomOut(Z)V
     .locals 7
 
-    .line 1570
+    .line 1573
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v0, v0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
@@ -1068,7 +1068,7 @@
 
     return-void
 
-    .line 1573
+    .line 1576
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
@@ -1076,7 +1076,7 @@
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->zoomOut(Lorg/telegram/ui/Charts/BaseChartView;Z)V
 
-    .line 1574
+    .line 1577
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v0, v0, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -1087,45 +1087,45 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 1575
+    .line 1578
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Charts/BaseChartView;->setHeader(Lorg/telegram/ui/Charts/view_data/ChartHeaderView;)V
 
-    .line 1577
+    .line 1580
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Charts/BaseChartView;->getSelectedDate()J
 
     move-result-wide v3
 
-    .line 1578
+    .line 1581
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     const-wide/16 v5, 0x0
 
     iput-wide v5, v0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->activeZoom:J
 
-    .line 1580
+    .line 1583
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     const/4 v5, 0x0
 
     invoke-virtual {v0, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1581
+    .line 1584
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Charts/BaseChartView;->clearSelection()V
 
-    .line 1583
+    .line 1586
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Charts/BaseChartView;->setHeader(Lorg/telegram/ui/Charts/view_data/ChartHeaderView;)V
 
-    .line 1584
+    .line 1587
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
@@ -1136,27 +1136,27 @@
 
     if-nez p1, :cond_1
 
-    .line 1587
+    .line 1590
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     const/4 v2, 0x4
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1588
+    .line 1591
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput-boolean v0, p1, Lorg/telegram/ui/Charts/BaseChartView;->enabled:Z
 
-    .line 1589
+    .line 1592
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput-boolean v5, v2, Lorg/telegram/ui/Charts/BaseChartView;->enabled:Z
 
-    .line 1590
+    .line 1593
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 1591
+    .line 1594
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -1171,7 +1171,7 @@
 
     invoke-virtual {p1, v2}, Landroid/view/Window;->clearFlags(I)V
 
-    .line 1593
+    .line 1596
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1191,32 +1191,32 @@
 
     check-cast v2, Lorg/telegram/ui/StatisticActivity$BaseChartCell$CheckBoxHolder;
 
-    .line 1594
+    .line 1597
     iget-object v3, v2, Lorg/telegram/ui/StatisticActivity$BaseChartCell$CheckBoxHolder;->checkBox:Lorg/telegram/ui/Components/FlatCheckBox;
 
     invoke-virtual {v3, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1595
+    .line 1598
     iget-object v2, v2, Lorg/telegram/ui/StatisticActivity$BaseChartCell$CheckBoxHolder;->checkBox:Lorg/telegram/ui/Components/FlatCheckBox;
 
     iput-boolean v0, v2, Lorg/telegram/ui/Components/FlatCheckBox;->enabled:Z
 
     goto :goto_0
 
-    .line 1598
+    .line 1601
     :cond_1
     invoke-direct {p0, v3, v4, v5}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->createTransitionAnimator(JZ)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
-    .line 1599
+    .line 1602
     new-instance v2, Lorg/telegram/ui/StatisticActivity$BaseChartCell$3;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/StatisticActivity$BaseChartCell$3;-><init>(Lorg/telegram/ui/StatisticActivity$BaseChartCell;)V
 
     invoke-virtual {p1, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1622
+    .line 1625
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -1236,7 +1236,7 @@
 
     check-cast v3, Lorg/telegram/ui/StatisticActivity$BaseChartCell$CheckBoxHolder;
 
-    .line 1623
+    .line 1626
     iget-object v4, v3, Lorg/telegram/ui/StatisticActivity$BaseChartCell$CheckBoxHolder;->checkBox:Lorg/telegram/ui/Components/FlatCheckBox;
 
     invoke-virtual {v4}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1249,14 +1249,14 @@
 
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1624
+    .line 1627
     iget-object v3, v3, Lorg/telegram/ui/StatisticActivity$BaseChartCell$CheckBoxHolder;->checkBox:Lorg/telegram/ui/Components/FlatCheckBox;
 
     iput-boolean v0, v3, Lorg/telegram/ui/Components/FlatCheckBox;->enabled:Z
 
     goto :goto_1
 
-    .line 1626
+    .line 1629
     :cond_2
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
@@ -1275,37 +1275,37 @@
 .method public recolor()V
     .locals 7
 
-    .line 1786
-    iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Charts/BaseChartView;->updateColors()V
-
-    .line 1787
-    iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
-
-    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
-
     .line 1789
-    iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
+    iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Charts/BaseChartView;->updateColors()V
 
     .line 1790
-    iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
+    iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     .line 1792
+    iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Charts/BaseChartView;->updateColors()V
+
+    .line 1793
+    iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
+
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+
+    .line 1795
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->recolor()V
 
-    .line 1793
+    .line 1796
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1795
+    .line 1798
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     if-eqz v0, :cond_4
@@ -1330,7 +1330,7 @@
 
     move v2, v0
 
-    .line 1796
+    .line 1799
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
@@ -1344,7 +1344,7 @@
 
     if-ge v2, v3, :cond_4
 
-    .line 1798
+    .line 1801
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v3, v3, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
@@ -1381,7 +1381,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1799
+    .line 1802
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v3, v3, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
@@ -1402,7 +1402,7 @@
 
     goto :goto_2
 
-    .line 1801
+    .line 1804
     :cond_0
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
@@ -1430,7 +1430,7 @@
     :goto_1
     if-eqz v3, :cond_2
 
-    .line 1802
+    .line 1805
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v3, v3, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
@@ -1447,7 +1447,7 @@
 
     goto :goto_2
 
-    .line 1803
+    .line 1806
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
@@ -1463,7 +1463,7 @@
 
     iget v3, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->color:I
 
-    .line 1805
+    .line 1808
     :goto_2
     iget-object v4, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
@@ -1473,7 +1473,7 @@
 
     if-ge v2, v4, :cond_3
 
-    .line 1806
+    .line 1809
     iget-object v4, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1489,7 +1489,7 @@
 
     goto/16 :goto_0
 
-    .line 1810
+    .line 1813
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
@@ -1501,7 +1501,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
 
-    .line 1811
+    .line 1814
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray4:I
@@ -1522,7 +1522,7 @@
 
     return-void
 
-    .line 1695
+    .line 1698
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
@@ -1530,7 +1530,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->setTitle(Ljava/lang/String;)V
 
-    .line 1697
+    .line 1700
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1543,7 +1543,7 @@
 
     move-result-object v0
 
-    .line 1698
+    .line 1701
     iget v0, v0, Landroid/content/res/Configuration;->orientation:I
 
     const/4 v1, 0x2
@@ -1561,21 +1561,21 @@
     :cond_1
     move v0, v3
 
-    .line 1699
+    .line 1702
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v4, v0}, Lorg/telegram/ui/Charts/BaseChartView;->setLandscape(Z)V
 
-    .line 1701
+    .line 1704
     iget-object v4, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v4, v0}, Lorg/telegram/ui/Charts/BaseChartView;->setLandscape(Z)V
 
-    .line 1702
+    .line 1705
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
-    .line 1704
+    .line 1707
     iget-boolean v0, p1, Lorg/telegram/ui/StatisticActivity$ChartViewData;->isEmpty:Z
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -1594,13 +1594,13 @@
 
     goto/16 :goto_5
 
-    .line 1718
+    .line 1721
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1719
+    .line 1722
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v0, v0, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -1609,14 +1609,14 @@
 
     iput-boolean v8, v0, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->isTopHourChart:Z
 
-    .line 1720
+    .line 1723
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
     xor-int/2addr v8, v2
 
     invoke-virtual {v0, v8}, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->showDate(Z)V
 
-    .line 1722
+    .line 1725
     iget-object v0, p1, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
 
     if-nez v0, :cond_3
@@ -1625,20 +1625,20 @@
 
     if-eqz v0, :cond_3
 
-    .line 1723
+    .line 1726
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p2, v4}, Lorg/telegram/ui/Components/RadialProgressView;->setAlpha(F)V
 
-    .line 1724
+    .line 1727
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1725
+    .line 1728
     invoke-virtual {p0, p1}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->loadData(Lorg/telegram/ui/StatisticActivity$ChartViewData;)V
 
-    .line 1726
+    .line 1729
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p1, v6}, Lorg/telegram/ui/Charts/BaseChartView;->setData(Lorg/telegram/ui/Charts/data/ChartData;)V
@@ -1648,12 +1648,12 @@
     :cond_3
     if-nez p2, :cond_4
 
-    .line 1729
+    .line 1732
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {v0, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1732
+    .line 1735
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
@@ -1661,14 +1661,14 @@
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Charts/BaseChartView;->setData(Lorg/telegram/ui/Charts/data/ChartData;)V
 
-    .line 1733
+    .line 1736
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
     iget-boolean v4, p1, Lorg/telegram/ui/StatisticActivity$ChartViewData;->useWeekFormat:Z
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->setUseWeekInterval(Z)V
 
-    .line 1734
+    .line 1737
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v0, v0, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -1677,7 +1677,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->setUseWeek(Z)V
 
-    .line 1736
+    .line 1739
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p1, p1, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -1708,19 +1708,19 @@
     :goto_2
     iput-boolean v0, p1, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->zoomEnabled:Z
 
-    .line 1737
+    .line 1740
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v0, v0, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
     iput-boolean v3, v0, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->zoomEnabled:Z
 
-    .line 1739
+    .line 1742
     iget-boolean v0, p1, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->zoomEnabled:Z
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 1740
+    .line 1743
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p1, p1, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -1729,7 +1729,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 1742
+    .line 1745
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p1, p1, Lorg/telegram/ui/Charts/BaseChartView;->lines:Ljava/util/ArrayList;
@@ -1738,12 +1738,12 @@
 
     move-result p1
 
-    .line 1743
+    .line 1746
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkboxContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 1744
+    .line 1747
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
@@ -1755,7 +1755,7 @@
     :goto_3
     if-ge v0, p1, :cond_7
 
-    .line 1747
+    .line 1750
     iget-object v4, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v4, v4, Lorg/telegram/ui/Charts/BaseChartView;->lines:Ljava/util/ArrayList;
@@ -1766,7 +1766,7 @@
 
     check-cast v4, Lorg/telegram/ui/Charts/view_data/LineViewData;
 
-    .line 1748
+    .line 1751
     new-instance v6, Lorg/telegram/ui/StatisticActivity$BaseChartCell$CheckBoxHolder;
 
     invoke-direct {v6, p0, v0}, Lorg/telegram/ui/StatisticActivity$BaseChartCell$CheckBoxHolder;-><init>(Lorg/telegram/ui/StatisticActivity$BaseChartCell;I)V
@@ -1777,7 +1777,7 @@
 
     goto :goto_3
 
-    .line 1752
+    .line 1755
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
@@ -1789,32 +1789,32 @@
 
     if-lez p1, :cond_8
 
-    .line 1753
+    .line 1756
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p1, v6, v7}, Lorg/telegram/ui/Charts/BaseChartView;->selectDate(J)V
 
-    .line 1754
+    .line 1757
     invoke-virtual {p0, v2}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomChart(Z)V
 
     goto :goto_4
 
-    .line 1756
+    .line 1759
     :cond_8
     invoke-direct {p0, v3}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomOut(Z)V
 
-    .line 1757
+    .line 1760
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 1760
+    .line 1763
     :goto_4
     invoke-virtual {p0}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->recolor()V
 
     if-eqz p2, :cond_9
 
-    .line 1763
+    .line 1766
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     const/4 p2, 0x3
@@ -1823,14 +1823,14 @@
 
     new-array p1, v1, [F
 
-    .line 1764
+    .line 1767
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
-    .line 1765
+    .line 1768
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     new-instance v0, Lorg/telegram/ui/Charts/view_data/TransitionParams;
@@ -1839,51 +1839,51 @@
 
     iput-object v0, p2, Lorg/telegram/ui/Charts/BaseChartView;->transitionParams:Lorg/telegram/ui/Charts/view_data/TransitionParams;
 
-    .line 1766
+    .line 1769
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object p2, p2, Lorg/telegram/ui/Charts/BaseChartView;->transitionParams:Lorg/telegram/ui/Charts/view_data/TransitionParams;
 
     iput v5, p2, Lorg/telegram/ui/Charts/view_data/TransitionParams;->progress:F
 
-    .line 1767
+    .line 1770
     new-instance p2, Lorg/telegram/ui/StatisticActivity$BaseChartCell$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/StatisticActivity$BaseChartCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/StatisticActivity$BaseChartCell;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1774
+    .line 1777
     new-instance p2, Lorg/telegram/ui/StatisticActivity$BaseChartCell$4;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/StatisticActivity$BaseChartCell$4;-><init>(Lorg/telegram/ui/StatisticActivity$BaseChartCell;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1781
+    .line 1784
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     :cond_9
     return-void
 
-    .line 1705
+    .line 1708
     :cond_a
     :goto_5
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->progressView:Lorg/telegram/ui/Components/RadialProgressView;
 
     invoke-virtual {p2, v7}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1706
+    .line 1709
     iget-object p1, p1, Lorg/telegram/ui/StatisticActivity$ChartViewData;->errorMessage:Ljava/lang/String;
 
     if-eqz p1, :cond_c
 
-    .line 1707
+    .line 1710
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1708
+    .line 1711
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getVisibility()I
@@ -1892,12 +1892,12 @@
 
     if-ne p1, v7, :cond_b
 
-    .line 1709
+    .line 1712
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v5}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1710
+    .line 1713
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1906,13 +1906,13 @@
 
     invoke-virtual {p1, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 1712
+    .line 1715
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->errorTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1714
+    .line 1717
     :cond_c
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
@@ -1935,21 +1935,21 @@
 .method public zoomChart(Z)V
     .locals 12
 
-    .line 1483
+    .line 1486
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Charts/BaseChartView;->getSelectedDate()J
 
     move-result-wide v0
 
-    .line 1484
+    .line 1487
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v2, v2, Lorg/telegram/ui/StatisticActivity$ChartViewData;->childChartData:Lorg/telegram/ui/Charts/data/ChartData;
 
     if-eqz p1, :cond_0
 
-    .line 1487
+    .line 1490
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v3}, Landroid/view/View;->getVisibility()I
@@ -1958,19 +1958,19 @@
 
     if-eqz v3, :cond_1
 
-    .line 1488
+    .line 1491
     :cond_0
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v3, v2, v0, v1}, Lorg/telegram/ui/Charts/BaseChartView;->updatePicker(Lorg/telegram/ui/Charts/data/ChartData;J)V
 
-    .line 1490
+    .line 1493
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v3, v2}, Lorg/telegram/ui/Charts/BaseChartView;->setData(Lorg/telegram/ui/Charts/data/ChartData;)V
 
-    .line 1493
+    .line 1496
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v3, v3, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
@@ -1993,7 +1993,7 @@
 
     move v7, v3
 
-    .line 1495
+    .line 1498
     :goto_0
     iget-object v8, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
@@ -2011,7 +2011,7 @@
 
     move v8, v6
 
-    .line 1497
+    .line 1500
     :goto_1
     iget-object v10, v2, Lorg/telegram/ui/Charts/data/ChartData;->lines:Ljava/util/ArrayList;
 
@@ -2021,7 +2021,7 @@
 
     if-ge v8, v10, :cond_5
 
-    .line 1498
+    .line 1501
     iget-object v10, v2, Lorg/telegram/ui/Charts/data/ChartData;->lines:Ljava/util/ArrayList;
 
     invoke-virtual {v10, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2030,7 +2030,7 @@
 
     check-cast v10, Lorg/telegram/ui/Charts/data/ChartData$Line;
 
-    .line 1499
+    .line 1502
     iget-object v10, v10, Lorg/telegram/ui/Charts/data/ChartData$Line;->id:Ljava/lang/String;
 
     iget-object v11, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -2053,7 +2053,7 @@
 
     if-eqz v10, :cond_4
 
-    .line 1500
+    .line 1503
     iget-object v10, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {v10, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2066,7 +2066,7 @@
 
     iget-boolean v10, v10, Lorg/telegram/ui/Components/FlatCheckBox;->checked:Z
 
-    .line 1501
+    .line 1504
     iget-object v11, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v11, v11, Lorg/telegram/ui/Charts/BaseChartView;->lines:Ljava/util/ArrayList;
@@ -2079,7 +2079,7 @@
 
     iput-boolean v10, v11, Lorg/telegram/ui/Charts/view_data/LineViewData;->enabled:Z
 
-    .line 1502
+    .line 1505
     iget-object v11, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v11, v11, Lorg/telegram/ui/Charts/BaseChartView;->lines:Ljava/util/ArrayList;
@@ -2102,7 +2102,7 @@
     :goto_2
     iput v11, v8, Lorg/telegram/ui/Charts/view_data/LineViewData;->alpha:F
 
-    .line 1503
+    .line 1506
     iget-object v8, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2115,7 +2115,7 @@
 
     iput-boolean v5, v8, Lorg/telegram/ui/Components/FlatCheckBox;->enabled:Z
 
-    .line 1504
+    .line 1507
     iget-object v8, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2156,7 +2156,7 @@
     :goto_3
     if-nez v8, :cond_6
 
-    .line 1511
+    .line 1514
     iget-object v8, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2169,7 +2169,7 @@
 
     iput-boolean v6, v8, Lorg/telegram/ui/Components/FlatCheckBox;->enabled:Z
 
-    .line 1512
+    .line 1515
     iget-object v8, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2198,7 +2198,7 @@
     :cond_7
     if-nez v7, :cond_9
 
-    .line 1517
+    .line 1520
     :goto_4
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
@@ -2212,7 +2212,7 @@
 
     if-ge v6, p1, :cond_8
 
-    .line 1518
+    .line 1521
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2225,7 +2225,7 @@
 
     iput-boolean v5, p1, Lorg/telegram/ui/Components/FlatCheckBox;->enabled:Z
 
-    .line 1519
+    .line 1522
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->checkBoxes:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2253,50 +2253,50 @@
     :cond_8
     return-void
 
-    .line 1525
+    .line 1528
     :cond_9
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iput-wide v0, v2, Lorg/telegram/ui/StatisticActivity$ChartViewData;->activeZoom:J
 
-    .line 1527
+    .line 1530
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v2, v2, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1528
+    .line 1531
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput v4, v2, Lorg/telegram/ui/Charts/BaseChartView;->selectionA:F
 
-    .line 1529
+    .line 1532
     iput-boolean v6, v2, Lorg/telegram/ui/Charts/BaseChartView;->legendShowing:Z
 
-    .line 1530
+    .line 1533
     iput-boolean v6, v2, Lorg/telegram/ui/Charts/BaseChartView;->animateLegentTo:Z
 
-    .line 1532
+    .line 1535
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Charts/BaseChartView;->updateColors()V
 
     if-nez p1, :cond_a
 
-    .line 1535
+    .line 1538
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Charts/BaseChartView;->clearSelection()V
 
-    .line 1536
+    .line 1539
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
     iget-object v3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {v2, v3, v0, v1, v5}, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->zoomTo(Lorg/telegram/ui/Charts/BaseChartView;JZ)V
 
-    .line 1539
+    .line 1542
     :cond_a
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
@@ -2304,7 +2304,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Charts/BaseChartView;->setHeader(Lorg/telegram/ui/Charts/view_data/ChartHeaderView;)V
 
-    .line 1540
+    .line 1543
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     const/4 v3, 0x0
@@ -2313,55 +2313,55 @@
 
     if-eqz p1, :cond_b
 
-    .line 1543
+    .line 1546
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     const/4 v2, 0x4
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1544
+    .line 1547
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p1, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1546
+    .line 1549
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput v6, p1, Lorg/telegram/ui/Charts/BaseChartView;->transitionMode:I
 
-    .line 1547
+    .line 1550
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput v6, v2, Lorg/telegram/ui/Charts/BaseChartView;->transitionMode:I
 
-    .line 1548
+    .line 1551
     iput-boolean v6, p1, Lorg/telegram/ui/Charts/BaseChartView;->enabled:Z
 
-    .line 1549
+    .line 1552
     iput-boolean v5, v2, Lorg/telegram/ui/Charts/BaseChartView;->enabled:Z
 
-    .line 1550
+    .line 1553
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartHeaderView:Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
     invoke-virtual {p1, v2, v0, v1, v6}, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->zoomTo(Lorg/telegram/ui/Charts/BaseChartView;JZ)V
 
     goto :goto_5
 
-    .line 1552
+    .line 1555
     :cond_b
     invoke-direct {p0, v0, v1, v5}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->createTransitionAnimator(JZ)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
-    .line 1553
+    .line 1556
     new-instance v0, Lorg/telegram/ui/StatisticActivity$BaseChartCell$2;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/StatisticActivity$BaseChartCell$2;-><init>(Lorg/telegram/ui/StatisticActivity$BaseChartCell;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1565
+    .line 1568
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     :goto_5

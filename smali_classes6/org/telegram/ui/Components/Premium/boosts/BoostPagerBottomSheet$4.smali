@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 194
+    .line 210
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$4;->val$leftSheet:Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;
@@ -54,7 +54,7 @@
         }
     .end annotation
 
-    .line 197
+    .line 213
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
@@ -65,7 +65,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->scrollToPosition(I)Z
 
-    .line 198
+    .line 214
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$4;->val$leftSheet:Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;->onChatsSelected(Ljava/util/List;)V
@@ -84,7 +84,7 @@
         }
     .end annotation
 
-    .line 209
+    .line 225
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
@@ -95,7 +95,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->scrollToPosition(I)Z
 
-    .line 210
+    .line 226
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$4;->val$leftSheet:Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;->onCountrySelected(Ljava/util/List;)V
@@ -106,10 +106,10 @@
 .method public onShowToast(Ljava/lang/String;)V
     .locals 2
 
-    .line 215
+    .line 231
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;->access$200(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;->access$300(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     move-result-object v0
 
@@ -143,7 +143,7 @@
         }
     .end annotation
 
-    .line 203
+    .line 219
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
@@ -154,7 +154,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ViewPagerFixed;->scrollToPosition(I)Z
 
-    .line 204
+    .line 220
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$4;->val$leftSheet:Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;->onUsersSelected(Ljava/util/List;)V

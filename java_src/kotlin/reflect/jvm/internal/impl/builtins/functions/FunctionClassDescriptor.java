@@ -117,13 +117,13 @@ public final class FunctionClassDescriptor extends AbstractClassDescriptor {
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getCompanionObjectDescriptor  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ ClassDescriptor mo2044getCompanionObjectDescriptor() {
+    public /* bridge */ /* synthetic */ ClassDescriptor mo2046getCompanionObjectDescriptor() {
         return (ClassDescriptor) getCompanionObjectDescriptor();
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getUnsubstitutedPrimaryConstructor  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ ClassConstructorDescriptor mo2045getUnsubstitutedPrimaryConstructor() {
+    public /* bridge */ /* synthetic */ ClassConstructorDescriptor mo2047getUnsubstitutedPrimaryConstructor() {
         return (ClassConstructorDescriptor) getUnsubstitutedPrimaryConstructor();
     }
 
@@ -329,12 +329,12 @@ public final class FunctionClassDescriptor extends AbstractClassDescriptor {
 
         @Override // kotlin.reflect.jvm.internal.impl.types.ClassifierBasedTypeConstructor, kotlin.reflect.jvm.internal.impl.types.TypeConstructor
         /* renamed from: getDeclarationDescriptor */
-        public FunctionClassDescriptor mo2051getDeclarationDescriptor() {
+        public FunctionClassDescriptor mo2053getDeclarationDescriptor() {
             return FunctionClassDescriptor.this;
         }
 
         public String toString() {
-            return mo2051getDeclarationDescriptor().toString();
+            return mo2053getDeclarationDescriptor().toString();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */

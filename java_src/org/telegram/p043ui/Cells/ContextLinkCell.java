@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.storage.domain.model.analytics.AnalyticsEvent;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -677,7 +677,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
             int i = this.resolveFileNameId;
             this.resolveFileNameId = i + 1;
             this.resolveFileNameId = i;
-            Utilities.searchQueue.postRunnable(new RunnableC40041(i, z));
+            Utilities.searchQueue.postRunnable(new RunnableC40011(i, z));
             this.radialProgress.setIcon(4, z, false);
         } else if (TextUtils.isEmpty(str)) {
             this.buttonState = -1;
@@ -733,11 +733,11 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Cells.ContextLinkCell$1 */
     /* loaded from: classes5.dex */
-    public class RunnableC40041 implements Runnable {
+    public class RunnableC40011 implements Runnable {
         final /* synthetic */ boolean val$ifSame;
         final /* synthetic */ int val$localId;
 
-        RunnableC40041(int i, boolean z) {
+        RunnableC40011(int i, boolean z) {
             this.val$localId = i;
             this.val$ifSame = z;
         }
@@ -753,7 +753,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                 Method dump skipped, instructions count: 592
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Cells.ContextLinkCell.RunnableC40041.run():void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Cells.ContextLinkCell.RunnableC40011.run():void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -816,28 +816,28 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         StringBuilder sb = new StringBuilder();
         switch (this.documentAttachType) {
             case 1:
-                sb.append(LocaleController.getString("AttachDocument", C3634R.string.AttachDocument));
+                sb.append(LocaleController.getString("AttachDocument", C3632R.string.AttachDocument));
                 break;
             case 2:
-                sb.append(LocaleController.getString("AttachGif", C3634R.string.AttachGif));
+                sb.append(LocaleController.getString("AttachGif", C3632R.string.AttachGif));
                 break;
             case 3:
-                sb.append(LocaleController.getString("AttachAudio", C3634R.string.AttachAudio));
+                sb.append(LocaleController.getString("AttachAudio", C3632R.string.AttachAudio));
                 break;
             case 4:
-                sb.append(LocaleController.getString("AttachVideo", C3634R.string.AttachVideo));
+                sb.append(LocaleController.getString("AttachVideo", C3632R.string.AttachVideo));
                 break;
             case 5:
-                sb.append(LocaleController.getString("AttachMusic", C3634R.string.AttachMusic));
+                sb.append(LocaleController.getString("AttachMusic", C3632R.string.AttachMusic));
                 break;
             case 6:
-                sb.append(LocaleController.getString("AttachSticker", C3634R.string.AttachSticker));
+                sb.append(LocaleController.getString("AttachSticker", C3632R.string.AttachSticker));
                 break;
             case 7:
-                sb.append(LocaleController.getString("AttachPhoto", C3634R.string.AttachPhoto));
+                sb.append(LocaleController.getString("AttachPhoto", C3632R.string.AttachPhoto));
                 break;
             case 8:
-                sb.append(LocaleController.getString("AttachLocation", C3634R.string.AttachLocation));
+                sb.append(LocaleController.getString("AttachLocation", C3632R.string.AttachLocation));
                 break;
         }
         StaticLayout staticLayout = this.titleLayout;
@@ -846,7 +846,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         boolean z2 = (staticLayout2 == null || TextUtils.isEmpty(staticLayout2.getText())) ? false : true;
         if (this.documentAttachType == 5 && z && z2) {
             sb.append(", ");
-            sb.append(LocaleController.formatString("AccDescrMusicInfo", C3634R.string.AccDescrMusicInfo, this.descriptionLayout.getText(), this.titleLayout.getText()));
+            sb.append(LocaleController.formatString("AccDescrMusicInfo", C3632R.string.AccDescrMusicInfo, this.descriptionLayout.getText(), this.titleLayout.getText()));
         } else {
             if (z) {
                 if (sb.length() > 0) {

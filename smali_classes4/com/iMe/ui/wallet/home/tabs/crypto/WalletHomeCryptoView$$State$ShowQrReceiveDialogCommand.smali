@@ -32,17 +32,17 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/Network;)V
     .locals 1
 
-    .line 450
+    .line 483
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showQrReceiveDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 452
+    .line 485
     iput-object p2, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowQrReceiveDialogCommand;->address:Ljava/lang/String;
 
-    .line 453
+    .line 486
     iput-object p3, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowQrReceiveDialogCommand;->network:Lcom/iMe/storage/domain/model/crypto/Network;
 
     return-void
@@ -53,7 +53,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V
     .locals 2
 
-    .line 458
+    .line 491
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowQrReceiveDialogCommand;->address:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowQrReceiveDialogCommand;->network:Lcom/iMe/storage/domain/model/crypto/Network;
@@ -66,7 +66,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 444
+    .line 477
     check-cast p1, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowQrReceiveDialogCommand;->apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V

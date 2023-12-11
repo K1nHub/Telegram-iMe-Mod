@@ -8,26 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/MessagesController;
-
-.field public final synthetic f$2:J
-
-.field public final synthetic f$3:Ljava/lang/Runnable;
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessagesController;JLjava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLObject;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda41;->f$0:Lorg/telegram/tgnet/TLObject;
 
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda41;->f$1:Lorg/telegram/messenger/MessagesController;
-
-    iput-wide p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda41;->f$2:J
-
-    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda41;->f$3:Ljava/lang/Runnable;
+    iput p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda41;->f$1:I
 
     return-void
 .end method
@@ -35,17 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda41;->f$0:Lorg/telegram/tgnet/TLObject;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda41;->f$1:Lorg/telegram/messenger/MessagesController;
+    iget v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda41;->f$1:I
 
-    iget-wide v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda41;->f$2:J
-
-    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda41;->f$3:Ljava/lang/Runnable;
-
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$xO7_eCKF9Q7Unkw_k5t5MZrR2rQ(Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessagesController;JLjava/lang/Runnable;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$skcEN4lt5_g6mBcbG0uXT0S1I_A(Lorg/telegram/tgnet/TLObject;I)V
 
     return-void
 .end method

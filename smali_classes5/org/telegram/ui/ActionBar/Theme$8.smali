@@ -24,7 +24,7 @@
 .method constructor <init>(II)V
     .locals 0
 
-    .line 5710
+    .line 5688
     iput p1, p0, Lorg/telegram/ui/ActionBar/Theme$8;->val$leftInset:I
 
     iput p2, p0, Lorg/telegram/ui/ActionBar/Theme$8;->val$rightInset:I
@@ -39,12 +39,12 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 5714
+    .line 5692
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 5715
+    .line 5693
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v1
@@ -67,7 +67,7 @@
 
     add-int/2addr v1, v2
 
-    .line 5716
+    .line 5694
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
 
     move-result v2

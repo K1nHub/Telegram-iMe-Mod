@@ -3,7 +3,7 @@ package p033j$.time.temporal;
 import p033j$.time.Duration;
 /* renamed from: j$.time.temporal.ChronoUnit */
 /* loaded from: classes2.dex */
-public enum ChronoUnit implements InterfaceC2758y {
+public enum ChronoUnit implements InterfaceC2755y {
     NANOS("Nanos", Duration.m982c(1)),
     MICROS("Micros", Duration.m982c(1000)),
     MILLIS("Millis", Duration.m982c(1000000)),
@@ -33,10 +33,10 @@ public enum ChronoUnit implements InterfaceC2758y {
         this.f627b = duration;
     }
 
-    @Override // p033j$.time.temporal.InterfaceC2758y
+    @Override // p033j$.time.temporal.InterfaceC2755y
     /* renamed from: a */
-    public InterfaceC2743j mo722a(InterfaceC2743j interfaceC2743j, long j) {
-        return interfaceC2743j.mo742f(j, this);
+    public InterfaceC2740j mo722a(InterfaceC2740j interfaceC2740j, long j) {
+        return interfaceC2740j.mo742f(j, this);
     }
 
     /* renamed from: b */

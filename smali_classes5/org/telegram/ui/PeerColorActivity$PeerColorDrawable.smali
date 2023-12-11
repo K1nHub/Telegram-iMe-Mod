@@ -36,24 +36,24 @@
 .method public constructor <init>(III)V
     .locals 8
 
-    .line 1166
+    .line 1489
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     const v0, 0x41aaa9fc    # 21.333f
 
-    .line 1156
+    .line 1479
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->diameter:I
 
-    .line 1157
+    .line 1480
     div-int/lit8 v1, v0, 0x2
 
     iput v1, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->radius:I
 
-    .line 1160
+    .line 1483
     new-instance v2, Landroid/graphics/Paint;
 
     const/4 v3, 0x1
@@ -62,28 +62,28 @@
 
     iput-object v2, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->color1Paint:Landroid/graphics/Paint;
 
-    .line 1161
+    .line 1484
     new-instance v4, Landroid/graphics/Paint;
 
     invoke-direct {v4, v3}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v4, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->color2Paint:Landroid/graphics/Paint;
 
-    .line 1162
+    .line 1485
     new-instance v5, Landroid/graphics/Paint;
 
     invoke-direct {v5, v3}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v5, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->color3Paint:Landroid/graphics/Paint;
 
-    .line 1163
+    .line 1486
     new-instance v6, Landroid/graphics/Path;
 
     invoke-direct {v6}, Landroid/graphics/Path;-><init>()V
 
     iput-object v6, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->color2Path:Landroid/graphics/Path;
 
-    .line 1164
+    .line 1487
     new-instance v7, Landroid/graphics/Path;
 
     invoke-direct {v7}, Landroid/graphics/Path;-><init>()V
@@ -97,17 +97,17 @@
     :cond_0
     const/4 v3, 0x0
 
-    .line 1167
+    .line 1490
     :goto_0
     iput-boolean v3, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->hasColor3:Z
 
-    .line 1168
+    .line 1491
     invoke-virtual {v2, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1169
+    .line 1492
     invoke-virtual {v4, p2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1170
+    .line 1493
     invoke-virtual {v5, p3}, Landroid/graphics/Paint;->setColor(I)V
 
     int-to-float p1, v1
@@ -116,7 +116,7 @@
 
     int-to-float p3, v1
 
-    .line 1172
+    .line 1495
     sget-object v1, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {v7, p1, p2, p3, v1}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
@@ -125,22 +125,22 @@
 
     const/4 p2, 0x0
 
-    .line 1173
+    .line 1496
     invoke-virtual {v6, p1, p2}, Landroid/graphics/Path;->moveTo(FF)V
 
     int-to-float p1, v0
 
     int-to-float p3, v0
 
-    .line 1174
+    .line 1497
     invoke-virtual {v6, p1, p3}, Landroid/graphics/Path;->lineTo(FF)V
 
     int-to-float p1, v0
 
-    .line 1175
+    .line 1498
     invoke-virtual {v6, p2, p1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 1176
+    .line 1499
     invoke-virtual {v6}, Landroid/graphics/Path;->close()V
 
     return-void
@@ -153,7 +153,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 1142
+    .line 1465
     new-instance p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;
 
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[I
@@ -184,7 +184,7 @@
 
     return-object p0
 
-    .line 1144
+    .line 1467
     :cond_0
     invoke-static {p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -198,13 +198,13 @@
 
     goto :goto_0
 
-    .line 1145
+    .line 1468
     :cond_1
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MessagesController$PeerColors;->getColor(I)Lorg/telegram/messenger/MessagesController$PeerColor;
 
     move-result-object p0
 
-    .line 1146
+    .line 1469
     :goto_0
     invoke-static {p0}, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->from(Lorg/telegram/messenger/MessagesController$PeerColor;)Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;
 
@@ -218,7 +218,7 @@
 
     if-nez p0, :cond_0
 
-    .line 1151
+    .line 1474
     new-instance p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;
 
     const/4 v0, 0x0
@@ -227,7 +227,7 @@
 
     return-object p0
 
-    .line 1153
+    .line 1476
     :cond_0
     new-instance v0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;
 
@@ -253,10 +253,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 1181
+    .line 1504
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1182
+    .line 1505
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -287,29 +287,29 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1183
+    .line 1506
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->clipCirclePath:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 1184
+    .line 1507
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->color1Paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawPaint(Landroid/graphics/Paint;)V
 
-    .line 1185
+    .line 1508
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->color2Path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->color2Paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1186
+    .line 1509
     iget-boolean v0, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->hasColor3:Z
 
     if-eqz v0, :cond_0
 
-    .line 1187
+    .line 1510
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget v1, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->radius:I
@@ -358,7 +358,7 @@
 
     const/high16 v1, 0x42340000    # 45.0f
 
-    .line 1188
+    .line 1511
     iget v2, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->radius:I
 
     int-to-float v3, v2
@@ -369,7 +369,7 @@
 
     const v1, 0x40151eb8    # 2.33f
 
-    .line 1189
+    .line 1512
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
@@ -386,7 +386,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1191
+    .line 1514
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -396,7 +396,7 @@
 .method public getIntrinsicHeight()I
     .locals 1
 
-    .line 1207
+    .line 1530
     iget v0, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->diameter:I
 
     return v0
@@ -405,7 +405,7 @@
 .method public getIntrinsicWidth()I
     .locals 1
 
-    .line 1212
+    .line 1535
     iget v0, p0, Lorg/telegram/ui/PeerColorActivity$PeerColorDrawable;->diameter:I
 
     return v0

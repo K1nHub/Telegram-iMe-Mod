@@ -20,7 +20,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingConditionsBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -130,15 +130,15 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
         Intrinsics.checkNotNullParameter(finishedFeeText, "finishedFeeText");
         ForkContentStakingConditionsBinding binding = getBinding();
         binding.viewHeader.setupViewData(new ImageHeaderView.IconData.RemoteImage(iconUrl), networkIconUrl, name, author);
-        binding.viewAnnualPercentageCell.setupViewData(getResourceManager().getString(C3634R.string.staking_details_apy_apr), annualPercentage, C3634R.C3636drawable.fork_ic_percent, true);
-        binding.viewStartDateCell.setupViewData(getResourceManager().getString(C3634R.string.staking_conditions_start), startDate, C3634R.C3636drawable.fork_ic_start, true);
-        binding.viewCompletionDateCell.setupViewData(getResourceManager().getString(C3634R.string.staking_conditions_completion), completionDate, C3634R.C3636drawable.fork_ic_done_24, true);
-        binding.viewThresholdCell.setupViewData(getResourceManager().getString(C3634R.string.staking_conditions_compound_threshold), compoundThreshold, C3634R.C3636drawable.fork_ic_donations_24, true);
-        binding.viewPlannedWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3634R.string.staking_conditions_planned_withdrawal), plannedWithdrawalFeeText, C3634R.C3636drawable.fork_ic_transactions_24, true);
-        binding.viewImmediateWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3634R.string.staking_conditions_immediate_withdrawal), immediateWithdrawalFeeText, C3634R.C3636drawable.fork_ic_ask_transfer_24, true);
+        binding.viewAnnualPercentageCell.setupViewData(getResourceManager().getString(C3632R.string.staking_details_apy_apr), annualPercentage, C3632R.C3634drawable.fork_ic_percent, true);
+        binding.viewStartDateCell.setupViewData(getResourceManager().getString(C3632R.string.staking_conditions_start), startDate, C3632R.C3634drawable.fork_ic_start, true);
+        binding.viewCompletionDateCell.setupViewData(getResourceManager().getString(C3632R.string.staking_conditions_completion), completionDate, C3632R.C3634drawable.fork_ic_done_24, true);
+        binding.viewThresholdCell.setupViewData(getResourceManager().getString(C3632R.string.staking_conditions_compound_threshold), compoundThreshold, C3632R.C3634drawable.fork_ic_donations_24, true);
+        binding.viewPlannedWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3632R.string.staking_conditions_planned_withdrawal), plannedWithdrawalFeeText, C3632R.C3634drawable.fork_ic_transactions_24, true);
+        binding.viewImmediateWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3632R.string.staking_conditions_immediate_withdrawal), immediateWithdrawalFeeText, C3632R.C3634drawable.fork_ic_ask_transfer_24, true);
         DetailsIconCellView viewFinishedFeeCell = binding.viewFinishedFeeCell;
         Intrinsics.checkNotNullExpressionValue(viewFinishedFeeCell, "viewFinishedFeeCell");
-        DetailsIconCellView.setupViewData$default(viewFinishedFeeCell, getResourceManager().getString(C3634R.string.staking_conditions_end_output), finishedFeeText, C3634R.C3636drawable.fork_ic_end_24, false, 8, null);
+        DetailsIconCellView.setupViewData$default(viewFinishedFeeCell, getResourceManager().getString(C3632R.string.staking_conditions_end_output), finishedFeeText, C3632R.C3634drawable.fork_ic_end_24, false, 8, null);
     }
 
     private final void setupColors() {
@@ -152,7 +152,7 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
     }
 
     private final void setupTexts() {
-        getBinding().buttonOk.setText(LocaleController.getString("OK", C3634R.string.OK));
+        getBinding().buttonOk.setText(LocaleController.getString("OK", C3632R.string.OK));
     }
 
     private final void setupListeners() {

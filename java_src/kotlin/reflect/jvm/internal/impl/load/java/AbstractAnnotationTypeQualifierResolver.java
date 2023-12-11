@@ -279,7 +279,7 @@ public abstract class AbstractAnnotationTypeQualifierResolver<TAnnotation> {
             /* JADX WARN: Multi-variable type inference failed */
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Boolean invoke(Object obj) {
-                return invoke((C3313xba7ba3d0<TAnnotation>) obj);
+                return invoke((C3310xba7ba3d0<TAnnotation>) obj);
             }
         })) == null) {
             return null;

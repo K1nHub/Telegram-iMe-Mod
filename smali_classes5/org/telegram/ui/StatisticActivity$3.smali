@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 447
+    .line 450
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/BottomPagerTabs;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
@@ -33,7 +33,7 @@
 
     new-array v0, v0, [Lorg/telegram/ui/Components/BottomPagerTabs$Tab;
 
-    .line 451
+    .line 454
     new-instance v1, Lorg/telegram/ui/Components/BottomPagerTabs$Tab;
 
     sget v2, Lorg/telegram/messenger/R$raw;->stats:I
@@ -42,7 +42,7 @@
 
     const-string v4, "Statistics"
 
-    .line 452
+    .line 455
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -61,7 +61,7 @@
 
     const-string v4, "Boosts"
 
-    .line 453
+    .line 456
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -72,14 +72,14 @@
 
     aput-object v1, v0, v4
 
-    .line 455
+    .line 458
     aget-object v1, v0, v4
 
     const/16 v2, 0x19
 
     iput v2, v1, Lorg/telegram/ui/Components/BottomPagerTabs$Tab;->customEndFrameMid:I
 
-    .line 456
+    .line 459
     aget-object v1, v0, v4
 
     const/16 v2, 0x31

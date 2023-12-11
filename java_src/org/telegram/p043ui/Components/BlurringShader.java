@@ -29,7 +29,7 @@ import java.util.Iterator;
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLContext;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
@@ -157,8 +157,8 @@ public class BlurringShader {
         this.uvBuffer = asFloatBuffer3;
         asFloatBuffer3.put(fArr2);
         this.uvBuffer.position(0);
-        String readRes = RLottieDrawable.readRes(null, C3634R.raw.blur_vrt);
-        String readRes2 = RLottieDrawable.readRes(null, C3634R.raw.blur_frg);
+        String readRes = RLottieDrawable.readRes(null, C3632R.raw.blur_vrt);
+        String readRes2 = RLottieDrawable.readRes(null, C3632R.raw.blur_frg);
         if (readRes == null || readRes2 == null) {
             return false;
         }

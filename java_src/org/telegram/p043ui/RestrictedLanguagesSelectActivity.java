@@ -21,7 +21,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -30,7 +30,7 @@ import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -142,18 +142,18 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("DoNotTranslate", C3634R.string.DoNotTranslate));
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.RestrictedLanguagesSelectActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("DoNotTranslate", C3632R.string.DoNotTranslate));
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.RestrictedLanguagesSelectActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     RestrictedLanguagesSelectActivity.this.finishFragment();
                 }
             }
         });
-        this.actionBar.createMenu().addItem(0, C3634R.C3636drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.RestrictedLanguagesSelectActivity.2
+        this.actionBar.createMenu().addItem(0, C3632R.C3634drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.RestrictedLanguagesSelectActivity.2
             @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
             }
@@ -180,7 +180,7 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
                     RestrictedLanguagesSelectActivity.this.listView.setAdapter(RestrictedLanguagesSelectActivity.this.listAdapter);
                 }
             }
-        }).setSearchFieldHint(LocaleController.getString("Search", C3634R.string.Search));
+        }).setSearchFieldHint(LocaleController.getString("Search", C3632R.string.Search));
         this.listAdapter = new ListAdapter(context, false);
         this.searchListViewAdapter = new ListAdapter(context, true);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -189,7 +189,7 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
         this.emptyView = emptyTextProgressView;
-        emptyTextProgressView.setText(LocaleController.getString("NoResult", C3634R.string.NoResult));
+        emptyTextProgressView.setText(LocaleController.getString("NoResult", C3632R.string.NoResult));
         this.emptyView.showTextView();
         this.emptyView.setShowAtCenter(true);
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
@@ -430,7 +430,7 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
             } else if (i == 2) {
                 HeaderCell headerCell2 = new HeaderCell(this.mContext);
                 headerCell2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                headerCell2.setText(LocaleController.getString("ChooseLanguages", C3634R.string.ChooseLanguages));
+                headerCell2.setText(LocaleController.getString("ChooseLanguages", C3632R.string.ChooseLanguages));
                 headerCell = headerCell2;
             } else {
                 headerCell = new ShadowSectionCell(this.mContext);
@@ -464,7 +464,7 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
                 android.view.View r6 = r6.itemView
                 org.telegram.ui.Cells.ShadowSectionCell r6 = (org.telegram.p043ui.Cells.ShadowSectionCell) r6
                 android.content.Context r7 = r5.mContext
-                int r0 = org.telegram.messenger.C3634R.C3636drawable.greydivider
+                int r0 = org.telegram.messenger.C3632R.C3634drawable.greydivider
                 int r1 = org.telegram.p043ui.ActionBar.Theme.key_windowBackgroundGrayShadow
                 android.graphics.drawable.Drawable r7 = org.telegram.p043ui.ActionBar.Theme.getThemedDrawableByKey(r7, r0, r1)
                 r6.setBackgroundDrawable(r7)
@@ -553,10 +553,10 @@ public class RestrictedLanguagesSelectActivity extends BaseFragment implements N
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{LanguageCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3706ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(c3704ActionBar, i, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelBoostLayout;)V
     .locals 0
 
-    .line 460
+    .line 461
     iput-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout$2;->this$0:Lorg/telegram/ui/ChannelBoostLayout;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 463
+    .line 464
     iget-object p1, p0, Lorg/telegram/ui/ChannelBoostLayout$2;->this$0:Lorg/telegram/ui/ChannelBoostLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/ChannelBoostLayout;->access$800(Lorg/telegram/ui/ChannelBoostLayout;)Landroid/widget/LinearLayout;

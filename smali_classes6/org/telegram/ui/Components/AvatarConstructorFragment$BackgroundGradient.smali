@@ -30,7 +30,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1133
+    .line 1138
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public colorsCount()I
     .locals 1
 
-    .line 1152
+    .line 1157
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color4:I
 
     if-eqz v0, :cond_0
@@ -50,7 +50,7 @@
 
     return v0
 
-    .line 1155
+    .line 1160
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color3:I
 
@@ -60,7 +60,7 @@
 
     return v0
 
-    .line 1158
+    .line 1163
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color2:I
 
@@ -79,27 +79,27 @@
 .method public copy()Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
     .locals 2
 
-    .line 1143
+    .line 1148
     new-instance v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;-><init>()V
 
-    .line 1144
+    .line 1149
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color1:I
 
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color1:I
 
-    .line 1145
+    .line 1150
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color2:I
 
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color2:I
 
-    .line 1146
+    .line 1151
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color3:I
 
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color3:I
 
-    .line 1147
+    .line 1152
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color4:I
 
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color4:I
@@ -116,7 +116,7 @@
 
     return v0
 
-    .line 1167
+    .line 1172
     :cond_0
     instance-of v1, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -126,11 +126,11 @@
 
     return v2
 
-    .line 1168
+    .line 1173
     :cond_1
     check-cast p1, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
-    .line 1169
+    .line 1174
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color1:I
 
     iget v3, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color1:I
@@ -167,39 +167,39 @@
 .method public getAverageColor()I
     .locals 3
 
-    .line 1178
+    .line 1183
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color1:I
 
-    .line 1179
+    .line 1184
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color2:I
 
     const/high16 v2, 0x3f000000    # 0.5f
 
     if-eqz v1, :cond_0
 
-    .line 1180
+    .line 1185
     invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v0
 
-    .line 1182
+    .line 1187
     :cond_0
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color3:I
 
     if-eqz v1, :cond_1
 
-    .line 1183
+    .line 1188
     invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v0
 
-    .line 1185
+    .line 1190
     :cond_1
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color4:I
 
     if-eqz v1, :cond_2
 
-    .line 1186
+    .line 1191
     invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v0
@@ -215,7 +215,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 1174
+    .line 1179
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->stableId:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;

@@ -502,12 +502,12 @@ public final class JvmBuiltInsCustomizer implements AdditionalClassPartsProvider
     /* JADX INFO: Access modifiers changed from: private */
     public static final Iterable getJdkMethodStatus$lambda$9(JvmBuiltInsCustomizer this$0, ClassDescriptor classDescriptor) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Collection<KotlinType> mo2052getSupertypes = classDescriptor.getTypeConstructor().mo2052getSupertypes();
-        Intrinsics.checkNotNullExpressionValue(mo2052getSupertypes, "it.typeConstructor.supertypes");
+        Collection<KotlinType> mo2054getSupertypes = classDescriptor.getTypeConstructor().mo2054getSupertypes();
+        Intrinsics.checkNotNullExpressionValue(mo2054getSupertypes, "it.typeConstructor.supertypes");
         ArrayList arrayList = new ArrayList();
-        for (KotlinType kotlinType : mo2052getSupertypes) {
-            ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-            ClassifierDescriptor original = mo2051getDeclarationDescriptor != null ? mo2051getDeclarationDescriptor.getOriginal() : null;
+        for (KotlinType kotlinType : mo2054getSupertypes) {
+            ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+            ClassifierDescriptor original = mo2053getDeclarationDescriptor != null ? mo2053getDeclarationDescriptor.getOriginal() : null;
             ClassDescriptor classDescriptor2 = original instanceof ClassDescriptor ? (ClassDescriptor) original : null;
             LazyJavaClassDescriptor javaAnalogue = classDescriptor2 != null ? this$0.getJavaAnalogue(classDescriptor2) : null;
             if (javaAnalogue != null) {
@@ -640,8 +640,8 @@ public final class JvmBuiltInsCustomizer implements AdditionalClassPartsProvider
         if (constructorDescriptor.getValueParameters().size() == 1) {
             List<ValueParameterDescriptor> valueParameters = constructorDescriptor.getValueParameters();
             Intrinsics.checkNotNullExpressionValue(valueParameters, "valueParameters");
-            ClassifierDescriptor mo2051getDeclarationDescriptor = ((ValueParameterDescriptor) CollectionsKt.single((List<? extends Object>) valueParameters)).getType().getConstructor().mo2051getDeclarationDescriptor();
-            if (Intrinsics.areEqual(mo2051getDeclarationDescriptor != null ? DescriptorUtilsKt.getFqNameUnsafe(mo2051getDeclarationDescriptor) : null, DescriptorUtilsKt.getFqNameUnsafe(classDescriptor))) {
+            ClassifierDescriptor mo2053getDeclarationDescriptor = ((ValueParameterDescriptor) CollectionsKt.single((List<? extends Object>) valueParameters)).getType().getConstructor().mo2053getDeclarationDescriptor();
+            if (Intrinsics.areEqual(mo2053getDeclarationDescriptor != null ? DescriptorUtilsKt.getFqNameUnsafe(mo2053getDeclarationDescriptor) : null, DescriptorUtilsKt.getFqNameUnsafe(classDescriptor))) {
                 return true;
             }
         }

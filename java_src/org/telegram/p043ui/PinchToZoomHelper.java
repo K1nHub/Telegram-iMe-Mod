@@ -27,7 +27,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.exoplayer2.p016ui.AspectRatioFrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
@@ -239,7 +239,7 @@ public class PinchToZoomHelper {
                 this.isHardwareVideo = true;
                 MediaController.getInstance().setTextureView(this.overlayView.videoTextureView, this.overlayView.aspectRatioFrameLayout, this.overlayView.videoPlayerContainer, true);
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.overlayView.videoPlayerContainer.getLayoutParams();
-                this.overlayView.videoPlayerContainer.setTag(C3634R.C3637id.parent_tag, imageReceiver);
+                this.overlayView.videoPlayerContainer.setTag(C3632R.C3635id.parent_tag, imageReceiver);
                 if (layoutParams.width != imageReceiver.getImageWidth() || layoutParams.height != imageReceiver.getImageHeight()) {
                     this.overlayView.aspectRatioFrameLayout.setResizeMode(3);
                     layoutParams.width = (int) imageReceiver.getImageWidth();
@@ -472,7 +472,7 @@ public class PinchToZoomHelper {
                 frameLayout.setOutlineProvider(new ViewOutlineProvider(this, r5) { // from class: org.telegram.ui.PinchToZoomHelper.ZoomOverlayView.1
                     @Override // android.view.ViewOutlineProvider
                     public void getOutline(View view, Outline outline) {
-                        ImageReceiver imageReceiver = (ImageReceiver) view.getTag(C3634R.C3637id.parent_tag);
+                        ImageReceiver imageReceiver = (ImageReceiver) view.getTag(C3632R.C3635id.parent_tag);
                         if (imageReceiver != null) {
                             int[] roundRadius = imageReceiver.getRoundRadius();
                             int i = 0;
@@ -499,7 +499,7 @@ public class PinchToZoomHelper {
                     protected void onSizeChanged(int i, int i2, int i3, int i4) {
                         super.onSizeChanged(i, i2, i3, i4);
                         ZoomOverlayView.this.aspectPath.reset();
-                        ImageReceiver imageReceiver = (ImageReceiver) getTag(C3634R.C3637id.parent_tag);
+                        ImageReceiver imageReceiver = (ImageReceiver) getTag(C3632R.C3635id.parent_tag);
                         if (imageReceiver == null) {
                             float f = i / 2;
                             ZoomOverlayView.this.aspectPath.addCircle(f, i2 / 2, f, Path.Direction.CW);

@@ -27,7 +27,7 @@ import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatThemeController;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
@@ -316,7 +316,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         }
         EmojiThemes emojiThemes = this.chatThemeItem.chatTheme;
         if (emojiThemes == null || emojiThemes.showAsDefaultStub) {
-            setContentDescription(LocaleController.getString("ChatNoTheme", C3634R.string.ChatNoTheme));
+            setContentDescription(LocaleController.getString("ChatNoTheme", C3632R.string.ChatNoTheme));
         } else {
             setContentDescription(emojiThemes.getEmoticon());
         }
@@ -355,7 +355,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setItem$3(final ChatThemeBottomSheet.ChatThemeItem chatThemeItem, final int i) {
-        final Bitmap bitmap = SvgHelper.getBitmap(C3634R.raw.default_pattern, AndroidUtilities.m104dp(120), AndroidUtilities.m104dp(140), -16777216, AndroidUtilities.density);
+        final Bitmap bitmap = SvgHelper.getBitmap(C3632R.raw.default_pattern, AndroidUtilities.m104dp(120), AndroidUtilities.m104dp(140), -16777216, AndroidUtilities.density);
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ThemeSmallPreviewView$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
@@ -582,7 +582,7 @@ public class ThemeSmallPreviewView extends FrameLayout implements NotificationCe
         textPaint.setColor(getThemedColor(Theme.key_chat_emojiPanelTrendingDescription));
         this.noThemeTextPaint.setTextSize(AndroidUtilities.m104dp(14));
         this.noThemeTextPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        StaticLayout createStaticLayout2 = StaticLayoutEx.createStaticLayout2(LocaleController.getString("ChatNoTheme", C3634R.string.ChatNoTheme), this.noThemeTextPaint, AndroidUtilities.m104dp(52), Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, true, TextUtils.TruncateAt.END, AndroidUtilities.m104dp(52), 3);
+        StaticLayout createStaticLayout2 = StaticLayoutEx.createStaticLayout2(LocaleController.getString("ChatNoTheme", C3632R.string.ChatNoTheme), this.noThemeTextPaint, AndroidUtilities.m104dp(52), Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, true, TextUtils.TruncateAt.END, AndroidUtilities.m104dp(52), 3);
         this.textLayout = createStaticLayout2;
         return createStaticLayout2;
     }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$75;)V
     .locals 0
 
-    .line 18335
+    .line 18337
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$75$1;->this$1:Lorg/telegram/ui/PhotoViewer$75;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 18338
+    .line 18340
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$75$1;->this$1:Lorg/telegram/ui/PhotoViewer$75;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$75;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -50,7 +50,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 18339
+    .line 18341
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$75$1;->this$1:Lorg/telegram/ui/PhotoViewer$75;
 
     iget-object p1, p1, Lorg/telegram/ui/PhotoViewer$75;->this$0:Lorg/telegram/ui/PhotoViewer;

@@ -41,14 +41,14 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
 /* compiled from: FragmentPremiumPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiumView> {
     private TokenBalance balance;
     private List<TonFragmentItem.C1535Premium> items;
@@ -92,7 +92,7 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
         if (this.selectedItem != null) {
             FragmentPremiumView fragmentPremiumView = (FragmentPremiumView) getViewState();
             ResourceManager resourceManager = this.resourceManager;
-            int i = C3634R.string.fragment_premium_gift;
+            int i = C3632R.string.fragment_premium_gift;
             Object[] objArr = new Object[1];
             TonFragmentItem.C1535Premium c1535Premium = this.selectedItem;
             if (c1535Premium == null || (priceText = c1535Premium.getPriceText()) == null) {
@@ -126,7 +126,7 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
         this.items = arrayList;
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) this.items);
         ((FragmentPremiumView) getViewState()).renderItems(mutableList);
-        ((FragmentPremiumView) getViewState()).renderButton(this.resourceManager.getString(C3634R.string.fragment_premium_gift, productItem.getPriceText()), this.recipient != null);
+        ((FragmentPremiumView) getViewState()).renderButton(this.resourceManager.getString(C3632R.string.fragment_premium_gift, productItem.getPriceText()), this.recipient != null);
         this.selectedItem = productItem;
     }
 
@@ -139,9 +139,9 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
             return;
         }
         FragmentPremiumView fragmentPremiumView = (FragmentPremiumView) getViewState();
-        String string = this.resourceManager.getString(C3634R.string.fragment_premium_gift_confirmation_title);
+        String string = this.resourceManager.getString(C3632R.string.fragment_premium_gift_confirmation_title);
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3634R.string.fragment_premium_gift_confirmation_description;
+        int i = C3632R.string.fragment_premium_gift_confirmation_description;
         Object[] objArr = new Object[2];
         String formatName = ContactsController.formatName(tLRPC$User);
         isBlank = StringsKt__StringsJVMKt.isBlank(formatName);
@@ -151,7 +151,7 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
         Intrinsics.checkNotNullExpressionValue(formatName, "formatName(user).ifBlank { user.username }");
         objArr[0] = formatName;
         objArr[1] = priceText;
-        fragmentPremiumView.showConfirmationDialog(new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_buy_button_action_text)));
+        fragmentPremiumView.showConfirmationDialog(new DialogModel(string, resourceManager.getString(i, objArr), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.wallet_buy_button_action_text)));
     }
 
     public final void loadPlans() {
@@ -202,12 +202,12 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends PremiumPlan>> result) {
-                m1711invoke(result);
+                m1712invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1711invoke(Result<? extends List<? extends PremiumPlan>> it) {
+            public final void m1712invoke(Result<? extends List<? extends PremiumPlan>> it) {
                 ResourceManager resourceManager;
                 ResourceManager resourceManager2;
                 List list;
@@ -227,7 +227,7 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
                     if (list.isEmpty()) {
                         FragmentPremiumPresenter.this.renderGlobalState(GlobalState.Empty.Common.INSTANCE);
                         resourceManager4 = FragmentPremiumPresenter.this.resourceManager;
-                        ((FragmentPremiumView) FragmentPremiumPresenter.this.getViewState()).renderButton(resourceManager4.getString(C3634R.string.common_error), false);
+                        ((FragmentPremiumView) FragmentPremiumPresenter.this.getViewState()).renderButton(resourceManager4.getString(C3632R.string.common_error), false);
                         return;
                     }
                     list2 = FragmentPremiumPresenter.this.items;
@@ -239,7 +239,7 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
                     if (c1535Premium != null) {
                         FragmentPremiumView fragmentPremiumView = (FragmentPremiumView) FragmentPremiumPresenter.this.getViewState();
                         resourceManager3 = FragmentPremiumPresenter.this.resourceManager;
-                        String string = resourceManager3.getString(C3634R.string.fragment_premium_gift, c1535Premium.getPriceText());
+                        String string = resourceManager3.getString(C3632R.string.fragment_premium_gift, c1535Premium.getPriceText());
                         tLRPC$User = FragmentPremiumPresenter.this.recipient;
                         fragmentPremiumView.renderButton(string, tLRPC$User != null);
                     } else {
@@ -288,7 +288,7 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
         double orZero = NumberExtKt.orZero(tokenBalance != null ? Double.valueOf(tokenBalance.getTotal()) : null);
         TonFragmentItem.C1535Premium c1535Premium2 = this.selectedItem;
         if (orZero < NumberExtKt.orZero(c1535Premium2 != null ? Double.valueOf(c1535Premium2.getPrice()) : null)) {
-            ((FragmentPremiumView) getViewState()).showActionError(this.resourceManager.getString(C3634R.string.wallet_amount_send_error_insufficient_funds));
+            ((FragmentPremiumView) getViewState()).showActionError(this.resourceManager.getString(C3632R.string.wallet_amount_send_error_insufficient_funds));
             return;
         }
         TonFragmentInteractor tonFragmentInteractor = this.tonFragmentInteractor;
@@ -310,12 +310,12 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1709invoke(result);
+                m1710invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1709invoke(Result<? extends Boolean> it) {
+            public final void m1710invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
@@ -359,7 +359,7 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
-        ((FragmentPremiumView) getViewState()).renderButton(this.resourceManager.getString(C3634R.string.common_progress_state_title), false);
+        ((FragmentPremiumView) getViewState()).renderButton(this.resourceManager.getString(C3632R.string.common_progress_state_title), false);
         loadPlans();
         loadBalance();
     }
@@ -375,12 +375,12 @@ public final class FragmentPremiumPresenter extends BasePresenter<FragmentPremiu
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
-                m1710invoke(result);
+                m1711invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1710invoke(Result<? extends TokenBalance> it) {
+            public final void m1711invoke(Result<? extends TokenBalance> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends TokenBalance> result = it;

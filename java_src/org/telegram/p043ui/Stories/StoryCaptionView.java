@@ -40,7 +40,7 @@ import java.util.Objects;
 import java.util.Stack;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -651,7 +651,7 @@ public class StoryCaptionView extends NestedScrollView {
                 if (storyCaptionTextView4.shouldCollapse) {
                     float lineTop = this.fullLayout.getLineTop(2) + this.fullLayout.getTopPadding();
                     if (this == StoryCaptionTextView.this.state[0]) {
-                        String string = LocaleController.getString("ShowMore", C3634R.string.ShowMore);
+                        String string = LocaleController.getString("ShowMore", C3632R.string.ShowMore);
                         StoryCaptionTextView storyCaptionTextView5 = StoryCaptionTextView.this;
                         storyCaptionTextView5.showMore = storyCaptionTextView5.makeTextLayout(storyCaptionTextView5.showMorePaint, string, i);
                         StoryCaptionTextView.this.showMoreY = (storyCaptionTextView.verticalPadding + lineTop) - AndroidUtilities.dpf2(0.3f);

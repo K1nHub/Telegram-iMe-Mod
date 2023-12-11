@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/blockchains/TRONBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v0, p1}, Lcom/iMe/storage/data/manager/crypto/blockchains/TRONBlockchainCryptoWalletManagerImpl;->$r8$lambda$_g6nIap8-MWhJjqc7Al13unh5Ng(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {v0, p1}, Lcom/iMe/storage/data/manager/crypto/blockchains/TRONBlockchainCryptoWalletManagerImpl;->$r8$lambda$ycRqf-xi1DbsYoeIciwO4heMwnE(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
 
     move-result-object p1
 

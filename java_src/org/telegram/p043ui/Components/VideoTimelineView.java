@@ -22,7 +22,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.VideoTimelineView */
@@ -558,7 +558,7 @@ public class VideoTimelineView extends View {
             this.tooltipPaint = textPaint;
             this.lastTime = -1L;
             textPaint.setTextSize(AndroidUtilities.m104dp(14));
-            this.tooltipBackgroundArrow = ContextCompat.getDrawable(context, C3634R.C3636drawable.tooltip_arrow);
+            this.tooltipBackgroundArrow = ContextCompat.getDrawable(context, C3632R.C3634drawable.tooltip_arrow);
             this.tooltipBackground = Theme.createRoundRectDrawable(AndroidUtilities.m104dp(5), Theme.getColor(Theme.key_chat_gifSaveHintBackground));
             updateColors();
             setTime(0);

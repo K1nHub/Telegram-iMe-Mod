@@ -17,13 +17,13 @@ public final class ProcessedUptoTlbConstructor extends org.ton.tlb.TlbConstructo
     public void storeTlb(CellBuilder cellBuilder, ProcessedUpto value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5147getLastMsgLtsVKNKU());
+        cellBuilder.mo5193storeUInt64VKZWuLQ(value.m5129getLastMsgLtsVKNKU());
         cellBuilder.storeBits(value.getLastMsgHash());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public ProcessedUpto loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new ProcessedUpto(cellSlice.mo5221loadUInt64sVKNKU(), cellSlice.loadBits(256), null);
+        return new ProcessedUpto(cellSlice.mo5203loadUInt64sVKNKU(), cellSlice.loadBits(256), null);
     }
 }

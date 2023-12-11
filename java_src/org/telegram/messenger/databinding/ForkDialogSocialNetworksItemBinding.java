@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkDialogSocialNetworksItemBinding implements ViewBinding {
     public final ImageView icon;
@@ -30,7 +30,7 @@ public final class ForkDialogSocialNetworksItemBinding implements ViewBinding {
     }
 
     public static ForkDialogSocialNetworksItemBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_dialog_social_networks_item, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_dialog_social_networks_item, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -38,10 +38,10 @@ public final class ForkDialogSocialNetworksItemBinding implements ViewBinding {
     }
 
     public static ForkDialogSocialNetworksItemBinding bind(View view) {
-        int i = C3634R.C3637id.icon;
+        int i = C3632R.C3635id.icon;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
         if (imageView != null) {
-            i = C3634R.C3637id.text;
+            i = C3632R.C3635id.text;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
                 return new ForkDialogSocialNetworksItemBinding((ConstraintLayout) view, imageView, textView);

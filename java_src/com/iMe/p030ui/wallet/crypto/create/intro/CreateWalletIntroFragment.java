@@ -65,7 +65,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
@@ -73,7 +73,7 @@ import org.telegram.messenger.databinding.ForkFragmentCreateWalletIntroBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -184,15 +184,15 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
             }
         });
         this.linkedWalletViewCornerRadius$delegate = lazy2;
-        this.toolbar$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<C3706ActionBar>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$toolbar$2
+        this.toolbar$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<C3704ActionBar>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$toolbar$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
             }
 
             @Override // kotlin.jvm.functions.Function0
-            public final C3706ActionBar invoke() {
-                C3706ActionBar initActionBar;
+            public final C3704ActionBar invoke() {
+                C3704ActionBar initActionBar;
                 initActionBar = CreateWalletIntroFragment.this.initActionBar();
                 return initActionBar;
             }
@@ -216,8 +216,8 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         return ((Number) this.linkedWalletViewCornerRadius$delegate.getValue()).floatValue();
     }
 
-    private final C3706ActionBar getToolbar() {
-        return (C3706ActionBar) this.toolbar$delegate.getValue(this, $$delegatedProperties[2]);
+    private final C3704ActionBar getToolbar() {
+        return (C3704ActionBar) this.toolbar$delegate.getValue(this, $$delegatedProperties[2]);
     }
 
     @Override // com.iMe.p030ui.base.mvp.MvpFragment
@@ -242,7 +242,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         Intrinsics.checkNotNullExpressionValue(constraintLinkedWalletSection, "constraintLinkedWalletSection");
         ViewExtKt.visible$default(constraintLinkedWalletSection, false, 1, null);
         binding.imageAvatar.setUser(user);
-        binding.textUserId.setText(getResourceManager().getString(C3634R.string.wallet_home_crypto_account_telegram_id, Long.valueOf(user.f1749id)));
+        binding.textUserId.setText(getResourceManager().getString(C3632R.string.wallet_home_crypto_account_telegram_id, Long.valueOf(user.f1749id)));
         binding.textAddress.setText(address);
         setupItemMoreOptions(explorer);
     }
@@ -339,13 +339,13 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final C3706ActionBar initActionBar() {
-        C3706ActionBar c3706ActionBar = new C3706ActionBar(getContext());
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(this.walletCreationType.getTitleTextResId()));
-        c3706ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3634R.C3636drawable.msg_info);
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$initActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+    public final C3704ActionBar initActionBar() {
+        C3704ActionBar c3704ActionBar = new C3704ActionBar(getContext());
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(this.walletCreationType.getTitleTextResId()));
+        c3704ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3632R.C3634drawable.msg_info);
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$initActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CreateWalletIntroFragment.this.finishFragment();
@@ -354,17 +354,17 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
                 }
             }
         });
-        return c3706ActionBar;
+        return c3704ActionBar;
     }
 
     private final void setupItemMoreOptions(Network.Explorer explorer) {
         final ActionBarMenuItem setupItemMoreOptions$lambda$8 = getBinding().itemMoreOptions;
         setupItemMoreOptions$lambda$8.setLongClickEnabled(false);
         setupItemMoreOptions$lambda$8.setSubMenuOpenSide(2);
-        setupItemMoreOptions$lambda$8.setIcon(C3634R.C3636drawable.ic_ab_other);
+        setupItemMoreOptions$lambda$8.setIcon(C3632R.C3634drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupItemMoreOptions$lambda$8, "setupItemMoreOptions$lambda$8");
         ViewExtKt.setCircleRippleBackground(setupItemMoreOptions$lambda$8);
-        setupItemMoreOptions$lambda$8.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3634R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
+        setupItemMoreOptions$lambda$8.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3632R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
         ViewExtKt.safeThrottledClick$default(setupItemMoreOptions$lambda$8, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$setupItemMoreOptions$1$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -389,7 +389,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
                 CreateWalletIntroFragment.setupItemMoreOptions$lambda$8$lambda$7(CreateWalletIntroFragment.this, i);
             }
         });
-        setupItemMoreOptions$lambda$8.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+        setupItemMoreOptions$lambda$8.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -402,7 +402,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
 
     private final void setupListeners() {
         final ForkFragmentCreateWalletIntroBinding binding = getBinding();
-        C3706ActionBar toolbar = getToolbar();
+        C3704ActionBar toolbar = getToolbar();
         if (!ViewCompat.isLaidOut(toolbar) || toolbar.isLayoutRequested()) {
             toolbar.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$setupListeners$lambda$12$$inlined$doOnLayout$1
                 @Override // android.view.View.OnLayoutChangeListener
@@ -531,7 +531,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
     /* JADX INFO: Access modifiers changed from: private */
     public final void setupColors() {
         List<AppCompatImageView> listOf;
-        C3706ActionBar toolbar = getToolbar();
+        C3704ActionBar toolbar = getToolbar();
         int i = Theme.key_windowBackgroundWhite;
         toolbar.setBackgroundColor(getThemedColor(i));
         int i2 = Theme.key_windowBackgroundWhiteBlackText;
@@ -584,30 +584,30 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         ForkFragmentCreateWalletIntroBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageHeader;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3634R.raw.fork_crypto_wallet, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3632R.raw.fork_crypto_wallet, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
-        binding.textTitle.setText(getResourceManager().getString(C3634R.string.wallet_creation_intro_title));
-        binding.textDescription.setText(getResourceManager().getString(C3634R.string.wallet_creation_intro_description));
-        binding.textLinkedWalletTitle.setText(getResourceManager().getString(C3634R.string.wallet_creation_intro_linked_wallet));
+        binding.textTitle.setText(getResourceManager().getString(C3632R.string.wallet_creation_intro_title));
+        binding.textDescription.setText(getResourceManager().getString(C3632R.string.wallet_creation_intro_description));
+        binding.textLinkedWalletTitle.setText(getResourceManager().getString(C3632R.string.wallet_creation_intro_linked_wallet));
         TextView textView = binding.textPrivacy;
         textView.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-        String string = getResourceManager().getString(C3634R.string.wallet_creation_intro_privacy);
+        String string = getResourceManager().getString(C3632R.string.wallet_creation_intro_privacy);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) string, "*", 0, false, 6, (Object) null);
         lastIndexOf$default = StringsKt__StringsKt.lastIndexOf$default((CharSequence) string, "*", 0, false, 6, (Object) null);
         if (indexOf$default != -1 && lastIndexOf$default != -1 && indexOf$default != lastIndexOf$default) {
             spannableStringBuilder.replace(lastIndexOf$default, lastIndexOf$default + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf$default, indexOf$default + 1, (CharSequence) "");
-            spannableStringBuilder.setSpan(new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3634R.string.PrivacyPolicyUrl)), indexOf$default, lastIndexOf$default - 1, 33);
+            spannableStringBuilder.setSpan(new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3632R.string.PrivacyPolicyUrl)), indexOf$default, lastIndexOf$default - 1, 33);
         }
         textView.setText(spannableStringBuilder);
-        binding.itemMoreOptions.setIcon(C3634R.C3636drawable.ic_ab_other);
-        binding.buttonNext.setIcon(C3634R.C3636drawable.msg_arrow_forward);
+        binding.itemMoreOptions.setIcon(C3632R.C3634drawable.ic_ab_other);
+        binding.buttonNext.setIcon(C3632R.C3634drawable.msg_arrow_forward);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showInfoDialog() {
-        showDialog(DialogsFactoryKt.createDialogInfoWithAnimation$default(this, 0, getResourceManager().getString(C3634R.string.wallet_creation_intro_information_title), getResourceManager().getString(C3634R.string.wallet_creation_intro_information_description), 0, null, null, 57, null));
+        showDialog(DialogsFactoryKt.createDialogInfoWithAnimation$default(this, 0, getResourceManager().getString(C3632R.string.wallet_creation_intro_information_title), getResourceManager().getString(C3632R.string.wallet_creation_intro_information_description), 0, null, null, 57, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

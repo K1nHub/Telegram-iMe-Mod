@@ -10,13 +10,21 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$2:Ljava/util/ArrayList;
 
-.field public final synthetic f$3:J
+.field public final synthetic f$3:I
+
+.field public final synthetic f$4:Landroidx/collection/LongSparseArray;
+
+.field public final synthetic f$5:Lorg/telegram/tgnet/TLRPC$StickerSet;
+
+.field public final synthetic f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;
+
+.field public final synthetic f$7:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Lorg/telegram/tgnet/TLObject;ZJ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Lorg/telegram/tgnet/TLObject;Ljava/util/ArrayList;ILandroidx/collection/LongSparseArray;Lorg/telegram/tgnet/TLRPC$StickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +33,17 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iput-boolean p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$2:Z
+    iput-object p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$2:Ljava/util/ArrayList;
 
-    iput-wide p4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$3:J
+    iput p4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$3:I
+
+    iput-object p5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$4:Landroidx/collection/LongSparseArray;
+
+    iput-object p6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$5:Lorg/telegram/tgnet/TLRPC$StickerSet;
+
+    iput-object p7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;
+
+    iput p8, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$7:I
 
     return-void
 .end method
@@ -35,17 +51,25 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$0:Lorg/telegram/messenger/MediaDataController;
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iget-boolean v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$2:Z
+    iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$2:Ljava/util/ArrayList;
 
-    iget-wide v3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$3:J
+    iget v3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$3:I
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$pQ3ZvAtQuVXPpdPuHTE3oQmGMdE(Lorg/telegram/messenger/MediaDataController;Lorg/telegram/tgnet/TLObject;ZJ)V
+    iget-object v4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$4:Landroidx/collection/LongSparseArray;
+
+    iget-object v5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$5:Lorg/telegram/tgnet/TLRPC$StickerSet;
+
+    iget-object v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;
+
+    iget v7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda95;->f$7:I
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$erMOvivn7r7Dxftjkm48otDMOV4(Lorg/telegram/messenger/MediaDataController;Lorg/telegram/tgnet/TLObject;Ljava/util/ArrayList;ILandroidx/collection/LongSparseArray;Lorg/telegram/tgnet/TLRPC$StickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;I)V
 
     return-void
 .end method

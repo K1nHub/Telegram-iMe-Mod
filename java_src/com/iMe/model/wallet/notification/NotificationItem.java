@@ -108,13 +108,13 @@ public final class NotificationItem implements ClickableItem {
     @Override // com.iMe.model.wallet.transaction.ClickableItem
     public String getLinkedText() {
         Notification notification = this.notification;
-        return notification instanceof Notification.CryptoTransfer.C1963In ? ((Notification.CryptoTransfer.C1963In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1964In ? ((Notification.Donation.C1964In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
+        return notification instanceof Notification.CryptoTransfer.C1960In ? ((Notification.CryptoTransfer.C1960In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1961In ? ((Notification.Donation.C1961In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
     }
 
     @Override // com.iMe.model.wallet.transaction.ClickableItem
     public String getRecipientAddress() {
         Notification notification = this.notification;
-        return notification instanceof Notification.CryptoTransfer.C1963In ? ((Notification.CryptoTransfer.C1963In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1964In ? ((Notification.Donation.C1964In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
+        return notification instanceof Notification.CryptoTransfer.C1960In ? ((Notification.CryptoTransfer.C1960In) notification).getFromAddress() : notification instanceof Notification.CryptoTransfer.Out ? ((Notification.CryptoTransfer.Out) notification).getToAddress() : notification instanceof Notification.Donation.C1961In ? ((Notification.Donation.C1961In) notification).getFromAddress() : notification instanceof Notification.Donation.Out ? ((Notification.Donation.Out) notification).getToAddress() : "";
     }
 
     @Override // com.iMe.model.wallet.transaction.ClickableItem

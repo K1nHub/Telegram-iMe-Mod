@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* compiled from: FragmentPremiumView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface FragmentPremiumView extends BaseView {
     void openChooseContact(Bundle bundle);
 

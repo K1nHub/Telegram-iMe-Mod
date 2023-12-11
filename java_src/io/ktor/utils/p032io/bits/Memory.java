@@ -12,18 +12,18 @@ public final class Memory {
     private static final ByteBuffer Empty;
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static ByteBuffer m1910constructorimpl(ByteBuffer buffer) {
+    public static ByteBuffer m1912constructorimpl(ByteBuffer buffer) {
         Intrinsics.checkNotNullParameter(buffer, "buffer");
         return buffer;
     }
 
     /* renamed from: slice-87lwejk  reason: not valid java name */
-    public static final ByteBuffer m1912slice87lwejk(ByteBuffer byteBuffer, int i, int i2) {
-        return m1910constructorimpl(MemoryJvmKt.sliceSafe(byteBuffer, i, i2));
+    public static final ByteBuffer m1914slice87lwejk(ByteBuffer byteBuffer, int i, int i2) {
+        return m1912constructorimpl(MemoryJvmKt.sliceSafe(byteBuffer, i, i2));
     }
 
     /* renamed from: copyTo-JT6ljtQ  reason: not valid java name */
-    public static final void m1911copyToJT6ljtQ(ByteBuffer byteBuffer, ByteBuffer destination, int i, int i2, int i3) {
+    public static final void m1913copyToJT6ljtQ(ByteBuffer byteBuffer, ByteBuffer destination, int i, int i2, int i3) {
         Intrinsics.checkNotNullParameter(destination, "destination");
         if (byteBuffer.hasArray() && destination.hasArray() && !byteBuffer.isReadOnly() && !destination.isReadOnly()) {
             System.arraycopy(byteBuffer.array(), byteBuffer.arrayOffset() + i, destination.array(), destination.arrayOffset() + i3, i2);
@@ -49,7 +49,7 @@ public final class Memory {
         }
 
         /* renamed from: getEmpty-SK3TCg8  reason: not valid java name */
-        public final ByteBuffer m1913getEmptySK3TCg8() {
+        public final ByteBuffer m1915getEmptySK3TCg8() {
             return Memory.Empty;
         }
     }
@@ -57,6 +57,6 @@ public final class Memory {
     static {
         ByteBuffer order = ByteBuffer.allocate(0).order(ByteOrder.BIG_ENDIAN);
         Intrinsics.checkNotNullExpressionValue(order, "allocate(0).order(ByteOrder.BIG_ENDIAN)");
-        Empty = m1910constructorimpl(order);
+        Empty = m1912constructorimpl(order);
     }
 }

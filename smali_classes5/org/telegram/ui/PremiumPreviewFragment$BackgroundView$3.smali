@@ -34,7 +34,7 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;Lorg/telegram/ui/PremiumPreviewFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 1419
+    .line 1420
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iput-object p3, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;->val$context:Landroid/content/Context;
@@ -47,7 +47,7 @@
 .method private synthetic lambda$onCreateViewHolder$0(Lorg/telegram/ui/Components/Premium/PremiumTierCell;Ljava/lang/Void;)Landroid/graphics/Paint;
     .locals 7
 
-    .line 1436
+    .line 1437
     iget-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iget-object p2, p2, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -82,7 +82,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->gradientMatrix(IIIIFF)V
 
-    .line 1437
+    .line 1438
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iget-object p1, p1, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -99,7 +99,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1456
+    .line 1457
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -116,7 +116,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 1451
+    .line 1452
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -145,12 +145,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 4
 
-    .line 1444
+    .line 1445
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/PremiumTierCell;
 
-    .line 1445
+    .line 1446
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -185,7 +185,7 @@
     :goto_0
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->bind(Lorg/telegram/ui/PremiumPreviewFragment$SubscriptionTier;Z)V
 
-    .line 1446
+    .line 1447
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -208,21 +208,21 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 1423
+    .line 1424
     new-instance p1, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3$1;
 
     iget-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;->val$context:Landroid/content/Context;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3$1;-><init>(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;Landroid/content/Context;)V
 
-    .line 1435
+    .line 1436
     new-instance p2, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$3;Lorg/telegram/ui/Components/Premium/PremiumTierCell;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Premium/PremiumTierCell;->setCirclePaintProvider(Lorg/telegram/messenger/GenericProvider;)V
 
-    .line 1439
+    .line 1440
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

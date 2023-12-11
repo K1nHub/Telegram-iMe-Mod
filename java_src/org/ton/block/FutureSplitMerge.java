@@ -72,7 +72,7 @@ public interface FutureSplitMerge extends TlbObject {
             lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.PUBLICATION, new Function0<KSerializer<Object>>() { // from class: org.ton.block.FutureSplitMerge.FsmNone.1
                 @Override // kotlin.jvm.functions.Function0
                 public final KSerializer<Object> invoke() {
-                    return new ObjectSerializer("fsm_none", FsmNone.INSTANCE, new Annotation[]{new C7556xec1cadf2("@type")});
+                    return new ObjectSerializer("fsm_none", FsmNone.INSTANCE, new Annotation[]{new C7554xec1cadf2("@type")});
                 }
             });
             $cachedSerializer$delegate = lazy;
@@ -128,7 +128,7 @@ public interface FutureSplitMerge extends TlbObject {
         }
 
         public int hashCode() {
-            return (UInt.m1974hashCodeimpl(this.mergeUtime) * 31) + UInt.m1974hashCodeimpl(this.interval);
+            return (UInt.m1976hashCodeimpl(this.mergeUtime) * 31) + UInt.m1976hashCodeimpl(this.interval);
         }
 
         private FsmMerge(int i, int i2) {
@@ -140,23 +140,23 @@ public interface FutureSplitMerge extends TlbObject {
             if (3 != (i & 3)) {
                 PluginExceptionsKt.throwMissingFieldException(i, 3, FutureSplitMerge$FsmMerge$$serializer.INSTANCE.getDescriptor());
             }
-            this.mergeUtime = uInt.m1976unboximpl();
-            this.interval = uInt2.m1976unboximpl();
+            this.mergeUtime = uInt.m1978unboximpl();
+            this.interval = uInt2.m1978unboximpl();
         }
 
         public static final /* synthetic */ void write$Self(FsmMerge fsmMerge, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
             UIntSerializer uIntSerializer = UIntSerializer.INSTANCE;
-            compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1971boximpl(fsmMerge.mergeUtime));
-            compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1971boximpl(fsmMerge.interval));
+            compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1973boximpl(fsmMerge.mergeUtime));
+            compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1973boximpl(fsmMerge.interval));
         }
 
         /* renamed from: getMergeUtime-pVg5ArA  reason: not valid java name */
-        public final int m5111getMergeUtimepVg5ArA() {
+        public final int m5093getMergeUtimepVg5ArA() {
             return this.mergeUtime;
         }
 
         /* renamed from: getInterval-pVg5ArA  reason: not valid java name */
-        public final int m5110getIntervalpVg5ArA() {
+        public final int m5092getIntervalpVg5ArA() {
             return this.interval;
         }
 
@@ -210,8 +210,8 @@ public interface FutureSplitMerge extends TlbObject {
         public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
             Intrinsics.checkNotNullParameter(printer, "printer");
             TlbPrettyPrinter open = printer.open("fsm_merge");
-            open.field("merge_utime", UInt.m1971boximpl(this.mergeUtime));
-            open.field("interval", UInt.m1971boximpl(this.interval));
+            open.field("merge_utime", UInt.m1973boximpl(this.mergeUtime));
+            open.field("interval", UInt.m1973boximpl(this.interval));
             TlbPrettyPrinter.close$default(open, null, 1, null);
             return printer;
         }
@@ -245,7 +245,7 @@ public interface FutureSplitMerge extends TlbObject {
         }
 
         public int hashCode() {
-            return (UInt.m1974hashCodeimpl(this.splitUtime) * 31) + UInt.m1974hashCodeimpl(this.interval);
+            return (UInt.m1976hashCodeimpl(this.splitUtime) * 31) + UInt.m1976hashCodeimpl(this.interval);
         }
 
         private FsmSplit(int i, int i2) {
@@ -257,23 +257,23 @@ public interface FutureSplitMerge extends TlbObject {
             if (3 != (i & 3)) {
                 PluginExceptionsKt.throwMissingFieldException(i, 3, FutureSplitMerge$FsmSplit$$serializer.INSTANCE.getDescriptor());
             }
-            this.splitUtime = uInt.m1976unboximpl();
-            this.interval = uInt2.m1976unboximpl();
+            this.splitUtime = uInt.m1978unboximpl();
+            this.interval = uInt2.m1978unboximpl();
         }
 
         public static final /* synthetic */ void write$Self(FsmSplit fsmSplit, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
             UIntSerializer uIntSerializer = UIntSerializer.INSTANCE;
-            compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1971boximpl(fsmSplit.splitUtime));
-            compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1971boximpl(fsmSplit.interval));
+            compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1973boximpl(fsmSplit.splitUtime));
+            compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1973boximpl(fsmSplit.interval));
         }
 
         /* renamed from: getSplitUtime-pVg5ArA  reason: not valid java name */
-        public final int m5113getSplitUtimepVg5ArA() {
+        public final int m5095getSplitUtimepVg5ArA() {
             return this.splitUtime;
         }
 
         /* renamed from: getInterval-pVg5ArA  reason: not valid java name */
-        public final int m5112getIntervalpVg5ArA() {
+        public final int m5094getIntervalpVg5ArA() {
             return this.interval;
         }
 
@@ -327,8 +327,8 @@ public interface FutureSplitMerge extends TlbObject {
         public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
             Intrinsics.checkNotNullParameter(printer, "printer");
             TlbPrettyPrinter open = printer.open("fsm_split");
-            open.field("split_utime", UInt.m1971boximpl(this.splitUtime));
-            open.field("interval", UInt.m1971boximpl(this.interval));
+            open.field("split_utime", UInt.m1973boximpl(this.splitUtime));
+            open.field("interval", UInt.m1973boximpl(this.interval));
             TlbPrettyPrinter.close$default(open, null, 1, null);
             return printer;
         }
@@ -368,7 +368,7 @@ public interface FutureSplitMerge extends TlbObject {
         }
 
         public final KSerializer<FutureSplitMerge> serializer() {
-            return new SealedClassSerializer("org.ton.block.FutureSplitMerge", Reflection.getOrCreateKotlinClass(FutureSplitMerge.class), new KClass[]{Reflection.getOrCreateKotlinClass(FsmMerge.class), Reflection.getOrCreateKotlinClass(FsmNone.class), Reflection.getOrCreateKotlinClass(FsmSplit.class)}, new KSerializer[]{FutureSplitMerge$FsmMerge$$serializer.INSTANCE, new ObjectSerializer("fsm_none", FsmNone.INSTANCE, new Annotation[]{new C7556xec1cadf2("@type")}), FutureSplitMerge$FsmSplit$$serializer.INSTANCE}, new Annotation[]{new C7556xec1cadf2("@type")});
+            return new SealedClassSerializer("org.ton.block.FutureSplitMerge", Reflection.getOrCreateKotlinClass(FutureSplitMerge.class), new KClass[]{Reflection.getOrCreateKotlinClass(FsmMerge.class), Reflection.getOrCreateKotlinClass(FsmNone.class), Reflection.getOrCreateKotlinClass(FsmSplit.class)}, new KSerializer[]{FutureSplitMerge$FsmMerge$$serializer.INSTANCE, new ObjectSerializer("fsm_none", FsmNone.INSTANCE, new Annotation[]{new C7554xec1cadf2("@type")}), FutureSplitMerge$FsmSplit$$serializer.INSTANCE}, new Annotation[]{new C7554xec1cadf2("@type")});
         }
     }
 }

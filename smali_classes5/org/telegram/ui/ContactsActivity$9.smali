@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;)V
     .locals 0
 
-    .line 1152
+    .line 1153
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -41,7 +41,7 @@
 
     if-ne p2, p1, :cond_1
 
-    .line 1159
+    .line 1160
     iget-object p2, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ContactsActivity;->access$700(Lorg/telegram/ui/ContactsActivity;)Z
@@ -58,7 +58,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1160
+    .line 1161
     iget-object p2, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -71,7 +71,7 @@
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 1162
+    .line 1163
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/ContactsActivity$9;->scrollingManually:Z
 
@@ -80,7 +80,7 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 1164
+    .line 1165
     iput-boolean p1, p0, Lorg/telegram/ui/ContactsActivity$9;->scrollingManually:Z
 
     :goto_0
@@ -90,10 +90,10 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 3
 
-    .line 1170
+    .line 1171
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 1171
+    .line 1172
     iget-object p2, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ContactsActivity;->access$800(Lorg/telegram/ui/ContactsActivity;)Landroid/widget/FrameLayout;
@@ -116,7 +116,7 @@
 
     if-eq p2, p3, :cond_7
 
-    .line 1172
+    .line 1173
     iget-object p2, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ContactsActivity;->access$3100(Lorg/telegram/ui/ContactsActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -129,14 +129,14 @@
 
     const/4 p3, 0x0
 
-    .line 1174
+    .line 1175
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 1177
+    .line 1178
     invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
     move-result p1
@@ -146,7 +146,7 @@
     :cond_0
     move p1, p3
 
-    .line 1181
+    .line 1182
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
@@ -158,7 +158,7 @@
 
     if-ne v0, p2, :cond_2
 
-    .line 1182
+    .line 1183
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$3300(Lorg/telegram/ui/ContactsActivity;)I
@@ -167,7 +167,7 @@
 
     sub-int/2addr v0, p1
 
-    .line 1183
+    .line 1184
     iget-object v2, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ContactsActivity;->access$3300(Lorg/telegram/ui/ContactsActivity;)I
@@ -183,7 +183,7 @@
     :cond_1
     move v2, p3
 
-    .line 1184
+    .line 1185
     :goto_1
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
@@ -193,7 +193,7 @@
 
     goto :goto_2
 
-    .line 1186
+    .line 1187
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
@@ -214,7 +214,7 @@
     :cond_4
     if-eqz p3, :cond_6
 
-    .line 1188
+    .line 1189
     iget-object p3, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/ContactsActivity;->access$3400(Lorg/telegram/ui/ContactsActivity;)Z
@@ -229,24 +229,24 @@
 
     if-eqz p3, :cond_6
 
-    .line 1189
+    .line 1190
     :cond_5
     iget-object p3, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p3, v2}, Lorg/telegram/ui/ContactsActivity;->access$1400(Lorg/telegram/ui/ContactsActivity;Z)V
 
-    .line 1191
+    .line 1192
     :cond_6
     iget-object p3, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p3, p2}, Lorg/telegram/ui/ContactsActivity;->access$3202(Lorg/telegram/ui/ContactsActivity;I)I
 
-    .line 1192
+    .line 1193
     iget-object p2, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/ContactsActivity;->access$3302(Lorg/telegram/ui/ContactsActivity;I)I
 
-    .line 1193
+    .line 1194
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$9;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/ContactsActivity;->access$3402(Lorg/telegram/ui/ContactsActivity;Z)Z

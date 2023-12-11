@@ -24,7 +24,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringBuilderKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$Chat;
@@ -97,12 +97,12 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
-                m1579invoke(bool);
+                m1580invoke(bool);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1579invoke(Boolean it) {
+            public final void m1580invoke(Boolean it) {
                 CampaignItem campaignItem;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Boolean bool = it;
@@ -171,7 +171,7 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
     }
 
     public final void copyChannelLink() {
-        String string = LocaleController.getString("LinkCopied", C3634R.string.LinkCopied);
+        String string = LocaleController.getString("LinkCopied", C3632R.string.LinkCopied);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"LinkCopied\", R.string.LinkCopied)");
         ContextExtKt.copyToClipboard("https://" + TelegramControllersGateway.CC.getMessagesController$default(this.telegramControllersGateway, 0, 1, null).linkPrefix + '/' + this.campaign.getShortname(), string);
     }

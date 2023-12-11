@@ -211,7 +211,7 @@ public final class IntMsgInfo implements CommonMsgInfo {
         KClass[] kClassArr = {Reflection.getOrCreateKotlinClass(AddrStd.class), Reflection.getOrCreateKotlinClass(AddrVar.class)};
         AddrStd$$serializer addrStd$$serializer = AddrStd$$serializer.INSTANCE;
         AddrVar$$serializer addrVar$$serializer = AddrVar$$serializer.INSTANCE;
-        $childSerializers = new KSerializer[]{null, null, null, new SealedClassSerializer("org.ton.block.MsgAddressInt", orCreateKotlinClass, kClassArr, new KSerializer[]{addrStd$$serializer, addrVar$$serializer}, new Annotation[]{new C7558x56daaf1f("@type")}), new SealedClassSerializer("org.ton.block.MsgAddressInt", Reflection.getOrCreateKotlinClass(MsgAddressInt.class), new KClass[]{Reflection.getOrCreateKotlinClass(AddrStd.class), Reflection.getOrCreateKotlinClass(AddrVar.class)}, new KSerializer[]{addrStd$$serializer, addrVar$$serializer}, new Annotation[]{new C7558x56daaf1f("@type")}), null, null, null, null, null};
+        $childSerializers = new KSerializer[]{null, null, null, new SealedClassSerializer("org.ton.block.MsgAddressInt", orCreateKotlinClass, kClassArr, new KSerializer[]{addrStd$$serializer, addrVar$$serializer}, new Annotation[]{new C7556x56daaf1f("@type")}), new SealedClassSerializer("org.ton.block.MsgAddressInt", Reflection.getOrCreateKotlinClass(MsgAddressInt.class), new KClass[]{Reflection.getOrCreateKotlinClass(AddrStd.class), Reflection.getOrCreateKotlinClass(AddrVar.class)}, new KSerializer[]{addrStd$$serializer, addrVar$$serializer}, new Annotation[]{new C7556x56daaf1f("@type")}), null, null, null, null, null};
     }
 
     @Override // org.ton.tlb.TlbObject

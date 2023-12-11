@@ -50,9 +50,9 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentWalletBinancePayHistoryBinding;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* compiled from: WalletBinancePayHistoryFragment.kt */
@@ -287,12 +287,12 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthBaseFragmen
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_binance_pay_action_history));
-        c3706ActionBar.setAllowOverlayTitle(true);
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.wallet_binance_pay_action_history));
+        c3704ActionBar.setAllowOverlayTitle(true);
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletBinancePayHistoryFragment.this.finishFragment();

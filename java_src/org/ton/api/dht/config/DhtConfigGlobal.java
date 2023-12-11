@@ -23,10 +23,10 @@ public final class DhtConfigGlobal {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: a */
-    private final int f2029a;
+    private final int f2030a;
 
     /* renamed from: k */
-    private final int f2030k;
+    private final int f2031k;
     private final DhtNodes staticNodes;
 
     public DhtConfigGlobal() {
@@ -39,17 +39,17 @@ public final class DhtConfigGlobal {
         }
         if (obj instanceof DhtConfigGlobal) {
             DhtConfigGlobal dhtConfigGlobal = (DhtConfigGlobal) obj;
-            return Intrinsics.areEqual(this.staticNodes, dhtConfigGlobal.staticNodes) && this.f2030k == dhtConfigGlobal.f2030k && this.f2029a == dhtConfigGlobal.f2029a;
+            return Intrinsics.areEqual(this.staticNodes, dhtConfigGlobal.staticNodes) && this.f2031k == dhtConfigGlobal.f2031k && this.f2030a == dhtConfigGlobal.f2030a;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.staticNodes.hashCode() * 31) + this.f2030k) * 31) + this.f2029a;
+        return (((this.staticNodes.hashCode() * 31) + this.f2031k) * 31) + this.f2030a;
     }
 
     public String toString() {
-        return "DhtConfigGlobal(staticNodes=" + this.staticNodes + ", k=" + this.f2030k + ", a=" + this.f2029a + ')';
+        return "DhtConfigGlobal(staticNodes=" + this.staticNodes + ", k=" + this.f2031k + ", a=" + this.f2030a + ')';
     }
 
     public /* synthetic */ DhtConfigGlobal(int i, DhtNodes dhtNodes, int i2, int i3, SerializationConstructorMarker serializationConstructorMarker) {
@@ -58,33 +58,33 @@ public final class DhtConfigGlobal {
         }
         this.staticNodes = (i & 1) == 0 ? new DhtNodes((Collection) null, 1, (DefaultConstructorMarker) null) : dhtNodes;
         if ((i & 2) == 0) {
-            this.f2030k = 0;
+            this.f2031k = 0;
         } else {
-            this.f2030k = i2;
+            this.f2031k = i2;
         }
         if ((i & 4) == 0) {
-            this.f2029a = 0;
+            this.f2030a = 0;
         } else {
-            this.f2029a = i3;
+            this.f2030a = i3;
         }
     }
 
     public DhtConfigGlobal(DhtNodes staticNodes, int i, int i2) {
         Intrinsics.checkNotNullParameter(staticNodes, "staticNodes");
         this.staticNodes = staticNodes;
-        this.f2030k = i;
-        this.f2029a = i2;
+        this.f2031k = i;
+        this.f2030a = i2;
     }
 
     public static final /* synthetic */ void write$Self(DhtConfigGlobal dhtConfigGlobal, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 0) || !Intrinsics.areEqual(dhtConfigGlobal.staticNodes, new DhtNodes((Collection) null, 1, (DefaultConstructorMarker) null))) {
             compositeEncoder.encodeSerializableElement(serialDescriptor, 0, DhtNodes$$serializer.INSTANCE, dhtConfigGlobal.staticNodes);
         }
-        if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 1) || dhtConfigGlobal.f2030k != 0) {
-            compositeEncoder.encodeIntElement(serialDescriptor, 1, dhtConfigGlobal.f2030k);
+        if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 1) || dhtConfigGlobal.f2031k != 0) {
+            compositeEncoder.encodeIntElement(serialDescriptor, 1, dhtConfigGlobal.f2031k);
         }
-        if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 2) || dhtConfigGlobal.f2029a != 0) {
-            compositeEncoder.encodeIntElement(serialDescriptor, 2, dhtConfigGlobal.f2029a);
+        if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 2) || dhtConfigGlobal.f2030a != 0) {
+            compositeEncoder.encodeIntElement(serialDescriptor, 2, dhtConfigGlobal.f2030a);
         }
     }
 
@@ -97,11 +97,11 @@ public final class DhtConfigGlobal {
     }
 
     public final int getK() {
-        return this.f2030k;
+        return this.f2031k;
     }
 
     public final int getA() {
-        return this.f2029a;
+        return this.f2030a;
     }
 
     /* compiled from: DhtConfigGlobal.kt */

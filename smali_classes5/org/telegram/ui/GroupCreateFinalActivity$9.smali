@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateFinalActivity;)V
     .locals 0
 
-    .line 634
+    .line 636
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$9;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public dismiss()V
     .locals 1
 
-    .line 637
+    .line 639
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$9;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/GroupCreateFinalActivity;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -51,12 +51,12 @@
 .method public setAutoDeleteHistory(II)V
     .locals 0
 
-    .line 642
+    .line 644
     iget-object p2, p0, Lorg/telegram/ui/GroupCreateFinalActivity$9;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$1802(Lorg/telegram/ui/GroupCreateFinalActivity;I)I
 
-    .line 643
+    .line 645
     iget-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$9;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$300(Lorg/telegram/ui/GroupCreateFinalActivity;)Lorg/telegram/ui/Components/RecyclerListView;

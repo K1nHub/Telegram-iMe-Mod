@@ -137,8 +137,8 @@ public final class LiteClient implements Closeable, CoroutineScope {
     }
 
     /* renamed from: latency-UwyO8pc  reason: not valid java name */
-    public final long m5252latencyUwyO8pc() {
-        return getServerTimeGotAt().m2124minus5sfh64U(getServerTime());
+    public final long m5234latencyUwyO8pc() {
+        return getServerTimeGotAt().m2126minus5sfh64U(getServerTime());
     }
 
     public final void setServerVersion(final int i, long j) {
@@ -173,10 +173,10 @@ public final class LiteClient implements Closeable, CoroutineScope {
     }
 
     /* renamed from: setServerTime-5sfh64U  reason: not valid java name */
-    public final long m5253setServerTime5sfh64U(int i) {
+    public final long m5235setServerTime5sfh64U(int i) {
         setServerTime(Instant.Companion.fromEpochSeconds$default(Instant.Companion, i, 0L, 2, null));
         setServerTimeGotAt(Clock$System.INSTANCE.now());
-        final long m5252latencyUwyO8pc = m5252latencyUwyO8pc();
+        final long m5234latencyUwyO8pc = m5234latencyUwyO8pc();
         this.logger.debug(new Function0<String>() { // from class: org.ton.lite.client.LiteClient$setServerTime$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -192,12 +192,12 @@ public final class LiteClient implements Closeable, CoroutineScope {
                 serverTime = LiteClient.this.getServerTime();
                 sb.append(serverTime);
                 sb.append(" (latency ");
-                sb.append((Object) Duration.m2087toStringimpl(m5252latencyUwyO8pc));
+                sb.append((Object) Duration.m2089toStringimpl(m5234latencyUwyO8pc));
                 sb.append(')');
                 return sb.toString();
             }
         });
-        return m5252latencyUwyO8pc;
+        return m5234latencyUwyO8pc;
     }
 
     public static /* synthetic */ Object getLastBlockId$default(LiteClient liteClient, int i, Continuation continuation, int i2, Object obj) {

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;Landroid/view/View;)V
     .locals 0
 
-    .line 1661
+    .line 1662
     iput-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iput-object p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->val$v:Landroid/view/View;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1664
+    .line 1665
     iget-object p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->val$v:Landroid/view/View;
 
     const/16 v0, 0x8
@@ -48,7 +48,7 @@
 
     const/4 p1, 0x0
 
-    .line 1666
+    .line 1667
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
@@ -62,7 +62,7 @@
 
     if-ge p1, v0, :cond_1
 
-    .line 1667
+    .line 1668
     iget-object v0, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     iget-object v0, v0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->this$0:Lorg/telegram/ui/PremiumPreviewFragment;
@@ -73,7 +73,7 @@
 
     move-result-object v0
 
-    .line 1668
+    .line 1669
     iget-object v1, p0, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView$4;->this$1:Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;
 
     invoke-static {v1}, Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;->access$200(Lorg/telegram/ui/PremiumPreviewFragment$BackgroundView;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -84,7 +84,7 @@
 
     const/4 v1, 0x0
 
-    .line 1669
+    .line 1670
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
     :cond_0

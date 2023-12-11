@@ -74,7 +74,7 @@ public interface CommonMsgInfoRelaxed extends TlbObject {
             }
             int i3 = (i + i2) * 31;
             boolean z2 = this.bounced;
-            return ((((((((((((((i3 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.src.hashCode()) * 31) + this.dest.hashCode()) * 31) + this.value.hashCode()) * 31) + this.ihrFee.hashCode()) * 31) + this.fwdFee.hashCode()) * 31) + ULong.m1996hashCodeimpl(this.createdLt)) * 31) + UInt.m1974hashCodeimpl(this.createdAt);
+            return ((((((((((((((i3 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.src.hashCode()) * 31) + this.dest.hashCode()) * 31) + this.value.hashCode()) * 31) + this.ihrFee.hashCode()) * 31) + this.fwdFee.hashCode()) * 31) + ULong.m1998hashCodeimpl(this.createdLt)) * 31) + UInt.m1976hashCodeimpl(this.createdAt);
         }
 
         private IntMsgInfoRelaxed(boolean z, boolean z2, boolean z3, MsgAddress src, MsgAddressInt dest, CurrencyCollection value, Coins ihrFee, Coins fwdFee, long j, int i) {
@@ -128,12 +128,12 @@ public interface CommonMsgInfoRelaxed extends TlbObject {
         }
 
         /* renamed from: getCreatedLt-s-VKNKU  reason: not valid java name */
-        public final long m5100getCreatedLtsVKNKU() {
+        public final long m5082getCreatedLtsVKNKU() {
             return this.createdLt;
         }
 
         /* renamed from: getCreatedAt-pVg5ArA  reason: not valid java name */
-        public final int m5099getCreatedAtpVg5ArA() {
+        public final int m5081getCreatedAtpVg5ArA() {
             return this.createdAt;
         }
 
@@ -153,8 +153,8 @@ public interface CommonMsgInfoRelaxed extends TlbObject {
             open.field(AppMeasurementSdk.ConditionalUserProperty.VALUE, this.value);
             open.field("ihr_fee", this.ihrFee);
             open.field("fwd_fee", this.fwdFee);
-            open.field("created_lt", ULong.m1993boximpl(this.createdLt));
-            open.field("created_at", UInt.m1971boximpl(this.createdAt));
+            open.field("created_lt", ULong.m1995boximpl(this.createdLt));
+            open.field("created_at", UInt.m1973boximpl(this.createdAt));
             TlbPrettyPrinter.close$default(open, null, 1, null);
             return printer;
         }
@@ -184,7 +184,7 @@ public interface CommonMsgInfoRelaxed extends TlbObject {
         }
 
         public int hashCode() {
-            return (((((this.src.hashCode() * 31) + this.dest.hashCode()) * 31) + ULong.m1996hashCodeimpl(this.createdLt)) * 31) + UInt.m1974hashCodeimpl(this.createdAt);
+            return (((((this.src.hashCode() * 31) + this.dest.hashCode()) * 31) + ULong.m1998hashCodeimpl(this.createdLt)) * 31) + UInt.m1976hashCodeimpl(this.createdAt);
         }
 
         private ExtOutMsgInfoRelaxed(MsgAddress src, MsgAddressExt dest, long j, int i) {
@@ -205,12 +205,12 @@ public interface CommonMsgInfoRelaxed extends TlbObject {
         }
 
         /* renamed from: getCreatedLt-s-VKNKU  reason: not valid java name */
-        public final long m5098getCreatedLtsVKNKU() {
+        public final long m5080getCreatedLtsVKNKU() {
             return this.createdLt;
         }
 
         /* renamed from: getCreatedAt-pVg5ArA  reason: not valid java name */
-        public final int m5097getCreatedAtpVg5ArA() {
+        public final int m5079getCreatedAtpVg5ArA() {
             return this.createdAt;
         }
 
@@ -224,8 +224,8 @@ public interface CommonMsgInfoRelaxed extends TlbObject {
             TlbPrettyPrinter open = printer.open("ext_out_msg_info");
             open.field("src", this.src);
             open.field("dest", this.dest);
-            open.field("created_lt", ULong.m1993boximpl(this.createdLt));
-            open.field("created_at", UInt.m1971boximpl(this.createdAt));
+            open.field("created_lt", ULong.m1995boximpl(this.createdLt));
+            open.field("created_at", UInt.m1973boximpl(this.createdAt));
             TlbPrettyPrinter.close$default(open, null, 1, null);
             return printer;
         }

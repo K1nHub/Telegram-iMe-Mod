@@ -79,7 +79,7 @@ public final class WalletTransactionMappingKt {
                 String id = walletTransactionResponse.getId();
                 BigDecimal bigDecimal = new BigDecimal(walletTransactionResponse.getAmount());
                 TokenDetailed mapToDomain = TokenMappingKt.mapToDomain(walletTransactionResponse.getToken());
-                return new Transaction.Registration(id, bigDecimal, map, TransactionDirection.Companion.map(walletTransactionResponse.getDirection()), walletTransactionResponse.getCreatedAt(), mapToDomain, Status.Companion.map(walletTransactionResponse.getStatus()), TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing()), new BigDecimal(walletTransactionResponse.getFeeAmount()), TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken()));
+                return new Transaction.Registration(id, bigDecimal, map, TransactionDirection.Companion.map(walletTransactionResponse.getDirection()), walletTransactionResponse.getCreatedAt(), mapToDomain, Status.Companion.map(walletTransactionResponse.getStatus()), TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing()), walletTransactionResponse.getProcessingName(), new BigDecimal(walletTransactionResponse.getFeeAmount()), TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken()));
             case 2:
                 String id2 = walletTransactionResponse.getId();
                 BigDecimal bigDecimal2 = new BigDecimal(walletTransactionResponse.getAmount());
@@ -90,18 +90,19 @@ public final class WalletTransactionMappingKt {
                 BigDecimal bigDecimal3 = new BigDecimal(walletTransactionResponse.getFeeAmount());
                 TokenDetailed mapToDomain3 = TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken());
                 TransactionProcessingType map4 = TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing());
+                String processingName = walletTransactionResponse.getProcessingName();
                 String userAccountId = walletTransactionResponse.getUserAccountId();
-                return new Transaction.Referral(id2, bigDecimal2, map, map2, createdAt, mapToDomain2, map3, map4, bigDecimal3, mapToDomain3, userAccountId == null ? "" : userAccountId);
+                return new Transaction.Referral(id2, bigDecimal2, map, map2, createdAt, mapToDomain2, map3, map4, processingName, bigDecimal3, mapToDomain3, userAccountId == null ? "" : userAccountId);
             case 3:
                 String id3 = walletTransactionResponse.getId();
                 BigDecimal bigDecimal4 = new BigDecimal(walletTransactionResponse.getAmount());
                 TokenDetailed mapToDomain4 = TokenMappingKt.mapToDomain(walletTransactionResponse.getToken());
-                return new Transaction.Purchase(id3, bigDecimal4, map, TransactionDirection.Companion.map(walletTransactionResponse.getDirection()), walletTransactionResponse.getCreatedAt(), mapToDomain4, Status.Companion.map(walletTransactionResponse.getStatus()), TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing()), new BigDecimal(walletTransactionResponse.getFeeAmount()), TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken()));
+                return new Transaction.Purchase(id3, bigDecimal4, map, TransactionDirection.Companion.map(walletTransactionResponse.getDirection()), walletTransactionResponse.getCreatedAt(), mapToDomain4, Status.Companion.map(walletTransactionResponse.getStatus()), TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing()), walletTransactionResponse.getProcessingName(), new BigDecimal(walletTransactionResponse.getFeeAmount()), TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken()));
             case 4:
                 String id4 = walletTransactionResponse.getId();
                 BigDecimal bigDecimal5 = new BigDecimal(walletTransactionResponse.getAmount());
                 TokenDetailed mapToDomain5 = TokenMappingKt.mapToDomain(walletTransactionResponse.getToken());
-                return new Transaction.Lottery(id4, bigDecimal5, map, TransactionDirection.Companion.map(walletTransactionResponse.getDirection()), walletTransactionResponse.getCreatedAt(), mapToDomain5, Status.Companion.map(walletTransactionResponse.getStatus()), TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing()), new BigDecimal(walletTransactionResponse.getFeeAmount()), TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken()));
+                return new Transaction.Lottery(id4, bigDecimal5, map, TransactionDirection.Companion.map(walletTransactionResponse.getDirection()), walletTransactionResponse.getCreatedAt(), mapToDomain5, Status.Companion.map(walletTransactionResponse.getStatus()), TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing()), walletTransactionResponse.getProcessingName(), new BigDecimal(walletTransactionResponse.getFeeAmount()), TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken()));
             case 5:
                 String id5 = walletTransactionResponse.getId();
                 BigDecimal bigDecimal6 = new BigDecimal(walletTransactionResponse.getAmount());
@@ -112,8 +113,9 @@ public final class WalletTransactionMappingKt {
                 BigDecimal bigDecimal7 = new BigDecimal(walletTransactionResponse.getFeeAmount());
                 TokenDetailed mapToDomain7 = TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken());
                 TransactionProcessingType map7 = TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing());
+                String processingName2 = walletTransactionResponse.getProcessingName();
                 String userAccountId2 = walletTransactionResponse.getUserAccountId();
-                return new Transaction.Transfer(id5, bigDecimal6, map, map5, createdAt2, mapToDomain6, map6, map7, bigDecimal7, mapToDomain7, userAccountId2 == null ? "" : userAccountId2);
+                return new Transaction.Transfer(id5, bigDecimal6, map, map5, createdAt2, mapToDomain6, map6, map7, processingName2, bigDecimal7, mapToDomain7, userAccountId2 == null ? "" : userAccountId2);
             case 6:
             case 7:
                 if (Intrinsics.areEqual(walletTransactionResponse.isDonation(), Boolean.TRUE)) {
@@ -134,8 +136,9 @@ public final class WalletTransactionMappingKt {
                     String str3 = txHash == null ? "" : txHash;
                     String receiverAccountId = walletTransactionResponse.getReceiverAccountId();
                     String str4 = receiverAccountId == null ? "" : receiverAccountId;
+                    String processingName3 = walletTransactionResponse.getProcessingName();
                     String senderAccountId = walletTransactionResponse.getSenderAccountId();
-                    transfer = new Transaction.Crypto.Donation(id6, bigDecimal8, map, map8, createdAt3, mapToDomain8, map9, map10, bigDecimal9, mapToDomain9, str3, str2, str, senderAccountId == null ? "" : senderAccountId, str4);
+                    transfer = new Transaction.Crypto.Donation(id6, bigDecimal8, map, map8, createdAt3, mapToDomain8, map9, map10, processingName3, bigDecimal9, mapToDomain9, str3, str2, str, senderAccountId == null ? "" : senderAccountId, str4);
                 } else {
                     String id7 = walletTransactionResponse.getId();
                     BigDecimal bigDecimal10 = new BigDecimal(walletTransactionResponse.getAmount());
@@ -146,12 +149,13 @@ public final class WalletTransactionMappingKt {
                     BigDecimal bigDecimal11 = new BigDecimal(walletTransactionResponse.getFeeAmount());
                     TokenDetailed mapToDomain11 = TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken());
                     TransactionProcessingType map13 = TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing());
+                    String processingName4 = walletTransactionResponse.getProcessingName();
                     String txToCryptoAddress2 = walletTransactionResponse.getTxToCryptoAddress();
                     String str5 = txToCryptoAddress2 == null ? "" : txToCryptoAddress2;
                     String txFromCryptoAddress2 = walletTransactionResponse.getTxFromCryptoAddress();
                     String str6 = txFromCryptoAddress2 == null ? "" : txFromCryptoAddress2;
                     String txHash2 = walletTransactionResponse.getTxHash();
-                    transfer = new Transaction.Crypto.Transfer(id7, bigDecimal10, map, map11, createdAt4, mapToDomain10, map12, map13, bigDecimal11, mapToDomain11, txHash2 == null ? "" : txHash2, str6, str5, walletTransactionResponse.getPayloadMessage());
+                    transfer = new Transaction.Crypto.Transfer(id7, bigDecimal10, map, map11, createdAt4, mapToDomain10, map12, map13, processingName4, bigDecimal11, mapToDomain11, txHash2 == null ? "" : txHash2, str6, str5, walletTransactionResponse.getPayloadMessage());
                 }
                 return transfer;
             case 8:
@@ -164,8 +168,9 @@ public final class WalletTransactionMappingKt {
                 BigDecimal bigDecimal13 = new BigDecimal(walletTransactionResponse.getFeeAmount());
                 TokenDetailed mapToDomain13 = TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken());
                 TransactionProcessingType map16 = TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing());
+                String processingName5 = walletTransactionResponse.getProcessingName();
                 String txHash3 = walletTransactionResponse.getTxHash();
-                return new Transaction.Crypto.Approve(id8, bigDecimal12, map, map14, createdAt5, mapToDomain12, map15, map16, bigDecimal13, mapToDomain13, txHash3 == null ? "" : txHash3);
+                return new Transaction.Crypto.Approve(id8, bigDecimal12, map, map14, createdAt5, mapToDomain12, map15, map16, processingName5, bigDecimal13, mapToDomain13, txHash3 == null ? "" : txHash3);
             case 9:
                 String id9 = walletTransactionResponse.getId();
                 BigDecimal bigDecimal14 = new BigDecimal(walletTransactionResponse.getAmount());
@@ -176,6 +181,7 @@ public final class WalletTransactionMappingKt {
                 BigDecimal bigDecimal15 = new BigDecimal(walletTransactionResponse.getFeeAmount());
                 TokenDetailed mapToDomain15 = TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken());
                 TransactionProcessingType map19 = TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing());
+                String processingName6 = walletTransactionResponse.getProcessingName();
                 String txToCryptoAddress3 = walletTransactionResponse.getTxToCryptoAddress();
                 String str7 = txToCryptoAddress3 == null ? "" : txToCryptoAddress3;
                 String txFromCryptoAddress3 = walletTransactionResponse.getTxFromCryptoAddress();
@@ -190,15 +196,14 @@ public final class WalletTransactionMappingKt {
                 if (spentCurrency == null) {
                     spentCurrency = TokenDetailed.Companion.getUSD().getName();
                 }
-                String str11 = str9;
                 FiatCode fiatCode = new FiatCode(spentCurrency, 0, 2, null);
                 Intrinsics.checkNotNullExpressionValue(bigDecimal16, "amountToSpent?.toBigDecimal() ?: BigDecimal.ZERO");
-                return new Transaction.Crypto.SimplexPurchase(id9, bigDecimal14, map, map17, createdAt6, mapToDomain14, map18, map19, bigDecimal15, mapToDomain15, str11, str8, str7, str10, bigDecimal16, fiatCode);
+                return new Transaction.Crypto.SimplexPurchase(id9, bigDecimal14, map, map17, createdAt6, mapToDomain14, map18, map19, processingName6, bigDecimal15, mapToDomain15, str9, str8, str7, str10, bigDecimal16, fiatCode);
             case 10:
                 String id10 = walletTransactionResponse.getId();
                 BigDecimal bigDecimal17 = new BigDecimal(walletTransactionResponse.getAmount());
                 TokenDetailed mapToDomain16 = TokenMappingKt.mapToDomain(walletTransactionResponse.getToken());
-                return new Transaction.Refund(id10, bigDecimal17, map, TransactionDirection.Companion.map(walletTransactionResponse.getDirection()), walletTransactionResponse.getCreatedAt(), mapToDomain16, Status.Companion.map(walletTransactionResponse.getStatus()), TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing()), new BigDecimal(walletTransactionResponse.getFeeAmount()), TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken()));
+                return new Transaction.Refund(id10, bigDecimal17, map, TransactionDirection.Companion.map(walletTransactionResponse.getDirection()), walletTransactionResponse.getCreatedAt(), mapToDomain16, Status.Companion.map(walletTransactionResponse.getStatus()), TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing()), walletTransactionResponse.getProcessingName(), new BigDecimal(walletTransactionResponse.getFeeAmount()), TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken()));
             case 11:
                 if (walletTransactionResponse.getInputToken() == null || walletTransactionResponse.getOutputToken() == null) {
                     return unsupportedTransaction(walletTransactionResponse);
@@ -212,6 +217,7 @@ public final class WalletTransactionMappingKt {
                 BigDecimal bigDecimal19 = new BigDecimal(walletTransactionResponse.getFeeAmount());
                 TokenDetailed mapToDomain18 = TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken());
                 TransactionProcessingType map22 = TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing());
+                String processingName7 = walletTransactionResponse.getProcessingName();
                 TradeType.Companion companion = TradeType.Companion;
                 String tradeType = walletTransactionResponse.getTradeType();
                 if (tradeType == null) {
@@ -230,7 +236,7 @@ public final class WalletTransactionMappingKt {
                 }
                 Intrinsics.checkNotNullExpressionValue(bigDecimal20, "inputAmount?.toBigDecimal() ?: BigDecimal.ZERO");
                 Intrinsics.checkNotNullExpressionValue(bigDecimal21, "outputAmount?.toBigDecimal() ?: BigDecimal.ZERO");
-                return new Transaction.Crypto.Swap(id11, bigDecimal18, map, map20, createdAt7, mapToDomain17, map21, map22, bigDecimal19, mapToDomain18, txHash5, mapToDomain20, mapToDomain19, map23, bigDecimal20, bigDecimal21);
+                return new Transaction.Crypto.Swap(id11, bigDecimal18, map, map20, createdAt7, mapToDomain17, map21, map22, processingName7, bigDecimal19, mapToDomain18, txHash5, mapToDomain20, mapToDomain19, map23, bigDecimal20, bigDecimal21);
             default:
                 return unsupportedTransaction(walletTransactionResponse);
         }
@@ -242,6 +248,6 @@ public final class WalletTransactionMappingKt {
         BigDecimal bigDecimal = new BigDecimal(walletTransactionResponse.getAmount());
         TokenDetailed mapToDomain = TokenMappingKt.mapToDomain(walletTransactionResponse.getToken());
         String createdAt = walletTransactionResponse.getCreatedAt();
-        return new Transaction.Unsupported(id, bigDecimal, map, TransactionDirection.Companion.map(walletTransactionResponse.getDirection()), createdAt, mapToDomain, Status.Companion.map(walletTransactionResponse.getStatus()), TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing()), new BigDecimal(walletTransactionResponse.getFeeAmount()), TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken()));
+        return new Transaction.Unsupported(id, bigDecimal, map, TransactionDirection.Companion.map(walletTransactionResponse.getDirection()), createdAt, mapToDomain, Status.Companion.map(walletTransactionResponse.getStatus()), TransactionProcessingType.Companion.map(walletTransactionResponse.getProcessing()), walletTransactionResponse.getProcessingName(), new BigDecimal(walletTransactionResponse.getFeeAmount()), TokenMappingKt.mapToDomain(walletTransactionResponse.getFeeToken()));
     }
 }

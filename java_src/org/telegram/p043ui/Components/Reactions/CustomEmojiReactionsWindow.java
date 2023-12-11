@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
@@ -198,10 +198,10 @@ public class CustomEmojiReactionsWindow {
         });
         this.attachToParent = i == 2;
         this.containerView = new ContainerView(context);
-        C54802 c54802 = new C54802(baseFragment, context, false, null, 1, i != 1, resourcesProvider, 16, reactionsContainerLayout, baseFragment);
-        this.selectAnimatedEmojiDialog = c54802;
+        C54762 c54762 = new C54762(baseFragment, context, false, null, 1, i != 1, resourcesProvider, 16, reactionsContainerLayout, baseFragment);
+        this.selectAnimatedEmojiDialog = c54762;
         if (Build.VERSION.SDK_INT >= 21) {
-            c54802.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow.3
+            c54762.setOutlineProvider(new ViewOutlineProvider() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow.3
                 final Rect rect = new Rect();
                 final RectF rectTmp = new RectF();
                 final RectF rectF = new RectF();
@@ -291,12 +291,12 @@ public class CustomEmojiReactionsWindow {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$2 */
     /* loaded from: classes6.dex */
-    public class C54802 extends SelectAnimatedEmojiDialog {
+    public class C54762 extends SelectAnimatedEmojiDialog {
         final /* synthetic */ BaseFragment val$baseFragment;
         final /* synthetic */ ReactionsContainerLayout val$reactionsContainerLayout;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C54802(BaseFragment baseFragment, Context context, boolean z, Integer num, int i, boolean z2, Theme.ResourcesProvider resourcesProvider, int i2, ReactionsContainerLayout reactionsContainerLayout, BaseFragment baseFragment2) {
+        C54762(BaseFragment baseFragment, Context context, boolean z, Integer num, int i, boolean z2, Theme.ResourcesProvider resourcesProvider, int i2, ReactionsContainerLayout reactionsContainerLayout, BaseFragment baseFragment2) {
             super(baseFragment, context, z, num, i, z2, resourcesProvider, i2);
             this.val$reactionsContainerLayout = reactionsContainerLayout;
             this.val$baseFragment = baseFragment2;
@@ -339,10 +339,10 @@ public class CustomEmojiReactionsWindow {
         protected void onEmojiSelected(View view, Long l, TLRPC$Document tLRPC$Document, Integer num) {
             if (!UserConfig.getInstance(this.val$baseFragment.getCurrentAccount()).isPremium()) {
                 CustomEmojiReactionsWindow.this.windowView.performHapticFeedback(3);
-                BulletinFactory.m63of(CustomEmojiReactionsWindow.this.windowView, null).createEmojiBulletin(tLRPC$Document, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiReaction", C3634R.string.UnlockPremiumEmojiReaction)), LocaleController.getString("PremiumMore", C3634R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$2$$ExternalSyntheticLambda0
+                BulletinFactory.m63of(CustomEmojiReactionsWindow.this.windowView, null).createEmojiBulletin(tLRPC$Document, AndroidUtilities.replaceTags(LocaleController.getString("UnlockPremiumEmojiReaction", C3632R.string.UnlockPremiumEmojiReaction)), LocaleController.getString("PremiumMore", C3632R.string.PremiumMore), new Runnable() { // from class: org.telegram.ui.Components.Reactions.CustomEmojiReactionsWindow$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        CustomEmojiReactionsWindow.C54802.this.lambda$onEmojiSelected$0();
+                        CustomEmojiReactionsWindow.C54762.this.lambda$onEmojiSelected$0();
                     }
                 }).show();
                 return;
@@ -878,7 +878,7 @@ public class CustomEmojiReactionsWindow {
             this.enterTransitionScale = 1.0f;
             this.enterTransitionScalePx = BitmapDescriptorFactory.HUE_RED;
             this.enterTransitionScalePy = BitmapDescriptorFactory.HUE_RED;
-            this.shadow = ContextCompat.getDrawable(context, C3634R.C3636drawable.reactions_bubble_shadow).mutate();
+            this.shadow = ContextCompat.getDrawable(context, C3632R.C3634drawable.reactions_bubble_shadow).mutate();
             Rect rect = this.shadowPad;
             int m104dp = AndroidUtilities.m104dp(7);
             rect.bottom = m104dp;

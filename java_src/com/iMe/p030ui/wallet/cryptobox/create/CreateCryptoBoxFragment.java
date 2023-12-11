@@ -61,10 +61,10 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentCreateCryptoboxBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -241,7 +241,7 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
         Intrinsics.checkNotNullExpressionValue(editText, "inputAmount.inputView.editText");
         ViewExtKt.limitInputLength$default(editText, i, 0, 2, null);
         TextView renderSelectedToken$lambda$5$lambda$4 = binding.textTokenBalance;
-        renderSelectedToken$lambda$5$lambda$4.setText(AndroidUtilities.replaceTags(getResourceManager().getString(C3634R.string.wallet_swap_process_my_balance, tokenBalanceText)));
+        renderSelectedToken$lambda$5$lambda$4.setText(AndroidUtilities.replaceTags(getResourceManager().getString(C3632R.string.wallet_swap_process_my_balance, tokenBalanceText)));
         Intrinsics.checkNotNullExpressionValue(renderSelectedToken$lambda$5$lambda$4, "renderSelectedToken$lambda$5$lambda$4");
         ViewExtKt.visible$default(renderSelectedToken$lambda$5$lambda$4, false, 1, null);
     }
@@ -359,7 +359,7 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
 
     @Override // com.iMe.p030ui.wallet.cryptobox.create.CreateCryptoBoxView
     public void showCreationSuccess() {
-        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3634R.string.cryptobox_create_success_title), getResourceManager().getString(C3634R.string.cryptobox_create_success_description), getResourceManager().getString(C3634R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxFragment$$ExternalSyntheticLambda6
+        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3632R.string.cryptobox_create_success_title), getResourceManager().getString(C3632R.string.cryptobox_create_success_description), getResourceManager().getString(C3632R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxFragment$$ExternalSyntheticLambda6
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 CreateCryptoBoxFragment.this.finishFragment();
@@ -370,7 +370,7 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
     @Override // com.iMe.p030ui.wallet.cryptobox.create.CreateCryptoBoxView
     public void showActionError(String message) {
         Intrinsics.checkNotNullParameter(message, "message");
-        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3634R.string.common_error), message, getResourceManager().getString(C3634R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3632R.string.common_error), message, getResourceManager().getString(C3632R.string.common_ok), null, 8, null);
     }
 
     @Override // com.iMe.p030ui.wallet.cryptobox.create.CreateCryptoBoxView
@@ -453,11 +453,11 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.cryptobox_create_title));
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.cryptobox_create_title));
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CreateCryptoBoxFragment.this.finishFragment();
@@ -470,10 +470,10 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
         final ForkFragmentCreateCryptoboxBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageHeader;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3634R.raw.fork_new_cryptobox, 96, 96);
+        rLottieImageView.setAnimation(C3632R.raw.fork_new_cryptobox, 96, 96);
         rLottieImageView.playAnimation();
-        binding.textHeader.setText(getResourceManager().getString(C3634R.string.cryptobox_create_header));
-        binding.textDescription.setText(getResourceManager().getString(C3634R.string.cryptobox_create_description));
+        binding.textHeader.setText(getResourceManager().getString(C3632R.string.cryptobox_create_header));
+        binding.textDescription.setText(getResourceManager().getString(C3632R.string.cryptobox_create_description));
         TitledInputFieldView titledInputFieldView = binding.inputToken;
         Context context = titledInputFieldView.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
@@ -492,9 +492,9 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
         }, 1, null);
         titledInputFieldView.setCustomView(networkTypeView);
         Intrinsics.checkNotNullExpressionValue(titledInputFieldView, "this");
-        String string = getResourceManager().getString(C3634R.string.wallet_binance_receive_select_token_hint);
-        String string2 = getResourceManager().getString(C3634R.string.wallet_binance_receive_select_token_title);
-        int i = C3634R.C3636drawable.fork_ic_select_token_24;
+        String string = getResourceManager().getString(C3632R.string.wallet_binance_receive_select_token_hint);
+        String string2 = getResourceManager().getString(C3632R.string.wallet_binance_receive_select_token_title);
+        int i = C3632R.C3634drawable.fork_ic_select_token_24;
         titledInputFieldView.setTitle(string);
         titledInputFieldView.setupInputLayoutParams(-1, this.inputFieldHeight);
         LinkActionView inputView = titledInputFieldView.getInputView();
@@ -511,9 +511,9 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
         TitledInputFieldView titledInputFieldView2 = binding.inputAmount;
         titledInputFieldView2.setCustomView(new TextView(titledInputFieldView2.getContext()));
         Intrinsics.checkNotNullExpressionValue(titledInputFieldView2, "this");
-        String string3 = getResourceManager().getString(C3634R.string.cryptobox_create_amount_title);
-        String string4 = getResourceManager().getString(C3634R.string.wallet_binance_receive_amount_title);
-        int i2 = C3634R.C3636drawable.fork_ic_custom_tokens;
+        String string3 = getResourceManager().getString(C3632R.string.cryptobox_create_amount_title);
+        String string4 = getResourceManager().getString(C3632R.string.wallet_binance_receive_amount_title);
+        int i2 = C3632R.C3634drawable.fork_ic_custom_tokens;
         titledInputFieldView2.setTitle(string3);
         titledInputFieldView2.setupInputLayoutParams(-1, this.inputFieldHeight);
         LinkActionView inputView2 = titledInputFieldView2.getInputView();
@@ -550,9 +550,9 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
         TitledInputFieldView titledInputFieldView3 = binding.inputCapacity;
         titledInputFieldView3.setCustomView(new TextView(titledInputFieldView3.getContext()));
         Intrinsics.checkNotNullExpressionValue(titledInputFieldView3, "this");
-        String string5 = getResourceManager().getString(C3634R.string.cryptobox_create_capacity_title);
-        String string6 = getResourceManager().getString(C3634R.string.cryptobox_create_capacity_hint);
-        int i3 = C3634R.C3636drawable.fork_filter_icon_users;
+        String string5 = getResourceManager().getString(C3632R.string.cryptobox_create_capacity_title);
+        String string6 = getResourceManager().getString(C3632R.string.cryptobox_create_capacity_hint);
+        int i3 = C3632R.C3634drawable.fork_filter_icon_users;
         titledInputFieldView3.setTitle(string5);
         titledInputFieldView3.setupInputLayoutParams(-1, this.inputFieldHeight);
         LinkActionView inputView3 = titledInputFieldView3.getInputView();
@@ -582,9 +582,9 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
         });
         TitledInputFieldView inputChat = binding.inputChat;
         Intrinsics.checkNotNullExpressionValue(inputChat, "inputChat");
-        String string7 = getResourceManager().getString(C3634R.string.cryptobox_create_chat_title);
-        String string8 = getResourceManager().getString(C3634R.string.cryptobox_create_chat_hint);
-        int i4 = C3634R.C3636drawable.msg_channel;
+        String string7 = getResourceManager().getString(C3632R.string.cryptobox_create_chat_title);
+        String string8 = getResourceManager().getString(C3632R.string.cryptobox_create_chat_hint);
+        int i4 = C3632R.C3634drawable.msg_channel;
         inputChat.setTitle(string7);
         inputChat.setupInputLayoutParams(-1, this.inputFieldHeight);
         LinkActionView inputView4 = inputChat.getInputView();
@@ -600,9 +600,9 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
         });
         TitledInputFieldView inputDescription = binding.inputDescription;
         Intrinsics.checkNotNullExpressionValue(inputDescription, "inputDescription");
-        String string9 = getResourceManager().getString(C3634R.string.cryptobox_create_description_title);
-        String string10 = getResourceManager().getString(C3634R.string.cryptobox_create_description_hint);
-        int i5 = C3634R.C3636drawable.msg_edit;
+        String string9 = getResourceManager().getString(C3632R.string.cryptobox_create_description_title);
+        String string10 = getResourceManager().getString(C3632R.string.cryptobox_create_description_hint);
+        int i5 = C3632R.C3634drawable.msg_edit;
         inputDescription.setTitle(string9);
         inputDescription.setupInputLayoutParams(-1, this.inputFieldHeight);
         LinkActionView inputView5 = inputDescription.getInputView();
@@ -636,7 +636,7 @@ public final class CreateCryptoBoxFragment extends WalletAuthBaseFragment implem
         });
         TransactionActionButtonsView viewActionButtons = binding.viewActionButtons;
         Intrinsics.checkNotNullExpressionValue(viewActionButtons, "viewActionButtons");
-        viewActionButtons.setupViewData(getResourceManager().getString(C3634R.string.common_progress_state_title), (r14 & 2) != 0, (r14 & 4) != 0 ? false : false, (r14 & 8) == 0 ? false : false, (r14 & 16) != 0 ? new Callbacks$Callback() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$$ExternalSyntheticLambda1
+        viewActionButtons.setupViewData(getResourceManager().getString(C3632R.string.common_progress_state_title), (r14 & 2) != 0, (r14 & 4) != 0 ? false : false, (r14 & 8) == 0 ? false : false, (r14 & 16) != 0 ? new Callbacks$Callback() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 TransactionActionButtonsView.setupViewData$lambda$0();

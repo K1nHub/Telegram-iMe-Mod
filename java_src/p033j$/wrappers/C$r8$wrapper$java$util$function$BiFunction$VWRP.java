@@ -17,12 +17,12 @@ public final /* synthetic */ class C$r8$wrapper$java$util$function$BiFunction$VW
         if (biFunction == null) {
             return null;
         }
-        return biFunction instanceof C3236s ? ((C3236s) biFunction).f1335a : new C$r8$wrapper$java$util$function$BiFunction$VWRP(biFunction);
+        return biFunction instanceof C3233s ? ((C3233s) biFunction).f1335a : new C$r8$wrapper$java$util$function$BiFunction$VWRP(biFunction);
     }
 
     @Override // p033j$.util.function.BiFunction
     public /* synthetic */ BiFunction andThen(Function function) {
-        return convert(this.f1254a.andThen(C3183K.m241a(function)));
+        return convert(this.f1254a.andThen(C3180K.m241a(function)));
     }
 
     @Override // p033j$.util.function.BiFunction

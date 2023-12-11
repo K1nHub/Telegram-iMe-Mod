@@ -51,14 +51,14 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
     .locals 0
 
-    .line 1445
+    .line 1450
     iput-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 1483
+    .line 1488
     iput-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->translateFromLanguage:Ljava/lang/String;
 
     return-void
@@ -67,7 +67,7 @@
 .method private synthetic lambda$onActionItemClicked$2()V
     .locals 1
 
-    .line 1521
+    .line 1526
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$3100(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
@@ -78,10 +78,10 @@
 .method private synthetic lambda$onPrepareActionMode$0(Landroid/view/Menu;Ljava/lang/String;)V
     .locals 0
 
-    .line 1468
+    .line 1473
     iput-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->translateFromLanguage:Ljava/lang/String;
 
-    .line 1469
+    .line 1474
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->updateTranslateButton(Landroid/view/Menu;)V
 
     return-void
@@ -92,18 +92,18 @@
 
     const-string v0, "mlkit: failed to detect language in selection"
 
-    .line 1471
+    .line 1476
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1472
+    .line 1477
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p2, 0x0
 
-    .line 1473
+    .line 1478
     iput-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->translateFromLanguage:Ljava/lang/String;
 
-    .line 1474
+    .line 1479
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->updateTranslateButton(Landroid/view/Menu;)V
 
     return-void
@@ -112,7 +112,7 @@
 .method private updateTranslateButton(Landroid/view/Menu;)V
     .locals 2
 
-    .line 1485
+    .line 1490
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
@@ -127,14 +127,14 @@
 
     const/4 v1, 0x3
 
-    .line 1486
+    .line 1491
     invoke-interface {p1, v1}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object p1
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    .line 1487
+    .line 1492
     invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Lorg/telegram/ui/Cells/TextSelectionHelper$OnTranslateListener;
 
     move-result-object v1
@@ -145,7 +145,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1490
+    .line 1495
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -162,7 +162,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1491
+    .line 1496
     :cond_0
     invoke-static {}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->getRestrictedLanguages()Ljava/util/HashSet;
 
@@ -176,7 +176,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1492
+    .line 1497
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/LanguageDetector;->hasSupport()Z
 
@@ -192,7 +192,7 @@
     :cond_3
     const/4 v0, 0x0
 
-    .line 1486
+    .line 1491
     :goto_0
     invoke-interface {p1, v0}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
@@ -204,7 +204,7 @@
 .method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
     .locals 4
 
-    .line 1499
+    .line 1504
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isInSelectionMode()Z
@@ -217,7 +217,7 @@
 
     return v0
 
-    .line 1502
+    .line 1507
     :cond_0
     invoke-interface {p2}, Landroid/view/MenuItem;->getItemId()I
 
@@ -227,7 +227,7 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 1504
+    .line 1509
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2900(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
@@ -239,7 +239,7 @@
 
     if-ne p1, p2, :cond_3
 
-    .line 1507
+    .line 1512
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object p2, p1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -254,30 +254,30 @@
 
     return v0
 
-    .line 1511
+    .line 1516
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iput v1, p2, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    .line 1512
+    .line 1517
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
 
     iput p1, p2, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    .line 1513
+    .line 1518
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1000(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
-    .line 1514
+    .line 1519
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->invalidate()V
 
-    .line 1515
+    .line 1520
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
@@ -286,7 +286,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1516
+    .line 1521
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
@@ -302,7 +302,7 @@
 
     if-ne p1, p2, :cond_5
 
-    .line 1519
+    .line 1524
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Lorg/telegram/ui/Cells/TextSelectionHelper$OnTranslateListener;
@@ -311,7 +311,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 1520
+    .line 1525
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object p1
@@ -324,7 +324,7 @@
 
     move-result-object p1
 
-    .line 1521
+    .line 1526
     iget-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Lorg/telegram/ui/Cells/TextSelectionHelper$OnTranslateListener;
@@ -345,7 +345,7 @@
 
     invoke-interface {p2, v1, v2, p1, v3}, Lorg/telegram/ui/Cells/TextSelectionHelper$OnTranslateListener;->run(Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;)V
 
-    .line 1523
+    .line 1528
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -353,25 +353,25 @@
 
     return v0
 
-    .line 1525
+    .line 1530
     :cond_5
     sget p2, Lorg/telegram/messenger/R$id;->menu_quote:I
 
     if-ne p1, p2, :cond_6
 
-    .line 1526
+    .line 1531
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$3000(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
-    .line 1527
+    .line 1532
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1000(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
     return v0
 
-    .line 1530
+    .line 1535
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -389,10 +389,10 @@
 
     const v1, 0x1040001
 
-    .line 1448
+    .line 1453
     invoke-interface {p2, p1, v0, p1, v1}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
-    .line 1449
+    .line 1454
     sget v0, Lorg/telegram/messenger/R$id;->menu_quote:I
 
     sget v1, Lorg/telegram/messenger/R$string;->Quote:I
@@ -411,10 +411,10 @@
 
     const v3, 0x104000d
 
-    .line 1450
+    .line 1455
     invoke-interface {p2, p1, v0, v1, v3}, Landroid/view/Menu;->add(IIII)Landroid/view/MenuItem;
 
-    .line 1451
+    .line 1456
     sget v0, Lorg/telegram/messenger/R$string;->TranslateMessage:I
 
     const-string v1, "TranslateMessage"
@@ -433,14 +433,14 @@
 .method public onDestroyActionMode(Landroid/view/ActionMode;)V
     .locals 1
 
-    .line 1537
+    .line 1542
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x17
 
     if-ge p1, v0, :cond_0
 
-    .line 1538
+    .line 1543
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->clear()V
@@ -454,7 +454,7 @@
 
     const/4 p1, 0x1
 
-    .line 1457
+    .line 1462
     invoke-interface {p2, p1}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
     move-result-object v0
@@ -467,7 +467,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 1458
+    .line 1463
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -476,12 +476,12 @@
 
     const/4 v2, 0x0
 
-    .line 1459
+    .line 1464
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getText(Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;Z)Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 1460
+    .line 1465
     iget-object v1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-boolean v3, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->multiselect:Z
@@ -506,7 +506,7 @@
 
     goto :goto_0
 
-    .line 1463
+    .line 1468
     :cond_0
     invoke-interface {p2, v4}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
 
@@ -516,7 +516,7 @@
 
     goto :goto_1
 
-    .line 1461
+    .line 1466
     :cond_1
     :goto_0
     invoke-interface {p2, v4}, Landroid/view/Menu;->getItem(I)Landroid/view/MenuItem;
@@ -525,7 +525,7 @@
 
     invoke-interface {v0, v2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
-    .line 1466
+    .line 1471
     :cond_2
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
@@ -550,7 +550,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1467
+    .line 1472
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getSelectedText()Ljava/lang/CharSequence;
@@ -576,10 +576,10 @@
     :cond_3
     const/4 v0, 0x0
 
-    .line 1477
+    .line 1482
     iput-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->translateFromLanguage:Ljava/lang/String;
 
-    .line 1478
+    .line 1483
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/TextSelectionHelper$4;->updateTranslateButton(Landroid/view/Menu;)V
 
     :goto_2

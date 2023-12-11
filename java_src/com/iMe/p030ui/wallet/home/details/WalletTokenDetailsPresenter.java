@@ -96,7 +96,7 @@ import kotlin.jvm.internal.Ref$ObjectRef;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$Chat;
@@ -288,12 +288,12 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1728invoke(result);
+                m1729invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1728invoke(Result<? extends Boolean> it) {
+            public final void m1729invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
@@ -337,7 +337,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         List listOf;
         Intrinsics.checkNotNullParameter(token, "token");
         String totalBalanceText = BinanceTokenBalanceExtKt.getTotalBalanceText(token);
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new StatisticDiagramModel.DiagramItem[]{new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3634R.string.binance_token_details_distribution_spot), Theme.key_statisticChartLine_blue, token.getSpot().getTotal()), new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3634R.string.binance_token_details_distribution_margin), Theme.key_statisticChartLine_golden, token.getMargin().getTotal())});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new StatisticDiagramModel.DiagramItem[]{new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3632R.string.binance_token_details_distribution_spot), Theme.key_statisticChartLine_blue, token.getSpot().getTotal()), new StatisticDiagramModel.DiagramItem(this.resourceManager.getString(C3632R.string.binance_token_details_distribution_margin), Theme.key_statisticChartLine_golden, token.getMargin().getTotal())});
         ((WalletTokenDetailsView) getViewState()).showStatisticDialog(new StatisticDiagramModel(totalBalanceText, listOf));
     }
 
@@ -373,7 +373,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
     public final void showCryptoBoxRefreshConfirmation(final String boxId) {
         Intrinsics.checkNotNullParameter(boxId, "boxId");
-        ((WalletTokenDetailsView) getViewState()).showConfirmationDialog(new DialogModel(this.resourceManager.getString(C3634R.string.cryptobox_refresh_message_confirmation_title), this.resourceManager.getString(C3634R.string.cryptobox_refresh_message_confirmation_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.cryptobox_details_restore)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda5
+        ((WalletTokenDetailsView) getViewState()).showConfirmationDialog(new DialogModel(this.resourceManager.getString(C3632R.string.cryptobox_refresh_message_confirmation_title), this.resourceManager.getString(C3632R.string.cryptobox_refresh_message_confirmation_description), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.cryptobox_details_restore)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda5
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletTokenDetailsPresenter.showCryptoBoxRefreshConfirmation$lambda$3(WalletTokenDetailsPresenter.this, boxId);
@@ -441,12 +441,12 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingDetailedMetadata> result) {
-                    m1731invoke(result);
+                    m1732invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1731invoke(Result<? extends StakingDetailedMetadata> it) {
+                public final void m1732invoke(Result<? extends StakingDetailedMetadata> it) {
                     ResourceManager resourceManager;
                     RxEventBus rxEventBus;
                     TokenDetailsArgs tokenDetailsArgs2;
@@ -516,12 +516,12 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxInfo> result) {
-                    m1735invoke(result);
+                    m1736invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1735invoke(Result<? extends CryptoBoxInfo> it) {
+                public final void m1736invoke(Result<? extends CryptoBoxInfo> it) {
                     ResourceManager resourceManager;
                     RxEventBus rxEventBus;
                     TokenDetailsArgs tokenDetailsArgs2;
@@ -644,12 +644,12 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends AccountLevelInformation> result) {
-                m1730invoke(result);
+                m1731invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1730invoke(Result<? extends AccountLevelInformation> it) {
+            public final void m1731invoke(Result<? extends AccountLevelInformation> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends AccountLevelInformation> result = it;
@@ -766,13 +766,13 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         Number parseFormattedString2 = balanceFormatter.parseFormattedString(stakingDetailsItem.getFormattedAPR());
         if (NumberExtKt.isZero(parseFormattedString) || stakingDetailsItem.getAnnualPercentageMode() == StakingAnnualPercentageMode.APY) {
             str = stakingDetailsItem.getFormattedAPY() + '%';
-            string = this.resourceManager.getString(C3634R.string.staking_details_apy);
+            string = this.resourceManager.getString(C3632R.string.staking_details_apy);
         } else if (NumberExtKt.isZero(parseFormattedString2) || stakingDetailsItem.getAnnualPercentageMode() == StakingAnnualPercentageMode.APR) {
             str = stakingDetailsItem.getFormattedAPR() + '%';
-            string = this.resourceManager.getString(C3634R.string.staking_details_apr);
+            string = this.resourceManager.getString(C3632R.string.staking_details_apr);
         } else {
-            str = this.resourceManager.getString(C3634R.string.staking_details_apy_apr_values, stakingDetailsItem.getFormattedAPR(), stakingDetailsItem.getFormattedAPY());
-            string = this.resourceManager.getString(C3634R.string.staking_details_apy_apr);
+            str = this.resourceManager.getString(C3632R.string.staking_details_apy_apr_values, stakingDetailsItem.getFormattedAPR(), stakingDetailsItem.getFormattedAPY());
+            string = this.resourceManager.getString(C3632R.string.staking_details_apy_apr);
         }
         String str3 = str;
         String str4 = string;
@@ -784,7 +784,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                 createUSDValue$default2 = FiatValue.Companion.createUSDValue$default(FiatValue.Companion, 0.0d, 1, null);
             }
             copy2 = createEmptyBalanceFor.copy((r16 & 1) != 0 ? createEmptyBalanceFor.total : orZero, (r16 & 2) != 0 ? createEmptyBalanceFor.totalInFiat : createUSDValue$default2, (r16 & 4) != 0 ? createEmptyBalanceFor.rateToFiat : null, (r16 & 8) != 0 ? createEmptyBalanceFor.ratePercentageChange24h : 0.0d, (r16 & 16) != 0 ? createEmptyBalanceFor.token : null);
-            str2 = this.resourceManager.getString(C3634R.string.staking_details_profit_value, TokenBalanceExtKt.getTotalBalanceShortText(copy2), TokenBalanceExtKt.getDollarsBalanceText(copy2));
+            str2 = this.resourceManager.getString(C3632R.string.staking_details_profit_value, TokenBalanceExtKt.getTotalBalanceShortText(copy2), TokenBalanceExtKt.getDollarsBalanceText(copy2));
         } else {
             str2 = "-";
         }
@@ -821,12 +821,12 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1729invoke(rxEvent);
+                m1730invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1729invoke(RxEvent it) {
+            public final void m1730invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (rxEvent instanceof AppRxEvents.UpdateWalletScreen) {
@@ -895,7 +895,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
             BinanceTokenBalanceInfo token = ((TokenDetailsArgs.Binance) tokenDetailsArgs).getToken();
             ArrayList arrayList = new ArrayList();
             if (token.getConvertible()) {
-                arrayList.add(new HorizontalActionButtonItem(C3634R.C3636drawable.fork_ic_exchange_27, this.resourceManager.getString(C3634R.string.wallet_token_details_transactions_swap), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$1
+                arrayList.add(new HorizontalActionButtonItem(C3632R.C3634drawable.fork_ic_exchange_27, this.resourceManager.getString(C3632R.string.wallet_token_details_transactions_swap), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$1
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
@@ -915,7 +915,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                 }, 4, null));
             }
             if (true ^ token.getReplenishNetworksIds().isEmpty()) {
-                arrayList.add(new HorizontalActionButtonItem(C3634R.C3636drawable.fork_ic_buy_28, this.resourceManager.getString(C3634R.string.wallet_token_details_action_buy), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$2
+                arrayList.add(new HorizontalActionButtonItem(C3632R.C3634drawable.fork_ic_buy_28, this.resourceManager.getString(C3632R.string.wallet_token_details_action_buy), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
@@ -935,7 +935,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                 }, 4, null));
             }
             if (token.getReceivable()) {
-                arrayList.add(new HorizontalActionButtonItem(C3634R.C3636drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3634R.string.wallet_token_details_action_receive), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$3
+                arrayList.add(new HorizontalActionButtonItem(C3632R.C3634drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3632R.string.wallet_token_details_action_receive), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$1$1$3
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
@@ -959,7 +959,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         } else if (tokenDetailsArgs instanceof TokenDetailsArgs.Crypto) {
             final TokenDetailed token2 = ((TokenDetailsArgs.Crypto) tokenDetailsArgs).getToken().getBalance().getToken();
             ArrayList arrayList2 = new ArrayList();
-            arrayList2.add(new HorizontalActionButtonItem(C3634R.C3636drawable.msg_send, this.resourceManager.getString(C3634R.string.wallet_token_details_details_action_send), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$1
+            arrayList2.add(new HorizontalActionButtonItem(C3632R.C3634drawable.msg_send, this.resourceManager.getString(C3632R.string.wallet_token_details_details_action_send), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -978,7 +978,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                 }
             }, 4, null));
             if (isBuyAvailable(token2.getNetworkId())) {
-                arrayList2.add(new HorizontalActionButtonItem(C3634R.C3636drawable.fork_ic_exchange_27, this.resourceManager.getString(C3634R.string.wallet_token_details_transactions_swap), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$2
+                arrayList2.add(new HorizontalActionButtonItem(C3632R.C3634drawable.fork_ic_exchange_27, this.resourceManager.getString(C3632R.string.wallet_token_details_transactions_swap), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$2
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
@@ -997,7 +997,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                     }
                 }, 4, null));
             }
-            arrayList2.add(new HorizontalActionButtonItem(C3634R.C3636drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3634R.string.wallet_token_details_action_receive), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$3
+            arrayList2.add(new HorizontalActionButtonItem(C3632R.C3634drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3632R.string.wallet_token_details_action_receive), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$2$1$3
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -1023,8 +1023,8 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
             throw new NoWhenBranchMatchedException();
         } else {
             HorizontalActionButtonItem[] horizontalActionButtonItemArr = new HorizontalActionButtonItem[4];
-            int i = C3634R.C3636drawable.fork_ic_buy_28;
-            String string = this.resourceManager.getString(C3634R.string.staking_details_replenish);
+            int i = C3632R.C3634drawable.fork_ic_buy_28;
+            String string = this.resourceManager.getString(C3632R.string.staking_details_replenish);
             StakingDetailedMetadata stakingDetailedMetadata = this.stakingMetadata;
             horizontalActionButtonItemArr[0] = new HorizontalActionButtonItem(i, string, (stakingDetailedMetadata == null || (rules3 = stakingDetailedMetadata.getRules()) == null || !rules3.getCanDeposit()) ? false : true, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$3
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -1044,8 +1044,8 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                     WalletTokenDetailsPresenter.this.openStakingReplenishCheckingAccountLevel(((TokenDetailsArgs.Staking) tokenDetailsArgs).getStakingDetails());
                 }
             });
-            int i2 = C3634R.C3636drawable.fork_ic_ask_transfer;
-            String string2 = this.resourceManager.getString(C3634R.string.staking_details_claim);
+            int i2 = C3632R.C3634drawable.fork_ic_ask_transfer;
+            String string2 = this.resourceManager.getString(C3632R.string.staking_details_claim);
             StakingDetailedMetadata stakingDetailedMetadata2 = this.stakingMetadata;
             horizontalActionButtonItemArr[1] = new HorizontalActionButtonItem(i2, string2, (stakingDetailedMetadata2 == null || (stats = stakingDetailedMetadata2.getStats()) == null || !stats.isParticipated()) ? false : true, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$4
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -1065,8 +1065,8 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                     ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).openStakingTransactionScreen(((TokenDetailsArgs.Staking) tokenDetailsArgs).getStakingDetails(), StakingScreenType.STAKING_PROFIT_SCREEN_TYPE);
                 }
             });
-            int i3 = C3634R.C3636drawable.fork_ic_withdraw;
-            String string3 = this.resourceManager.getString(C3634R.string.staking_details_withdraw);
+            int i3 = C3632R.C3634drawable.fork_ic_withdraw;
+            String string3 = this.resourceManager.getString(C3632R.string.staking_details_withdraw);
             StakingDetailedMetadata stakingDetailedMetadata3 = this.stakingMetadata;
             horizontalActionButtonItemArr[2] = new HorizontalActionButtonItem(i3, string3, (stakingDetailedMetadata3 == null || (rules2 = stakingDetailedMetadata3.getRules()) == null || (!rules2.getCanWithdrawSafely() && !rules2.getCanWithdrawImmediately())) ? false : true, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$resolveAvailableTokenActions$6
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -1086,8 +1086,8 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                     ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).openStakingTransactionScreen(((TokenDetailsArgs.Staking) tokenDetailsArgs).getStakingDetails(), StakingScreenType.STAKING_WITHDRAW_SCREEN_TYPE);
                 }
             });
-            int i4 = C3634R.C3636drawable.fork_wallet_staking_dashboard_calculator;
-            String string4 = this.resourceManager.getString(C3634R.string.staking_dashboard_calculator);
+            int i4 = C3632R.C3634drawable.fork_wallet_staking_dashboard_calculator;
+            String string4 = this.resourceManager.getString(C3632R.string.staking_dashboard_calculator);
             StakingDetailedMetadata stakingDetailedMetadata4 = this.stakingMetadata;
             if (stakingDetailedMetadata4 == null || (rules = stakingDetailedMetadata4.getRules()) == null || !rules.getCanDeposit()) {
                 z = false;
@@ -1125,7 +1125,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         List<HorizontalActionButtonItem> emptyList;
         List<HorizontalActionButtonItem> listOf;
         if (cryptoBoxInfo.getStatus() == CryptoBoxStatus.ACTIVE) {
-            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3634R.C3636drawable.msg_block, this.resourceManager.getString(C3634R.string.cryptobox_details_stop), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$getCryptoBoxActions$1$1
+            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3632R.C3634drawable.msg_block, this.resourceManager.getString(C3632R.string.cryptobox_details_stop), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$getCryptoBoxActions$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -1142,7 +1142,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                 public final void invoke2() {
                     WalletTokenDetailsPresenter.this.prepareCryptoBoxSuspension(cryptoBoxInfo.getId());
                 }
-            }, 4, null), new HorizontalActionButtonItem(C3634R.C3636drawable.fork_ic_wallet_restore, this.resourceManager.getString(C3634R.string.cryptobox_details_restore), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$getCryptoBoxActions$1$2
+            }, 4, null), new HorizontalActionButtonItem(C3632R.C3634drawable.fork_ic_wallet_restore, this.resourceManager.getString(C3632R.string.cryptobox_details_restore), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$getCryptoBoxActions$1$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -1181,12 +1181,12 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxTransactionAction> result) {
-                m1733invoke(result);
+                m1734invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1733invoke(Result<? extends CryptoBoxTransactionAction> it) {
+            public final void m1734invoke(Result<? extends CryptoBoxTransactionAction> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoBoxTransactionAction> result = it;
@@ -1259,19 +1259,19 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Boolean, ? extends Boolean> pair) {
-                    m1732invoke(pair);
+                    m1733invoke(pair);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1732invoke(Pair<? extends Boolean, ? extends Boolean> it) {
+                public final void m1733invoke(Pair<? extends Boolean, ? extends Boolean> it) {
                     ResourceManager resourceManager;
                     Intrinsics.checkNotNullExpressionValue(it, "it");
                     Pair<? extends Boolean, ? extends Boolean> pair = it;
                     Boolean hasAdminRights = pair.component1();
                     if (!pair.component2().booleanValue()) {
                         resourceManager = WalletTokenDetailsPresenter.this.resourceManager;
-                        ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showToast(resourceManager.getString(C3634R.string.cryptobox_create_user_not_owner));
+                        ((WalletTokenDetailsView) WalletTokenDetailsPresenter.this.getViewState()).showToast(resourceManager.getString(C3632R.string.cryptobox_create_user_not_owner));
                         return;
                     }
                     Intrinsics.checkNotNullExpressionValue(hasAdminRights, "hasAdminRights");
@@ -1310,7 +1310,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                     String message2 = error.getMessage();
                     if (message2 == null) {
                         resourceManager = this.resourceManager;
-                        message2 = resourceManager.getString(C3634R.string.common_error_unexpected);
+                        message2 = resourceManager.getString(C3632R.string.common_error_unexpected);
                     }
                     walletTokenDetailsView2.showActionError(message2);
                 }
@@ -1328,7 +1328,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void onWalletBotAdminRightsRequired(final long j, final String str) {
-        ((WalletTokenDetailsView) getViewState()).showConfirmationDialog(new DialogModel(this.resourceManager.getString(C3634R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_title), this.resourceManager.getString(C3634R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_description), this.resourceManager.getString(C3634R.string.common_cancel), LocaleController.getString(RtspHeaders.ALLOW, C3634R.string.Allow)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda4
+        ((WalletTokenDetailsView) getViewState()).showConfirmationDialog(new DialogModel(this.resourceManager.getString(C3632R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_title), this.resourceManager.getString(C3632R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_description), this.resourceManager.getString(C3632R.string.common_cancel), LocaleController.getString(RtspHeaders.ALLOW, C3632R.string.Allow)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$$ExternalSyntheticLambda4
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletTokenDetailsPresenter.onWalletBotAdminRightsRequired$lambda$22(WalletTokenDetailsPresenter.this, j, str);
@@ -1357,12 +1357,12 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1734invoke(result);
+                m1735invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1734invoke(Result<? extends Boolean> it) {
+            public final void m1735invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
@@ -1451,7 +1451,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
         if ((info == null || info.isVerified()) ? false : true) {
             ((WalletTokenDetailsView) getViewState()).showRequiredVerifyDialog();
         } else if (resolveNetworkIdForReplenish == null) {
-            ((WalletTokenDetailsView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.binance_replenish_unsupported_network));
+            ((WalletTokenDetailsView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.binance_replenish_unsupported_network));
         } else {
             final Ref$ObjectRef ref$ObjectRef = new Ref$ObjectRef();
             ?? disposed = Disposables.disposed();
@@ -1471,12 +1471,12 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TokenBalance>> result) {
-                    m1736invoke(result);
+                    m1737invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1736invoke(Result<? extends List<? extends TokenBalance>> it) {
+                public final void m1737invoke(Result<? extends List<? extends TokenBalance>> it) {
                     ResourceManager resourceManager;
                     TokenItem tokenItem;
                     Object obj;
@@ -1504,7 +1504,7 @@ public final class WalletTokenDetailsPresenter extends BasePresenter<WalletToken
                         }
                         if (tokenItem == null) {
                             resourceManager2 = this.resourceManager;
-                            ((WalletTokenDetailsView) this.getViewState()).showToast(resourceManager2.getString(C3634R.string.binance_replenish_no_token_on_balance));
+                            ((WalletTokenDetailsView) this.getViewState()).showToast(resourceManager2.getString(C3632R.string.binance_replenish_no_token_on_balance));
                             return;
                         }
                         ((WalletTokenDetailsView) this.getViewState()).openBinanceReplenishScreen(tokenItem, resolveNetworkIdForReplenish);

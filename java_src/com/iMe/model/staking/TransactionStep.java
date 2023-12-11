@@ -4,7 +4,7 @@ import com.iMe.model.wallet.staking.StakingScreenType;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* compiled from: TransactionStep.kt */
 /* loaded from: classes3.dex */
 public abstract class TransactionStep {
@@ -39,7 +39,7 @@ public abstract class TransactionStep {
         public static final Loading INSTANCE = new Loading();
 
         private Loading() {
-            super(C3634R.string.staking_action_button_loading, false, null);
+            super(C3632R.string.staking_action_button_loading, false, null);
         }
     }
 
@@ -49,7 +49,7 @@ public abstract class TransactionStep {
         public static final RetryLoading INSTANCE = new RetryLoading();
 
         private RetryLoading() {
-            super(C3634R.string.staking_action_button_try_again, true, null);
+            super(C3632R.string.staking_action_button_try_again, true, null);
         }
     }
 
@@ -59,7 +59,7 @@ public abstract class TransactionStep {
         public static final ApprovalProcessing INSTANCE = new ApprovalProcessing();
 
         private ApprovalProcessing() {
-            super(C3634R.string.wallet_swap_process_button_approving, false, null);
+            super(C3632R.string.wallet_swap_process_button_approving, false, null);
         }
     }
 
@@ -69,7 +69,7 @@ public abstract class TransactionStep {
         public static final Prepare INSTANCE = new Prepare();
 
         private Prepare() {
-            super(C3634R.string.wallet_amount_button_calculate, false, null);
+            super(C3632R.string.wallet_amount_button_calculate, false, null);
         }
     }
 
@@ -131,7 +131,7 @@ public abstract class TransactionStep {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ApprovalNeeded(String tokenTicker) {
-            super(C3634R.string.staking_approve_token, true, null);
+            super(C3632R.string.staking_approve_token, true, null);
             Intrinsics.checkNotNullParameter(tokenTicker, "tokenTicker");
             this.tokenTicker = tokenTicker;
         }
@@ -193,7 +193,7 @@ public abstract class TransactionStep {
         public static final CryptoBoxExecute INSTANCE = new CryptoBoxExecute();
 
         private CryptoBoxExecute() {
-            super(C3634R.string.common_create, true, null);
+            super(C3632R.string.common_create, true, null);
         }
     }
 }

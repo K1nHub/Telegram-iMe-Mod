@@ -16,7 +16,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import p033j$.util.DesugarTimeZone;
 import timber.log.Timber;
@@ -33,13 +33,13 @@ public final class TonFragmentProductUiMappingKt {
             j = 0;
         }
         if (j <= 0) {
-            String string = LocaleController.getString("Expired", C3634R.string.Expired);
+            String string = LocaleController.getString("Expired", C3632R.string.Expired);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Expired\", R.string.Expired)");
             return string;
         }
         long minutes = TimeUnit.MILLISECONDS.toMinutes(j);
         if (NumberExtKt.isZero(Long.valueOf(minutes))) {
-            sb = LocaleController.getInternalString(C3634R.string.fragment_username_details_time_left_less_than_minute);
+            sb = LocaleController.getInternalString(C3632R.string.fragment_username_details_time_left_less_than_minute);
         } else {
             StringBuilder sb2 = new StringBuilder();
             TimeUnit timeUnit = TimeUnit.MINUTES;
@@ -64,7 +64,7 @@ public final class TonFragmentProductUiMappingKt {
             }
             sb = sb2.toString();
         }
-        String formatStringInternal = LocaleController.formatStringInternal(C3634R.string.fragment_username_details_time_left, sb);
+        String formatStringInternal = LocaleController.formatStringInternal(C3632R.string.fragment_username_details_time_left, sb);
         Intrinsics.checkNotNullExpressionValue(formatStringInternal, "formatStringInternal(\n  …       timeLeftText\n    )");
         return formatStringInternal;
     }
@@ -79,7 +79,7 @@ public final class TonFragmentProductUiMappingKt {
         for (TonFragmentProduct tonFragmentProduct : list) {
             removePrefix = StringsKt__StringsKt.removePrefix(tonFragmentProduct.getUsername(), "@");
             String price = tonFragmentProduct.getPrice();
-            String string = resourceManager.getString(C3634R.string.fragment_premium_product_price, tonFragmentProduct.getPrice());
+            String string = resourceManager.getString(C3632R.string.fragment_premium_product_price, tonFragmentProduct.getPrice());
             arrayList.add(new TonFragmentItem.Product(removePrefix, price, string, '~' + tonFragmentProduct.getFiatPrice() + TokenDetailed.Companion.getUSD().getTicker(), formatTimeLeft(tonFragmentProduct.getTimestamp()), tonFragmentProduct.getTimestamp()));
         }
         return arrayList;
@@ -98,7 +98,7 @@ public final class TonFragmentProductUiMappingKt {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
             PremiumPlan premiumPlan = (PremiumPlan) obj;
-            arrayList.add(new TonFragmentItem.C1535Premium(premiumPlan.getPrice(), resourceManager.getString(C3634R.string.fragment_premium_product_price, BalanceFormatter.format$default(Double.valueOf(premiumPlan.getPrice()), null, 2, null)), '~' + premiumPlan.getFiatPrice() + TokenDetailed.Companion.getUSD().getTicker(), premiumPlan.getMonths(), premiumPlan.getDiscount(), NumberExtKt.isZero(Integer.valueOf(i))));
+            arrayList.add(new TonFragmentItem.C1535Premium(premiumPlan.getPrice(), resourceManager.getString(C3632R.string.fragment_premium_product_price, BalanceFormatter.format$default(Double.valueOf(premiumPlan.getPrice()), null, 2, null)), '~' + premiumPlan.getFiatPrice() + TokenDetailed.Companion.getUSD().getTicker(), premiumPlan.getMonths(), premiumPlan.getDiscount(), NumberExtKt.isZero(Integer.valueOf(i))));
             i = i2;
         }
         return arrayList;

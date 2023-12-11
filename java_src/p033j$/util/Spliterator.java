@@ -2,82 +2,82 @@ package p033j$.util;
 
 import java.util.Comparator;
 import p033j$.util.function.Consumer;
-import p033j$.util.function.InterfaceC2820f;
-import p033j$.util.function.InterfaceC2826l;
-import p033j$.util.function.InterfaceC2830p;
+import p033j$.util.function.InterfaceC2817f;
+import p033j$.util.function.InterfaceC2823l;
+import p033j$.util.function.InterfaceC2827p;
 /* renamed from: j$.util.Spliterator */
 /* loaded from: classes2.dex */
 public interface Spliterator<T> {
 
     /* renamed from: j$.util.Spliterator$a */
     /* loaded from: classes2.dex */
-    public interface InterfaceC2776a extends InterfaceC2779d {
+    public interface InterfaceC2773a extends InterfaceC2776d {
         @Override // p033j$.util.Spliterator
         /* renamed from: b */
         boolean mo179b(Consumer consumer);
 
         /* renamed from: e */
-        void mo199e(InterfaceC2820f interfaceC2820f);
+        void mo199e(InterfaceC2817f interfaceC2817f);
 
         @Override // p033j$.util.Spliterator
         void forEachRemaining(Consumer consumer);
 
         /* renamed from: n */
-        boolean mo198n(InterfaceC2820f interfaceC2820f);
+        boolean mo198n(InterfaceC2817f interfaceC2817f);
 
-        @Override // p033j$.util.Spliterator.InterfaceC2779d, p033j$.util.Spliterator
-        InterfaceC2776a trySplit();
+        @Override // p033j$.util.Spliterator.InterfaceC2776d, p033j$.util.Spliterator
+        InterfaceC2773a trySplit();
     }
 
     /* renamed from: j$.util.Spliterator$b */
     /* loaded from: classes2.dex */
-    public interface InterfaceC2777b extends InterfaceC2779d {
+    public interface InterfaceC2774b extends InterfaceC2776d {
         @Override // p033j$.util.Spliterator
         /* renamed from: b */
         boolean mo179b(Consumer consumer);
 
         /* renamed from: c */
-        void mo193c(InterfaceC2826l interfaceC2826l);
+        void mo193c(InterfaceC2823l interfaceC2823l);
 
         @Override // p033j$.util.Spliterator
         void forEachRemaining(Consumer consumer);
 
         /* renamed from: g */
-        boolean mo192g(InterfaceC2826l interfaceC2826l);
+        boolean mo192g(InterfaceC2823l interfaceC2823l);
 
-        @Override // p033j$.util.Spliterator.InterfaceC2779d, p033j$.util.Spliterator
-        InterfaceC2777b trySplit();
+        @Override // p033j$.util.Spliterator.InterfaceC2776d, p033j$.util.Spliterator
+        InterfaceC2774b trySplit();
     }
 
     /* renamed from: j$.util.Spliterator$c */
     /* loaded from: classes2.dex */
-    public interface InterfaceC2778c extends InterfaceC2779d {
+    public interface InterfaceC2775c extends InterfaceC2776d {
         @Override // p033j$.util.Spliterator
         /* renamed from: b */
         boolean mo179b(Consumer consumer);
 
         /* renamed from: d */
-        void mo187d(InterfaceC2830p interfaceC2830p);
+        void mo187d(InterfaceC2827p interfaceC2827p);
 
         @Override // p033j$.util.Spliterator
         void forEachRemaining(Consumer consumer);
 
         /* renamed from: i */
-        boolean mo186i(InterfaceC2830p interfaceC2830p);
+        boolean mo186i(InterfaceC2827p interfaceC2827p);
 
-        @Override // p033j$.util.Spliterator.InterfaceC2779d, p033j$.util.Spliterator
-        InterfaceC2778c trySplit();
+        @Override // p033j$.util.Spliterator.InterfaceC2776d, p033j$.util.Spliterator
+        InterfaceC2775c trySplit();
     }
 
     /* renamed from: j$.util.Spliterator$d */
     /* loaded from: classes2.dex */
-    public interface InterfaceC2779d extends Spliterator {
+    public interface InterfaceC2776d extends Spliterator {
         void forEachRemaining(Object obj);
 
         boolean tryAdvance(Object obj);
 
         @Override // p033j$.util.Spliterator
-        InterfaceC2779d trySplit();
+        InterfaceC2776d trySplit();
     }
 
     /* renamed from: b */

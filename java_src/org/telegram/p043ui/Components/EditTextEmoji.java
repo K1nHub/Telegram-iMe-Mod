@@ -30,7 +30,7 @@ import com.iMe.fork.utils.Callbacks$Callback1;
 import java.util.ArrayList;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
@@ -232,7 +232,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
                         EditTextEmoji.this.shownFormatButton = z2;
                         if (z2) {
                             this.lastIcon = EditTextEmoji.this.emojiIconDrawable.getIcon();
-                            EditTextEmoji.this.emojiIconDrawable.setIcon(C3634R.C3636drawable.msg_edit, true);
+                            EditTextEmoji.this.emojiIconDrawable.setIcon(C3632R.C3634drawable.msg_edit, true);
                             return;
                         }
                         EditTextEmoji.this.emojiIconDrawable.setIcon(this.lastIcon, true);
@@ -313,15 +313,15 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         imageView2.setImageDrawable(replaceableIconDrawable);
         if (i == 0) {
             this.emojiIconDrawable.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.MULTIPLY));
-            this.emojiIconDrawable.setIcon(C3634R.C3636drawable.smiles_tab_smiles, false);
+            this.emojiIconDrawable.setIcon(C3632R.C3634drawable.smiles_tab_smiles, false);
             addView(this.emojiButton, LayoutHelper.createFrame(48, 48, (LocaleController.isRTL ? 3 : 5) | 16, 0, 0, 0, 7));
         } else if (i == 2 || i == 3) {
             this.emojiIconDrawable.setColorFilter(new PorterDuffColorFilter(-1929379841, PorterDuff.Mode.MULTIPLY));
-            this.emojiIconDrawable.setIcon(C3634R.C3636drawable.input_smile, false);
+            this.emojiIconDrawable.setIcon(C3632R.C3634drawable.input_smile, false);
             addView(this.emojiButton, LayoutHelper.createFrame(40, 40, 83, 0, 0, 0, 0));
         } else {
             this.emojiIconDrawable.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.MULTIPLY));
-            this.emojiIconDrawable.setIcon(C3634R.C3636drawable.input_smile, false);
+            this.emojiIconDrawable.setIcon(C3632R.C3634drawable.input_smile, false);
             addView(this.emojiButton, LayoutHelper.createFrame(48, 48, 83, 0, 0, 0, 0));
         }
         if (Build.VERSION.SDK_INT >= 21) {
@@ -333,7 +333,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
                 EditTextEmoji.this.lambda$new$0(sizeNotifierFrameLayout, resourcesProvider, view);
             }
         });
-        this.emojiButton.setContentDescription(LocaleController.getString("Emoji", C3634R.string.Emoji));
+        this.emojiButton.setContentDescription(LocaleController.getString("Emoji", C3632R.string.Emoji));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -642,7 +642,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
             if (sizeNotifierFrameLayout != null) {
                 this.emojiPadding = i2;
                 sizeNotifierFrameLayout.requestLayout();
-                this.emojiIconDrawable.setIcon(C3634R.C3636drawable.input_keyboard, true);
+                this.emojiIconDrawable.setIcon(C3632R.C3634drawable.input_keyboard, true);
                 onWindowSizeChanged();
             }
             onEmojiKeyboardUpdate();
@@ -672,9 +672,9 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         }
         if (this.emojiButton != null) {
             if (this.currentStyle == 0) {
-                this.emojiIconDrawable.setIcon(C3634R.C3636drawable.smiles_tab_smiles, true);
+                this.emojiIconDrawable.setIcon(C3632R.C3634drawable.smiles_tab_smiles, true);
             } else {
-                this.emojiIconDrawable.setIcon(C3634R.C3636drawable.input_smile, true);
+                this.emojiIconDrawable.setIcon(C3632R.C3634drawable.input_smile, true);
             }
         }
         if (this.emojiView != null) {
@@ -745,14 +745,14 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         if (AndroidUtilities.isTablet()) {
             this.emojiView.setForseMultiwindowLayout(true);
         }
-        this.emojiView.setDelegate(new C49107());
+        this.emojiView.setDelegate(new C49077());
         this.sizeNotifierLayout.addView(this.emojiView);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.EditTextEmoji$7 */
     /* loaded from: classes6.dex */
-    public class C49107 implements EmojiView.EmojiViewDelegate {
+    public class C49077 implements EmojiView.EmojiViewDelegate {
         @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
         public /* synthetic */ boolean canSchedule() {
             return EmojiView.EmojiViewDelegate.CC.$default$canSchedule(this);
@@ -883,7 +883,7 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
             EmojiView.EmojiViewDelegate.CC.$default$showTrendingStickersAlert(this, trendingStickersLayout);
         }
 
-        C49107() {
+        C49077() {
         }
 
         @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
@@ -989,15 +989,15 @@ public class EditTextEmoji extends FrameLayout implements NotificationCenter.Not
         @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
         public void onClearEmojiRecent() {
             AlertDialog.Builder builder = new AlertDialog.Builder(EditTextEmoji.this.getContext(), EditTextEmoji.this.resourcesProvider);
-            builder.setTitle(LocaleController.getString("ClearRecentEmojiTitle", C3634R.string.ClearRecentEmojiTitle));
-            builder.setMessage(LocaleController.getString("ClearRecentEmojiText", C3634R.string.ClearRecentEmojiText));
-            builder.setPositiveButton(LocaleController.getString("ClearButton", C3634R.string.ClearButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.EditTextEmoji$7$$ExternalSyntheticLambda0
+            builder.setTitle(LocaleController.getString("ClearRecentEmojiTitle", C3632R.string.ClearRecentEmojiTitle));
+            builder.setMessage(LocaleController.getString("ClearRecentEmojiText", C3632R.string.ClearRecentEmojiText));
+            builder.setPositiveButton(LocaleController.getString("ClearButton", C3632R.string.ClearButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.EditTextEmoji$7$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
-                    EditTextEmoji.C49107.this.lambda$onClearEmojiRecent$0(dialogInterface, i);
+                    EditTextEmoji.C49077.this.lambda$onClearEmojiRecent$0(dialogInterface, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
             if (EditTextEmoji.this.parentFragment != null) {
                 EditTextEmoji.this.parentFragment.showDialog(builder.create());
             } else {

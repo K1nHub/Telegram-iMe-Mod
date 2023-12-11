@@ -65,9 +65,9 @@ public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambd
                 ReaderScope readerScope = (ReaderScope) this.L$0;
                 this.$selectable.interestOp(SelectInterest.WRITE, false);
                 ByteChannel byteChannel = this.$channel;
-                C26641 c26641 = new C26641(this.$socketOptions, readerScope, byteChannel, this.$nioChannel, this.$selectable, this.$selector, null);
+                C26611 c26611 = new C26611(this.$socketOptions, readerScope, byteChannel, this.$nioChannel, this.$selectable, this.$selector, null);
                 this.label = 1;
-                if (byteChannel.lookAheadSuspend(c26641, this) == coroutine_suspended) {
+                if (byteChannel.lookAheadSuspend(c26611, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {
@@ -106,7 +106,7 @@ public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambd
     @DebugMetadata(m145c = "io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1$1", m144f = "CIOWriter.kt", m143l = {99, 111, 111}, m142m = "invokeSuspend")
     /* renamed from: io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1$1 */
     /* loaded from: classes4.dex */
-    public static final class C26641 extends SuspendLambda implements Function2<LookAheadSuspendSession, Continuation<? super Unit>, Object> {
+    public static final class C26611 extends SuspendLambda implements Function2<LookAheadSuspendSession, Continuation<? super Unit>, Object> {
         final /* synthetic */ ReaderScope $$this$reader;
         final /* synthetic */ ByteChannel $channel;
         final /* synthetic */ WritableByteChannel $nioChannel;
@@ -124,7 +124,7 @@ public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambd
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C26641(SocketOptions.TCPClientSocketOptions tCPClientSocketOptions, ReaderScope readerScope, ByteChannel byteChannel, WritableByteChannel writableByteChannel, Selectable selectable, SelectorManager selectorManager, Continuation<? super C26641> continuation) {
+        C26611(SocketOptions.TCPClientSocketOptions tCPClientSocketOptions, ReaderScope readerScope, ByteChannel byteChannel, WritableByteChannel writableByteChannel, Selectable selectable, SelectorManager selectorManager, Continuation<? super C26611> continuation) {
             super(2, continuation);
             this.$socketOptions = tCPClientSocketOptions;
             this.$$this$reader = readerScope;
@@ -136,14 +136,14 @@ public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambd
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            C26641 c26641 = new C26641(this.$socketOptions, this.$$this$reader, this.$channel, this.$nioChannel, this.$selectable, this.$selector, continuation);
-            c26641.L$0 = obj;
-            return c26641;
+            C26611 c26611 = new C26611(this.$socketOptions, this.$$this$reader, this.$channel, this.$nioChannel, this.$selectable, this.$selector, continuation);
+            c26611.L$0 = obj;
+            return c26611;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(LookAheadSuspendSession lookAheadSuspendSession, Continuation<? super Unit> continuation) {
-            return ((C26641) create(lookAheadSuspendSession, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C26611) create(lookAheadSuspendSession, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
@@ -171,7 +171,7 @@ public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambd
                 Method dump skipped, instructions count: 409
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1.C26641.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1.C26611.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 }

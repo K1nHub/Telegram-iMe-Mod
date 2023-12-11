@@ -73,7 +73,11 @@ public class QuoteHighlight extends Path {
                 int max = Math.max(0, i2 - i4);
                 int i6 = textLayoutBlock.charactersOffset;
                 int min = Math.min(i3 - i6, textLayoutBlock.charactersEnd - i6);
-                this.currentOffsetX = -f;
+                float f2 = -f;
+                this.currentOffsetX = f2;
+                if (textLayoutBlock.code && !textLayoutBlock.quote) {
+                    this.currentOffsetX = f2 + AndroidUtilities.m104dp(10);
+                }
                 this.currentOffsetY = textLayoutBlock.textYOffset + textLayoutBlock.padTop;
                 this.minX = textLayoutBlock.quote ? AndroidUtilities.m104dp(10) : BitmapDescriptorFactory.HUE_RED;
                 z = z || AndroidUtilities.isRTL(textLayoutBlock.textLayout.getText());

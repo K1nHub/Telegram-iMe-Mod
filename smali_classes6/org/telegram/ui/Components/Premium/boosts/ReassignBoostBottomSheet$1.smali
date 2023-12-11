@@ -26,10 +26,10 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 102
+    .line 100
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 104
+    .line 102
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -44,14 +44,14 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 110
+    .line 108
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$1;->incGradient:Z
 
     const v1, 0x3c83126f    # 0.016f
 
     if-eqz v0, :cond_0
 
-    .line 111
+    .line 109
     iget v0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$1;->progress:F
 
     add-float/2addr v0, v1
@@ -66,12 +66,12 @@
 
     const/4 v0, 0x0
 
-    .line 113
+    .line 111
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$1;->incGradient:Z
 
     goto :goto_0
 
-    .line 116
+    .line 114
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$1;->progress:F
 
@@ -87,10 +87,10 @@
 
     const/4 v0, 0x1
 
-    .line 118
+    .line 116
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$1;->incGradient:Z
 
-    .line 121
+    .line 119
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$1;->rect:Landroid/graphics/RectF;
@@ -111,7 +111,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 122
+    .line 120
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
     move-result-object v4
@@ -148,7 +148,7 @@
 
     invoke-virtual/range {v4 .. v10}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->updateMainGradientMatrix(IIIIFF)V
 
-    .line 123
+    .line 121
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$1;->rect:Landroid/graphics/RectF;
 
     const/16 v1, 0x8
@@ -175,10 +175,10 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 124
+    .line 122
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 125
+    .line 123
     invoke-super {p0, p1}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->onDraw(Landroid/graphics/Canvas;)V
 
     return-void

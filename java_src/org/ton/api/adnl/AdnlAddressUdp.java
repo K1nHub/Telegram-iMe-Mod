@@ -19,7 +19,7 @@ public final class AdnlAddressUdp implements AdnlAddress {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: ip */
-    private final int f2025ip;
+    private final int f2026ip;
     private final int port;
 
     public boolean equals(Object obj) {
@@ -28,17 +28,17 @@ public final class AdnlAddressUdp implements AdnlAddress {
         }
         if (obj instanceof AdnlAddressUdp) {
             AdnlAddressUdp adnlAddressUdp = (AdnlAddressUdp) obj;
-            return this.f2025ip == adnlAddressUdp.f2025ip && this.port == adnlAddressUdp.port;
+            return this.f2026ip == adnlAddressUdp.f2026ip && this.port == adnlAddressUdp.port;
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.f2025ip * 31) + this.port;
+        return (this.f2026ip * 31) + this.port;
     }
 
     public AdnlAddressUdp(int i, int i2) {
-        this.f2025ip = i;
+        this.f2026ip = i;
         this.port = i2;
     }
 
@@ -46,7 +46,7 @@ public final class AdnlAddressUdp implements AdnlAddress {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, AdnlAddressUdp$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2025ip = i2;
+        this.f2026ip = i2;
         this.port = i3;
     }
 
@@ -56,7 +56,7 @@ public final class AdnlAddressUdp implements AdnlAddress {
     }
 
     public int getIp() {
-        return this.f2025ip;
+        return this.f2026ip;
     }
 
     public int getPort() {

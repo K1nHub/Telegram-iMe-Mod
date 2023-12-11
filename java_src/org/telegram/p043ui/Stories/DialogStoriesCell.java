@@ -36,7 +36,7 @@ import java.util.Comparator;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageReceiver;
@@ -46,7 +46,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AnimatedFloat;
@@ -79,8 +79,8 @@ import org.telegram.tgnet.p042tl.TL_stories$PeerStories;
 public class DialogStoriesCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
 
     /* renamed from: K */
-    float f1980K;
-    private C3706ActionBar actionBar;
+    float f1981K;
+    private C3704ActionBar actionBar;
     Adapter adapter;
     Paint addCirclePaint;
     private final Drawable addNewStoryDrawable;
@@ -171,7 +171,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
                 return lambda$new$6;
             }
         };
-        this.f1980K = 0.3f;
+        this.f1981K = 0.3f;
         this.ellipsizeSpanAnimator = new EllipsizeSpanAnimator(this);
         this.type = i2;
         this.currentAccount = i;
@@ -264,7 +264,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
         this.grayPaint.setColor(-2762018);
         this.grayPaint.setStyle(Paint.Style.STROKE);
         this.grayPaint.setStrokeWidth(AndroidUtilities.m104dp(1));
-        this.addNewStoryDrawable = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.msg_mini_addstory);
+        this.addNewStoryDrawable = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.msg_mini_addstory);
         RecyclerListView recyclerListView3 = new RecyclerListView(getContext()) { // from class: org.telegram.ui.Stories.DialogStoriesCell.3
             @Override // org.telegram.p043ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
             public boolean dispatchTouchEvent(MotionEvent motionEvent) {
@@ -517,7 +517,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
         int max = Math.max(1, Math.max(this.storiesController.getTotalStoriesCount(this.type == 1), size));
         if (this.storiesController.hasOnlySelfStories()) {
             if (this.storiesController.hasUploadingStories(UserConfig.getInstance(this.currentAccount).getClientUserId())) {
-                String string = LocaleController.getString("UploadingStory", C3634R.string.UploadingStory);
+                String string = LocaleController.getString("UploadingStory", C3632R.string.UploadingStory);
                 if (string.indexOf("…") > 0) {
                     if (this.uploadingString == null) {
                         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
@@ -531,7 +531,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
                     this.currentTitle = string;
                 }
             } else {
-                this.currentTitle = LocaleController.getString("MyStory", C3634R.string.MyStory);
+                this.currentTitle = LocaleController.getString("MyStory", C3632R.string.MyStory);
             }
         } else {
             this.currentTitle = LocaleController.formatPluralString("Stories", max, new Object[0]);
@@ -644,7 +644,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
         }
         this.collapsedProgress1 = f;
         checkCollapsedProgres();
-        final boolean z2 = f > this.f1980K;
+        final boolean z2 = f > this.f1981K;
         if (z2 != this.collapsed) {
             this.collapsed = z2;
             ValueAnimator valueAnimator = this.valueAnimator;
@@ -895,8 +895,8 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
         performHapticFeedback(3);
     }
 
-    public void setActionBar(C3706ActionBar c3706ActionBar) {
-        this.actionBar = c3706ActionBar;
+    public void setActionBar(C3704ActionBar c3704ActionBar) {
+        this.actionBar = c3704ActionBar;
     }
 
     public float overscrollProgress() {
@@ -999,10 +999,10 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
         public ImageReceiver crossfageToAvatarImage;
 
         /* renamed from: cx */
-        private float f1981cx;
+        private float f1982cx;
 
         /* renamed from: cy */
-        private float f1982cy;
+        private float f1983cy;
         long dialogId;
         public boolean drawAvatar;
         public boolean drawInParent;
@@ -1105,7 +1105,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
             }
             this.textView.setRightDrawable((Drawable) null);
             if (DialogStoriesCell.this.storiesController.isLastUploadingFailed(j)) {
-                this.textView.setText(LocaleController.getString("FailedStory", C3634R.string.FailedStory));
+                this.textView.setText(LocaleController.getString("FailedStory", C3632R.string.FailedStory));
                 this.isUploadingState = false;
             } else if (!Utilities.isNullOrEmpty(DialogStoriesCell.this.storiesController.getUploadingStories(j))) {
                 StoriesUtilities.applyUploadingStr(this.textView, true, false);
@@ -1153,7 +1153,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
                 }
                 AndroidUtilities.runOnUIThread(DialogStoriesCell.this.animationRunnable, 500L);
                 this.isUploadingState = false;
-                this.textView.setText(LocaleController.getString("MyStory", C3634R.string.MyStory));
+                this.textView.setText(LocaleController.getString("MyStory", C3632R.string.MyStory));
             } else {
                 TLRPC$User tLRPC$User2 = this.user;
                 if (tLRPC$User2 != null) {
@@ -1195,7 +1195,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
 
         float getCy() {
             float m104dp = AndroidUtilities.m104dp(28);
-            return AndroidUtilities.lerp(AndroidUtilities.m104dp(5), (C3706ActionBar.getCurrentActionBarHeight() - m104dp) / 2.0f, DialogStoriesCell.this.collapsedProgress1) + (AndroidUtilities.lerp(AndroidUtilities.m104dp(48), m104dp, this.progressToCollapsed) / 2.0f);
+            return AndroidUtilities.lerp(AndroidUtilities.m104dp(5), (C3704ActionBar.getCurrentActionBarHeight() - m104dp) / 2.0f, DialogStoriesCell.this.collapsedProgress1) + (AndroidUtilities.lerp(AndroidUtilities.m104dp(48), m104dp, this.progressToCollapsed) / 2.0f);
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -1221,7 +1221,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
             float f6 = lerp / 2.0f;
             float measuredWidth = (getMeasuredWidth() / 2.0f) - f6;
             float lerp2 = AndroidUtilities.lerp(measuredWidth, (float) BitmapDescriptorFactory.HUE_RED, this.progressToCollapsed);
-            float lerp3 = AndroidUtilities.lerp(AndroidUtilities.m104dp(5), (C3706ActionBar.getCurrentActionBarHeight() - m104dp2) / 2.0f, this.progressToCollapsed);
+            float lerp3 = AndroidUtilities.lerp(AndroidUtilities.m104dp(5), (C3704ActionBar.getCurrentActionBarHeight() - m104dp2) / 2.0f, this.progressToCollapsed);
             float clamp = Utilities.clamp(this.progressToCollapsed / 0.5f, 1.0f, (float) BitmapDescriptorFactory.HUE_RED);
             StoriesUtilities.AvatarStoryParams avatarStoryParams = this.params;
             avatarStoryParams.drawSegments = true;
@@ -1233,20 +1233,20 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
             this.avatarImage.setAlpha(1.0f);
             this.avatarImage.setRoundRadius((int) f6);
             float f8 = lerp2 + f6;
-            this.f1981cx = f8;
+            this.f1982cx = f8;
             float f9 = lerp3 + f6;
-            this.f1982cy = f9;
+            this.f1983cy = f9;
             if (DialogStoriesCell.this.type == 0) {
                 DialogStoriesCell.this.backgroundPaint.setColor(Theme.getColor(Theme.key_actionBarDefault));
             } else {
                 DialogStoriesCell.this.backgroundPaint.setColor(Theme.getColor(Theme.key_actionBarDefaultArchived));
             }
             if (this.progressToCollapsed != BitmapDescriptorFactory.HUE_RED) {
-                canvas.drawCircle(this.f1981cx, this.f1982cy, AndroidUtilities.m104dp(3) + f6, DialogStoriesCell.this.backgroundPaint);
+                canvas.drawCircle(this.f1982cx, this.f1983cy, AndroidUtilities.m104dp(3) + f6, DialogStoriesCell.this.backgroundPaint);
             }
             canvas.save();
             float f10 = this.bounceScale;
-            canvas.scale(f10, f10, this.f1981cx, this.f1982cy);
+            canvas.scale(f10, f10, this.f1982cx, this.f1983cy);
             if (this.radialProgress == null) {
                 this.radialProgress = DialogStoriesCell.this.radialProgress;
             }
@@ -1336,7 +1336,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
                     StoriesUtilities.AvatarStoryParams avatarStoryParams3 = this.params;
                     float f13 = f12 * avatarStoryParams3.progressToSegments;
                     avatarStoryParams3.animate = !this.progressWasDrawn;
-                    avatarStoryParams3.progressToArc = getArcProgress(this.f1981cx, f6);
+                    avatarStoryParams3.progressToArc = getArcProgress(this.f1982cx, f6);
                     StoriesUtilities.AvatarStoryParams avatarStoryParams4 = this.params;
                     avatarStoryParams4.isLast = this.isLast;
                     avatarStoryParams4.isFirst = this.isFirst;
@@ -1382,9 +1382,9 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
                 if (this.drawAvatar) {
                     canvas.save();
                     float f14 = 1.0f - clamp;
-                    canvas.scale(f14, f14, this.f1981cx + AndroidUtilities.m104dp(16), this.f1982cy + AndroidUtilities.m104dp(16));
-                    drawPlus(canvas, this.f1981cx, this.f1982cy, 1.0f);
-                    drawFail(canvas, this.f1981cx, this.f1982cy, f12);
+                    canvas.scale(f14, f14, this.f1982cx + AndroidUtilities.m104dp(16), this.f1983cy + AndroidUtilities.m104dp(16));
+                    drawPlus(canvas, this.f1982cx, this.f1983cy, 1.0f);
+                    drawFail(canvas, this.f1982cx, this.f1983cy, f12);
                     canvas.restore();
                 }
             }
@@ -1606,7 +1606,7 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
             }
             if (!this.mini) {
                 DialogStoriesCell dialogStoriesCell = DialogStoriesCell.this;
-                f4 = 1.0f - Utilities.clamp(dialogStoriesCell.collapsedProgress / dialogStoriesCell.f1980K, 1.0f, (float) BitmapDescriptorFactory.HUE_RED);
+                f4 = 1.0f - Utilities.clamp(dialogStoriesCell.collapsedProgress / dialogStoriesCell.f1981K, 1.0f, (float) BitmapDescriptorFactory.HUE_RED);
             }
             this.textAlphaTransition = f4;
             this.textViewContainer.setAlpha(f4 * this.textAlpha);
@@ -1643,8 +1643,8 @@ public class DialogStoriesCell extends FrameLayout implements NotificationCenter
 
     /* JADX INFO: Access modifiers changed from: private */
     public Drawable createVerifiedDrawable() {
-        final Drawable mutate = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.verified_area).mutate();
-        final Drawable mutate2 = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.verified_check).mutate();
+        final Drawable mutate = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.verified_area).mutate();
+        final Drawable mutate2 = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.verified_check).mutate();
         CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, mutate2) { // from class: org.telegram.ui.Stories.DialogStoriesCell.7
             int lastColor;
 

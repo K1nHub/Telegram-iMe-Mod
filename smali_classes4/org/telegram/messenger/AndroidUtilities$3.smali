@@ -1,14 +1,11 @@
 .class Lorg/telegram/messenger/AndroidUtilities$3;
-.super Ljava/lang/Object;
+.super Landroid/text/style/ClickableSpan;
 .source "AndroidUtilities.java"
-
-# interfaces
-.implements Landroid/view/View$OnLayoutChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/messenger/AndroidUtilities;->doOnLayout(Landroid/view/View;Ljava/lang/Runnable;)V
+    value = Lorg/telegram/messenger/AndroidUtilities;->replaceSingleLink(Ljava/lang/String;I)Landroid/text/SpannableStringBuilder;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,39 +15,44 @@
 
 
 # instance fields
-.field final synthetic val$runnable:Ljava/lang/Runnable;
-
-.field final synthetic val$view:Landroid/view/View;
+.field final synthetic val$color:I
 
 
 # direct methods
-.method constructor <init>(Landroid/view/View;Ljava/lang/Runnable;)V
+.method constructor <init>(I)V
     .locals 0
 
-    .line 969
-    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$view:Landroid/view/View;
+    .line 699
+    iput p1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$color:I
 
-    iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$runnable:Ljava/lang/Runnable;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onLayoutChange(Landroid/view/View;IIIIIIII)V
+.method public onClick(Landroid/view/View;)V
     .locals 0
 
-    .line 972
-    iget-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$view:Landroid/view/View;
+    return-void
+.end method
 
-    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+.method public updateDrawState(Landroid/text/TextPaint;)V
+    .locals 1
 
-    .line 973
-    iget-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$runnable:Ljava/lang/Runnable;
+    .line 702
+    invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    const/4 v0, 0x0
+
+    .line 703
+    invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
+
+    .line 704
+    iget v0, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$color:I
+
+    invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setColor(I)V
 
     return-void
 .end method

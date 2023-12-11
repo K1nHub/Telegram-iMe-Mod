@@ -10,15 +10,9 @@
 
 .field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:I
-
-.field public final synthetic f$4:J
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;IIJ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,31 +21,19 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda69;->f$1:Ljava/util/ArrayList;
 
-    iput p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda69;->f$2:I
-
-    iput p4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda69;->f$3:I
-
-    iput-wide p5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda69;->f$4:J
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda69;->f$0:Lorg/telegram/messenger/MediaDataController;
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda69;->f$1:Ljava/util/ArrayList;
 
-    iget v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda69;->f$2:I
-
-    iget v3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda69;->f$3:I
-
-    iget-wide v4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda69;->f$4:J
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$gJj4wcwgmBLv65XE6o4Iv1LqTiQ(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;IIJ)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$rnUTzfop9WlybZ4kKtt5p2_toMg(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;)V
 
     return-void
 .end method

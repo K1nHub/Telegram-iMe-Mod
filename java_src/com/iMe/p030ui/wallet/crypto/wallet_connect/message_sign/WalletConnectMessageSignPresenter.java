@@ -12,7 +12,7 @@ import com.iMe.utils.extentions.common.StringExtKt;
 import com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* compiled from: WalletConnectMessageSignPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignPresenter */
@@ -57,7 +57,7 @@ public final class WalletConnectMessageSignPresenter extends BasePresenter<Walle
     }
 
     public final DialogModel getSendConfirmationDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_connect_message_sign_confirm_title), this.resourceManager.getString(C3634R.string.wallet_connect_message_sign_confirm_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_connect_transaction_button_sign));
+        return new DialogModel(this.resourceManager.getString(C3632R.string.wallet_connect_message_sign_confirm_title), this.resourceManager.getString(C3632R.string.wallet_connect_message_sign_confirm_description), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.wallet_connect_transaction_button_sign));
     }
 
     public final void approveSign() {
@@ -89,6 +89,6 @@ public final class WalletConnectMessageSignPresenter extends BasePresenter<Walle
         String address;
         String shortened$default;
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        return (eVMWallet == null || (address = eVMWallet.getAddress()) == null || (shortened$default = StringExtKt.shortened$default(address, 0, 1, null)) == null) ? this.resourceManager.getString(C3634R.string.wallet_connect_message_sign_address_hidden) : shortened$default;
+        return (eVMWallet == null || (address = eVMWallet.getAddress()) == null || (shortened$default = StringExtKt.shortened$default(address, 0, 1, null)) == null) ? this.resourceManager.getString(C3632R.string.wallet_connect_message_sign_address_hidden) : shortened$default;
     }
 }

@@ -27,7 +27,7 @@ public final class TrPhaseComputeVm implements TrComputePhase {
     private final boolean msgStateUsed;
 
     /* renamed from: r1 */
-    private final CellRef<TrComputePhaseAux> f2051r1;
+    private final CellRef<TrComputePhaseAux> f2052r1;
     private final boolean success;
     public static final Companion Companion = new Companion(null);
     private static final KSerializer<Object>[] $childSerializers = {null, null, null, null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0])};
@@ -38,7 +38,7 @@ public final class TrPhaseComputeVm implements TrComputePhase {
         }
         if (obj instanceof TrPhaseComputeVm) {
             TrPhaseComputeVm trPhaseComputeVm = (TrPhaseComputeVm) obj;
-            return this.success == trPhaseComputeVm.success && this.msgStateUsed == trPhaseComputeVm.msgStateUsed && this.accountActivated == trPhaseComputeVm.accountActivated && Intrinsics.areEqual(this.gasFees, trPhaseComputeVm.gasFees) && Intrinsics.areEqual(this.f2051r1, trPhaseComputeVm.f2051r1);
+            return this.success == trPhaseComputeVm.success && this.msgStateUsed == trPhaseComputeVm.msgStateUsed && this.accountActivated == trPhaseComputeVm.accountActivated && Intrinsics.areEqual(this.gasFees, trPhaseComputeVm.gasFees) && Intrinsics.areEqual(this.f2052r1, trPhaseComputeVm.f2052r1);
         }
         return false;
     }
@@ -62,7 +62,7 @@ public final class TrPhaseComputeVm implements TrComputePhase {
         }
         int i3 = (i + i2) * 31;
         boolean z2 = this.accountActivated;
-        return ((((i3 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.gasFees.hashCode()) * 31) + this.f2051r1.hashCode();
+        return ((((i3 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.gasFees.hashCode()) * 31) + this.f2052r1.hashCode();
     }
 
     public /* synthetic */ TrPhaseComputeVm(int i, boolean z, boolean z2, boolean z3, Coins coins, CellRef cellRef, SerializationConstructorMarker serializationConstructorMarker) {
@@ -73,7 +73,7 @@ public final class TrPhaseComputeVm implements TrComputePhase {
         this.msgStateUsed = z2;
         this.accountActivated = z3;
         this.gasFees = coins;
-        this.f2051r1 = cellRef;
+        this.f2052r1 = cellRef;
     }
 
     public TrPhaseComputeVm(boolean z, boolean z2, boolean z3, Coins gasFees, CellRef<TrComputePhaseAux> r1) {
@@ -83,7 +83,7 @@ public final class TrPhaseComputeVm implements TrComputePhase {
         this.msgStateUsed = z2;
         this.accountActivated = z3;
         this.gasFees = gasFees;
-        this.f2051r1 = r1;
+        this.f2052r1 = r1;
     }
 
     public static final /* synthetic */ void write$Self(TrPhaseComputeVm trPhaseComputeVm, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
@@ -92,7 +92,7 @@ public final class TrPhaseComputeVm implements TrComputePhase {
         compositeEncoder.encodeBooleanElement(serialDescriptor, 1, trPhaseComputeVm.msgStateUsed);
         compositeEncoder.encodeBooleanElement(serialDescriptor, 2, trPhaseComputeVm.accountActivated);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 3, Coins$$serializer.INSTANCE, trPhaseComputeVm.gasFees);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 4, kSerializerArr[4], trPhaseComputeVm.f2051r1);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 4, kSerializerArr[4], trPhaseComputeVm.f2052r1);
     }
 
     public final boolean getSuccess() {
@@ -112,7 +112,7 @@ public final class TrPhaseComputeVm implements TrComputePhase {
     }
 
     public final CellRef<TrComputePhaseAux> getR1() {
-        return this.f2051r1;
+        return this.f2052r1;
     }
 
     public String toString() {
@@ -169,7 +169,7 @@ public final class TrPhaseComputeVm implements TrComputePhase {
         open.field("msg_state_used", Boolean.valueOf(this.msgStateUsed));
         open.field("account_activated", Boolean.valueOf(this.accountActivated));
         open.field("gas_fees", this.gasFees);
-        open.field(this.f2051r1);
+        open.field(this.f2052r1);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

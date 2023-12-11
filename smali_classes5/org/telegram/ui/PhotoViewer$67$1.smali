@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer$67;)V
     .locals 0
 
-    .line 15014
+    .line 15016
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$67$1;->this$1:Lorg/telegram/ui/PhotoViewer$67;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onAnimationEnd$0()V
     .locals 2
 
-    .line 15018
+    .line 15020
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$67$1;->this$1:Lorg/telegram/ui/PhotoViewer$67;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$67;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -52,7 +52,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
-    .line 15019
+    .line 15021
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$67$1;->this$1:Lorg/telegram/ui/PhotoViewer$67;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$67;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -63,7 +63,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 15020
+    .line 15022
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$67$1;->this$1:Lorg/telegram/ui/PhotoViewer$67;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$67;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -74,7 +74,7 @@
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 15021
+    .line 15023
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$67$1;->this$1:Lorg/telegram/ui/PhotoViewer$67;
 
     iget-object v0, v0, Lorg/telegram/ui/PhotoViewer$67;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -83,7 +83,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$28102(Lorg/telegram/ui/PhotoViewer;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 15023
+    .line 15025
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$67$1;->this$1:Lorg/telegram/ui/PhotoViewer$67;
 
@@ -101,7 +101,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 15017
+    .line 15019
     new-instance p1, Lorg/telegram/ui/PhotoViewer$67$1$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/PhotoViewer$67$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PhotoViewer$67$1;)V

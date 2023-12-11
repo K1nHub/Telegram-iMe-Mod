@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment$$ExternalSyntheticLambda4;->f$1:Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;
 
-    invoke-static {v0, v1, p1, p2, p3}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$e5GEuKR4wPG0wNFRpVuOrLk9HZA(Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
+    invoke-static {v0, v1, p1, p2, p3}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;->$r8$lambda$xi-XeT6GNsykce0jgFF6ZgDgHdc(Lcom/iMe/ui/wallet/home/adapter/BalancesRecycleAdapter;Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
 
     return-void
 .end method

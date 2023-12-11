@@ -79,9 +79,9 @@ public final class DescriptorUtilsKt {
         MemberScope memberScope = moduleDescriptor.getPackage(parent).getMemberScope();
         Name shortName = topLevelClassFqName.shortName();
         Intrinsics.checkNotNullExpressionValue(shortName, "topLevelClassFqName.shortName()");
-        ClassifierDescriptor mo2053getContributedClassifier = memberScope.mo2053getContributedClassifier(shortName, location);
-        if (mo2053getContributedClassifier instanceof ClassDescriptor) {
-            return (ClassDescriptor) mo2053getContributedClassifier;
+        ClassifierDescriptor mo2055getContributedClassifier = memberScope.mo2055getContributedClassifier(shortName, location);
+        if (mo2055getContributedClassifier instanceof ClassDescriptor) {
+            return (ClassDescriptor) mo2055getContributedClassifier;
         }
         return null;
     }
@@ -103,12 +103,12 @@ public final class DescriptorUtilsKt {
 
     public static final ClassDescriptor getSuperClassNotAny(ClassDescriptor classDescriptor) {
         Intrinsics.checkNotNullParameter(classDescriptor, "<this>");
-        for (KotlinType kotlinType : classDescriptor.getDefaultType().getConstructor().mo2052getSupertypes()) {
+        for (KotlinType kotlinType : classDescriptor.getDefaultType().getConstructor().mo2054getSupertypes()) {
             if (!KotlinBuiltIns.isAnyOrNullableAny(kotlinType)) {
-                ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-                if (DescriptorUtils.isClassOrEnumClass(mo2051getDeclarationDescriptor)) {
-                    Intrinsics.checkNotNull(mo2051getDeclarationDescriptor, "null cannot be cast to non-null type org.jetbrains.kotlin.descriptors.ClassDescriptor");
-                    return (ClassDescriptor) mo2051getDeclarationDescriptor;
+                ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+                if (DescriptorUtils.isClassOrEnumClass(mo2053getDeclarationDescriptor)) {
+                    Intrinsics.checkNotNull(mo2053getDeclarationDescriptor, "null cannot be cast to non-null type org.jetbrains.kotlin.descriptors.ClassDescriptor");
+                    return (ClassDescriptor) mo2053getDeclarationDescriptor;
                 }
             }
         }
@@ -255,9 +255,9 @@ public final class DescriptorUtilsKt {
 
     public static final ClassDescriptor getAnnotationClass(AnnotationDescriptor annotationDescriptor) {
         Intrinsics.checkNotNullParameter(annotationDescriptor, "<this>");
-        ClassifierDescriptor mo2051getDeclarationDescriptor = annotationDescriptor.getType().getConstructor().mo2051getDeclarationDescriptor();
-        if (mo2051getDeclarationDescriptor instanceof ClassDescriptor) {
-            return (ClassDescriptor) mo2051getDeclarationDescriptor;
+        ClassifierDescriptor mo2053getDeclarationDescriptor = annotationDescriptor.getType().getConstructor().mo2053getDeclarationDescriptor();
+        if (mo2053getDeclarationDescriptor instanceof ClassDescriptor) {
+            return (ClassDescriptor) mo2053getDeclarationDescriptor;
         }
         return null;
     }

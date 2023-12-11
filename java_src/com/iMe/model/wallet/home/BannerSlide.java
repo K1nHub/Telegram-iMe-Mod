@@ -3,134 +3,371 @@ package com.iMe.model.wallet.home;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum FAQ uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:444)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByField(EnumVisitor.java:368)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByWrappedInsn(EnumVisitor.java:333)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:318)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:258)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInvoke(EnumVisitor.java:289)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+import org.telegram.messenger.C3632R;
 /* compiled from: BannerSlide.kt */
 /* loaded from: classes3.dex */
-public final class BannerSlide {
-    private static final /* synthetic */ BannerSlide[] $VALUES;
-    public static final BannerSlide ASCENDEEX;
-    public static final BannerSlide BINANCE_PAY_FAQ;
-    public static final BannerSlide BINANCE_PAY_INFORMATION;
-    public static final BannerSlide BINANCE_PAY_MARKETPLACE;
-    public static final BannerSlide BINANCE_PAY_OPERATION_WITHOUT_FEE;
-    public static final BannerSlide CRYPTO_TRANSFERS;
-    public static final Companion Companion;
-    public static final BannerSlide FAQ;
-    public static final BannerSlide GATE;
-    public static final BannerSlide MULTI_NETWORKS;
-    public static final BannerSlide NON_CUSTODIAL;
-    public static final BannerSlide SAFE;
-    public static final BannerSlide STAKING;
-    public static final BannerSlide SWAP;
-    private final int action;
-    private final int animatedIcon;
-    private final int longDescription;
-    private final int shortDescription;
-    private final int title;
+public abstract class BannerSlide {
+    private final int actionTextResId;
+    private final int animatedIconResId;
+    private final int longDescriptionResId;
+    private final int shortDescriptionResId;
+    private final int titleResId;
 
-    private static final /* synthetic */ BannerSlide[] $values() {
-        return new BannerSlide[]{FAQ, NON_CUSTODIAL, SAFE, CRYPTO_TRANSFERS, SWAP, MULTI_NETWORKS, GATE, ASCENDEEX, STAKING, BINANCE_PAY_INFORMATION, BINANCE_PAY_OPERATION_WITHOUT_FEE, BINANCE_PAY_MARKETPLACE, BINANCE_PAY_FAQ};
+    public /* synthetic */ BannerSlide(int i, int i2, int i3, int i4, int i5, DefaultConstructorMarker defaultConstructorMarker) {
+        this(i, i2, i3, i4, i5);
     }
 
-    public static BannerSlide valueOf(String str) {
-        return (BannerSlide) Enum.valueOf(BannerSlide.class, str);
+    private BannerSlide(int i, int i2, int i3, int i4, int i5) {
+        this.titleResId = i;
+        this.shortDescriptionResId = i2;
+        this.longDescriptionResId = i3;
+        this.actionTextResId = i4;
+        this.animatedIconResId = i5;
     }
 
-    public static BannerSlide[] values() {
-        return (BannerSlide[]) $VALUES.clone();
+    public int getTitleResId() {
+        return this.titleResId;
     }
 
-    private BannerSlide(String str, int i, int i2, int i3, int i4, int i5, int i6) {
-        this.title = i2;
-        this.shortDescription = i3;
-        this.longDescription = i4;
-        this.action = i5;
-        this.animatedIcon = i6;
+    public int getShortDescriptionResId() {
+        return this.shortDescriptionResId;
     }
 
-    public int getTitle() {
-        return this.title;
+    public int getLongDescriptionResId() {
+        return this.longDescriptionResId;
     }
 
-    public int getShortDescription() {
-        return this.shortDescription;
+    public int getActionTextResId() {
+        return this.actionTextResId;
     }
 
-    public int getLongDescription() {
-        return this.longDescription;
-    }
-
-    public int getAction() {
-        return this.action;
-    }
-
-    public int getAnimatedIcon() {
-        return this.animatedIcon;
-    }
-
-    static {
-        int i = C3634R.string.wallet_banner_slide_faq_title;
-        int i2 = C3634R.string.wallet_banner_slide_faq_description;
-        int i3 = C3634R.string.wallet_banner_slide_faq_long_description;
-        int i4 = C3634R.string.common_next;
-        FAQ = new BannerSlide("FAQ", 0, i, i2, i3, i4, C3634R.raw.fork_faq);
-        NON_CUSTODIAL = new BannerSlide("NON_CUSTODIAL", 1, C3634R.string.wallet_banner_slide_non_custodial_title, C3634R.string.wallet_banner_slide_non_custodial_description, C3634R.string.wallet_banner_slide_non_custodial_long_description, C3634R.string.wallet_eth_backup_info_start_dialog_title, C3634R.raw.fork_non_custodial);
-        int i5 = C3634R.string.wallet_banner_slide_safe_title;
-        int i6 = C3634R.string.wallet_banner_slide_safe_description;
-        int i7 = C3634R.string.wallet_banner_slide_safe_long_description;
-        int i8 = C3634R.string.common_ok;
-        SAFE = new BannerSlide("SAFE", 2, i5, i6, i7, i8, C3634R.raw.fork_safe);
-        CRYPTO_TRANSFERS = new BannerSlide("CRYPTO_TRANSFERS", 3, C3634R.string.wallet_banner_slide_crypto_transfers_title, C3634R.string.wallet_banner_slide_crypto_transfers_description, C3634R.string.wallet_banner_slide_crypto_transfers_long_description, C3634R.string.transfer_via_wallet_action_item, C3634R.raw.fork_crypto_transfers);
-        SWAP = new BannerSlide("SWAP", 4, C3634R.string.wallet_banner_slide_swap_title, C3634R.string.wallet_banner_slide_swap_description, C3634R.string.wallet_banner_slide_swap_long_description, C3634R.string.wallet_swap_process_button_exchange, C3634R.raw.fork_swap);
-        MULTI_NETWORKS = new BannerSlide("MULTI_NETWORKS", 5, C3634R.string.wallet_banner_slide_multi_networks_title, C3634R.string.wallet_banner_slide_multi_networks_description, C3634R.string.wallet_banner_slide_multi_networks_long_description, i8, C3634R.raw.fork_multi_networking);
-        GATE = new BannerSlide("GATE", 6, C3634R.string.wallet_banner_slide_gate_title, C3634R.string.wallet_banner_slide_gate_description, C3634R.string.wallet_banner_slide_gate_long_description, i4, C3634R.raw.fork_gate);
-        ASCENDEEX = new BannerSlide("ASCENDEEX", 7, C3634R.string.wallet_banner_slide_ascendeex_title, C3634R.string.wallet_banner_slide_ascendeex_description, C3634R.string.wallet_banner_slide_ascendeex_long_description, i4, C3634R.raw.fork_ascendeex);
-        STAKING = new BannerSlide("STAKING", 8, C3634R.string.wallet_banner_slide_staking_title, C3634R.string.wallet_banner_slide_staking_description, C3634R.string.wallet_banner_slide_staking_long_description, i4, C3634R.raw.fork_staking_profit);
-        BINANCE_PAY_INFORMATION = new BannerSlide("BINANCE_PAY_INFORMATION", 9, C3634R.string.wallet_banner_slide_binance_pay_information_title, C3634R.string.wallet_banner_slide_binance_pay_information_description, C3634R.string.wallet_banner_slide_binance_pay_information_long_description, i8, C3634R.raw.fork_binance_pay_information);
-        BINANCE_PAY_OPERATION_WITHOUT_FEE = new BannerSlide("BINANCE_PAY_OPERATION_WITHOUT_FEE", 10, C3634R.string.wallet_banner_slide_binance_pay_operation_without_fee_title, C3634R.string.wallet_banner_slide_binance_pay_operation_without_fee_description, C3634R.string.wallet_banner_slide_binance_pay_operation_without_fee_long_description, i8, C3634R.raw.fork_binance_pay_operation_without_fee);
-        BINANCE_PAY_MARKETPLACE = new BannerSlide("BINANCE_PAY_MARKETPLACE", 11, C3634R.string.wallet_banner_slide_binance_pay_marketplace_title, C3634R.string.wallet_banner_slide_binance_pay_marketplace_description, C3634R.string.wallet_banner_slide_binance_pay_marketplace_long_description, i4, C3634R.raw.fork_binance_pay_marketplace);
-        BINANCE_PAY_FAQ = new BannerSlide("BINANCE_PAY_FAQ", 12, C3634R.string.wallet_banner_slide_binance_pay_faq_title, C3634R.string.wallet_banner_slide_binance_pay_faq_description, C3634R.string.wallet_banner_slide_binance_pay_faq_long_description, i4, C3634R.raw.fork_binance_pay_faq);
-        $VALUES = $values();
-        Companion = new Companion(null);
-    }
-
-    public final int getActionButtonText(CryptoAccessManager cryptoAccessManager) {
-        Intrinsics.checkNotNullParameter(cryptoAccessManager, "cryptoAccessManager");
-        if ((this == SWAP || this == NON_CUSTODIAL) && !cryptoAccessManager.isCurrentBlockchainWalletCreated()) {
-            return C3634R.string.common_ok;
-        }
-        return getAction();
+    public int getAnimatedIconResId() {
+        return this.animatedIconResId;
     }
 
     /* compiled from: BannerSlide.kt */
     /* loaded from: classes3.dex */
-    public static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
+    public static abstract class Crypto extends BannerSlide {
+        public static final Companion Companion = new Companion(null);
+        private final int actionTextResId;
+        private final int animatedIconResId;
+        private final int longDescriptionResId;
+        private final int shortDescriptionResId;
+        private final int titleResId;
+
+        public /* synthetic */ Crypto(int i, int i2, int i3, int i4, int i5, DefaultConstructorMarker defaultConstructorMarker) {
+            this(i, i2, i3, i4, i5);
         }
 
-        private Companion() {
+        @Override // com.iMe.model.wallet.home.BannerSlide
+        public int getTitleResId() {
+            return this.titleResId;
         }
 
-        public final BannerSlide[] getCryptoBanners() {
-            return new BannerSlide[]{BannerSlide.FAQ, BannerSlide.NON_CUSTODIAL, BannerSlide.SAFE, BannerSlide.CRYPTO_TRANSFERS, BannerSlide.SWAP, BannerSlide.MULTI_NETWORKS, BannerSlide.GATE, BannerSlide.ASCENDEEX, BannerSlide.STAKING};
+        @Override // com.iMe.model.wallet.home.BannerSlide
+        public int getShortDescriptionResId() {
+            return this.shortDescriptionResId;
         }
 
-        public final BannerSlide[] getBinancePayBanners() {
-            return new BannerSlide[]{BannerSlide.BINANCE_PAY_INFORMATION, BannerSlide.BINANCE_PAY_OPERATION_WITHOUT_FEE, BannerSlide.BINANCE_PAY_MARKETPLACE, BannerSlide.BINANCE_PAY_FAQ};
+        @Override // com.iMe.model.wallet.home.BannerSlide
+        public int getLongDescriptionResId() {
+            return this.longDescriptionResId;
         }
+
+        public /* synthetic */ Crypto(int i, int i2, int i3, int i4, int i5, int i6, DefaultConstructorMarker defaultConstructorMarker) {
+            this(i, i2, i3, (i6 & 8) != 0 ? C3632R.string.common_next : i4, i5, null);
+        }
+
+        @Override // com.iMe.model.wallet.home.BannerSlide
+        public int getActionTextResId() {
+            return this.actionTextResId;
+        }
+
+        @Override // com.iMe.model.wallet.home.BannerSlide
+        public int getAnimatedIconResId() {
+            return this.animatedIconResId;
+        }
+
+        private Crypto(int i, int i2, int i3, int i4, int i5) {
+            super(i, i2, i3, i4, i5, null);
+            this.titleResId = i;
+            this.shortDescriptionResId = i2;
+            this.longDescriptionResId = i3;
+            this.actionTextResId = i4;
+            this.animatedIconResId = i5;
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class AttractorTestnet extends Crypto {
+            public static final AttractorTestnet INSTANCE = new AttractorTestnet();
+
+            /* JADX WARN: Illegal instructions before constructor call */
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+                To view partially-correct add '--show-bad-code' argument
+            */
+            private AttractorTestnet() {
+                /*
+                    r8 = this;
+                    int r1 = org.telegram.messenger.C3632R.string.wallet_banner_slide_attractor_testnet_title
+                    int r3 = org.telegram.messenger.C3632R.string.wallet_banner_slide_attractor_testnet_description
+                    int r5 = org.telegram.messenger.C3632R.raw.fork_attractor
+                    r4 = 0
+                    r6 = 8
+                    r7 = 0
+                    r0 = r8
+                    r2 = r3
+                    r0.<init>(r1, r2, r3, r4, r5, r6, r7)
+                    return
+                */
+                throw new UnsupportedOperationException("Method not decompiled: com.iMe.model.wallet.home.BannerSlide.Crypto.AttractorTestnet.<init>():void");
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class AttractorGiveaway extends Crypto {
+            public static final AttractorGiveaway INSTANCE = new AttractorGiveaway();
+
+            /* JADX WARN: Illegal instructions before constructor call */
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+                To view partially-correct add '--show-bad-code' argument
+            */
+            private AttractorGiveaway() {
+                /*
+                    r8 = this;
+                    int r1 = org.telegram.messenger.C3632R.string.wallet_banner_slide_attractor_giveaway_title
+                    int r3 = org.telegram.messenger.C3632R.string.wallet_banner_slide_attractor_giveaway_description
+                    int r5 = org.telegram.messenger.C3632R.raw.fork_attractor_giveaway
+                    r4 = 0
+                    r6 = 8
+                    r7 = 0
+                    r0 = r8
+                    r2 = r3
+                    r0.<init>(r1, r2, r3, r4, r5, r6, r7)
+                    return
+                */
+                throw new UnsupportedOperationException("Method not decompiled: com.iMe.model.wallet.home.BannerSlide.Crypto.AttractorGiveaway.<init>():void");
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class FAQ extends Crypto {
+            public static final FAQ INSTANCE = new FAQ();
+
+            private FAQ() {
+                super(C3632R.string.wallet_banner_slide_faq_title, C3632R.string.wallet_banner_slide_faq_description, C3632R.string.wallet_banner_slide_faq_long_description, 0, C3632R.raw.fork_faq, 8, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class NonCustodial extends Crypto {
+            public static final NonCustodial INSTANCE = new NonCustodial();
+
+            private NonCustodial() {
+                super(C3632R.string.wallet_banner_slide_non_custodial_title, C3632R.string.wallet_banner_slide_non_custodial_description, C3632R.string.wallet_banner_slide_non_custodial_long_description, C3632R.string.wallet_eth_backup_info_start_dialog_title, C3632R.raw.fork_non_custodial, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class Safe extends Crypto {
+            public static final Safe INSTANCE = new Safe();
+
+            private Safe() {
+                super(C3632R.string.wallet_banner_slide_safe_title, C3632R.string.wallet_banner_slide_safe_description, C3632R.string.wallet_banner_slide_safe_long_description, C3632R.string.common_ok, C3632R.raw.fork_safe, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class CryptoTransfers extends Crypto {
+            public static final CryptoTransfers INSTANCE = new CryptoTransfers();
+
+            private CryptoTransfers() {
+                super(C3632R.string.wallet_banner_slide_crypto_transfers_title, C3632R.string.wallet_banner_slide_crypto_transfers_description, C3632R.string.wallet_banner_slide_crypto_transfers_long_description, C3632R.string.transfer_via_wallet_action_item, C3632R.raw.fork_crypto_transfers, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class Swap extends Crypto {
+            public static final Swap INSTANCE = new Swap();
+
+            private Swap() {
+                super(C3632R.string.wallet_banner_slide_swap_title, C3632R.string.wallet_banner_slide_swap_description, C3632R.string.wallet_banner_slide_swap_long_description, C3632R.string.wallet_swap_process_button_exchange, C3632R.raw.fork_swap, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class MultiNetworks extends Crypto {
+            public static final MultiNetworks INSTANCE = new MultiNetworks();
+
+            private MultiNetworks() {
+                super(C3632R.string.wallet_banner_slide_multi_networks_title, C3632R.string.wallet_banner_slide_multi_networks_description, C3632R.string.wallet_banner_slide_multi_networks_long_description, C3632R.string.common_ok, C3632R.raw.fork_multi_networking, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class Gate extends Crypto {
+            public static final Gate INSTANCE = new Gate();
+
+            private Gate() {
+                super(C3632R.string.wallet_banner_slide_gate_title, C3632R.string.wallet_banner_slide_gate_description, C3632R.string.wallet_banner_slide_gate_long_description, 0, C3632R.raw.fork_gate, 8, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class AscendeEX extends Crypto {
+            public static final AscendeEX INSTANCE = new AscendeEX();
+
+            private AscendeEX() {
+                super(C3632R.string.wallet_banner_slide_ascendeex_title, C3632R.string.wallet_banner_slide_ascendeex_description, C3632R.string.wallet_banner_slide_ascendeex_long_description, 0, C3632R.raw.fork_ascendeex, 8, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class Staking extends Crypto {
+            public static final Staking INSTANCE = new Staking();
+
+            private Staking() {
+                super(C3632R.string.wallet_banner_slide_staking_title, C3632R.string.wallet_banner_slide_staking_description, C3632R.string.wallet_banner_slide_staking_long_description, 0, C3632R.raw.fork_staking_profit, 8, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class Companion {
+            public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+                this();
+            }
+
+            private Companion() {
+            }
+
+            public final Crypto[] getBanners() {
+                return new Crypto[]{AttractorTestnet.INSTANCE, AttractorGiveaway.INSTANCE, FAQ.INSTANCE, NonCustodial.INSTANCE, Safe.INSTANCE, CryptoTransfers.INSTANCE, Swap.INSTANCE, MultiNetworks.INSTANCE, Gate.INSTANCE, AscendeEX.INSTANCE, Staking.INSTANCE};
+            }
+        }
+    }
+
+    /* compiled from: BannerSlide.kt */
+    /* loaded from: classes3.dex */
+    public static abstract class Binance extends BannerSlide {
+        public static final Companion Companion = new Companion(null);
+        private final int actionTextResId;
+        private final int animatedIconResId;
+        private final int longDescriptionResId;
+        private final int shortDescriptionResId;
+        private final int titleResId;
+
+        public /* synthetic */ Binance(int i, int i2, int i3, int i4, int i5, DefaultConstructorMarker defaultConstructorMarker) {
+            this(i, i2, i3, i4, i5);
+        }
+
+        @Override // com.iMe.model.wallet.home.BannerSlide
+        public int getTitleResId() {
+            return this.titleResId;
+        }
+
+        @Override // com.iMe.model.wallet.home.BannerSlide
+        public int getShortDescriptionResId() {
+            return this.shortDescriptionResId;
+        }
+
+        @Override // com.iMe.model.wallet.home.BannerSlide
+        public int getLongDescriptionResId() {
+            return this.longDescriptionResId;
+        }
+
+        @Override // com.iMe.model.wallet.home.BannerSlide
+        public int getActionTextResId() {
+            return this.actionTextResId;
+        }
+
+        @Override // com.iMe.model.wallet.home.BannerSlide
+        public int getAnimatedIconResId() {
+            return this.animatedIconResId;
+        }
+
+        private Binance(int i, int i2, int i3, int i4, int i5) {
+            super(i, i2, i3, i4, i5, null);
+            this.titleResId = i;
+            this.shortDescriptionResId = i2;
+            this.longDescriptionResId = i3;
+            this.actionTextResId = i4;
+            this.animatedIconResId = i5;
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class Information extends Binance {
+            public static final Information INSTANCE = new Information();
+
+            private Information() {
+                super(C3632R.string.wallet_banner_slide_binance_pay_information_title, C3632R.string.wallet_banner_slide_binance_pay_information_description, C3632R.string.wallet_banner_slide_binance_pay_information_long_description, C3632R.string.common_ok, C3632R.raw.fork_binance_pay_information, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class OperationWithoutFee extends Binance {
+            public static final OperationWithoutFee INSTANCE = new OperationWithoutFee();
+
+            private OperationWithoutFee() {
+                super(C3632R.string.wallet_banner_slide_binance_pay_operation_without_fee_title, C3632R.string.wallet_banner_slide_binance_pay_operation_without_fee_description, C3632R.string.wallet_banner_slide_binance_pay_operation_without_fee_long_description, C3632R.string.common_ok, C3632R.raw.fork_binance_pay_operation_without_fee, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class Marketplace extends Binance {
+            public static final Marketplace INSTANCE = new Marketplace();
+
+            private Marketplace() {
+                super(C3632R.string.wallet_banner_slide_binance_pay_marketplace_title, C3632R.string.wallet_banner_slide_binance_pay_marketplace_description, C3632R.string.wallet_banner_slide_binance_pay_marketplace_long_description, C3632R.string.common_next, C3632R.raw.fork_binance_pay_marketplace, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class FAQ extends Binance {
+            public static final FAQ INSTANCE = new FAQ();
+
+            private FAQ() {
+                super(C3632R.string.wallet_banner_slide_binance_pay_faq_title, C3632R.string.wallet_banner_slide_binance_pay_faq_description, C3632R.string.wallet_banner_slide_binance_pay_faq_long_description, C3632R.string.common_next, C3632R.raw.fork_binance_pay_faq, null);
+            }
+        }
+
+        /* compiled from: BannerSlide.kt */
+        /* loaded from: classes3.dex */
+        public static final class Companion {
+            public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+                this();
+            }
+
+            private Companion() {
+            }
+
+            public final Binance[] getBanners() {
+                return new Binance[]{Information.INSTANCE, OperationWithoutFee.INSTANCE, Marketplace.INSTANCE, FAQ.INSTANCE};
+            }
+        }
+    }
+
+    public final int getActionButtonText(CryptoAccessManager cryptoAccessManager) {
+        Intrinsics.checkNotNullParameter(cryptoAccessManager, "cryptoAccessManager");
+        if ((!Intrinsics.areEqual(this, Crypto.Swap.INSTANCE) && !Intrinsics.areEqual(this, Crypto.NonCustodial.INSTANCE)) || cryptoAccessManager.isCurrentBlockchainWalletCreated()) {
+            return getActionTextResId();
+        }
+        return C3632R.string.common_ok;
     }
 }

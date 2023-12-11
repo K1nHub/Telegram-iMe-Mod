@@ -212,14 +212,14 @@ public class VideoPlayerHolderBase {
         }
         VideoPlayer videoPlayer2 = new VideoPlayer(false, z);
         this.videoPlayer = videoPlayer2;
-        videoPlayer2.setDelegate(new C36852());
+        videoPlayer2.setDelegate(new C36832());
         this.videoPlayer.setIsStory();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.video.VideoPlayerHolderBase$2 */
     /* loaded from: classes4.dex */
-    public class C36852 implements VideoPlayer.VideoPlayerDelegate {
+    public class C36832 implements VideoPlayer.VideoPlayerDelegate {
         @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
         public /* bridge */ /* synthetic */ void onRenderedFirstFrame(AnalyticsListener.EventTime eventTime) {
             VideoPlayer.VideoPlayerDelegate.CC.$default$onRenderedFirstFrame(this, eventTime);
@@ -248,7 +248,7 @@ public class VideoPlayerHolderBase {
         public void onVideoSizeChanged(int i, int i2, int i3, float f) {
         }
 
-        C36852() {
+        C36832() {
         }
 
         @Override // org.telegram.p043ui.Components.VideoPlayer.VideoPlayerDelegate
@@ -282,7 +282,7 @@ public class VideoPlayerHolderBase {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.video.VideoPlayerHolderBase$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoPlayerHolderBase.C36852.this.lambda$onRenderedFirstFrame$0();
+                    VideoPlayerHolderBase.C36832.this.lambda$onRenderedFirstFrame$0();
                 }
             }, VideoPlayerHolderBase.this.surfaceView == null ? 16L : 32L);
         }

@@ -63,7 +63,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC$Chat;
@@ -211,12 +211,12 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
-                m1696invoke(result);
+                m1697invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1696invoke(Result<? extends TokenBalance> it) {
+            public final void m1697invoke(Result<? extends TokenBalance> it) {
                 ResourceManager resourceManager;
                 ResourceManager resourceManager2;
                 CryptoBoxTokenApprovalStatus cryptoBoxTokenApprovalStatus;
@@ -228,7 +228,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
                     TokenBalance tokenBalance2 = (TokenBalance) ((Result.Success) result).getData();
                     TokenDetailed token = tokenBalance2.getToken();
                     resourceManager2 = CreateCryptoBoxPresenter.this.resourceManager;
-                    String string = resourceManager2.getString(C3634R.string.wallet_common_token_name_with_ticker, token.getName(), token.getTicker());
+                    String string = resourceManager2.getString(C3632R.string.wallet_common_token_name_with_ticker, token.getName(), token.getTicker());
                     String avatarUrl = token.getAvatarUrl();
                     int decimals = token.getDecimals();
                     ((CreateCryptoBoxView) CreateCryptoBoxPresenter.this.getViewState()).renderSelectedToken(string, avatarUrl, decimals, BalanceFormatter.format$default(Double.valueOf(tokenBalance2.getTotal()), null, 2, null) + ' ' + token.getTicker());
@@ -307,7 +307,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
     public final void onChatSelected(Long l) {
         if (l == null) {
-            ((CreateCryptoBoxView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.common_error_unexpected));
+            ((CreateCryptoBoxView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.common_error_unexpected));
             return;
         }
         TLRPC$Chat tLRPC$Chat = this.selectedChat;
@@ -339,18 +339,18 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
-                m1695invoke(bool);
+                m1696invoke(bool);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1695invoke(Boolean it) {
+            public final void m1696invoke(Boolean it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Boolean bool = it;
                 if (!TLRPC$Chat.this.creator) {
                     resourceManager = this.resourceManager;
-                    ((CreateCryptoBoxView) this.getViewState()).showToast(resourceManager.getString(C3634R.string.cryptobox_create_user_not_owner));
+                    ((CreateCryptoBoxView) this.getViewState()).showToast(resourceManager.getString(C3632R.string.cryptobox_create_user_not_owner));
                 } else if (bool.booleanValue()) {
                     this.onWalletBotAdminRightsGranted(TLRPC$Chat.this);
                 } else {
@@ -412,7 +412,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
     public final void onCryptoBoxInfoClick() {
         CryptoBoxCreationRules cryptoBoxCreationRules = this.creationRules;
         if (cryptoBoxCreationRules != null) {
-            ((CreateCryptoBoxView) getViewState()).showCryptoBoxInfoDialog(this.resourceManager.getString(C3634R.string.cryptobox_create_cryptobox_information_description, BalanceFormatter.INSTANCE.formatTokenBalance(new BigDecimal(String.valueOf(cryptoBoxCreationRules.getFeePerUser())), cryptoBoxCreationRules.getFeeToken())));
+            ((CreateCryptoBoxView) getViewState()).showCryptoBoxInfoDialog(this.resourceManager.getString(C3632R.string.cryptobox_create_cryptobox_information_description, BalanceFormatter.INSTANCE.formatTokenBalance(new BigDecimal(String.valueOf(cryptoBoxCreationRules.getFeePerUser())), cryptoBoxCreationRules.getFeeToken())));
         }
     }
 
@@ -520,7 +520,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
                     string = "";
                 } else {
                     resourceManager = CreateCryptoBoxPresenter.this.resourceManager;
-                    int i = C3634R.string.cryptobox_create_cryptobox_information_amount;
+                    int i = C3632R.string.cryptobox_create_cryptobox_information_amount;
                     Object[] objArr = new Object[2];
                     objArr[0] = BalanceFormatter.INSTANCE.formatTokenBalance(multiply, token);
                     tokenBalance2 = CreateCryptoBoxPresenter.this.selectedTokenBalance;
@@ -547,12 +547,12 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxCreationRulesItem> result) {
-                m1698invoke(result);
+                m1699invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1698invoke(Result<? extends CryptoBoxCreationRulesItem> it) {
+            public final void m1699invoke(Result<? extends CryptoBoxCreationRulesItem> it) {
                 TransactionStep transactionStep;
                 ResourceManager resourceManager;
                 TransactionStep transactionStep2;
@@ -566,7 +566,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
                 if (result instanceof Result.Success) {
                     transactionStep2 = CreateCryptoBoxPresenter.this.currentStep;
                     if (Intrinsics.areEqual(transactionStep2, TransactionStep.CryptoBoxExecute.INSTANCE)) {
-                        CreateCryptoBoxPresenter.setupTransactionAction$default(CreateCryptoBoxPresenter.this, new TransactionStep.Idle(C3634R.string.common_create), null, 2, null);
+                        CreateCryptoBoxPresenter.setupTransactionAction$default(CreateCryptoBoxPresenter.this, new TransactionStep.Idle(C3632R.string.common_create), null, 2, null);
                     }
                     ((CreateCryptoBoxView) CreateCryptoBoxPresenter.this.getViewState()).renderCryptoBoxCreationRules((CryptoBoxCreationRulesItem) ((Result.Success) result).getData(), true);
                     CreateCryptoBoxPresenter.this.validatePrepareConditions();
@@ -591,9 +591,9 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
                 } else if (result instanceof Result.Error) {
                     transactionStep = CreateCryptoBoxPresenter.this.currentStep;
                     if (Intrinsics.areEqual(transactionStep, TransactionStep.CryptoBoxExecute.INSTANCE)) {
-                        CreateCryptoBoxPresenter.setupTransactionAction$default(CreateCryptoBoxPresenter.this, new TransactionStep.Idle(C3634R.string.common_create), null, 2, null);
+                        CreateCryptoBoxPresenter.setupTransactionAction$default(CreateCryptoBoxPresenter.this, new TransactionStep.Idle(C3632R.string.common_create), null, 2, null);
                     }
-                    CreateCryptoBoxPresenter.this.renderCryptoBoxRulesPlaceholderData(C3634R.string.common_error);
+                    CreateCryptoBoxPresenter.this.renderCryptoBoxRulesPlaceholderData(C3632R.string.common_error);
                     resourceManager = CreateCryptoBoxPresenter.this.resourceManager;
                     ((CreateCryptoBoxView) CreateCryptoBoxPresenter.this.getViewState()).showErrorToast((Result.Error) result, resourceManager);
                 }
@@ -641,7 +641,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
     private final void loadRules() {
         this.shouldReloadRulesOnConnected = false;
-        renderCryptoBoxRulesPlaceholderData(C3634R.string.common_progress_state_title);
+        renderCryptoBoxRulesPlaceholderData(C3632R.string.common_progress_state_title);
         Observable<Result<CryptoBoxCreationRules>> observeOn = this.cryptoBoxInteractor.getCreationRules(this.selectedNetworkItem.getNetworkId()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoBoxInteractor\n    …(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends CryptoBoxCreationRules>, Unit>() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter$loadRules$$inlined$subscribeWithErrorHandle$default$1
@@ -651,12 +651,12 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxCreationRules> result) {
-                m1694invoke(result);
+                m1695invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1694invoke(Result<? extends CryptoBoxCreationRules> it) {
+            public final void m1695invoke(Result<? extends CryptoBoxCreationRules> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoBoxCreationRules> result = it;
@@ -668,14 +668,14 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
                         CreateCryptoBoxPresenter.this.checkTokenApproval(cryptoBoxCreationRules.getFeeToken(), true, true);
                     } else {
                         CreateCryptoBoxPresenter.this.feeTokenApprovalStatus = CryptoBoxTokenApprovalStatus.DONE;
-                        CreateCryptoBoxPresenter.setupTransactionAction$default(CreateCryptoBoxPresenter.this, new TransactionStep.Idle(C3634R.string.common_create), null, 2, null);
+                        CreateCryptoBoxPresenter.setupTransactionAction$default(CreateCryptoBoxPresenter.this, new TransactionStep.Idle(C3632R.string.common_create), null, 2, null);
                     }
                     createCryptoBoxPresenter.creationRules = cryptoBoxCreationRules;
                 } else if (result instanceof Result.Error) {
                     Result.Error error = (Result.Error) result;
                     CreateCryptoBoxPresenter.this.shouldReloadRulesOnConnected = error.getError().isNoConnectionStatus();
                     CreateCryptoBoxPresenter.setupTransactionAction$default(CreateCryptoBoxPresenter.this, TransactionStep.RetryLoading.INSTANCE, null, 2, null);
-                    CreateCryptoBoxPresenter.this.renderCryptoBoxRulesPlaceholderData(C3634R.string.common_error);
+                    CreateCryptoBoxPresenter.this.renderCryptoBoxRulesPlaceholderData(C3632R.string.common_error);
                     resourceManager = CreateCryptoBoxPresenter.this.resourceManager;
                     ((CreateCryptoBoxView) CreateCryptoBoxPresenter.this.getViewState()).showErrorToast(error, resourceManager);
                 }
@@ -716,7 +716,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
             if (i != 1) {
                 if (i != 2) {
                     if (i == 3) {
-                        return new TransactionStep.Idle(C3634R.string.common_create);
+                        return new TransactionStep.Idle(C3632R.string.common_create);
                     }
                     throw new NoWhenBranchMatchedException();
                 }
@@ -796,7 +796,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "private fun checkTokenAp…y { autoDispose() }\n    }");
-        Observable flatMap2 = flatMap.flatMap(new C2233x7c925b1e(new Function1<Result<? extends CryptoBoxTokenApprovalInfo>, ObservableSource<? extends Result<? extends Pair<? extends TransactionStep, ? extends FeeType>>>>() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter$checkTokenApproval$$inlined$flatMapSuccess$1
+        Observable flatMap2 = flatMap.flatMap(new C2230x7c925b1e(new Function1<Result<? extends CryptoBoxTokenApprovalInfo>, ObservableSource<? extends Result<? extends Pair<? extends TransactionStep, ? extends FeeType>>>>() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter$checkTokenApproval$$inlined$flatMapSuccess$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(1);
@@ -887,7 +887,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
                 Lae:
                     return r5
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.cryptobox.create.C2212x8ca852e4.invoke(com.iMe.storage.domain.model.Result):io.reactivex.ObservableSource");
+                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.cryptobox.create.C2209x8ca852e4.invoke(com.iMe.storage.domain.model.Result):io.reactivex.ObservableSource");
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
@@ -902,12 +902,12 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Pair<? extends TransactionStep, ? extends FeeType>> result) {
-                m1691invoke(result);
+                m1692invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1691invoke(Result<? extends Pair<? extends TransactionStep, ? extends FeeType>> it) {
+            public final void m1692invoke(Result<? extends Pair<? extends TransactionStep, ? extends FeeType>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Pair<? extends TransactionStep, ? extends FeeType>> result = it;
                 if (result instanceof Result.Success) {
@@ -963,7 +963,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
                 TokenBalance tokenBalance = this.selectedTokenBalance;
                 TokenDetailed token = tokenBalance != null ? tokenBalance.getToken() : null;
                 if (token == null) {
-                    transactionStep = new TransactionStep.Idle(C3634R.string.common_create);
+                    transactionStep = new TransactionStep.Idle(C3632R.string.common_create);
                 } else {
                     checkTokenApproval$default(this, token, false, false, 4, null);
                     transactionStep = TransactionStep.Loading.INSTANCE;
@@ -1010,12 +1010,12 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1693invoke(result);
+                m1694invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1693invoke(Result<? extends String> it) {
+            public final void m1694invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 boolean z;
                 TokenBalance tokenBalance;
@@ -1091,7 +1091,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void onWalletBotAdminRightsRequired(final TLRPC$Chat tLRPC$Chat) {
-        ((CreateCryptoBoxView) getViewState()).showConfirmDialog(new DialogModel(this.resourceManager.getString(C3634R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_title), this.resourceManager.getString(C3634R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_description), this.resourceManager.getString(C3634R.string.common_cancel), LocaleController.getString(RtspHeaders.ALLOW, C3634R.string.Allow)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter$$ExternalSyntheticLambda2
+        ((CreateCryptoBoxView) getViewState()).showConfirmDialog(new DialogModel(this.resourceManager.getString(C3632R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_title), this.resourceManager.getString(C3632R.string.cryptobox_create_wallet_bot_amin_rights_confirmation_description), this.resourceManager.getString(C3632R.string.common_cancel), LocaleController.getString(RtspHeaders.ALLOW, C3632R.string.Allow)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxPresenter$$ExternalSyntheticLambda2
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 CreateCryptoBoxPresenter.onWalletBotAdminRightsRequired$lambda$20(CreateCryptoBoxPresenter.this, tLRPC$Chat);
@@ -1182,12 +1182,12 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxTransactionAction> result) {
-                m1697invoke(result);
+                m1698invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1697invoke(Result<? extends CryptoBoxTransactionAction> it) {
+            public final void m1698invoke(Result<? extends CryptoBoxTransactionAction> it) {
                 ResourceManager resourceManager;
                 ResourceManager resourceManager2;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -1238,7 +1238,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
         Long valueOf = tLRPC$Chat != null ? Long.valueOf(ChatExtKt.getBotApiId(tLRPC$Chat)) : null;
         CryptoBoxTransactionArgs cryptoBoxTransactionArgs = this.transactionArgs;
         if (valueOf == null || cryptoBoxTransactionArgs == null) {
-            ((CreateCryptoBoxView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.common_error_unexpected));
+            ((CreateCryptoBoxView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.common_error_unexpected));
             return;
         }
         Observable<Result<String>> observeOn = this.cryptoBoxInteractor.sendCreationExecute(valueOf.longValue(), this.selectedDescription, cryptoBoxTransactionArgs).observeOn(this.schedulersProvider.mo1010ui());
@@ -1254,12 +1254,12 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1692invoke(result);
+                m1693invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1692invoke(Result<? extends String> it) {
+            public final void m1693invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 RxEventBus rxEventBus;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -1317,11 +1317,11 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
     }
 
     private final DialogModel getApproveConfirmationDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_swap_process_confirm_approve_alert_title), this.resourceManager.getString(C3634R.string.wallet_swap_process_confirm_approve_alert_description, str), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_swap_process_confirm_approve_alert_action));
+        return new DialogModel(this.resourceManager.getString(C3632R.string.wallet_swap_process_confirm_approve_alert_title), this.resourceManager.getString(C3632R.string.wallet_swap_process_confirm_approve_alert_description, str), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.wallet_swap_process_confirm_approve_alert_action));
     }
 
     private final DialogModel getCreateConfirmationDialogModel(String str, String str2) {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.profile_twitter_link_confirmation_alert_title), this.resourceManager.getString(C3634R.string.cryptobox_create_confirmation_description, str, str2), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.cryptobox_action_type_create));
+        return new DialogModel(this.resourceManager.getString(C3632R.string.profile_twitter_link_confirmation_alert_title), this.resourceManager.getString(C3632R.string.cryptobox_create_confirmation_description, str, str2), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.cryptobox_action_type_create));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1332,7 +1332,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showAmountError(boolean z) {
-        ((CreateCryptoBoxView) getViewState()).setupAmountInputErrorState(z, this.resourceManager.getString(C3634R.string.wallet_amount_send_error_insufficient_funds), FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(this.selectedNetworkItem.getNetworkId()) ? this.resourceManager.getString(C3634R.string.wallet_token_details_action_buy) : "");
+        ((CreateCryptoBoxView) getViewState()).setupAmountInputErrorState(z, this.resourceManager.getString(C3632R.string.wallet_amount_send_error_insufficient_funds), FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(this.selectedNetworkItem.getNetworkId()) ? this.resourceManager.getString(C3632R.string.wallet_token_details_action_buy) : "");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1340,7 +1340,7 @@ public final class CreateCryptoBoxPresenter extends BasePresenter<CreateCryptoBo
         String str;
         if (z) {
             ResourceManager resourceManager = this.resourceManager;
-            int i = C3634R.string.cryptobox_create_enter_capacity_threshold_error;
+            int i = C3632R.string.cryptobox_create_enter_capacity_threshold_error;
             Object[] objArr = new Object[1];
             CryptoBoxCreationRules cryptoBoxCreationRules = this.creationRules;
             objArr[0] = Integer.valueOf(NumberExtKt.orZero(cryptoBoxCreationRules != null ? Integer.valueOf(cryptoBoxCreationRules.getMinimalCapacity()) : null));

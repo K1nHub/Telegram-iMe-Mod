@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/messenger/Utilities$Callback;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->$r8$lambda$C4r07Wlv7CpbLUXtracWHbkEbkY(Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->$r8$lambda$Gf-1gyWEMukm_4IlBntSGlqC_-4(Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method

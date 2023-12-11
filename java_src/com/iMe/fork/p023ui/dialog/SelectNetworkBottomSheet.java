@@ -48,11 +48,11 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RecyclerListView;
@@ -133,7 +133,7 @@ public final class SelectNetworkBottomSheet extends BottomSheet implements KoinC
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(C3706ActionBar.getCurrentActionBarHeight());
+                return Integer.valueOf(C3704ActionBar.getCurrentActionBarHeight());
             }
         });
         this.actionBarHeight$delegate = lazy2;
@@ -152,15 +152,15 @@ public final class SelectNetworkBottomSheet extends BottomSheet implements KoinC
             }
         });
         this.topShadow$delegate = lazy3;
-        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<C3706ActionBar>() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$actionBar$2
+        lazy4 = LazyKt__LazyJVMKt.lazy(new Function0<C3704ActionBar>() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$actionBar$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
             }
 
             @Override // kotlin.jvm.functions.Function0
-            public final C3706ActionBar invoke() {
-                C3706ActionBar initActionBar;
+            public final C3704ActionBar invoke() {
+                C3704ActionBar initActionBar;
                 initActionBar = SelectNetworkBottomSheet.this.initActionBar();
                 return initActionBar;
             }
@@ -238,8 +238,8 @@ public final class SelectNetworkBottomSheet extends BottomSheet implements KoinC
         return (View) this.topShadow$delegate.getValue();
     }
 
-    private final C3706ActionBar getActionBar() {
-        return (C3706ActionBar) this.actionBar$delegate.getValue();
+    private final C3704ActionBar getActionBar() {
+        return (C3704ActionBar) this.actionBar$delegate.getValue();
     }
 
     private final FrameLayout getUnderlay() {
@@ -266,23 +266,23 @@ public final class SelectNetworkBottomSheet extends BottomSheet implements KoinC
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final C3706ActionBar initActionBar() {
-        C3706ActionBar c3706ActionBar = new C3706ActionBar(getContext());
-        c3706ActionBar.setOccupyStatusBar(false);
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(LocaleController.getInternalString(C3634R.string.wallet_network_type_dialog_title));
-        ActionBarMenuItem isSearchField = c3706ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3634R.C3636drawable.ic_ab_search).setIsSearchField(true);
+    public final C3704ActionBar initActionBar() {
+        C3704ActionBar c3704ActionBar = new C3704ActionBar(getContext());
+        c3704ActionBar.setOccupyStatusBar(false);
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(LocaleController.getInternalString(C3632R.string.wallet_network_type_dialog_title));
+        ActionBarMenuItem isSearchField = c3704ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3632R.C3634drawable.ic_ab_search).setIsSearchField(true);
         isSearchField.getSearchField().setImeOptions(Integer.MIN_VALUE);
-        isSearchField.setSearchFieldHint(LocaleController.getInternalString(C3634R.string.wallet_network_type_dialog_search_hint));
-        isSearchField.setContentDescription(LocaleController.getString("Search", C3634R.string.Search));
-        c3706ActionBar.setBackgroundColor(0);
+        isSearchField.setSearchFieldHint(LocaleController.getInternalString(C3632R.string.wallet_network_type_dialog_search_hint));
+        isSearchField.setContentDescription(LocaleController.getString("Search", C3632R.string.Search));
+        c3704ActionBar.setBackgroundColor(0);
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3706ActionBar.setTitleColor(getThemedColor(i));
-        c3706ActionBar.setItemsColor(getThemedColor(i), false);
-        c3706ActionBar.setSearchCursorColor(getThemedColor(i));
-        c3706ActionBar.setSearchTextColor(getThemedColor(i), false);
-        c3706ActionBar.setSearchTextColor(getThemedColor(Theme.key_windowBackgroundWhiteHintText), true);
-        return c3706ActionBar;
+        c3704ActionBar.setTitleColor(getThemedColor(i));
+        c3704ActionBar.setItemsColor(getThemedColor(i), false);
+        c3704ActionBar.setSearchCursorColor(getThemedColor(i));
+        c3704ActionBar.setSearchTextColor(getThemedColor(i), false);
+        c3704ActionBar.setSearchTextColor(getThemedColor(Theme.key_windowBackgroundWhiteHintText), true);
+        return c3704ActionBar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -323,9 +323,9 @@ public final class SelectNetworkBottomSheet extends BottomSheet implements KoinC
     }
 
     private final void setupListeners() {
-        C3706ActionBar actionBar = getActionBar();
-        actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$setupListeners$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar actionBar = getActionBar();
+        actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.dialog.SelectNetworkBottomSheet$setupListeners$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SelectNetworkBottomSheet.this.dismiss();
@@ -369,7 +369,7 @@ public final class SelectNetworkBottomSheet extends BottomSheet implements KoinC
                     for (Object obj2 : list) {
                         NetworkItem networkItem = (NetworkItem) obj2;
                         if (networkItem instanceof NetworkItem.All) {
-                            z2 = StringsKt__StringsKt.contains((CharSequence) selectNetworkBottomSheet3.getResourceManager().getString(C3634R.string.networks_all), (CharSequence) obj, true);
+                            z2 = StringsKt__StringsKt.contains((CharSequence) selectNetworkBottomSheet3.getResourceManager().getString(C3632R.string.networks_all), (CharSequence) obj, true);
                         } else if (networkItem instanceof NetworkItem.Crypto) {
                             NetworkItem.Crypto crypto = (NetworkItem.Crypto) networkItem;
                             contains = StringsKt__StringsKt.contains((CharSequence) crypto.getFullName(), (CharSequence) obj, true);
@@ -672,7 +672,7 @@ public final class SelectNetworkBottomSheet extends BottomSheet implements KoinC
             if (i == IdFabric$ViewTypes.EMPTY_VIEW) {
                 Context context = SelectNetworkBottomSheet.this.getContext();
                 Intrinsics.checkNotNullExpressionValue(context, "context");
-                String internalString = LocaleController.getInternalString(C3634R.string.wallet_network_type_dialog_search_empty);
+                String internalString = LocaleController.getInternalString(C3632R.string.wallet_network_type_dialog_search_empty);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…type_dialog_search_empty)");
                 imageTextCheckCell = new EmptyView(context, internalString);
                 imageTextCheckCell.setLayoutParams(LayoutHelper.createRecycler(SelectNetworkBottomSheet.this.itemWidth, 250));
@@ -698,8 +698,8 @@ public final class SelectNetworkBottomSheet extends BottomSheet implements KoinC
                 SelectNetworkBottomSheet selectNetworkBottomSheet = SelectNetworkBottomSheet.this;
                 NetworkItem networkItem = (NetworkItem) selectNetworkBottomSheet.getCurrentItemsList().get(i);
                 if (networkItem instanceof NetworkItem.All) {
-                    String string = selectNetworkBottomSheet.getResourceManager().getString(C3634R.string.networks_all);
-                    Integer valueOf = Integer.valueOf(C3634R.C3636drawable.fork_ic_all_networks);
+                    String string = selectNetworkBottomSheet.getResourceManager().getString(C3632R.string.networks_all);
+                    Integer valueOf = Integer.valueOf(C3632R.C3634drawable.fork_ic_all_networks);
                     boolean areEqual = Intrinsics.areEqual(selectNetworkBottomSheet.getCurrentItemsList().get(i), selectNetworkBottomSheet.selectedNetwork);
                     lastIndex2 = CollectionsKt__CollectionsKt.getLastIndex(selectNetworkBottomSheet.getCurrentItemsList());
                     imageTextCheckCell.setupViewData(string, (r13 & 2) != 0 ? null : null, (r13 & 4) != 0 ? null : valueOf, areEqual, lastIndex2 != i);

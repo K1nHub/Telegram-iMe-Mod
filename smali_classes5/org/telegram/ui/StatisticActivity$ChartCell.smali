@@ -38,10 +38,10 @@
 .method public constructor <init>(Lorg/telegram/ui/StatisticActivity;Landroid/content/Context;ILorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;)V
     .locals 0
 
-    .line 1242
+    .line 1245
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
-    .line 1243
+    .line 1246
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;)V
 
     return-void
@@ -52,7 +52,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1308
+    .line 1311
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$3700(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/messenger/LruCache;
@@ -64,7 +64,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 1310
+    .line 1313
     iget-boolean p2, p3, Lorg/telegram/ui/StatisticActivity$ZoomCancelable;->canceled:Z
 
     if-nez p2, :cond_1
@@ -73,7 +73,7 @@
 
     if-ltz p2, :cond_1
 
-    .line 1311
+    .line 1314
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$700(Lorg/telegram/ui/StatisticActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -86,17 +86,17 @@
 
     move-result-object p2
 
-    .line 1312
+    .line 1315
     instance-of p3, p2, Lorg/telegram/ui/StatisticActivity$ChartCell;
 
     if-eqz p3, :cond_1
 
-    .line 1313
+    .line 1316
     iget-object p3, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iput-object p1, p3, Lorg/telegram/ui/StatisticActivity$ChartViewData;->childChartData:Lorg/telegram/ui/Charts/data/ChartData;
 
-    .line 1314
+    .line 1317
     check-cast p2, Lorg/telegram/ui/StatisticActivity$ChartCell;
 
     iget-object p1, p2, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
@@ -107,10 +107,10 @@
 
     invoke-virtual {p1, p3, p3}, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->showProgress(ZZ)V
 
-    .line 1315
+    .line 1318
     invoke-virtual {p2, p3}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomChart(Z)V
 
-    .line 1318
+    .line 1321
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -122,7 +122,7 @@
 .method private synthetic lambda$onZoomed$1(Ljava/lang/String;Lorg/telegram/ui/StatisticActivity$ZoomCancelable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 4
 
-    .line 1294
+    .line 1297
     instance-of p4, p3, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;
 
     const/4 v0, 0x1
@@ -131,14 +131,14 @@
 
     if-eqz p4, :cond_1
 
-    .line 1295
+    .line 1298
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;
 
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;->json:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->data:Ljava/lang/String;
 
-    .line 1297
+    .line 1300
     :try_start_0
     new-instance p4, Lorg/json/JSONObject;
 
@@ -175,18 +175,18 @@
     :catch_0
     move-exception p3
 
-    .line 1299
+    .line 1302
     invoke-virtual {p3}, Lorg/json/JSONException;->printStackTrace()V
 
     goto :goto_1
 
-    .line 1301
+    .line 1304
     :cond_1
     instance-of p4, p3, Lorg/telegram/tgnet/TLRPC$TL_statsGraphError;
 
     if-eqz p4, :cond_2
 
-    .line 1302
+    .line 1305
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object p4
@@ -201,7 +201,7 @@
 
     invoke-virtual {p3}, Landroid/widget/Toast;->show()V
 
-    .line 1306
+    .line 1309
     :cond_2
     :goto_1
     new-instance p3, Lorg/telegram/ui/StatisticActivity$ChartCell$$ExternalSyntheticLambda0;
@@ -218,7 +218,7 @@
 .method public loadData(Lorg/telegram/ui/StatisticActivity$ChartViewData;)V
     .locals 8
 
-    .line 1326
+    .line 1329
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$4300(Lorg/telegram/ui/StatisticActivity;)I
@@ -269,7 +269,7 @@
 
     move-object/from16 v0, p0
 
-    .line 1253
+    .line 1256
     iget-object v1, v0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-wide v1, v1, Lorg/telegram/ui/StatisticActivity$ChartViewData;->activeZoom:J
@@ -282,11 +282,11 @@
 
     return-void
 
-    .line 1256
+    .line 1259
     :cond_0
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->performClick()Z
 
-    .line 1257
+    .line 1260
     iget-object v1, v0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v2, v1, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
@@ -297,13 +297,13 @@
 
     return-void
 
-    .line 1260
+    .line 1263
     :cond_1
     invoke-virtual {v1}, Lorg/telegram/ui/Charts/BaseChartView;->getSelectedDate()J
 
     move-result-wide v1
 
-    .line 1261
+    .line 1264
     iget v5, v0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartType:I
 
     const/4 v6, 0x4
@@ -312,7 +312,7 @@
 
     if-ne v5, v6, :cond_2
 
-    .line 1262
+    .line 1265
     iget-object v3, v0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     new-instance v4, Lorg/telegram/ui/Charts/data/StackLinearChartData;
@@ -323,12 +323,12 @@
 
     iput-object v4, v3, Lorg/telegram/ui/StatisticActivity$ChartViewData;->childChartData:Lorg/telegram/ui/Charts/data/ChartData;
 
-    .line 1263
+    .line 1266
     invoke-virtual {v0, v7}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomChart(Z)V
 
     return-void
 
-    .line 1267
+    .line 1270
     :cond_2
     iget-object v5, v0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
@@ -338,13 +338,13 @@
 
     return-void
 
-    .line 1271
+    .line 1274
     :cond_3
     iget-object v5, v0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/StatisticActivity;->access$3600(Lorg/telegram/ui/StatisticActivity;)V
 
-    .line 1272
+    .line 1275
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -365,7 +365,7 @@
 
     move-result-object v5
 
-    .line 1273
+    .line 1276
     iget-object v6, v0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/StatisticActivity;->access$3700(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/messenger/LruCache;
@@ -380,23 +380,23 @@
 
     if-eqz v6, :cond_4
 
-    .line 1275
+    .line 1278
     iget-object v1, v0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iput-object v6, v1, Lorg/telegram/ui/StatisticActivity$ChartViewData;->childChartData:Lorg/telegram/ui/Charts/data/ChartData;
 
-    .line 1276
+    .line 1279
     invoke-virtual {v0, v7}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomChart(Z)V
 
     return-void
 
-    .line 1280
+    .line 1283
     :cond_4
     new-instance v9, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;
 
     invoke-direct {v9}, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;-><init>()V
 
-    .line 1281
+    .line 1284
     iget-object v6, v0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->data:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v6, v6, Lorg/telegram/ui/StatisticActivity$ChartViewData;->zoomToken:Ljava/lang/String;
@@ -409,17 +409,17 @@
 
     if-eqz v3, :cond_5
 
-    .line 1283
+    .line 1286
     iput-wide v1, v9, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;->x:J
 
-    .line 1284
+    .line 1287
     iget v1, v9, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;->flags:I
 
     or-int/2addr v1, v4
 
     iput v1, v9, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;->flags:I
 
-    .line 1287
+    .line 1290
     :cond_5
     iget-object v1, v0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -429,7 +429,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/StatisticActivity;->access$3802(Lorg/telegram/ui/StatisticActivity;Lorg/telegram/ui/StatisticActivity$ZoomCancelable;)Lorg/telegram/ui/StatisticActivity$ZoomCancelable;
 
-    .line 1288
+    .line 1291
     iget-object v1, v0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/StatisticActivity;->access$3900(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -442,14 +442,14 @@
 
     iput v1, v2, Lorg/telegram/ui/StatisticActivity$ZoomCancelable;->adapterPosition:I
 
-    .line 1290
+    .line 1293
     iget-object v1, v0, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iget-object v1, v1, Lorg/telegram/ui/Charts/BaseChartView;->legendSignatureView:Lorg/telegram/ui/Charts/view_data/LegendSignatureView;
 
     invoke-virtual {v1, v4, v7}, Lorg/telegram/ui/Charts/view_data/LegendSignatureView;->showProgress(ZZ)V
 
-    .line 1292
+    .line 1295
     iget-object v1, v0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/StatisticActivity;->access$4000(Lorg/telegram/ui/StatisticActivity;)I
@@ -472,7 +472,7 @@
 
     iget-object v1, v0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
-    .line 1320
+    .line 1323
     invoke-static {v1}, Lorg/telegram/ui/StatisticActivity;->access$1100(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     move-result-object v1
@@ -483,12 +483,12 @@
 
     const/16 v16, 0x1
 
-    .line 1292
+    .line 1295
     invoke-virtual/range {v8 .. v16}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/QuickAckDelegate;Lorg/telegram/tgnet/WriteToSocketDelegate;IIIZ)I
 
     move-result v1
 
-    .line 1321
+    .line 1324
     iget-object v2, v0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/StatisticActivity;->access$4200(Lorg/telegram/ui/StatisticActivity;)I
@@ -513,7 +513,7 @@
 .method public zoomCanceled()V
     .locals 1
 
-    .line 1248
+    .line 1251
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$ChartCell;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$3600(Lorg/telegram/ui/StatisticActivity;)V

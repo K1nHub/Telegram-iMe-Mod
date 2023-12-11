@@ -15,9 +15,9 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.controller.ForkCommonController;
 import java.util.Locale;
-import org.telegram.PhoneFormat.C3549PhoneFormat;
+import org.telegram.PhoneFormat.C3546PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -313,7 +313,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                 if (tLRPC$User2 == null) {
                     str3 = "";
                 } else if (this.albumMode && UserObject.isUserSelf(tLRPC$User2)) {
-                    str3 = LocaleController.getString("SavedMessages", C3634R.string.SavedMessages);
+                    str3 = LocaleController.getString("SavedMessages", C3632R.string.SavedMessages);
                 } else {
                     str3 = UserObject.getUserName(this.user);
                 }
@@ -323,9 +323,9 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         if (str4.length() == 0) {
             TLRPC$User tLRPC$User3 = this.user;
             if (tLRPC$User3 != null && (str2 = tLRPC$User3.phone) != null && str2.length() != 0) {
-                str4 = C3549PhoneFormat.getInstance().format("+" + this.user.phone);
+                str4 = C3546PhoneFormat.getInstance().format("+" + this.user.phone);
             } else {
-                str4 = LocaleController.getString("HiddenName", C3634R.string.HiddenName);
+                str4 = LocaleController.getString("HiddenName", C3632R.string.HiddenName);
             }
         }
         if (this.encryptedChat != null) {
@@ -346,7 +346,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         }
         if (this.contact != null) {
             TextPaint textPaint3 = Theme.dialogs_countTextPaint;
-            int i = C3634R.string.Invite;
+            int i = C3632R.string.Invite;
             int measureText = (int) (textPaint3.measureText(LocaleController.getString(i)) + 1.0f);
             this.actionLayout = new StaticLayout(LocaleController.getString(i), Theme.dialogs_countTextPaint, measureText, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             if (!LocaleController.isRTL) {
@@ -413,15 +413,15 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                 if (tLRPC$User4 == null) {
                     str = null;
                 } else if (MessagesController.isSupportUser(tLRPC$User4)) {
-                    str = LocaleController.getString("SupportStatus", C3634R.string.SupportStatus);
+                    str = LocaleController.getString("SupportStatus", C3632R.string.SupportStatus);
                 } else {
                     TLRPC$User tLRPC$User5 = this.user;
                     if (tLRPC$User5.bot) {
-                        str = LocaleController.getString("Bot", C3634R.string.Bot);
+                        str = LocaleController.getString("Bot", C3632R.string.Bot);
                     } else {
                         long j = tLRPC$User5.f1749id;
                         if (j == 333000 || j == 777000) {
-                            str = LocaleController.getString("ServiceNotifications", C3634R.string.ServiceNotifications);
+                            str = LocaleController.getString("ServiceNotifications", C3632R.string.ServiceNotifications);
                         } else {
                             if (this.isOnline == null) {
                                 this.isOnline = new boolean[1];
@@ -435,7 +435,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                             TLRPC$User tLRPC$User6 = this.user;
                             if (tLRPC$User6 != null && (tLRPC$User6.f1749id == UserConfig.getInstance(this.currentAccount).getClientUserId() || ((tLRPC$UserStatus = this.user.status) != null && tLRPC$UserStatus.expires > ConnectionsManager.getInstance(this.currentAccount).getCurrentTime()))) {
                                 textPaint4 = Theme.dialogs_onlinePaint;
-                                str = LocaleController.getString("Online", C3634R.string.Online);
+                                str = LocaleController.getString("Online", C3632R.string.Online);
                             }
                         }
                     }
@@ -447,7 +447,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
             }
         } else {
             if (this.albumMode) {
-                str = LocaleController.getInternalString(C3634R.string.cloud_album).toLowerCase();
+                str = LocaleController.getInternalString(C3632R.string.cloud_album).toLowerCase();
             } else {
                 if (ChatObject.isChannel(tLRPC$Chat3)) {
                     TLRPC$Chat tLRPC$Chat4 = this.chat;
@@ -456,9 +456,9 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                         if (i2 != 0) {
                             str = LocaleController.formatPluralStringComma("Subscribers", i2);
                         } else if (!ChatObject.isPublic(tLRPC$Chat4)) {
-                            str = LocaleController.getString("ChannelPrivate", C3634R.string.ChannelPrivate).toLowerCase();
+                            str = LocaleController.getString("ChannelPrivate", C3632R.string.ChannelPrivate).toLowerCase();
                         } else {
-                            str = LocaleController.getString("ChannelPublic", C3634R.string.ChannelPublic).toLowerCase();
+                            str = LocaleController.getString("ChannelPublic", C3632R.string.ChannelPublic).toLowerCase();
                         }
                     }
                 }
@@ -467,11 +467,11 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
                 if (i3 != 0) {
                     str = LocaleController.formatPluralStringComma("Members", i3);
                 } else if (tLRPC$Chat5.has_geo) {
-                    str = LocaleController.getString("MegaLocation", C3634R.string.MegaLocation);
+                    str = LocaleController.getString("MegaLocation", C3632R.string.MegaLocation);
                 } else if (!ChatObject.isPublic(tLRPC$Chat5)) {
-                    str = LocaleController.getString("MegaPrivate", C3634R.string.MegaPrivate).toLowerCase();
+                    str = LocaleController.getString("MegaPrivate", C3632R.string.MegaPrivate).toLowerCase();
                 } else {
-                    str = LocaleController.getString("MegaPublic", C3634R.string.MegaPublic).toLowerCase();
+                    str = LocaleController.getString("MegaPublic", C3632R.string.MegaPublic).toLowerCase();
                 }
             }
             this.nameTop = AndroidUtilities.m104dp(19);
@@ -679,7 +679,7 @@ public class ProfileSearchCell extends BaseCell implements NotificationCenter.No
         }
         if (this.drawCheck) {
             sb.append(", ");
-            sb.append(LocaleController.getString("AccDescrVerified", C3634R.string.AccDescrVerified));
+            sb.append(LocaleController.getString("AccDescrVerified", C3632R.string.AccDescrVerified));
             sb.append("\n");
         }
         if (this.statusLayout != null) {

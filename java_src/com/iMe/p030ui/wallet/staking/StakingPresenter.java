@@ -127,12 +127,12 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingTotalStats> result) {
-                m1809invoke(result);
+                m1811invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1809invoke(Result<? extends StakingTotalStats> it) {
+            public final void m1811invoke(Result<? extends StakingTotalStats> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends StakingTotalStats> result = it;
@@ -191,12 +191,12 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.StakingTabRefreshStateChanged stakingTabRefreshStateChanged) {
-                m1808invoke(stakingTabRefreshStateChanged);
+                m1810invoke(stakingTabRefreshStateChanged);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1808invoke(DomainRxEvents.StakingTabRefreshStateChanged it) {
+            public final void m1810invoke(DomainRxEvents.StakingTabRefreshStateChanged it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.StakingTabRefreshStateChanged stakingTabRefreshStateChanged = it;
                 int i = StakingPresenter.WhenMappings.$EnumSwitchMapping$0[stakingTabRefreshStateChanged.getStakingTabType().ordinal()];

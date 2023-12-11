@@ -15,7 +15,7 @@ import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -891,10 +891,10 @@ public class FlickerLoadingView extends View {
         textPaint.setTextSize(AndroidUtilities.m104dp(14));
         float m104dp = AndroidUtilities.m104dp(34);
         if (z) {
-            i = C3634R.string.AddToChannel;
+            i = C3632R.string.AddToChannel;
             str = "AddToChannel";
         } else {
-            i = C3634R.string.AddToGroup;
+            i = C3632R.string.AddToGroup;
             str = "AddToGroup";
         }
         this.memberRequestButtonWidth = m104dp + textPaint.measureText(LocaleController.getString(str, i));

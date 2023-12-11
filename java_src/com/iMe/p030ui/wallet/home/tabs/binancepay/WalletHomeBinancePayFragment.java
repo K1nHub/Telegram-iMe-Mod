@@ -72,7 +72,7 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinancePayBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
@@ -569,7 +569,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
         if (baseNode instanceof CardButtonItem) {
-            if (((CardButtonItem) baseNode).getId() == C3634R.C3637id.binance_pay_link) {
+            if (((CardButtonItem) baseNode).getId() == C3632R.C3635id.binance_pay_link) {
                 this$0.getPresenter().startBinancePayLoginFlow();
             }
         } else if (baseNode instanceof BinanceBalanceItem) {
@@ -585,15 +585,15 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(view, "view");
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
         int id = view.getId();
-        if (id == C3634R.C3637id.image_copy) {
+        if (id == C3632R.C3635id.image_copy) {
             if (baseNode instanceof BinanceAccountItem) {
                 ContextExtKt.copyToClipboard$default(((BinanceAccountItem) baseNode).getInfo().getId(), null, 2, null);
             }
-        } else if (id == C3634R.C3637id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3632R.C3635id.image_wallet_crypto_tokens_settings) {
             this$0.presentFragment(WalletHomeCryptoTokensSettingsFragment.Companion.newInstance(new TokensScreenType.Binance(SelectableMappingKt.mapToDetailedTokensList(this$0.getPresenter().getBalances()))));
-        } else if (id == C3634R.C3637id.image_wallet_order_tokens) {
+        } else if (id == C3632R.C3635id.image_wallet_order_tokens) {
             this$0.getPresenter().onOrderTokensClick();
-        } else if (id == C3634R.C3637id.image_wallet_crypto_eye) {
+        } else if (id == C3632R.C3635id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
         }
     }

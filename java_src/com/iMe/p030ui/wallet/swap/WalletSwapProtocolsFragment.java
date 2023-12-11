@@ -50,9 +50,9 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentWalletSwapProtocolsBinding;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.ActionIntroActivity;
@@ -272,12 +272,12 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_navigation_exchange));
-        c3706ActionBar.setAllowOverlayTitle(true);
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.wallet_navigation_exchange));
+        c3704ActionBar.setAllowOverlayTitle(true);
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.WalletSwapProtocolsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSwapProtocolsFragment.this.finishFragment();
@@ -320,9 +320,9 @@ public final class WalletSwapProtocolsFragment extends WalletTabFragment impleme
     private final void openExchangeScreen(CentralizedExchangesInfo centralizedExchangesInfo) {
         int i = WhenMappings.$EnumSwitchMapping$0[centralizedExchangesInfo.getExchange().ordinal()];
         if (i == 1) {
-            presentFragment(new ActionIntroActivity(108, null, null, null, BannerSlide.GATE, null));
+            presentFragment(new ActionIntroActivity(108, null, null, null, BannerSlide.Crypto.Gate.INSTANCE, null));
         } else if (i == 2) {
-            presentFragment(new ActionIntroActivity(108, null, null, null, BannerSlide.ASCENDEEX, null));
+            presentFragment(new ActionIntroActivity(108, null, null, null, BannerSlide.Crypto.AscendeEX.INSTANCE, null));
         } else if (i != 3) {
         } else {
             getPresenter().startBinanceExchangeFlow();

@@ -263,7 +263,7 @@
     .line 173
     sget-object v1, Lorg/telegram/messenger/FileLog;->excludeRequests:Ljava/util/HashSet;
 
-    const-string v2, "TL_upload_a"
+    const-string v2, "TL_upload_getWebFile"
 
     invoke-virtual {v1, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 

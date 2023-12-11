@@ -33,7 +33,7 @@ import com.iMe.common.IdFabric$CustomType;
 import com.iMe.fork.controller.FiltersController;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -47,6 +47,7 @@ import org.telegram.tgnet.TLRPC$Message;
 import org.telegram.tgnet.TLRPC$TL_error;
 import org.telegram.tgnet.TLRPC$TL_payments_getPaymentReceipt;
 import org.telegram.tgnet.TLRPC$TL_payments_paymentReceipt;
+@Deprecated
 /* renamed from: org.telegram.ui.Components.UndoView */
 /* loaded from: classes6.dex */
 public class UndoView extends FrameLayout {
@@ -113,11 +114,11 @@ public class UndoView extends FrameLayout {
     }
 
     public void showInfo(CharSequence charSequence, Runnable runnable) {
-        showWithAction(0L, 18, charSequence, Integer.valueOf(C3634R.raw.info), (Runnable) null, runnable);
+        showWithAction(0L, 18, charSequence, Integer.valueOf(C3632R.raw.info), (Runnable) null, runnable);
     }
 
     public void showError(CharSequence charSequence) {
-        showWithAction(0L, 18, charSequence, Integer.valueOf(C3634R.raw.error), (Runnable) null, (Runnable) null);
+        showWithAction(0L, 18, charSequence, Integer.valueOf(C3632R.raw.error), (Runnable) null, (Runnable) null);
     }
 
     private boolean isFoldersHidden() {
@@ -234,7 +235,7 @@ public class UndoView extends FrameLayout {
         });
         ImageView imageView = new ImageView(context);
         this.undoImageView = imageView;
-        imageView.setImageResource(C3634R.C3636drawable.chats_undo);
+        imageView.setImageResource(C3632R.C3634drawable.chats_undo);
         this.undoImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), PorterDuff.Mode.MULTIPLY));
         this.undoButton.addView(this.undoImageView, LayoutHelper.createLinear(-2, -2, 19, 4, 4, 0, 4));
         TextView textView5 = new TextView(context);
@@ -242,7 +243,7 @@ public class UndoView extends FrameLayout {
         textView5.setTextSize(1, 14.0f);
         this.undoTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.undoTextView.setTextColor(getThemedColor(i2));
-        this.undoTextView.setText(LocaleController.getString("Undo", C3634R.string.Undo));
+        this.undoTextView.setText(LocaleController.getString("Undo", C3632R.string.Undo));
         this.undoButton.addView(this.undoTextView, LayoutHelper.createLinear(-2, -2, 19, 6, 4, 8, 4));
         this.rect = new RectF(AndroidUtilities.m104dp(15), AndroidUtilities.m104dp(15), AndroidUtilities.m104dp(33), AndroidUtilities.m104dp(33));
         Paint paint = new Paint(1);
@@ -402,11 +403,11 @@ public class UndoView extends FrameLayout {
         showWithAction(arrayList, i, obj, obj2, runnable, runnable2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:836:0x1bb3  */
-    /* JADX WARN: Removed duplicated region for block: B:839:0x1bd3  */
-    /* JADX WARN: Removed duplicated region for block: B:842:0x1bfa  */
-    /* JADX WARN: Removed duplicated region for block: B:846:0x1c3f  */
-    /* JADX WARN: Removed duplicated region for block: B:877:0x1cf2  */
+    /* JADX WARN: Removed duplicated region for block: B:836:0x1b9a  */
+    /* JADX WARN: Removed duplicated region for block: B:839:0x1bba  */
+    /* JADX WARN: Removed duplicated region for block: B:842:0x1be1  */
+    /* JADX WARN: Removed duplicated region for block: B:846:0x1c26  */
+    /* JADX WARN: Removed duplicated region for block: B:877:0x1cd9  */
     /* JADX WARN: Removed duplicated region for block: B:904:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -414,7 +415,7 @@ public class UndoView extends FrameLayout {
     */
     public void showWithAction(java.util.ArrayList<java.lang.Long> r22, int r23, java.lang.Object r24, java.lang.Object r25, java.lang.Runnable r26, java.lang.Runnable r27) {
         /*
-            Method dump skipped, instructions count: 7514
+            Method dump skipped, instructions count: 7490
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.UndoView.showWithAction(java.util.ArrayList, int, java.lang.Object, java.lang.Object, java.lang.Runnable, java.lang.Runnable):void");

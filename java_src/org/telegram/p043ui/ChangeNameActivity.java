@@ -9,13 +9,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
@@ -51,11 +51,11 @@ public class ChangeNameActivity extends BaseFragment {
     public View createView(Context context) {
         this.actionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_avatar_actionBarSelectorBlue, this.resourcesProvider), false);
         this.actionBar.setItemsColor(Theme.getColor(Theme.key_actionBarDefaultIcon, this.resourcesProvider), false);
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("EditName", C3634R.string.EditName));
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChangeNameActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("EditName", C3632R.string.EditName));
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChangeNameActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i != -1) {
                     if (i != 1 || ChangeNameActivity.this.firstNameField.getText().length() == 0) {
@@ -68,7 +68,7 @@ public class ChangeNameActivity extends BaseFragment {
                 ChangeNameActivity.this.finishFragment();
             }
         });
-        this.doneButton = this.actionBar.createMenu().addItemWithWidth(1, C3634R.C3636drawable.ic_ab_done, AndroidUtilities.m104dp(56), LocaleController.getString("Done", C3634R.string.Done));
+        this.doneButton = this.actionBar.createMenu().addItemWithWidth(1, C3632R.C3634drawable.ic_ab_done, AndroidUtilities.m104dp(56), LocaleController.getString("Done", C3632R.string.Done));
         TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(UserConfig.getInstance(this.currentAccount).getClientUserId()));
         if (user == null) {
             user = UserConfig.getInstance(this.currentAccount).getCurrentUser();
@@ -113,7 +113,7 @@ public class ChangeNameActivity extends BaseFragment {
         this.firstNameField.setGravity(LocaleController.isRTL ? 5 : 3);
         this.firstNameField.setInputType(49152);
         this.firstNameField.setImeOptions(5);
-        this.firstNameField.setHint(LocaleController.getString("FirstName", C3634R.string.FirstName));
+        this.firstNameField.setHint(LocaleController.getString("FirstName", C3632R.string.FirstName));
         this.firstNameField.setCursorColor(Theme.getColor(i2, this.resourcesProvider));
         this.firstNameField.setCursorSize(AndroidUtilities.m104dp(20));
         this.firstNameField.setCursorWidth(1.5f);
@@ -144,7 +144,7 @@ public class ChangeNameActivity extends BaseFragment {
         this.lastNameField.setGravity(LocaleController.isRTL ? 5 : 3);
         this.lastNameField.setInputType(49152);
         this.lastNameField.setImeOptions(6);
-        this.lastNameField.setHint(LocaleController.getString("LastName", C3634R.string.LastName));
+        this.lastNameField.setHint(LocaleController.getString("LastName", C3632R.string.LastName));
         this.lastNameField.setCursorColor(Theme.getColor(i2, this.resourcesProvider));
         this.lastNameField.setCursorSize(AndroidUtilities.m104dp(20));
         this.lastNameField.setCursorWidth(1.5f);

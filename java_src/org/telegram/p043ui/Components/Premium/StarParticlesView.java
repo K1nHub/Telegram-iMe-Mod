@@ -21,7 +21,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
@@ -219,56 +219,56 @@ public class StarParticlesView extends View {
                 int i7 = this.type;
                 if (i7 == 9) {
                     if (i5 == 0) {
-                        i4 = C3634R.raw.premium_object_folder;
+                        i4 = C3632R.raw.premium_object_folder;
                     } else if (i5 == 1) {
-                        i4 = C3634R.raw.premium_object_bubble;
+                        i4 = C3632R.raw.premium_object_bubble;
                     } else {
-                        i4 = C3634R.raw.premium_object_settings;
+                        i4 = C3632R.raw.premium_object_settings;
                     }
                     this.stars[i5] = SvgHelper.getBitmap(i4, i6, i6, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
                     this.svg = true;
                 } else if (i7 == 11 || i7 == 4) {
                     if (i5 == 0) {
-                        i = C3634R.raw.premium_object_smile1;
+                        i = C3632R.raw.premium_object_smile1;
                     } else if (i5 == 1) {
-                        i = C3634R.raw.premium_object_smile2;
+                        i = C3632R.raw.premium_object_smile2;
                     } else {
-                        i = C3634R.raw.premium_object_like;
+                        i = C3632R.raw.premium_object_like;
                     }
                     this.stars[i5] = SvgHelper.getBitmap(i, i6, i6, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
                     this.svg = true;
                 } else if (i7 == 3) {
                     if (i5 == 0) {
-                        i3 = C3634R.raw.premium_object_adsbubble;
+                        i3 = C3632R.raw.premium_object_adsbubble;
                     } else if (i5 == 1) {
-                        i3 = C3634R.raw.premium_object_like;
+                        i3 = C3632R.raw.premium_object_like;
                     } else {
-                        i3 = C3634R.raw.premium_object_noads;
+                        i3 = C3632R.raw.premium_object_noads;
                     }
                     this.stars[i5] = SvgHelper.getBitmap(i3, i6, i6, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
                     this.svg = true;
                 } else if (i7 == 7) {
                     if (i5 == 0) {
-                        i2 = C3634R.raw.premium_object_video2;
+                        i2 = C3632R.raw.premium_object_video2;
                     } else if (i5 == 1) {
-                        i2 = C3634R.raw.premium_object_video;
+                        i2 = C3632R.raw.premium_object_video;
                     } else {
-                        i2 = C3634R.raw.premium_object_user;
+                        i2 = C3632R.raw.premium_object_user;
                     }
                     this.stars[i5] = SvgHelper.getBitmap(i2, i6, i6, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
                     this.svg = true;
                 } else if (i7 == 1001) {
-                    this.stars[i5] = SvgHelper.getBitmap(C3634R.raw.premium_object_fire, i6, i6, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.stars[i5] = SvgHelper.getBitmap(C3632R.raw.premium_object_fire, i6, i6, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
                     this.svg = true;
                 } else if (i7 == 1002) {
-                    this.stars[i5] = SvgHelper.getBitmap(C3634R.raw.premium_object_star2, i6, i6, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
+                    this.stars[i5] = SvgHelper.getBitmap(C3632R.raw.premium_object_star2, i6, i6, ColorUtils.setAlphaComponent(Theme.getColor(this.colorKey, this.resourcesProvider), 30));
                     this.svg = true;
                 } else {
                     Bitmap createBitmap = Bitmap.createBitmap(i6, i6, Bitmap.Config.ARGB_8888);
                     this.stars[i5] = createBitmap;
                     Canvas canvas = new Canvas(createBitmap);
                     if (this.type == 6 && (i5 == 1 || i5 == 2)) {
-                        android.graphics.drawable.Drawable drawable = ContextCompat.getDrawable(ApplicationLoader.applicationContext, C3634R.C3636drawable.msg_premium_liststar);
+                        android.graphics.drawable.Drawable drawable = ContextCompat.getDrawable(ApplicationLoader.applicationContext, C3632R.C3634drawable.msg_premium_liststar);
                         drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(this.colorKey, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
                         drawable.setBounds(0, 0, i6, i6);
                         drawable.draw(canvas);

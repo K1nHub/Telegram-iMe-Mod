@@ -23,7 +23,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
@@ -272,7 +272,7 @@ public class ItemOptions {
                 return this;
             }
             ActionBarMenuSubItem actionBarMenuSubItem = (ActionBarMenuSubItem) itemAt;
-            actionBarMenuSubItem.setRightIcon(C3634R.C3636drawable.msg_mini_lock3);
+            actionBarMenuSubItem.setRightIcon(C3632R.C3634drawable.msg_mini_lock3);
             actionBarMenuSubItem.getRightIcon().setAlpha(0.4f);
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -303,7 +303,7 @@ public class ItemOptions {
                 return this;
             }
             ActionBarMenuSubItem actionBarMenuSubItem = (ActionBarMenuSubItem) itemAt;
-            actionBarMenuSubItem.setRightIcon(C3634R.C3636drawable.msg_text_check);
+            actionBarMenuSubItem.setRightIcon(C3632R.C3634drawable.msg_text_check);
             actionBarMenuSubItem.getRightIcon().setColorFilter(-1, PorterDuff.Mode.MULTIPLY);
             actionBarMenuSubItem.getRightIcon().setScaleX(0.85f);
             actionBarMenuSubItem.getRightIcon().setScaleY(0.85f);
@@ -313,7 +313,7 @@ public class ItemOptions {
 
     public ItemOptions addGap() {
         ActionBarPopupWindow.GapView gapView = new ActionBarPopupWindow.GapView(this.context, this.resourcesProvider);
-        gapView.setTag(C3634R.C3637id.fit_width_tag, 1);
+        gapView.setTag(C3632R.C3635id.fit_width_tag, 1);
         this.lastLayout.addView((View) gapView, LayoutHelper.createLinear(-1, 8));
         return this;
     }
@@ -349,7 +349,7 @@ public class ItemOptions {
         if (view == null) {
             return this;
         }
-        view.setTag(C3634R.C3637id.fit_width_tag, 1);
+        view.setTag(C3632R.C3635id.fit_width_tag, 1);
         this.lastLayout.addView(view, LayoutHelper.createLinear(-1, -2));
         return this;
     }
@@ -360,7 +360,7 @@ public class ItemOptions {
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, this.resourcesProvider));
         textView.setPadding(AndroidUtilities.m104dp(13), AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(13), AndroidUtilities.m104dp(8));
         textView.setText(charSequence);
-        textView.setTag(C3634R.C3637id.fit_width_tag, 1);
+        textView.setTag(C3632R.C3635id.fit_width_tag, 1);
         textView.setMaxWidth(AndroidUtilities.m104dp(200));
         this.lastLayout.addView((View) textView, LayoutHelper.createLinear(-1, -2));
         return this;
@@ -403,7 +403,7 @@ public class ItemOptions {
     }
 
     public ItemOptions setBlurBackground(BlurringShader.BlurManager blurManager, float f, float f2) {
-        Drawable mutate = this.context.getResources().getDrawable(C3634R.C3636drawable.popup_fixed_alert2).mutate();
+        Drawable mutate = this.context.getResources().getDrawable(C3632R.C3634drawable.popup_fixed_alert2).mutate();
         ViewGroup viewGroup = this.layout;
         if (viewGroup instanceof ActionBarPopupWindow.ActionBarPopupWindowLayout) {
             viewGroup.setBackgroundDrawable(new BlurringShader.StoryBlurDrawer(blurManager, viewGroup, 5).makeDrawable(this.offsetX + f + this.layout.getX(), this.offsetY + f2 + this.layout.getY(), mutate, AndroidUtilities.m104dp(6)));
@@ -529,7 +529,7 @@ public class ItemOptions {
                 this.actionBarPopupWindow.setOutsideTouchable(true);
                 this.actionBarPopupWindow.setFocusable(true);
                 this.actionBarPopupWindow.setBackgroundDrawable(new ColorDrawable(0));
-                this.actionBarPopupWindow.setAnimationStyle(C3634R.style.PopupContextAnimation);
+                this.actionBarPopupWindow.setAnimationStyle(C3632R.style.PopupContextAnimation);
                 this.actionBarPopupWindow.setInputMethodMode(2);
                 this.actionBarPopupWindow.setSoftInputMode(0);
                 if (AndroidUtilities.isTablet()) {

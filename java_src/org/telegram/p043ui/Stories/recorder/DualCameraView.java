@@ -14,7 +14,7 @@ import com.google.common.primitives.Floats;
 import com.google.zxing.common.detector.MathUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -45,10 +45,10 @@ public class DualCameraView extends CameraView implements CameraController.Error
     private boolean atTop;
 
     /* renamed from: cx */
-    private float f1987cx;
+    private float f1988cx;
 
     /* renamed from: cy */
-    private float f1988cy;
+    private float f1989cy;
     private boolean doNotSpanRotation;
     private boolean down;
     private boolean dualAvailable;
@@ -57,7 +57,7 @@ public class DualCameraView extends CameraView implements CameraController.Error
     private boolean firstMeasure;
 
     /* renamed from: h */
-    private float f1989h;
+    private float f1990h;
     private Matrix invMatrix;
     private Runnable lastFocusToPoint;
     private final PointF lastTouch;
@@ -80,7 +80,7 @@ public class DualCameraView extends CameraView implements CameraController.Error
     private float[] verticesSrc;
 
     /* renamed from: w */
-    private float f1990w;
+    private float f1991w;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$log$0(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
@@ -381,13 +381,13 @@ public class DualCameraView extends CameraView implements CameraController.Error
                     if (this.lastTouchDistance != BitmapDescriptorFactory.HUE_RED) {
                         extractPointsData(this.touchMatrix);
                         float f7 = f / this.lastTouchDistance;
-                        if (this.f1990w * f7 > getWidth() * 0.7f) {
+                        if (this.f1991w * f7 > getWidth() * 0.7f) {
                             width = getWidth() * 0.7f;
-                            f2 = this.f1990w;
+                            f2 = this.f1991w;
                         } else {
-                            if (this.f1990w * f7 < getWidth() * 0.2f) {
+                            if (this.f1991w * f7 < getWidth() * 0.2f) {
                                 width = getWidth() * 0.2f;
-                                f2 = this.f1990w;
+                                f2 = this.f1991w;
                             }
                             this.touchMatrix.postScale(f7, f7, f3, f4);
                         }
@@ -422,7 +422,7 @@ public class DualCameraView extends CameraView implements CameraController.Error
                 float round = (Math.round(this.angle / 90.0f) * 90.0f) - this.angle;
                 if (this.allowRotation && !this.doNotSpanRotation) {
                     if (Math.abs(round) < 5.0f) {
-                        this.finalMatrix.postRotate(round, this.f1987cx, this.f1988cy);
+                        this.finalMatrix.postRotate(round, this.f1988cx, this.f1989cy);
                         if (!this.snappedRotation) {
                             try {
                                 performHapticFeedback(9, 1);
@@ -434,25 +434,25 @@ public class DualCameraView extends CameraView implements CameraController.Error
                         this.snappedRotation = false;
                     }
                 }
-                float f9 = this.f1987cx;
+                float f9 = this.f1988cx;
                 if (f9 < BitmapDescriptorFactory.HUE_RED) {
                     this.finalMatrix.postTranslate(-f9, BitmapDescriptorFactory.HUE_RED);
                 } else if (f9 > getWidth()) {
-                    this.finalMatrix.postTranslate(getWidth() - this.f1987cx, BitmapDescriptorFactory.HUE_RED);
+                    this.finalMatrix.postTranslate(getWidth() - this.f1988cx, BitmapDescriptorFactory.HUE_RED);
                 }
-                float f10 = this.f1988cy;
+                float f10 = this.f1989cy;
                 if (f10 < BitmapDescriptorFactory.HUE_RED) {
                     this.finalMatrix.postTranslate(BitmapDescriptorFactory.HUE_RED, -f10);
                 } else if (f10 > getHeight() - AndroidUtilities.m104dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION)) {
-                    this.finalMatrix.postTranslate(BitmapDescriptorFactory.HUE_RED, (getHeight() - AndroidUtilities.m104dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION)) - this.f1988cy);
+                    this.finalMatrix.postTranslate(BitmapDescriptorFactory.HUE_RED, (getHeight() - AndroidUtilities.m104dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION)) - this.f1989cy);
                 }
                 this.finalMatrix.postConcat(this.toGL);
                 dualPosition.set(this.finalMatrix);
                 updateDualPosition();
-                float f11 = this.f1988cy;
-                boolean z5 = Math.min(f11, f11 - (this.f1989h / 2.0f)) < ((float) AndroidUtilities.m104dp(66));
-                float f12 = this.f1988cy;
-                boolean z6 = Math.max(f12, (this.f1989h / 2.0f) + f12) > ((float) (getHeight() - AndroidUtilities.m104dp(66)));
+                float f11 = this.f1989cy;
+                boolean z5 = Math.min(f11, f11 - (this.f1990h / 2.0f)) < ((float) AndroidUtilities.m104dp(66));
+                float f12 = this.f1989cy;
+                boolean z6 = Math.max(f12, (this.f1990h / 2.0f) + f12) > ((float) (getHeight() - AndroidUtilities.m104dp(66)));
                 if (this.atTop != z5) {
                     this.atTop = z5;
                     onEntityDraggedTop(z5);
@@ -515,25 +515,25 @@ public class DualCameraView extends CameraView implements CameraController.Error
         fArr[1] = 0.0f;
         matrix.mapPoints(fArr);
         float[] fArr2 = this.vertices;
-        this.f1987cx = fArr2[0];
-        this.f1988cy = fArr2[1];
+        this.f1988cx = fArr2[0];
+        this.f1989cy = fArr2[1];
         fArr2[0] = 1.0f;
         fArr2[1] = 0.0f;
         matrix.mapPoints(fArr2);
         float[] fArr3 = this.vertices;
-        this.angle = (float) Math.toDegrees(Math.atan2(fArr3[1] - this.f1988cy, fArr3[0] - this.f1987cx));
-        float f = this.f1987cx;
-        float f2 = this.f1988cy;
+        this.angle = (float) Math.toDegrees(Math.atan2(fArr3[1] - this.f1989cy, fArr3[0] - this.f1988cx));
+        float f = this.f1988cx;
+        float f2 = this.f1989cy;
         float[] fArr4 = this.vertices;
-        this.f1990w = MathUtils.distance(f, f2, fArr4[0], fArr4[1]) * 2.0f;
+        this.f1991w = MathUtils.distance(f, f2, fArr4[0], fArr4[1]) * 2.0f;
         float[] fArr5 = this.vertices;
         fArr5[0] = 0.0f;
         fArr5[1] = 1.0f;
         matrix.mapPoints(fArr5);
-        float f3 = this.f1987cx;
-        float f4 = this.f1988cy;
+        float f3 = this.f1988cx;
+        float f4 = this.f1989cy;
         float[] fArr6 = this.vertices;
-        this.f1989h = MathUtils.distance(f3, f4, fArr6[0], fArr6[1]) * 2.0f;
+        this.f1990h = MathUtils.distance(f3, f4, fArr6[0], fArr6[1]) * 2.0f;
     }
 
     public boolean isPointInsideDual(Matrix matrix, float f, float f2) {
@@ -586,7 +586,7 @@ public class DualCameraView extends CameraView implements CameraController.Error
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
                 this.dualAvailable = false;
                 edit.putBoolean("dual_available", false).apply();
-                new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(C3634R.string.DualErrorTitle)).setMessage(LocaleController.getString(C3634R.string.DualErrorMessage)).setPositiveButton(LocaleController.getString(C3634R.string.OK), null).show();
+                new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(C3632R.string.DualErrorTitle)).setMessage(LocaleController.getString(C3632R.string.DualErrorMessage)).setPositiveButton(LocaleController.getString(C3632R.string.OK), null).show();
             }
             log(false);
             toggleDual();

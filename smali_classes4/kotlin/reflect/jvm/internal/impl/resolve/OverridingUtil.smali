@@ -629,7 +629,7 @@
     goto/16 :goto_4
 
     :pswitch_3c
-    const-string v13, "isReturnTypeMoreSpecific"
+    const-string/jumbo v13, "isReturnTypeMoreSpecific"
 
     aput-object v13, v12, v11
 
@@ -823,6 +823,8 @@
 
     :goto_5
     throw v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x18

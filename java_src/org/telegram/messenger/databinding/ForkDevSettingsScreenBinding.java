@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkDevSettingsScreenBinding implements ViewBinding {
     public final ProgressBar progressBar;
@@ -24,7 +24,7 @@ public final class ForkDevSettingsScreenBinding implements ViewBinding {
     }
 
     public static ForkDevSettingsScreenBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_dev_settings_screen, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_dev_settings_screen, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -32,10 +32,10 @@ public final class ForkDevSettingsScreenBinding implements ViewBinding {
     }
 
     public static ForkDevSettingsScreenBinding bind(View view) {
-        int i = C3634R.C3637id.progressBar;
+        int i = C3632R.C3635id.progressBar;
         ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(view, i);
         if (progressBar != null) {
-            i = C3634R.C3637id.textDevScreen;
+            i = C3632R.C3635id.textDevScreen;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
                 return new ForkDevSettingsScreenBinding((ConstraintLayout) view, progressBar, textView);

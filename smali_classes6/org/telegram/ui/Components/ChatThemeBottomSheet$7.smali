@@ -42,7 +42,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Landroid/content/Context;ZLandroid/graphics/Canvas;FFFLandroid/graphics/Paint;Landroid/graphics/Bitmap;Landroid/graphics/Paint;FF)V
     .locals 0
 
-    .line 611
+    .line 605
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     iput-boolean p3, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->val$isDark:Z
@@ -75,15 +75,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 614
+    .line 608
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 615
+    .line 609
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->val$isDark:Z
 
     if-eqz v0, :cond_1
 
-    .line 616
+    .line 610
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$1800(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)F
@@ -96,7 +96,7 @@
 
     if-lez v0, :cond_0
 
-    .line 617
+    .line 611
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->val$bitmapCanvas:Landroid/graphics/Canvas;
 
     iget v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->val$cx:F
@@ -117,7 +117,7 @@
 
     invoke-virtual {v0, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 619
+    .line 613
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->val$bitmap:Landroid/graphics/Bitmap;
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 621
+    .line 615
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->val$cx:F
 
@@ -151,18 +151,18 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 623
+    .line 617
     :goto_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 624
+    .line 618
     iget v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->val$x:F
 
     iget v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->val$y:F
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 625
+    .line 619
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$7;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$1900(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/Components/RLottieImageView;
@@ -171,7 +171,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 626
+    .line 620
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

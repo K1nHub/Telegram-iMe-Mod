@@ -175,6 +175,251 @@
     return-object p0
 .end method
 
+.method public static final isBasicSeed([B)Z
+    .locals 2
+
+    const-string v0, "entropy"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 143
+    new-instance v0, Lorg/ton/crypto/kdf/PKCSS2ParametersGenerator;
+
+    sget-object v1, Lorg/ton/crypto/digest/Digest;->Companion:Lorg/ton/crypto/digest/Digest$Companion;
+
+    invoke-virtual {v1}, Lorg/ton/crypto/digest/Digest$Companion;->sha512()Lorg/ton/crypto/digest/Digest;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lorg/ton/crypto/kdf/PKCSS2ParametersGenerator;-><init>(Lorg/ton/crypto/digest/Digest;)V
+
+    invoke-static {v0, p0}, Lorg/ton/mnemonic/MnemonicKt;->access$basicValidation(Lorg/ton/crypto/kdf/PKCSS2ParametersGenerator;[B)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static final isPasswordNeeded(Ljava/util/List;)Z
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)Z"
+        }
+    .end annotation
+
+    const-string v0, "mnemonic"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x2
+
+    .line 101
+    invoke-static {p0, v0, v1, v0}, Lorg/ton/mnemonic/Mnemonic;->toEntropy$default(Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)[B
+
+    move-result-object p0
+
+    .line 102
+    invoke-static {p0}, Lorg/ton/mnemonic/Mnemonic;->isPasswordSeed([B)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p0}, Lorg/ton/mnemonic/Mnemonic;->isBasicSeed([B)Z
+
+    move-result p0
+
+    if-nez p0, :cond_0
+
+    const/4 p0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p0, 0x0
+
+    :goto_0
+    return p0
+.end method
+
+.method public static final isPasswordSeed([B)Z
+    .locals 2
+
+    const-string v0, "entropy"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 147
+    new-instance v0, Lorg/ton/crypto/kdf/PKCSS2ParametersGenerator;
+
+    sget-object v1, Lorg/ton/crypto/digest/Digest;->Companion:Lorg/ton/crypto/digest/Digest$Companion;
+
+    invoke-virtual {v1}, Lorg/ton/crypto/digest/Digest$Companion;->sha512()Lorg/ton/crypto/digest/Digest;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lorg/ton/crypto/kdf/PKCSS2ParametersGenerator;-><init>(Lorg/ton/crypto/digest/Digest;)V
+
+    invoke-static {v0, p0}, Lorg/ton/mnemonic/MnemonicKt;->access$passwordValidation(Lorg/ton/crypto/kdf/PKCSS2ParametersGenerator;[B)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static final isValid(Ljava/util/List;Ljava/lang/String;Ljava/util/List;)Z
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;",
+            "Ljava/lang/String;",
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;)Z"
+        }
+    .end annotation
+
+    const-string v0, "mnemonic"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "password"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "wordlist"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1726
+    instance-of v0, p0, Ljava/util/Collection;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    move p2, v1
+
+    goto :goto_0
+
+    .line 1727
+    :cond_1
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :cond_2
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    .line 111
+    invoke-interface {p2, v3}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    move p2, v2
+
+    :goto_0
+    if-nez p2, :cond_3
+
+    return v2
+
+    .line 115
+    :cond_3
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result p2
+
+    if-lez p2, :cond_4
+
+    goto :goto_1
+
+    :cond_4
+    move v1, v2
+
+    :goto_1
+    if-eqz v1, :cond_5
+
+    invoke-static {p0}, Lorg/ton/mnemonic/Mnemonic;->isPasswordNeeded(Ljava/util/List;)Z
+
+    move-result p2
+
+    if-nez p2, :cond_5
+
+    return v2
+
+    .line 119
+    :cond_5
+    invoke-static {p0, p1}, Lorg/ton/mnemonic/Mnemonic;->toEntropy(Ljava/util/List;Ljava/lang/String;)[B
+
+    move-result-object p0
+
+    invoke-static {p0}, Lorg/ton/mnemonic/Mnemonic;->isBasicSeed([B)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic isValid$default(Ljava/util/List;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)Z
+    .locals 0
+
+    and-int/lit8 p4, p3, 0x2
+
+    if-eqz p4, :cond_0
+
+    const-string p1, ""
+
+    :cond_0
+    and-int/lit8 p3, p3, 0x4
+
+    if-eqz p3, :cond_1
+
+    .line 109
+    sget-object p2, Lorg/ton/mnemonic/Mnemonic;->INSTANCE:Lorg/ton/mnemonic/Mnemonic;
+
+    invoke-virtual {p2}, Lorg/ton/mnemonic/Mnemonic;->mnemonicWords()Ljava/util/List;
+
+    move-result-object p2
+
+    .line 106
+    :cond_1
+    invoke-static {p0, p1, p2}, Lorg/ton/mnemonic/Mnemonic;->isValid(Ljava/util/List;Ljava/lang/String;Ljava/util/List;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public static final toEntropy(Ljava/util/List;Ljava/lang/String;)[B
     .locals 12
     .annotation system Ldalvik/annotation/Signature;
@@ -308,6 +553,24 @@
     invoke-static {v2, p0, p1, v1}, Lorg/ton/mnemonic/MnemonicKt;->access$entropy(Lorg/ton/crypto/mac/hmac/HMac;[B[B[B)V
 
     return-object v1
+.end method
+
+.method public static synthetic toEntropy$default(Ljava/util/List;Ljava/lang/String;ILjava/lang/Object;)[B
+    .locals 0
+
+    and-int/lit8 p2, p2, 0x2
+
+    if-eqz p2, :cond_0
+
+    const-string p1, ""
+
+    .line 134
+    :cond_0
+    invoke-static {p0, p1}, Lorg/ton/mnemonic/Mnemonic;->toEntropy(Ljava/util/List;Ljava/lang/String;)[B
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static final toSeed(Ljava/util/List;Ljava/lang/String;)[B

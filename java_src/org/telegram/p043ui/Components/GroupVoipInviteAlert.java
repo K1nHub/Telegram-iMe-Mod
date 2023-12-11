@@ -14,7 +14,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
@@ -792,7 +792,7 @@ public class GroupVoipInviteAlert extends UsersAlertBase {
             ManageChatUserCell manageChatUserCell;
             if (i == 0) {
                 ManageChatUserCell manageChatUserCell2 = new ManageChatUserCell(this.mContext, 2, 2, false);
-                manageChatUserCell2.setCustomRightImage(C3634R.C3636drawable.msg_invited);
+                manageChatUserCell2.setCustomRightImage(C3632R.C3634drawable.msg_invited);
                 manageChatUserCell2.setNameColor(Theme.getColor(Theme.key_voipgroup_nameText));
                 manageChatUserCell2.setStatusColors(Theme.getColor(Theme.key_voipgroup_lastSeenTextUnscrolled), Theme.getColor(Theme.key_voipgroup_listeningText));
                 manageChatUserCell2.setDividerColor(Theme.key_voipgroup_listViewBackground);
@@ -883,7 +883,7 @@ public class GroupVoipInviteAlert extends UsersAlertBase {
             ManageChatUserCell manageChatUserCell2;
             if (i == 0) {
                 ManageChatUserCell manageChatUserCell3 = new ManageChatUserCell(this.mContext, 6, 2, false);
-                manageChatUserCell3.setCustomRightImage(C3634R.C3636drawable.msg_invited);
+                manageChatUserCell3.setCustomRightImage(C3632R.C3634drawable.msg_invited);
                 manageChatUserCell3.setNameColor(Theme.getColor(Theme.key_voipgroup_nameText));
                 manageChatUserCell3.setStatusColors(Theme.getColor(Theme.key_voipgroup_lastSeenTextUnscrolled), Theme.getColor(Theme.key_voipgroup_listeningText));
                 manageChatUserCell3.setDividerColor(Theme.key_voipgroup_actionBar);
@@ -945,7 +945,7 @@ public class GroupVoipInviteAlert extends UsersAlertBase {
             } else if (itemViewType == 1) {
                 ManageChatTextCell manageChatTextCell = (ManageChatTextCell) viewHolder.itemView;
                 if (i == GroupVoipInviteAlert.this.addNewRow) {
-                    manageChatTextCell.setText(LocaleController.getString("VoipGroupCopyInviteLink", C3634R.string.VoipGroupCopyInviteLink), null, C3634R.C3636drawable.msg_link, 7, (!GroupVoipInviteAlert.this.loadingUsers || GroupVoipInviteAlert.this.firstLoaded) && GroupVoipInviteAlert.this.membersHeaderRow == -1 && !GroupVoipInviteAlert.this.participants.isEmpty());
+                    manageChatTextCell.setText(LocaleController.getString("VoipGroupCopyInviteLink", C3632R.string.VoipGroupCopyInviteLink), null, C3632R.C3634drawable.msg_link, 7, (!GroupVoipInviteAlert.this.loadingUsers || GroupVoipInviteAlert.this.firstLoaded) && GroupVoipInviteAlert.this.membersHeaderRow == -1 && !GroupVoipInviteAlert.this.participants.isEmpty());
                 }
             } else if (itemViewType != 2) {
             } else {
@@ -953,16 +953,16 @@ public class GroupVoipInviteAlert extends UsersAlertBase {
                 if (i != GroupVoipInviteAlert.this.membersHeaderRow) {
                     if (i == GroupVoipInviteAlert.this.contactsHeaderRow) {
                         if (GroupVoipInviteAlert.this.showContacts) {
-                            graySectionCell.setText(LocaleController.getString("YourContactsToInvite", C3634R.string.YourContactsToInvite));
+                            graySectionCell.setText(LocaleController.getString("YourContactsToInvite", C3632R.string.YourContactsToInvite));
                             return;
                         } else {
-                            graySectionCell.setText(LocaleController.getString("GroupContacts", C3634R.string.GroupContacts));
+                            graySectionCell.setText(LocaleController.getString("GroupContacts", C3632R.string.GroupContacts));
                             return;
                         }
                     }
                     return;
                 }
-                graySectionCell.setText(LocaleController.getString("ChannelOtherMembers", C3634R.string.ChannelOtherMembers));
+                graySectionCell.setText(LocaleController.getString("ChannelOtherMembers", C3632R.string.ChannelOtherMembers));
             }
         }
 

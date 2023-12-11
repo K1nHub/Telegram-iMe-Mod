@@ -2582,14 +2582,14 @@
 .method private addToSelectedPhotos(Lorg/telegram/messenger/MediaController$PhotoEntry;I)I
     .locals 2
 
-    .line 1490
+    .line 1494
     iget v0, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->imageId:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 1491
+    .line 1495
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -2598,12 +2598,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 1492
+    .line 1496
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1493
+    .line 1497
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -2612,7 +2612,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 1495
+    .line 1499
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -2620,18 +2620,18 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 1497
+    .line 1501
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->updatePhotosCounter(Z)V
 
-    .line 1498
+    .line 1502
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->updateCheckedPhotoIndices()V
 
     if-ltz p2, :cond_1
 
-    .line 1500
+    .line 1504
     invoke-virtual {p1}, Lorg/telegram/messenger/MediaController$PhotoEntry;->reset()V
 
-    .line 1501
+    .line 1505
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->photoViewerProvider:Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;
 
     invoke-interface {p1, p2}, Lorg/telegram/ui/PhotoViewer$PhotoViewerProvider;->updatePhotoAtIndex(I)V
@@ -2639,20 +2639,20 @@
     :cond_1
     return v0
 
-    .line 1505
+    .line 1509
     :cond_2
     sget-object p2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {p2, v0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1506
+    .line 1510
     sget-object p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     const/4 p1, 0x1
 
-    .line 1507
+    .line 1511
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->updatePhotosCounter(Z)V
 
     const/4 p1, -0x1
@@ -2663,12 +2663,12 @@
 .method private applyCameraViewPosition()V
     .locals 5
 
-    .line 2860
+    .line 2864
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_4
 
-    .line 2861
+    .line 2865
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
     const/4 v2, 0x1
@@ -2677,14 +2677,14 @@
 
     if-nez v1, :cond_0
 
-    .line 2862
+    .line 2866
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
 
     aget v1, v1, v3
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 2863
+    .line 2867
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
@@ -2697,7 +2697,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 2865
+    .line 2869
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
@@ -2707,7 +2707,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 2866
+    .line 2870
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
@@ -2724,15 +2724,15 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 2867
+    .line 2871
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->itemSize:I
 
-    .line 2871
+    .line 2875
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
     if-nez v1, :cond_2
 
-    .line 2872
+    .line 2876
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     iget v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewOffsetY:F
@@ -2741,7 +2741,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/camera/CameraView;->setClipTop(I)V
 
-    .line 2873
+    .line 2877
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     iget v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewOffsetBottomY:F
@@ -2750,7 +2750,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/camera/CameraView;->setClipBottom(I)V
 
-    .line 2874
+    .line 2878
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2759,7 +2759,7 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 2875
+    .line 2879
     iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     if-ne v2, v0, :cond_1
@@ -2768,26 +2768,26 @@
 
     if-eq v2, v0, :cond_2
 
-    .line 2876
+    .line 2880
     :cond_1
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 2877
+    .line 2881
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 2878
+    .line 2882
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2880
+    .line 2884
     new-instance v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda14;
 
     invoke-direct {v0, p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Landroid/widget/FrameLayout$LayoutParams;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2888
+    .line 2892
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->itemSize:I
 
@@ -2801,7 +2801,7 @@
 
     int-to-float v0, v0
 
-    .line 2889
+    .line 2893
     iget v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewOffsetY:F
 
     sub-float/2addr v0, v2
@@ -2812,7 +2812,7 @@
 
     float-to-int v0, v0
 
-    .line 2891
+    .line 2895
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2821,7 +2821,7 @@
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 2892
+    .line 2896
     iget v3, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     if-ne v3, v0, :cond_3
@@ -2830,19 +2830,19 @@
 
     if-eq v3, v1, :cond_4
 
-    .line 2893
+    .line 2897
     :cond_3
     iput v1, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 2894
+    .line 2898
     iput v0, v2, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 2895
+    .line 2899
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2897
+    .line 2901
     new-instance v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda15;
 
     invoke-direct {v0, p0, v2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Landroid/widget/FrameLayout$LayoutParams;)V
@@ -2856,7 +2856,7 @@
 .method private checkSendMediaEnabled(Lorg/telegram/messenger/MediaController$PhotoEntry;)Z
     .locals 3
 
-    .line 1475
+    .line 1479
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->videoEnabled:Z
 
     const/4 v1, 0x1
@@ -2867,7 +2867,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1476
+    .line 1480
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->sizeNotifierFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -2882,22 +2882,22 @@
 
     const-string v2, "GlobalAttachVideoRestricted"
 
-    .line 1477
+    .line 1481
     invoke-static {v2, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1476
+    .line 1480
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createErrorBulletin(Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
-    .line 1478
+    .line 1482
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
     return v1
 
-    .line 1480
+    .line 1484
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->photoEnabled:Z
 
@@ -2907,7 +2907,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1481
+    .line 1485
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->sizeNotifierFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -2922,17 +2922,17 @@
 
     const-string v2, "GlobalAttachPhotoRestricted"
 
-    .line 1482
+    .line 1486
     invoke-static {v2, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1481
+    .line 1485
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createErrorBulletin(Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
-    .line 1483
+    .line 1487
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
     return v1
@@ -2946,7 +2946,7 @@
 .method private clearSelectedPhotos()V
     .locals 5
 
-    .line 1513
+    .line 1517
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->spoilerItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$string;->EnablePhotoSpoiler:I
@@ -2957,14 +2957,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1514
+    .line 1518
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->spoilerItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$raw;->photo_spoiler:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setAnimatedIcon(I)V
 
-    .line 1515
+    .line 1519
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -2973,7 +2973,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    .line 1516
+    .line 1520
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
@@ -2982,7 +2982,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1517
+    .line 1521
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -3006,30 +3006,30 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 1518
+    .line 1522
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 1519
+    .line 1523
     invoke-virtual {v1}, Lorg/telegram/messenger/MediaController$PhotoEntry;->reset()V
 
     goto :goto_0
 
-    .line 1521
+    .line 1525
     :cond_0
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 1522
+    .line 1526
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 1524
+    .line 1528
     :cond_1
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotos:Ljava/util/ArrayList;
 
@@ -3041,7 +3041,7 @@
 
     const/4 v0, 0x0
 
-    .line 1525
+    .line 1529
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotos:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -3051,7 +3051,7 @@
     :goto_1
     if-ge v0, v1, :cond_4
 
-    .line 1526
+    .line 1530
     sget-object v2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotos:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3060,7 +3060,7 @@
 
     check-cast v2, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 1527
+    .line 1531
     new-instance v3, Ljava/io/File;
 
     iget-object v4, v2, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
@@ -3069,12 +3069,12 @@
 
     invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    .line 1528
+    .line 1532
     iget-object v3, v2, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
 
     if-eqz v3, :cond_2
 
-    .line 1529
+    .line 1533
     new-instance v3, Ljava/io/File;
 
     iget-object v4, v2, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
@@ -3083,13 +3083,13 @@
 
     invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    .line 1531
+    .line 1535
     :cond_2
     iget-object v3, v2, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
     if-eqz v3, :cond_3
 
-    .line 1532
+    .line 1536
     new-instance v3, Ljava/io/File;
 
     iget-object v2, v2, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
@@ -3103,19 +3103,19 @@
 
     goto :goto_1
 
-    .line 1535
+    .line 1539
     :cond_4
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotos:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 1537
+    .line 1541
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 1538
+    .line 1542
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAttachAdapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
@@ -3126,7 +3126,7 @@
 .method private getCellForIndex(I)Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
     .locals 6
 
-    .line 1994
+    .line 1998
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -3138,14 +3138,14 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 1996
+    .line 2000
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1997
+    .line 2001
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v3
@@ -3174,16 +3174,16 @@
 
     goto :goto_1
 
-    .line 2000
+    .line 2004
     :cond_0
     instance-of v3, v2, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
 
     if-eqz v3, :cond_1
 
-    .line 2001
+    .line 2005
     check-cast v2, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
 
-    .line 2002
+    .line 2006
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v3
@@ -3306,7 +3306,7 @@
 .method private isNoGalleryPermissions()Z
     .locals 4
 
-    .line 2951
+    .line 2955
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -3317,7 +3317,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2953
+    .line 2957
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -3326,7 +3326,7 @@
 
     move-result-object v0
 
-    .line 2955
+    .line 2959
     :cond_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -3342,7 +3342,7 @@
 
     const-string v3, "android.permission.READ_MEDIA_IMAGES"
 
-    .line 2958
+    .line 2962
     invoke-virtual {v0, v3}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v3
@@ -3351,7 +3351,7 @@
 
     const-string v3, "android.permission.READ_MEDIA_VIDEO"
 
-    .line 2959
+    .line 2963
     invoke-virtual {v0, v3}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v3
@@ -3363,7 +3363,7 @@
 
     const-string v1, "android.permission.READ_EXTERNAL_STORAGE"
 
-    .line 2961
+    .line 2965
     invoke-virtual {v0, v1}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v0
@@ -3385,12 +3385,12 @@
 .method private synthetic lambda$applyCameraViewPosition$16(Landroid/widget/FrameLayout$LayoutParams;)V
     .locals 1
 
-    .line 2881
+    .line 2885
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_0
 
-    .line 2882
+    .line 2886
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     :cond_0
@@ -3400,12 +3400,12 @@
 .method private synthetic lambda$applyCameraViewPosition$17(Landroid/widget/FrameLayout$LayoutParams;)V
     .locals 1
 
-    .line 2898
+    .line 2902
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_0
 
-    .line 2899
+    .line 2903
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     :cond_0
@@ -3415,7 +3415,7 @@
 .method private synthetic lambda$hideCamera$15()V
     .locals 2
 
-    .line 2412
+    .line 2416
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainer()Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
@@ -3426,7 +3426,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 2413
+    .line 2417
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainer()Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
@@ -3439,10 +3439,10 @@
 
     const/4 v0, 0x0
 
-    .line 2414
+    .line 2418
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
-    .line 2415
+    .line 2419
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     return-void
@@ -4564,7 +4564,7 @@
 .method private synthetic lambda$onHide$23()V
     .locals 2
 
-    .line 3528
+    .line 3532
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const/16 v1, 0x8
@@ -4577,12 +4577,12 @@
 .method private synthetic lambda$onMenuItemClick$18(ZILjava/lang/String;)V
     .locals 9
 
-    .line 3006
+    .line 3010
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->applyCaption()V
 
-    .line 3007
+    .line 3011
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->delegate:Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;
@@ -4609,12 +4609,12 @@
 .method private synthetic lambda$onMenuItemClick$19(ZILjava/lang/String;)V
     .locals 9
 
-    .line 3016
+    .line 3020
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->applyCaption()V
 
-    .line 3017
+    .line 3021
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->delegate:Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;
@@ -4641,7 +4641,7 @@
 .method private synthetic lambda$onMenuItemClick$20(Z)V
     .locals 2
 
-    .line 3039
+    .line 3043
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->spoilerItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     if-eqz p1, :cond_0
@@ -4662,7 +4662,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 3041
+    .line 3045
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->spoilerItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_spoiler_off:I
@@ -4671,7 +4671,7 @@
 
     goto :goto_1
 
-    .line 3043
+    .line 3047
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->spoilerItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
@@ -4684,7 +4684,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 3046
+    .line 3050
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -4693,7 +4693,7 @@
 
     goto :goto_2
 
-    .line 3048
+    .line 3052
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -4708,12 +4708,12 @@
 .method private static synthetic lambda$onMenuItemClick$21(Ljava/util/List;ZLandroid/view/View;)V
     .locals 1
 
-    .line 3064
+    .line 3068
     instance-of v0, p2, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
 
     if-eqz v0, :cond_1
 
-    .line 3065
+    .line 3069
     check-cast p2, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getPhotoEntry()Lorg/telegram/messenger/MediaController$PhotoEntry;
@@ -4722,7 +4722,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3066
+    .line 3070
     iget v0, v0, Lorg/telegram/messenger/MediaController$PhotoEntry;->imageId:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4754,15 +4754,15 @@
 .method private synthetic lambda$onPhotoEditModeChanged$24()V
     .locals 1
 
-    .line 3570
+    .line 3574
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pauseCameraPreview()V
 
     const/4 v0, 0x0
 
-    .line 3571
+    .line 3575
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->afterCameraInitRunnable:Ljava/lang/Runnable;
 
-    .line 3572
+    .line 3576
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->isCameraFrontfaceBeforeEnteringEditMode:Ljava/lang/Boolean;
 
     return-void
@@ -4771,7 +4771,7 @@
 .method private synthetic lambda$onPreMeasure$25()V
     .locals 1
 
-    .line 3622
+    .line 3626
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
@@ -4782,17 +4782,17 @@
 .method private synthetic lambda$onShow$22(Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;)V
     .locals 3
 
-    .line 3454
+    .line 3458
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getCurrentItemTop()I
 
     move-result v0
 
-    .line 3455
+    .line 3459
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getListTopPadding()I
 
     move-result p1
 
-    .line 3456
+    .line 3460
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/16 v2, 0x8
@@ -5192,7 +5192,7 @@
 
     const/4 v2, -0x1
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_11
 
     .line 1385
     new-instance v0, Lorg/telegram/messenger/MediaController$PhotoEntry;
@@ -5595,12 +5595,12 @@
     :cond_d
     invoke-static {v3, v11}, Lorg/telegram/messenger/MessageObject;->isAnimatedStickerDocument(Lorg/telegram/tgnet/TLRPC$Document;Z)Z
 
-    move-result v3
+    move-result v4
 
     .line 1460
-    iget-byte v4, v1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
+    iget-byte v5, v1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
 
-    if-eqz v3, :cond_e
+    if-eqz v4, :cond_e
 
     goto :goto_6
 
@@ -5608,14 +5608,34 @@
     const/4 v11, 0x4
 
     :goto_6
-    or-int v3, v4, v11
+    or-int v4, v5, v11
+
+    int-to-byte v4, v4
+
+    iput-byte v4, v1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
+
+    .line 1462
+    :cond_f
+    invoke-static {v3}, Lorg/telegram/messenger/MessageObject;->isTextColorEmoji(Lorg/telegram/tgnet/TLRPC$Document;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_10
+
+    .line 1463
+    iput v2, v1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->color:I
+
+    .line 1464
+    iget-byte v3, v1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
+
+    or-int/lit8 v3, v3, 0x8
 
     int-to-byte v3, v3
 
     iput-byte v3, v1, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
 
-    .line 1463
-    :cond_f
+    .line 1467
+    :cond_10
     iget-object v3, v0, Lorg/telegram/messenger/MediaController$MediaEditState;->editedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     new-instance v4, Ljava/util/ArrayList;
@@ -5624,7 +5644,7 @@
 
     iput-object v4, v3, Lorg/telegram/messenger/VideoEditedInfo;->mediaEntities:Ljava/util/ArrayList;
 
-    .line 1464
+    .line 1468
     iget-object v3, v0, Lorg/telegram/messenger/MediaController$MediaEditState;->editedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     iget-object v3, v3, Lorg/telegram/messenger/VideoEditedInfo;->mediaEntities:Ljava/util/ArrayList;
@@ -5633,8 +5653,8 @@
 
     goto :goto_7
 
-    .line 1466
-    :cond_10
+    .line 1470
+    :cond_11
     new-instance v0, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     const/4 v5, 0x0
@@ -5661,7 +5681,7 @@
 
     invoke-direct/range {v4 .. v15}, Lorg/telegram/messenger/MediaController$PhotoEntry;-><init>(IIJLjava/lang/String;IZIIJ)V
 
-    .line 1468
+    .line 1472
     :goto_7
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
@@ -5671,7 +5691,7 @@
 
     invoke-virtual {v1, v3, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1469
+    .line 1473
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -5682,7 +5702,7 @@
 
     move-object/from16 v1, p0
 
-    .line 1470
+    .line 1474
     iget-object v0, v1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->delegate:Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;
@@ -5713,12 +5733,12 @@
 
     const/4 v1, 0x1
 
-    .line 1927
+    .line 1931
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->showZoomControls(ZZ)V
 
     const/4 v0, 0x0
 
-    .line 1928
+    .line 1932
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
     return-void
@@ -5731,12 +5751,12 @@
 
     const/4 v1, 0x1
 
-    .line 1949
+    .line 1953
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->showZoomControls(ZZ)V
 
     const/4 v0, 0x0
 
-    .line 1950
+    .line 1954
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
     return-void
@@ -5745,7 +5765,7 @@
 .method private static synthetic lambda$updateAlbumsDropDown$11(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;)I
     .locals 3
 
-    .line 1552
+    .line 1556
     iget v0, p1, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketId:I
 
     const/4 v1, -0x1
@@ -5763,20 +5783,20 @@
 
     if-eqz v0, :cond_1
 
-    .line 1554
+    .line 1558
     iget v0, p2, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketId:I
 
     if-nez v0, :cond_1
 
     return v2
 
-    .line 1557
+    .line 1561
     :cond_1
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result p1
 
-    .line 1558
+    .line 1562
     invoke-virtual {p0, p2}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result p0
@@ -5799,7 +5819,7 @@
 .method private synthetic lambda$updateAlbumsDropDown$12(ILandroid/view/View;)V
     .locals 0
 
-    .line 1581
+    .line 1585
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/ChatAttachAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -5810,7 +5830,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;->onItemClick(I)V
 
-    .line 1582
+    .line 1586
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->toggleSubMenu()V
@@ -5821,7 +5841,7 @@
 .method private onPhotoEditModeChanged(Z)V
     .locals 1
 
-    .line 3562
+    .line 3566
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->needCamera:Z
 
     if-eqz v0, :cond_1
@@ -5832,12 +5852,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 3564
+    .line 3568
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz p1, :cond_1
 
-    .line 3565
+    .line 3569
     invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraView;->isFrontface()Z
 
     move-result p1
@@ -5850,12 +5870,12 @@
 
     const/4 p1, 0x1
 
-    .line 3566
+    .line 3570
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->hideCamera(Z)V
 
     goto :goto_0
 
-    .line 3569
+    .line 3573
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda7;
 
@@ -5863,7 +5883,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->afterCameraInitRunnable:Ljava/lang/Runnable;
 
-    .line 3574
+    .line 3578
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->showCamera()V
 
     :cond_1
@@ -5874,7 +5894,7 @@
 .method private openCamera(Z)V
     .locals 9
 
-    .line 2076
+    .line 2080
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_d
@@ -5893,13 +5913,13 @@
 
     goto/16 :goto_7
 
-    .line 2079
+    .line 2083
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->initTexture()V
 
-    .line 2080
+    .line 2084
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->shouldLoadAllMedia()Z
 
     move-result v0
@@ -5910,20 +5930,20 @@
 
     if-eqz v0, :cond_1
 
-    .line 2081
+    .line 2085
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->tooltipTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 2083
+    .line 2087
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->tooltipTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2085
+    .line 2089
     :goto_0
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotos:Ljava/util/ArrayList;
 
@@ -5935,30 +5955,30 @@
 
     if-eqz v0, :cond_2
 
-    .line 2086
+    .line 2090
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2087
+    .line 2091
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
     goto :goto_1
 
-    .line 2089
+    .line 2093
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2090
+    .line 2094
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 2092
+    .line 2096
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -5976,44 +5996,44 @@
 
     if-eqz v0, :cond_3
 
-    .line 2093
+    .line 2097
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->closeKeyboard()V
 
-    .line 2095
+    .line 2099
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2096
+    .line 2100
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2097
+    .line 2101
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2098
+    .line 2102
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     const/4 v4, 0x0
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 2099
+    .line 2103
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->animateCameraValues:[I
 
     aput v2, v0, v2
 
-    .line 2100
+    .line 2104
     iget v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->itemSize:I
 
     const/4 v5, 0x1
@@ -6022,30 +6042,30 @@
 
     const/4 v6, 0x2
 
-    .line 2101
+    .line 2105
     aput v4, v0, v6
 
-    .line 2102
+    .line 2106
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->additionCloseCameraY:F
 
-    .line 2103
+    .line 2107
     iput-boolean v5, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraExpanded:Z
 
-    .line 2104
+    .line 2108
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_4
 
     const/4 v4, -0x1
 
-    .line 2105
+    .line 2109
     invoke-virtual {v0, v4}, Lorg/telegram/messenger/camera/CameraView;->setFpsLimit(I)V
 
-    .line 2107
+    .line 2111
     :cond_4
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 2108
+    .line 2112
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -6054,7 +6074,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/messenger/AndroidUtilities;->setLightNavigationBar(Landroid/view/Window;Z)V
 
-    .line 2109
+    .line 2113
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -6069,25 +6089,25 @@
 
     if-eqz p1, :cond_7
 
-    .line 2111
+    .line 2115
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->setCameraOpenProgress(F)V
 
-    .line 2112
+    .line 2116
     iput-boolean v5, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAnimationInProgress:Z
 
-    .line 2113
+    .line 2117
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
 
-    .line 2114
+    .line 2118
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     new-array v4, v6, [F
 
-    .line 2115
+    .line 2119
     fill-array-data v4, :array_0
 
     const-string v7, "cameraOpenProgress"
@@ -6098,7 +6118,7 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2116
+    .line 2120
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -6113,7 +6133,7 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2117
+    .line 2121
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -6128,7 +6148,7 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2118
+    .line 2122
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -6148,7 +6168,7 @@
     :goto_2
     if-ge v4, v6, :cond_6
 
-    .line 2120
+    .line 2124
     iget-object v7, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->flashModeButton:[Landroid/widget/ImageView;
 
     aget-object v7, v7, v4
@@ -6159,7 +6179,7 @@
 
     if-nez v7, :cond_5
 
-    .line 2121
+    .line 2125
     iget-object v7, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->flashModeButton:[Landroid/widget/ImageView;
 
     aget-object v4, v7, v4
@@ -6183,53 +6203,53 @@
 
     goto :goto_2
 
-    .line 2125
+    .line 2129
     :cond_6
     :goto_3
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 2126
+    .line 2130
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
     const-wide/16 v1, 0x15e
 
-    .line 2127
+    .line 2131
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2128
+    .line 2132
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2129
+    .line 2133
     new-instance v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$17;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$17;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2149
+    .line 2153
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_6
 
-    .line 2151
+    .line 2155
     :cond_7
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->setCameraOpenProgress(F)V
 
-    .line 2152
+    .line 2156
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 2153
+    .line 2157
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 2154
+    .line 2158
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->setAlpha(F)V
@@ -6237,7 +6257,7 @@
     :goto_4
     if-ge v2, v6, :cond_9
 
-    .line 2156
+    .line 2160
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->flashModeButton:[Landroid/widget/ImageView;
 
     aget-object v1, v1, v2
@@ -6248,7 +6268,7 @@
 
     if-nez v1, :cond_8
 
-    .line 2157
+    .line 2161
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->flashModeButton:[Landroid/widget/ImageView;
 
     aget-object v1, v1, v2
@@ -6262,7 +6282,7 @@
 
     goto :goto_4
 
-    .line 2161
+    .line 2165
     :cond_9
     :goto_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -6271,7 +6291,7 @@
 
     invoke-interface {v0}, Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;->onCameraOpened()V
 
-    .line 2162
+    .line 2166
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_a
@@ -6284,23 +6304,23 @@
 
     const/16 v1, 0x404
 
-    .line 2163
+    .line 2167
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setSystemUiVisibility(I)V
 
-    .line 2166
+    .line 2170
     :cond_a
     :goto_6
     iput-boolean v5, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
-    .line 2167
+    .line 2171
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_b
 
-    .line 2168
+    .line 2172
     invoke-virtual {v0, v6}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    .line 2170
+    .line 2174
     :cond_b
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -6308,7 +6328,7 @@
 
     if-lt v0, v1, :cond_c
 
-    .line 2171
+    .line 2175
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->setImportantForAccessibility(I)V
@@ -6316,7 +6336,7 @@
     :cond_c
     const v0, 0x81e0
 
-    .line 2174
+    .line 2178
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
@@ -6333,7 +6353,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 2175
+    .line 2179
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v0, v5, p1}, Lorg/telegram/messenger/camera/CameraView;->showTexture(ZZ)V
@@ -6354,20 +6374,20 @@
 .method private pauseCameraPreview()V
     .locals 2
 
-    .line 3536
+    .line 3540
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_0
 
-    .line 3537
+    .line 3541
     invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 3539
+    .line 3543
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v1
@@ -6381,7 +6401,7 @@
     :catch_0
     move-exception v0
 
-    .line 3543
+    .line 3547
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -6398,7 +6418,7 @@
 
     return v0
 
-    .line 1592
+    .line 1596
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pressed:Z
 
@@ -6423,7 +6443,7 @@
 
     if-ne v1, v4, :cond_5
 
-    .line 1593
+    .line 1597
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
@@ -6431,7 +6451,7 @@
 
     invoke-virtual {v1, v4}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 1594
+    .line 1598
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -6462,7 +6482,7 @@
 
     return v0
 
-    .line 1597
+    .line 1601
     :cond_3
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->takingPhoto:Z
 
@@ -6472,14 +6492,14 @@
 
     if-nez v1, :cond_10
 
-    .line 1598
+    .line 1602
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v1
 
     if-ne v1, v2, :cond_4
 
-    .line 1599
+    .line 1603
     invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v1
@@ -6512,41 +6532,41 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pinchStartDistance:F
 
-    .line 1600
+    .line 1604
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zooming:Z
 
     goto :goto_0
 
-    .line 1602
+    .line 1606
     :cond_4
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->maybeStartDraging:Z
 
-    .line 1603
+    .line 1607
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->lastY:F
 
-    .line 1604
+    .line 1608
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zooming:Z
 
-    .line 1606
+    .line 1610
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomWas:Z
 
-    .line 1607
+    .line 1611
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pressed:Z
 
     goto/16 :goto_2
 
-    .line 1609
+    .line 1613
     :cond_5
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pressed:Z
 
     if-eqz v1, :cond_10
 
-    .line 1610
+    .line 1614
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v1
@@ -6565,7 +6585,7 @@
 
     if-ne v1, v2, :cond_c
 
-    .line 1611
+    .line 1615
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zooming:Z
 
     const v11, 0x3ecccccd    # 0.4f
@@ -6582,7 +6602,7 @@
 
     if-nez v1, :cond_9
 
-    .line 1612
+    .line 1616
     invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v1
@@ -6613,12 +6633,12 @@
 
     double-to-float p1, v1
 
-    .line 1613
+    .line 1617
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomWas:Z
 
     if-nez v1, :cond_6
 
-    .line 1614
+    .line 1618
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pinchStartDistance:F
 
     sub-float v1, p1, v1
@@ -6635,21 +6655,21 @@
 
     if-ltz v0, :cond_10
 
-    .line 1615
+    .line 1619
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pinchStartDistance:F
 
-    .line 1616
+    .line 1620
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomWas:Z
 
     goto/16 :goto_2
 
-    .line 1619
+    .line 1623
     :cond_6
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v1, :cond_10
 
-    .line 1620
+    .line 1624
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pinchStartDistance:F
 
     sub-float v1, p1, v1
@@ -6664,10 +6684,10 @@
 
     div-float/2addr v1, v2
 
-    .line 1621
+    .line 1625
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pinchStartDistance:F
 
-    .line 1622
+    .line 1626
     iget p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraZoom:F
 
     add-float/2addr p1, v1
@@ -6678,7 +6698,7 @@
 
     if-gez v1, :cond_7
 
-    .line 1624
+    .line 1628
     iput v10, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraZoom:F
 
     goto :goto_1
@@ -6688,10 +6708,10 @@
 
     if-lez p1, :cond_8
 
-    .line 1626
+    .line 1630
     iput v9, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraZoom:F
 
-    .line 1628
+    .line 1632
     :cond_8
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
@@ -6700,7 +6720,7 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/Components/ZoomControlView;->setZoom(FZ)V
 
-    .line 1629
+    .line 1633
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getSheetContainer()Landroid/view/ViewGroup;
@@ -6709,35 +6729,35 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 1630
+    .line 1634
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraZoom:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/camera/CameraView;->setZoom(F)V
 
-    .line 1631
+    .line 1635
     invoke-direct {p0, v3, v3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->showZoomControls(ZZ)V
 
     goto/16 :goto_2
 
-    .line 1635
+    .line 1639
     :cond_9
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result p1
 
-    .line 1636
+    .line 1640
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->lastY:F
 
     sub-float v1, p1, v1
 
-    .line 1637
+    .line 1641
     iget-boolean v9, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->maybeStartDraging:Z
 
     if-eqz v9, :cond_a
 
-    .line 1638
+    .line 1642
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result p1
@@ -6750,26 +6770,26 @@
 
     if-lez p1, :cond_10
 
-    .line 1639
+    .line 1643
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->maybeStartDraging:Z
 
-    .line 1640
+    .line 1644
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dragging:Z
 
     goto/16 :goto_2
 
-    .line 1642
+    .line 1646
     :cond_a
     iget-boolean v9, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dragging:Z
 
     if-eqz v9, :cond_10
 
-    .line 1643
+    .line 1647
     iget-object v9, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v9, :cond_10
 
-    .line 1644
+    .line 1648
     invoke-virtual {v9}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result v11
@@ -6778,26 +6798,26 @@
 
     invoke-virtual {v9, v11}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1645
+    .line 1649
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->lastY:F
 
-    .line 1646
+    .line 1650
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {p1, v6}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 1647
+    .line 1651
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_b
 
-    .line 1648
+    .line 1652
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1649
+    .line 1653
     iput-object v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
-    .line 1651
+    .line 1655
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
@@ -6807,7 +6827,7 @@
 
     if-nez p1, :cond_10
 
-    .line 1652
+    .line 1656
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -6816,14 +6836,14 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1653
+    .line 1657
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
     new-array v1, v7, [Landroid/animation/Animator;
 
-    .line 1654
+    .line 1658
     iget-object v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -6832,7 +6852,7 @@
 
     aput v10, v9, v0
 
-    .line 1655
+    .line 1659
     invoke-static {v6, v7, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -6847,7 +6867,7 @@
 
     aput v10, v9, v0
 
-    .line 1656
+    .line 1660
     invoke-static {v6, v7, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -6862,7 +6882,7 @@
 
     aput v10, v9, v0
 
-    .line 1657
+    .line 1661
     invoke-static {v6, v7, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v6
@@ -6879,7 +6899,7 @@
 
     aput v10, v7, v0
 
-    .line 1658
+    .line 1662
     invoke-static {v2, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
@@ -6896,7 +6916,7 @@
 
     aput v10, v7, v0
 
-    .line 1659
+    .line 1663
     invoke-static {v2, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
@@ -6911,32 +6931,32 @@
 
     aput v10, v6, v0
 
-    .line 1660
+    .line 1664
     invoke-static {v2, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v1, v4
 
-    .line 1654
+    .line 1658
     invoke-virtual {p1, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const-wide/16 v0, 0xdc
 
-    .line 1661
+    .line 1665
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1662
+    .line 1666
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1663
+    .line 1667
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     goto/16 :goto_2
 
-    .line 1668
+    .line 1672
     :cond_c
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -6956,27 +6976,27 @@
 
     if-ne v1, v7, :cond_10
 
-    .line 1669
+    .line 1673
     :cond_d
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pressed:Z
 
-    .line 1670
+    .line 1674
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zooming:Z
 
-    .line 1673
+    .line 1677
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dragging:Z
 
     if-eqz v1, :cond_f
 
-    .line 1674
+    .line 1678
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dragging:Z
 
-    .line 1675
+    .line 1679
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz p1, :cond_10
 
-    .line 1676
+    .line 1680
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result p1
@@ -7001,12 +7021,12 @@
 
     if-lez p1, :cond_e
 
-    .line 1677
+    .line 1681
     invoke-virtual {p0, v3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->closeCamera(Z)V
 
     goto/16 :goto_2
 
-    .line 1679
+    .line 1683
     :cond_e
     new-instance p1, Landroid/animation/AnimatorSet;
 
@@ -7014,7 +7034,7 @@
 
     new-array v1, v7, [Landroid/animation/Animator;
 
-    .line 1680
+    .line 1684
     iget-object v7, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     sget-object v11, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -7023,7 +7043,7 @@
 
     aput v10, v12, v0
 
-    .line 1681
+    .line 1685
     invoke-static {v7, v11, v12}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v7
@@ -7038,7 +7058,7 @@
 
     aput v9, v11, v0
 
-    .line 1682
+    .line 1686
     invoke-static {v7, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v7
@@ -7053,7 +7073,7 @@
 
     aput v9, v11, v0
 
-    .line 1683
+    .line 1687
     invoke-static {v7, v10, v11}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v7
@@ -7070,7 +7090,7 @@
 
     aput v9, v10, v0
 
-    .line 1684
+    .line 1688
     invoke-static {v2, v7, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
@@ -7087,7 +7107,7 @@
 
     aput v9, v8, v0
 
-    .line 1685
+    .line 1689
     invoke-static {v2, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
@@ -7102,37 +7122,37 @@
 
     aput v9, v7, v0
 
-    .line 1686
+    .line 1690
     invoke-static {v2, v5, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v1, v4
 
-    .line 1680
+    .line 1684
     invoke-virtual {p1, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const-wide/16 v0, 0xfa
 
-    .line 1687
+    .line 1691
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1688
+    .line 1692
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->interpolator:Landroid/view/animation/DecelerateInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1689
+    .line 1693
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1690
+    .line 1694
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v6}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     goto :goto_2
 
-    .line 1693
+    .line 1697
     :cond_f
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
@@ -7142,12 +7162,12 @@
 
     if-nez v2, :cond_10
 
-    .line 1694
+    .line 1698
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->viewPosition:[I
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->getLocationOnScreen([I)V
 
-    .line 1695
+    .line 1699
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v1
@@ -7160,7 +7180,7 @@
 
     sub-float/2addr v1, v0
 
-    .line 1696
+    .line 1700
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result p1
@@ -7173,7 +7193,7 @@
 
     sub-float/2addr p1, v0
 
-    .line 1697
+    .line 1701
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     float-to-int v1, v1
@@ -7190,7 +7210,7 @@
 .method private resetRecordState()V
     .locals 7
 
-    .line 1705
+    .line 1709
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->destroyed:Z
@@ -7215,7 +7235,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 1710
+    .line 1714
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->flashModeButton:[Landroid/widget/ImageView;
 
     aget-object v2, v2, v1
@@ -7248,7 +7268,7 @@
 
     goto :goto_0
 
-    .line 1712
+    .line 1716
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->switchCameraButton:Landroid/widget/ImageView;
 
@@ -7276,7 +7296,7 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1713
+    .line 1717
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->tooltipTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -7297,22 +7317,22 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1714
+    .line 1718
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->recordTime:Landroid/widget/TextView;
 
     invoke-static {v1, v0}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;Z)V
 
-    .line 1716
+    .line 1720
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->videoRecordRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 v0, 0x0
 
-    .line 1717
+    .line 1721
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->videoRecordRunnable:Ljava/lang/Runnable;
 
-    .line 1718
+    .line 1722
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -7331,23 +7351,23 @@
 
     const/4 v0, 0x0
 
-    .line 3549
+    .line 3553
     :try_start_0
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCamera(Z)V
 
-    .line 3550
+    .line 3554
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_0
 
-    .line 3551
+    .line 3555
     invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 3553
+    .line 3557
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v1
@@ -7361,7 +7381,7 @@
     :catch_0
     move-exception v0
 
-    .line 3557
+    .line 3561
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -7372,14 +7392,14 @@
 .method private saveLastCameraBitmap()V
     .locals 10
 
-    .line 2421
+    .line 2425
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->canSaveCameraPreview:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2425
+    .line 2429
     :cond_0
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
@@ -7388,7 +7408,7 @@
 
     move-result-object v0
 
-    .line 2426
+    .line 2430
     invoke-virtual {v0}, Landroid/view/TextureView;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -7399,7 +7419,7 @@
 
     const/4 v3, 0x0
 
-    .line 2428
+    .line 2432
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
@@ -7422,12 +7442,12 @@
 
     move-result-object v1
 
-    .line 2429
+    .line 2433
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     const/16 v0, 0x50
 
-    .line 2431
+    .line 2435
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v2
@@ -7458,7 +7478,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 2434
+    .line 2438
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_1
@@ -7466,7 +7486,7 @@
 
     const/4 v6, 0x1
 
-    .line 2436
+    .line 2440
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v7
@@ -7483,7 +7503,7 @@
 
     invoke-static/range {v4 .. v9}, Lorg/telegram/messenger/Utilities;->blurBitmap(Ljava/lang/Object;IIIII)V
 
-    .line 2437
+    .line 2441
     new-instance v1, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -7494,22 +7514,22 @@
 
     invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 2438
+    .line 2442
     new-instance v2, Ljava/io/FileOutputStream;
 
     invoke-direct {v2, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 2439
+    .line 2443
     sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v3, 0x57
 
     invoke-virtual {v0, v1, v3, v2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 2440
+    .line 2444
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 2441
+    .line 2445
     invoke-virtual {v2}, Ljava/io/FileOutputStream;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -7522,7 +7542,7 @@
 .method private setCameraFlashModeIcon(Landroid/widget/ImageView;Ljava/lang/String;)V
     .locals 2
 
-    .line 2011
+    .line 2015
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
 
     invoke-virtual {p2}, Ljava/lang/String;->hashCode()I
@@ -7586,13 +7606,13 @@
 
     goto :goto_1
 
-    .line 2021
+    .line 2025
     :pswitch_0
     sget p2, Lorg/telegram/messenger/R$drawable;->flash_auto:I
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2022
+    .line 2026
     sget p2, Lorg/telegram/messenger/R$string;->AccDescrCameraFlashAuto:I
 
     const-string v0, "AccDescrCameraFlashAuto"
@@ -7605,13 +7625,13 @@
 
     goto :goto_1
 
-    .line 2013
+    .line 2017
     :pswitch_1
     sget p2, Lorg/telegram/messenger/R$drawable;->flash_off:I
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2014
+    .line 2018
     sget p2, Lorg/telegram/messenger/R$string;->AccDescrCameraFlashOff:I
 
     const-string v0, "AccDescrCameraFlashOff"
@@ -7624,13 +7644,13 @@
 
     goto :goto_1
 
-    .line 2017
+    .line 2021
     :pswitch_2
     sget p2, Lorg/telegram/messenger/R$drawable;->flash_on:I
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2018
+    .line 2022
     sget p2, Lorg/telegram/messenger/R$string;->AccDescrCameraFlashOn:I
 
     const-string v0, "AccDescrCameraFlashOn"
@@ -7750,7 +7770,7 @@
 .method private shouldLoadAllMedia()Z
     .locals 2
 
-    .line 2192
+    .line 2196
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->isPhotoPicker:Z
@@ -7784,7 +7804,7 @@
 .method private showZoomControls(ZZ)V
     .locals 8
 
-    .line 1921
+    .line 1925
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -7811,15 +7831,15 @@
     :cond_1
     if-eqz p1, :cond_3
 
-    .line 1923
+    .line 1927
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_2
 
-    .line 1924
+    .line 1928
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1926
+    .line 1930
     :cond_2
     new-instance p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda9;
 
@@ -7832,16 +7852,16 @@
     :cond_3
     return-void
 
-    .line 1933
+    .line 1937
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz p2, :cond_5
 
-    .line 1934
+    .line 1938
     invoke-virtual {p2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1936
+    .line 1940
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
@@ -7861,7 +7881,7 @@
     :goto_0
     invoke-virtual {p2, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 1937
+    .line 1941
     new-instance p2, Landroid/animation/AnimatorSet;
 
     invoke-direct {p2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -7870,10 +7890,10 @@
 
     const-wide/16 v3, 0xb4
 
-    .line 1938
+    .line 1942
     invoke-virtual {p2, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1939
+    .line 1943
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlAnimation:Landroid/animation/AnimatorSet;
 
     new-array v3, v2, [Landroid/animation/Animator;
@@ -7906,7 +7926,7 @@
 
     invoke-virtual {p2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1940
+    .line 1944
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$16;
@@ -7915,14 +7935,14 @@
 
     invoke-virtual {p2, v2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1946
+    .line 1950
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p2}, Landroid/animation/AnimatorSet;->start()V
 
     if-eqz p1, :cond_8
 
-    .line 1948
+    .line 1952
     new-instance p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda12;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
@@ -7938,33 +7958,33 @@
 .method private updateAlbumsDropDown()V
     .locals 10
 
-    .line 1542
+    .line 1546
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->removeAllSubItems()V
 
-    .line 1543
+    .line 1547
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaEnabled:Z
 
     if-eqz v0, :cond_1
 
-    .line 1545
+    .line 1549
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->shouldLoadAllMedia()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1546
+    .line 1550
     sget-object v0, Lorg/telegram/messenger/MediaController;->allMediaAlbums:Ljava/util/ArrayList;
 
     goto :goto_0
 
-    .line 1548
+    .line 1552
     :cond_0
     sget-object v0, Lorg/telegram/messenger/MediaController;->allPhotoAlbums:Ljava/util/ArrayList;
 
-    .line 1550
+    .line 1554
     :goto_0
     new-instance v1, Ljava/util/ArrayList;
 
@@ -7972,7 +7992,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownAlbums:Ljava/util/ArrayList;
 
-    .line 1551
+    .line 1555
     new-instance v2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda18;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda18;-><init>(Ljava/util/ArrayList;)V
@@ -7981,7 +8001,7 @@
 
     goto :goto_1
 
-    .line 1569
+    .line 1573
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -7989,7 +8009,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownAlbums:Ljava/util/ArrayList;
 
-    .line 1571
+    .line 1575
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownAlbums:Ljava/util/ArrayList;
 
@@ -8001,14 +8021,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 1572
+    .line 1576
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDown:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1, v1, v1, v1}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_3
 
-    .line 1574
+    .line 1578
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDown:Landroid/widget/TextView;
 
@@ -8018,7 +8038,7 @@
 
     const/4 v0, 0x0
 
-    .line 1575
+    .line 1579
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownAlbums:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -8028,7 +8048,7 @@
     :goto_2
     if-ge v0, v1, :cond_3
 
-    .line 1576
+    .line 1580
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownAlbums:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -8037,7 +8057,7 @@
 
     check-cast v2, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 1577
+    .line 1581
     new-instance v9, Lorg/telegram/ui/Stories/recorder/AlbumButton;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -8060,7 +8080,7 @@
 
     invoke-direct/range {v3 .. v8}, Lorg/telegram/ui/Stories/recorder/AlbumButton;-><init>(Landroid/content/Context;Lorg/telegram/messenger/MediaController$PhotoEntry;Ljava/lang/CharSequence;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1578
+    .line 1582
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->getPopupLayout()Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -8071,7 +8091,7 @@
 
     add-int/lit8 v2, v0, 0xa
 
-    .line 1580
+    .line 1584
     new-instance v3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda4;
 
     invoke-direct {v3, p0, v2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;I)V
@@ -8096,7 +8116,7 @@
 
     move v1, v0
 
-    .line 3172
+    .line 3176
     :goto_0
     sget-object v2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
@@ -8108,31 +8128,31 @@
 
     if-nez v1, :cond_2
 
-    .line 3174
+    .line 3178
     sget-object v2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 3175
+    .line 3179
     sget-object v3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v3, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 3176
+    .line 3180
     instance-of v4, v3, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     const/4 v5, 0x1
 
     if-eqz v4, :cond_0
 
-    .line 3177
+    .line 3181
     check-cast v3, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 3178
+    .line 3182
     invoke-virtual {v3}, Lorg/telegram/messenger/MediaController$PhotoEntry;->clone()Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     move-result-object v3
@@ -8141,7 +8161,7 @@
 
     aput-object p1, v4, v0
 
-    .line 3180
+    .line 3184
     sget v5, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -8154,23 +8174,23 @@
 
     iput-object v5, v3, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
-    .line 3181
+    .line 3185
     aget-object v4, v4, v0
 
     iput-object v4, v3, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
     goto :goto_1
 
-    .line 3183
+    .line 3187
     :cond_0
     instance-of v4, v3, Lorg/telegram/messenger/MediaController$SearchImage;
 
     if-eqz v4, :cond_1
 
-    .line 3184
+    .line 3188
     check-cast v3, Lorg/telegram/messenger/MediaController$SearchImage;
 
-    .line 3185
+    .line 3189
     invoke-virtual {v3}, Lorg/telegram/messenger/MediaController$SearchImage;->clone()Lorg/telegram/messenger/MediaController$SearchImage;
 
     move-result-object v3
@@ -8179,7 +8199,7 @@
 
     aput-object p1, v4, v0
 
-    .line 3187
+    .line 3191
     sget v5, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -8192,12 +8212,12 @@
 
     iput-object v5, v3, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
-    .line 3188
+    .line 3192
     aget-object v4, v4, v0
 
     iput-object v4, v3, Lorg/telegram/messenger/MediaController$SearchImage;->caption:Ljava/lang/CharSequence;
 
-    .line 3191
+    .line 3195
     :cond_1
     :goto_1
     sget-object v4, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
@@ -8216,7 +8236,7 @@
 .method canDismissWithTouchOutside()Z
     .locals 1
 
-    .line 3652
+    .line 3656
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
     xor-int/lit8 v0, v0, 0x1
@@ -8227,7 +8247,7 @@
 .method canScheduleMessages()Z
     .locals 5
 
-    .line 3374
+    .line 3378
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -8255,20 +8275,20 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 3375
+    .line 3379
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 3376
+    .line 3380
     instance-of v4, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz v4, :cond_1
 
-    .line 3377
+    .line 3381
     check-cast v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 3378
+    .line 3382
     iget v1, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
 
     if-eqz v1, :cond_0
@@ -8278,16 +8298,16 @@
 
     goto :goto_1
 
-    .line 3382
+    .line 3386
     :cond_1
     instance-of v4, v1, Lorg/telegram/messenger/MediaController$SearchImage;
 
     if-eqz v4, :cond_0
 
-    .line 3383
+    .line 3387
     check-cast v1, Lorg/telegram/messenger/MediaController$SearchImage;
 
-    .line 3384
+    .line 3388
     iget v1, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
 
     if-eqz v1, :cond_0
@@ -8315,7 +8335,7 @@
 
     move v2, v1
 
-    .line 3198
+    .line 3202
     :goto_0
     sget-object v3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
@@ -8325,7 +8345,7 @@
 
     if-ge v1, v3, :cond_3
 
-    .line 3199
+    .line 3203
     sget-object v3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     sget-object v4, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
@@ -8340,32 +8360,32 @@
 
     const/4 v4, 0x0
 
-    .line 3201
+    .line 3205
     instance-of v5, v3, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz v5, :cond_0
 
-    .line 3202
+    .line 3206
     check-cast v3, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 3203
+    .line 3207
     iget-object v4, v3, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
     goto :goto_1
 
-    .line 3204
+    .line 3208
     :cond_0
     instance-of v5, v3, Lorg/telegram/messenger/MediaController$SearchImage;
 
     if-eqz v5, :cond_1
 
-    .line 3205
+    .line 3209
     check-cast v3, Lorg/telegram/messenger/MediaController$SearchImage;
 
-    .line 3206
+    .line 3210
     iget-object v4, v3, Lorg/telegram/messenger/MediaController$SearchImage;->caption:Ljava/lang/CharSequence;
 
-    .line 3208
+    .line 3212
     :cond_1
     :goto_1
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -8395,7 +8415,7 @@
 .method public checkCamera(Z)V
     .locals 7
 
-    .line 2028
+    .line 2032
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->destroyed:Z
@@ -8408,19 +8428,19 @@
 
     goto/16 :goto_2
 
-    .line 2031
+    .line 2035
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->deviceHasGoodCamera:Z
 
-    .line 2032
+    .line 2036
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->noCameraPermissions:Z
 
-    .line 2033
+    .line 2037
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-nez v0, :cond_1
 
-    .line 2035
+    .line 2039
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
@@ -8428,7 +8448,7 @@
     :cond_1
     if-eqz v0, :cond_e
 
-    .line 2037
+    .line 2041
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -8437,7 +8457,7 @@
 
     goto/16 :goto_2
 
-    .line 2040
+    .line 2044
     :cond_2
     sget-boolean v3, Lorg/telegram/messenger/SharedConfig;->inappCamera:Z
 
@@ -8445,12 +8465,12 @@
 
     if-nez v3, :cond_3
 
-    .line 2041
+    .line 2045
     iput-boolean v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->deviceHasGoodCamera:Z
 
     goto :goto_1
 
-    .line 2043
+    .line 2047
     :cond_3
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -8460,7 +8480,7 @@
 
     if-lt v3, v5, :cond_9
 
-    .line 2044
+    .line 2048
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -8487,7 +8507,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 2047
+    .line 2051
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -8509,7 +8529,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2052
+    .line 2056
     :catch_0
     :cond_5
     iput-boolean v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->deviceHasGoodCamera:Z
@@ -8519,12 +8539,12 @@
     :cond_6
     if-nez p1, :cond_7
 
-    .line 2054
+    .line 2058
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->hasCameraCache:Z
 
     if-eqz p1, :cond_8
 
-    .line 2055
+    .line 2059
     :cond_7
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
@@ -8532,7 +8552,7 @@
 
     invoke-virtual {p1, v6}, Lorg/telegram/messenger/camera/CameraController;->initCamera(Ljava/lang/Runnable;)V
 
-    .line 2057
+    .line 2061
     :cond_8
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
@@ -8549,12 +8569,12 @@
     :cond_9
     if-nez p1, :cond_a
 
-    .line 2060
+    .line 2064
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->hasCameraCache:Z
 
     if-eqz p1, :cond_b
 
-    .line 2061
+    .line 2065
     :cond_a
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
@@ -8562,7 +8582,7 @@
 
     invoke-virtual {p1, v6}, Lorg/telegram/messenger/camera/CameraController;->initCamera(Ljava/lang/Runnable;)V
 
-    .line 2063
+    .line 2067
     :cond_b
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
@@ -8574,7 +8594,7 @@
 
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->deviceHasGoodCamera:Z
 
-    .line 2066
+    .line 2070
     :goto_1
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->deviceHasGoodCamera:Z
 
@@ -8589,10 +8609,10 @@
 
     if-eqz p1, :cond_d
 
-    .line 2067
+    .line 2071
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 2069
+    .line 2073
     :cond_d
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -8626,7 +8646,7 @@
 
     if-nez p1, :cond_e
 
-    .line 2070
+    .line 2074
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->showCamera()V
 
     :cond_e
@@ -8637,7 +8657,7 @@
 .method protected checkCameraViewPosition()V
     .locals 11
 
-    .line 2752
+    .line 2756
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x1
@@ -8648,15 +8668,15 @@
 
     if-lt v0, v2, :cond_3
 
-    .line 2753
+    .line 2757
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v4, :cond_0
 
-    .line 2754
+    .line 2758
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->invalidateOutline()V
 
-    .line 2756
+    .line 2760
     :cond_0
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -8670,12 +8690,12 @@
 
     if-eqz v4, :cond_1
 
-    .line 2758
+    .line 2762
     iget-object v4, v4, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->invalidateOutline()V
 
-    .line 2760
+    .line 2764
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
@@ -8695,7 +8715,7 @@
 
     if-eq v4, v5, :cond_3
 
-    .line 2761
+    .line 2765
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -8705,18 +8725,18 @@
 
     if-eqz v4, :cond_3
 
-    .line 2763
+    .line 2767
     iget-object v4, v4, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->invalidateOutline()V
 
-    .line 2767
+    .line 2771
     :cond_3
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v4, :cond_4
 
-    .line 2768
+    .line 2772
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_4
@@ -8724,19 +8744,19 @@
 
     if-lt v0, v4, :cond_6
 
-    .line 2771
+    .line 2775
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->recordTime:Landroid/widget/TextView;
 
     if-eqz v0, :cond_6
 
-    .line 2772
+    .line 2776
     invoke-virtual {v0}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 2773
+    .line 2777
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getRootWindowInsets()Landroid/view/WindowInsets;
 
     move-result-object v5
@@ -8771,7 +8791,7 @@
     :goto_0
     iput v5, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 2776
+    .line 2780
     :cond_6
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->deviceHasGoodCamera:Z
 
@@ -8779,7 +8799,7 @@
 
     return-void
 
-    .line 2779
+    .line 2783
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -8794,26 +8814,26 @@
 
     if-ge v5, v0, :cond_12
 
-    .line 2781
+    .line 2785
     iget-object v7, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v7, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 2782
+    .line 2786
     instance-of v8, v7, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
     if-eqz v8, :cond_11
 
-    .line 2783
+    .line 2787
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v5, 0x13
 
     if-lt v0, v5, :cond_8
 
-    .line 2784
+    .line 2788
     invoke-virtual {v7}, Landroid/view/View;->isAttachedToWindow()Z
 
     move-result v5
@@ -8822,7 +8842,7 @@
 
     goto/16 :goto_6
 
-    .line 2789
+    .line 2793
     :cond_8
     invoke-virtual {v7}, Landroid/view/View;->getY()F
 
@@ -8842,7 +8862,7 @@
 
     add-float/2addr v5, v8
 
-    .line 2790
+    .line 2794
     iget-object v8, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getSheetContainer()Landroid/view/ViewGroup;
@@ -8855,7 +8875,7 @@
 
     add-float/2addr v8, v5
 
-    .line 2791
+    .line 2795
     invoke-virtual {v7}, Landroid/view/View;->getX()F
 
     move-result v9
@@ -8888,7 +8908,7 @@
 
     if-lt v0, v4, :cond_9
 
-    .line 2793
+    .line 2797
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getRootWindowInsets()Landroid/view/WindowInsets;
 
     move-result-object v4
@@ -8904,7 +8924,7 @@
     :cond_9
     if-lt v0, v2, :cond_a
 
-    .line 2796
+    .line 2800
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-boolean v4, v4, Lorg/telegram/ui/Components/ChatAttachAlert;->inBubbleMode:Z
@@ -8938,7 +8958,7 @@
     :cond_b
     move v4, v6
 
-    .line 2804
+    .line 2808
     :goto_3
     iget v10, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewOffsetY:F
 
@@ -8946,36 +8966,36 @@
 
     if-eqz v10, :cond_e
 
-    .line 2805
+    .line 2809
     iput v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewOffsetY:F
 
-    .line 2806
+    .line 2810
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v4, :cond_d
 
     if-lt v0, v2, :cond_c
 
-    .line 2808
+    .line 2812
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->invalidateOutline()V
 
     goto :goto_4
 
-    .line 2810
+    .line 2814
     :cond_c
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2813
+    .line 2817
     :cond_d
     :goto_4
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_e
 
-    .line 2814
+    .line 2818
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2818
+    .line 2822
     :cond_e
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -8987,7 +9007,7 @@
 
     move-result v0
 
-    .line 2819
+    .line 2823
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatAttachAlert;->buttonsRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -9014,14 +9034,14 @@
 
     int-to-float v0, v0
 
-    .line 2820
+    .line 2824
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatAttachAlert;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 
     if-eqz v2, :cond_f
 
-    .line 2821
+    .line 2825
     invoke-virtual {v2}, Lorg/telegram/ui/Components/MentionsContainerView;->clipBottom()F
 
     move-result v2
@@ -9038,7 +9058,7 @@
 
     sub-float/2addr v0, v2
 
-    .line 2824
+    .line 2828
     :cond_f
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -9054,7 +9074,7 @@
 
     const/4 v2, 0x5
 
-    .line 2825
+    .line 2829
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -9081,20 +9101,20 @@
 
     goto :goto_5
 
-    .line 2827
+    .line 2831
     :cond_10
     iput v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewOffsetBottomY:F
 
-    .line 2830
+    .line 2834
     :goto_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
 
     aput v9, v0, v3
 
-    .line 2831
+    .line 2835
     aput v8, v0, v1
 
-    .line 2832
+    .line 2836
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->applyCameraViewPosition()V
 
     return-void
@@ -9104,7 +9124,7 @@
 
     goto/16 :goto_1
 
-    .line 2838
+    .line 2842
     :cond_12
     :goto_6
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewOffsetY:F
@@ -9119,43 +9139,43 @@
 
     if-eqz v0, :cond_16
 
-    .line 2839
+    .line 2843
     :cond_13
     iput v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewOffsetX:F
 
-    .line 2840
+    .line 2844
     iput v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewOffsetY:F
 
-    .line 2841
+    .line 2845
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_15
 
-    .line 2842
+    .line 2846
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v4, v2, :cond_14
 
-    .line 2843
+    .line 2847
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidateOutline()V
 
     goto :goto_7
 
-    .line 2845
+    .line 2849
     :cond_14
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2848
+    .line 2852
     :cond_15
     :goto_7
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_16
 
-    .line 2849
+    .line 2853
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2853
+    .line 2857
     :cond_16
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
 
@@ -9169,12 +9189,12 @@
 
     aput v2, v0, v3
 
-    .line 2854
+    .line 2858
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
 
     aput v6, v0, v1
 
-    .line 2856
+    .line 2860
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->applyCameraViewPosition()V
 
     return-void
@@ -9183,15 +9203,15 @@
 .method checkColors()V
     .locals 6
 
-    .line 3289
+    .line 3293
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_0
 
-    .line 3290
+    .line 3294
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 3292
+    .line 3296
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->forceDarkTheme:Z
 
@@ -9204,7 +9224,7 @@
     :cond_1
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    .line 3293
+    .line 3297
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -9216,7 +9236,7 @@
 
     invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->setDrawableColor(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 3294
+    .line 3298
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_emptyListPlaceholder:I
@@ -9227,7 +9247,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/EmptyTextProgressView;->setTextColor(I)V
 
-    .line 3295
+    .line 3299
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
@@ -9238,7 +9258,7 @@
 
     invoke-virtual {v1, v3}, Landroidx/recyclerview/widget/RecyclerView;->setGlowColor(I)V
 
-    .line 3296
+    .line 3300
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v3, 0x0
@@ -9249,14 +9269,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 3297
+    .line 3301
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v4, v1, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
     if-eqz v4, :cond_2
 
-    .line 3298
+    .line 3302
     check-cast v1, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->getImageView()Landroid/widget/ImageView;
@@ -9275,7 +9295,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 3301
+    .line 3305
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDown:Landroid/widget/TextView;
 
@@ -9285,7 +9305,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 3302
+    .line 3306
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->forceDarkTheme:Z
@@ -9306,7 +9326,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setPopupItemsColor(IZ)V
 
-    .line 3303
+    .line 3307
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->forceDarkTheme:Z
@@ -9329,7 +9349,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setPopupItemsColor(IZ)V
 
-    .line 3304
+    .line 3308
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->forceDarkTheme:Z
@@ -9350,7 +9370,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->redrawPopup(I)V
 
-    .line 3305
+    .line 3309
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
@@ -9365,7 +9385,7 @@
 .method public checkStorage()V
     .locals 2
 
-    .line 2966
+    .line 2970
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->noGalleryPermissions:Z
 
     if-eqz v0, :cond_1
@@ -9376,14 +9396,14 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 2967
+    .line 2971
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
-    .line 2969
+    .line 2973
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->isNoGalleryPermissions()Z
 
     move-result v0
@@ -9392,16 +9412,16 @@
 
     if-nez v0, :cond_0
 
-    .line 2971
+    .line 2975
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->loadGalleryPhotos()V
 
-    .line 2973
+    .line 2977
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 2974
+    .line 2978
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAttachAdapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
@@ -9413,7 +9433,7 @@
 .method public closeCamera(Z)V
     .locals 8
 
-    .line 2548
+    .line 2552
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->takingPhoto:Z
 
     if-nez v0, :cond_b
@@ -9424,7 +9444,7 @@
 
     goto/16 :goto_6
 
-    .line 2551
+    .line 2555
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->animateCameraValues:[I
 
@@ -9436,23 +9456,23 @@
 
     const/4 v3, 0x2
 
-    .line 2552
+    .line 2556
     aput v1, v0, v3
 
-    .line 2553
+    .line 2557
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 2554
+    .line 2558
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2555
+    .line 2559
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
-    .line 2557
+    .line 2561
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -9494,7 +9514,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 2559
+    .line 2563
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getTranslationY()F
@@ -9503,10 +9523,10 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->additionCloseCameraY:F
 
-    .line 2561
+    .line 2565
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAnimationInProgress:Z
 
-    .line 2562
+    .line 2566
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -9517,14 +9537,14 @@
 
     const-string v6, "cameraOpenProgress"
 
-    .line 2563
+    .line 2567
     invoke-static {p0, v6, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2564
+    .line 2568
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -9539,7 +9559,7 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2565
+    .line 2569
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -9554,7 +9574,7 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2566
+    .line 2570
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -9569,7 +9589,7 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2567
+    .line 2571
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -9589,7 +9609,7 @@
     :goto_1
     if-ge v4, v3, :cond_4
 
-    .line 2569
+    .line 2573
     iget-object v6, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->flashModeButton:[Landroid/widget/ImageView;
 
     aget-object v6, v6, v4
@@ -9600,7 +9620,7 @@
 
     if-nez v6, :cond_3
 
-    .line 2570
+    .line 2574
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->flashModeButton:[Landroid/widget/ImageView;
 
     aget-object v3, v3, v4
@@ -9624,48 +9644,48 @@
 
     goto :goto_1
 
-    .line 2575
+    .line 2579
     :cond_4
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
 
-    .line 2576
+    .line 2580
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 2577
+    .line 2581
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
     const-wide/16 v1, 0xdc
 
-    .line 2578
+    .line 2582
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2579
+    .line 2583
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2580
+    .line 2584
     new-instance v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$22;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$22;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2615
+    .line 2619
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_5
 
-    .line 2617
+    .line 2621
     :cond_5
     iput-boolean v5, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraExpanded:Z
 
-    .line 2618
+    .line 2622
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v2}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
@@ -9676,55 +9696,55 @@
 
     invoke-virtual {v2, v4}, Landroid/view/Window;->clearFlags(I)V
 
-    .line 2619
+    .line 2623
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->setCameraOpenProgress(F)V
 
-    .line 2620
+    .line 2624
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->animateCameraValues:[I
 
     aput v5, v2, v5
 
-    .line 2621
+    .line 2625
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->setCameraOpenProgress(F)V
 
-    .line 2622
+    .line 2626
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 2623
+    .line 2627
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     const/16 v4, 0x8
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2624
+    .line 2628
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2625
+    .line 2629
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 2626
+    .line 2630
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2627
+    .line 2631
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 2628
+    .line 2632
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 2629
+    .line 2633
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
@@ -9734,7 +9754,7 @@
     :goto_3
     if-ge v1, v3, :cond_7
 
-    .line 2631
+    .line 2635
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->flashModeButton:[Landroid/widget/ImageView;
 
     aget-object v2, v2, v1
@@ -9745,7 +9765,7 @@
 
     if-nez v2, :cond_6
 
-    .line 2632
+    .line 2636
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->flashModeButton:[Landroid/widget/ImageView;
 
     aget-object v1, v2, v1
@@ -9759,46 +9779,46 @@
 
     goto :goto_3
 
-    .line 2636
+    .line 2640
     :cond_7
     :goto_4
     iput-boolean v5, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
-    .line 2637
+    .line 2641
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_8
 
     const/16 v1, 0x1e
 
-    .line 2638
+    .line 2642
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/camera/CameraView;->setFpsLimit(I)V
 
-    .line 2639
+    .line 2643
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_8
 
-    .line 2640
+    .line 2644
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     const/16 v1, 0x400
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setSystemUiVisibility(I)V
 
-    .line 2644
+    .line 2648
     :cond_8
     :goto_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_9
 
-    .line 2645
+    .line 2649
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    .line 2647
+    .line 2651
     :cond_9
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -9806,7 +9826,7 @@
 
     if-lt v0, v1, :cond_a
 
-    .line 2648
+    .line 2652
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->setImportantForAccessibility(I)V
@@ -9814,7 +9834,7 @@
     :cond_a
     const v0, 0x81e0
 
-    .line 2651
+    .line 2655
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
@@ -9825,7 +9845,7 @@
 
     if-eqz v0, :cond_b
 
-    .line 2652
+    .line 2656
     invoke-virtual {v0, v5, p1}, Lorg/telegram/messenger/camera/CameraView;->showTexture(ZZ)V
 
     :cond_b
@@ -9836,52 +9856,52 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 3
 
-    .line 3849
+    .line 3853
     sget p2, Lorg/telegram/messenger/NotificationCenter;->albumsDidLoad:I
 
     const/4 p3, 0x0
 
     if-ne p1, p2, :cond_7
 
-    .line 3850
+    .line 3854
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     if-eqz p1, :cond_8
 
-    .line 3851
+    .line 3855
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->shouldLoadAllMedia()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 3852
+    .line 3856
     sget-object p1, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     goto :goto_0
 
-    .line 3854
+    .line 3858
     :cond_0
     sget-object p1, Lorg/telegram/messenger/MediaController;->allPhotosAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 3856
+    .line 3860
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     if-nez p1, :cond_1
 
-    .line 3857
+    .line 3861
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     goto :goto_2
 
-    .line 3858
+    .line 3862
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->shouldLoadAllMedia()Z
 
@@ -9891,7 +9911,7 @@
 
     move p1, p3
 
-    .line 3859
+    .line 3863
     :goto_1
     sget-object p2, Lorg/telegram/messenger/MediaController;->allMediaAlbums:Ljava/util/ArrayList;
 
@@ -9901,7 +9921,7 @@
 
     if-ge p1, p2, :cond_3
 
-    .line 3860
+    .line 3864
     sget-object p2, Lorg/telegram/messenger/MediaController;->allMediaAlbums:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9910,7 +9930,7 @@
 
     check-cast p2, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 3861
+    .line 3865
     iget v0, p2, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketId:I
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
@@ -9925,7 +9945,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 3862
+    .line 3866
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     goto :goto_2
@@ -9935,27 +9955,27 @@
 
     goto :goto_1
 
-    .line 3867
+    .line 3871
     :cond_3
     :goto_2
     iput-boolean p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->loading:Z
 
-    .line 3868
+    .line 3872
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmptyTextProgressView;->showTextView()V
 
-    .line 3869
+    .line 3873
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 3870
+    .line 3874
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAttachAdapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 3871
+    .line 3875
     sget-object p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -9968,7 +9988,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 3872
+    .line 3876
     sget-object p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -9978,7 +9998,7 @@
     :goto_3
     if-ge p3, p1, :cond_6
 
-    .line 3873
+    .line 3877
     sget-object p2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -9987,14 +10007,14 @@
 
     check-cast p2, Ljava/lang/Integer;
 
-    .line 3874
+    .line 3878
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v0, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 3875
+    .line 3879
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     iget-object v1, v1, Lorg/telegram/messenger/MediaController$AlbumEntry;->photosByIds:Landroid/util/SparseArray;
@@ -10011,18 +10031,18 @@
 
     if-eqz v1, :cond_5
 
-    .line 3877
+    .line 3881
     instance-of v2, v0, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz v2, :cond_4
 
-    .line 3878
+    .line 3882
     check-cast v0, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 3879
+    .line 3883
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MediaController$PhotoEntry;->copyFrom(Lorg/telegram/messenger/MediaController$MediaEditState;)V
 
-    .line 3881
+    .line 3885
     :cond_4
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
@@ -10033,19 +10053,19 @@
 
     goto :goto_3
 
-    .line 3885
+    .line 3889
     :cond_6
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->updateAlbumsDropDown()V
 
     goto :goto_4
 
-    .line 3887
+    .line 3891
     :cond_7
     sget p2, Lorg/telegram/messenger/NotificationCenter;->cameraInitied:I
 
     if-ne p1, p2, :cond_8
 
-    .line 3888
+    .line 3892
     invoke-virtual {p0, p3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCamera(Z)V
 
     :cond_8
@@ -10153,7 +10173,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 2748
+    .line 2752
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpenProgress:F
 
     return v0
@@ -10162,7 +10182,7 @@
 .method public getCurrentItemTop()I
     .locals 4
 
-    .line 3264
+    .line 3268
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -10171,7 +10191,7 @@
 
     if-gtz v0, :cond_0
 
-    .line 3265
+    .line 3269
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getPaddingTop()I
@@ -10180,7 +10200,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setTopGlowOffset(I)V
 
-    .line 3266
+    .line 3270
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     const/4 v1, 0x0
@@ -10191,7 +10211,7 @@
 
     return v0
 
-    .line 3269
+    .line 3273
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -10201,7 +10221,7 @@
 
     move-result-object v0
 
-    .line 3270
+    .line 3274
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->findContainingViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
@@ -10210,19 +10230,19 @@
 
     check-cast v1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    .line 3271
+    .line 3275
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v0
 
     const/4 v2, 0x7
 
-    .line 3272
+    .line 3276
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    .line 3273
+    .line 3277
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -10242,7 +10262,7 @@
     :cond_1
     move v0, v3
 
-    .line 3276
+    .line 3280
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
@@ -10276,7 +10296,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 3277
+    .line 3281
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setTopGlowOffset(I)V
@@ -10287,7 +10307,7 @@
 .method public getFirstOffset()I
     .locals 2
 
-    .line 3284
+    .line 3288
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->getListTopPadding()I
 
     move-result v0
@@ -10316,7 +10336,7 @@
 .method public getListTopPadding()I
     .locals 1
 
-    .line 3256
+    .line 3260
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getPaddingTop()I
@@ -10346,7 +10366,7 @@
 .method getSelectedItemsCount()I
     .locals 1
 
-    .line 3124
+    .line 3128
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -10368,7 +10388,7 @@
         }
     .end annotation
 
-    .line 2907
+    .line 2911
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     return-object v0
@@ -10385,7 +10405,7 @@
         }
     .end annotation
 
-    .line 2911
+    .line 2915
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     return-object v0
@@ -10394,7 +10414,7 @@
 .method public hideCamera(Z)V
     .locals 5
 
-    .line 2393
+    .line 2397
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->deviceHasGoodCamera:Z
 
     if-eqz v0, :cond_4
@@ -10405,11 +10425,11 @@
 
     goto :goto_2
 
-    .line 2396
+    .line 2400
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->saveLastCameraBitmap()V
 
-    .line 2397
+    .line 2401
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -10423,22 +10443,22 @@
     :goto_0
     if-ge v2, v0, :cond_2
 
-    .line 2399
+    .line 2403
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 2400
+    .line 2404
     instance-of v4, v3, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
     if-eqz v4, :cond_1
 
-    .line 2401
+    .line 2405
     invoke-virtual {v3, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2402
+    .line 2406
     check-cast v3, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->updateBitmap()V
@@ -10450,7 +10470,7 @@
 
     goto :goto_0
 
-    .line 2406
+    .line 2410
     :cond_2
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
@@ -10459,18 +10479,18 @@
 
     invoke-virtual {v0, p1, v2}, Lorg/telegram/messenger/camera/CameraView;->destroy(ZLjava/lang/Runnable;)V
 
-    .line 2407
+    .line 2411
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraInitAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz p1, :cond_3
 
-    .line 2408
+    .line 2412
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2409
+    .line 2413
     iput-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraInitAnimation:Landroid/animation/AnimatorSet;
 
-    .line 2411
+    .line 2415
     :cond_3
     new-instance p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda10;
 
@@ -10480,7 +10500,7 @@
 
     invoke-static {p1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 2417
+    .line 2421
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->canSaveCameraPreview:Z
 
     :cond_4
@@ -10491,26 +10511,26 @@
 .method public loadGalleryPhotos()V
     .locals 2
 
-    .line 2181
+    .line 2185
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->shouldLoadAllMedia()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2182
+    .line 2186
     sget-object v0, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     goto :goto_0
 
-    .line 2184
+    .line 2188
     :cond_0
     sget-object v0, Lorg/telegram/messenger/MediaController;->allPhotosAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     :goto_0
     if-nez v0, :cond_1
 
-    .line 2186
+    .line 2190
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -10519,7 +10539,7 @@
 
     const/4 v0, 0x0
 
-    .line 2187
+    .line 2191
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->loadGalleryPhotosAlbums(I)V
 
     :cond_1
@@ -10543,7 +10563,7 @@
 
     move-object/from16 v7, p3
 
-    .line 2450
+    .line 2454
     iget-object v2, v1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-boolean v2, v2, Lorg/telegram/ui/Components/ChatAttachAlert;->destroyed:Z
@@ -10555,12 +10575,12 @@
     :cond_0
     const/4 v14, 0x1
 
-    .line 2453
+    .line 2457
     sput-boolean v14, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaFromExternalCamera:Z
 
     if-nez v0, :cond_1
 
-    .line 2455
+    .line 2459
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v0
@@ -10577,7 +10597,7 @@
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/PhotoViewer;->setParentActivity(Landroid/app/Activity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 2456
+    .line 2460
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v0
@@ -10590,21 +10610,21 @@
 
     invoke-virtual {v0, v3, v2}, Lorg/telegram/ui/PhotoViewer;->setMaxSelectedPhotos(IZ)V
 
-    .line 2457
+    .line 2461
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/AndroidUtilities;->getImageOrientation(Ljava/lang/String;)Landroid/util/Pair;
 
     move-result-object v0
 
-    .line 2460
+    .line 2464
     :try_start_0
     new-instance v2, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 2461
+    .line 2465
     iput-boolean v14, v2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 2462
+    .line 2466
     new-instance v3, Ljava/io/File;
 
     invoke-direct {v3, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -10615,12 +10635,12 @@
 
     invoke-static {v3, v2}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 2463
+    .line 2467
     iget v3, v2, Landroid/graphics/BitmapFactory$Options;->outWidth:I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2464
+    .line 2468
     :try_start_1
     iget v2, v2, Landroid/graphics/BitmapFactory$Options;->outHeight:I
     :try_end_1
@@ -10640,7 +10660,7 @@
 
     const/4 v11, 0x0
 
-    .line 2466
+    .line 2470
     :goto_0
     new-instance v12, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
@@ -10680,12 +10700,12 @@
 
     move-result-object v0
 
-    .line 2467
+    .line 2471
     iput-boolean v14, v0, Lorg/telegram/messenger/MediaController$PhotoEntry;->canDeleteAfter:Z
 
     const/4 v2, 0x0
 
-    .line 2468
+    .line 2472
     invoke-virtual {v1, v0, v2, v14}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->openPhotoViewer(Lorg/telegram/messenger/MediaController$PhotoEntry;ZZ)V
 
     goto/16 :goto_9
@@ -10695,12 +10715,12 @@
 
     if-ne v0, v2, :cond_f
 
-    .line 2471
+    .line 2475
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_2
 
-    .line 2472
+    .line 2476
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10724,7 +10744,7 @@
 
     if-eqz v7, :cond_3
 
-    .line 2475
+    .line 2479
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -10745,19 +10765,19 @@
     :goto_1
     if-eqz v0, :cond_a
 
-    .line 2480
+    .line 2484
     invoke-virtual {v0}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
     if-eqz v0, :cond_6
 
-    .line 2482
+    .line 2486
     sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v3, :cond_4
 
-    .line 2483
+    .line 2487
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -10778,18 +10798,18 @@
 
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2485
+    .line 2489
     :cond_4
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getPath(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2486
+    .line 2490
     sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v3, :cond_5
 
-    .line 2487
+    .line 2491
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -10809,7 +10829,7 @@
     :cond_5
     if-eqz v0, :cond_6
 
-    .line 2489
+    .line 2493
     new-instance v3, Ljava/io/File;
 
     invoke-direct {v3, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -10823,7 +10843,7 @@
     :cond_6
     move-object v0, v7
 
-    .line 2495
+    .line 2499
     :cond_7
     iget-object v3, v1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -10841,7 +10861,7 @@
 
     if-nez v3, :cond_9
 
-    .line 2496
+    .line 2500
     :cond_8
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/AndroidUtilities;->addMediaToGallery(Ljava/lang/String;)V
 
@@ -10858,12 +10878,12 @@
 
     if-eqz v7, :cond_b
 
-    .line 2501
+    .line 2505
     new-instance v3, Ljava/io/File;
 
     invoke-direct {v3, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 2502
+    .line 2506
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v3
@@ -10878,7 +10898,7 @@
     :goto_3
     const-wide/16 v3, 0x0
 
-    .line 2510
+    .line 2514
     :try_start_2
     new-instance v5, Landroid/media/MediaMetadataRetriever;
 
@@ -10887,20 +10907,20 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_4
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 2511
+    .line 2515
     :try_start_3
     invoke-virtual {v5, v7}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/lang/String;)V
 
     const/16 v0, 0x9
 
-    .line 2512
+    .line 2516
     invoke-virtual {v5, v0}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
 
     move-result-object v0
 
     if-eqz v0, :cond_c
 
-    .line 2514
+    .line 2518
     invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v8
@@ -10924,7 +10944,7 @@
 
     int-to-long v3, v0
 
-    .line 2521
+    .line 2525
     :cond_c
     :try_start_4
     invoke-virtual {v5}, Landroid/media/MediaMetadataRetriever;->release()V
@@ -10938,7 +10958,7 @@
 
     move-object v2, v0
 
-    .line 2524
+    .line 2528
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_5
@@ -10969,7 +10989,7 @@
     :catch_4
     move-exception v0
 
-    .line 2517
+    .line 2521
     :goto_4
     :try_start_5
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -10978,20 +10998,20 @@
 
     if-eqz v2, :cond_d
 
-    .line 2521
+    .line 2525
     :try_start_6
     invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_2
 
-    .line 2527
+    .line 2531
     :cond_d
     :goto_5
     invoke-static {v7, v14}, Lorg/telegram/messenger/SendMessagesHelper;->createVideoThumbnail(Ljava/lang/String;I)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 2528
+    .line 2532
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11014,7 +11034,7 @@
 
     move-result-object v0
 
-    .line 2529
+    .line 2533
     new-instance v5, Ljava/io/File;
 
     const/4 v6, 0x4
@@ -11025,13 +11045,13 @@
 
     invoke-direct {v5, v6, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 2531
+    .line 2535
     :try_start_7
     new-instance v0, Ljava/io/FileOutputStream;
 
     invoke-direct {v0, v5}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 2532
+    .line 2536
     sget-object v6, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v8, 0x37
@@ -11045,14 +11065,14 @@
     :catchall_2
     move-exception v0
 
-    .line 2534
+    .line 2538
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2536
+    .line 2540
     :goto_6
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
-    .line 2538
+    .line 2542
     new-instance v0, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     const/16 v19, 0x0
@@ -11087,10 +11107,10 @@
 
     long-to-int v2, v3
 
-    .line 2539
+    .line 2543
     iput v2, v0, Lorg/telegram/messenger/MediaController$PhotoEntry;->duration:I
 
-    .line 2540
+    .line 2544
     invoke-virtual {v5}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v2
@@ -11099,7 +11119,7 @@
 
     const/4 v2, 0x0
 
-    .line 2541
+    .line 2545
     invoke-virtual {v1, v0, v2, v14}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->openPhotoViewer(Lorg/telegram/messenger/MediaController$PhotoEntry;ZZ)V
 
     goto :goto_9
@@ -11107,7 +11127,7 @@
     :goto_7
     if-eqz v2, :cond_e
 
-    .line 2521
+    .line 2525
     :try_start_8
     invoke-virtual {v2}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_8
@@ -11120,10 +11140,10 @@
 
     move-object v2, v0
 
-    .line 2524
+    .line 2528
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2526
+    .line 2530
     :cond_e
     :goto_8
     throw v3
@@ -11136,10 +11156,10 @@
 .method onButtonsTranslationYUpdated()V
     .locals 0
 
-    .line 3398
+    .line 3402
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraViewPosition()V
 
-    .line 3399
+    .line 3403
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -11148,44 +11168,44 @@
 .method public onContainerTranslationUpdated(F)V
     .locals 2
 
-    .line 3674
+    .line 3678
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->currentPanTranslationY:F
 
-    .line 3675
+    .line 3679
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraViewPosition()V
 
-    .line 3676
+    .line 3680
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz p1, :cond_1
 
-    .line 3677
+    .line 3681
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_0
 
-    .line 3678
+    .line 3682
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidateOutline()V
 
     goto :goto_0
 
-    .line 3680
+    .line 3684
     :cond_0
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 3683
+    .line 3687
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_2
 
-    .line 3684
+    .line 3688
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 3686
+    .line 3690
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -11195,7 +11215,7 @@
 .method public onContainerViewTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 3723
+    .line 3727
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAnimationInProgress:Z
 
     if-eqz v0, :cond_0
@@ -11204,13 +11224,13 @@
 
     return p1
 
-    .line 3725
+    .line 3729
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
     if-eqz v0, :cond_1
 
-    .line 3726
+    .line 3730
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->processTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -11243,7 +11263,7 @@
     :cond_0
     move v3, v2
 
-    .line 3784
+    .line 3788
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
@@ -11257,7 +11277,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 3786
+    .line 3790
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getVisibility()I
@@ -11266,7 +11286,7 @@
 
     if-nez p2, :cond_1
 
-    .line 3787
+    .line 3791
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -11285,7 +11305,7 @@
 
     goto :goto_1
 
-    .line 3789
+    .line 3793
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
@@ -11299,7 +11319,7 @@
 
     goto :goto_1
 
-    .line 3792
+    .line 3796
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -11309,7 +11329,7 @@
 
     if-nez p2, :cond_3
 
-    .line 3793
+    .line 3797
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -11328,7 +11348,7 @@
 
     goto :goto_1
 
-    .line 3795
+    .line 3799
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
@@ -11343,7 +11363,7 @@
     :goto_1
     return v1
 
-    .line 3799
+    .line 3803
     :cond_4
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
@@ -11357,7 +11377,7 @@
 
     if-eqz v3, :cond_6
 
-    .line 3801
+    .line 3805
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p3}, Landroid/view/ViewGroup;->getVisibility()I
@@ -11366,7 +11386,7 @@
 
     if-nez p3, :cond_5
 
-    .line 3802
+    .line 3806
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -11385,7 +11405,7 @@
 
     goto :goto_2
 
-    .line 3804
+    .line 3808
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
@@ -11405,7 +11425,7 @@
 
     goto :goto_2
 
-    .line 3807
+    .line 3811
     :cond_6
     iget-object p5, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -11415,7 +11435,7 @@
 
     if-nez p5, :cond_7
 
-    .line 3808
+    .line 3812
     iget-object p5, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -11434,7 +11454,7 @@
 
     goto :goto_2
 
-    .line 3810
+    .line 3814
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
@@ -11455,7 +11475,7 @@
     :goto_2
     return v1
 
-    .line 3814
+    .line 3818
     :cond_8
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
@@ -11465,7 +11485,7 @@
 
     if-eqz v3, :cond_9
 
-    .line 3818
+    .line 3822
     invoke-virtual {v4}, Landroid/widget/TextView;->getMeasuredWidth()I
 
     move-result p2
@@ -11474,21 +11494,21 @@
 
     div-int/lit8 v0, v0, 0x2
 
-    .line 3819
+    .line 3823
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     sub-int/2addr p5, p1
 
-    .line 3820
+    .line 3824
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setRotation(F)V
 
-    .line 3821
+    .line 3825
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getVisibility()I
@@ -11497,7 +11517,7 @@
 
     if-nez p1, :cond_a
 
-    .line 3822
+    .line 3826
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -11506,7 +11526,7 @@
 
     goto :goto_3
 
-    .line 3825
+    .line 3829
     :cond_9
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -11514,7 +11534,7 @@
 
     sub-int v0, p4, p1
 
-    .line 3826
+    .line 3830
     div-int/lit8 p3, p3, 0x2
 
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
@@ -11527,14 +11547,14 @@
 
     add-int p5, p3, p1
 
-    .line 3827
+    .line 3831
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     const/high16 p2, -0x3d4c0000    # -90.0f
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setRotation(F)V
 
-    .line 3828
+    .line 3832
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getVisibility()I
@@ -11543,14 +11563,14 @@
 
     if-nez p1, :cond_a
 
-    .line 3829
+    .line 3833
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     sub-int/2addr v0, p1
 
-    .line 3832
+    .line 3836
     :cond_a
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
@@ -11573,7 +11593,7 @@
 
     return v1
 
-    .line 3834
+    .line 3838
     :cond_b
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -11583,14 +11603,14 @@
 
     if-eqz v3, :cond_c
 
-    .line 3836
+    .line 3840
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     sub-int/2addr p3, p2
 
-    .line 3837
+    .line 3841
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p2
@@ -11608,14 +11628,14 @@
     :cond_c
     add-int/2addr p2, v0
 
-    .line 3839
+    .line 3843
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
 
     sub-int/2addr p2, p3
 
-    .line 3840
+    .line 3844
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p3
@@ -11651,7 +11671,7 @@
     :cond_0
     move v2, v0
 
-    .line 3734
+    .line 3738
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
@@ -11659,7 +11679,7 @@
 
     if-ne p1, v3, :cond_1
 
-    .line 3735
+    .line 3739
     iget p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->itemSize:I
 
     invoke-static {p1, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -11688,13 +11708,13 @@
 
     return v1
 
-    .line 3737
+    .line 3741
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-ne p1, v3, :cond_2
 
-    .line 3738
+    .line 3742
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
     if-eqz p1, :cond_9
@@ -11703,7 +11723,7 @@
 
     if-nez p1, :cond_9
 
-    .line 3739
+    .line 3743
     invoke-static {p2, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
@@ -11724,7 +11744,7 @@
 
     return v1
 
-    .line 3742
+    .line 3746
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPanel:Landroid/widget/FrameLayout;
 
@@ -11734,7 +11754,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 3744
+    .line 3748
     invoke-static {p2, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -11751,7 +11771,7 @@
 
     goto :goto_1
 
-    .line 3746
+    .line 3750
     :cond_3
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -11770,7 +11790,7 @@
     :goto_1
     return v1
 
-    .line 3749
+    .line 3753
     :cond_4
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
@@ -11780,7 +11800,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 3751
+    .line 3755
     invoke-static {p2, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -11797,7 +11817,7 @@
 
     goto :goto_2
 
-    .line 3753
+    .line 3757
     :cond_5
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -11816,13 +11836,13 @@
     :goto_2
     return v1
 
-    .line 3756
+    .line 3760
     :cond_6
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-ne p1, v3, :cond_9
 
-    .line 3757
+    .line 3761
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerViewIgnoreLayout:Z
 
     const/16 p1, 0x50
@@ -11831,7 +11851,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 3759
+    .line 3763
     invoke-static {p2, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
@@ -11846,7 +11866,7 @@
 
     invoke-virtual {v3, p2, p1}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 3760
+    .line 3764
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->getOrientation()I
@@ -11855,7 +11875,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 3761
+    .line 3765
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -11868,19 +11888,19 @@
 
     invoke-virtual {p1, p2, v0, p3, v0}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 3762
+    .line 3766
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->setOrientation(I)V
 
-    .line 3763
+    .line 3767
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAttachAdapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
     goto :goto_3
 
-    .line 3766
+    .line 3770
     :cond_7
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -11896,7 +11916,7 @@
 
     invoke-virtual {v3, p1, p2}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 3767
+    .line 3771
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->getOrientation()I
@@ -11905,7 +11925,7 @@
 
     if-eq p1, v1, :cond_8
 
-    .line 3768
+    .line 3772
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -11918,17 +11938,17 @@
 
     invoke-virtual {p1, v0, p2, v0, p3}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 3769
+    .line 3773
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->setOrientation(I)V
 
-    .line 3770
+    .line 3774
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAttachAdapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 3773
+    .line 3777
     :cond_8
     :goto_3
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoRecyclerViewIgnoreLayout:Z
@@ -11942,7 +11962,7 @@
 .method public onDestroy()V
     .locals 2
 
-    .line 3218
+    .line 3222
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -11951,7 +11971,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 3219
+    .line 3223
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -11966,7 +11986,7 @@
 .method public onDismiss()Z
     .locals 2
 
-    .line 3701
+    .line 3705
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAnimationInProgress:Z
 
     const/4 v1, 0x1
@@ -11975,18 +11995,18 @@
 
     return v1
 
-    .line 3704
+    .line 3708
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
     if-eqz v0, :cond_1
 
-    .line 3705
+    .line 3709
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->closeCamera(Z)V
 
     return v1
 
-    .line 3708
+    .line 3712
     :cond_1
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->hideCamera(Z)V
 
@@ -12011,7 +12031,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 3696
+    .line 3700
     :goto_0
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->hideCamera(Z)V
 
@@ -12021,22 +12041,22 @@
 .method onHidden()V
     .locals 3
 
-    .line 3581
+    .line 3585
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_0
 
     const/16 v1, 0x8
 
-    .line 3582
+    .line 3586
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3583
+    .line 3587
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3585
+    .line 3589
     :cond_0
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
@@ -12062,7 +12082,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 3586
+    .line 3590
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -12071,7 +12091,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 3587
+    .line 3591
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -12084,7 +12104,7 @@
 
     goto :goto_0
 
-    .line 3590
+    .line 3594
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
@@ -12098,10 +12118,10 @@
 
     const/4 v0, 0x1
 
-    .line 3512
+    .line 3516
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->isHidden:Z
 
-    .line 3513
+    .line 3517
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -12115,30 +12135,30 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 3515
+    .line 3519
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 3516
+    .line 3520
     instance-of v4, v3, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
     if-eqz v4, :cond_0
 
-    .line 3517
+    .line 3521
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
-    .line 3518
+    .line 3522
     invoke-virtual {v3, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3519
+    .line 3523
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->saveLastCameraBitmap()V
 
-    .line 3520
+    .line 3524
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->updateBitmap()V
 
     goto :goto_1
@@ -12148,17 +12168,17 @@
 
     goto :goto_0
 
-    .line 3525
+    .line 3529
     :cond_1
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->headerAnimator:Landroid/view/ViewPropertyAnimator;
 
     if-eqz v0, :cond_2
 
-    .line 3526
+    .line 3530
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 3528
+    .line 3532
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDown:Landroid/widget/TextView;
 
@@ -12194,10 +12214,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->headerAnimator:Landroid/view/ViewPropertyAnimator;
 
-    .line 3529
+    .line 3533
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 3531
+    .line 3535
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->pauseCameraPreview()V
 
     return-void
@@ -12206,15 +12226,15 @@
 .method onHideShowProgress(F)V
     .locals 1
 
-    .line 3497
+    .line 3501
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v0, :cond_1
 
-    .line 3498
+    .line 3502
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 3499
+    .line 3503
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
@@ -12225,7 +12245,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3500
+    .line 3504
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -12234,14 +12254,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 3501
+    .line 3505
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3502
+    .line 3506
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -12251,7 +12271,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 3503
+    .line 3507
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -12262,12 +12282,12 @@
 
     if-eq p1, v0, :cond_1
 
-    .line 3504
+    .line 3508
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3505
+    .line 3509
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
@@ -12299,20 +12319,20 @@
     :goto_0
     move v2, v0
 
-    .line 3310
+    .line 3314
     :goto_1
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaEnabled:Z
 
-    .line 3311
+    .line 3315
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->videoEnabled:Z
 
-    .line 3312
+    .line 3316
     iput-boolean p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->photoEnabled:Z
 
-    .line 3313
+    .line 3317
     iput-boolean p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->documentsEnabled:Z
 
-    .line 3314
+    .line 3318
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     const/high16 p2, 0x3f800000    # 1.0f
@@ -12330,24 +12350,24 @@
     :cond_2
     move v2, p3
 
-    .line 3315
+    .line 3319
     :goto_2
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 3316
+    .line 3320
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaEnabled:Z
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 3318
+    .line 3322
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_5
 
-    .line 3319
+    .line 3323
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaEnabled:Z
 
     if-eqz v2, :cond_4
@@ -12360,14 +12380,14 @@
     :goto_3
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 3320
+    .line 3324
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaEnabled:Z
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 3322
+    .line 3326
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -12381,17 +12401,17 @@
 
     if-nez p1, :cond_9
 
-    .line 3323
+    .line 3327
     sget-object p1, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 3324
+    .line 3328
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaEnabled:Z
 
     if-eqz p1, :cond_6
 
-    .line 3325
+    .line 3329
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     sget p2, Lorg/telegram/messenger/R$string;->NoPhotos:I
@@ -12404,14 +12424,14 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/EmptyTextProgressView;->setText(Ljava/lang/String;)V
 
-    .line 3326
+    .line 3330
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     invoke-virtual {p1, v1, v1, v1}, Lorg/telegram/ui/Components/EmptyTextProgressView;->setLottie(III)V
 
     goto :goto_4
 
-    .line 3328
+    .line 3332
     :cond_6
     check-cast p2, Lorg/telegram/ui/ChatActivity;
 
@@ -12419,7 +12439,7 @@
 
     move-result-object p1
 
-    .line 3329
+    .line 3333
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     sget p3, Lorg/telegram/messenger/R$raw;->media_forbidden:I
@@ -12430,14 +12450,14 @@
 
     const/4 p2, 0x7
 
-    .line 3330
+    .line 3334
     invoke-static {p1, p2}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p2
 
     if-eqz p2, :cond_7
 
-    .line 3331
+    .line 3335
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     sget p2, Lorg/telegram/messenger/R$string;->GlobalAttachMediaRestricted:I
@@ -12452,7 +12472,7 @@
 
     goto :goto_4
 
-    .line 3332
+    .line 3336
     :cond_7
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$Chat;->banned_rights:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
@@ -12462,7 +12482,7 @@
 
     if-eqz p2, :cond_8
 
-    .line 3333
+    .line 3337
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     sget p2, Lorg/telegram/messenger/R$string;->AttachMediaRestrictedForever:I
@@ -12479,7 +12499,7 @@
 
     goto :goto_4
 
-    .line 3335
+    .line 3339
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
@@ -12509,7 +12529,7 @@
 
     goto :goto_4
 
-    .line 3339
+    .line 3343
     :cond_9
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->shouldLoadAllMedia()Z
 
@@ -12517,20 +12537,20 @@
 
     if-eqz p1, :cond_a
 
-    .line 3340
+    .line 3344
     sget-object p1, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     goto :goto_4
 
-    .line 3342
+    .line 3346
     :cond_a
     sget-object p1, Lorg/telegram/messenger/MediaController;->allPhotosAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 3345
+    .line 3349
     :goto_4
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -12538,14 +12558,14 @@
 
     if-lt p1, p2, :cond_b
 
-    .line 3346
+    .line 3350
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->isNoGalleryPermissions()Z
 
     move-result p1
 
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->noGalleryPermissions:Z
 
-    .line 3348
+    .line 3352
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
@@ -12556,7 +12576,7 @@
     :goto_5
     const/16 p2, 0x64
 
-    .line 3349
+    .line 3353
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     iget-object p3, p3, Lorg/telegram/messenger/MediaController$AlbumEntry;->photos:Ljava/util/ArrayList;
@@ -12571,7 +12591,7 @@
 
     if-ge p1, p2, :cond_c
 
-    .line 3350
+    .line 3354
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     iget-object p2, p2, Lorg/telegram/messenger/MediaController$AlbumEntry;->photos:Ljava/util/ArrayList;
@@ -12582,33 +12602,33 @@
 
     check-cast p2, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 3351
+    .line 3355
     invoke-virtual {p2}, Lorg/telegram/messenger/MediaController$PhotoEntry;->reset()V
 
     add-int/lit8 p1, p1, 0x1
 
     goto :goto_5
 
-    .line 3354
+    .line 3358
     :cond_c
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->clearSelectedPhotos()V
 
-    .line 3355
+    .line 3359
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->updatePhotosCounter(Z)V
 
-    .line 3356
+    .line 3360
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotoLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     const p2, 0xf4240
 
     invoke-virtual {p1, v1, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 3357
+    .line 3361
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {p1, v1, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 3359
+    .line 3363
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDown:Landroid/widget/TextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->ChatGallery:I
@@ -12621,25 +12641,25 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3361
+    .line 3365
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     if-eqz p1, :cond_d
 
-    .line 3363
+    .line 3367
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->loading:Z
 
-    .line 3364
+    .line 3368
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->progressView:Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     if-eqz p1, :cond_d
 
-    .line 3365
+    .line 3369
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmptyTextProgressView;->showTextView()V
 
-    .line 3368
+    .line 3372
     :cond_d
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->updateAlbumsDropDown()V
 
@@ -12649,29 +12669,29 @@
 .method protected onLayout(ZIIII)V
     .locals 2
 
-    .line 3595
+    .line 3599
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->lastNotifyWidth:I
 
     sub-int v1, p4, p2
 
     if-eq v0, v1, :cond_0
 
-    .line 3596
+    .line 3600
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->lastNotifyWidth:I
 
-    .line 3597
+    .line 3601
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     if-eqz v0, :cond_0
 
-    .line 3598
+    .line 3602
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 3601
+    .line 3605
     :cond_0
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 3602
+    .line 3606
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraViewPosition()V
 
     return-void
@@ -12686,7 +12706,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 2994
+    .line 2998
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -12710,17 +12730,17 @@
 
     if-eqz v2, :cond_1
 
-    .line 2995
+    .line 2999
     check-cast v1, Lorg/telegram/ui/ChatActivity;
 
-    .line 2996
+    .line 3000
     invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getCurrentChat()Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    .line 2997
+    .line 3001
     invoke-static {v1}, Lorg/telegram/messenger/ChatObject;->hasAdminRights(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v2
@@ -12731,7 +12751,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 2998
+    .line 3002
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -12765,7 +12785,7 @@
     :cond_1
     if-nez p1, :cond_5
 
-    .line 3004
+    .line 3008
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->editingMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -12807,7 +12827,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 3005
+    .line 3009
     :cond_3
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -12841,13 +12861,13 @@
 
     goto/16 :goto_6
 
-    .line 3010
+    .line 3014
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->applyCaption()V
 
-    .line 3011
+    .line 3015
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->delegate:Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;
@@ -12873,7 +12893,7 @@
     :cond_5
     if-ne p1, v0, :cond_9
 
-    .line 3014
+    .line 3018
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->editingMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -12915,7 +12935,7 @@
 
     if-eqz p1, :cond_8
 
-    .line 3015
+    .line 3019
     :cond_7
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -12949,13 +12969,13 @@
 
     goto/16 :goto_6
 
-    .line 3020
+    .line 3024
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->applyCaption()V
 
-    .line 3021
+    .line 3025
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->delegate:Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;
@@ -12985,7 +13005,7 @@
 
     if-ne p1, v1, :cond_10
 
-    .line 3024
+    .line 3028
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getPhotoPreviewLayout()Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview;
@@ -12994,7 +13014,7 @@
 
     if-eqz p1, :cond_a
 
-    .line 3025
+    .line 3029
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getPhotoPreviewLayout()Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview;
@@ -13003,7 +13023,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview;->startMediaCrossfade()V
 
-    .line 3029
+    .line 3033
     :cond_a
     sget-object p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
@@ -13028,14 +13048,14 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 3030
+    .line 3034
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 3031
+    .line 3035
     iget-boolean v1, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->hasSpoiler:Z
 
     if-eqz v1, :cond_b
@@ -13050,7 +13070,7 @@
     :goto_0
     xor-int/2addr p1, v0
 
-    .line 3038
+    .line 3042
     new-instance v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda17;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Z)V
@@ -13059,12 +13079,12 @@
 
     invoke-static {v0, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 3052
+    .line 3056
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3053
+    .line 3057
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
@@ -13089,7 +13109,7 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 3054
+    .line 3058
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -13098,23 +13118,23 @@
 
     if-eqz v4, :cond_d
 
-    .line 3055
+    .line 3059
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 3056
+    .line 3060
     iput-boolean p1, v3, Lorg/telegram/messenger/MediaController$PhotoEntry;->hasSpoiler:Z
 
-    .line 3057
+    .line 3061
     iput-boolean v2, v3, Lorg/telegram/messenger/MediaController$PhotoEntry;->isChatPreviewSpoilerRevealed:Z
 
-    .line 3058
+    .line 3062
     iput-boolean v2, v3, Lorg/telegram/messenger/MediaController$PhotoEntry;->isAttachSpoilerRevealed:Z
 
-    .line 3059
+    .line 3063
     iget v3, v3, Lorg/telegram/messenger/MediaController$PhotoEntry;->imageId:I
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -13125,7 +13145,7 @@
 
     goto :goto_1
 
-    .line 3063
+    .line 3067
     :cond_e
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -13135,7 +13155,7 @@
 
     invoke-virtual {v1, v2}, Landroidx/recyclerview/widget/RecyclerView;->forAllChild(Landroidx/core/util/Consumer;)V
 
-    .line 3069
+    .line 3073
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getCurrentAttachLayout()Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;
@@ -13144,12 +13164,12 @@
 
     if-eq p1, p0, :cond_f
 
-    .line 3070
+    .line 3074
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 3073
+    .line 3077
     :cond_f
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -13159,7 +13179,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 3074
+    .line 3078
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getPhotoPreviewLayout()Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview;
@@ -13175,7 +13195,7 @@
 
     if-ne p1, v3, :cond_15
 
-    .line 3078
+    .line 3082
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -13200,30 +13220,30 @@
 
     goto :goto_2
 
-    .line 3095
+    .line 3099
     :cond_11
     new-instance p1, Landroid/content/Intent;
 
     invoke-direct {p1, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3096
+    .line 3100
     invoke-virtual {p1, v5}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3097
+    .line 3101
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget v2, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->avatarPicker:I
 
     if-eqz v2, :cond_12
 
-    .line 3098
+    .line 3102
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v1, p1, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_3
 
-    .line 3100
+    .line 3104
     :cond_12
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
@@ -13231,7 +13251,7 @@
 
     goto :goto_3
 
-    .line 3079
+    .line 3083
     :cond_13
     :goto_2
     new-instance p1, Landroid/content/Intent;
@@ -13240,32 +13260,32 @@
 
     const-string v1, "video/*"
 
-    .line 3080
+    .line 3084
     invoke-virtual {p1, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v1, "android.intent.action.GET_CONTENT"
 
-    .line 3081
+    .line 3085
     invoke-virtual {p1, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v1, "android.intent.extra.sizeLimit"
 
     const-wide/32 v7, 0x7d000000
 
-    .line 3082
+    .line 3086
     invoke-virtual {p1, v1, v7, v8}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 3084
+    .line 3088
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 3085
+    .line 3089
     invoke-virtual {v1, v5}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     const/4 v3, 0x0
 
-    .line 3086
+    .line 3090
     invoke-static {v1, v3}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
     move-result-object v1
@@ -13276,30 +13296,30 @@
 
     aput-object p1, v5, v2
 
-    .line 3087
+    .line 3091
     invoke-virtual {v1, v3, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 3089
+    .line 3093
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget v2, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->avatarPicker:I
 
     if-eqz v2, :cond_14
 
-    .line 3090
+    .line 3094
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {p1, v1, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_3
 
-    .line 3092
+    .line 3096
     :cond_14
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 3103
+    .line 3107
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -13312,7 +13332,7 @@
     :catch_0
     move-exception p1
 
-    .line 3105
+    .line 3109
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_6
@@ -13322,7 +13342,7 @@
 
     if-ne p1, v1, :cond_17
 
-    .line 3108
+    .line 3112
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->getCurrentAttachLayout()Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;
@@ -13352,7 +13372,7 @@
 
     if-lt p1, v0, :cond_19
 
-    .line 3110
+    .line 3114
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownAlbums:Ljava/util/ArrayList;
 
     sub-int/2addr p1, v0
@@ -13365,12 +13385,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 3111
+    .line 3115
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->galleryAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     if-ne p1, v0, :cond_18
 
-    .line 3112
+    .line 3116
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDown:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->ChatGallery:I
@@ -13385,7 +13405,7 @@
 
     goto :goto_5
 
-    .line 3114
+    .line 3118
     :cond_18
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDown:Landroid/widget/TextView;
 
@@ -13393,18 +13413,18 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3116
+    .line 3120
     :goto_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 3117
+    .line 3121
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAttachAdapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 3118
+    .line 3122
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -13433,7 +13453,7 @@
 .method onOpenAnimationEnd()V
     .locals 1
 
-    .line 3691
+    .line 3695
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     if-eqz v0, :cond_0
@@ -13460,41 +13480,41 @@
 .method public onPanTransitionStart(ZI)V
     .locals 1
 
-    .line 3657
+    .line 3661
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->onPanTransitionStart(ZI)V
 
-    .line 3658
+    .line 3662
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraViewPosition()V
 
-    .line 3659
+    .line 3663
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz p1, :cond_1
 
-    .line 3660
+    .line 3664
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x15
 
     if-lt p2, v0, :cond_0
 
-    .line 3661
+    .line 3665
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidateOutline()V
 
     goto :goto_0
 
-    .line 3663
+    .line 3667
     :cond_0
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 3666
+    .line 3670
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_2
 
-    .line 3667
+    .line 3671
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_2
@@ -13504,14 +13524,14 @@
 .method onPause()V
     .locals 4
 
-    .line 3224
+    .line 3228
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->shutterButton:Lorg/telegram/ui/Components/ShutterButton;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 3227
+    .line 3231
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->requestingPermissions:Z
 
@@ -13521,7 +13541,7 @@
 
     if-nez v1, :cond_3
 
-    .line 3228
+    .line 3232
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v1, :cond_1
@@ -13534,10 +13554,10 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 3229
+    .line 3233
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->resetRecordState()V
 
-    .line 3230
+    .line 3234
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v0
@@ -13550,29 +13570,29 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/messenger/camera/CameraController;->stopVideoRecording(Lorg/telegram/messenger/camera/CameraSession;Z)V
 
-    .line 3231
+    .line 3235
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->shutterButton:Lorg/telegram/ui/Components/ShutterButton;
 
     sget-object v1, Lorg/telegram/ui/Components/ShutterButton$State;->DEFAULT:Lorg/telegram/ui/Components/ShutterButton$State;
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/ShutterButton;->setState(Lorg/telegram/ui/Components/ShutterButton$State;Z)V
 
-    .line 3233
+    .line 3237
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
     if-eqz v0, :cond_2
 
-    .line 3234
+    .line 3238
     invoke-virtual {p0, v3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->closeCamera(Z)V
 
-    .line 3236
+    .line 3240
     :cond_2
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->hideCamera(Z)V
 
     goto :goto_0
 
-    .line 3238
+    .line 3242
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
@@ -13586,14 +13606,14 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 3239
+    .line 3243
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->shutterButton:Lorg/telegram/ui/Components/ShutterButton;
 
     sget-object v1, Lorg/telegram/ui/Components/ShutterButton$State;->DEFAULT:Lorg/telegram/ui/Components/ShutterButton$State;
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/ShutterButton;->setState(Lorg/telegram/ui/Components/ShutterButton$State;Z)V
 
-    .line 3241
+    .line 3245
     :cond_4
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->requestingPermissions:Z
 
@@ -13606,10 +13626,10 @@
 
     const/4 v0, 0x1
 
-    .line 3607
+    .line 3611
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->ignoreLayout:Z
 
-    .line 3608
+    .line 3612
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v1
@@ -13618,12 +13638,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 3609
+    .line 3613
     iput v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->itemsPerRow:I
 
     goto :goto_0
 
-    .line 3610
+    .line 3614
     :cond_0
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -13633,7 +13653,7 @@
 
     if-le v3, v1, :cond_1
 
-    .line 3611
+    .line 3615
     iput v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->itemsPerRow:I
 
     goto :goto_0
@@ -13641,10 +13661,10 @@
     :cond_1
     const/4 v1, 0x3
 
-    .line 3613
+    .line 3617
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->itemsPerRow:I
 
-    .line 3615
+    .line 3619
     :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -13652,7 +13672,7 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 3616
+    .line 3620
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v2
@@ -13661,7 +13681,7 @@
 
     const/16 v1, 0xc
 
-    .line 3618
+    .line 3622
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -13682,22 +13702,22 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->itemSize:I
 
-    .line 3620
+    .line 3624
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->lastItemSize:I
 
     if-eq v1, p1, :cond_2
 
-    .line 3621
+    .line 3625
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->lastItemSize:I
 
-    .line 3622
+    .line 3626
     new-instance p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda8;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 3625
+    .line 3629
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
@@ -13727,7 +13747,7 @@
 
     invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanCount(I)V
 
-    .line 3626
+    .line 3630
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->getItemCount()I
@@ -13752,7 +13772,7 @@
 
     double-to-int p1, v3
 
-    .line 3627
+    .line 3631
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->itemSize:I
 
     mul-int/2addr v1, p1
@@ -13769,7 +13789,7 @@
 
     sub-int p1, p2, v1
 
-    .line 3628
+    .line 3632
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v0
@@ -13790,20 +13810,20 @@
 
     move-result p1
 
-    .line 3629
+    .line 3633
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridExtraSpace:I
 
     if-eq v1, p1, :cond_3
 
-    .line 3630
+    .line 3634
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridExtraSpace:I
 
-    .line 3631
+    .line 3635
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 3634
+    .line 3638
     :cond_3
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
@@ -13829,7 +13849,7 @@
 
     goto :goto_1
 
-    .line 3637
+    .line 3641
     :cond_4
     div-int/2addr p2, v2
 
@@ -13838,7 +13858,7 @@
     :goto_1
     const/16 p2, 0x34
 
-    .line 3639
+    .line 3643
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -13849,7 +13869,7 @@
 
     move p1, v0
 
-    .line 3643
+    .line 3647
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -13859,7 +13879,7 @@
 
     if-eq p2, p1, :cond_6
 
-    .line 3644
+    .line 3648
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x6
@@ -13880,7 +13900,7 @@
 
     invoke-virtual {p2, v2, p1, v1, v3}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 3646
+    .line 3650
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDown:Landroid/widget/TextView;
 
@@ -13908,7 +13928,7 @@
     :goto_2
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 3647
+    .line 3651
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->ignoreLayout:Z
 
     return-void
@@ -13917,7 +13937,7 @@
 .method public onResume()V
     .locals 1
 
-    .line 3248
+    .line 3252
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->isShowing()Z
@@ -13946,7 +13966,7 @@
 
     const/4 v0, 0x0
 
-    .line 3249
+    .line 3253
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCamera(Z)V
 
     :cond_0
@@ -13964,7 +13984,7 @@
 
     if-le p1, v2, :cond_2
 
-    .line 3129
+    .line 3133
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v4, v3, Lorg/telegram/ui/Components/ChatAttachAlert;->editingMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -13973,18 +13993,18 @@
 
     goto :goto_0
 
-    .line 3140
+    .line 3144
     :cond_0
     iget-object v3, v3, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    .line 3141
+    .line 3145
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->documentsEnabled:Z
 
     if-eqz v1, :cond_1
 
-    .line 3142
+    .line 3146
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -13993,7 +14013,7 @@
 
     goto :goto_1
 
-    .line 3144
+    .line 3148
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -14003,7 +14023,7 @@
 
     goto :goto_1
 
-    .line 3130
+    .line 3134
     :cond_2
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -14014,14 +14034,14 @@
 
     if-nez p1, :cond_3
 
-    .line 3132
+    .line 3136
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    .line 3133
+    .line 3137
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -14030,13 +14050,13 @@
 
     goto :goto_1
 
-    .line 3134
+    .line 3138
     :cond_3
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->documentsEnabled:Z
 
     if-eqz v1, :cond_4
 
-    .line 3135
+    .line 3139
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -14045,7 +14065,7 @@
 
     goto :goto_1
 
-    .line 3137
+    .line 3141
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -14056,7 +14076,7 @@
     :goto_1
     if-eqz p1, :cond_5
 
-    .line 3148
+    .line 3152
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -14070,21 +14090,21 @@
 
     if-le p1, v2, :cond_6
 
-    .line 3151
+    .line 3155
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    .line 3152
+    .line 3156
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->showSubItem(I)V
 
-    .line 3153
+    .line 3157
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->compressItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$string;->SendAsFiles:I
@@ -14097,7 +14117,7 @@
 
     goto :goto_2
 
-    .line 3155
+    .line 3159
     :cond_6
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -14105,7 +14125,7 @@
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->hideSubItem(I)V
 
-    .line 3156
+    .line 3160
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -14114,7 +14134,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 3158
+    .line 3162
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->compressItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$string;->SendAsFile:I
@@ -14131,7 +14151,7 @@
 
     if-eqz p1, :cond_9
 
-    .line 3161
+    .line 3165
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     if-eqz p1, :cond_8
@@ -14152,7 +14172,7 @@
 
     goto :goto_3
 
-    .line 3166
+    .line 3170
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -14162,7 +14182,7 @@
 
     goto :goto_4
 
-    .line 3162
+    .line 3166
     :cond_9
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->spoilerItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
@@ -14175,14 +14195,14 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3163
+    .line 3167
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->spoilerItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     sget v1, Lorg/telegram/messenger/R$raw;->photo_spoiler:I
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setAnimatedIcon(I)V
 
-    .line 3164
+    .line 3168
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert;->selectedMenuItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -14196,7 +14216,7 @@
 .method public onSheetKeyDown(ILandroid/view/KeyEvent;)Z
     .locals 0
 
-    .line 3714
+    .line 3718
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
     if-eqz p2, :cond_1
@@ -14217,7 +14237,7 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 3715
+    .line 3719
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->shutterButton:Lorg/telegram/ui/Components/ShutterButton;
 
@@ -14240,15 +14260,15 @@
 .method public onShow(Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;)V
     .locals 5
 
-    .line 3437
+    .line 3441
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->headerAnimator:Landroid/view/ViewPropertyAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 3438
+    .line 3442
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 3440
+    .line 3444
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDownContainer:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
@@ -14256,27 +14276,27 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3441
+    .line 3445
     instance-of v0, p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayoutPreview;
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     if-nez v0, :cond_1
 
-    .line 3442
+    .line 3446
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->onSelectedItemsCountChanged(I)V
 
-    .line 3443
+    .line 3447
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->clearSelectedPhotos()V
 
-    .line 3444
+    .line 3448
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDown:Landroid/widget/TextView;
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setAlpha(F)V
 
     goto :goto_0
 
-    .line 3446
+    .line 3450
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->dropDown:Landroid/widget/TextView;
 
@@ -14302,10 +14322,10 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->headerAnimator:Landroid/view/ViewPropertyAnimator;
 
-    .line 3447
+    .line 3451
     invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 3449
+    .line 3453
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -14315,28 +14335,28 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 3451
+    .line 3455
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {v2, v1, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
     if-eqz v0, :cond_2
 
-    .line 3453
+    .line 3457
     new-instance v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda16;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;)V
 
-    .line 3458
+    .line 3462
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->post(Ljava/lang/Runnable;)Z
 
-    .line 3461
+    .line 3465
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraViewPosition()V
 
-    .line 3463
+    .line 3467
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->resumeCameraPreview()V
 
     return-void
@@ -14347,33 +14367,33 @@
 
     const/4 v0, 0x0
 
-    .line 3468
+    .line 3472
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->isHidden:Z
 
-    .line 3469
+    .line 3473
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v1, :cond_0
 
-    .line 3470
+    .line 3474
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3472
+    .line 3476
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     if-eqz v1, :cond_1
 
-    .line 3473
+    .line 3477
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3475
+    .line 3479
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz v1, :cond_3
 
-    .line 3476
+    .line 3480
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
@@ -14385,21 +14405,21 @@
     :goto_0
     if-ge v2, v1, :cond_3
 
-    .line 3478
+    .line 3482
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 3479
+    .line 3483
     instance-of v4, v3, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
     if-eqz v4, :cond_2
 
     const/4 v1, 0x4
 
-    .line 3480
+    .line 3484
     invoke-virtual {v3, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_1
@@ -14409,19 +14429,19 @@
 
     goto :goto_0
 
-    .line 3485
+    .line 3489
     :cond_3
     :goto_1
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraWhenShown:Z
 
     if-eqz v1, :cond_4
 
-    .line 3486
+    .line 3490
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraWhenShown:Z
 
     const/4 v0, 0x1
 
-    .line 3487
+    .line 3491
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCamera(Z)V
 
     :cond_4
@@ -14435,12 +14455,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 1723
+    .line 1727
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotos:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1724
+    .line 1728
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     iget v2, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->imageId:I
@@ -14451,7 +14471,7 @@
 
     invoke-virtual {v1, v2, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1725
+    .line 1729
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     iget v2, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->imageId:I
@@ -14462,17 +14482,17 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1726
+    .line 1730
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ChatAttachAlert;->updateCountButton(I)V
 
-    .line 1727
+    .line 1731
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
 
-    .line 1728
+    .line 1732
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraAttachAdapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->notifyDataSetChanged()V
@@ -14484,7 +14504,7 @@
 
     if-nez p3, :cond_2
 
-    .line 1730
+    .line 1734
     sget-object p3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotos:Ljava/util/ArrayList;
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
@@ -14493,30 +14513,30 @@
 
     if-le p3, v1, :cond_2
 
-    .line 1731
+    .line 1735
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->updatePhotosCounter(Z)V
 
-    .line 1732
+    .line 1736
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-eqz p1, :cond_1
 
-    .line 1733
+    .line 1737
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Components/ZoomControlView;->setZoom(FZ)V
 
-    .line 1734
+    .line 1738
     iput p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraZoom:F
 
-    .line 1735
+    .line 1739
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/camera/CameraView;->setZoom(F)V
 
-    .line 1736
+    .line 1740
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object p1
@@ -14532,7 +14552,7 @@
     :cond_1
     return-void
 
-    .line 1740
+    .line 1744
     :cond_2
     sget-object p3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotos:Ljava/util/ArrayList;
 
@@ -14544,18 +14564,18 @@
 
     return-void
 
-    .line 1743
+    .line 1747
     :cond_3
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cancelTakingPhotos:Z
 
-    .line 1745
+    .line 1749
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object p3, p3, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-nez p3, :cond_4
 
-    .line 1747
+    .line 1751
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p3
@@ -14565,7 +14585,7 @@
 
     return-void
 
-    .line 1752
+    .line 1756
     :cond_5
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
@@ -14579,7 +14599,7 @@
 
     invoke-virtual {v2, p3, v3}, Lorg/telegram/ui/PhotoViewer;->setParentActivity(Landroid/app/Activity;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1753
+    .line 1757
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object p3
@@ -14588,7 +14608,7 @@
 
     invoke-virtual {p3, v2}, Lorg/telegram/ui/PhotoViewer;->setParentAlert(Lorg/telegram/ui/Components/ChatAttachAlert;)V
 
-    .line 1754
+    .line 1758
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object p3
@@ -14601,7 +14621,7 @@
 
     invoke-virtual {p3, v3, v2}, Lorg/telegram/ui/PhotoViewer;->setMaxSelectedPhotos(IZ)V
 
-    .line 1758
+    .line 1762
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget v2, p3, Lorg/telegram/ui/Components/ChatAttachAlert;->avatarPicker:I
@@ -14617,7 +14637,7 @@
 
     goto :goto_2
 
-    .line 1761
+    .line 1765
     :cond_6
     iget-object p3, p3, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
@@ -14625,7 +14645,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 1762
+    .line 1766
     move-object v3, p3
 
     check-cast v3, Lorg/telegram/ui/ChatActivity;
@@ -14645,23 +14665,23 @@
     :goto_2
     if-eqz v2, :cond_8
 
-    .line 1771
+    .line 1775
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1772
+    .line 1776
     invoke-virtual {p3, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 1775
+    .line 1779
     :cond_8
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->getAllPhotosArray()Ljava/util/ArrayList;
 
     move-result-object p3
 
-    .line 1776
+    .line 1780
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraPhotos:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -14675,7 +14695,7 @@
 
     move v6, v0
 
-    .line 1778
+    .line 1782
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p3}, Lorg/telegram/ui/Components/ChatAttachAlert;->getAvatarFor()Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;
@@ -14686,7 +14706,7 @@
 
     if-eqz p1, :cond_9
 
-    .line 1779
+    .line 1783
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p3}, Lorg/telegram/ui/Components/ChatAttachAlert;->getAvatarFor()Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;
@@ -14697,7 +14717,7 @@
 
     iput-boolean p1, p3, Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;->isVideo:Z
 
-    .line 1781
+    .line 1785
     :cond_9
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
@@ -14711,7 +14731,7 @@
 
     invoke-virtual/range {v4 .. v10}, Lorg/telegram/ui/PhotoViewer;->openPhotoForSelect(Ljava/util/ArrayList;IIZLorg/telegram/ui/PhotoViewer$PhotoViewerProvider;Lorg/telegram/ui/ChatActivity;)Z
 
-    .line 1917
+    .line 1921
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object p1
@@ -14730,14 +14750,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 3426
+    .line 3430
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 3429
+    .line 3433
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
@@ -14747,7 +14767,7 @@
 .method public scrollToTop()V
     .locals 2
 
-    .line 2981
+    .line 2985
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x0
@@ -14766,18 +14786,18 @@
 
     move/from16 v1, p1
 
-    .line 2663
+    .line 2667
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     if-nez v2, :cond_0
 
     return-void
 
-    .line 2666
+    .line 2670
     :cond_0
     iput v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpenProgress:F
 
-    .line 2667
+    .line 2671
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->animateCameraValues:[I
 
     const/4 v3, 0x1
@@ -14788,19 +14808,19 @@
 
     const/4 v5, 0x2
 
-    .line 2668
+    .line 2672
     aget v2, v2, v5
 
     int-to-float v2, v2
 
-    .line 2669
+    .line 2673
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v6, v5, Landroid/graphics/Point;->x:I
 
     iget v5, v5, Landroid/graphics/Point;->y:I
 
-    .line 2670
+    .line 2674
     iget-object v5, v0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainer()Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
@@ -14829,7 +14849,7 @@
 
     int-to-float v5, v5
 
-    .line 2671
+    .line 2675
     iget-object v6, v0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainer()Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
@@ -14842,17 +14862,17 @@
 
     int-to-float v6, v6
 
-    .line 2673
+    .line 2677
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
 
     const/4 v8, 0x0
 
     aget v9, v7, v8
 
-    .line 2674
+    .line 2678
     aget v10, v7, v3
 
-    .line 2676
+    .line 2680
     iget v11, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->additionCloseCameraY:F
 
     const/4 v12, 0x0
@@ -14861,14 +14881,14 @@
 
     if-nez v13, :cond_1
 
-    .line 2679
+    .line 2683
     iget-object v13, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     aget v7, v7, v8
 
     invoke-virtual {v13, v7}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 2680
+    .line 2684
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     iget-object v8, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
@@ -14881,7 +14901,7 @@
 
     invoke-virtual {v7, v3}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 2685
+    .line 2689
     :cond_1
     iget-object v3, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
@@ -14891,14 +14911,14 @@
 
     check-cast v3, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 2687
+    .line 2691
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v7, v4, v2}, Lorg/telegram/messenger/camera/CameraView;->getTextureHeight(FF)F
 
     move-result v7
 
-    .line 2688
+    .line 2692
     iget-object v8, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v8, v5, v6}, Lorg/telegram/messenger/camera/CameraView;->getTextureHeight(FF)F
@@ -14911,7 +14931,7 @@
 
     div-float v13, v4, v5
 
-    .line 2694
+    .line 2698
     iget-boolean v14, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraExpanded:Z
 
     const/high16 v15, 0x3f800000    # 1.0f
@@ -14928,7 +14948,7 @@
 
     add-float/2addr v7, v1
 
-    .line 2698
+    .line 2702
     iget-object v15, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v15}, Lorg/telegram/messenger/camera/CameraView;->getTextureView()Landroid/view/TextureView;
@@ -14937,7 +14957,7 @@
 
     invoke-virtual {v15, v7}, Landroid/view/TextureView;->setScaleX(F)V
 
-    .line 2699
+    .line 2703
     iget-object v15, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v15}, Lorg/telegram/messenger/camera/CameraView;->getTextureView()Landroid/view/TextureView;
@@ -14970,7 +14990,7 @@
 
     div-float/2addr v13, v8
 
-    .line 2707
+    .line 2711
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     mul-float v8, v9, v17
@@ -14985,7 +15005,7 @@
 
     invoke-virtual {v7, v13}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 2708
+    .line 2712
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     mul-float v13, v10, v17
@@ -14998,7 +15018,7 @@
 
     invoke-virtual {v7, v11}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 2709
+    .line 2713
     iget-object v7, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v7}, Landroid/widget/FrameLayout;->getTranslationY()F
@@ -15013,7 +15033,7 @@
 
     mul-float v10, v10, v17
 
-    .line 2710
+    .line 2714
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getTranslationY()F
@@ -15028,7 +15048,7 @@
 
     iput v10, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->animationClipBottom:F
 
-    .line 2712
+    .line 2716
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getTranslationX()F
@@ -15043,7 +15063,7 @@
 
     mul-float v9, v9, v17
 
-    .line 2713
+    .line 2717
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getTranslationX()F
@@ -15065,7 +15085,7 @@
 
     float-to-int v12, v2
 
-    .line 2717
+    .line 2721
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v2}, Lorg/telegram/messenger/camera/CameraView;->getTextureView()Landroid/view/TextureView;
@@ -15076,7 +15096,7 @@
 
     invoke-virtual {v2, v4}, Landroid/view/TextureView;->setScaleX(F)V
 
-    .line 2718
+    .line 2722
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v2}, Lorg/telegram/messenger/camera/CameraView;->getTextureView()Landroid/view/TextureView;
@@ -15087,24 +15107,24 @@
 
     const/4 v2, 0x0
 
-    .line 2719
+    .line 2723
     iput v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->animationClipTop:F
 
-    .line 2720
+    .line 2724
     iput v6, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->animationClipBottom:F
 
-    .line 2721
+    .line 2725
     iput v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->animationClipLeft:F
 
-    .line 2722
+    .line 2726
     iput v5, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->animationClipRight:F
 
-    .line 2724
+    .line 2728
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v2, v9}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 2725
+    .line 2729
     iget-object v2, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v2, v10}, Landroid/widget/FrameLayout;->setTranslationY(F)V
@@ -15116,7 +15136,7 @@
 
     if-gtz v4, :cond_3
 
-    .line 2729
+    .line 2733
     iget-object v4, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     div-float/2addr v1, v2
@@ -15129,7 +15149,7 @@
 
     goto :goto_1
 
-    .line 2731
+    .line 2735
     :cond_3
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
@@ -15137,7 +15157,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 2734
+    .line 2738
     :goto_1
     iget v1, v3, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
@@ -15147,19 +15167,19 @@
 
     if-eq v1, v12, :cond_5
 
-    .line 2735
+    .line 2739
     :cond_4
     iput v14, v3, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 2736
+    .line 2740
     iput v12, v3, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 2737
+    .line 2741
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 2739
+    .line 2743
     :cond_5
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -15167,14 +15187,14 @@
 
     if-lt v1, v2, :cond_6
 
-    .line 2740
+    .line 2744
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->invalidateOutline()V
 
     goto :goto_2
 
-    .line 2742
+    .line 2746
     :cond_6
     iget-object v1, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
@@ -15187,7 +15207,7 @@
 .method public setCheckCameraWhenShown(Z)V
     .locals 0
 
-    .line 3492
+    .line 3496
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraWhenShown:Z
 
     return-void
@@ -15196,7 +15216,7 @@
 .method public setTranslationY(F)V
     .locals 6
 
-    .line 3404
+    .line 3408
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getSheetAnimationType()I
@@ -15217,7 +15237,7 @@
 
     const/4 v0, 0x0
 
-    .line 3406
+    .line 3410
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
@@ -15227,24 +15247,24 @@
     :goto_0
     if-ge v0, v2, :cond_2
 
-    .line 3407
+    .line 3411
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 3408
+    .line 3412
     instance-of v4, v3, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
     const/high16 v5, 0x3f800000    # 1.0f
 
     if-eqz v4, :cond_0
 
-    .line 3409
+    .line 3413
     check-cast v3, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
-    .line 3410
+    .line 3414
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->getImageView()Landroid/widget/ImageView;
 
     move-result-object v4
@@ -15253,7 +15273,7 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 3411
+    .line 3415
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->getImageView()Landroid/widget/ImageView;
 
     move-result-object v3
@@ -15262,16 +15282,16 @@
 
     goto :goto_1
 
-    .line 3412
+    .line 3416
     :cond_0
     instance-of v4, v3, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
 
     if-eqz v4, :cond_1
 
-    .line 3413
+    .line 3417
     check-cast v3, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
 
-    .line 3414
+    .line 3418
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getCheckBox()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object v4
@@ -15280,7 +15300,7 @@
 
     invoke-virtual {v4, v5}, Landroid/view/View;->setScaleX(F)V
 
-    .line 3415
+    .line 3419
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getCheckBox()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object v3
@@ -15293,11 +15313,11 @@
 
     goto :goto_0
 
-    .line 3419
+    .line 3423
     :cond_2
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 3420
+    .line 3424
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getSheetContainer()Landroid/view/ViewGroup;
@@ -15306,7 +15326,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 3421
+    .line 3425
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -15395,7 +15415,7 @@
 .method public showCamera()V
     .locals 8
 
-    .line 2196
+    .line 2200
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->paused:Z
@@ -15408,7 +15428,7 @@
 
     goto/16 :goto_5
 
-    .line 2199
+    .line 2203
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
@@ -15422,14 +15442,14 @@
 
     const v0, 0x81e0
 
-    .line 2200
+    .line 2204
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
 
     xor-int/2addr v0, v3
 
-    .line 2201
+    .line 2205
     new-instance v4, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -15456,21 +15476,21 @@
 
     iput-object v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
-    .line 2241
+    .line 2245
     iget-object v5, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraCell:Lorg/telegram/ui/Cells/PhotoAttachCameraCell;
 
     if-eqz v5, :cond_2
 
     if-eqz v0, :cond_2
 
-    .line 2242
+    .line 2246
     invoke-virtual {v5}, Lorg/telegram/ui/Cells/PhotoAttachCameraCell;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {v4, v0}, Lorg/telegram/messenger/camera/CameraView;->setThumbDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2244
+    .line 2248
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
@@ -15504,26 +15524,26 @@
 
     invoke-virtual {v0, v4}, Lorg/telegram/messenger/camera/CameraView;->setRecordFile(Ljava/io/File;)V
 
-    .line 2245
+    .line 2249
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 2246
+    .line 2250
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     const/16 v4, 0x1e
 
     invoke-virtual {v0, v4}, Lorg/telegram/messenger/camera/CameraView;->setFpsLimit(I)V
 
-    .line 2247
+    .line 2251
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x15
 
     if-lt v0, v4, :cond_4
 
-    .line 2248
+    .line 2252
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     new-instance v4, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$19;
@@ -15532,12 +15552,12 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 2268
+    .line 2272
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setClipToOutline(Z)V
 
-    .line 2270
+    .line 2274
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
@@ -15551,7 +15571,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 2271
+    .line 2275
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainer()Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
@@ -15568,7 +15588,7 @@
 
     invoke-virtual {v0, v4, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2272
+    .line 2276
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     new-instance v4, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$20;
@@ -15577,12 +15597,12 @@
 
     invoke-virtual {v0, v4}, Lorg/telegram/messenger/camera/CameraView;->setDelegate(Lorg/telegram/messenger/camera/CameraView$CameraViewDelegate;)V
 
-    .line 2331
+    .line 2335
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     if-nez v0, :cond_5
 
-    .line 2332
+    .line 2336
     new-instance v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$21;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -15593,15 +15613,15 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
-    .line 2360
+    .line 2364
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 2361
+    .line 2365
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 2363
+    .line 2367
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -15621,7 +15641,7 @@
 
     invoke-virtual {v0, v4, v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2365
+    .line 2369
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaEnabled:Z
@@ -15642,14 +15662,14 @@
     :goto_2
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 2366
+    .line 2370
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaEnabled:Z
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 2367
+    .line 2371
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaEnabled:Z
@@ -15664,70 +15684,70 @@
     :goto_3
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 2368
+    .line 2372
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->mediaEnabled:Z
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 2369
+    .line 2373
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->isHidden:Z
 
     if-eqz v0, :cond_8
 
-    .line 2370
+    .line 2374
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     const/16 v4, 0x8
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2371
+    .line 2375
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2373
+    .line 2377
     :cond_8
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
     if-eqz v0, :cond_9
 
-    .line 2374
+    .line 2378
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     goto :goto_4
 
-    .line 2376
+    .line 2380
     :cond_9
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->checkCameraViewPosition()V
 
-    .line 2378
+    .line 2382
     :goto_4
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2380
+    .line 2384
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     if-eqz v0, :cond_b
 
-    .line 2381
+    .line 2385
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/ZoomControlView;->setZoom(FZ)V
 
-    .line 2382
+    .line 2386
     iput v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraZoom:F
 
-    .line 2384
+    .line 2388
     :cond_b
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraOpened:Z
 
     if-nez v0, :cond_c
 
-    .line 2385
+    .line 2389
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
@@ -15736,7 +15756,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 2386
+    .line 2390
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraView:Lorg/telegram/messenger/camera/CameraView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
@@ -15749,7 +15769,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 2387
+    .line 2391
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
@@ -15758,7 +15778,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 2388
+    .line 2392
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraIcon:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->cameraViewLocation:[F
@@ -15958,7 +15978,7 @@
 .method protected updatePhotosCounter(Z)V
     .locals 7
 
-    .line 1956
+    .line 1960
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     if-eqz v0, :cond_b
@@ -15971,7 +15991,7 @@
 
     goto/16 :goto_2
 
-    .line 1961
+    .line 1965
     :cond_0
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
@@ -16004,14 +16024,14 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 1962
+    .line 1966
     invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 1963
+    .line 1967
     iget-boolean v4, v4, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-eqz v4, :cond_2
@@ -16028,7 +16048,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 1972
+    .line 1976
     :cond_3
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
@@ -16044,7 +16064,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 1974
+    .line 1978
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     sget-object v3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
@@ -16067,14 +16087,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1975
+    .line 1979
     iget v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->currentSelectedCount:I
 
     if-ne v0, v2, :cond_4
 
     if-eqz p1, :cond_9
 
-    .line 1976
+    .line 1980
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -16095,7 +16115,7 @@
     :cond_5
     if-eqz v2, :cond_7
 
-    .line 1979
+    .line 1983
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
     sget-object v3, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
@@ -16118,14 +16138,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1980
+    .line 1984
     iget v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->currentSelectedCount:I
 
     if-ne v0, v2, :cond_6
 
     if-eqz p1, :cond_9
 
-    .line 1981
+    .line 1985
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -16143,7 +16163,7 @@
 
     goto :goto_1
 
-    .line 1984
+    .line 1988
     :cond_7
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->counterTextView:Landroid/widget/TextView;
 
@@ -16167,14 +16187,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1985
+    .line 1989
     iget v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->currentSelectedCount:I
 
     if-ne v0, v2, :cond_8
 
     if-eqz p1, :cond_9
 
-    .line 1986
+    .line 1990
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
@@ -16190,7 +16210,7 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1989
+    .line 1993
     :cond_9
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -16202,7 +16222,7 @@
     :cond_a
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/ChatAttachAlert;->setCanOpenPreview(Z)V
 
-    .line 1990
+    .line 1994
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->currentSelectedCount:I
 
     :cond_b
@@ -16225,22 +16245,22 @@
         }
     .end annotation
 
-    .line 2915
+    .line 2919
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 2916
+    .line 2920
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
 
-    .line 2917
+    .line 2921
     sget-object p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 2918
+    .line 2922
     sget-object p1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -16249,13 +16269,13 @@
 
     const/4 p1, 0x0
 
-    .line 2920
+    .line 2924
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->updatePhotosCounter(Z)V
 
-    .line 2921
+    .line 2925
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->updateCheckedPhotoIndices()V
 
-    .line 2923
+    .line 2927
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getChildCount()I
@@ -16267,26 +16287,26 @@
     :goto_0
     if-ge p3, p2, :cond_6
 
-    .line 2925
+    .line 2929
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, p3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2926
+    .line 2930
     instance-of v1, v0, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
 
     if-eqz v1, :cond_5
 
-    .line 2927
+    .line 2931
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v1
 
-    .line 2928
+    .line 2932
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->access$5700(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;)Z
@@ -16303,18 +16323,18 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 2932
+    .line 2936
     :cond_0
     check-cast v0, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
 
-    .line 2933
+    .line 2937
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget v2, v2, Lorg/telegram/ui/Components/ChatAttachAlert;->avatarPicker:I
 
     if-eqz v2, :cond_1
 
-    .line 2934
+    .line 2938
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getCheckBox()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object v2
@@ -16323,7 +16343,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2936
+    .line 2940
     :cond_1
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->getPhotoEntryAtPosition(I)Lorg/telegram/messenger/MediaController$PhotoEntry;
 
@@ -16331,7 +16351,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 2938
+    .line 2942
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->adapter:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;->access$5700(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$PhotoAttachAdapter;)Z
@@ -16374,7 +16394,7 @@
     :goto_2
     invoke-virtual {v0, v2, v3, v4}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->setPhotoEntry(Lorg/telegram/messenger/MediaController$PhotoEntry;ZZ)V
 
-    .line 2939
+    .line 2943
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     iget-object v3, v1, Lorg/telegram/ui/Components/ChatAttachAlert;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -16387,7 +16407,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 2940
+    .line 2944
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotosOrder:Ljava/util/ArrayList;
 
     iget v3, v2, Lorg/telegram/messenger/MediaController$PhotoEntry;->imageId:I
@@ -16416,7 +16436,7 @@
 
     goto :goto_3
 
-    .line 2942
+    .line 2946
     :cond_4
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->selectedPhotos:Ljava/util/HashMap;
 

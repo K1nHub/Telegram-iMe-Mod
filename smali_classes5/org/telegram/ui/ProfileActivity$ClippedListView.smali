@@ -25,10 +25,10 @@
 .method public constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 12758
+    .line 12791
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$ClippedListView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    .line 12759
+    .line 12792
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -39,7 +39,7 @@
 .method public updateClip([I)V
     .locals 2
 
-    .line 12764
+    .line 12797
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$ClippedListView;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$34700(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -54,7 +54,7 @@
 
     aput v0, p1, v1
 
-    .line 12765
+    .line 12798
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v0

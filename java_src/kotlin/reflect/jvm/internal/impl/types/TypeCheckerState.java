@@ -164,7 +164,7 @@ public class TypeCheckerState {
         }
 
         /* renamed from: transformType */
-        public abstract SimpleTypeMarker mo2055transformType(TypeCheckerState typeCheckerState, KotlinTypeMarker kotlinTypeMarker);
+        public abstract SimpleTypeMarker mo2057transformType(TypeCheckerState typeCheckerState, KotlinTypeMarker kotlinTypeMarker);
 
         private SupertypesPolicy() {
         }
@@ -180,7 +180,7 @@ public class TypeCheckerState {
 
             @Override // kotlin.reflect.jvm.internal.impl.types.TypeCheckerState.SupertypesPolicy
             /* renamed from: transformType  reason: collision with other method in class */
-            public /* bridge */ /* synthetic */ SimpleTypeMarker mo2055transformType(TypeCheckerState typeCheckerState, KotlinTypeMarker kotlinTypeMarker) {
+            public /* bridge */ /* synthetic */ SimpleTypeMarker mo2057transformType(TypeCheckerState typeCheckerState, KotlinTypeMarker kotlinTypeMarker) {
                 return (SimpleTypeMarker) transformType(typeCheckerState, kotlinTypeMarker);
             }
 
@@ -202,7 +202,7 @@ public class TypeCheckerState {
 
             @Override // kotlin.reflect.jvm.internal.impl.types.TypeCheckerState.SupertypesPolicy
             /* renamed from: transformType */
-            public SimpleTypeMarker mo2055transformType(TypeCheckerState state, KotlinTypeMarker type) {
+            public SimpleTypeMarker mo2057transformType(TypeCheckerState state, KotlinTypeMarker type) {
                 Intrinsics.checkNotNullParameter(state, "state");
                 Intrinsics.checkNotNullParameter(type, "type");
                 return state.getTypeSystemContext().upperBoundIfFlexible(type);
@@ -220,7 +220,7 @@ public class TypeCheckerState {
 
             @Override // kotlin.reflect.jvm.internal.impl.types.TypeCheckerState.SupertypesPolicy
             /* renamed from: transformType */
-            public SimpleTypeMarker mo2055transformType(TypeCheckerState state, KotlinTypeMarker type) {
+            public SimpleTypeMarker mo2057transformType(TypeCheckerState state, KotlinTypeMarker type) {
                 Intrinsics.checkNotNullParameter(state, "state");
                 Intrinsics.checkNotNullParameter(type, "type");
                 return state.getTypeSystemContext().lowerBoundIfFlexible(type);

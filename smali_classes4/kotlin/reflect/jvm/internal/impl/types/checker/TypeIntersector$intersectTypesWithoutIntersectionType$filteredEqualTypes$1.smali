@@ -44,7 +44,7 @@
 .method public final getName()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "isStrictSupertype"
+    const-string/jumbo v0, "isStrictSupertype"
 
     return-object v0
 .end method
@@ -64,7 +64,7 @@
 .method public final getSignature()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "isStrictSupertype(Lorg/jetbrains/kotlin/types/KotlinType;Lorg/jetbrains/kotlin/types/KotlinType;)Z"
+    const-string/jumbo v0, "isStrictSupertype(Lorg/jetbrains/kotlin/types/KotlinType;Lorg/jetbrains/kotlin/types/KotlinType;)Z"
 
     return-object v0
 .end method

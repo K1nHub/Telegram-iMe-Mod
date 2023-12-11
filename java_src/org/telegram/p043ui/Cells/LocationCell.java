@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -160,7 +160,7 @@ public class LocationCell extends FrameLayout {
         int colorForIndex = getColorForIndex(i);
         if (tLRPC$TL_messageMediaVenue != null && (str2 = tLRPC$TL_messageMediaVenue.icon) != null) {
             if ("pin".equals(str2) || tLRPC$TL_messageMediaVenue.icon.startsWith("emoji")) {
-                Drawable mutate = getResources().getDrawable(C3634R.C3636drawable.pin).mutate();
+                Drawable mutate = getResources().getDrawable(C3632R.C3634drawable.pin).mutate();
                 mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_location_sendLocationIcon), PorterDuff.Mode.MULTIPLY));
                 CombinedDrawable combinedDrawable = new CombinedDrawable(Theme.createCircleDrawable(AndroidUtilities.m104dp(42), 0), mutate);
                 combinedDrawable.setCustomSize(AndroidUtilities.m104dp(42), AndroidUtilities.m104dp(42));

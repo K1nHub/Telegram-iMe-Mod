@@ -18,12 +18,12 @@ public final class KeyMaxLtTlbConstructor extends org.ton.tlb.TlbConstructor<Key
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeBit(value.getKey());
-        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5119getMaxEndLtsVKNKU());
+        cellBuilder.mo5193storeUInt64VKZWuLQ(value.m5101getMaxEndLtsVKNKU());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public KeyMaxLt loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new KeyMaxLt(cellSlice.loadBit(), cellSlice.mo5221loadUInt64sVKNKU(), null);
+        return new KeyMaxLt(cellSlice.loadBit(), cellSlice.mo5203loadUInt64sVKNKU(), null);
     }
 }

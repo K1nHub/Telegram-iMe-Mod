@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.PopupWindow;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.CustomPopupMenu */
@@ -22,7 +22,7 @@ public abstract class CustomPopupMenu {
     protected abstract void onDismissed();
 
     public CustomPopupMenu(Context context, Theme.ResourcesProvider resourcesProvider, boolean z) {
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(context, C3634R.C3636drawable.popup_fixed_alert2, resourcesProvider, z ? 1 : 0);
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(context, C3632R.C3634drawable.popup_fixed_alert2, resourcesProvider, z ? 1 : 0);
         this.popupLayout = actionBarPopupWindowLayout;
         actionBarPopupWindowLayout.setAnimationEnabled(false);
         this.popupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.CustomPopupMenu$$ExternalSyntheticLambda0
@@ -44,7 +44,7 @@ public abstract class CustomPopupMenu {
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.popupLayout, -2, -2);
         this.popupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setAnimationEnabled(false);
-        this.popupWindow.setAnimationStyle(C3634R.style.PopupContextAnimation2);
+        this.popupWindow.setAnimationStyle(C3632R.style.PopupContextAnimation2);
         this.popupWindow.setOutsideTouchable(true);
         this.popupWindow.setClippingEnabled(true);
         this.popupWindow.setInputMethodMode(2);

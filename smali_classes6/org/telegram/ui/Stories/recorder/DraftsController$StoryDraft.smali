@@ -158,7 +158,7 @@
 .method public constructor <init>(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 8
 
-    .line 754
+    .line 757
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, 0x9
@@ -190,7 +190,7 @@
     .line 497
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioVolume:F
 
-    .line 755
+    .line 758
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -203,7 +203,7 @@
 
     return-void
 
-    .line 757
+    .line 760
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -213,7 +213,7 @@
 
     throw p1
 
-    .line 762
+    .line 765
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
@@ -221,7 +221,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->date:J
 
-    .line 763
+    .line 766
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
@@ -232,17 +232,17 @@
 
     if-eqz v0, :cond_2
 
-    .line 764
+    .line 767
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 765
+    .line 768
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->thumb:Ljava/lang/String;
 
-    .line 767
+    .line 770
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
@@ -250,7 +250,7 @@
 
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isVideo:Z
 
-    .line 768
+    .line 771
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
@@ -259,17 +259,17 @@
 
     if-eqz v0, :cond_3
 
-    .line 769
+    .line 772
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v0
 
     if-nez v0, :cond_3
 
-    .line 770
+    .line 773
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->file:Ljava/lang/String;
 
-    .line 772
+    .line 775
     :cond_3
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
@@ -277,70 +277,70 @@
 
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->fileDeletable:Z
 
-    .line 773
+    .line 776
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->muted:Z
 
-    .line 774
+    .line 777
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->left:J
 
-    .line 775
+    .line 778
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->right:J
 
-    .line 776
+    .line 779
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->orientation:I
 
-    .line 777
+    .line 780
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->invert:I
 
-    .line 778
+    .line 781
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->width:I
 
-    .line 779
+    .line 782
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->height:I
 
-    .line 780
+    .line 783
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->resultWidth:I
 
-    .line 781
+    .line 784
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->resultHeight:I
 
-    .line 782
+    .line 785
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v2
@@ -351,7 +351,7 @@
 
     move v2, v0
 
-    .line 783
+    .line 786
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->matrixValues:[F
 
@@ -359,7 +359,7 @@
 
     if-ge v2, v4, :cond_4
 
-    .line 784
+    .line 787
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v4
@@ -370,7 +370,7 @@
 
     goto :goto_0
 
-    .line 786
+    .line 789
     :cond_4
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -378,14 +378,14 @@
 
     iput v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->gradientTopColor:I
 
-    .line 787
+    .line 790
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
 
     iput v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->gradientBottomColor:I
 
-    .line 788
+    .line 791
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v2
@@ -394,17 +394,17 @@
 
     if-eqz v2, :cond_5
 
-    .line 789
+    .line 792
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v2
 
     if-nez v2, :cond_5
 
-    .line 790
+    .line 793
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->caption:Ljava/lang/String;
 
-    .line 792
+    .line 795
     :cond_5
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -418,7 +418,7 @@
 
     return-void
 
-    .line 795
+    .line 798
     :cond_6
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -428,7 +428,7 @@
 
     throw p1
 
-    .line 798
+    .line 801
     :cond_7
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -439,19 +439,19 @@
     :goto_1
     if-ge v4, v2, :cond_9
 
-    .line 800
+    .line 803
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->captionEntities:Ljava/util/ArrayList;
 
     if-nez v5, :cond_8
 
-    .line 801
+    .line 804
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->captionEntities:Ljava/util/ArrayList;
 
-    .line 803
+    .line 806
     :cond_8
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->captionEntities:Ljava/util/ArrayList;
 
@@ -469,7 +469,7 @@
 
     goto :goto_1
 
-    .line 805
+    .line 808
     :cond_9
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -481,7 +481,7 @@
 
     return-void
 
-    .line 808
+    .line 811
     :cond_a
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -491,13 +491,13 @@
 
     throw p1
 
-    .line 811
+    .line 814
     :cond_b
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
 
-    .line 812
+    .line 815
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->privacyRules:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
@@ -507,7 +507,7 @@
     :goto_2
     if-ge v4, v2, :cond_c
 
-    .line 814
+    .line 817
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->privacyRules:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
@@ -524,11 +524,11 @@
 
     goto :goto_2
 
-    .line 816
+    .line 819
     :cond_c
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
-    .line 817
+    .line 820
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v2
@@ -537,17 +537,17 @@
 
     if-eqz v2, :cond_d
 
-    .line 818
+    .line 821
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v2
 
     if-nez v2, :cond_d
 
-    .line 819
+    .line 822
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->paintFilePath:Ljava/lang/String;
 
-    .line 821
+    .line 824
     :cond_d
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
@@ -555,7 +555,7 @@
 
     iput-wide v4, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->averageDuration:J
 
-    .line 822
+    .line 825
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
@@ -566,7 +566,7 @@
 
     return-void
 
-    .line 825
+    .line 828
     :cond_e
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -576,7 +576,7 @@
 
     throw p1
 
-    .line 828
+    .line 831
     :cond_f
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -587,19 +587,19 @@
     :goto_3
     if-ge v4, v2, :cond_11
 
-    .line 830
+    .line 833
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->mediaEntities:Ljava/util/ArrayList;
 
     if-nez v5, :cond_10
 
-    .line 831
+    .line 834
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->mediaEntities:Ljava/util/ArrayList;
 
-    .line 833
+    .line 836
     :cond_10
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->mediaEntities:Ljava/util/ArrayList;
 
@@ -615,7 +615,7 @@
 
     goto :goto_3
 
-    .line 835
+    .line 838
     :cond_11
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -627,7 +627,7 @@
 
     return-void
 
-    .line 838
+    .line 841
     :cond_12
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -637,7 +637,7 @@
 
     throw p1
 
-    .line 841
+    .line 844
     :cond_13
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -648,19 +648,19 @@
     :goto_4
     if-ge v4, v2, :cond_15
 
-    .line 843
+    .line 846
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->stickers:Ljava/util/List;
 
     if-nez v5, :cond_14
 
-    .line 844
+    .line 847
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->stickers:Ljava/util/List;
 
-    .line 846
+    .line 849
     :cond_14
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->stickers:Ljava/util/List;
 
@@ -678,7 +678,7 @@
 
     goto :goto_4
 
-    .line 848
+    .line 851
     :cond_15
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
@@ -688,17 +688,17 @@
 
     if-eqz v2, :cond_16
 
-    .line 849
+    .line 852
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v2
 
     if-nez v2, :cond_16
 
-    .line 850
+    .line 853
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->filterFilePath:Ljava/lang/String;
 
-    .line 852
+    .line 855
     :cond_16
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -708,7 +708,7 @@
 
     if-ne v2, v4, :cond_17
 
-    .line 854
+    .line 857
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     goto :goto_5
@@ -718,17 +718,17 @@
 
     if-ne v2, v5, :cond_18
 
-    .line 856
+    .line 859
     new-instance v2, Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     invoke-direct {v2}, Lorg/telegram/messenger/MediaController$SavedFilterState;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
-    .line 857
+    .line 860
     invoke-virtual {v2, p1, p2}, Lorg/telegram/messenger/MediaController$SavedFilterState;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    .line 859
+    .line 862
     :cond_18
     :goto_5
     invoke-virtual {p1}, Lorg/telegram/tgnet/AbstractSerializedData;->remaining()I
@@ -739,14 +739,14 @@
 
     if-lt v2, v5, :cond_19
 
-    .line 860
+    .line 863
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
 
     iput v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->period:I
 
-    .line 862
+    .line 865
     :cond_19
     invoke-virtual {p1}, Lorg/telegram/tgnet/AbstractSerializedData;->remaining()I
 
@@ -754,7 +754,7 @@
 
     if-lez v2, :cond_1c
 
-    .line 863
+    .line 866
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
@@ -765,7 +765,7 @@
 
     return-void
 
-    .line 866
+    .line 869
     :cond_1a
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -775,13 +775,13 @@
 
     throw p1
 
-    .line 869
+    .line 872
     :cond_1b
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
 
-    .line 870
+    .line 873
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->parts:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
@@ -789,15 +789,15 @@
     :goto_6
     if-ge v0, v2, :cond_1c
 
-    .line 872
+    .line 875
     new-instance v3, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;
 
     invoke-direct {v3}, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;-><init>()V
 
-    .line 873
+    .line 876
     invoke-virtual {v3, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    .line 874
+    .line 877
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->parts:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -806,7 +806,7 @@
 
     goto :goto_6
 
-    .line 877
+    .line 880
     :cond_1c
     invoke-virtual {p1}, Lorg/telegram/tgnet/AbstractSerializedData;->remaining()I
 
@@ -814,49 +814,49 @@
 
     if-lez v0, :cond_1d
 
-    .line 878
+    .line 881
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isEdit:Z
 
-    .line 879
+    .line 882
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editStoryId:I
 
-    .line 880
+    .line 883
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editStoryPeerId:J
 
-    .line 881
+    .line 884
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editExpireDate:J
 
-    .line 882
+    .line 885
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editPhotoId:J
 
-    .line 883
+    .line 886
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editDocumentId:J
 
-    .line 885
+    .line 888
     :cond_1d
     invoke-virtual {p1}, Lorg/telegram/tgnet/AbstractSerializedData;->remaining()I
 
@@ -864,7 +864,7 @@
 
     if-lez v0, :cond_1e
 
-    .line 886
+    .line 889
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
@@ -873,17 +873,17 @@
 
     if-eqz v0, :cond_1e
 
-    .line 887
+    .line 890
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v0
 
     if-nez v0, :cond_1e
 
-    .line 888
+    .line 891
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->paintEntitiesFilePath:Ljava/lang/String;
 
-    .line 891
+    .line 894
     :cond_1e
     invoke-virtual {p1}, Lorg/telegram/tgnet/AbstractSerializedData;->remaining()I
 
@@ -891,26 +891,26 @@
 
     if-lez v0, :cond_20
 
-    .line 892
+    .line 895
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isError:Z
 
-    .line 893
+    .line 896
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     if-ne v0, v4, :cond_1f
 
-    .line 895
+    .line 898
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
     goto :goto_7
 
-    .line 897
+    .line 900
     :cond_1f
     invoke-static {p1, v0, p2}, Lorg/telegram/tgnet/TLRPC$TL_error;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_error;
 
@@ -918,7 +918,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    .line 899
+    .line 902
     :goto_7
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
@@ -926,7 +926,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->fullThumb:Ljava/lang/String;
 
-    .line 901
+    .line 904
     :cond_20
     invoke-virtual {p1}, Lorg/telegram/tgnet/AbstractSerializedData;->remaining()I
 
@@ -934,7 +934,7 @@
 
     if-lez v0, :cond_23
 
-    .line 902
+    .line 905
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -943,14 +943,14 @@
 
     if-ne v0, v1, :cond_23
 
-    .line 904
+    .line 907
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioPath:Ljava/lang/String;
 
-    .line 905
+    .line 908
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -959,14 +959,14 @@
 
     if-ne v0, v1, :cond_21
 
-    .line 907
+    .line 910
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioAuthor:Ljava/lang/String;
 
-    .line 909
+    .line 912
     :cond_21
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -974,14 +974,14 @@
 
     if-ne v0, v1, :cond_22
 
-    .line 911
+    .line 914
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioTitle:Ljava/lang/String;
 
-    .line 913
+    .line 916
     :cond_22
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
@@ -989,35 +989,35 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioDuration:J
 
-    .line 914
+    .line 917
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioOffset:J
 
-    .line 915
+    .line 918
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioLeft:F
 
-    .line 916
+    .line 919
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioRight:F
 
-    .line 917
+    .line 920
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioVolume:F
 
-    .line 920
+    .line 923
     :cond_23
     invoke-virtual {p1}, Lorg/telegram/tgnet/AbstractSerializedData;->remaining()I
 
@@ -1025,7 +1025,7 @@
 
     if-lez v0, :cond_24
 
-    .line 921
+    .line 924
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -1424,17 +1424,17 @@
 .method public getObjectSize()I
     .locals 2
 
-    .line 749
+    .line 752
     new-instance v0, Lorg/telegram/tgnet/NativeByteBuffer;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(Z)V
 
-    .line 750
+    .line 753
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->toStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 751
+    .line 754
     invoke-virtual {v0}, Lorg/telegram/tgnet/NativeByteBuffer;->length()I
 
     move-result v0
@@ -1630,7 +1630,7 @@
     .line 585
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->caption:Ljava/lang/String;
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     .line 586
     new-instance v2, Landroid/text/SpannableString;
@@ -1642,6 +1642,15 @@
     .line 587
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
+    if-nez v3, :cond_4
+
+    .line 588
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->createCommonMessageResources()V
+
+    .line 590
+    :cond_4
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
+
     invoke-virtual {v3}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
     move-result-object v3
@@ -1650,7 +1659,7 @@
 
     move-result-object v1
 
-    .line 588
+    .line 591
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->captionEntities:Ljava/util/ArrayList;
 
     const/4 v6, 0x1
@@ -1665,36 +1674,36 @@
 
     invoke-static/range {v4 .. v9}, Lorg/telegram/messenger/MessageObject;->addEntitiesToText(Ljava/lang/CharSequence;Ljava/util/ArrayList;ZZZZ)Z
 
-    .line 589
+    .line 592
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
 
     goto :goto_1
 
-    :cond_4
+    :cond_5
     const-string v1, ""
 
-    .line 591
+    .line 594
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
 
-    .line 593
+    .line 596
     :goto_1
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 594
+    .line 597
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->privacyRules:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 595
+    .line 598
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->paintFilePath:Ljava/lang/String;
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_6
 
-    .line 596
+    .line 599
     new-instance v1, Ljava/io/File;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->paintFilePath:Ljava/lang/String;
@@ -1703,13 +1712,13 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
 
-    .line 598
-    :cond_5
+    .line 601
+    :cond_6
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->paintEntitiesFilePath:Ljava/lang/String;
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_7
 
-    .line 599
+    .line 602
     new-instance v1, Ljava/io/File;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->paintEntitiesFilePath:Ljava/lang/String;
@@ -1718,28 +1727,28 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintEntitiesFile:Ljava/io/File;
 
-    .line 601
-    :cond_6
+    .line 604
+    :cond_7
     iget-wide v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->averageDuration:J
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->averageDuration:J
 
-    .line 602
+    .line 605
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->mediaEntities:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
 
-    .line 603
+    .line 606
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->stickers:Ljava/util/List;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->stickers:Ljava/util/List;
 
-    .line 604
+    .line 607
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->filterFilePath:Ljava/lang/String;
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_8
 
-    .line 605
+    .line 608
     new-instance v1, Ljava/io/File;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->filterFilePath:Ljava/lang/String;
@@ -1748,23 +1757,23 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
-    .line 607
-    :cond_7
+    .line 610
+    :cond_8
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
-    .line 608
+    .line 611
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->period:I
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->period:I
 
-    .line 609
+    .line 612
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->parts:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 610
+    .line 613
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->parts:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->parts:Ljava/util/ArrayList;
@@ -1773,10 +1782,10 @@
 
     const/4 v1, 0x0
 
-    .line 611
+    .line 614
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->partsMaxId:I
 
-    .line 612
+    .line 615
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->parts:Ljava/util/ArrayList;
 
@@ -1784,9 +1793,9 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_8
+    if-ge v1, v2, :cond_9
 
-    .line 613
+    .line 616
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->partsMaxId:I
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->parts:Ljava/util/ArrayList;
@@ -1809,88 +1818,88 @@
 
     goto :goto_2
 
-    .line 615
-    :cond_8
+    .line 618
+    :cond_9
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isEdit:Z
 
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
 
-    .line 616
+    .line 619
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editStoryId:I
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStoryId:I
 
-    .line 617
+    .line 620
     iget-wide v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editStoryPeerId:J
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStoryPeerId:J
 
-    .line 618
+    .line 621
     iget-wide v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editExpireDate:J
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editExpireDate:J
 
-    .line 619
+    .line 622
     iget-wide v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editPhotoId:J
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editPhotoId:J
 
-    .line 620
+    .line 623
     iget-wide v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editDocumentId:J
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editDocumentId:J
 
-    .line 621
+    .line 624
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isError:Z
 
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isError:Z
 
-    .line 622
+    .line 625
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    .line 624
+    .line 627
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioPath:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->audioPath:Ljava/lang/String;
 
-    .line 625
+    .line 628
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioAuthor:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->audioAuthor:Ljava/lang/String;
 
-    .line 626
+    .line 629
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioTitle:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->audioTitle:Ljava/lang/String;
 
-    .line 627
+    .line 630
     iget-wide v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioDuration:J
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->audioDuration:J
 
-    .line 628
+    .line 631
     iget-wide v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioOffset:J
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->audioOffset:J
 
-    .line 629
+    .line 632
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioLeft:F
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->audioLeft:F
 
-    .line 630
+    .line 633
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioRight:F
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->audioRight:F
 
-    .line 631
+    .line 634
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioVolume:F
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->audioVolume:F
 
-    .line 632
+    .line 635
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
@@ -1903,80 +1912,80 @@
 
     const v0, -0x4e94ff4b
 
-    .line 637
+    .line 640
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 638
+    .line 641
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->date:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 639
+    .line 642
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->thumb:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 640
+    .line 643
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isVideo:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 641
+    .line 644
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->file:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 642
+    .line 645
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->fileDeletable:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 643
+    .line 646
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->muted:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 644
+    .line 647
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->left:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 645
+    .line 648
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->right:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 646
+    .line 649
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->orientation:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 647
+    .line 650
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->invert:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 648
+    .line 651
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->width:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 649
+    .line 652
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->height:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 650
+    .line 653
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->resultWidth:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 651
+    .line 654
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->resultHeight:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 652
+    .line 655
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->duration:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
@@ -1985,7 +1994,7 @@
 
     move v1, v0
 
-    .line 653
+    .line 656
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->matrixValues:[F
 
@@ -1993,7 +2002,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 654
+    .line 657
     aget v2, v2, v1
 
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
@@ -2002,28 +2011,28 @@
 
     goto :goto_0
 
-    .line 656
+    .line 659
     :cond_0
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->gradientTopColor:I
 
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 657
+    .line 660
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->gradientBottomColor:I
 
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 658
+    .line 661
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->caption:Ljava/lang/String;
 
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
     const v1, 0x1cb5c415
 
-    .line 659
+    .line 662
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 660
+    .line 663
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->captionEntities:Ljava/util/ArrayList;
 
     if-nez v2, :cond_1
@@ -2040,14 +2049,14 @@
     :goto_1
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 661
+    .line 664
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->captionEntities:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_2
 
     move v2, v0
 
-    .line 662
+    .line 665
     :goto_2
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->captionEntities:Ljava/util/ArrayList;
 
@@ -2057,7 +2066,7 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 663
+    .line 666
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->captionEntities:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2072,11 +2081,11 @@
 
     goto :goto_2
 
-    .line 666
+    .line 669
     :cond_2
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 667
+    .line 670
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->privacyRules:Ljava/util/ArrayList;
 
     if-nez v2, :cond_3
@@ -2093,14 +2102,14 @@
     :goto_3
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 668
+    .line 671
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->privacyRules:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_4
 
     move v2, v0
 
-    .line 669
+    .line 672
     :goto_4
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->privacyRules:Ljava/util/ArrayList;
 
@@ -2110,7 +2119,7 @@
 
     if-ge v2, v3, :cond_4
 
-    .line 670
+    .line 673
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->privacyRules:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2125,24 +2134,24 @@
 
     goto :goto_4
 
-    .line 673
+    .line 676
     :cond_4
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 674
+    .line 677
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->paintFilePath:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 675
+    .line 678
     iget-wide v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->averageDuration:J
 
     invoke-virtual {p1, v2, v3}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 676
+    .line 679
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 677
+    .line 680
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->mediaEntities:Ljava/util/ArrayList;
 
     if-nez v2, :cond_5
@@ -2159,14 +2168,14 @@
     :goto_5
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 678
+    .line 681
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->mediaEntities:Ljava/util/ArrayList;
 
     if-eqz v2, :cond_6
 
     move v2, v0
 
-    .line 679
+    .line 682
     :goto_6
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->mediaEntities:Ljava/util/ArrayList;
 
@@ -2176,7 +2185,7 @@
 
     if-ge v2, v3, :cond_6
 
-    .line 680
+    .line 683
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->mediaEntities:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2193,11 +2202,11 @@
 
     goto :goto_6
 
-    .line 683
+    .line 686
     :cond_6
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 684
+    .line 687
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->stickers:Ljava/util/List;
 
     if-nez v2, :cond_7
@@ -2214,14 +2223,14 @@
     :goto_7
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 685
+    .line 688
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->stickers:Ljava/util/List;
 
     if-eqz v2, :cond_8
 
     move v2, v0
 
-    .line 686
+    .line 689
     :goto_8
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->stickers:Ljava/util/List;
 
@@ -2231,7 +2240,7 @@
 
     if-ge v2, v3, :cond_8
 
-    .line 687
+    .line 690
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->stickers:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2246,7 +2255,7 @@
 
     goto :goto_8
 
-    .line 690
+    .line 693
     :cond_8
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->filterFilePath:Ljava/lang/String;
 
@@ -2257,14 +2266,14 @@
     :cond_9
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 691
+    .line 694
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     const v3, 0x56730bcc
 
     if-nez v2, :cond_a
 
-    .line 692
+    .line 695
     invoke-virtual {p1, v3}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     goto :goto_9
@@ -2272,24 +2281,24 @@
     :cond_a
     const v2, -0x4e94ff4a
 
-    .line 694
+    .line 697
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 695
+    .line 698
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     invoke-virtual {v2, p1}, Lorg/telegram/messenger/MediaController$SavedFilterState;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 697
+    .line 700
     :goto_9
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->period:I
 
     invoke-virtual {p1, v2}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 698
+    .line 701
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 699
+    .line 702
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->parts:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -2298,7 +2307,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 700
+    .line 703
     :goto_a
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->parts:Ljava/util/ArrayList;
 
@@ -2308,7 +2317,7 @@
 
     if-ge v0, v1, :cond_b
 
-    .line 701
+    .line 704
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->parts:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2323,73 +2332,73 @@
 
     goto :goto_a
 
-    .line 703
+    .line 706
     :cond_b
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isEdit:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 704
+    .line 707
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editStoryId:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 705
+    .line 708
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editStoryPeerId:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 706
+    .line 709
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editExpireDate:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 707
+    .line 710
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editPhotoId:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 708
+    .line 711
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->editDocumentId:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 709
+    .line 712
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->paintEntitiesFilePath:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 710
+    .line 713
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->isError:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 711
+    .line 714
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
     if-nez v0, :cond_c
 
-    .line 712
+    .line 715
     invoke-virtual {p1, v3}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     goto :goto_b
 
-    .line 714
+    .line 717
     :cond_c
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_error;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 716
+    .line 719
     :goto_b
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->fullThumb:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 718
+    .line 721
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioPath:Ljava/lang/String;
 
     if-nez v0, :cond_d
 
-    .line 719
+    .line 722
     invoke-virtual {p1, v3}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     goto :goto_e
@@ -2397,93 +2406,93 @@
     :cond_d
     const v0, -0x67ad063a
 
-    .line 721
+    .line 724
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 722
+    .line 725
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioPath:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 723
+    .line 726
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioAuthor:Ljava/lang/String;
 
     const v1, -0x48e18986
 
     if-nez v0, :cond_e
 
-    .line 724
+    .line 727
     invoke-virtual {p1, v3}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     goto :goto_c
 
-    .line 726
+    .line 729
     :cond_e
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 727
+    .line 730
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioAuthor:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 729
+    .line 732
     :goto_c
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioTitle:Ljava/lang/String;
 
     if-nez v0, :cond_f
 
-    .line 730
+    .line 733
     invoke-virtual {p1, v3}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     goto :goto_d
 
-    .line 732
+    .line 735
     :cond_f
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 733
+    .line 736
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioTitle:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 735
+    .line 738
     :goto_d
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioDuration:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 736
+    .line 739
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioOffset:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 737
+    .line 740
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioLeft:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 738
+    .line 741
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioRight:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 739
+    .line 742
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->audioVolume:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 741
+    .line 744
     :goto_e
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/DraftsController$StoryDraft;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     if-eqz v0, :cond_10
 
-    .line 742
+    .line 745
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     goto :goto_f
 
-    .line 744
+    .line 747
     :cond_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputPeerSelf;
 

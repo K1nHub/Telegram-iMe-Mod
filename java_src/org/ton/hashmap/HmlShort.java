@@ -22,7 +22,7 @@ public final class HmlShort implements HmLabel {
     private final Unary len;
 
     /* renamed from: s */
-    private final BitString f2095s;
+    private final BitString f2096s;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -30,13 +30,13 @@ public final class HmlShort implements HmLabel {
         }
         if (obj instanceof HmlShort) {
             HmlShort hmlShort = (HmlShort) obj;
-            return Intrinsics.areEqual(this.len, hmlShort.len) && Intrinsics.areEqual(this.f2095s, hmlShort.f2095s);
+            return Intrinsics.areEqual(this.len, hmlShort.len) && Intrinsics.areEqual(this.f2096s, hmlShort.f2096s);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.len.hashCode() * 31) + this.f2095s.hashCode();
+        return (this.len.hashCode() * 31) + this.f2096s.hashCode();
     }
 
     public /* synthetic */ HmlShort(int i, Unary unary, BitString bitString, SerializationConstructorMarker serializationConstructorMarker) {
@@ -44,19 +44,19 @@ public final class HmlShort implements HmLabel {
             PluginExceptionsKt.throwMissingFieldException(i, 3, HmlShort$$serializer.INSTANCE.getDescriptor());
         }
         this.len = unary;
-        this.f2095s = bitString;
+        this.f2096s = bitString;
     }
 
     public HmlShort(Unary len, BitString s) {
         Intrinsics.checkNotNullParameter(len, "len");
         Intrinsics.checkNotNullParameter(s, "s");
         this.len = len;
-        this.f2095s = s;
+        this.f2096s = s;
     }
 
     public static final /* synthetic */ void write$Self(HmlShort hmlShort, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, $childSerializers[0], hmlShort.len);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, FiftHexBitStringSerializer.INSTANCE, hmlShort.f2095s);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, FiftHexBitStringSerializer.INSTANCE, hmlShort.f2096s);
     }
 
     public final Unary getLen() {
@@ -64,7 +64,7 @@ public final class HmlShort implements HmLabel {
     }
 
     public final BitString getS() {
-        return this.f2095s;
+        return this.f2096s;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -75,7 +75,7 @@ public final class HmlShort implements HmLabel {
 
     @Override // org.ton.hashmap.HmLabel
     public BitString toBitString() {
-        return this.f2095s;
+        return this.f2096s;
     }
 
     public String toString() {
@@ -111,7 +111,7 @@ public final class HmlShort implements HmLabel {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("hml_short");
         open.field("len", this.len);
-        open.field("s", this.f2095s);
+        open.field("s", this.f2096s);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

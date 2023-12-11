@@ -2108,7 +2108,7 @@
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 840
+    .line 849
     iget-object v0, p0, Lorg/telegram/ui/TextMessageEnterTransition;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -2191,7 +2191,7 @@
 
 # virtual methods
 .method public onDraw(Landroid/graphics/Canvas;)V
-    .locals 46
+    .locals 49
 
     move-object/from16 v0, p0
 
@@ -3127,7 +3127,7 @@
     .line 544
     iget-boolean v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->hasReply:Z
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_30
 
     .line 545
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->chatActivity:Lorg/telegram/ui/ChatActivity;
@@ -3196,7 +3196,7 @@
     .line 553
     iget-object v13, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    move/from16 v35, v2
+    move/from16 v36, v2
 
     iget v2, v13, Lorg/telegram/ui/Cells/ChatMessageCell;->replyStartX:I
 
@@ -3204,7 +3204,7 @@
 
     add-float/2addr v2, v9
 
-    move/from16 v36, v4
+    move/from16 v37, v4
 
     .line 554
     iget v4, v13, Lorg/telegram/ui/Cells/ChatMessageCell;->replyStartY:I
@@ -3233,29 +3233,29 @@
 
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
-    move-result-object v38
+    move-result-object v39
 
     iget-object v4, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
 
-    move-result-object v39
+    move-result-object v40
 
     iget-object v4, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentChat()Lorg/telegram/tgnet/TLRPC$Chat;
 
-    move-result-object v40
+    move-result-object v41
 
     iget-object v4, v0, Lorg/telegram/ui/TextMessageEnterTransition;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    const/16 v42, 0x1
+    const/16 v43, 0x1
 
-    move-object/from16 v37, v13
+    move-object/from16 v38, v13
 
-    move-object/from16 v41, v4
+    move-object/from16 v42, v4
 
-    invoke-virtual/range {v37 .. v42}, Lorg/telegram/ui/Components/ReplyMessageLine;->check(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)I
+    invoke-virtual/range {v38 .. v43}, Lorg/telegram/ui/Components/ReplyMessageLine;->check(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)I
 
     .line 565
     iget-object v4, v0, Lorg/telegram/ui/TextMessageEnterTransition;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -3358,7 +3358,7 @@
 
     move-result v13
 
-    const v37, 0x3f19999a    # 0.6f
+    const v38, 0x3f19999a    # 0.6f
 
     if-eqz v13, :cond_15
 
@@ -3371,9 +3371,9 @@
 
     if-eqz v13, :cond_11
 
-    move/from16 v38, v5
+    move/from16 v39, v5
 
-    move/from16 v39, v6
+    move/from16 v40, v6
 
     goto :goto_9
 
@@ -3385,12 +3385,12 @@
 
     move-result v13
 
-    move/from16 v38, v5
+    move/from16 v39, v5
 
     .line 586
     iget-object v5, v0, Lorg/telegram/ui/TextMessageEnterTransition;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    move/from16 v39, v6
+    move/from16 v40, v6
 
     iget-boolean v6, v5, Lorg/telegram/messenger/MessageObject;->forceAvatar:Z
 
@@ -3461,7 +3461,7 @@
 
     move-result v13
 
-    move/from16 v5, v37
+    move/from16 v5, v38
 
     goto :goto_8
 
@@ -3481,9 +3481,9 @@
     goto/16 :goto_b
 
     :cond_15
-    move/from16 v38, v5
+    move/from16 v39, v5
 
-    move/from16 v39, v6
+    move/from16 v40, v6
 
     .line 593
     iget-object v5, v0, Lorg/telegram/ui/TextMessageEnterTransition;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -3579,7 +3579,7 @@
 
     move-result v5
 
-    move/from16 v6, v37
+    move/from16 v6, v38
 
     goto :goto_a
 
@@ -3599,9 +3599,9 @@
     goto :goto_b
 
     :cond_1a
-    move/from16 v38, v5
+    move/from16 v39, v5
 
-    move/from16 v39, v6
+    move/from16 v40, v6
 
     .line 605
     iget-object v5, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -3685,7 +3685,7 @@
 
     iget v13, v0, Lorg/telegram/ui/TextMessageEnterTransition;->replayObjectFromColor:I
 
-    move/from16 v37, v7
+    move/from16 v38, v7
 
     move/from16 v7, v33
 
@@ -3754,9 +3754,11 @@
 
     const/16 v33, 0x5
 
-    const/16 v40, 0x6
+    const/16 v41, 0x7
 
-    const/16 v41, 0x2
+    const/16 v42, 0x6
+
+    const/16 v43, 0x2
 
     if-nez v4, :cond_1f
 
@@ -3767,8 +3769,6 @@
     .line 623
     iput-object v4, v0, Lorg/telegram/ui/TextMessageEnterTransition;->roundRectRadii:[F
 
-    const/16 v28, 0x7
-
     .line 624
     invoke-static/range {v20 .. v20}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -3776,17 +3776,17 @@
 
     int-to-float v5, v5
 
-    aput v5, v4, v28
+    aput v5, v4, v41
 
-    aput v5, v4, v40
+    aput v5, v4, v42
 
     const/16 v21, 0x1
 
     aput v5, v4, v21
 
-    const/16 v28, 0x0
+    const/16 v35, 0x0
 
-    aput v5, v4, v28
+    aput v5, v4, v35
 
     .line 625
     iget-object v4, v0, Lorg/telegram/ui/TextMessageEnterTransition;->roundRectRadii:[F
@@ -3799,7 +3799,7 @@
 
     aput v5, v4, v23
 
-    aput v5, v4, v41
+    aput v5, v4, v43
 
     .line 628
     :cond_1f
@@ -3876,13 +3876,13 @@
 
     move-object v1, v3
 
-    move/from16 v28, v2
+    move/from16 v3, v36
 
-    move/from16 v3, v35
+    move/from16 v36, v2
 
     move-object/from16 v2, p1
 
-    move/from16 v35, v7
+    move/from16 v44, v7
 
     const/16 v34, 0x13
 
@@ -3892,9 +3892,11 @@
 
     move v4, v12
 
-    const/16 v42, 0x8
+    move/from16 v28, v39
 
-    move/from16 v43, v8
+    const/16 v39, 0x8
+
+    move/from16 v45, v8
 
     move v8, v6
 
@@ -3916,7 +3918,7 @@
 
     iget-boolean v1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->needReplyImage:Z
 
-    if-eqz v1, :cond_20
+    if-eqz v1, :cond_22
 
     .line 648
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -3938,13 +3940,36 @@
 
     sub-float/2addr v1, v2
 
-    const/16 v2, 0x21
+    iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    iget-boolean v2, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->isReplyQuote:Z
+
+    if-eqz v2, :cond_20
+
+    move/from16 v41, v23
+
+    :cond_20
+    invoke-static/range {v41 .. v41}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     int-to-float v2, v2
+
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_replyNamePaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v3}, Landroid/text/TextPaint;->getTextSize()F
+
+    move-result v3
+
+    add-float/2addr v2, v3
+
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_replyTextPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v3}, Landroid/text/TextPaint;->getTextSize()F
+
+    move-result v3
+
+    add-float/2addr v2, v3
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(FF)F
 
@@ -3971,7 +3996,7 @@
     iget v3, v3, Landroid/graphics/RectF;->left:F
 
     .line 652
-    invoke-static/range {v42 .. v42}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static/range {v39 .. v39}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
@@ -3988,7 +4013,35 @@
     iget v4, v4, Landroid/graphics/RectF;->top:F
 
     .line 653
-    invoke-static/range {v33 .. v33}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    iget-object v5, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    iget-boolean v6, v5, Lorg/telegram/ui/Cells/ChatMessageCell;->isReplyQuote:Z
+
+    if-eqz v6, :cond_21
+
+    iget-object v5, v5, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextLayout:Landroid/text/StaticLayout;
+
+    if-eqz v5, :cond_21
+
+    invoke-virtual {v5}, Landroid/text/StaticLayout;->getLineCount()I
+
+    move-result v5
+
+    const/4 v6, 0x1
+
+    if-gt v5, v6, :cond_21
+
+    move/from16 v5, v43
+
+    goto :goto_c
+
+    :cond_21
+    const/4 v5, 0x0
+
+    :goto_c
+    add-int/lit8 v5, v5, 0x5
+
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
@@ -4015,13 +4068,13 @@
 
     move v8, v1
 
-    goto :goto_c
+    goto :goto_d
 
-    :cond_20
+    :cond_22
     const/4 v8, 0x0
 
     .line 660
-    :goto_c
+    :goto_d
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v1, v7
@@ -4036,15 +4089,15 @@
     .line 663
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_23
 
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->shouldDrawWithoutBackground()Z
 
     move-result v1
 
-    if-eqz v1, :cond_21
+    if-eqz v1, :cond_23
 
-    invoke-static/range {v40 .. v40}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static/range {v42 .. v42}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
@@ -4056,9 +4109,9 @@
 
     const/4 v1, 0x1
 
-    goto :goto_d
+    goto :goto_e
 
-    :cond_21
+    :cond_23
     const/4 v1, 0x1
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -4070,16 +4123,16 @@
     int-to-float v2, v2
 
     .line 664
-    :goto_d
+    :goto_e
     iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_24
 
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->shouldDrawWithoutBackground()Z
 
     move-result v3
 
-    if-eqz v3, :cond_22
+    if-eqz v3, :cond_24
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -4087,16 +4140,16 @@
 
     int-to-float v1, v3
 
-    goto :goto_e
+    goto :goto_f
 
-    :cond_22
+    :cond_24
     invoke-static/range {v23 .. v23}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    :goto_e
+    :goto_f
     move/from16 v29, v1
 
     .line 666
@@ -4106,28 +4159,26 @@
 
     int-to-float v3, v1
 
-    sub-float v3, v28, v3
+    sub-float v3, v36, v3
 
-    add-float/2addr v3, v2
+    add-float v7, v3, v2
 
     .line 667
-    iget v4, v0, Lorg/telegram/ui/TextMessageEnterTransition;->replyNameDx:F
+    iget v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->replyNameDx:F
 
-    sub-float v4, v28, v4
+    sub-float v3, v36, v3
 
-    add-float/2addr v4, v2
+    add-float/2addr v3, v2
 
     int-to-float v1, v1
 
     sub-float v1, v13, v1
 
     .line 669
-    invoke-static {v1, v3, v11}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
-
-    move-result v28
+    invoke-static {v1, v7, v11}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     .line 670
-    invoke-static {v13, v4, v11}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+    invoke-static {v13, v3, v11}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v1
 
@@ -4135,7 +4186,7 @@
 
     iget-boolean v2, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->needReplyImage:Z
 
-    if-eqz v2, :cond_23
+    if-eqz v2, :cond_25
 
     invoke-static/range {v23 .. v23}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -4145,12 +4196,12 @@
 
     add-float/2addr v2, v8
 
-    goto :goto_f
+    goto :goto_10
 
-    :cond_23
+    :cond_25
     const/4 v2, 0x0
 
-    :goto_f
+    :goto_10
     add-float/2addr v1, v2
 
     .line 672
@@ -4158,7 +4209,7 @@
 
     iget-object v2, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->replyNameLayout:Landroid/text/StaticLayout;
 
-    if-eqz v2, :cond_24
+    if-eqz v2, :cond_26
 
     .line 673
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -4205,20 +4256,20 @@
 
     invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getReplyNameTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    move-result-object v13
+    move-result-object v6
 
     const/4 v2, 0x0
 
     const/4 v3, 0x0
 
     .line 680
-    invoke-virtual {v13}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v6}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
     int-to-float v4, v1
 
-    invoke-virtual {v13}, Landroid/view/View;->getHeight()I
+    invoke-virtual {v6}, Landroid/view/View;->getHeight()I
 
     move-result v1
 
@@ -4226,30 +4277,40 @@
 
     mul-float v1, v19, v25
 
-    float-to-int v6, v1
+    float-to-int v1, v1
 
-    const/16 v7, 0x1f
+    const/16 v31, 0x1f
+
+    move/from16 v33, v1
 
     move-object/from16 v1, p1
 
-    move/from16 v31, v35
+    move-object/from16 v46, v6
 
-    move/from16 v33, v37
+    move/from16 v6, v33
+
+    move/from16 v33, v7
+
+    move/from16 v36, v44
+
+    move/from16 v7, v31
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    move-object/from16 v1, v46
+
+    const/high16 v2, 0x3f800000    # 1.0f
 
     .line 681
-    invoke-virtual {v13, v1}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
     .line 682
-    invoke-virtual {v13, v10}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v1, v10}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 683
-    invoke-virtual {v13, v1}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setAlpha(F)V
 
     .line 684
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
@@ -4257,24 +4318,24 @@
     .line 685
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    goto :goto_10
+    goto :goto_11
 
-    :cond_24
-    move/from16 v31, v35
+    :cond_26
+    move/from16 v33, v7
 
-    move/from16 v33, v37
+    move/from16 v36, v44
 
     .line 688
-    :goto_10
+    :goto_11
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->isReplyQuote:Z
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_28
 
     iget-object v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replyQuoteDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_28
 
     .line 689
     iget-object v1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replyLine:Lorg/telegram/ui/Components/ReplyMessageLine;
@@ -4287,7 +4348,7 @@
 
     iget v3, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->replyQuoteDrawableColor:I
 
-    if-eq v1, v3, :cond_25
+    if-eq v1, v3, :cond_27
 
     .line 690
     iget-object v1, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->replyQuoteDrawable:Landroid/graphics/drawable/Drawable;
@@ -4311,7 +4372,7 @@
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 692
-    :cond_25
+    :cond_27
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replyQuoteDrawable:Landroid/graphics/drawable/Drawable;
@@ -4464,75 +4525,122 @@
     invoke-virtual {v1, v10}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 702
-    :cond_26
+    :cond_28
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextLayout:Landroid/text/StaticLayout;
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2f
 
     .line 703
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 704
+    .line 705
+    iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    iget-boolean v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->isReplyQuote:Z
+
+    if-eqz v2, :cond_29
+
+    iget-boolean v1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->needReplyImage:Z
+
+    if-eqz v1, :cond_29
+
+    .line 706
+    invoke-static/range {v43 .. v43}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    sub-float v7, v33, v1
+
+    goto :goto_12
+
+    :cond_29
+    move/from16 v7, v33
+
+    .line 708
+    :goto_12
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->needReplyImage:Z
 
-    if-eqz v2, :cond_28
+    if-eqz v2, :cond_2b
 
     iget-boolean v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->isReplyQuote:Z
 
-    if-eqz v2, :cond_27
+    if-eqz v2, :cond_2a
 
     iget-boolean v1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextRTL:Z
 
-    if-eqz v1, :cond_28
+    if-eqz v1, :cond_2b
 
-    :cond_27
+    .line 709
+    :cond_2a
     invoke-static/range {v23 .. v23}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    add-float/2addr v1, v8
+    add-float/2addr v8, v1
 
-    goto :goto_11
+    add-float/2addr v7, v8
 
-    :cond_28
-    const/4 v1, 0x0
+    .line 711
+    :cond_2b
+    iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    :goto_11
-    iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-boolean v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextRTL:Z
 
-    iget-boolean v3, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->isReplyQuote:Z
+    if-eqz v2, :cond_2c
 
-    if-eqz v3, :cond_29
+    iget v1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextOffset:I
 
-    iget-boolean v2, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->needReplyImage:Z
+    if-lez v1, :cond_2c
 
-    if-eqz v2, :cond_29
+    .line 712
+    iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->replySelectorRect:Landroid/graphics/RectF;
 
-    const/4 v3, -0x2
+    iget v1, v1, Landroid/graphics/RectF;->right:F
 
-    goto :goto_12
-
-    :cond_29
-    const/4 v3, 0x0
-
-    :goto_12
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static/range {v39 .. v39}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    add-float/2addr v1, v2
+    sub-float/2addr v1, v2
 
-    add-float v1, v28, v1
+    iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 705
+    iget-object v2, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextLayout:Landroid/text/StaticLayout;
+
+    invoke-virtual {v2}, Landroid/text/StaticLayout;->getWidth()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    sub-float/2addr v1, v2
+
+    sub-float v7, v1, v9
+
+    .line 714
+    :cond_2c
+    iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    iget v1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextOffset:I
+
+    int-to-float v1, v1
+
+    sub-float/2addr v13, v1
+
+    invoke-static {v13, v7, v11}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+
+    move-result v1
+
     invoke-static/range {v34 .. v34}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -4563,17 +4671,17 @@
 
     invoke-virtual {v10, v1, v15}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 707
+    .line 716
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 708
+    .line 717
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replySpoilers:Ljava/util/List;
 
     invoke-static {v10, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->clipOutCanvas(Landroid/graphics/Canvas;Ljava/util/List;)V
 
-    .line 709
+    .line 718
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextLayout:Landroid/text/StaticLayout;
@@ -4594,23 +4702,23 @@
 
     move-object/from16 v1, p1
 
-    move/from16 v13, v31
+    move/from16 v13, v36
 
-    move/from16 v15, v43
+    move/from16 v15, v45
 
     invoke-static/range {v1 .. v9}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFF)V
 
-    .line 710
+    .line 719
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 711
+    .line 720
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 713
+    .line 722
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->replySpoilers:Ljava/util/List;
@@ -4624,7 +4732,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_2e
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -4632,12 +4740,12 @@
 
     check-cast v2, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 714
+    .line 723
     invoke-virtual {v2}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->shouldInvalidateColor()Z
 
     move-result v3
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_2d
 
     iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -4653,35 +4761,37 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
 
-    .line 715
-    :cond_2a
+    .line 724
+    :cond_2d
     invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->draw(Landroid/graphics/Canvas;)V
 
     goto :goto_13
 
-    .line 718
-    :cond_2b
+    .line 727
+    :cond_2e
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_14
 
-    :cond_2c
-    move/from16 v13, v31
+    :cond_2f
+    move/from16 v13, v36
 
-    move/from16 v15, v43
+    move/from16 v15, v45
 
-    .line 721
+    .line 730
     :goto_14
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_15
 
-    :cond_2d
-    move/from16 v36, v4
+    :cond_30
+    move/from16 v37, v4
 
-    move/from16 v38, v5
+    move/from16 v28, v5
 
-    move/from16 v39, v6
+    move/from16 v40, v6
+
+    move/from16 v38, v7
 
     move v15, v8
 
@@ -4689,20 +4799,18 @@
 
     const/16 v34, 0x13
 
-    move/from16 v33, v7
-
-    .line 724
+    .line 733
     :goto_15
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 726
+    .line 735
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v1
 
-    if-eqz v1, :cond_2e
+    if-eqz v1, :cond_31
 
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -4714,17 +4822,17 @@
 
     move/from16 v2, v34
 
-    if-eq v1, v2, :cond_2f
+    if-eq v1, v2, :cond_32
 
-    .line 727
-    :cond_2e
+    .line 736
+    :cond_31
     invoke-static/range {v20 .. v20}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    add-float v7, v33, v1
+    add-float v7, v38, v1
 
     invoke-static/range {v20 .. v20}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -4732,13 +4840,13 @@
 
     int-to-float v1, v1
 
-    add-float v6, v39, v1
+    add-float v6, v40, v1
 
     invoke-static/range {v20 .. v20}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    sub-int v4, v36, v1
+    sub-int v4, v37, v1
 
     int-to-float v1, v4
 
@@ -4748,24 +4856,24 @@
 
     int-to-float v2, v2
 
-    sub-float v5, v38, v2
+    sub-float v5, v28, v2
 
     invoke-virtual {v10, v7, v6, v1, v5}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 730
-    :cond_2f
+    .line 739
+    :cond_32
     iget v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->scaleFrom:F
 
     mul-float v1, v1, v19
 
     add-float v9, v11, v1
 
-    .line 732
+    .line 741
     iget-boolean v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->drawBitmaps:Z
 
-    if-eqz v1, :cond_30
+    if-eqz v1, :cond_33
 
-    .line 733
+    .line 742
     iget v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->scaleY:F
 
     mul-float v1, v1, v19
@@ -4774,16 +4882,16 @@
 
     goto :goto_16
 
-    :cond_30
+    :cond_33
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 738
+    .line 747
     :goto_16
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     mul-float v20, v32, v19
 
-    .line 739
+    .line 748
     iget v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->toXOffset:F
 
     sub-float v2, v17, v2
@@ -4810,20 +4918,20 @@
 
     const/4 v1, 0x0
 
-    .line 740
+    .line 749
     invoke-virtual {v10, v9, v8, v1, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 742
+    .line 751
     iget-boolean v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->drawBitmaps:Z
 
-    if-eqz v1, :cond_32
+    if-eqz v1, :cond_35
 
-    .line 743
+    .line 752
     iget-boolean v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->crossfade:Z
 
-    if-eqz v1, :cond_31
+    if-eqz v1, :cond_34
 
-    .line 744
+    .line 753
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->bitmapPaint:Landroid/graphics/Paint;
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -4836,8 +4944,8 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 746
-    :cond_31
+    .line 755
+    :cond_34
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->textLayoutBitmap:Landroid/graphics/Bitmap;
 
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->bitmapPaint:Landroid/graphics/Paint;
@@ -4846,25 +4954,25 @@
 
     invoke-virtual {v10, v1, v3, v3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    move/from16 v45, v8
+    move/from16 v48, v8
 
-    move/from16 v43, v15
+    move/from16 v45, v15
 
     move v15, v9
 
     goto/16 :goto_17
 
-    .line 748
-    :cond_32
+    .line 757
+    :cond_35
     iget-boolean v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->crossfade:Z
 
-    if-eqz v1, :cond_33
+    if-eqz v1, :cond_36
 
     iget-boolean v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->changeColor:Z
 
-    if-eqz v2, :cond_33
+    if-eqz v2, :cond_36
 
-    .line 749
+    .line 758
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getPaint()Landroid/text/TextPaint;
@@ -4875,7 +4983,7 @@
 
     move-result v7
 
-    .line 750
+    .line 759
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getPaint()Landroid/text/TextPaint;
@@ -4896,7 +5004,7 @@
 
     const/4 v3, 0x0
 
-    .line 751
+    .line 760
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getWidth()I
@@ -4925,18 +5033,18 @@
 
     move-object/from16 v1, p1
 
-    move/from16 v44, v7
+    move/from16 v47, v7
 
     move/from16 v7, v23
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 752
+    .line 761
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 753
+    .line 762
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->animatedEmojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
@@ -4953,11 +5061,11 @@
 
     move-object/from16 v1, p1
 
-    move/from16 v45, v8
+    move/from16 v48, v8
 
     move/from16 v8, v23
 
-    move/from16 v43, v15
+    move/from16 v45, v15
 
     move v15, v9
 
@@ -4965,36 +5073,36 @@
 
     invoke-static/range {v1 .. v9}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFF)V
 
-    .line 754
+    .line 763
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v1
 
-    move/from16 v2, v44
+    move/from16 v2, v47
 
     invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 755
+    .line 764
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_17
 
-    :cond_33
-    move/from16 v45, v8
+    :cond_36
+    move/from16 v48, v8
 
-    move/from16 v43, v15
+    move/from16 v45, v15
 
     move v15, v9
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_37
 
     const/4 v2, 0x0
 
     const/4 v3, 0x0
 
-    .line 757
+    .line 766
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getWidth()I
@@ -5025,12 +5133,12 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 758
+    .line 767
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 759
+    .line 768
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->animatedEmojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
@@ -5049,18 +5157,18 @@
 
     invoke-static/range {v1 .. v9}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFF)V
 
-    .line 760
+    .line 769
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_17
 
-    .line 762
-    :cond_34
+    .line 771
+    :cond_37
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 763
+    .line 772
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->layout:Landroid/text/StaticLayout;
 
     iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->animatedEmojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
@@ -5081,19 +5189,19 @@
 
     invoke-static/range {v1 .. v9}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->drawAnimatedEmojis(Landroid/graphics/Canvas;Landroid/text/Layout;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;FLjava/util/List;FFFF)V
 
-    .line 766
+    .line 775
     :goto_17
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 768
+    .line 777
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->rtlLayout:Landroid/text/StaticLayout;
 
-    if-eqz v1, :cond_39
+    if-eqz v1, :cond_3c
 
-    .line 769
+    .line 778
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 770
+    .line 779
     iget v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->toXOffsetRtl:F
 
     sub-float v1, v17, v1
@@ -5114,24 +5222,24 @@
 
     invoke-virtual {v10, v1, v14}, Landroid/graphics/Canvas;->translate(FF)V
 
-    move/from16 v9, v45
+    move/from16 v9, v48
 
     const/4 v1, 0x0
 
-    .line 771
+    .line 780
     invoke-virtual {v10, v15, v9, v1, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 772
+    .line 781
     iget-boolean v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->drawBitmaps:Z
 
-    if-eqz v1, :cond_36
+    if-eqz v1, :cond_39
 
-    .line 773
+    .line 782
     iget-boolean v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->crossfade:Z
 
-    if-eqz v1, :cond_35
+    if-eqz v1, :cond_38
 
-    .line 774
+    .line 783
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->bitmapPaint:Landroid/graphics/Paint;
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -5144,8 +5252,8 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 776
-    :cond_35
+    .line 785
+    :cond_38
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->textLayoutBitmapRtl:Landroid/graphics/Bitmap;
 
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->bitmapPaint:Landroid/graphics/Paint;
@@ -5156,17 +5264,17 @@
 
     goto :goto_18
 
-    .line 778
-    :cond_36
+    .line 787
+    :cond_39
     iget-boolean v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->crossfade:Z
 
-    if-eqz v1, :cond_37
+    if-eqz v1, :cond_3a
 
     iget-boolean v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->changeColor:Z
 
-    if-eqz v2, :cond_37
+    if-eqz v2, :cond_3a
 
-    .line 779
+    .line 788
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->rtlLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getPaint()Landroid/text/TextPaint;
@@ -5177,12 +5285,12 @@
 
     move-result v1
 
-    .line 780
+    .line 789
     invoke-static {v1}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v2
 
-    .line 781
+    .line 790
     iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->rtlLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v3}, Landroid/text/StaticLayout;->getPaint()Landroid/text/TextPaint;
@@ -5213,12 +5321,12 @@
 
     invoke-virtual {v3, v2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 782
+    .line 791
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->rtlLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 783
+    .line 792
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->rtlLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getPaint()Landroid/text/TextPaint;
@@ -5229,10 +5337,10 @@
 
     goto :goto_18
 
-    :cond_37
-    if-eqz v1, :cond_38
+    :cond_3a
+    if-eqz v1, :cond_3b
 
-    .line 785
+    .line 794
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->rtlLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getPaint()Landroid/text/TextPaint;
@@ -5243,7 +5351,7 @@
 
     move-result v1
 
-    .line 786
+    .line 795
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->rtlLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getPaint()Landroid/text/TextPaint;
@@ -5262,12 +5370,12 @@
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 787
+    .line 796
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->rtlLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 788
+    .line 797
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->rtlLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v2}, Landroid/text/StaticLayout;->getPaint()Landroid/text/TextPaint;
@@ -5278,31 +5386,31 @@
 
     goto :goto_18
 
-    .line 790
-    :cond_38
+    .line 799
+    :cond_3b
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->rtlLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v10}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 793
+    .line 802
     :goto_18
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_19
 
-    :cond_39
-    move/from16 v9, v45
+    :cond_3c
+    move/from16 v9, v48
 
-    .line 796
+    .line 805
     :goto_19
     iget-boolean v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->crossfade:Z
 
-    if-eqz v1, :cond_3c
+    if-eqz v1, :cond_3f
 
-    .line 797
+    .line 806
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 798
+    .line 807
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getLeft()I
@@ -5333,11 +5441,11 @@
 
     add-float/2addr v1, v13
 
-    move/from16 v2, v43
+    move/from16 v2, v45
 
     invoke-virtual {v10, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 799
+    .line 808
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getTextX()I
@@ -5356,7 +5464,7 @@
 
     invoke-virtual {v10, v15, v9, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 800
+    .line 809
     iget v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->crossfadeTextOffset:F
 
     neg-float v1, v1
@@ -5365,12 +5473,12 @@
 
     invoke-virtual {v10, v2, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 802
+    .line 811
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->crossfadeTextBitmap:Landroid/graphics/Bitmap;
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_3d
 
-    .line 803
+    .line 812
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->bitmapPaint:Landroid/graphics/Paint;
 
     mul-float v6, v12, v25
@@ -5379,7 +5487,7 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 804
+    .line 813
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->crossfadeTextBitmap:Landroid/graphics/Bitmap;
 
     iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->bitmapPaint:Landroid/graphics/Paint;
@@ -5388,22 +5496,22 @@
 
     goto :goto_1a
 
-    .line 806
-    :cond_3a
+    .line 815
+    :cond_3d
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v1}, Landroid/text/TextPaint;->getColor()I
 
     move-result v7
 
-    .line 807
+    .line 816
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
     iget v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->toColor:I
 
     invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 808
+    .line 817
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
@@ -5422,37 +5530,37 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawMessageText(Landroid/graphics/Canvas;Ljava/util/ArrayList;ZFZ)V
 
-    .line 809
+    .line 818
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v1, v10, v12}, Lorg/telegram/ui/Cells/ChatMessageCell;->drawAnimatedEmojis(Landroid/graphics/Canvas;F)V
 
-    .line 810
+    .line 819
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v1}, Landroid/text/TextPaint;->getColor()I
 
     move-result v1
 
-    if-eq v1, v7, :cond_3b
+    if-eq v1, v7, :cond_3e
 
-    .line 811
+    .line 820
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v1, v7}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 814
-    :cond_3b
+    .line 823
+    :cond_3e
     :goto_1a
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 817
-    :cond_3c
+    .line 826
+    :cond_3f
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    if-eqz v22, :cond_3d
+    if-eqz v22, :cond_40
 
-    .line 820
+    .line 829
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->gradientMatrix:Landroid/graphics/Matrix;
 
     move/from16 v2, v30
@@ -5463,7 +5571,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/graphics/Matrix;->setTranslate(FF)V
 
-    .line 821
+    .line 830
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->gradientShader:Landroid/graphics/LinearGradient;
 
     iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->gradientMatrix:Landroid/graphics/Matrix;
@@ -5472,7 +5580,7 @@
 
     const/4 v2, 0x0
 
-    .line 822
+    .line 831
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
 
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
@@ -5495,40 +5603,42 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 823
+    .line 832
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 826
-    :cond_3d
+    .line 835
+    :cond_40
     iget v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->progress:F
 
     cmpl-float v2, v1, v16
 
-    if-lez v2, :cond_3e
+    if-lez v2, :cond_41
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    goto :goto_1b
-
-    :cond_3e
-    div-float v1, v1, v16
-
-    :goto_1b
     const/high16 v2, 0x3f800000    # 1.0f
 
-    cmpl-float v3, v1, v2
+    goto :goto_1b
 
-    if-nez v3, :cond_3f
+    :cond_41
+    div-float v2, v1, v16
 
-    .line 828
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    :goto_1b
+    cmpl-float v3, v2, v1
+
+    if-nez v3, :cond_42
+
+    .line 837
     iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setTextTransitionIsRunning(Z)V
 
-    .line 830
-    :cond_3f
+    .line 839
+    :cond_42
     iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getSendButton()Landroid/view/View;
@@ -5539,97 +5649,19 @@
 
     move-result v3
 
-    if-nez v3, :cond_40
+    if-nez v3, :cond_43
 
-    cmpg-float v2, v1, v2
+    cmpg-float v1, v2, v1
 
-    if-gez v2, :cond_40
+    if-gez v1, :cond_43
 
-    .line 831
+    .line 840
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 832
-    iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getX()F
-
-    move-result v2
-
-    iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-virtual {v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getSendButton()Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/View;->getX()F
-
-    move-result v3
-
-    add-float/2addr v2, v3
-
-    iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-virtual {v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getSendButton()Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/view/View;
-
-    invoke-virtual {v3}, Landroid/view/View;->getX()F
-
-    move-result v3
-
-    add-float/2addr v2, v3
-
-    iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-virtual {v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getSendButton()Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/view/View;
-
-    invoke-virtual {v3}, Landroid/view/View;->getX()F
-
-    move-result v3
-
-    add-float/2addr v2, v3
-
-    iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
-
-    invoke-virtual {v3}, Landroid/view/View;->getX()F
-
-    move-result v3
-
-    sub-float/2addr v2, v3
-
-    const/16 v3, 0x34
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    mul-float/2addr v3, v1
-
-    add-float/2addr v2, v3
-
+    .line 841
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getY()F
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getX()F
 
     move-result v1
 
@@ -5639,7 +5671,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/view/View;->getY()F
+    invoke-virtual {v3}, Landroid/view/View;->getX()F
 
     move-result v3
 
@@ -5657,7 +5689,7 @@
 
     check-cast v3, Landroid/view/View;
 
-    invoke-virtual {v3}, Landroid/view/View;->getY()F
+    invoke-virtual {v3}, Landroid/view/View;->getX()F
 
     move-result v3
 
@@ -5679,7 +5711,7 @@
 
     check-cast v3, Landroid/view/View;
 
-    invoke-virtual {v3}, Landroid/view/View;->getY()F
+    invoke-virtual {v3}, Landroid/view/View;->getX()F
 
     move-result v3
 
@@ -5687,15 +5719,93 @@
 
     iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
 
-    invoke-virtual {v3}, Landroid/view/View;->getY()F
+    invoke-virtual {v3}, Landroid/view/View;->getX()F
 
     move-result v3
 
     sub-float/2addr v1, v3
 
-    invoke-virtual {v10, v2, v1}, Landroid/graphics/Canvas;->translate(FF)V
+    const/16 v3, 0x34
 
-    .line 833
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    mul-float/2addr v3, v2
+
+    add-float/2addr v1, v3
+
+    iget-object v2, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getY()F
+
+    move-result v2
+
+    iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-virtual {v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getSendButton()Landroid/view/View;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/view/View;->getY()F
+
+    move-result v3
+
+    add-float/2addr v2, v3
+
+    iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-virtual {v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getSendButton()Landroid/view/View;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/view/View;
+
+    invoke-virtual {v3}, Landroid/view/View;->getY()F
+
+    move-result v3
+
+    add-float/2addr v2, v3
+
+    iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-virtual {v3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getSendButton()Landroid/view/View;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/view/View;
+
+    invoke-virtual {v3}, Landroid/view/View;->getY()F
+
+    move-result v3
+
+    add-float/2addr v2, v3
+
+    iget-object v3, v0, Lorg/telegram/ui/TextMessageEnterTransition;->container:Lorg/telegram/ui/MessageEnterTransitionContainer;
+
+    invoke-virtual {v3}, Landroid/view/View;->getY()F
+
+    move-result v3
+
+    sub-float/2addr v2, v3
+
+    invoke-virtual {v10, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 842
     iget-object v1, v0, Lorg/telegram/ui/TextMessageEnterTransition;->enterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getSendButton()Landroid/view/View;
@@ -5704,13 +5814,13 @@
 
     invoke-virtual {v1, v10}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 834
+    .line 843
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 835
+    .line 844
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    :cond_40
+    :cond_43
     return-void
 .end method
 

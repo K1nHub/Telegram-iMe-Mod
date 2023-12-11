@@ -23,7 +23,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -493,7 +493,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     public final TextView initTitleLink() {
         TextView textView = new TextView(getContext());
         textView.setGravity(17);
-        textView.setText(LocaleController.getString(C3634R.string.formatting_link_title));
+        textView.setText(LocaleController.getString(C3632R.string.formatting_link_title));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -503,7 +503,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         int m104dp = AndroidUtilities.m104dp(8);
         imageView.setPadding(m104dp, m104dp, m104dp, m104dp);
-        imageView.setImageResource(C3634R.C3636drawable.msg_link_folder);
+        imageView.setImageResource(C3632R.C3634drawable.msg_link_folder);
         return imageView;
     }
 
@@ -527,7 +527,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
         r1.setLines(1);
         r1.setSingleLine(true);
         r1.setImeOptions(268435459);
-        r1.setHint(r1.getContext().getString(C3634R.string.formatting_link_hint_edit_text));
+        r1.setHint(r1.getContext().getString(C3632R.string.formatting_link_hint_edit_text));
         r1.setCursorColor(Theme.key_featuredStickers_addedIcon);
         r1.setCursorSize(AndroidUtilities.m104dp(20));
         return r1;
@@ -554,7 +554,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     public final ImageView initClearLink() {
         ImageView imageView = new ImageView(getContext());
         ViewExtKt.gone$default(imageView, false, 1, null);
-        imageView.setImageResource(C3634R.C3636drawable.msg_delete);
+        imageView.setImageResource(C3632R.C3634drawable.msg_delete);
         int m104dp = AndroidUtilities.m104dp(8);
         imageView.setPadding(m104dp, m104dp, m104dp, m104dp);
         return imageView;
@@ -564,7 +564,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     public final TextView initTitleFormat() {
         TextView textView = new TextView(getContext());
         textView.setGravity(17);
-        textView.setText(textView.getContext().getText(C3634R.string.formatting_hint_format));
+        textView.setText(textView.getContext().getText(C3632R.string.formatting_hint_format));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -627,7 +627,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
         textView.setTag(this.formattingTextController.getListTextStyleSpanFlags().get(2));
         textView.setGravity(17);
         textView.setIncludeFontPadding(false);
-        textView.setText(LocaleController.getString("Mono", C3634R.string.Mono));
+        textView.setText(LocaleController.getString("Mono", C3632R.string.Mono));
         ViewExtKt.withMediumTypeface(textView);
         textView.setTextSize(1, 18.0f);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.formatting_messages.FormattingMessagesKeyboardContainer$$ExternalSyntheticLambda1
@@ -654,7 +654,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
         textView.setTag(this.formattingTextController.getListTextStyleSpanFlags().get(5));
         textView.setGravity(17);
         textView.setIncludeFontPadding(false);
-        textView.setText(LocaleController.getString("Spoiler", C3634R.string.Spoiler));
+        textView.setText(LocaleController.getString("Spoiler", C3632R.string.Spoiler));
         ViewExtKt.withMediumTypeface(textView);
         textView.setTextSize(1, 18.0f);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.formatting_messages.FormattingMessagesKeyboardContainer$$ExternalSyntheticLambda4

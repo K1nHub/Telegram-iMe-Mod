@@ -3,7 +3,7 @@ package com.iMe.model.wallet.crypto.tutorial;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 /* compiled from: TutorialType.kt */
 /* loaded from: classes3.dex */
@@ -28,7 +28,7 @@ public abstract class TutorialType {
         public static final WalletCreated INSTANCE = new WalletCreated();
 
         private WalletCreated() {
-            super(C3634R.string.common_done, null);
+            super(C3632R.string.common_done, null);
         }
     }
 
@@ -44,7 +44,7 @@ public abstract class TutorialType {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
         public WalletIntro(Function0<? extends BaseFragment> onTutorialPassedFragmentCreator) {
-            super(C3634R.string.wallet_creation_backup, null);
+            super(C3632R.string.wallet_creation_backup, null);
             Intrinsics.checkNotNullParameter(onTutorialPassedFragmentCreator, "onTutorialPassedFragmentCreator");
             this.onTutorialPassedFragmentCreator = onTutorialPassedFragmentCreator;
         }

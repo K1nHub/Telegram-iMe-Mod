@@ -71,30 +71,30 @@ public class OverridingUtil {
     /* JADX WARN: Removed duplicated region for block: B:115:0x01f4  */
     /* JADX WARN: Removed duplicated region for block: B:116:0x01fa  */
     /* JADX WARN: Removed duplicated region for block: B:117:0x01fe  */
-    /* JADX WARN: Removed duplicated region for block: B:118:0x0204  */
-    /* JADX WARN: Removed duplicated region for block: B:119:0x020a  */
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0211  */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x0216  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x021b  */
-    /* JADX WARN: Removed duplicated region for block: B:123:0x0220  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x0225  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x022b  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0230  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0235  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x023a  */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x023d  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x0242  */
-    /* JADX WARN: Removed duplicated region for block: B:131:0x0245  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x0248  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x024d  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x0256  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x0259  */
-    /* JADX WARN: Removed duplicated region for block: B:137:0x025e  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0263  */
-    /* JADX WARN: Removed duplicated region for block: B:139:0x0268  */
-    /* JADX WARN: Removed duplicated region for block: B:142:0x0272 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:151:0x0285  */
+    /* JADX WARN: Removed duplicated region for block: B:118:0x0205  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x020b  */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0212  */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x0217  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x021c  */
+    /* JADX WARN: Removed duplicated region for block: B:123:0x0221  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0226  */
+    /* JADX WARN: Removed duplicated region for block: B:125:0x022c  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0231  */
+    /* JADX WARN: Removed duplicated region for block: B:127:0x0236  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x023b  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x023e  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0243  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x0246  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0249  */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x024e  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x0251  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x0257  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x025f  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x0264  */
+    /* JADX WARN: Removed duplicated region for block: B:139:0x0269  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0273 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x0286  */
     /* JADX WARN: Removed duplicated region for block: B:17:0x0035 A[FALL_THROUGH] */
     /* JADX WARN: Removed duplicated region for block: B:29:0x004d  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x0058 A[FALL_THROUGH] */
@@ -150,7 +150,7 @@ public class OverridingUtil {
     */
     private static /* synthetic */ void $$$reportNull$$$0(int r24) {
         /*
-            Method dump skipped, instructions count: 1350
+            Method dump skipped, instructions count: 1352
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlin.reflect.jvm.internal.impl.resolve.OverridingUtil.$$$reportNull$$$0(int):void");
@@ -340,7 +340,7 @@ public class OverridingUtil {
         boolean z2 = isOverridableByWithoutExternalConditions.getResult() == OverrideCompatibilityInfo.Result.OVERRIDABLE;
         for (ExternalOverridabilityCondition externalOverridabilityCondition : EXTERNAL_CONDITIONS) {
             if (externalOverridabilityCondition.getContract() != ExternalOverridabilityCondition.Contract.CONFLICTS_ONLY && (!z2 || externalOverridabilityCondition.getContract() != ExternalOverridabilityCondition.Contract.SUCCESS_ONLY)) {
-                int i = C34478.f1381x42e2f52f[externalOverridabilityCondition.isOverridable(callableDescriptor, callableDescriptor2, classDescriptor).ordinal()];
+                int i = C34448.f1381x42e2f52f[externalOverridabilityCondition.isOverridable(callableDescriptor, callableDescriptor2, classDescriptor).ordinal()];
                 if (i == 1) {
                     z2 = true;
                 } else if (i == 2) {
@@ -361,7 +361,7 @@ public class OverridingUtil {
         if (z2) {
             for (ExternalOverridabilityCondition externalOverridabilityCondition2 : EXTERNAL_CONDITIONS) {
                 if (externalOverridabilityCondition2.getContract() == ExternalOverridabilityCondition.Contract.CONFLICTS_ONLY) {
-                    int i2 = C34478.f1381x42e2f52f[externalOverridabilityCondition2.isOverridable(callableDescriptor, callableDescriptor2, classDescriptor).ordinal()];
+                    int i2 = C34448.f1381x42e2f52f[externalOverridabilityCondition2.isOverridable(callableDescriptor, callableDescriptor2, classDescriptor).ordinal()];
                     if (i2 == 1) {
                         throw new IllegalStateException("Contract violation in " + externalOverridabilityCondition2.getClass().getName() + " condition. It's not supposed to end with success");
                     } else if (i2 == 2) {
@@ -665,7 +665,7 @@ public class OverridingUtil {
         for (CallableMemberDescriptor callableMemberDescriptor2 : collection) {
             OverrideCompatibilityInfo.Result result = isOverridableBy(callableMemberDescriptor2, callableMemberDescriptor, classDescriptor).getResult();
             boolean isVisibleForOverride = isVisibleForOverride(callableMemberDescriptor, callableMemberDescriptor2, false);
-            int i = C34478.f1382xb0ae9f3b[result.ordinal()];
+            int i = C34448.f1382xb0ae9f3b[result.ordinal()];
             if (i == 1) {
                 if (isVisibleForOverride) {
                     create.add(callableMemberDescriptor2);
@@ -896,7 +896,7 @@ public class OverridingUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: kotlin.reflect.jvm.internal.impl.resolve.OverridingUtil$8 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C34478 {
+    public static /* synthetic */ class C34448 {
         static final /* synthetic */ int[] $SwitchMap$org$jetbrains$kotlin$descriptors$Modality;
 
         /* renamed from: $SwitchMap$org$jetbrains$kotlin$resolve$ExternalOverridabilityCondition$Result */
@@ -970,7 +970,7 @@ public class OverridingUtil {
         boolean z2 = false;
         boolean z3 = false;
         for (CallableMemberDescriptor callableMemberDescriptor : collection) {
-            int i = C34478.$SwitchMap$org$jetbrains$kotlin$descriptors$Modality[callableMemberDescriptor.getModality().ordinal()];
+            int i = C34448.$SwitchMap$org$jetbrains$kotlin$descriptors$Modality[callableMemberDescriptor.getModality().ordinal()];
             if (i == 1) {
                 Modality modality = Modality.FINAL;
                 if (modality == null) {

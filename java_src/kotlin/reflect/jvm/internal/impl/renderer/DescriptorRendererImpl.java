@@ -777,11 +777,11 @@ public final class DescriptorRendererImpl extends DescriptorRenderer implements 
 
     public String renderTypeConstructor(TypeConstructor typeConstructor) {
         Intrinsics.checkNotNullParameter(typeConstructor, "typeConstructor");
-        ClassifierDescriptor mo2051getDeclarationDescriptor = typeConstructor.mo2051getDeclarationDescriptor();
-        if (mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor ? true : mo2051getDeclarationDescriptor instanceof ClassDescriptor ? true : mo2051getDeclarationDescriptor instanceof TypeAliasDescriptor) {
-            return renderClassifierName(mo2051getDeclarationDescriptor);
+        ClassifierDescriptor mo2053getDeclarationDescriptor = typeConstructor.mo2053getDeclarationDescriptor();
+        if (mo2053getDeclarationDescriptor instanceof TypeParameterDescriptor ? true : mo2053getDeclarationDescriptor instanceof ClassDescriptor ? true : mo2053getDeclarationDescriptor instanceof TypeAliasDescriptor) {
+            return renderClassifierName(mo2053getDeclarationDescriptor);
         }
-        if (mo2051getDeclarationDescriptor == null) {
+        if (mo2053getDeclarationDescriptor == null) {
             if (typeConstructor instanceof IntersectionTypeConstructor) {
                 return ((IntersectionTypeConstructor) typeConstructor).makeDebugNameForIntersectionType(new Function1<KotlinType, Object>() { // from class: kotlin.reflect.jvm.internal.impl.renderer.DescriptorRendererImpl$renderTypeConstructor$1
                     @Override // kotlin.jvm.functions.Function1
@@ -793,7 +793,7 @@ public final class DescriptorRendererImpl extends DescriptorRenderer implements 
             }
             return typeConstructor.toString();
         }
-        throw new IllegalStateException(("Unexpected classifier: " + mo2051getDeclarationDescriptor.getClass()).toString());
+        throw new IllegalStateException(("Unexpected classifier: " + mo2053getDeclarationDescriptor.getClass()).toString());
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.renderer.DescriptorRenderer
@@ -993,7 +993,7 @@ public final class DescriptorRendererImpl extends DescriptorRenderer implements 
                 CollectionsKt___CollectionsKt.joinTo$default(renderAndSortAnnotationArguments, sb, ", ", "(", ")", 0, null, null, 112, null);
             }
         }
-        if (getVerbose() && (KotlinTypeKt.isError(type) || (type.getConstructor().mo2051getDeclarationDescriptor() instanceof NotFoundClasses.MockClassDescriptor))) {
+        if (getVerbose() && (KotlinTypeKt.isError(type) || (type.getConstructor().mo2053getDeclarationDescriptor() instanceof NotFoundClasses.MockClassDescriptor))) {
             sb.append(" /* annotation class not found */");
         }
         String sb2 = sb.toString();
@@ -1006,13 +1006,13 @@ public final class DescriptorRendererImpl extends DescriptorRenderer implements 
         int collectionSizeOrDefault2;
         List plus;
         List<String> sorted;
-        ClassConstructorDescriptor mo2045getUnsubstitutedPrimaryConstructor;
+        ClassConstructorDescriptor mo2047getUnsubstitutedPrimaryConstructor;
         List<ValueParameterDescriptor> valueParameters;
         int collectionSizeOrDefault3;
         Map<Name, ConstantValue<?>> allValueArguments = annotationDescriptor.getAllValueArguments();
         List list = null;
         ClassDescriptor annotationClass = getRenderDefaultAnnotationArguments() ? DescriptorUtilsKt.getAnnotationClass(annotationDescriptor) : null;
-        if (annotationClass != null && (mo2045getUnsubstitutedPrimaryConstructor = annotationClass.mo2045getUnsubstitutedPrimaryConstructor()) != null && (valueParameters = mo2045getUnsubstitutedPrimaryConstructor.getValueParameters()) != null) {
+        if (annotationClass != null && (mo2047getUnsubstitutedPrimaryConstructor = annotationClass.mo2047getUnsubstitutedPrimaryConstructor()) != null && (valueParameters = mo2047getUnsubstitutedPrimaryConstructor.getValueParameters()) != null) {
             ArrayList<ValueParameterDescriptor> arrayList = new ArrayList();
             for (Object obj : valueParameters) {
                 if (((ValueParameterDescriptor) obj).declaresDefaultValue()) {
@@ -1764,12 +1764,12 @@ public final class DescriptorRendererImpl extends DescriptorRenderer implements 
     }
 
     private final void renderInitializer(VariableDescriptor variableDescriptor, StringBuilder sb) {
-        ConstantValue<?> mo2047getCompileTimeInitializer;
-        if (!getIncludePropertyConstant() || (mo2047getCompileTimeInitializer = variableDescriptor.mo2047getCompileTimeInitializer()) == null) {
+        ConstantValue<?> mo2049getCompileTimeInitializer;
+        if (!getIncludePropertyConstant() || (mo2049getCompileTimeInitializer = variableDescriptor.mo2049getCompileTimeInitializer()) == null) {
             return;
         }
         sb.append(" = ");
-        sb.append(escape(renderConstant(mo2047getCompileTimeInitializer)));
+        sb.append(escape(renderConstant(mo2049getCompileTimeInitializer)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1804,7 +1804,7 @@ public final class DescriptorRendererImpl extends DescriptorRenderer implements 
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void renderClass(ClassDescriptor classDescriptor, StringBuilder sb) {
-        ClassConstructorDescriptor mo2045getUnsubstitutedPrimaryConstructor;
+        ClassConstructorDescriptor mo2047getUnsubstitutedPrimaryConstructor;
         boolean z = classDescriptor.getKind() == ClassKind.ENUM_ENTRY;
         if (!getStartFromName()) {
             renderAnnotations$default(this, sb, classDescriptor, null, 2, null);
@@ -1844,16 +1844,16 @@ public final class DescriptorRendererImpl extends DescriptorRenderer implements 
         Intrinsics.checkNotNullExpressionValue(declaredTypeParameters, "klass.declaredTypeParameters");
         renderTypeParameters(declaredTypeParameters, sb, false);
         renderCapturedTypeParametersIfRequired(classDescriptor, sb);
-        if (!classDescriptor.getKind().isSingleton() && getClassWithPrimaryConstructor() && (mo2045getUnsubstitutedPrimaryConstructor = classDescriptor.mo2045getUnsubstitutedPrimaryConstructor()) != null) {
+        if (!classDescriptor.getKind().isSingleton() && getClassWithPrimaryConstructor() && (mo2047getUnsubstitutedPrimaryConstructor = classDescriptor.mo2047getUnsubstitutedPrimaryConstructor()) != null) {
             sb.append(" ");
-            renderAnnotations$default(this, sb, mo2045getUnsubstitutedPrimaryConstructor, null, 2, null);
-            DescriptorVisibility visibility2 = mo2045getUnsubstitutedPrimaryConstructor.getVisibility();
+            renderAnnotations$default(this, sb, mo2047getUnsubstitutedPrimaryConstructor, null, 2, null);
+            DescriptorVisibility visibility2 = mo2047getUnsubstitutedPrimaryConstructor.getVisibility();
             Intrinsics.checkNotNullExpressionValue(visibility2, "primaryConstructor.visibility");
             renderVisibility(visibility2, sb);
             sb.append(renderKeyword("constructor"));
-            List<ValueParameterDescriptor> valueParameters = mo2045getUnsubstitutedPrimaryConstructor.getValueParameters();
+            List<ValueParameterDescriptor> valueParameters = mo2047getUnsubstitutedPrimaryConstructor.getValueParameters();
             Intrinsics.checkNotNullExpressionValue(valueParameters, "primaryConstructor.valueParameters");
-            renderValueParameters(valueParameters, mo2045getUnsubstitutedPrimaryConstructor.hasSynthesizedParameterNames(), sb);
+            renderValueParameters(valueParameters, mo2047getUnsubstitutedPrimaryConstructor.hasSynthesizedParameterNames(), sb);
         }
         renderSuperTypes(classDescriptor, sb);
         renderWhereSuffix(declaredTypeParameters, sb);
@@ -1863,17 +1863,17 @@ public final class DescriptorRendererImpl extends DescriptorRenderer implements 
         if (getWithoutSuperTypes() || KotlinBuiltIns.isNothing(classDescriptor.getDefaultType())) {
             return;
         }
-        Collection<KotlinType> mo2052getSupertypes = classDescriptor.getTypeConstructor().mo2052getSupertypes();
-        Intrinsics.checkNotNullExpressionValue(mo2052getSupertypes, "klass.typeConstructor.supertypes");
-        if (mo2052getSupertypes.isEmpty()) {
+        Collection<KotlinType> mo2054getSupertypes = classDescriptor.getTypeConstructor().mo2054getSupertypes();
+        Intrinsics.checkNotNullExpressionValue(mo2054getSupertypes, "klass.typeConstructor.supertypes");
+        if (mo2054getSupertypes.isEmpty()) {
             return;
         }
-        if (mo2052getSupertypes.size() == 1 && KotlinBuiltIns.isAnyOrNullableAny(mo2052getSupertypes.iterator().next())) {
+        if (mo2054getSupertypes.size() == 1 && KotlinBuiltIns.isAnyOrNullableAny(mo2054getSupertypes.iterator().next())) {
             return;
         }
         renderSpaceIfNeeded(sb);
         sb.append(": ");
-        CollectionsKt___CollectionsKt.joinTo$default(mo2052getSupertypes, sb, ", ", null, null, 0, null, new Function1<KotlinType, CharSequence>() { // from class: kotlin.reflect.jvm.internal.impl.renderer.DescriptorRendererImpl$renderSuperTypes$1
+        CollectionsKt___CollectionsKt.joinTo$default(mo2054getSupertypes, sb, ", ", null, null, 0, null, new Function1<KotlinType, CharSequence>() { // from class: kotlin.reflect.jvm.internal.impl.renderer.DescriptorRendererImpl$renderSuperTypes$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

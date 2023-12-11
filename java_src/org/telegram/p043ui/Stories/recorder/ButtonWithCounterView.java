@@ -18,7 +18,7 @@ import android.widget.FrameLayout;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AnimatedFloat;
 import org.telegram.p043ui.Components.AnimatedTextView;
@@ -247,7 +247,7 @@ public class ButtonWithCounterView extends FrameLayout {
 
     public void withCounterIcon() {
         this.withCounterIcon = true;
-        Drawable mutate = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.mini_boost_button).mutate();
+        Drawable mutate = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.mini_boost_button).mutate();
         this.counterDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addButton, this.resourcesProvider), PorterDuff.Mode.SRC_IN));
     }

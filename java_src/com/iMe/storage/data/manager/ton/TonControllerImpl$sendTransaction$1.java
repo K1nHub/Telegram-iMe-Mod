@@ -11,7 +11,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: TonControllerImpl.kt */
-@DebugMetadata(m145c = "com.iMe.storage.data.manager.ton.TonControllerImpl$sendTransaction$1", m144f = "TonControllerImpl.kt", m143l = {109}, m142m = "invokeSuspend")
+@DebugMetadata(m145c = "com.iMe.storage.data.manager.ton.TonControllerImpl$sendTransaction$1", m144f = "TonControllerImpl.kt", m143l = {115}, m142m = "invokeSuspend")
 /* loaded from: classes3.dex */
 final class TonControllerImpl$sendTransaction$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Result<? extends String>>, Object> {
     final /* synthetic */ long $amount;

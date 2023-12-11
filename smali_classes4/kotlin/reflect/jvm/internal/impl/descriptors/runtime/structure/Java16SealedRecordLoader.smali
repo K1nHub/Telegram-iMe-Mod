@@ -48,7 +48,7 @@
     :try_start_0
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/descriptors/runtime/structure/Java16SealedRecordLoader$Cache;
 
-    const-string v2, "isSealed"
+    const-string/jumbo v2, "isSealed"
 
     const/4 v3, 0x0
 
@@ -68,7 +68,7 @@
 
     move-result-object v4
 
-    const-string v5, "isRecord"
+    const-string/jumbo v5, "isRecord"
 
     new-array v6, v3, [Ljava/lang/Class;
 

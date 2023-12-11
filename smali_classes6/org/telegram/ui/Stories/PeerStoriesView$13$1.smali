@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView$13;)V
     .locals 0
 
-    .line 1912
+    .line 1909
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13$1;->this$1:Lorg/telegram/ui/Stories/PeerStoriesView$13;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,21 +35,21 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 1915
+    .line 1912
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13$1;->this$1:Lorg/telegram/ui/Stories/PeerStoriesView$13;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1916
+    .line 1913
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13$1;->this$1:Lorg/telegram/ui/Stories/PeerStoriesView$13;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Stories/PeerStoriesView$13;->access$4502(Lorg/telegram/ui/Stories/PeerStoriesView$13;I)I
 
-    .line 1917
+    .line 1914
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13$1;->this$1:Lorg/telegram/ui/Stories/PeerStoriesView$13;
 
     iget-object v0, p1, Lorg/telegram/ui/Stories/PeerStoriesView$13;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -58,7 +58,7 @@
 
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->forceUpdateOffsets:Z
 
-    .line 1918
+    .line 1915
     invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView$13;->access$4600(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
 
     move-result-object p1
@@ -77,7 +77,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1919
+    .line 1916
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13$1;->this$1:Lorg/telegram/ui/Stories/PeerStoriesView$13;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView$13;->access$5100(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
@@ -122,7 +122,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1920
+    .line 1917
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13$1;->this$1:Lorg/telegram/ui/Stories/PeerStoriesView$13;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView$13;->access$5200(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
@@ -131,7 +131,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1921
+    .line 1918
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13$1;->this$1:Lorg/telegram/ui/Stories/PeerStoriesView$13;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView$13;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView$13;)Landroid/view/View;
@@ -148,7 +148,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1924
+    .line 1921
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$13$1;->this$1:Lorg/telegram/ui/Stories/PeerStoriesView$13;
 

@@ -53,11 +53,11 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentWalletTutorialBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BackDrawable;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import timber.log.Timber;
@@ -260,15 +260,15 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
     }
 
     private final void setupActionBar() {
-        C3706ActionBar setupActionBar$lambda$1 = this.actionBar;
+        C3704ActionBar setupActionBar$lambda$1 = this.actionBar;
         setupActionBar$lambda$1.setCastShadows(false);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$1, "setupActionBar$lambda$1");
         ActionBarExtKt.applyColorsWithWhiteBackground(setupActionBar$lambda$1);
         setupActionBar$lambda$1.setAllowOverlayTitle(true);
         setupActionBar$lambda$1.setBackButtonDrawable(new BackDrawable(false));
         setupActionBar$lambda$1.createMenu();
-        setupActionBar$lambda$1.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        setupActionBar$lambda$1.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CreateWalletTutorialFragment.this.handleBackPressed();
@@ -282,7 +282,7 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
         if (this.tutorialType instanceof TutorialType.WalletIntro) {
             Activity parentActivity = getParentActivity();
             Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-            AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, new DialogModel(getResourceManager().getString(C3634R.string.wallet_backup_quit_alert_title), getResourceManager().getString(C3634R.string.wallet_backup_quit_alert_description), getResourceManager().getString(C3634R.string.wallet_backup_quit_alert_negative_button), getResourceManager().getString(C3634R.string.wallet_backup_quit_alert_positive_button)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$$ExternalSyntheticLambda0
+            AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, new DialogModel(getResourceManager().getString(C3632R.string.wallet_backup_quit_alert_title), getResourceManager().getString(C3632R.string.wallet_backup_quit_alert_description), getResourceManager().getString(C3632R.string.wallet_backup_quit_alert_negative_button), getResourceManager().getString(C3632R.string.wallet_backup_quit_alert_positive_button)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$$ExternalSyntheticLambda0
                 @Override // com.iMe.fork.utils.Callbacks$Callback
                 public final void invoke() {
                     CreateWalletTutorialFragment.this.finishFragment();
@@ -345,7 +345,7 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
             }, 1, null);
             return;
         }
-        updatePageButton$lambda$6$lambda$5.setText(getResourceManager().getString(C3634R.string.common_next));
+        updatePageButton$lambda$6$lambda$5.setText(getResourceManager().getString(C3632R.string.common_next));
         Intrinsics.checkNotNullExpressionValue(updatePageButton$lambda$6$lambda$5, "updatePageButton$lambda$6$lambda$5");
         ViewExtKt.safeThrottledClick$default(updatePageButton$lambda$6$lambda$5, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.tutorial.CreateWalletTutorialFragment$updatePageButton$1$1$2
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -370,7 +370,7 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
     }
 
     private final void setupTexts() {
-        getBinding().buttonAction.setText(getResourceManager().getString(C3634R.string.common_next));
+        getBinding().buttonAction.setText(getResourceManager().getString(C3632R.string.common_next));
     }
 
     private final void setupColors() {
@@ -378,10 +378,10 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
         NestedScrollView root = binding.getRoot();
         int i = Theme.key_windowBackgroundWhite;
         root.setBackgroundColor(getThemedColor(i));
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackgroundColor(getThemedColor(i));
-        c3706ActionBar.setItemsColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), false);
-        c3706ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_listSelector), false);
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackgroundColor(getThemedColor(i));
+        c3704ActionBar.setItemsColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText), false);
+        c3704ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_listSelector), false);
         binding.buttonAction.applyColors();
         DotsIndicator dotsIndicator = binding.dotsIndicatorTutorial;
         dotsIndicator.setSelectedDotColor(getThemedColor(Theme.key_chats_actionBackground));
@@ -399,12 +399,12 @@ public final class CreateWalletTutorialFragment extends WalletCreationBaseFragme
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.BackupFlowStarted backupFlowStarted) {
-                m1664invoke(backupFlowStarted);
+                m1665invoke(backupFlowStarted);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1664invoke(DomainRxEvents.BackupFlowStarted it) {
+            public final void m1665invoke(DomainRxEvents.BackupFlowStarted it) {
                 TutorialType tutorialType;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 tutorialType = CreateWalletTutorialFragment.this.tutorialType;

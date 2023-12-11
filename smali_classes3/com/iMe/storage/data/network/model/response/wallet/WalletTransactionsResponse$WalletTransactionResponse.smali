@@ -47,6 +47,8 @@
 
 .field private final processing:Ljava/lang/String;
 
+.field private final processingName:Ljava/lang/String;
+
 .field private final receiverAccountId:Ljava/lang/String;
 
 .field private final senderAccountId:Ljava/lang/String;
@@ -75,14 +77,14 @@
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 13
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 14
 
     move-object v0, p0
 
     move-object v1, p1
 
-    move-object v2, p2
+    move-object/from16 v2, p2
 
     move-object/from16 v3, p3
 
@@ -102,49 +104,55 @@
 
     move-object/from16 v11, p11
 
-    const-string v12, "id"
+    move-object/from16 v12, p12
 
-    invoke-static {p1, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "id"
 
-    const-string v12, "amount"
+    invoke-static {p1, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p2, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "amount"
 
-    const-string v12, "type"
+    invoke-static {v2, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "type"
 
-    const-string v12, "direction"
+    invoke-static {v3, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v4, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "direction"
 
-    const-string v12, "updatedAt"
+    invoke-static {v4, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v5, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "updatedAt"
 
-    const-string v12, "createdAt"
+    invoke-static {v5, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v6, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "createdAt"
 
-    const-string v12, "token"
+    invoke-static {v6, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v7, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "token"
 
-    const-string v12, "status"
+    invoke-static {v7, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v8, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "status"
 
-    const-string v12, "feeAmount"
+    invoke-static {v8, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v9, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "feeAmount"
 
-    const-string v12, "feeToken"
+    invoke-static {v9, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v10, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "feeToken"
 
-    const-string v12, "processing"
+    invoke-static {v10, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v11, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v13, "processing"
+
+    invoke-static {v11, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v13, "processingName"
+
+    invoke-static {v12, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 6
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -182,105 +190,108 @@
     .line 18
     iput-object v11, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processing:Ljava/lang/String;
 
-    move-object/from16 v1, p12
-
-    .line 21
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->userAccountId:Ljava/lang/String;
+    .line 19
+    iput-object v12, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processingName:Ljava/lang/String;
 
     move-object/from16 v1, p13
 
-    .line 24
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation:Ljava/lang/Boolean;
+    .line 22
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->userAccountId:Ljava/lang/String;
 
     move-object/from16 v1, p14
 
     .line 25
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->senderAccountId:Ljava/lang/String;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation:Ljava/lang/Boolean;
 
     move-object/from16 v1, p15
 
     .line 26
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->receiverAccountId:Ljava/lang/String;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->senderAccountId:Ljava/lang/String;
 
     move-object/from16 v1, p16
 
-    .line 29
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txFromCryptoAddress:Ljava/lang/String;
+    .line 27
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->receiverAccountId:Ljava/lang/String;
 
     move-object/from16 v1, p17
 
     .line 30
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txHash:Ljava/lang/String;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txFromCryptoAddress:Ljava/lang/String;
 
     move-object/from16 v1, p18
 
     .line 31
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txHash:Ljava/lang/String;
 
     move-object/from16 v1, p19
 
     .line 32
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
 
     move-object/from16 v1, p20
 
-    .line 35
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
+    .line 33
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
 
     move-object/from16 v1, p21
 
     .line 36
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
 
     move-object/from16 v1, p22
 
     .line 37
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
 
     move-object/from16 v1, p23
 
-    .line 40
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
+    .line 38
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
 
     move-object/from16 v1, p24
 
     .line 41
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
 
     move-object/from16 v1, p25
 
     .line 42
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     move-object/from16 v1, p26
 
     .line 43
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     move-object/from16 v1, p27
 
     .line 44
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
 
     move-object/from16 v1, p28
 
-    .line 47
-    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
+    .line 45
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
 
     move-object/from16 v1, p29
 
     .line 48
+    iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
+
+    move-object/from16 v1, p30
+
+    .line 49
     iput-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->payloadMessage:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;
+.method public static synthetic copy$default(Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;
     .locals 17
 
     move-object/from16 v0, p0
 
-    move/from16 v1, p30
+    move/from16 v1, p31
 
     and-int/lit8 v2, v1, 0x1
 
@@ -418,7 +429,7 @@
 
     if-eqz v13, :cond_b
 
-    iget-object v13, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->userAccountId:Ljava/lang/String;
+    iget-object v13, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processingName:Ljava/lang/String;
 
     goto :goto_b
 
@@ -430,7 +441,7 @@
 
     if-eqz v14, :cond_c
 
-    iget-object v14, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation:Ljava/lang/Boolean;
+    iget-object v14, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->userAccountId:Ljava/lang/String;
 
     goto :goto_c
 
@@ -442,7 +453,7 @@
 
     if-eqz v15, :cond_d
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->senderAccountId:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation:Ljava/lang/Boolean;
 
     goto :goto_d
 
@@ -456,7 +467,7 @@
 
     if-eqz v15, :cond_e
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->receiverAccountId:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->senderAccountId:Ljava/lang/String;
 
     goto :goto_e
 
@@ -472,7 +483,7 @@
 
     if-eqz v16, :cond_f
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txFromCryptoAddress:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->receiverAccountId:Ljava/lang/String;
 
     goto :goto_f
 
@@ -488,7 +499,7 @@
 
     if-eqz v16, :cond_10
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txHash:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txFromCryptoAddress:Ljava/lang/String;
 
     goto :goto_10
 
@@ -504,7 +515,7 @@
 
     if-eqz v16, :cond_11
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txHash:Ljava/lang/String;
 
     goto :goto_11
 
@@ -520,7 +531,7 @@
 
     if-eqz v16, :cond_12
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
 
     goto :goto_12
 
@@ -536,7 +547,7 @@
 
     if-eqz v16, :cond_13
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
 
     goto :goto_13
 
@@ -552,7 +563,7 @@
 
     if-eqz v16, :cond_14
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
 
     goto :goto_14
 
@@ -568,7 +579,7 @@
 
     if-eqz v16, :cond_15
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
 
     goto :goto_15
 
@@ -584,7 +595,7 @@
 
     if-eqz v16, :cond_16
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
 
     goto :goto_16
 
@@ -600,7 +611,7 @@
 
     if-eqz v16, :cond_17
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
 
     goto :goto_17
 
@@ -616,7 +627,7 @@
 
     if-eqz v16, :cond_18
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     goto :goto_18
 
@@ -632,7 +643,7 @@
 
     if-eqz v16, :cond_19
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     goto :goto_19
 
@@ -648,7 +659,7 @@
 
     if-eqz v16, :cond_1a
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
 
     goto :goto_1a
 
@@ -664,7 +675,7 @@
 
     if-eqz v16, :cond_1b
 
-    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
 
     goto :goto_1b
 
@@ -674,18 +685,34 @@
     :goto_1b
     const/high16 v16, 0x10000000
 
-    and-int v1, v1, v16
+    and-int v16, v1, v16
 
-    if-eqz v1, :cond_1c
+    move-object/from16 p28, v15
 
-    iget-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->payloadMessage:Ljava/lang/String;
+    if-eqz v16, :cond_1c
+
+    iget-object v15, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
 
     goto :goto_1c
 
     :cond_1c
-    move-object/from16 v1, p29
+    move-object/from16 v15, p29
 
     :goto_1c
+    const/high16 v16, 0x20000000
+
+    and-int v1, v1, v16
+
+    if-eqz v1, :cond_1d
+
+    iget-object v1, v0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->payloadMessage:Ljava/lang/String;
+
+    goto :goto_1d
+
+    :cond_1d
+    move-object/from16 v1, p30
+
+    :goto_1d
     move-object/from16 p1, v2
 
     move-object/from16 p2, v3
@@ -712,11 +739,11 @@
 
     move-object/from16 p13, v14
 
-    move-object/from16 p28, v15
+    move-object/from16 p29, v15
 
-    move-object/from16 p29, v1
+    move-object/from16 p30, v1
 
-    invoke-virtual/range {p0 .. p29}, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;
+    invoke-virtual/range {p0 .. p30}, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;
 
     move-result-object v0
 
@@ -752,12 +779,20 @@
 .method public final component12()Ljava/lang/String;
     .locals 1
 
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processingName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final component13()Ljava/lang/String;
+    .locals 1
+
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->userAccountId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final component13()Ljava/lang/Boolean;
+.method public final component14()Ljava/lang/Boolean;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation:Ljava/lang/Boolean;
@@ -765,7 +800,7 @@
     return-object v0
 .end method
 
-.method public final component14()Ljava/lang/String;
+.method public final component15()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->senderAccountId:Ljava/lang/String;
@@ -773,7 +808,7 @@
     return-object v0
 .end method
 
-.method public final component15()Ljava/lang/String;
+.method public final component16()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->receiverAccountId:Ljava/lang/String;
@@ -781,7 +816,7 @@
     return-object v0
 .end method
 
-.method public final component16()Ljava/lang/String;
+.method public final component17()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txFromCryptoAddress:Ljava/lang/String;
@@ -789,7 +824,7 @@
     return-object v0
 .end method
 
-.method public final component17()Ljava/lang/String;
+.method public final component18()Ljava/lang/String;
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txHash:Ljava/lang/String;
@@ -797,18 +832,10 @@
     return-object v0
 .end method
 
-.method public final component18()Ljava/lang/String;
-    .locals 1
-
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public final component19()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -824,7 +851,7 @@
 .method public final component20()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -832,7 +859,7 @@
 .method public final component21()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -840,7 +867,7 @@
 .method public final component22()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -848,15 +875,15 @@
 .method public final component23()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public final component24()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+.method public final component24()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -864,15 +891,15 @@
 .method public final component25()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-object v0
 .end method
 
-.method public final component26()Ljava/lang/String;
+.method public final component26()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-object v0
 .end method
@@ -880,7 +907,7 @@
 .method public final component27()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -888,7 +915,7 @@
 .method public final component28()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -896,7 +923,7 @@
 .method public final component29()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->payloadMessage:Ljava/lang/String;
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -905,6 +932,14 @@
     .locals 1
 
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->type:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public final component30()Ljava/lang/String;
+    .locals 1
+
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->payloadMessage:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -957,8 +992,8 @@
     return-object v0
 .end method
 
-.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;
-    .locals 32
+.method public final copy(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;
+    .locals 33
 
     move-object/from16 v1, p1
 
@@ -1018,9 +1053,11 @@
 
     move-object/from16 v29, p29
 
+    move-object/from16 v30, p30
+
     const-string v0, "id"
 
-    move-object/from16 v30, v1
+    move-object/from16 v31, v1
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1084,15 +1121,21 @@
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-instance v31, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;
+    const-string v0, "processingName"
 
-    move-object/from16 v0, v31
+    move-object/from16 v1, p12
 
-    move-object/from16 v1, v30
+    invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-direct/range {v0 .. v29}, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    new-instance v32, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;
 
-    return-object v31
+    move-object/from16 v0, v32
+
+    move-object/from16 v1, v31
+
+    invoke-direct/range {v0 .. v30}, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v32
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -1259,9 +1302,9 @@
     return v2
 
     :cond_c
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->userAccountId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processingName:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->userAccountId:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processingName:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1272,9 +1315,9 @@
     return v2
 
     :cond_d
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation:Ljava/lang/Boolean;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->userAccountId:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation:Ljava/lang/Boolean;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->userAccountId:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1285,9 +1328,9 @@
     return v2
 
     :cond_e
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->senderAccountId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation:Ljava/lang/Boolean;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->senderAccountId:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation:Ljava/lang/Boolean;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1298,9 +1341,9 @@
     return v2
 
     :cond_f
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->receiverAccountId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->senderAccountId:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->receiverAccountId:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->senderAccountId:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1311,9 +1354,9 @@
     return v2
 
     :cond_10
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txFromCryptoAddress:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->receiverAccountId:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txFromCryptoAddress:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->receiverAccountId:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1324,9 +1367,9 @@
     return v2
 
     :cond_11
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txHash:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txFromCryptoAddress:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txHash:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txFromCryptoAddress:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1337,9 +1380,9 @@
     return v2
 
     :cond_12
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txHash:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txHash:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1350,9 +1393,9 @@
     return v2
 
     :cond_13
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1363,9 +1406,9 @@
     return v2
 
     :cond_14
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1376,9 +1419,9 @@
     return v2
 
     :cond_15
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1389,9 +1432,9 @@
     return v2
 
     :cond_16
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1402,9 +1445,9 @@
     return v2
 
     :cond_17
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1415,9 +1458,9 @@
     return v2
 
     :cond_18
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1428,9 +1471,9 @@
     return v2
 
     :cond_19
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1441,9 +1484,9 @@
     return v2
 
     :cond_1a
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1454,9 +1497,9 @@
     return v2
 
     :cond_1b
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1467,9 +1510,9 @@
     return v2
 
     :cond_1c
-    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -1480,6 +1523,19 @@
     return v2
 
     :cond_1d
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
+
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
+
+    invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1e
+
+    return v2
+
+    :cond_1e
     iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->payloadMessage:Ljava/lang/String;
 
     iget-object p1, p1, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->payloadMessage:Ljava/lang/String;
@@ -1488,11 +1544,11 @@
 
     move-result p1
 
-    if-nez p1, :cond_1e
+    if-nez p1, :cond_1f
 
     return v2
 
-    :cond_1e
+    :cond_1f
     return v0
 .end method
 
@@ -1508,7 +1564,7 @@
 .method public final getAmountToSpent()Ljava/lang/String;
     .locals 1
 
-    .line 37
+    .line 38
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->amountToSpent:Ljava/lang/String;
 
     return-object v0
@@ -1562,7 +1618,7 @@
 .method public final getInputAmount()Ljava/lang/String;
     .locals 1
 
-    .line 44
+    .line 45
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputAmount:Ljava/lang/String;
 
     return-object v0
@@ -1571,7 +1627,7 @@
 .method public final getInputToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
     .locals 1
 
-    .line 41
+    .line 42
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->inputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-object v0
@@ -1580,7 +1636,7 @@
 .method public final getLogicalTime()Ljava/lang/String;
     .locals 1
 
-    .line 47
+    .line 48
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->logicalTime:Ljava/lang/String;
 
     return-object v0
@@ -1589,7 +1645,7 @@
 .method public final getNetworkType()Ljava/lang/String;
     .locals 1
 
-    .line 31
+    .line 32
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->networkType:Ljava/lang/String;
 
     return-object v0
@@ -1598,7 +1654,7 @@
 .method public final getOutputAmount()Ljava/lang/String;
     .locals 1
 
-    .line 43
+    .line 44
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputAmount:Ljava/lang/String;
 
     return-object v0
@@ -1607,7 +1663,7 @@
 .method public final getOutputToken()Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
     .locals 1
 
-    .line 42
+    .line 43
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->outputToken:Lcom/iMe/storage/data/network/model/response/wallet/TokenDetailedResponse;
 
     return-object v0
@@ -1616,7 +1672,7 @@
 .method public final getPayloadMessage()Ljava/lang/String;
     .locals 1
 
-    .line 48
+    .line 49
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->payloadMessage:Ljava/lang/String;
 
     return-object v0
@@ -1631,10 +1687,19 @@
     return-object v0
 .end method
 
+.method public final getProcessingName()Ljava/lang/String;
+    .locals 1
+
+    .line 19
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processingName:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public final getReceiverAccountId()Ljava/lang/String;
     .locals 1
 
-    .line 26
+    .line 27
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->receiverAccountId:Ljava/lang/String;
 
     return-object v0
@@ -1643,7 +1708,7 @@
 .method public final getSenderAccountId()Ljava/lang/String;
     .locals 1
 
-    .line 25
+    .line 26
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->senderAccountId:Ljava/lang/String;
 
     return-object v0
@@ -1652,7 +1717,7 @@
 .method public final getSimplexOrderId()Ljava/lang/String;
     .locals 1
 
-    .line 35
+    .line 36
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->simplexOrderId:Ljava/lang/String;
 
     return-object v0
@@ -1661,7 +1726,7 @@
 .method public final getSpentCurrency()Ljava/lang/String;
     .locals 1
 
-    .line 36
+    .line 37
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->spentCurrency:Ljava/lang/String;
 
     return-object v0
@@ -1688,7 +1753,7 @@
 .method public final getTradeType()Ljava/lang/String;
     .locals 1
 
-    .line 40
+    .line 41
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->tradeType:Ljava/lang/String;
 
     return-object v0
@@ -1697,7 +1762,7 @@
 .method public final getTxFromCryptoAddress()Ljava/lang/String;
     .locals 1
 
-    .line 29
+    .line 30
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txFromCryptoAddress:Ljava/lang/String;
 
     return-object v0
@@ -1706,7 +1771,7 @@
 .method public final getTxHash()Ljava/lang/String;
     .locals 1
 
-    .line 30
+    .line 31
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txHash:Ljava/lang/String;
 
     return-object v0
@@ -1715,7 +1780,7 @@
 .method public final getTxToCryptoAddress()Ljava/lang/String;
     .locals 1
 
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->txToCryptoAddress:Ljava/lang/String;
 
     return-object v0
@@ -1742,7 +1807,7 @@
 .method public final getUserAccountId()Ljava/lang/String;
     .locals 1
 
-    .line 21
+    .line 22
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->userAccountId:Ljava/lang/String;
 
     return-object v0
@@ -1850,6 +1915,16 @@
     mul-int/lit8 v0, v0, 0x1f
 
     iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processing:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processingName:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
@@ -2187,7 +2262,7 @@
 .method public final isDonation()Ljava/lang/Boolean;
     .locals 1
 
-    .line 24
+    .line 25
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->isDonation:Ljava/lang/Boolean;
 
     return-object v0
@@ -2285,6 +2360,14 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processing:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, ", processingName="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/wallet/WalletTransactionsResponse$WalletTransactionResponse;->processingName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

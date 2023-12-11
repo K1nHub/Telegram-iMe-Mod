@@ -75,7 +75,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 188
+    .line 194
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Error;
 
     if-nez v0, :cond_1
@@ -106,7 +106,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 188
+    .line 194
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$1;->invoke(Lcom/iMe/storage/domain/model/Result;)Ljava/lang/Boolean;

@@ -18,34 +18,34 @@ public final class OldMcBlocksInfoTlbCodec implements TlbCodec<OldMcBlocksInfo> 
 
     @Override // org.ton.tlb.TlbLoader
     public /* bridge */ /* synthetic */ Object loadTlb(Cell cell) {
-        return OldMcBlocksInfo.m5131boximpl(m5144loadTlba38pvyo(cell));
+        return OldMcBlocksInfo.m5113boximpl(m5126loadTlba38pvyo(cell));
     }
 
     @Override // org.ton.tlb.TlbLoader
     public /* bridge */ /* synthetic */ Object loadTlb(CellSlice cellSlice) {
-        return OldMcBlocksInfo.m5131boximpl(m5145loadTlba38pvyo(cellSlice));
+        return OldMcBlocksInfo.m5113boximpl(m5127loadTlba38pvyo(cellSlice));
     }
 
     /* renamed from: loadTlb-a38pvyo  reason: not valid java name */
-    public HashmapAugE<KeyExtBlkRef, KeyMaxLt> m5144loadTlba38pvyo(Cell cell) {
-        return ((OldMcBlocksInfo) TlbCodec.DefaultImpls.loadTlb(this, cell)).m5138unboximpl();
+    public HashmapAugE<KeyExtBlkRef, KeyMaxLt> m5126loadTlba38pvyo(Cell cell) {
+        return ((OldMcBlocksInfo) TlbCodec.DefaultImpls.loadTlb(this, cell)).m5120unboximpl();
     }
 
     @Override // org.ton.tlb.TlbStorer
     public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
-        m5146storeTlbt0Hynxs(cellBuilder, ((OldMcBlocksInfo) obj).m5138unboximpl());
+        m5128storeTlbt0Hynxs(cellBuilder, ((OldMcBlocksInfo) obj).m5120unboximpl());
     }
 
     /* renamed from: storeTlb-t0Hynxs  reason: not valid java name */
-    public void m5146storeTlbt0Hynxs(CellBuilder cellBuilder, HashmapAugE<KeyExtBlkRef, KeyMaxLt> value) {
+    public void m5128storeTlbt0Hynxs(CellBuilder cellBuilder, HashmapAugE<KeyExtBlkRef, KeyMaxLt> value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         codec.storeTlb(cellBuilder, value);
     }
 
     /* renamed from: loadTlb-a38pvyo  reason: not valid java name */
-    public HashmapAugE<KeyExtBlkRef, KeyMaxLt> m5145loadTlba38pvyo(CellSlice cellSlice) {
+    public HashmapAugE<KeyExtBlkRef, KeyMaxLt> m5127loadTlba38pvyo(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return OldMcBlocksInfo.m5132constructorimpl(codec.loadTlb(cellSlice));
+        return OldMcBlocksInfo.m5114constructorimpl(codec.loadTlb(cellSlice));
     }
 }

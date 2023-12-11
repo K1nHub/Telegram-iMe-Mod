@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/blockchains/BTCBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v0, p1}, Lcom/iMe/storage/data/manager/crypto/blockchains/BTCBlockchainCryptoWalletManagerImpl;->$r8$lambda$JhqznIQY4g2D3g5ja9HhEgstBu0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {v0, p1}, Lcom/iMe/storage/data/manager/crypto/blockchains/BTCBlockchainCryptoWalletManagerImpl;->$r8$lambda$SWe7Wr6MA_mMtomaP6KUCWsav_Y(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
 
     move-result-object p1
 

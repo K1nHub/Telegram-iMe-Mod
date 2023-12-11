@@ -198,18 +198,18 @@ public abstract class KDeclarationContainerImpl implements ClassBasedDeclaration
                 }
                 ((List) obj3).add(obj2);
             }
-            final C3263x62283bb c3263x62283bb = new Function2<DescriptorVisibility, DescriptorVisibility, Integer>() { // from class: kotlin.reflect.jvm.internal.KDeclarationContainerImpl$findPropertyDescriptor$mostVisibleProperties$2
+            final C3260x62283bb c3260x62283bb = new Function2<DescriptorVisibility, DescriptorVisibility, Integer>() { // from class: kotlin.reflect.jvm.internal.KDeclarationContainerImpl$findPropertyDescriptor$mostVisibleProperties$2
                 @Override // kotlin.jvm.functions.Function2
                 public final Integer invoke(DescriptorVisibility descriptorVisibility, DescriptorVisibility descriptorVisibility2) {
                     Integer compare = DescriptorVisibilities.compare(descriptorVisibility, descriptorVisibility2);
                     return Integer.valueOf(compare == null ? 0 : compare.intValue());
                 }
             };
-            sortedMap = MapsKt__MapsJVMKt.toSortedMap(linkedHashMap, new Comparator(c3263x62283bb) { // from class: kotlin.reflect.jvm.internal.KDeclarationContainerImpl$$Lambda$0
+            sortedMap = MapsKt__MapsJVMKt.toSortedMap(linkedHashMap, new Comparator(c3260x62283bb) { // from class: kotlin.reflect.jvm.internal.KDeclarationContainerImpl$$Lambda$0
                 private final Function2 arg$0;
 
                 {
-                    this.arg$0 = c3263x62283bb;
+                    this.arg$0 = c3260x62283bb;
                 }
 
                 @Override // java.util.Comparator

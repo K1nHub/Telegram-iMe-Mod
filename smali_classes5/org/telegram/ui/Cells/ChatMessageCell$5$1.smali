@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell$5;)V
     .locals 0
 
-    .line 8618
+    .line 8794
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$5$1;->this$1:Lorg/telegram/ui/Cells/ChatMessageCell$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public invalidate()V
     .locals 1
 
-    .line 8626
+    .line 8802
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$5$1;->this$1:Lorg/telegram/ui/Cells/ChatMessageCell$5;
 
     iget-object v0, v0, Lorg/telegram/ui/Cells/ChatMessageCell$5;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;

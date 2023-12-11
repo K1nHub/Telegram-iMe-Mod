@@ -28,7 +28,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -232,7 +232,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
                 SelfStoryViewsPage.this.lambda$new$0(storyViewer, view, i);
             }
         });
-        this.recyclerListView.setOnItemLongClickListener(new C71094(storyViewer));
+        this.recyclerListView.setOnItemLongClickListener(new C71074(storyViewer));
         this.listAdapter.updateRows();
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.topViewsContainer = frameLayout;
@@ -248,9 +248,9 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
         frameLayout.addView(view2, LayoutHelper.createFrame(-1, 10, 0, 0, this.TOP_PADDING - 17, 0, 0));
         frameLayout.addView(this.headerView);
         frameLayout.addView(textView);
-        C71115 c71115 = new C71115(getContext(), true, 13.0f, this.resourcesProvider);
-        this.searchField = c71115;
-        c71115.setHint(LocaleController.getString("Search", C3634R.string.Search));
+        C71095 c71095 = new C71095(getContext(), true, 13.0f, this.resourcesProvider);
+        this.searchField = c71095;
+        c71095.setHint(LocaleController.getString("Search", C3632R.string.Search));
         frameLayout.addView(this.searchField, LayoutHelper.createFrame(-1, -1, 51, 0, 36, 0, 0));
         addView(frameLayout);
     }
@@ -267,10 +267,10 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.SelfStoryViewsPage$4 */
     /* loaded from: classes6.dex */
-    public class C71094 implements RecyclerListView.OnItemLongClickListener {
+    public class C71074 implements RecyclerListView.OnItemLongClickListener {
         final /* synthetic */ StoryViewer val$storyViewer;
 
-        C71094(StoryViewer storyViewer) {
+        C71074(StoryViewer storyViewer) {
             this.val$storyViewer = storyViewer;
         }
 
@@ -278,7 +278,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
         public boolean onItemClick(View view, int i) {
             final MessagesController messagesController;
             final TLRPC$User user;
-            final C71094 c71094;
+            final C71074 c71074;
             if (view instanceof ReactedUserHolderView) {
                 final ReactedUserHolderView reactedUserHolderView = (ReactedUserHolderView) view;
                 StoryViewer storyViewer = this.val$storyViewer;
@@ -299,38 +299,38 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
                     str = str.substring(0, indexOf);
                 }
                 final String str2 = str;
-                ItemOptions cutTextInFancyHalf = ItemOptions.makeOptions(this.val$storyViewer.containerView, SelfStoryViewsPage.this.resourcesProvider, view).setGravity(3).ignoreX().setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_dialogBackground, SelfStoryViewsPage.this.resourcesProvider))).setDimAlpha(133).addIf((!isStoryShownToUser || isBlocked || z) ? false : true, C3634R.C3636drawable.msg_stories_myhide, LocaleController.formatString(C3634R.string.StoryHideFrom, str2), new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda2
+                ItemOptions cutTextInFancyHalf = ItemOptions.makeOptions(this.val$storyViewer.containerView, SelfStoryViewsPage.this.resourcesProvider, view).setGravity(3).ignoreX().setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_dialogBackground, SelfStoryViewsPage.this.resourcesProvider))).setDimAlpha(133).addIf((!isStoryShownToUser || isBlocked || z) ? false : true, C3632R.C3634drawable.msg_stories_myhide, LocaleController.formatString(C3632R.string.StoryHideFrom, str2), new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SelfStoryViewsPage.C71094.this.lambda$onItemClick$0(messagesController, user, str2, reactedUserHolderView, tL_stories$TL_storyView);
+                        SelfStoryViewsPage.C71074.this.lambda$onItemClick$0(messagesController, user, str2, reactedUserHolderView, tL_stories$TL_storyView);
                     }
-                }).makeMultiline(false).cutTextInFancyHalf().addIf(isBlocked && !z, C3634R.C3636drawable.msg_menu_stories, LocaleController.formatString(C3634R.string.StoryShowBackTo, str2), new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda1
+                }).makeMultiline(false).cutTextInFancyHalf().addIf(isBlocked && !z, C3632R.C3634drawable.msg_menu_stories, LocaleController.formatString(C3632R.string.StoryShowBackTo, str2), new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SelfStoryViewsPage.C71094.this.lambda$onItemClick$1(messagesController, user, str2, reactedUserHolderView, tL_stories$TL_storyView);
+                        SelfStoryViewsPage.C71074.this.lambda$onItemClick$1(messagesController, user, str2, reactedUserHolderView, tL_stories$TL_storyView);
                     }
                 }).makeMultiline(false).cutTextInFancyHalf();
                 boolean z3 = (z2 || z) ? false : true;
-                int i2 = C3634R.C3636drawable.msg_user_remove;
-                final ItemOptions addIf = cutTextInFancyHalf.addIf(z3, i2, (CharSequence) LocaleController.getString(C3634R.string.BlockUser), true, new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda4
+                int i2 = C3632R.C3634drawable.msg_user_remove;
+                final ItemOptions addIf = cutTextInFancyHalf.addIf(z3, i2, (CharSequence) LocaleController.getString(C3632R.string.BlockUser), true, new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SelfStoryViewsPage.C71094.this.lambda$onItemClick$2(messagesController, user, reactedUserHolderView, tL_stories$TL_storyView);
+                        SelfStoryViewsPage.C71074.this.lambda$onItemClick$2(messagesController, user, reactedUserHolderView, tL_stories$TL_storyView);
                     }
-                }).addIf(!z2 && z, C3634R.C3636drawable.msg_block, LocaleController.getString(C3634R.string.Unblock), new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda3
+                }).addIf(!z2 && z, C3632R.C3634drawable.msg_block, LocaleController.getString(C3632R.string.Unblock), new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SelfStoryViewsPage.C71094.this.lambda$onItemClick$3(messagesController, user, reactedUserHolderView, tL_stories$TL_storyView);
+                        SelfStoryViewsPage.C71074.this.lambda$onItemClick$3(messagesController, user, reactedUserHolderView, tL_stories$TL_storyView);
                     }
-                }).addIf(z2, i2, (CharSequence) LocaleController.getString(C3634R.string.StoryDeleteContact), true, new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda5
+                }).addIf(z2, i2, (CharSequence) LocaleController.getString(C3632R.string.StoryDeleteContact), true, new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SelfStoryViewsPage.C71094.this.lambda$onItemClick$4(user, str2, reactedUserHolderView, tL_stories$TL_storyView);
+                        SelfStoryViewsPage.C71074.this.lambda$onItemClick$4(user, str2, reactedUserHolderView, tL_stories$TL_storyView);
                     }
                 });
                 TLRPC$Reaction tLRPC$Reaction = tL_stories$TL_storyView.reaction;
                 if (tLRPC$Reaction instanceof TLRPC$TL_reactionCustomEmoji) {
-                    c71094 = this;
+                    c71074 = this;
                     TLRPC$InputStickerSet findStickerSet = AnimatedEmojiDrawable.getDocumentFetcher(SelfStoryViewsPage.this.currentAccount).findStickerSet(((TLRPC$TL_reactionCustomEmoji) tLRPC$Reaction).document_id);
                     if (findStickerSet != null) {
                         addIf.addGap();
@@ -341,13 +341,13 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
                         messageContainsEmojiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$4$$ExternalSyntheticLambda0
                             @Override // android.view.View.OnClickListener
                             public final void onClick(View view2) {
-                                SelfStoryViewsPage.C71094.this.lambda$onItemClick$5(arrayList, addIf, view2);
+                                SelfStoryViewsPage.C71074.this.lambda$onItemClick$5(arrayList, addIf, view2);
                             }
                         });
                         addIf.addView(messageContainsEmojiButton);
                     }
                 } else {
-                    c71094 = this;
+                    c71074 = this;
                 }
                 addIf.show();
                 try {
@@ -368,7 +368,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
         public /* synthetic */ void lambda$onItemClick$0(MessagesController messagesController, TLRPC$User tLRPC$User, String str, ReactedUserHolderView reactedUserHolderView, TL_stories$TL_storyView tL_stories$TL_storyView) {
             messagesController.getStoriesController().updateBlockUser(tLRPC$User.f1749id, true);
             SelfStoryViewsPage selfStoryViewsPage = SelfStoryViewsPage.this;
-            BulletinFactory.m63of(selfStoryViewsPage, selfStoryViewsPage.resourcesProvider).createSimpleBulletin(C3634R.raw.ic_ban, LocaleController.formatString(C3634R.string.StoryHidFromToast, str)).show();
+            BulletinFactory.m63of(selfStoryViewsPage, selfStoryViewsPage.resourcesProvider).createSimpleBulletin(C3632R.raw.ic_ban, LocaleController.formatString(C3632R.string.StoryHidFromToast, str)).show();
             reactedUserHolderView.animateAlpha(SelfStoryViewsPage.this.isStoryShownToUser(tL_stories$TL_storyView) ? 1.0f : 0.5f, true);
         }
 
@@ -376,7 +376,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
         public /* synthetic */ void lambda$onItemClick$1(MessagesController messagesController, TLRPC$User tLRPC$User, String str, ReactedUserHolderView reactedUserHolderView, TL_stories$TL_storyView tL_stories$TL_storyView) {
             messagesController.getStoriesController().updateBlockUser(tLRPC$User.f1749id, false);
             SelfStoryViewsPage selfStoryViewsPage = SelfStoryViewsPage.this;
-            BulletinFactory.m63of(selfStoryViewsPage, selfStoryViewsPage.resourcesProvider).createSimpleBulletin(C3634R.raw.contact_check, LocaleController.formatString(C3634R.string.StoryShownBackToToast, str)).show();
+            BulletinFactory.m63of(selfStoryViewsPage, selfStoryViewsPage.resourcesProvider).createSimpleBulletin(C3632R.raw.contact_check, LocaleController.formatString(C3632R.string.StoryShownBackToToast, str)).show();
             reactedUserHolderView.animateAlpha(SelfStoryViewsPage.this.isStoryShownToUser(tL_stories$TL_storyView) ? 1.0f : 0.5f, true);
         }
 
@@ -403,7 +403,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
             arrayList.add(tLRPC$User);
             ContactsController.getInstance(SelfStoryViewsPage.this.currentAccount).deleteContact(arrayList, false);
             SelfStoryViewsPage selfStoryViewsPage = SelfStoryViewsPage.this;
-            BulletinFactory.m63of(selfStoryViewsPage, selfStoryViewsPage.resourcesProvider).createSimpleBulletin(C3634R.raw.ic_ban, LocaleController.formatString(C3634R.string.DeletedFromYourContacts, str)).show();
+            BulletinFactory.m63of(selfStoryViewsPage, selfStoryViewsPage.resourcesProvider).createSimpleBulletin(C3632R.raw.ic_ban, LocaleController.formatString(C3632R.string.DeletedFromYourContacts, str)).show();
             reactedUserHolderView.animateAlpha(SelfStoryViewsPage.this.isStoryShownToUser(tL_stories$TL_storyView) ? 1.0f : 0.5f, true);
         }
 
@@ -432,10 +432,10 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.SelfStoryViewsPage$5 */
     /* loaded from: classes6.dex */
-    public class C71115 extends SearchField {
+    public class C71095 extends SearchField {
         Runnable runnable;
 
-        C71115(Context context, boolean z, float f, Theme.ResourcesProvider resourcesProvider) {
+        C71095(Context context, boolean z, float f, Theme.ResourcesProvider resourcesProvider) {
             super(context, z, f, resourcesProvider);
         }
 
@@ -448,7 +448,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
             this.runnable = new Runnable() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$5$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelfStoryViewsPage.C71115.this.lambda$onTextChange$0(str);
+                    SelfStoryViewsPage.C71095.this.lambda$onTextChange$0(str);
                 }
             };
             if (!TextUtils.isEmpty(str)) {
@@ -606,7 +606,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
                         this.showSearch = false;
                         this.showReactionsSort = false;
                         this.showContactsFilter = false;
-                        this.titleView.setText(LocaleController.getString("Viewers", C3634R.string.Viewers));
+                        this.titleView.setText(LocaleController.getString("Viewers", C3632R.string.Viewers));
                         this.searchField.setVisibility(8);
                         this.headerView.setVisibility(8);
                         this.TOP_PADDING = 46;
@@ -627,7 +627,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
                                     this.showSearch = false;
                                     this.showReactionsSort = false;
                                     this.showContactsFilter = false;
-                                    this.titleView.setText(LocaleController.getString("Viewers", C3634R.string.Viewers));
+                                    this.titleView.setText(LocaleController.getString("Viewers", C3632R.string.Viewers));
                                 }
                             }
                             TL_stories$StoryViews tL_stories$StoryViews4 = tL_stories$StoryItem.views;
@@ -638,7 +638,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
                                 z = false;
                             }
                             this.showContactsFilter = z;
-                            this.titleView.setText(LocaleController.getString("Viewers", C3634R.string.Viewers));
+                            this.titleView.setText(LocaleController.getString("Viewers", C3632R.string.Viewers));
                         }
                         this.searchField.setVisibility(this.showSearch ? 0 : 8);
                         this.TOP_PADDING = this.showSearch ? 96 : 46;
@@ -648,13 +648,13 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
             this.showSearch = false;
             this.showReactionsSort = false;
             this.showContactsFilter = false;
-            this.titleView.setText(LocaleController.getString("Viewers", C3634R.string.Viewers));
+            this.titleView.setText(LocaleController.getString("Viewers", C3632R.string.Viewers));
             this.searchField.setVisibility(8);
             this.headerView.setVisibility(8);
             this.TOP_PADDING = 46;
         } else {
             this.TOP_PADDING = 46;
-            this.titleView.setText(LocaleController.getString("UploadingStory", C3634R.string.UploadingStory));
+            this.titleView.setText(LocaleController.getString("UploadingStory", C3632R.string.UploadingStory));
             this.searchField.setVisibility(8);
             this.headerView.setVisibility(8);
         }
@@ -1276,7 +1276,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
             linearLayout.setOrientation(0);
             TextView textView = new TextView(context);
             this.allViewersView = textView;
-            textView.setText(LocaleController.getString("AllViewers", C3634R.string.AllViewers));
+            textView.setText(LocaleController.getString("AllViewers", C3632R.string.AllViewers));
             TextView textView2 = this.allViewersView;
             int i2 = Theme.key_dialogTextBlack;
             textView2.setTextColor(Theme.getColor(i2, SelfStoryViewsPage.this.resourcesProvider));
@@ -1285,7 +1285,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
             this.allViewersView.setPadding(AndroidUtilities.m104dp(12), AndroidUtilities.m104dp(4), AndroidUtilities.m104dp(12), AndroidUtilities.m104dp(4));
             TextView textView3 = new TextView(context);
             this.contactsViewersView = textView3;
-            textView3.setText(LocaleController.getString("Contacts", C3634R.string.Contacts));
+            textView3.setText(LocaleController.getString("Contacts", C3632R.string.Contacts));
             this.contactsViewersView.setTextColor(Theme.getColor(i2, SelfStoryViewsPage.this.resourcesProvider));
             this.contactsViewersView.setTextSize(1, 14.0f);
             this.contactsViewersView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
@@ -1302,14 +1302,14 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
             this.replacableDrawable = replaceableIconDrawable;
             replaceableIconDrawable.exactlyBounds = true;
             this.lastSortType = true;
-            replaceableIconDrawable.setIcon(C3634R.C3636drawable.menu_views_reactions3, false);
+            replaceableIconDrawable.setIcon(C3632R.C3634drawable.menu_views_reactions3, false);
             ImageView imageView = new ImageView(getContext());
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setImageDrawable(this.replacableDrawable);
             imageView.setPadding(AndroidUtilities.m104dp(1), AndroidUtilities.m104dp(1), AndroidUtilities.m104dp(1), AndroidUtilities.m104dp(1));
             linearLayout2.addView(imageView, LayoutHelper.createLinear(26, 26));
             ImageView imageView2 = new ImageView(getContext());
-            imageView2.setImageResource(C3634R.C3636drawable.arrow_more);
+            imageView2.setImageResource(C3632R.C3634drawable.arrow_more);
             linearLayout2.addView(imageView2, LayoutHelper.createLinear(16, 26));
             addView(linearLayout, LayoutHelper.createFrame(-2, -2));
             addView(linearLayout2, LayoutHelper.createFrame(-2, -2, 5, 13, 6, 13, 6));
@@ -1359,42 +1359,42 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Stories.SelfStoryViewsPage$HeaderView$1 */
         /* loaded from: classes6.dex */
-        public class C71131 extends CustomPopupMenu {
+        public class C71111 extends CustomPopupMenu {
             @Override // org.telegram.p043ui.Components.CustomPopupMenu
             protected void onDismissed() {
             }
 
-            C71131(Context context, Theme.ResourcesProvider resourcesProvider, boolean z) {
+            C71111(Context context, Theme.ResourcesProvider resourcesProvider, boolean z) {
                 super(context, resourcesProvider, z);
             }
 
             @Override // org.telegram.p043ui.Components.CustomPopupMenu
             protected void onCreate(ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout) {
                 actionBarPopupWindowLayout.setBackgroundColor(ColorUtils.blendARGB(-16777216, -1, 0.18f));
-                ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, SelfStoryViewsPage.this.state.sortByReactions ? C3634R.C3636drawable.menu_views_reactions2 : C3634R.C3636drawable.menu_views_reactions, LocaleController.getString("SortByReactions", C3634R.string.SortByReactions), false, SelfStoryViewsPage.this.resourcesProvider);
+                ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, SelfStoryViewsPage.this.state.sortByReactions ? C3632R.C3634drawable.menu_views_reactions2 : C3632R.C3634drawable.menu_views_reactions, LocaleController.getString("SortByReactions", C3632R.string.SortByReactions), false, SelfStoryViewsPage.this.resourcesProvider);
                 if (!SelfStoryViewsPage.this.state.sortByReactions) {
                     addItem.setAlpha(0.5f);
                 }
                 addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$HeaderView$1$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        SelfStoryViewsPage.HeaderView.C71131.this.lambda$onCreate$0(view);
+                        SelfStoryViewsPage.HeaderView.C71111.this.lambda$onCreate$0(view);
                     }
                 });
-                ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, !SelfStoryViewsPage.this.state.sortByReactions ? C3634R.C3636drawable.menu_views_recent2 : C3634R.C3636drawable.menu_views_recent, LocaleController.getString("SortByTime", C3634R.string.SortByTime), false, SelfStoryViewsPage.this.resourcesProvider);
+                ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, !SelfStoryViewsPage.this.state.sortByReactions ? C3632R.C3634drawable.menu_views_recent2 : C3632R.C3634drawable.menu_views_recent, LocaleController.getString("SortByTime", C3632R.string.SortByTime), false, SelfStoryViewsPage.this.resourcesProvider);
                 if (SelfStoryViewsPage.this.state.sortByReactions) {
                     addItem2.setAlpha(0.5f);
                 }
                 addItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Stories.SelfStoryViewsPage$HeaderView$1$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        SelfStoryViewsPage.HeaderView.C71131.this.lambda$onCreate$1(view);
+                        SelfStoryViewsPage.HeaderView.C71111.this.lambda$onCreate$1(view);
                     }
                 });
                 ActionBarPopupWindow.GapView gapView = new ActionBarPopupWindow.GapView(HeaderView.this.getContext(), SelfStoryViewsPage.this.resourcesProvider, Theme.key_actionBarDefaultSubmenuSeparator);
-                gapView.setTag(C3634R.C3637id.fit_width_tag, 1);
+                gapView.setTag(C3632R.C3635id.fit_width_tag, 1);
                 actionBarPopupWindowLayout.addView((View) gapView, LayoutHelper.createLinear(-1, 8));
-                ActionBarMenuItem.addText(actionBarPopupWindowLayout, LocaleController.getString("StoryViewsSortDescription", C3634R.string.StoryViewsSortDescription), SelfStoryViewsPage.this.resourcesProvider);
+                ActionBarMenuItem.addText(actionBarPopupWindowLayout, LocaleController.getString("StoryViewsSortDescription", C3632R.string.StoryViewsSortDescription), SelfStoryViewsPage.this.resourcesProvider);
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -1444,7 +1444,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$2(View view) {
-            SelfStoryViewsPage.this.popupMenu = new C71131(getContext(), SelfStoryViewsPage.this.resourcesProvider, false);
+            SelfStoryViewsPage.this.popupMenu = new C71111(getContext(), SelfStoryViewsPage.this.resourcesProvider, false);
             CustomPopupMenu customPopupMenu = SelfStoryViewsPage.this.popupMenu;
             LinearLayout linearLayout = this.buttonContainer;
             customPopupMenu.show(linearLayout, 0, (-linearLayout.getMeasuredHeight()) - AndroidUtilities.m104dp(8));
@@ -1554,7 +1554,7 @@ public class SelfStoryViewsPage extends FrameLayout implements NotificationCente
         boolean z3 = this.state.sortByReactions;
         if (z2 != z3) {
             headerView.lastSortType = z3;
-            headerView.replacableDrawable.setIcon(z3 ? C3634R.C3636drawable.menu_views_reactions3 : C3634R.C3636drawable.menu_views_recent3, z);
+            headerView.replacableDrawable.setIcon(z3 ? C3632R.C3634drawable.menu_views_reactions3 : C3632R.C3634drawable.menu_views_recent3, z);
         }
     }
 

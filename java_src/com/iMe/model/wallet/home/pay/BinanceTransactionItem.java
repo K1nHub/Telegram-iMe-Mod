@@ -13,7 +13,7 @@ import com.iMe.utils.formatter.BalanceFormatter;
 import com.iMe.utils.formatter.DateFormatter;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* compiled from: BinanceTransactionItem.kt */
 /* loaded from: classes3.dex */
 public final class BinanceTransactionItem extends NoChildNode {
@@ -65,7 +65,7 @@ public final class BinanceTransactionItem extends NoChildNode {
             return BinancePayExtKt.icon(binanceTransaction.getDirection());
         }
         if (binanceTransaction instanceof BinanceTransaction.Convert) {
-            return C3634R.C3636drawable.fork_ic_transaction_binance_convert;
+            return C3632R.C3634drawable.fork_ic_transaction_binance_convert;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -79,7 +79,7 @@ public final class BinanceTransactionItem extends NoChildNode {
         } else if (!(binanceTransaction instanceof BinanceTransaction.Convert)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3634R.string.binance_convert_toolbar_title;
+            i = C3632R.string.binance_convert_toolbar_title;
         }
         return resourceManager.getString(i);
     }
@@ -111,7 +111,7 @@ public final class BinanceTransactionItem extends NoChildNode {
         if (binanceTransaction instanceof BinanceTransaction.Pay ? true : binanceTransaction instanceof BinanceTransaction.Unsupported) {
             return BalanceFormatter.format(Double.valueOf(this.transaction.getAmount()), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())) + ' ' + this.transaction.getAsset();
         } else if (binanceTransaction instanceof BinanceTransaction.Convert) {
-            int i = C3634R.string.wallet_transactions_type_binance_swap_value;
+            int i = C3632R.string.wallet_transactions_type_binance_swap_value;
             Double valueOf = Double.valueOf(((BinanceTransaction.Convert) binanceTransaction).getInputAmount());
             TokenDetailed.Companion companion = TokenDetailed.Companion;
             return resourceManager.getString(i, BalanceFormatter.format(valueOf, Integer.valueOf(companion.getBNB().getDecimals())), ((BinanceTransaction.Convert) this.transaction).getInputAssetShortName(), BalanceFormatter.format(Double.valueOf(((BinanceTransaction.Convert) this.transaction).getOutputAmount()), Integer.valueOf(companion.getBNB().getDecimals())), ((BinanceTransaction.Convert) this.transaction).getOutputAssetShortName());

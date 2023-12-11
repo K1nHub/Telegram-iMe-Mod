@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -40,7 +40,7 @@ public final class ReactionHelper {
         if (parentActivity == null) {
             return;
         }
-        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3634R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3634R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3634R.string.common_cancel), LocaleController.getInternalString(C3634R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
+        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3632R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3632R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3632R.string.common_cancel), LocaleController.getInternalString(C3632R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 ReactionHelper.showReactionActivationAlert$lambda$0(BaseFragment.this);

@@ -42,9 +42,9 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentStakingCalculatorProgrammesBinding;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* compiled from: StakingCalculatorProgrammesFragment.kt */
@@ -217,11 +217,11 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthBaseFra
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.staking_calculator_select_programme));
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.staking_calculator_select_programme));
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.staking.calculator.programmes.adapter.StakingCalculatorProgrammesFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     StakingCalculatorProgrammesFragment.this.finishFragment();
@@ -291,7 +291,7 @@ public final class StakingCalculatorProgrammesFragment extends WalletAuthBaseFra
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
-        if (view.getId() == C3634R.C3637id.image_info) {
+        if (view.getId() == C3632R.C3635id.image_info) {
             BaseNode baseNode = (BaseNode) this_with.getItem(i);
             if (baseNode instanceof StakingProgrammeItem) {
                 this$0.getPresenter().onStakingInfoClick((StakingProgrammeItem) baseNode);

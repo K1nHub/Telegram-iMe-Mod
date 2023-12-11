@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
 
-    .line 1273
+    .line 1274
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-direct {p0, p2, p3}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
@@ -44,7 +44,7 @@
 .method public get(Landroid/view/View;)Ljava/lang/Float;
     .locals 0
 
-    .line 1276
+    .line 1277
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iget p1, p1, Lorg/telegram/ui/Components/ChatActivityEnterView;->emojiButtonScale:F
@@ -59,7 +59,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1273
+    .line 1274
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->get(Landroid/view/View;)Ljava/lang/Float;
@@ -72,7 +72,7 @@
 .method public set(Landroid/view/View;Ljava/lang/Float;)V
     .locals 0
 
-    .line 1281
+    .line 1282
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
@@ -81,7 +81,7 @@
 
     iput p2, p1, Lorg/telegram/ui/Components/ChatActivityEnterView;->emojiButtonScale:F
 
-    .line 1282
+    .line 1283
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$10;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4100(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
@@ -92,7 +92,7 @@
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 1273
+    .line 1274
     check-cast p1, Landroid/view/View;
 
     check-cast p2, Ljava/lang/Float;

@@ -58,7 +58,7 @@ public final class RawSubstitution extends TypeSubstitution {
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeSubstitution
     /* renamed from: get */
-    public TypeProjectionImpl mo2056get(KotlinType key) {
+    public TypeProjectionImpl mo2058get(KotlinType key) {
         Intrinsics.checkNotNullParameter(key, "key");
         return new TypeProjectionImpl(eraseType$default(this, key, null, 2, null));
     }
@@ -71,19 +71,19 @@ public final class RawSubstitution extends TypeSubstitution {
     }
 
     private final KotlinType eraseType(KotlinType kotlinType, JavaTypeAttributes javaTypeAttributes) {
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        if (mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor) {
-            return eraseType(this.typeParameterUpperBoundEraser.getErasedUpperBound((TypeParameterDescriptor) mo2051getDeclarationDescriptor, javaTypeAttributes.markIsRaw(true)), javaTypeAttributes);
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        if (mo2053getDeclarationDescriptor instanceof TypeParameterDescriptor) {
+            return eraseType(this.typeParameterUpperBoundEraser.getErasedUpperBound((TypeParameterDescriptor) mo2053getDeclarationDescriptor, javaTypeAttributes.markIsRaw(true)), javaTypeAttributes);
         }
-        if (mo2051getDeclarationDescriptor instanceof ClassDescriptor) {
-            ClassifierDescriptor mo2051getDeclarationDescriptor2 = FlexibleTypesKt.upperIfFlexible(kotlinType).getConstructor().mo2051getDeclarationDescriptor();
-            if (!(mo2051getDeclarationDescriptor2 instanceof ClassDescriptor)) {
-                throw new IllegalStateException(("For some reason declaration for upper bound is not a class but \"" + mo2051getDeclarationDescriptor2 + "\" while for lower it's \"" + mo2051getDeclarationDescriptor + '\"').toString());
+        if (mo2053getDeclarationDescriptor instanceof ClassDescriptor) {
+            ClassifierDescriptor mo2053getDeclarationDescriptor2 = FlexibleTypesKt.upperIfFlexible(kotlinType).getConstructor().mo2053getDeclarationDescriptor();
+            if (!(mo2053getDeclarationDescriptor2 instanceof ClassDescriptor)) {
+                throw new IllegalStateException(("For some reason declaration for upper bound is not a class but \"" + mo2053getDeclarationDescriptor2 + "\" while for lower it's \"" + mo2053getDeclarationDescriptor + '\"').toString());
             }
-            Pair<SimpleType, Boolean> eraseInflexibleBasedOnClassDescriptor = eraseInflexibleBasedOnClassDescriptor(FlexibleTypesKt.lowerIfFlexible(kotlinType), (ClassDescriptor) mo2051getDeclarationDescriptor, lowerTypeAttr);
+            Pair<SimpleType, Boolean> eraseInflexibleBasedOnClassDescriptor = eraseInflexibleBasedOnClassDescriptor(FlexibleTypesKt.lowerIfFlexible(kotlinType), (ClassDescriptor) mo2053getDeclarationDescriptor, lowerTypeAttr);
             SimpleType component1 = eraseInflexibleBasedOnClassDescriptor.component1();
             boolean booleanValue = eraseInflexibleBasedOnClassDescriptor.component2().booleanValue();
-            Pair<SimpleType, Boolean> eraseInflexibleBasedOnClassDescriptor2 = eraseInflexibleBasedOnClassDescriptor(FlexibleTypesKt.upperIfFlexible(kotlinType), (ClassDescriptor) mo2051getDeclarationDescriptor2, upperTypeAttr);
+            Pair<SimpleType, Boolean> eraseInflexibleBasedOnClassDescriptor2 = eraseInflexibleBasedOnClassDescriptor(FlexibleTypesKt.upperIfFlexible(kotlinType), (ClassDescriptor) mo2053getDeclarationDescriptor2, upperTypeAttr);
             SimpleType component12 = eraseInflexibleBasedOnClassDescriptor2.component1();
             boolean booleanValue2 = eraseInflexibleBasedOnClassDescriptor2.component2().booleanValue();
             if (booleanValue || booleanValue2) {
@@ -91,7 +91,7 @@ public final class RawSubstitution extends TypeSubstitution {
             }
             return KotlinTypeFactory.flexibleType(component1, component12);
         }
-        throw new IllegalStateException(("Unexpected declaration kind: " + mo2051getDeclarationDescriptor).toString());
+        throw new IllegalStateException(("Unexpected declaration kind: " + mo2053getDeclarationDescriptor).toString());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

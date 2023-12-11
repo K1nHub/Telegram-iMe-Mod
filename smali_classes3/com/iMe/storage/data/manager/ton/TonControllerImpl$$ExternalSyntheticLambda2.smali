@@ -5,27 +5,17 @@
 .implements Lio/reactivex/functions/Function;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;
+# instance fields
+.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;
-
-    invoke-direct {v0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;-><init>()V
-
-    sput-object v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;->INSTANCE:Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
     return-void
 .end method
@@ -33,11 +23,11 @@
 
 # virtual methods
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    .locals 1
 
-    check-cast p1, Ljava/lang/Throwable;
+    iget-object v0, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->$r8$lambda$GP17rYU8zIWi3Dfw_AKIDXutFWo(Ljava/lang/Throwable;)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {v0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->$r8$lambda$_l9urNBmC0C9wsY7w5reVLShHQk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
 
     move-result-object p1
 

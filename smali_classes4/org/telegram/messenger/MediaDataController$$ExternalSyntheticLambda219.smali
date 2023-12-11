@@ -43,7 +43,7 @@
 
     move-object v5, p2
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$obQx_sFXzBwLOWlkEoIP_vp6So8(Lorg/telegram/messenger/MediaDataController;ZJLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$1Nn5xS1dfP3XbQ29luv7V9CE0iE(Lorg/telegram/messenger/MediaDataController;ZJLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

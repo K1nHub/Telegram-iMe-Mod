@@ -32,7 +32,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: BuyCryptoProductPresenter.kt */
 @InjectViewState
@@ -56,7 +56,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         this.resourceManager = resourceManager;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.schedulersProvider = schedulersProvider;
-        resourceManager.getString(C3634R.string.common_dash);
+        resourceManager.getString(C3632R.string.common_dash);
     }
 
     public final void loadAvailableProducts() {
@@ -102,12 +102,12 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<BuyingCryptoQuote>> result) {
-                m1624invoke(result);
+                m1625invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1624invoke(Result<? extends List<BuyingCryptoQuote>> it) {
+            public final void m1625invoke(Result<? extends List<BuyingCryptoQuote>> it) {
                 ResourceManager resourceManager;
                 TokenDetailed tokenDetailed2;
                 List sortedWith;
@@ -182,7 +182,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         List<BaseNode> mutableListOf;
         SpreadBuilder spreadBuilder = new SpreadBuilder(2);
         spreadBuilder.addSpread(cryptoBuyItemArr);
-        spreadBuilder.add(new CryptoBuyFooterItem(C3634R.string.wallet_crypto_buy_footer_title, C3634R.string.wallet_crypto_buy_footer_description));
+        spreadBuilder.add(new CryptoBuyFooterItem(C3632R.string.wallet_crypto_buy_footer_title, C3632R.string.wallet_crypto_buy_footer_description));
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(spreadBuilder.toArray(new BaseNode[spreadBuilder.size()]));
         ((BuyCryptoProductView) getViewState()).showUiItems(mutableListOf);
     }

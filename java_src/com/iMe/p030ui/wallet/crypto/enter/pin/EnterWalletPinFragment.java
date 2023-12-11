@@ -60,7 +60,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthEnterPinBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -386,7 +386,7 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
         ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams3 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams3 : null;
         layoutParams2.setMargins(((ViewGroup.MarginLayoutParams) layoutParams2).leftMargin, (marginLayoutParams != null ? marginLayoutParams.topMargin : 0) + AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) layoutParams2).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin);
         setupActionBar$lambda$6.setLayoutParams(layoutParams2);
-        setupActionBar$lambda$6.setImageResource(C3634R.C3636drawable.ic_ab_back);
+        setupActionBar$lambda$6.setImageResource(C3632R.C3634drawable.ic_ab_back);
         ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$6);
         ImageViewExtKt.setImageColor(setupActionBar$lambda$6, Theme.getColor(Theme.key_actionBarDefaultTitle));
         ViewExtKt.safeThrottledClick$default(setupActionBar$lambda$6, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupActionBar$1$2
@@ -450,12 +450,12 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
-                m1641invoke(cryptoEvent);
+                m1642invoke(cryptoEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1641invoke(DomainRxEvents.CryptoEvent it) {
+            public final void m1642invoke(DomainRxEvents.CryptoEvent it) {
                 RxEventBus rxEventBus2;
                 EnterPinCodeScreenType enterPinCodeScreenType;
                 Function2 function2;

@@ -30,7 +30,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: TokenFamilyPresenter.kt */
 @InjectViewState
@@ -81,7 +81,7 @@ public final class TokenFamilyPresenter extends BasePresenter<TokenFamilyView> {
         subscribeToTokenVisibilitySwitch();
         TokenFamilyView tokenFamilyView = (TokenFamilyView) getViewState();
         FoundTokenItem foundTokenItem = (FoundTokenItem) CollectionsKt.firstOrNull((List<? extends Object>) this.tokens);
-        String string = foundTokenItem != null ? this.resourceManager.getString(C3634R.string.wallet_token_family_title, foundTokenItem.getName(), foundTokenItem.getTicker()) : null;
+        String string = foundTokenItem != null ? this.resourceManager.getString(C3632R.string.wallet_token_family_title, foundTokenItem.getName(), foundTokenItem.getTicker()) : null;
         if (string == null) {
             string = "";
         }
@@ -151,12 +151,12 @@ public final class TokenFamilyPresenter extends BasePresenter<TokenFamilyView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> pair) {
-                m1777invoke(pair);
+                m1779invoke(pair);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1777invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> it) {
+            public final void m1779invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> it) {
                 ResourceManager resourceManager;
                 List<FoundTokenItem> list;
                 int collectionSizeOrDefault;

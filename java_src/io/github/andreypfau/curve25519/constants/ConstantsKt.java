@@ -18,8 +18,8 @@ public final class ConstantsKt {
     /* renamed from: RR */
     private static final UnpackedScalar f422RR;
     private static final FieldElement SQRT_M1;
-    private static final long LOW_51_BIT_NASK = ULong.m1994constructorimpl(ULong.m1994constructorimpl(2251799813685248L) - 1);
-    private static final long LOW_52_BIT_NASK = ULong.m1994constructorimpl(ULong.m1994constructorimpl(4503599627370496L) - 1);
+    private static final long LOW_51_BIT_NASK = ULong.m1996constructorimpl(ULong.m1996constructorimpl(2251799813685248L) - 1);
+    private static final long LOW_52_BIT_NASK = ULong.m1996constructorimpl(ULong.m1996constructorimpl(4503599627370496L) - 1);
     private static final FieldElement EDWARDS_D = new FieldElement(929955233495203L, 466365720129213L, 1662059464998953L, 2033849074728123L, 1442794654840575L, null);
 
     static {

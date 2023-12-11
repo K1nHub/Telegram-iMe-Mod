@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.MediaController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.BackupImageView;
@@ -47,7 +47,7 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
             addView(backupImageView, LayoutHelper.createFrame(-1, -1));
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(0);
-            linearLayout.setBackgroundResource(C3634R.C3636drawable.album_shadow);
+            linearLayout.setBackgroundResource(C3632R.C3634drawable.album_shadow);
             addView(linearLayout, LayoutHelper.createFrame(-1, 60, 83));
             TextView textView = new TextView(context);
             this.nameTextView = textView;

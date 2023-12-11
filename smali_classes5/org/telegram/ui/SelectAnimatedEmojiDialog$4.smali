@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;)V
     .locals 0
 
-    .line 565
+    .line 566
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,10 +29,10 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 568
+    .line 569
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    .line 569
+    .line 570
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p1
@@ -43,7 +43,7 @@
 
     invoke-virtual {p0, p1}, Landroid/view/View;->setPivotX(F)V
 
-    .line 570
+    .line 571
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result p1

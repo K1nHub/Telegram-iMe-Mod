@@ -31,7 +31,7 @@ public final class FindClassInModuleKt {
         if (findClassAcrossModuleDependencies != null) {
             return findClassAcrossModuleDependencies;
         }
-        generateSequence = SequencesKt__SequencesKt.generateSequence(classId, C3289x24bfe126.INSTANCE);
+        generateSequence = SequencesKt__SequencesKt.generateSequence(classId, C3286x24bfe126.INSTANCE);
         map = SequencesKt___SequencesKt.map(generateSequence, new Function1<ClassId, Integer>() { // from class: kotlin.reflect.jvm.internal.impl.descriptors.FindClassInModuleKt$findNonGenericClassAcrossDependencies$typeParametersCount$2
             @Override // kotlin.jvm.functions.Function1
             public final Integer invoke(ClassId it) {

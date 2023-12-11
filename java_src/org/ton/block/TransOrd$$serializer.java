@@ -29,7 +29,7 @@ public final class TransOrd$$serializer implements GeneratedSerializer<TransOrd>
         pluginGeneratedSerialDescriptor.addElement("aborted", false);
         pluginGeneratedSerialDescriptor.addElement("bounce", false);
         pluginGeneratedSerialDescriptor.addElement("destroyed", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7617x7d68d86("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7615x7d68d86("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

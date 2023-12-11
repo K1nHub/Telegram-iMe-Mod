@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/HintView;)V
     .locals 0
 
-    .line 319
+    .line 320
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onAnimationEnd$0()V
     .locals 1
 
-    .line 324
+    .line 325
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/HintView;->hide()V
@@ -54,14 +54,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 322
+    .line 323
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/HintView;->access$002(Lorg/telegram/ui/Components/HintView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 323
+    .line 324
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/HintView;->access$100(Lorg/telegram/ui/Components/HintView;)Z
@@ -70,7 +70,7 @@
 
     if-nez p1, :cond_1
 
-    .line 324
+    .line 325
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView$1;->this$0:Lorg/telegram/ui/Components/HintView;
 
     new-instance v0, Lorg/telegram/ui/Components/HintView$1$$ExternalSyntheticLambda0;

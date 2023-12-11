@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.ArchivedStickersActivity;
@@ -83,18 +83,18 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         int i = this.currentType;
         if (i == 0) {
-            this.actionBar.setTitle(LocaleController.getString("ArchivedStickers", C3634R.string.ArchivedStickers));
+            this.actionBar.setTitle(LocaleController.getString("ArchivedStickers", C3632R.string.ArchivedStickers));
         } else if (i == 5) {
-            this.actionBar.setTitle(LocaleController.getString("ArchivedEmojiPacks", C3634R.string.ArchivedEmojiPacks));
+            this.actionBar.setTitle(LocaleController.getString("ArchivedEmojiPacks", C3632R.string.ArchivedEmojiPacks));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("ArchivedMasks", C3634R.string.ArchivedMasks));
+            this.actionBar.setTitle(LocaleController.getString("ArchivedMasks", C3632R.string.ArchivedMasks));
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ArchivedStickersActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ArchivedStickersActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     ArchivedStickersActivity.this.finishFragment();
@@ -109,9 +109,9 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
         this.emptyView = emptyTextProgressView;
         if (this.currentType == 0) {
-            emptyTextProgressView.setText(LocaleController.getString("ArchivedStickersEmpty", C3634R.string.ArchivedStickersEmpty));
+            emptyTextProgressView.setText(LocaleController.getString("ArchivedStickersEmpty", C3632R.string.ArchivedStickersEmpty));
         } else {
-            emptyTextProgressView.setText(LocaleController.getString("ArchivedMasksEmpty", C3634R.string.ArchivedMasksEmpty));
+            emptyTextProgressView.setText(LocaleController.getString("ArchivedMasksEmpty", C3632R.string.ArchivedMasksEmpty));
         }
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
         if (this.loadingStickers) {
@@ -409,10 +409,10 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
                     textInfoPrivacyCell.setTopPadding(17);
                     textInfoPrivacyCell.setBottomPadding(10);
                     if (ArchivedStickersActivity.this.currentType == 5) {
-                        i2 = C3634R.string.ArchivedEmojiInfo;
+                        i2 = C3632R.string.ArchivedEmojiInfo;
                         str = "ArchivedEmojiInfo";
                     } else {
-                        i2 = C3634R.string.ArchivedStickersInfo;
+                        i2 = C3632R.string.ArchivedStickersInfo;
                         str = "ArchivedStickersInfo";
                     }
                     textInfoPrivacyCell.setText(LocaleController.getString(str, i2));
@@ -451,12 +451,12 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
                 view = archivedStickerSetCell;
             } else if (i == 1) {
                 view = new LoadingCell(this.mContext);
-                view.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3634R.C3636drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                view.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3632R.C3634drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
             } else if (i != 2) {
                 view = null;
             } else {
                 view = new TextInfoPrivacyCell(this.mContext);
-                view.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3634R.C3636drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                view.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3632R.C3634drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
             }
             view.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
             return new RecyclerListView.Holder(view);
@@ -481,10 +481,10 @@ public class ArchivedStickersActivity extends BaseFragment implements Notificati
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
         int i = Theme.key_windowBackgroundGrayShadow;
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{LoadingCell.class, TextInfoPrivacyCell.class}, null, null, null, i));
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i2 = ThemeDescription.FLAG_BACKGROUND;
         int i3 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3706ActionBar, i2, null, null, null, null, i3));
+        arrayList.add(new ThemeDescription(c3704ActionBar, i2, null, null, null, null, i3));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i3));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

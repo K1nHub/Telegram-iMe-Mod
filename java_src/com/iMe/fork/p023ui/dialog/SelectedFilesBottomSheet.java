@@ -48,7 +48,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -250,7 +250,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3634R.string.multiple_files_sending_selected));
+        textView.setText(LocaleController.getInternalString(C3632R.string.multiple_files_sending_selected));
         textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(getThemedColor(Theme.key_dialogTextLink));
@@ -265,7 +265,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(getThemedColor(Theme.key_dialogBackground), getThemedColor(Theme.key_listSelector)));
-        textView.setText(LocaleController.getString("Save", C3634R.string.Save));
+        textView.setText(LocaleController.getString("Save", C3632R.string.Save));
         textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
         return textView;
     }
@@ -411,7 +411,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void openFile$lambda$16(final FileItem fileItem, final SelectedFilesBottomSheet this$0) {
-        Object m1940constructorimpl;
+        Object m1942constructorimpl;
         Intrinsics.checkNotNullParameter(fileItem, "$fileItem");
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         File checkDirectory = FileLoader.checkDirectory(3);
@@ -438,22 +438,22 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
                 openInputStream.close();
                 fileOutputStream.close();
             }
-            m1940constructorimpl = Result.m1940constructorimpl(Unit.INSTANCE);
+            m1942constructorimpl = Result.m1942constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
+            m1942constructorimpl = Result.m1942constructorimpl(ResultKt.createFailure(th));
         }
-        final Throwable m1943exceptionOrNullimpl = Result.m1943exceptionOrNullimpl(m1940constructorimpl);
-        if (m1943exceptionOrNullimpl != null) {
+        final Throwable m1945exceptionOrNullimpl = Result.m1945exceptionOrNullimpl(m1942constructorimpl);
+        if (m1945exceptionOrNullimpl != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SelectedFilesBottomSheet.openFile$lambda$16$lambda$13$lambda$12(m1943exceptionOrNullimpl);
+                    SelectedFilesBottomSheet.openFile$lambda$16$lambda$13$lambda$12(m1945exceptionOrNullimpl);
                 }
             });
         }
-        if (Result.m1946isSuccessimpl(m1940constructorimpl)) {
-            Unit unit = (Unit) m1940constructorimpl;
+        if (Result.m1948isSuccessimpl(m1942constructorimpl)) {
+            Unit unit = (Unit) m1942constructorimpl;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.ui.dialog.SelectedFilesBottomSheet$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -908,7 +908,7 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
         public final ImageView initImageView() {
             ImageView imageView = new ImageView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
-            CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m104dp(44), C3634R.C3636drawable.msg_round_file_s);
+            CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m104dp(44), C3632R.C3634drawable.msg_round_file_s);
             Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor(Theme.key_chat_outMediaIcon), false);
             Theme.setCombinedDrawableColor(createCircleDrawableWithIcon, selectedFilesBottomSheet.getThemedColor(Theme.key_chat_inMediaIcon), true);
             imageView.setImageDrawable(createCircleDrawableWithIcon);
@@ -941,9 +941,9 @@ public final class SelectedFilesBottomSheet extends BottomSheet {
             ImageView imageView = new ImageView(getContext());
             SelectedFilesBottomSheet selectedFilesBottomSheet = this.this$0;
             imageView.setColorFilter(new PorterDuffColorFilter(selectedFilesBottomSheet.getThemedColor(Theme.key_chat_replyPanelClose), PorterDuff.Mode.MULTIPLY));
-            imageView.setContentDescription(LocaleController.getString("Delete", C3634R.string.Delete));
+            imageView.setContentDescription(LocaleController.getString("Delete", C3632R.string.Delete));
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(C3634R.C3636drawable.input_clear);
+            imageView.setImageResource(C3632R.C3634drawable.input_clear);
             imageView.setBackground(Theme.createSelectorDrawable(selectedFilesBottomSheet.getThemedColor(Theme.key_listSelector), 3));
             return imageView;
         }

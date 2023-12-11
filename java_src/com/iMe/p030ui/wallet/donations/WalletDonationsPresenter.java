@@ -35,7 +35,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ManageLinksActivity;
 import timber.log.Timber;
 /* compiled from: WalletDonationsPresenter.kt */
@@ -106,7 +106,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     public final String getCurrentDonationsAddress() {
         Result<String> result = this.addressInfoResultState;
         if ((result instanceof Result.Loading) || result == null) {
-            return this.resourceManager.getString(C3634R.string.common_progress_state_title);
+            return this.resourceManager.getString(C3632R.string.common_progress_state_title);
         }
         return this.currentDonationsAddress;
     }
@@ -150,7 +150,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     public final void linkAddress(final String address) {
         Intrinsics.checkNotNullParameter(address, "address");
         if ((address.length() > 0) && Intrinsics.areEqual(address, this.currentDonationsAddress)) {
-            ((WalletDonationsView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.channel_donations_the_same_address_error));
+            ((WalletDonationsView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.channel_donations_the_same_address_error));
         } else if (CryptoHelper.isWithEthereumPrefix(address)) {
             extractAddressForLink(address);
         } else {
@@ -164,12 +164,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                    m1704invoke(result);
+                    m1705invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1704invoke(Result<? extends Boolean> it) {
+                public final void m1705invoke(Result<? extends Boolean> it) {
                     ResourceManager resourceManager;
                     ResourceManager resourceManager2;
                     DialogModel linkAddressDialogModel;
@@ -192,7 +192,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
                         });
                     } else {
                         resourceManager2 = WalletDonationsPresenter.this.resourceManager;
-                        ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showToast(resourceManager2.getString(C3634R.string.channel_donations_incorrect_address_error));
+                        ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showToast(resourceManager2.getString(C3632R.string.channel_donations_incorrect_address_error));
                     }
                 }
             }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$linkAddress$$inlined$subscribeWithErrorHandle$default$2
@@ -246,12 +246,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SendCryptoQRData> result) {
-                m1703invoke(result);
+                m1704invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1703invoke(Result<? extends SendCryptoQRData> it) {
+            public final void m1704invoke(Result<? extends SendCryptoQRData> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SendCryptoQRData> result = it;
                 if (result instanceof Result.Success) {
@@ -309,12 +309,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1705invoke(result);
+                m1706invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1705invoke(Result<? extends String> it) {
+            public final void m1706invoke(Result<? extends String> it) {
                 String str;
                 ResourceManager resourceManager;
                 String str2;
@@ -376,12 +376,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Transaction>> result) {
-                m1706invoke(result);
+                m1707invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1706invoke(Result<? extends List<? extends Transaction>> it) {
+            public final void m1707invoke(Result<? extends List<? extends Transaction>> it) {
                 ResourceManager resourceManager;
                 int collectionSizeOrDefault;
                 List mutableList;
@@ -452,12 +452,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1702invoke(result);
+                m1703invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1702invoke(Result<? extends Boolean> it) {
+            public final void m1703invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 List list;
                 List<TransactionItem> list2;
@@ -523,12 +523,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1708invoke(result);
+                m1709invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1708invoke(Result<? extends Boolean> it) {
+            public final void m1709invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 String str2;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -588,12 +588,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
-                m1707invoke(result);
+                m1708invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1707invoke(Result<? extends TokenBalance> it) {
+            public final void m1708invoke(Result<? extends TokenBalance> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends TokenBalance> result = it;
@@ -641,17 +641,17 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     }
 
     private final DialogModel getUnlinkWalletAddressDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.channel_donations_unlink_address_dialog_title), this.resourceManager.getString(C3634R.string.channel_donations_unlink_address_dialog_description, str), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.channel_donations_unlink_address_dialog_positive_button));
+        return new DialogModel(this.resourceManager.getString(C3632R.string.channel_donations_unlink_address_dialog_title), this.resourceManager.getString(C3632R.string.channel_donations_unlink_address_dialog_description, str), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.channel_donations_unlink_address_dialog_positive_button));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogModel getLinkAddressDialogModel(String str, boolean z) {
         int i;
         if (z) {
-            i = C3634R.string.channel_donations_link_non_castodial_wallet_address_dialog_title;
+            i = C3632R.string.channel_donations_link_non_castodial_wallet_address_dialog_title;
         } else {
-            i = C3634R.string.channel_donations_link_address_dialog_title;
+            i = C3632R.string.channel_donations_link_address_dialog_title;
         }
-        return new DialogModel(this.resourceManager.getString(i), this.resourceManager.getString(C3634R.string.channel_donations_link_address_dialog_description, str), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.channel_donations_link_address_dialog_positive_button));
+        return new DialogModel(this.resourceManager.getString(i), this.resourceManager.getString(C3632R.string.channel_donations_link_address_dialog_description, str), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.channel_donations_link_address_dialog_positive_button));
     }
 }

@@ -15,28 +15,28 @@ public final class UShortArray implements Collection<UShort>, KMappedMarker {
     private final short[] storage;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ UShortArray m2021boximpl(short[] sArr) {
+    public static final /* synthetic */ UShortArray m2023boximpl(short[] sArr) {
         return new UShortArray(sArr);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static short[] m2023constructorimpl(short[] storage) {
+    public static short[] m2025constructorimpl(short[] storage) {
         Intrinsics.checkNotNullParameter(storage, "storage");
         return storage;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2026equalsimpl(short[] sArr, Object obj) {
-        return (obj instanceof UShortArray) && Intrinsics.areEqual(sArr, ((UShortArray) obj).m2035unboximpl());
+    public static boolean m2028equalsimpl(short[] sArr, Object obj) {
+        return (obj instanceof UShortArray) && Intrinsics.areEqual(sArr, ((UShortArray) obj).m2037unboximpl());
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2029hashCodeimpl(short[] sArr) {
+    public static int m2031hashCodeimpl(short[] sArr) {
         return Arrays.hashCode(sArr);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2033toStringimpl(short[] sArr) {
+    public static String m2035toStringimpl(short[] sArr) {
         return "UShortArray(storage=" + Arrays.toString(sArr) + ')';
     }
 
@@ -57,12 +57,12 @@ public final class UShortArray implements Collection<UShort>, KMappedMarker {
 
     @Override // java.util.Collection
     public boolean equals(Object obj) {
-        return m2026equalsimpl(this.storage, obj);
+        return m2028equalsimpl(this.storage, obj);
     }
 
     @Override // java.util.Collection
     public int hashCode() {
-        return m2029hashCodeimpl(this.storage);
+        return m2031hashCodeimpl(this.storage);
     }
 
     @Override // java.util.Collection
@@ -92,18 +92,18 @@ public final class UShortArray implements Collection<UShort>, KMappedMarker {
     }
 
     public String toString() {
-        return m2033toStringimpl(this.storage);
+        return m2035toStringimpl(this.storage);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ short[] m2035unboximpl() {
+    public final /* synthetic */ short[] m2037unboximpl() {
         return this.storage;
     }
 
     @Override // java.util.Collection
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof UShort) {
-            return m2034containsxj2QHRw(((UShort) obj).m2020unboximpl());
+            return m2036containsxj2QHRw(((UShort) obj).m2022unboximpl());
         }
         return false;
     }
@@ -113,39 +113,39 @@ public final class UShortArray implements Collection<UShort>, KMappedMarker {
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static short[] m2022constructorimpl(int i) {
-        return m2023constructorimpl(new short[i]);
+    public static short[] m2024constructorimpl(int i) {
+        return m2025constructorimpl(new short[i]);
     }
 
     /* renamed from: get-Mh2AYeg  reason: not valid java name */
-    public static final short m2027getMh2AYeg(short[] sArr, int i) {
-        return UShort.m2016constructorimpl(sArr[i]);
+    public static final short m2029getMh2AYeg(short[] sArr, int i) {
+        return UShort.m2018constructorimpl(sArr[i]);
     }
 
     /* renamed from: set-01HTLdE  reason: not valid java name */
-    public static final void m2032set01HTLdE(short[] sArr, int i, short s) {
+    public static final void m2034set01HTLdE(short[] sArr, int i, short s) {
         sArr[i] = s;
     }
 
     /* renamed from: getSize-impl  reason: not valid java name */
-    public static int m2028getSizeimpl(short[] sArr) {
+    public static int m2030getSizeimpl(short[] sArr) {
         return sArr.length;
     }
 
     @Override // java.util.Collection
     /* renamed from: getSize */
     public int size() {
-        return m2028getSizeimpl(this.storage);
+        return m2030getSizeimpl(this.storage);
     }
 
     /* renamed from: iterator-impl  reason: not valid java name */
-    public static java.util.Iterator<UShort> m2031iteratorimpl(short[] sArr) {
+    public static java.util.Iterator<UShort> m2033iteratorimpl(short[] sArr) {
         return new Iterator(sArr);
     }
 
     @Override // java.util.Collection, java.lang.Iterable
     public java.util.Iterator<UShort> iterator() {
-        return m2031iteratorimpl(this.storage);
+        return m2033iteratorimpl(this.storage);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -172,7 +172,7 @@ public final class UShortArray implements Collection<UShort>, KMappedMarker {
 
         @Override // java.util.Iterator, p033j$.util.Iterator
         public /* bridge */ /* synthetic */ Object next() {
-            return UShort.m2015boximpl(m2036nextMh2AYeg());
+            return UShort.m2017boximpl(m2038nextMh2AYeg());
         }
 
         @Override // java.util.Iterator, p033j$.util.Iterator
@@ -181,24 +181,24 @@ public final class UShortArray implements Collection<UShort>, KMappedMarker {
         }
 
         /* renamed from: next-Mh2AYeg  reason: not valid java name */
-        public short m2036nextMh2AYeg() {
+        public short m2038nextMh2AYeg() {
             int i = this.index;
             short[] sArr = this.array;
             if (i < sArr.length) {
                 this.index = i + 1;
-                return UShort.m2016constructorimpl(sArr[i]);
+                return UShort.m2018constructorimpl(sArr[i]);
             }
             throw new NoSuchElementException(String.valueOf(this.index));
         }
     }
 
     /* renamed from: contains-xj2QHRw  reason: not valid java name */
-    public boolean m2034containsxj2QHRw(short s) {
-        return m2024containsxj2QHRw(this.storage, s);
+    public boolean m2036containsxj2QHRw(short s) {
+        return m2026containsxj2QHRw(this.storage, s);
     }
 
     /* renamed from: contains-xj2QHRw  reason: not valid java name */
-    public static boolean m2024containsxj2QHRw(short[] sArr, short s) {
+    public static boolean m2026containsxj2QHRw(short[] sArr, short s) {
         boolean contains;
         contains = ArraysKt___ArraysKt.contains(sArr, s);
         return contains;
@@ -207,17 +207,17 @@ public final class UShortArray implements Collection<UShort>, KMappedMarker {
     @Override // java.util.Collection
     public boolean containsAll(Collection<? extends Object> elements) {
         Intrinsics.checkNotNullParameter(elements, "elements");
-        return m2025containsAllimpl(this.storage, elements);
+        return m2027containsAllimpl(this.storage, elements);
     }
 
     /* renamed from: isEmpty-impl  reason: not valid java name */
-    public static boolean m2030isEmptyimpl(short[] sArr) {
+    public static boolean m2032isEmptyimpl(short[] sArr) {
         return sArr.length == 0;
     }
 
     @Override // java.util.Collection
     public boolean isEmpty() {
-        return m2030isEmptyimpl(this.storage);
+        return m2032isEmptyimpl(this.storage);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x0032 A[SYNTHETIC] */
@@ -226,7 +226,7 @@ public final class UShortArray implements Collection<UShort>, KMappedMarker {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public static boolean m2025containsAllimpl(short[] r4, java.util.Collection<kotlin.UShort> r5) {
+    public static boolean m2027containsAllimpl(short[] r4, java.util.Collection<kotlin.UShort> r5) {
         /*
             java.lang.String r0 = "elements"
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r5, r0)
@@ -246,7 +246,7 @@ public final class UShortArray implements Collection<UShort>, KMappedMarker {
             boolean r3 = r0 instanceof kotlin.UShort
             if (r3 == 0) goto L2f
             kotlin.UShort r0 = (kotlin.UShort) r0
-            short r0 = r0.m2020unboximpl()
+            short r0 = r0.m2022unboximpl()
             boolean r0 = kotlin.collections.ArraysKt.contains(r4, r0)
             if (r0 == 0) goto L2f
             r0 = r2
@@ -258,6 +258,6 @@ public final class UShortArray implements Collection<UShort>, KMappedMarker {
         L32:
             return r1
         */
-        throw new UnsupportedOperationException("Method not decompiled: kotlin.UShortArray.m2025containsAllimpl(short[], java.util.Collection):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: kotlin.UShortArray.m2027containsAllimpl(short[], java.util.Collection):boolean");
     }
 }

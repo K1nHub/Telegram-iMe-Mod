@@ -814,7 +814,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transaction, Builder> implements TransactionOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -965,7 +965,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transaction();
                 case 2:
@@ -1012,40 +1012,40 @@ public final class Binance {
 
     /* renamed from: wallet.core.jni.proto.Binance$1 */
     /* loaded from: classes7.dex */
-    static /* synthetic */ class C77281 {
+    static /* synthetic */ class C77261 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f2121xa1df5c61;
+        static final /* synthetic */ int[] f2122xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f2121xa1df5c61 = iArr;
+            f2122xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f2121xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2122xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f2121xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2122xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f2121xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2122xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f2121xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2122xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f2121xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2122xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f2121xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2122xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -1190,7 +1190,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Signature, Builder> implements SignatureOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -1269,7 +1269,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Signature();
                 case 2:
@@ -1541,7 +1541,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TradeOrder, Builder> implements TradeOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -1710,7 +1710,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TradeOrder();
                 case 2:
@@ -1897,7 +1897,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CancelTradeOrder, Builder> implements CancelTradeOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -1981,7 +1981,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CancelTradeOrder();
                 case 2:
@@ -2199,7 +2199,7 @@ public final class Binance {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Token, Builder> implements TokenOrBuilder {
-                /* synthetic */ Builder(C77281 c77281) {
+                /* synthetic */ Builder(C77261 c77261) {
                     this();
                 }
 
@@ -2255,7 +2255,7 @@ public final class Binance {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+                switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Token();
                     case 2:
@@ -2455,7 +2455,7 @@ public final class Binance {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Input, Builder> implements InputOrBuilder {
-                /* synthetic */ Builder(C77281 c77281) {
+                /* synthetic */ Builder(C77261 c77261) {
                     this();
                 }
 
@@ -2552,7 +2552,7 @@ public final class Binance {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+                switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Input();
                     case 2:
@@ -2752,7 +2752,7 @@ public final class Binance {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Output, Builder> implements OutputOrBuilder {
-                /* synthetic */ Builder(C77281 c77281) {
+                /* synthetic */ Builder(C77261 c77261) {
                     this();
                 }
 
@@ -2849,7 +2849,7 @@ public final class Binance {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+                switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Output();
                     case 2:
@@ -3090,7 +3090,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SendOrder, Builder> implements SendOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -3239,7 +3239,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SendOrder();
                 case 2:
@@ -3460,7 +3460,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TokenIssueOrder, Builder> implements TokenIssueOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -3578,7 +3578,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TokenIssueOrder();
                 case 2:
@@ -3753,7 +3753,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TokenMintOrder, Builder> implements TokenMintOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -3826,7 +3826,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TokenMintOrder();
                 case 2:
@@ -4001,7 +4001,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TokenBurnOrder, Builder> implements TokenBurnOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -4074,7 +4074,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TokenBurnOrder();
                 case 2:
@@ -4249,7 +4249,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TokenFreezeOrder, Builder> implements TokenFreezeOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -4322,7 +4322,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TokenFreezeOrder();
                 case 2:
@@ -4497,7 +4497,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TokenUnfreezeOrder, Builder> implements TokenUnfreezeOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -4570,7 +4570,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TokenUnfreezeOrder();
                 case 2:
@@ -4952,7 +4952,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<HTLTOrder, Builder> implements HTLTOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -5218,7 +5218,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new HTLTOrder();
                 case 2:
@@ -5440,7 +5440,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DepositHTLTOrder, Builder> implements DepositHTLTOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -5554,7 +5554,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DepositHTLTOrder();
                 case 2:
@@ -5723,7 +5723,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<ClaimHTLOrder, Builder> implements ClaimHTLOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -5785,7 +5785,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new ClaimHTLOrder();
                 case 2:
@@ -5935,7 +5935,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<RefundHTLTOrder, Builder> implements RefundHTLTOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -5980,7 +5980,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new RefundHTLTOrder();
                 case 2:
@@ -6182,7 +6182,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransferOut, Builder> implements TransferOutOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -6278,7 +6278,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransferOut();
                 case 2:
@@ -6493,7 +6493,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SideChainDelegate, Builder> implements SideChainDelegateOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -6600,7 +6600,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SideChainDelegate();
                 case 2:
@@ -6834,7 +6834,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SideChainRedelegate, Builder> implements SideChainRedelegateOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -6958,7 +6958,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SideChainRedelegate();
                 case 2:
@@ -7173,7 +7173,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SideChainUndelegate, Builder> implements SideChainUndelegateOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -7280,7 +7280,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SideChainUndelegate();
                 case 2:
@@ -7526,7 +7526,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TimeLockOrder, Builder> implements TimeLockOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -7668,7 +7668,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TimeLockOrder();
                 case 2:
@@ -7931,7 +7931,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TimeRelockOrder, Builder> implements TimeRelockOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -8090,7 +8090,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TimeRelockOrder();
                 case 2:
@@ -8236,7 +8236,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TimeUnlockOrder, Builder> implements TimeUnlockOrderOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -8281,7 +8281,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TimeUnlockOrder();
                 case 2:
@@ -9379,7 +9379,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -10171,7 +10171,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -10357,7 +10357,7 @@ public final class Binance {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C77281 c77281) {
+            /* synthetic */ Builder(C77261 c77261) {
                 this();
             }
 
@@ -10441,7 +10441,7 @@ public final class Binance {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77281.f2121xa1df5c61[method.ordinal()]) {
+            switch (C77261.f2122xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

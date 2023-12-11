@@ -62,10 +62,10 @@
 .method private constructor <init>(Lorg/telegram/ui/StatisticActivity$Adapter;Landroidx/recyclerview/widget/LinearLayoutManager;)V
     .locals 1
 
-    .line 2118
+    .line 2121
     invoke-direct {p0}, Landroidx/recyclerview/widget/DiffUtil$Callback;-><init>()V
 
-    .line 2095
+    .line 2098
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
@@ -74,61 +74,61 @@
 
     const/4 v0, -0x1
 
-    .line 2098
+    .line 2101
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->growCell:I
 
-    .line 2099
+    .line 2102
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->folowersCell:I
 
-    .line 2100
+    .line 2103
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->interactionsCell:I
 
-    .line 2101
+    .line 2104
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->ivInteractionsCell:I
 
-    .line 2102
+    .line 2105
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->viewsBySourceCell:I
 
-    .line 2103
+    .line 2106
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->newFollowersBySourceCell:I
 
-    .line 2104
+    .line 2107
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->languagesCell:I
 
-    .line 2105
+    .line 2108
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->topHourseCell:I
 
-    .line 2106
+    .line 2109
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->notificationsCell:I
 
-    .line 2108
+    .line 2111
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->groupMembersCell:I
 
-    .line 2109
+    .line 2112
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->newMembersBySourceCell:I
 
-    .line 2110
+    .line 2113
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->membersLanguageCell:I
 
-    .line 2111
+    .line 2114
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->messagesCell:I
 
-    .line 2112
+    .line 2115
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->actionsCell:I
 
-    .line 2113
+    .line 2116
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->topDayOfWeeksCell:I
 
-    .line 2115
+    .line 2118
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->startPosts:I
 
-    .line 2116
+    .line 2119
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->endPosts:I
 
-    .line 2119
+    .line 2122
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
-    .line 2120
+    .line 2123
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     return-void
@@ -137,7 +137,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/StatisticActivity$Adapter;Landroidx/recyclerview/widget/LinearLayoutManager;Lorg/telegram/ui/StatisticActivity$1;)V
     .locals 0
 
-    .line 2091
+    .line 2094
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;-><init>(Lorg/telegram/ui/StatisticActivity$Adapter;Landroidx/recyclerview/widget/LinearLayoutManager;)V
 
     return-void
@@ -148,14 +148,14 @@
 .method public areContentsTheSame(II)Z
     .locals 1
 
-    .line 2206
+    .line 2209
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->positionToTypeMap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
 
     move-result p1
 
-    .line 2207
+    .line 2210
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/StatisticActivity$Adapter;->getItemViewType(I)I
@@ -178,7 +178,7 @@
 .method public areItemsTheSame(II)Z
     .locals 4
 
-    .line 2161
+    .line 2164
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->positionToTypeMap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
@@ -201,7 +201,7 @@
 
     return v2
 
-    .line 2164
+    .line 2167
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->positionToTypeMap:Landroid/util/SparseIntArray;
 
@@ -223,7 +223,7 @@
 
     return v2
 
-    .line 2167
+    .line 2170
     :cond_1
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->startPosts:I
 
@@ -237,7 +237,7 @@
 
     sub-int/2addr p1, v0
 
-    .line 2168
+    .line 2171
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
     iget v0, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsStartRow:I
@@ -254,7 +254,7 @@
     :goto_0
     return v2
 
-    .line 2170
+    .line 2173
     :cond_3
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->growCell:I
 
@@ -268,7 +268,7 @@
 
     return v2
 
-    .line 2172
+    .line 2175
     :cond_4
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->folowersCell:I
 
@@ -282,7 +282,7 @@
 
     return v2
 
-    .line 2174
+    .line 2177
     :cond_5
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->interactionsCell:I
 
@@ -296,7 +296,7 @@
 
     return v2
 
-    .line 2176
+    .line 2179
     :cond_6
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->ivInteractionsCell:I
 
@@ -310,7 +310,7 @@
 
     return v2
 
-    .line 2178
+    .line 2181
     :cond_7
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->viewsBySourceCell:I
 
@@ -324,7 +324,7 @@
 
     return v2
 
-    .line 2180
+    .line 2183
     :cond_8
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->newFollowersBySourceCell:I
 
@@ -338,7 +338,7 @@
 
     return v2
 
-    .line 2182
+    .line 2185
     :cond_9
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->languagesCell:I
 
@@ -352,7 +352,7 @@
 
     return v2
 
-    .line 2184
+    .line 2187
     :cond_a
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->topHourseCell:I
 
@@ -366,7 +366,7 @@
 
     return v2
 
-    .line 2186
+    .line 2189
     :cond_b
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->notificationsCell:I
 
@@ -380,7 +380,7 @@
 
     return v2
 
-    .line 2188
+    .line 2191
     :cond_c
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->groupMembersCell:I
 
@@ -394,7 +394,7 @@
 
     return v2
 
-    .line 2190
+    .line 2193
     :cond_d
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->newMembersBySourceCell:I
 
@@ -408,7 +408,7 @@
 
     return v2
 
-    .line 2192
+    .line 2195
     :cond_e
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->membersLanguageCell:I
 
@@ -422,7 +422,7 @@
 
     return v2
 
-    .line 2194
+    .line 2197
     :cond_f
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->messagesCell:I
 
@@ -436,7 +436,7 @@
 
     return v2
 
-    .line 2196
+    .line 2199
     :cond_10
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->actionsCell:I
 
@@ -450,7 +450,7 @@
 
     return v2
 
-    .line 2198
+    .line 2201
     :cond_11
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->topDayOfWeeksCell:I
 
@@ -471,7 +471,7 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 2156
+    .line 2159
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
     iget v0, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
@@ -482,7 +482,7 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 2151
+    .line 2154
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->count:I
 
     return v0
@@ -491,12 +491,12 @@
 .method public saveOldState()V
     .locals 3
 
-    .line 2124
+    .line 2127
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->positionToTypeMap:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 2125
+    .line 2128
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
     invoke-virtual {v0}, Lorg/telegram/ui/StatisticActivity$Adapter;->getItemCount()I
@@ -507,13 +507,13 @@
 
     const/4 v0, 0x0
 
-    .line 2126
+    .line 2129
     :goto_0
     iget v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->count:I
 
     if-ge v0, v1, :cond_0
 
-    .line 2127
+    .line 2130
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->positionToTypeMap:Landroid/util/SparseIntArray;
 
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
@@ -528,7 +528,7 @@
 
     goto :goto_0
 
-    .line 2129
+    .line 2132
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
@@ -536,82 +536,82 @@
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->growCell:I
 
-    .line 2130
+    .line 2133
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->folowersCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->folowersCell:I
 
-    .line 2131
+    .line 2134
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->interactionsCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->interactionsCell:I
 
-    .line 2132
+    .line 2135
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->ivInteractionsCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->ivInteractionsCell:I
 
-    .line 2133
+    .line 2136
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->viewsBySourceCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->viewsBySourceCell:I
 
-    .line 2134
+    .line 2137
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->newFollowersBySourceCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->newFollowersBySourceCell:I
 
-    .line 2135
+    .line 2138
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->languagesCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->languagesCell:I
 
-    .line 2136
+    .line 2139
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->topHourseCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->topHourseCell:I
 
-    .line 2137
+    .line 2140
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->notificationsCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->notificationsCell:I
 
-    .line 2138
+    .line 2141
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsStartRow:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->startPosts:I
 
-    .line 2139
+    .line 2142
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsEndRow:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->endPosts:I
 
-    .line 2141
+    .line 2144
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->groupMembersCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->groupMembersCell:I
 
-    .line 2142
+    .line 2145
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->newMembersBySourceCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->newMembersBySourceCell:I
 
-    .line 2143
+    .line 2146
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->membersLanguageCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->membersLanguageCell:I
 
-    .line 2144
+    .line 2147
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->messagesCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->messagesCell:I
 
-    .line 2145
+    .line 2148
     iget v1, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->actionsCell:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->actionsCell:I
 
-    .line 2146
+    .line 2149
     iget v0, v0, Lorg/telegram/ui/StatisticActivity$Adapter;->topDayOfWeeksCell:I
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->topDayOfWeeksCell:I
@@ -622,22 +622,22 @@
 .method public update()V
     .locals 8
 
-    .line 2211
+    .line 2214
     invoke-virtual {p0}, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->saveOldState()V
 
-    .line 2212
+    .line 2215
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
     invoke-virtual {v0}, Lorg/telegram/ui/StatisticActivity$Adapter;->update()V
 
-    .line 2213
+    .line 2216
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->findFirstVisibleItemPosition()I
 
     move-result v0
 
-    .line 2214
+    .line 2217
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {v1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findLastVisibleItemPosition()I
@@ -651,7 +651,7 @@
 
     if-gt v0, v1, :cond_1
 
-    .line 2218
+    .line 2221
     iget-object v5, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
     invoke-virtual {v5, v0}, Lorg/telegram/ui/StatisticActivity$Adapter;->getItemId(I)J
@@ -662,7 +662,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 2219
+    .line 2222
     iget-object v5, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {v5, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->findViewByPosition(I)Landroid/view/View;
@@ -671,14 +671,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 2221
+    .line 2224
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/StatisticActivity$Adapter;->getItemId(I)J
 
     move-result-wide v0
 
-    .line 2222
+    .line 2225
     invoke-virtual {v5}, Landroid/view/View;->getTop()I
 
     move-result v5
@@ -695,7 +695,7 @@
 
     move-wide v0, v3
 
-    .line 2227
+    .line 2230
     :goto_1
     invoke-static {p0}, Landroidx/recyclerview/widget/DiffUtil;->calculateDiff(Landroidx/recyclerview/widget/DiffUtil$Callback;)Landroidx/recyclerview/widget/DiffUtil$DiffResult;
 
@@ -711,7 +711,7 @@
 
     const/4 v3, -0x1
 
-    .line 2231
+    .line 2234
     :goto_2
     iget-object v4, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
@@ -721,7 +721,7 @@
 
     if-ge v2, v4, :cond_3
 
-    .line 2232
+    .line 2235
     iget-object v4, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->adapter:Lorg/telegram/ui/StatisticActivity$Adapter;
 
     invoke-virtual {v4, v2}, Lorg/telegram/ui/StatisticActivity$Adapter;->getItemId(I)J
@@ -745,7 +745,7 @@
     :goto_3
     if-lez v3, :cond_4
 
-    .line 2238
+    .line 2241
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {v0, v3, v5}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V

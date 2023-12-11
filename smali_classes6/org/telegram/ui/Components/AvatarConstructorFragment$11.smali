@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 1009
+    .line 1014
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$11;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;Z)V
@@ -35,10 +35,10 @@
 .method public dismiss()V
     .locals 3
 
-    .line 1012
+    .line 1017
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 1013
+    .line 1018
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$11;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$2100(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
@@ -51,21 +51,21 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->selectGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 1014
+    .line 1019
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$11;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerInAnimatoin:Z
 
-    .line 1015
+    .line 1020
     invoke-static {v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$2200(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 1016
+    .line 1021
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$11;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerPreviewView:Landroid/view/View;
@@ -84,7 +84,7 @@
 
     const/4 v1, 0x0
 
-    .line 1022
+    .line 1027
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -103,10 +103,10 @@
 .method public dismissInternal()V
     .locals 2
 
-    .line 1027
+    .line 1032
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
-    .line 1028
+    .line 1033
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$11;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -121,7 +121,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustResize(Landroid/app/Activity;I)V
 
-    .line 1029
+    .line 1034
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$11;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     const/4 v1, 0x0

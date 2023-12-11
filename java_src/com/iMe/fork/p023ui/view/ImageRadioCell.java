@@ -18,7 +18,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -125,7 +125,7 @@ public final class ImageRadioCell extends FrameLayout {
 
     public final void setImageUrl(String imageUrl) {
         Intrinsics.checkNotNullParameter(imageUrl, "imageUrl");
-        ImageViewExtKt.loadFrom$default(getImageView(), imageUrl, Integer.valueOf(C3634R.C3636drawable.fork_bg_white_circle), false, 4, null);
+        ImageViewExtKt.loadFrom$default(getImageView(), imageUrl, Integer.valueOf(C3632R.C3634drawable.fork_bg_white_circle), false, 4, null);
     }
 
     public final void setTextColor(int i) {

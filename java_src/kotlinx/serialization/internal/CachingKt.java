@@ -15,25 +15,25 @@ public final class CachingKt {
     private static final boolean useClassValue;
 
     static {
-        Object m1940constructorimpl;
+        Object m1942constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m1940constructorimpl = Result.m1940constructorimpl(Class.forName("java.lang.ClassValue"));
+            m1942constructorimpl = Result.m1942constructorimpl(Class.forName("java.lang.ClassValue"));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
+            m1942constructorimpl = Result.m1942constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m1946isSuccessimpl(m1940constructorimpl)) {
+        if (Result.m1948isSuccessimpl(m1942constructorimpl)) {
             Result.Companion companion3 = Result.Companion;
-            Class cls = (Class) m1940constructorimpl;
-            m1940constructorimpl = Boolean.TRUE;
+            Class cls = (Class) m1942constructorimpl;
+            m1942constructorimpl = Boolean.TRUE;
         }
-        Object m1940constructorimpl2 = Result.m1940constructorimpl(m1940constructorimpl);
+        Object m1942constructorimpl2 = Result.m1942constructorimpl(m1942constructorimpl);
         Boolean bool = Boolean.FALSE;
-        if (Result.m1945isFailureimpl(m1940constructorimpl2)) {
-            m1940constructorimpl2 = bool;
+        if (Result.m1947isFailureimpl(m1942constructorimpl2)) {
+            m1942constructorimpl2 = bool;
         }
-        useClassValue = ((Boolean) m1940constructorimpl2).booleanValue();
+        useClassValue = ((Boolean) m1942constructorimpl2).booleanValue();
     }
 
     public static final <T> SerializerCache<T> createCache(Function1<? super KClass<?>, ? extends KSerializer<T>> factory) {

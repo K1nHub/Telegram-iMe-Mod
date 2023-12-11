@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.CombinedDrawable;
 /* renamed from: org.telegram.ui.Cells.ShadowSectionCell */
@@ -80,15 +80,15 @@ public class ShadowSectionCell extends View {
     private int getBackgroundResId() {
         boolean z = this.top;
         if (z && this.bottom) {
-            return C3634R.C3636drawable.greydivider;
+            return C3632R.C3634drawable.greydivider;
         }
         if (z) {
-            return C3634R.C3636drawable.greydivider_bottom;
+            return C3632R.C3634drawable.greydivider_bottom;
         }
         if (this.bottom) {
-            return C3634R.C3636drawable.greydivider_top;
+            return C3632R.C3634drawable.greydivider_top;
         }
-        return C3634R.C3636drawable.transparent;
+        return C3632R.C3634drawable.transparent;
     }
 
     @Override // android.view.View

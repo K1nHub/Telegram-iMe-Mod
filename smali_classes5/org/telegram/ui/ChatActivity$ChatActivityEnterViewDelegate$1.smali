@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;Lorg/telegram/ui/ActionBar/ActionBarMenu;)V
     .locals 0
 
-    .line 3469
+    .line 3472
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$1;->val$menu:Lorg/telegram/ui/ActionBar/ActionBarMenu;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 3480
+    .line 3483
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -58,7 +58,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 3472
+    .line 3475
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -71,14 +71,14 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setMenuOffsetSuppressed(Z)V
 
-    .line 3473
+    .line 3476
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$6500(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 3474
+    .line 3477
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -91,7 +91,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenu$LazyItem;->setVisibility(I)V
 
-    .line 3475
+    .line 3478
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityEnterViewDelegate$1;->val$menu:Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     const/16 v0, 0x30

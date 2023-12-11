@@ -27,7 +27,7 @@ public final class TrPhaseComputeVm$$serializer implements GeneratedSerializer<T
         pluginGeneratedSerialDescriptor.addElement("account_activated", false);
         pluginGeneratedSerialDescriptor.addElement("gas_fees", false);
         pluginGeneratedSerialDescriptor.addElement("r1", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7613x101b1ca4("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7611x101b1ca4("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

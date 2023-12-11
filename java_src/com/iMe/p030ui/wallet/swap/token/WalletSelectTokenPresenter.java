@@ -230,12 +230,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends SelectableTokenItem>> result) {
-                m1857invoke(result);
+                m1859invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1857invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
+            public final void m1859invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends SelectableTokenItem>> result = it;
                 if (result instanceof Result.Success) {
@@ -312,12 +312,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> result) {
-                m1855invoke(result);
+                m1857invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1855invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> it) {
+            public final void m1857invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> it) {
                 ResourceManager resourceManager;
                 Result.Success success;
                 List<SelectableTokenItem> withExcludedSelectedToken;
@@ -417,12 +417,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TokenBalance>> result) {
-                m1856invoke(result);
+                m1858invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1856invoke(Result<? extends List<? extends TokenBalance>> it) {
+            public final void m1858invoke(Result<? extends List<? extends TokenBalance>> it) {
                 ResourceManager resourceManager;
                 List<SelectableTokenItem> withExcludedSelectedToken;
                 boolean z;
@@ -567,12 +567,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends SelectableTokenItem>> result) {
-                m1858invoke(result);
+                m1860invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1858invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
+            public final void m1860invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends SelectableTokenItem>> result = it;
                 if (result instanceof Result.Success) {

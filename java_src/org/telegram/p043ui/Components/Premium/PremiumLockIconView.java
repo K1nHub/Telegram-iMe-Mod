@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.Premium.StarParticlesView;
@@ -57,7 +57,7 @@ public class PremiumLockIconView extends ImageView {
         this.shaderCrossfadeProgress = 1.0f;
         this.type = i;
         this.resourcesProvider = resourcesProvider;
-        setImageResource(i == TYPE_REACTIONS ? C3634R.C3636drawable.msg_premium_lock2 : C3634R.C3636drawable.msg_mini_premiumlock);
+        setImageResource(i == TYPE_REACTIONS ? C3632R.C3634drawable.msg_premium_lock2 : C3632R.C3634drawable.msg_mini_premiumlock);
         if (i == TYPE_REACTIONS) {
             StarParticlesView.Drawable drawable = new StarParticlesView.Drawable(5);
             this.starParticles = drawable;
@@ -256,7 +256,7 @@ public class PremiumLockIconView extends ImageView {
 
     public void setLocked(boolean z) {
         if (this.type != TYPE_REACTIONS) {
-            setImageResource(z ? C3634R.C3636drawable.msg_mini_premiumlock : C3634R.C3636drawable.msg_mini_stickerstar);
+            setImageResource(z ? C3632R.C3634drawable.msg_mini_premiumlock : C3632R.C3634drawable.msg_mini_stickerstar);
         }
     }
 }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
     .locals 0
 
-    .line 849
+    .line 850
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$15;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -35,7 +35,7 @@
 .method public getSpanSize(I)I
     .locals 1
 
-    .line 852
+    .line 853
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$15;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$2700(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchAdapter;
@@ -50,7 +50,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 854
+    .line 855
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$15;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$1000(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Landroidx/recyclerview/widget/GridLayoutManager;

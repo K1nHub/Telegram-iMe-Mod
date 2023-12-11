@@ -40,7 +40,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -152,7 +152,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.EmojiPacksAlert$1 */
     /* loaded from: classes6.dex */
-    public class C49261 implements ContentPreviewViewer.ContentPreviewViewerDelegate {
+    public class C49231 implements ContentPreviewViewer.ContentPreviewViewerDelegate {
         @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public boolean can() {
             return true;
@@ -262,7 +262,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
             ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$setKiklikoAvatar(this, str);
         }
 
-        C49261() {
+        C49231() {
         }
 
         @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -289,7 +289,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(MessageObject.findAnimatedEmojiEmoticon(tLRPC$Document));
             valueOf.setSpan(new AnimatedEmojiSpan(tLRPC$Document, (Paint.FontMetricsInt) null), 0, valueOf.length(), 33);
             if (AndroidUtilities.addToClipboard(valueOf)) {
-                BulletinFactory.m63of((FrameLayout) ((BottomSheet) EmojiPacksAlert.this).containerView, ((BottomSheet) EmojiPacksAlert.this).resourcesProvider).createCopyBulletin(LocaleController.getString("EmojiCopied", C3634R.string.EmojiCopied)).show();
+                BulletinFactory.m63of((FrameLayout) ((BottomSheet) EmojiPacksAlert.this).containerView, ((BottomSheet) EmojiPacksAlert.this).resourcesProvider).createCopyBulletin(LocaleController.getString("EmojiCopied", C3632R.string.EmojiCopied)).show();
             }
         }
 
@@ -324,16 +324,16 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.EmojiPacksAlert$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    EmojiPacksAlert.C49261.this.lambda$setAsEmojiStatus$0(tLRPC$TL_emojiStatusEmpty);
+                    EmojiPacksAlert.C49231.this.lambda$setAsEmojiStatus$0(tLRPC$TL_emojiStatusEmpty);
                 }
             };
             if (tLRPC$Document != null) {
-                BulletinFactory.m63of((FrameLayout) ((BottomSheet) EmojiPacksAlert.this).containerView, ((BottomSheet) EmojiPacksAlert.this).resourcesProvider).createEmojiBulletin(tLRPC$Document, LocaleController.getString("SetAsEmojiStatusInfo", C3634R.string.SetAsEmojiStatusInfo), LocaleController.getString("Undo", C3634R.string.Undo), runnable).show();
+                BulletinFactory.m63of((FrameLayout) ((BottomSheet) EmojiPacksAlert.this).containerView, ((BottomSheet) EmojiPacksAlert.this).resourcesProvider).createEmojiBulletin(tLRPC$Document, LocaleController.getString("SetAsEmojiStatusInfo", C3632R.string.SetAsEmojiStatusInfo), LocaleController.getString("Undo", C3632R.string.Undo), runnable).show();
                 return;
             }
             Bulletin.SimpleLayout simpleLayout = new Bulletin.SimpleLayout(EmojiPacksAlert.this.getContext(), ((BottomSheet) EmojiPacksAlert.this).resourcesProvider);
-            simpleLayout.textView.setText(LocaleController.getString("RemoveStatusInfo", C3634R.string.RemoveStatusInfo));
-            simpleLayout.imageView.setImageResource(C3634R.C3636drawable.msg_settings_premium);
+            simpleLayout.textView.setText(LocaleController.getString("RemoveStatusInfo", C3632R.string.RemoveStatusInfo));
+            simpleLayout.imageView.setImageResource(C3632R.C3634drawable.msg_settings_premium);
             Bulletin.UndoButton undoButton = new Bulletin.UndoButton(EmojiPacksAlert.this.getContext(), true, ((BottomSheet) EmojiPacksAlert.this).resourcesProvider);
             undoButton.setUndoAction(runnable);
             simpleLayout.setButton(undoButton);
@@ -448,7 +448,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), true, true);
         actionBarMenuSubItem.setItemHeight(48);
         actionBarMenuSubItem.setPadding(AndroidUtilities.m104dp(26), 0, AndroidUtilities.m104dp(26), 0);
-        actionBarMenuSubItem.setText(LocaleController.getString("Copy", C3634R.string.Copy));
+        actionBarMenuSubItem.setText(LocaleController.getString("Copy", C3632R.string.Copy));
         actionBarMenuSubItem.getTextView().setTextSize(1, 14.4f);
         actionBarMenuSubItem.getTextView().setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiPacksAlert$$ExternalSyntheticLambda4
@@ -458,7 +458,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
             }
         });
         LinearLayout linearLayout = new LinearLayout(context);
-        Drawable mutate = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.popup_fixed_alert).mutate();
+        Drawable mutate = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.popup_fixed_alert).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground), PorterDuff.Mode.MULTIPLY));
         linearLayout.setBackground(mutate);
         linearLayout.addView(actionBarMenuSubItem);
@@ -469,7 +469,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         this.popupWindow.setInputMethodMode(2);
         this.popupWindow.setSoftInputMode(0);
         this.popupWindow.setOutsideTouchable(true);
-        this.popupWindow.setAnimationStyle(C3634R.style.PopupAnimation);
+        this.popupWindow.setAnimationStyle(C3632R.style.PopupAnimation);
         int[] iArr = new int[2];
         view.getLocationInWindow(iArr);
         this.popupWindow.showAtLocation(view, 51, (iArr[0] - AndroidUtilities.m104dp(49)) + (view.getMeasuredWidth() / 2), iArr[1] - AndroidUtilities.m104dp(52));
@@ -491,7 +491,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(AnimatedEmojiDrawable.findDocument(this.currentAccount, animatedEmojiSpan.getDocumentId())));
         spannableString.setSpan(animatedEmojiSpan, 0, spannableString.length(), 33);
         if (AndroidUtilities.addToClipboard(spannableString)) {
-            BulletinFactory.m63of((FrameLayout) this.containerView, this.resourcesProvider).createCopyBulletin(LocaleController.getString("EmojiCopied", C3634R.string.EmojiCopied)).show();
+            BulletinFactory.m63of((FrameLayout) this.containerView, this.resourcesProvider).createCopyBulletin(LocaleController.getString("EmojiCopied", C3632R.string.EmojiCopied)).show();
         }
     }
 
@@ -942,7 +942,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         if (baseFragment != null) {
             new PremiumFeatureBottomSheet(baseFragment, 11, false).show();
         } else if (getContext() instanceof LaunchActivity) {
-            ((LaunchActivity) getContext()).lambda$runLinkRequest$90(new PremiumPreviewFragment(null));
+            ((LaunchActivity) getContext()).lambda$runLinkRequest$94(new PremiumPreviewFragment(null));
         }
     }
 
@@ -1088,7 +1088,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                     callback.run(Boolean.TRUE);
                 }
             } else if (view != null) {
-                Toast.makeText(baseFragment.getFragmentView().getContext(), LocaleController.getString("ErrorOccurred", C3634R.string.ErrorOccurred), 0).show();
+                Toast.makeText(baseFragment.getFragmentView().getContext(), LocaleController.getString("ErrorOccurred", C3632R.string.ErrorOccurred), 0).show();
                 if (callback != null) {
                     callback.run(Boolean.FALSE);
                 }
@@ -1365,7 +1365,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         private Adapter() {
         }
 
-        /* synthetic */ Adapter(EmojiPacksAlert emojiPacksAlert, C49261 c49261) {
+        /* synthetic */ Adapter(EmojiPacksAlert emojiPacksAlert, C49231 c49231) {
             this();
         }
 
@@ -1490,7 +1490,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                 TextView textView = (TextView) viewHolder.itemView;
                 textView.setTextSize(1, 13.0f);
                 textView.setTextColor(EmojiPacksAlert.this.getThemedColor(Theme.key_chat_emojiPanelTrendingDescription));
-                textView.setText(AndroidUtilities.replaceTags(LocaleController.getString("PremiumPreviewEmojiPack", C3634R.string.PremiumPreviewEmojiPack)));
+                textView.setText(AndroidUtilities.replaceTags(LocaleController.getString("PremiumPreviewEmojiPack", C3632R.string.PremiumPreviewEmojiPack)));
                 textView.setPadding(AndroidUtilities.m104dp(14), 0, AndroidUtilities.m104dp(30), AndroidUtilities.m104dp(14));
             }
         }
@@ -1596,20 +1596,20 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         if (parentActivity == null) {
             parentActivity = getContext();
         }
-        DialogC49338 dialogC49338 = new DialogC49338(parentActivity, null, str2, false, str2, false, this.resourcesProvider);
+        DialogC49308 dialogC49308 = new DialogC49308(parentActivity, null, str2, false, str2, false, this.resourcesProvider);
         BaseFragment baseFragment2 = this.fragment;
         if (baseFragment2 != null) {
-            baseFragment2.showDialog(dialogC49338);
+            baseFragment2.showDialog(dialogC49308);
         } else {
-            dialogC49338.show();
+            dialogC49308.show();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.EmojiPacksAlert$8 */
     /* loaded from: classes6.dex */
-    public class DialogC49338 extends ShareAlert {
-        DialogC49338(Context context, ArrayList arrayList, String str, boolean z, String str2, boolean z2, Theme.ResourcesProvider resourcesProvider) {
+    public class DialogC49308 extends ShareAlert {
+        DialogC49308(Context context, ArrayList arrayList, String str, boolean z, String str2, boolean z2, Theme.ResourcesProvider resourcesProvider) {
             super(context, arrayList, str, z, str2, z2, resourcesProvider);
         }
 
@@ -1619,7 +1619,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.EmojiPacksAlert$8$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    EmojiPacksAlert.DialogC49338.this.lambda$onSend$0(longSparseArray, i);
+                    EmojiPacksAlert.DialogC49308.this.lambda$onSend$0(longSparseArray, i);
                 }
             }, 100L);
         }
@@ -1778,13 +1778,13 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                 } else {
                     PremiumButtonView premiumButtonView = new PremiumButtonView(context, AndroidUtilities.m104dp(4), false, ((BottomSheet) EmojiPacksAlert.this).resourcesProvider);
                     this.unlockButtonView = premiumButtonView;
-                    premiumButtonView.setButton(LocaleController.getString("Unlock", C3634R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiPacksAlert$EmojiPackHeader$$ExternalSyntheticLambda2
+                    premiumButtonView.setButton(LocaleController.getString("Unlock", C3632R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiPacksAlert$EmojiPackHeader$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             EmojiPacksAlert.EmojiPackHeader.this.lambda$new$0(view);
                         }
                     });
-                    this.unlockButtonView.setIcon(C3634R.raw.unlock_icon);
+                    this.unlockButtonView.setIcon(C3632R.raw.unlock_icon);
                     ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.unlockButtonView.getIconView().getLayoutParams();
                     marginLayoutParams.leftMargin = AndroidUtilities.m104dp(1);
                     marginLayoutParams.topMargin = AndroidUtilities.m104dp(1);
@@ -1804,7 +1804,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                 TextView textView2 = this.addButtonView;
                 int i = Theme.key_featuredStickers_addButton;
                 textView2.setBackground(Theme.AdaptiveRipple.filledRect(EmojiPacksAlert.this.getThemedColor(i), 4.0f));
-                this.addButtonView.setText(LocaleController.getString("Add", C3634R.string.Add));
+                this.addButtonView.setText(LocaleController.getString("Add", C3632R.string.Add));
                 this.addButtonView.setPadding(AndroidUtilities.m104dp(18), 0, AndroidUtilities.m104dp(18), 0);
                 this.addButtonView.setGravity(17);
                 this.addButtonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiPacksAlert$EmojiPackHeader$$ExternalSyntheticLambda4
@@ -1821,7 +1821,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                 textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 this.removeButtonView.setTextColor(EmojiPacksAlert.this.getThemedColor(i));
                 this.removeButtonView.setBackground(Theme.createRadSelectorDrawable(268435455 & EmojiPacksAlert.this.getThemedColor(i), 4, 4));
-                this.removeButtonView.setText(LocaleController.getString("StickersRemove", C3634R.string.StickersRemove));
+                this.removeButtonView.setText(LocaleController.getString("StickersRemove", C3632R.string.StickersRemove));
                 this.removeButtonView.setPadding(AndroidUtilities.m104dp(12), 0, AndroidUtilities.m104dp(12), 0);
                 this.removeButtonView.setGravity(17);
                 this.removeButtonView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiPacksAlert$EmojiPackHeader$$ExternalSyntheticLambda1
@@ -1869,11 +1869,11 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                 this.optionsButton = actionBarMenuItem;
                 actionBarMenuItem.setLongClickEnabled(false);
                 this.optionsButton.setSubMenuOpenSide(2);
-                this.optionsButton.setIcon(C3634R.C3636drawable.ic_ab_other);
+                this.optionsButton.setIcon(C3632R.C3634drawable.ic_ab_other);
                 this.optionsButton.setBackgroundDrawable(Theme.createSelectorDrawable(EmojiPacksAlert.this.getThemedColor(Theme.key_player_actionBarSelector), 1));
                 addView(this.optionsButton, LayoutHelper.createFrame(40, 40.0f, 53, (float) BitmapDescriptorFactory.HUE_RED, 5.0f, 5.0f - (((BottomSheet) EmojiPacksAlert.this).backgroundPaddingLeft / AndroidUtilities.density), (float) BitmapDescriptorFactory.HUE_RED));
-                this.optionsButton.addSubItem(1, C3634R.C3636drawable.msg_share, LocaleController.getString("StickersShare", C3634R.string.StickersShare));
-                this.optionsButton.addSubItem(2, C3634R.C3636drawable.msg_link, LocaleController.getString("CopyLink", C3634R.string.CopyLink));
+                this.optionsButton.addSubItem(1, C3632R.C3634drawable.msg_share, LocaleController.getString("StickersShare", C3632R.string.StickersShare));
+                this.optionsButton.addSubItem(2, C3632R.C3634drawable.msg_link, LocaleController.getString("CopyLink", C3632R.string.CopyLink));
                 this.optionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmojiPacksAlert$EmojiPackHeader$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -1886,7 +1886,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                         EmojiPacksAlert.access$6500(EmojiPacksAlert.this, i2);
                     }
                 });
-                this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+                this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
             }
         }
 
@@ -2008,7 +2008,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
         private LinkMovementMethodMy() {
         }
 
-        /* synthetic */ LinkMovementMethodMy(C49261 c49261) {
+        /* synthetic */ LinkMovementMethodMy(C49231 c49231) {
             this();
         }
 
@@ -2149,7 +2149,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
                 if (EmojiPacksAlert.this.fragment == null || EmojiPacksAlert.this.fragment.getParentActivity() == null) {
                     return;
                 }
-                BulletinFactory.m62of(EmojiPacksAlert.this.fragment).createErrorBulletin(LocaleController.getString("UnknownError", C3634R.string.UnknownError)).show();
+                BulletinFactory.m62of(EmojiPacksAlert.this.fragment).createErrorBulletin(LocaleController.getString("UnknownError", C3632R.string.UnknownError)).show();
                 return;
             }
             TLRPC$Vector tLRPC$Vector = (TLRPC$Vector) tLObject;
@@ -2186,7 +2186,7 @@ public class EmojiPacksAlert extends BottomSheet implements NotificationCenter.N
             if (EmojiPacksAlert.this.fragment == null || EmojiPacksAlert.this.fragment.getParentActivity() == null) {
                 return;
             }
-            BulletinFactory.m62of(EmojiPacksAlert.this.fragment).createErrorBulletin(LocaleController.getString("AddEmojiNotFound", C3634R.string.AddEmojiNotFound)).show();
+            BulletinFactory.m62of(EmojiPacksAlert.this.fragment).createErrorBulletin(LocaleController.getString("AddEmojiNotFound", C3632R.string.AddEmojiNotFound)).show();
         }
 
         /* JADX INFO: Access modifiers changed from: private */

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 2829
+    .line 2832
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$12;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
@@ -35,7 +35,7 @@
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 2839
+    .line 2842
     invoke-static {}, Lorg/telegram/ui/ChatActivity;->access$2000()F
 
     move-result p1
@@ -50,10 +50,10 @@
 .method public setValue(Ljava/lang/Object;F)V
     .locals 1
 
-    .line 2832
+    .line 2835
     invoke-static {p2}, Lorg/telegram/ui/ChatActivity;->access$2002(F)F
 
-    .line 2833
+    .line 2836
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$12;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$2100(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/ColorMatrix;
@@ -62,7 +62,7 @@
 
     invoke-virtual {p1, p2}, Landroid/graphics/ColorMatrix;->setSaturation(F)V
 
-    .line 2834
+    .line 2837
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$12;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$2200(Lorg/telegram/ui/ChatActivity;)Landroid/graphics/Paint;

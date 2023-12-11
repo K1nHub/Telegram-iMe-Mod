@@ -120,7 +120,7 @@
 .end method
 
 .method private getCountryNameWithFlag(Lorg/telegram/tgnet/TLRPC$TL_help_country;)Ljava/lang/CharSequence;
-    .locals 8
+    .locals 6
 
     .line 68
     new-instance v0, Landroid/text/SpannableStringBuilder;
@@ -134,132 +134,61 @@
 
     move-result-object v1
 
-    .line 70
-    sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    const/4 v2, 0x1
 
-    const/16 v3, 0x10
+    const-string v3, " "
 
-    const/16 v4, 0x22
-
-    const/4 v5, 0x1
-
-    const-string v6, " "
-
-    const/4 v7, 0x0
-
-    if-nez v2, :cond_1
+    const/4 v4, 0x0
 
     if-eqz v1, :cond_0
 
-    .line 72
+    .line 71
     invoke-virtual {v0, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-virtual {v2, v6}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v5, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 73
-    new-instance v2, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;
+    .line 72
+    new-instance v3, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;
 
-    invoke-direct {v2, v3}, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;-><init>(I)V
+    const/16 v5, 0x10
+
+    invoke-direct {v3, v5}, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;-><init>(I)V
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v5
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    add-int/2addr v1, v5
+    add-int/2addr v1, v2
 
-    invoke-virtual {v0, v2, v3, v1, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v0, v3, v5, v1, v4}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     goto :goto_0
 
-    .line 75
+    .line 74
     :cond_0
-    invoke-virtual {v0, v6}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-virtual {v0, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 76
+    .line 75
     new-instance v1, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;
 
-    invoke-direct {v1, v4}, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;-><init>(I)V
+    const/16 v3, 0x22
 
-    invoke-virtual {v0, v1, v7, v5, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-direct {v1, v3}, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;-><init>(I)V
 
-    .line 78
+    invoke-virtual {v0, v1, v4, v2, v4}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    .line 77
     :goto_0
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;->default_name:Ljava/lang/String;
 
     invoke-virtual {v0, p1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    goto :goto_1
-
-    .line 80
-    :cond_1
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;->default_name:Ljava/lang/String;
-
-    invoke-virtual {v0, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-
-    if-eqz v1, :cond_2
-
-    .line 82
-    invoke-virtual {v0, v6}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-
-    .line 83
-    new-instance v1, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;
-
-    invoke-direct {v1, v3}, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;-><init>(I)V
-
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;->default_name:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;->default_name:Ljava/lang/String;
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    add-int/2addr p1, v5
-
-    invoke-virtual {v0, v1, v2, p1, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
-
-    goto :goto_1
-
-    .line 85
-    :cond_2
-    invoke-virtual {v0, v6}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-
-    .line 86
-    new-instance v1, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;
-
-    invoke-direct {v1, v4}, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell$SpaceDrawable;-><init>(I)V
-
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;->default_name:Ljava/lang/String;
-
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v2
-
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;->default_name:Ljava/lang/String;
-
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result p1
-
-    add-int/2addr p1, v5
-
-    invoke-virtual {v0, v1, v2, p1, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
-
-    :goto_1
     return-object v0
 .end method
 
@@ -276,7 +205,7 @@
 .method public getCountry()Lorg/telegram/tgnet/TLRPC$TL_help_country;
     .locals 1
 
-    .line 93
+    .line 82
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell;->country:Lorg/telegram/tgnet/TLRPC$TL_help_country;
 
     return-object v0
@@ -301,7 +230,7 @@
 .method public setChecked(ZZ)V
     .locals 1
 
-    .line 97
+    .line 86
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -310,7 +239,7 @@
 
     if-nez v0, :cond_0
 
-    .line 98
+    .line 87
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V

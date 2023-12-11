@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State;)V
     .locals 1
 
-    .line 420
+    .line 453
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showAddressMismatchScreen"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V
     .locals 0
 
-    .line 425
+    .line 458
     invoke-interface {p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;->showAddressMismatchScreen()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 418
+    .line 451
     check-cast p1, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowAddressMismatchScreenCommand;->apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V

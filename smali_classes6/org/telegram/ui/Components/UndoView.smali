@@ -10,6 +10,9 @@
     }
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # static fields
 .field public static ACTION_RINGTONE_ADDED:I = 0x53
@@ -179,7 +182,7 @@
 
     const/4 v1, 0x0
 
-    .line 269
+    .line 270
     invoke-direct {p0, p1, v0, v1, v0}, Lorg/telegram/ui/Components/UndoView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -192,7 +195,7 @@
 
     const/4 v1, 0x0
 
-    .line 273
+    .line 274
     invoke-direct {p0, p1, p2, v0, v1}, Lorg/telegram/ui/Components/UndoView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -205,27 +208,27 @@
 
     move-object/from16 v1, p1
 
-    .line 277
+    .line 278
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 121
+    .line 122
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v2, v0, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     const/4 v2, -0x1
 
-    .line 132
+    .line 133
     iput v2, v0, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     const/4 v2, 0x1
 
-    .line 235
+    .line 236
     iput v2, v0, Lorg/telegram/ui/Components/UndoView;->hideAnimationType:I
 
     const/16 v3, 0x8
 
-    .line 1688
+    .line 1689
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -234,25 +237,25 @@
 
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 1708
+    .line 1709
     iput v3, v0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
     move-object/from16 v3, p4
 
-    .line 278
+    .line 279
     iput-object v3, v0, Lorg/telegram/ui/Components/UndoView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-object/from16 v3, p2
 
-    .line 279
+    .line 280
     iput-object v3, v0, Lorg/telegram/ui/Components/UndoView;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move/from16 v3, p3
 
-    .line 280
+    .line 281
     iput-boolean v3, v0, Lorg/telegram/ui/Components/UndoView;->fromTop:Z
 
-    .line 282
+    .line 283
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -261,10 +264,10 @@
 
     const/high16 v4, 0x41700000    # 15.0f
 
-    .line 283
+    .line 284
     invoke-virtual {v3, v2, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 284
+    .line 285
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_undo_infoColor:I
@@ -275,7 +278,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 285
+    .line 286
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_undo_cancelColor:I
@@ -286,7 +289,7 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 286
+    .line 287
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     new-instance v6, Lorg/telegram/ui/Components/UndoView$LinkMovementMethodMy;
@@ -295,7 +298,7 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 287
+    .line 288
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/4 v6, -0x2
@@ -318,7 +321,7 @@
 
     invoke-virtual {v0, v3, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 289
+    .line 290
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -327,10 +330,10 @@
 
     const/high16 v6, 0x41500000    # 13.0f
 
-    .line 290
+    .line 291
     invoke-virtual {v3, v2, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 291
+    .line 292
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -339,7 +342,7 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 292
+    .line 293
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-direct {v0, v5}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -348,26 +351,26 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 293
+    .line 294
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/4 v6, 0x0
 
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setHighlightColor(I)V
 
-    .line 294
+    .line 295
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 295
+    .line 296
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     sget-object v7, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 296
+    .line 297
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     new-instance v7, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
@@ -376,7 +379,7 @@
 
     invoke-virtual {v3, v7}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 297
+    .line 298
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/4 v7, -0x2
@@ -399,19 +402,19 @@
 
     invoke-virtual {v0, v3, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 299
+    .line 300
     new-instance v3, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 300
+    .line 301
     sget-object v7, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v3, v7}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 301
+    .line 302
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_undo_background:I
@@ -428,7 +431,7 @@
 
     invoke-virtual {v3, v10, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 302
+    .line 303
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v7}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -441,7 +444,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 303
+    .line 304
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -452,7 +455,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 304
+    .line 305
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -463,7 +466,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 305
+    .line 306
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -474,7 +477,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 306
+    .line 307
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -485,7 +488,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 307
+    .line 308
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -496,7 +499,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 308
+    .line 309
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -507,7 +510,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 309
+    .line 310
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -518,7 +521,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 310
+    .line 311
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -529,7 +532,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 311
+    .line 312
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -540,7 +543,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 312
+    .line 313
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -551,7 +554,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 313
+    .line 314
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -562,7 +565,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 314
+    .line 315
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -573,7 +576,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 315
+    .line 316
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -584,7 +587,7 @@
 
     invoke-virtual {v3, v9, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 316
+    .line 317
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v8, 0x36
@@ -605,7 +608,7 @@
 
     invoke-virtual {v0, v3, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 318
+    .line 319
     new-instance v3, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -614,14 +617,14 @@
 
     const/16 v8, 0xf
 
-    .line 319
+    .line 320
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
     invoke-virtual {v3, v9}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 320
+    .line 321
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v9, 0x1e
@@ -640,17 +643,17 @@
 
     invoke-virtual {v0, v3, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 322
+    .line 323
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
-    .line 323
+    .line 324
     invoke-virtual {v3, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 324
+    .line 325
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-direct {v0, v5}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -677,7 +680,7 @@
 
     invoke-virtual {v3, v9}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 325
+    .line 326
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     const/4 v11, -0x2
@@ -696,7 +699,7 @@
 
     invoke-virtual {v0, v3, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 326
+    .line 327
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     new-instance v9, Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda0;
@@ -705,19 +708,19 @@
 
     invoke-virtual {v3, v9}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 333
+    .line 334
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-direct {v3, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/Components/UndoView;->undoImageView:Landroid/widget/ImageView;
 
-    .line 334
+    .line 335
     sget v9, Lorg/telegram/messenger/R$drawable;->chats_undo:I
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 335
+    .line 336
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->undoImageView:Landroid/widget/ImageView;
 
     new-instance v9, Landroid/graphics/PorterDuffColorFilter;
@@ -732,7 +735,7 @@
 
     invoke-virtual {v3, v9}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 336
+    .line 337
     iget-object v3, v0, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     iget-object v9, v0, Lorg/telegram/ui/Components/UndoView;->undoImageView:Landroid/widget/ImageView;
@@ -757,7 +760,7 @@
 
     invoke-virtual {v3, v9, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 338
+    .line 339
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -766,10 +769,10 @@
 
     const/high16 v1, 0x41600000    # 14.0f
 
-    .line 339
+    .line 340
     invoke-virtual {v3, v2, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 340
+    .line 341
     iget-object v1, v0, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     const-string v3, "fonts/rmedium.ttf"
@@ -780,7 +783,7 @@
 
     invoke-virtual {v1, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 341
+    .line 342
     iget-object v1, v0, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-direct {v0, v5}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -789,7 +792,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 342
+    .line 343
     iget-object v1, v0, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     sget v5, Lorg/telegram/messenger/R$string;->Undo:I
@@ -802,7 +805,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 343
+    .line 344
     iget-object v1, v0, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
@@ -819,7 +822,7 @@
 
     invoke-virtual {v1, v5, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 345
+    .line 346
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -852,19 +855,19 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/UndoView;->rect:Landroid/graphics/RectF;
 
-    .line 347
+    .line 348
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/UndoView;->progressPaint:Landroid/graphics/Paint;
 
-    .line 348
+    .line 349
     sget-object v5, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 349
+    .line 350
     iget-object v1, v0, Lorg/telegram/ui/Components/UndoView;->progressPaint:Landroid/graphics/Paint;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -875,14 +878,14 @@
 
     invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 350
+    .line 351
     iget-object v1, v0, Lorg/telegram/ui/Components/UndoView;->progressPaint:Landroid/graphics/Paint;
 
     sget-object v5, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 351
+    .line 352
     iget-object v1, v0, Lorg/telegram/ui/Components/UndoView;->progressPaint:Landroid/graphics/Paint;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -891,7 +894,7 @@
 
     invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 353
+    .line 354
     new-instance v1, Landroid/text/TextPaint;
 
     invoke-direct {v1, v2}, Landroid/text/TextPaint;-><init>(I)V
@@ -900,7 +903,7 @@
 
     const/16 v2, 0xc
 
-    .line 354
+    .line 355
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -909,7 +912,7 @@
 
     invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 355
+    .line 356
     iget-object v1, v0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -918,7 +921,7 @@
 
     invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 356
+    .line 357
     iget-object v1, v0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
 
     invoke-direct {v0, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -927,12 +930,12 @@
 
     invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 358
+    .line 359
     invoke-virtual {v0, v6}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     const/16 v1, 0xa
 
-    .line 359
+    .line 360
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -947,14 +950,14 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/UndoView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 361
+    .line 362
     sget-object v1, Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda3;->INSTANCE:Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda3;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     const/4 v1, 0x4
 
-    .line 363
+    .line 364
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     return-void
@@ -963,7 +966,7 @@
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 1849
+    .line 1850
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -976,7 +979,7 @@
 .method private hasSubInfo()Z
     .locals 2
 
-    .line 396
+    .line 397
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     const/16 v1, 0xb
@@ -1073,7 +1076,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 399
+    .line 400
     invoke-direct {p0}, Lorg/telegram/ui/Components/UndoView;->isSortingDisabled()Z
 
     move-result v0
@@ -1121,7 +1124,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 400
+    .line 401
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -1146,7 +1149,7 @@
 .method private isFoldersHidden()Z
     .locals 1
 
-    .line 96
+    .line 97
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v0}, Lcom/iMe/fork/controller/FiltersController;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
@@ -1163,7 +1166,7 @@
 .method private isSortingDisabled()Z
     .locals 2
 
-    .line 100
+    .line 101
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v0}, Lcom/iMe/fork/controller/FiltersController;->getInstance(I)Lcom/iMe/fork/controller/FiltersController;
@@ -1187,7 +1190,7 @@
 .method private isTooltipAction()Z
     .locals 5
 
-    .line 376
+    .line 377
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     const/4 v1, 0x0
@@ -1202,7 +1205,7 @@
 
     goto/16 :goto_0
 
-    .line 379
+    .line 380
     :cond_0
     sget v3, Lcom/iMe/common/IdFabric$CustomType;->UNDO_MOVE_TO_FOLDER:I
 
@@ -1351,7 +1354,7 @@
 
     if-eq v0, v2, :cond_2
 
-    .line 383
+    .line 384
     sget v2, Lorg/telegram/ui/Components/UndoView;->ACTION_RINGTONE_ADDED:I
 
     if-ne v0, v2, :cond_3
@@ -1367,7 +1370,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 1
 
-    .line 327
+    .line 328
     invoke-virtual {p0}, Lorg/telegram/ui/Components/UndoView;->canUndo()Z
 
     move-result p1
@@ -1381,7 +1384,7 @@
 
     const/4 v0, 0x1
 
-    .line 330
+    .line 331
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/UndoView;->hide(ZI)V
 
     return-void
@@ -1402,7 +1405,7 @@
 
     const/4 v0, 0x1
 
-    .line 553
+    .line 554
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/UndoView;->hide(ZI)V
 
     return-void
@@ -1419,12 +1422,12 @@
 .method private synthetic lambda$showWithAction$4(Lorg/telegram/tgnet/TLObject;)V
     .locals 2
 
-    .line 674
+    .line 675
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentReceipt;
 
     if-eqz v0, :cond_0
 
-    .line 675
+    .line 676
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     new-instance v1, Lorg/telegram/ui/PaymentFormActivity;
@@ -1442,7 +1445,7 @@
 .method private synthetic lambda$showWithAction$5(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 673
+    .line 674
     new-instance p2, Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda6;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/UndoView;Lorg/telegram/tgnet/TLObject;)V
@@ -1457,20 +1460,20 @@
 
     const/4 p2, 0x1
 
-    .line 669
+    .line 670
     invoke-virtual {p0, p2, p2}, Lorg/telegram/ui/Components/UndoView;->hide(ZI)V
 
-    .line 670
+    .line 671
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_payments_getPaymentReceipt;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_payments_getPaymentReceipt;-><init>()V
 
-    .line 671
+    .line 672
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
     iput v0, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_getPaymentReceipt;->msg_id:I
 
-    .line 672
+    .line 673
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -1485,7 +1488,7 @@
 
     iput-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_getPaymentReceipt;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 673
+    .line 674
     iget-object p1, p0, Lorg/telegram/ui/Components/UndoView;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -1506,7 +1509,7 @@
 .method private synthetic lambda$showWithAction$7()V
     .locals 3
 
-    .line 1237
+    .line 1238
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v1, 0x3
@@ -1521,7 +1524,7 @@
 .method private updatePosition()V
     .locals 2
 
-    .line 1839
+    .line 1840
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->enterOffset:F
 
     iget v1, p0, Lorg/telegram/ui/Components/UndoView;->enterOffsetMargin:I
@@ -1546,7 +1549,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1840
+    .line 1841
     invoke-virtual {p0}, Lorg/telegram/ui/Components/UndoView;->invalidate()V
 
     return-void
@@ -1571,7 +1574,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 1712
+    .line 1713
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->additionalTranslationY:F
 
     const/4 v1, 0x0
@@ -1580,10 +1583,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 1713
+    .line 1714
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1715
+    .line 1716
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -1608,7 +1611,7 @@
 
     if-lez v2, :cond_0
 
-    .line 1717
+    .line 1718
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v2
@@ -1617,16 +1620,16 @@
 
     invoke-virtual {p1, v1, v1, v2, v0}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 1718
+    .line 1719
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1720
+    .line 1721
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
 
-    .line 1722
+    .line 1723
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -1637,7 +1640,7 @@
 .method public getBackground()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 1845
+    .line 1846
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -1646,7 +1649,7 @@
 .method public getCurrentInfoObject()Ljava/lang/Object;
     .locals 1
 
-    .line 416
+    .line 417
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->currentInfoObject:Ljava/lang/Object;
 
     return-object v0
@@ -1657,7 +1660,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 1827
+    .line 1828
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->enterOffset:F
 
     return v0
@@ -1666,7 +1669,7 @@
 .method public hide(ZI)V
     .locals 8
 
-    .line 420
+    .line 421
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getVisibility()I
 
     move-result v0
@@ -1682,32 +1685,32 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 423
+    .line 424
     iput-object v0, p0, Lorg/telegram/ui/Components/UndoView;->currentInfoObject:Ljava/lang/Object;
 
-    .line 424
+    .line 425
     iput-object v0, p0, Lorg/telegram/ui/Components/UndoView;->currentInfoObject2:Ljava/lang/Object;
 
     const/4 v1, 0x0
 
-    .line 425
+    .line 426
     iput-boolean v1, p0, Lorg/telegram/ui/Components/UndoView;->isShown:Z
 
-    .line 426
+    .line 427
     iget-object v2, p0, Lorg/telegram/ui/Components/UndoView;->currentActionRunnable:Ljava/lang/Runnable;
 
     if-eqz v2, :cond_2
 
     if-eqz p1, :cond_1
 
-    .line 428
+    .line 429
     invoke-interface {v2}, Ljava/lang/Runnable;->run()V
 
-    .line 430
+    .line 431
     :cond_1
     iput-object v0, p0, Lorg/telegram/ui/Components/UndoView;->currentActionRunnable:Ljava/lang/Runnable;
 
-    .line 432
+    .line 433
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Components/UndoView;->currentCancelRunnable:Ljava/lang/Runnable;
 
@@ -1715,14 +1718,14 @@
 
     if-nez p1, :cond_3
 
-    .line 434
+    .line 435
     invoke-interface {v2}, Ljava/lang/Runnable;->run()V
 
-    .line 436
+    .line 437
     :cond_3
     iput-object v0, p0, Lorg/telegram/ui/Components/UndoView;->currentCancelRunnable:Ljava/lang/Runnable;
 
-    .line 438
+    .line 439
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
@@ -1743,7 +1746,7 @@
     :cond_5
     move v0, v1
 
-    .line 439
+    .line 440
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/UndoView;->currentDialogIds:Ljava/util/ArrayList;
 
@@ -1753,7 +1756,7 @@
 
     if-ge v0, v4, :cond_8
 
-    .line 440
+    .line 441
     iget-object v4, p0, Lorg/telegram/ui/Components/UndoView;->currentDialogIds:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1766,7 +1769,7 @@
 
     move-result-wide v4
 
-    .line 441
+    .line 442
     iget v6, p0, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1793,7 +1796,7 @@
     :goto_2
     invoke-virtual {v6, v4, v5, v7, p1}, Lorg/telegram/messenger/MessagesController;->removeDialogAction(JZZ)V
 
-    .line 442
+    .line 443
     iget v6, p0, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     invoke-virtual {p0, v4, v5, v6}, Lorg/telegram/ui/Components/UndoView;->onRemoveDialogAction(JI)V
@@ -1809,7 +1812,7 @@
 
     if-eqz p2, :cond_b
 
-    .line 446
+    .line 447
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -1820,7 +1823,7 @@
 
     new-array v3, v3, [F
 
-    .line 448
+    .line 449
     iget-boolean v4, p0, Lorg/telegram/ui/Components/UndoView;->fromTop:Z
 
     if-eqz v4, :cond_9
@@ -1855,7 +1858,7 @@
 
     const-wide/16 p1, 0xfa
 
-    .line 449
+    .line 450
     invoke-virtual {v2, p1, p2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
     goto :goto_4
@@ -1865,7 +1868,7 @@
 
     new-array p1, p1, [Landroid/animation/Animator;
 
-    .line 451
+    .line 452
     sget-object p2, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v0, v3, [F
@@ -1874,7 +1877,7 @@
 
     aput v4, v0, v1
 
-    .line 452
+    .line 453
     invoke-static {p0, p2, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p2
@@ -1887,7 +1890,7 @@
 
     aput v4, v0, v1
 
-    .line 453
+    .line 454
     invoke-static {p0, p2, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p2
@@ -1904,22 +1907,22 @@
 
     aput v4, v3, v1
 
-    .line 454
+    .line 455
     invoke-static {p0, v0, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, p1, p2
 
-    .line 451
+    .line 452
     invoke-virtual {v2, p1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const-wide/16 p1, 0xb4
 
-    .line 455
+    .line 456
     invoke-virtual {v2, p1, p2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 457
+    .line 458
     :goto_4
     new-instance p1, Landroid/view/animation/DecelerateInterpolator;
 
@@ -1927,19 +1930,19 @@
 
     invoke-virtual {v2, p1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 458
+    .line 459
     new-instance p1, Lorg/telegram/ui/Components/UndoView$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/UndoView$1;-><init>(Lorg/telegram/ui/Components/UndoView;)V
 
     invoke-virtual {v2, p1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 467
+    .line 468
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_6
 
-    .line 469
+    .line 470
     :cond_b
     iget-boolean p2, p0, Lorg/telegram/ui/Components/UndoView;->fromTop:Z
 
@@ -1965,7 +1968,7 @@
 
     const/4 p1, 0x4
 
-    .line 470
+    .line 471
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     :cond_d
@@ -1976,15 +1979,15 @@
 .method public invalidate()V
     .locals 1
 
-    .line 1809
+    .line 1810
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1810
+    .line 1811
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->invalidate()V
 
-    .line 1811
+    .line 1812
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->invalidate()V
@@ -1995,7 +1998,7 @@
 .method public isMultilineSubInfo()Z
     .locals 2
 
-    .line 404
+    .line 405
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     const/16 v1, 0xc
@@ -2036,7 +2039,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 13
 
-    .line 1728
+    .line 1729
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->additionalTranslationY:F
 
     const/4 v1, 0x0
@@ -2047,10 +2050,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 1729
+    .line 1730
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1731
+    .line 1732
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -2079,7 +2082,7 @@
 
     if-lez v3, :cond_0
 
-    .line 1733
+    .line 1734
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v3
@@ -2088,27 +2091,27 @@
 
     invoke-virtual {p1, v1, v1, v3, v0}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 1734
+    .line 1735
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 1736
+    .line 1737
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1737
+    .line 1738
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
 
-    .line 1739
+    .line 1740
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1742
+    .line 1743
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
@@ -2134,7 +2137,7 @@
 
     if-ne v0, v5, :cond_c
 
-    .line 1743
+    .line 1744
     :cond_2
     iget-wide v5, p0, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
@@ -2163,18 +2166,18 @@
     :cond_3
     move v0, v7
 
-    .line 1744
+    .line 1745
     :goto_1
     iget v5, p0, Lorg/telegram/ui/Components/UndoView;->prevSeconds:I
 
     if-eq v5, v0, :cond_5
 
-    .line 1745
+    .line 1746
     iput v0, p0, Lorg/telegram/ui/Components/UndoView;->prevSeconds:I
 
     new-array v5, v2, [Ljava/lang/Object;
 
-    .line 1746
+    .line 1747
     invoke-static {v2, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
@@ -2193,18 +2196,18 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/UndoView;->timeLeftString:Ljava/lang/String;
 
-    .line 1747
+    .line 1748
     iget-object v5, p0, Lorg/telegram/ui/Components/UndoView;->timeLayout:Landroid/text/StaticLayout;
 
     if-eqz v5, :cond_4
 
-    .line 1748
+    .line 1749
     iput-object v5, p0, Lorg/telegram/ui/Components/UndoView;->timeLayoutOut:Landroid/text/StaticLayout;
 
-    .line 1749
+    .line 1750
     iput v1, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
-    .line 1752
+    .line 1753
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
 
@@ -2222,7 +2225,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/UndoView;->textWidth:I
 
-    .line 1753
+    .line 1754
     new-instance v0, Landroid/text/StaticLayout;
 
     iget-object v6, p0, Lorg/telegram/ui/Components/UndoView;->timeLeftString:Ljava/lang/String;
@@ -2245,7 +2248,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/UndoView;->timeLayout:Landroid/text/StaticLayout;
 
-    .line 1756
+    .line 1757
     :cond_5
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
@@ -2259,23 +2262,23 @@
 
     add-float/2addr v0, v5
 
-    .line 1757
+    .line 1758
     iput v0, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
     cmpl-float v0, v0, v1
 
     if-lez v0, :cond_6
 
-    .line 1759
+    .line 1760
     iput v1, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
     goto :goto_2
 
-    .line 1761
+    .line 1762
     :cond_6
     invoke-virtual {p0}, Lorg/telegram/ui/Components/UndoView;->invalidate()V
 
-    .line 1765
+    .line 1766
     :cond_7
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
@@ -2284,7 +2287,7 @@
 
     move-result v0
 
-    .line 1767
+    .line 1768
     iget-object v5, p0, Lorg/telegram/ui/Components/UndoView;->timeLayoutOut:Landroid/text/StaticLayout;
 
     const/16 v6, 0xa
@@ -2299,7 +2302,7 @@
 
     if-gez v8, :cond_8
 
-    .line 1768
+    .line 1769
     iget-object v8, p0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
 
     int-to-float v9, v0
@@ -2312,10 +2315,10 @@
 
     invoke-virtual {v8, v5}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 1769
+    .line 1770
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1770
+    .line 1771
     iget-object v5, p0, Lorg/telegram/ui/Components/UndoView;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v5}, Landroid/graphics/RectF;->centerX()F
@@ -2350,33 +2353,33 @@
 
     invoke-virtual {p1, v5, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1771
+    .line 1772
     iget-object v5, p0, Lorg/telegram/ui/Components/UndoView;->timeLayoutOut:Landroid/text/StaticLayout;
 
     invoke-virtual {v5, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1772
+    .line 1773
     iget-object v5, p0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v5, v0}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 1773
+    .line 1774
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1776
+    .line 1777
     :cond_8
     iget-object v5, p0, Lorg/telegram/ui/Components/UndoView;->timeLayout:Landroid/text/StaticLayout;
 
     if-eqz v5, :cond_b
 
-    .line 1777
+    .line 1778
     iget v5, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
     cmpl-float v8, v5, v1
 
     if-eqz v8, :cond_9
 
-    .line 1778
+    .line 1779
     iget-object v8, p0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
 
     int-to-float v9, v0
@@ -2387,11 +2390,11 @@
 
     invoke-virtual {v8, v5}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 1780
+    .line 1781
     :cond_9
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1781
+    .line 1782
     iget-object v5, p0, Lorg/telegram/ui/Components/UndoView;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v5}, Landroid/graphics/RectF;->centerX()F
@@ -2428,28 +2431,28 @@
 
     invoke-virtual {p1, v5, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1782
+    .line 1783
     iget-object v5, p0, Lorg/telegram/ui/Components/UndoView;->timeLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v5, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1783
+    .line 1784
     iget v5, p0, Lorg/telegram/ui/Components/UndoView;->timeReplaceProgress:F
 
     cmpl-float v1, v5, v1
 
     if-eqz v1, :cond_a
 
-    .line 1784
+    .line 1785
     iget-object v1, p0, Lorg/telegram/ui/Components/UndoView;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v1, v0}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 1786
+    .line 1787
     :cond_a
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1791
+    .line 1792
     :cond_b
     iget-object v6, p0, Lorg/telegram/ui/Components/UndoView;->rect:Landroid/graphics/RectF;
 
@@ -2475,37 +2478,37 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    .line 1794
+    .line 1795
     :cond_c
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
-    .line 1795
+    .line 1796
     iget-wide v5, p0, Lorg/telegram/ui/Components/UndoView;->lastUpdateTime:J
 
     sub-long v5, v0, v5
 
-    .line 1796
+    .line 1797
     iget-wide v7, p0, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     sub-long/2addr v7, v5
 
     iput-wide v7, p0, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 1797
+    .line 1798
     iput-wide v0, p0, Lorg/telegram/ui/Components/UndoView;->lastUpdateTime:J
 
     cmp-long p1, v7, v3
 
     if-gtz p1, :cond_d
 
-    .line 1799
+    .line 1800
     iget p1, p0, Lorg/telegram/ui/Components/UndoView;->hideAnimationType:I
 
     invoke-virtual {p0, v2, p1}, Lorg/telegram/ui/Components/UndoView;->hide(ZI)V
 
-    .line 1802
+    .line 1803
     :cond_d
     iget p1, p0, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
@@ -2513,7 +2516,7 @@
 
     if-eq p1, v0, :cond_e
 
-    .line 1803
+    .line 1804
     invoke-virtual {p0}, Lorg/telegram/ui/Components/UndoView;->invalidate()V
 
     :cond_e
@@ -2523,7 +2526,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 1700
+    .line 1701
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -2542,7 +2545,7 @@
 
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 1701
+    .line 1702
     iget-object p1, p0, Lorg/telegram/ui/Components/UndoView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -2569,17 +2572,17 @@
 .method public setAdditionalTranslationY(F)V
     .locals 1
 
-    .line 409
+    .line 410
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->additionalTranslationY:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 410
+    .line 411
     iput p1, p0, Lorg/telegram/ui/Components/UndoView;->additionalTranslationY:F
 
-    .line 411
+    .line 412
     invoke-direct {p0}, Lorg/telegram/ui/Components/UndoView;->updatePosition()V
 
     :cond_0
@@ -2589,22 +2592,22 @@
 .method public setColors(II)V
     .locals 1
 
-    .line 367
+    .line 368
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/Theme;->setDrawableColor(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 368
+    .line 369
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 369
+    .line 370
     iget-object v0, p0, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 370
+    .line 371
     iget-object p2, p0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/high16 v0, -0x1000000
@@ -2615,7 +2618,7 @@
 
     invoke-virtual {p2, v0, p1}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 371
+    .line 372
     iget-object p2, p0, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const-string v0, "info2.**"
@@ -2630,17 +2633,17 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 1832
+    .line 1833
     iget v0, p0, Lorg/telegram/ui/Components/UndoView;->enterOffset:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 1833
+    .line 1834
     iput p1, p0, Lorg/telegram/ui/Components/UndoView;->enterOffset:F
 
-    .line 1834
+    .line 1835
     invoke-direct {p0}, Lorg/telegram/ui/Components/UndoView;->updatePosition()V
 
     :cond_0
@@ -2650,7 +2653,7 @@
 .method public setEnterOffsetMargin(I)V
     .locals 0
 
-    .line 1691
+    .line 1692
     iput p1, p0, Lorg/telegram/ui/Components/UndoView;->enterOffsetMargin:I
 
     return-void
@@ -2659,7 +2662,7 @@
 .method public setHideAnimationType(I)V
     .locals 0
 
-    .line 1819
+    .line 1820
     iput p1, p0, Lorg/telegram/ui/Components/UndoView;->hideAnimationType:I
 
     return-void
@@ -2668,7 +2671,7 @@
 .method public setInfoText(Ljava/lang/CharSequence;)V
     .locals 0
 
-    .line 1815
+    .line 1816
     iput-object p1, p0, Lorg/telegram/ui/Components/UndoView;->infoText:Ljava/lang/CharSequence;
 
     return-void
@@ -2677,7 +2680,7 @@
 .method public showError(Ljava/lang/CharSequence;)V
     .locals 9
 
-    .line 88
+    .line 89
     sget v0, Lorg/telegram/messenger/R$raw;->error:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2706,7 +2709,7 @@
 
     const/4 v0, 0x0
 
-    .line 80
+    .line 81
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/UndoView;->showInfo(Ljava/lang/CharSequence;Ljava/lang/Runnable;)V
 
     return-void
@@ -2715,7 +2718,7 @@
 .method public showInfo(Ljava/lang/CharSequence;Ljava/lang/Runnable;)V
     .locals 9
 
-    .line 84
+    .line 85
     sget v0, Lorg/telegram/messenger/R$raw;->info:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2756,7 +2759,7 @@
 
     move-object v4, p4
 
-    .line 487
+    .line 488
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
@@ -2765,12 +2768,12 @@
 .method public showWithAction(JILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
     .locals 7
 
-    .line 499
+    .line 500
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 500
+    .line 501
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -2789,7 +2792,7 @@
 
     move-object v6, p7
 
-    .line 501
+    .line 502
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Components/UndoView;->showWithAction(Ljava/util/ArrayList;ILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
@@ -2812,7 +2815,7 @@
 
     move-object v7, p6
 
-    .line 495
+    .line 496
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
@@ -2835,7 +2838,7 @@
 
     move-object v6, p4
 
-    .line 483
+    .line 484
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
@@ -2858,7 +2861,7 @@
 
     move-object v7, p5
 
-    .line 491
+    .line 492
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
@@ -2894,7 +2897,7 @@
 
     move-object/from16 v6, p6
 
-    .line 505
+    .line 506
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->shouldShowClipboardToast()Z
 
     move-result v7
@@ -2942,33 +2945,33 @@
     :cond_0
     return-void
 
-    .line 508
+    .line 509
     :cond_1
     iget-object v7, v1, Lorg/telegram/ui/Components/UndoView;->currentActionRunnable:Ljava/lang/Runnable;
 
     if-eqz v7, :cond_2
 
-    .line 509
+    .line 510
     invoke-interface {v7}, Ljava/lang/Runnable;->run()V
 
     :cond_2
     const/4 v7, 0x1
 
-    .line 511
+    .line 512
     iput-boolean v7, v1, Lorg/telegram/ui/Components/UndoView;->isShown:Z
 
-    .line 512
+    .line 513
     iput-object v5, v1, Lorg/telegram/ui/Components/UndoView;->currentActionRunnable:Ljava/lang/Runnable;
 
-    .line 513
+    .line 514
     iput-object v6, v1, Lorg/telegram/ui/Components/UndoView;->currentCancelRunnable:Ljava/lang/Runnable;
 
-    .line 514
+    .line 515
     iput-object v0, v1, Lorg/telegram/ui/Components/UndoView;->currentDialogIds:Ljava/util/ArrayList;
 
     const/4 v10, 0x0
 
-    .line 515
+    .line 516
     invoke-virtual {v0, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v11
@@ -2979,28 +2982,28 @@
 
     move-result-wide v11
 
-    .line 516
+    .line 517
     iput v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     const-wide/16 v13, 0x1388
 
-    .line 517
+    .line 518
     iput-wide v13, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 518
+    .line 519
     iput-object v3, v1, Lorg/telegram/ui/Components/UndoView;->currentInfoObject:Ljava/lang/Object;
 
-    .line 519
+    .line 520
     iput-object v4, v1, Lorg/telegram/ui/Components/UndoView;->currentInfoObject2:Ljava/lang/Object;
 
-    .line 520
+    .line 521
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v13
 
     iput-wide v13, v1, Lorg/telegram/ui/Components/UndoView;->lastUpdateTime:J
 
-    .line 521
+    .line 522
     iget-object v13, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     sget v14, Lorg/telegram/messenger/R$string;->Undo:I
@@ -3013,50 +3016,50 @@
 
     invoke-virtual {v13, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 522
+    .line 523
     iget-object v13, v1, Lorg/telegram/ui/Components/UndoView;->undoImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v13, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 523
+    .line 524
     iget-object v13, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v13, v10, v10, v10, v10}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 524
+    .line 525
     iget-object v13, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/high16 v14, 0x3f800000    # 1.0f
 
     invoke-virtual {v13, v14}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 525
+    .line 526
     iget-object v13, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v13, v14}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 526
+    .line 527
     iget-object v13, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v15, 0x41700000    # 15.0f
 
     invoke-virtual {v13, v7, v15}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 527
+    .line 528
     iget-object v13, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v14, 0x8
 
     invoke-virtual {v13, v14}, Landroid/view/View;->setVisibility(I)V
 
-    .line 529
+    .line 530
     iget-object v13, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/16 v8, 0x33
 
     invoke-virtual {v13, v8}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 532
+    .line 533
     iget-object v8, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3065,14 +3068,14 @@
 
     check-cast v8, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 533
+    .line 534
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
 
     iput v13, v8, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 535
+    .line 536
     iget-object v8, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v8}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3083,29 +3086,29 @@
 
     const/4 v13, -0x2
 
-    .line 536
+    .line 537
     iput v13, v8, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     const/16 v13, 0xd
 
-    .line 537
+    .line 538
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
 
     iput v13, v8, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 538
+    .line 539
     iput v10, v8, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 540
+    .line 541
     iget-object v13, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v15, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v13, v15}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 541
+    .line 542
     iget-object v13, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v13}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3116,17 +3119,17 @@
 
     const/16 v15, 0x13
 
-    .line 542
+    .line 543
     iput v15, v13, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 543
+    .line 544
     iput v10, v13, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     iput v10, v13, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     const/4 v15, 0x3
 
-    .line 544
+    .line 545
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -3135,7 +3138,7 @@
 
     const/16 v9, 0x36
 
-    .line 545
+    .line 546
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -3144,10 +3147,10 @@
 
     const/4 v9, -0x2
 
-    .line 546
+    .line 547
     iput v9, v13, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 548
+    .line 549
     iget-object v9, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v9, v10}, Landroid/widget/TextView;->setMinHeight(I)V
@@ -3158,13 +3161,13 @@
 
     if-eqz v6, :cond_4
 
-    .line 552
+    .line 553
     :cond_3
     sget v15, Lorg/telegram/ui/Components/UndoView;->ACTION_RINGTONE_ADDED:I
 
     if-ne v2, v15, :cond_5
 
-    .line 553
+    .line 554
     :cond_4
     new-instance v15, Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda1;
 
@@ -3172,27 +3175,27 @@
 
     invoke-virtual {v1, v15}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 554
+    .line 555
     invoke-virtual {v1, v9}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     goto :goto_0
 
-    .line 556
+    .line 557
     :cond_5
     invoke-virtual {v1, v9}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 557
+    .line 558
     sget-object v15, Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda4;->INSTANCE:Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda4;
 
     invoke-virtual {v1, v15}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 560
+    .line 561
     :goto_0
     iget-object v15, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v15, v9}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 562
+    .line 563
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/UndoView;->isTooltipAction()Z
 
     move-result v15
@@ -3207,17 +3210,17 @@
 
     if-eqz v15, :cond_67
 
-    .line 570
+    .line 571
     sget v0, Lorg/telegram/ui/Components/UndoView;->ACTION_RINGTONE_ADDED:I
 
     if-ne v2, v0, :cond_6
 
-    .line 571
+    .line 572
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 572
+    .line 573
     sget v0, Lorg/telegram/messenger/R$string;->SoundAdded:I
 
     const-string v2, "SoundAdded"
@@ -3226,7 +3229,7 @@
 
     move-result-object v0
 
-    .line 573
+    .line 574
     sget v2, Lorg/telegram/messenger/R$string;->SoundAddedSubtitle:I
 
     const-string v3, "SoundAddedSubtitle"
@@ -3239,15 +3242,15 @@
 
     move-result-object v2
 
-    .line 574
+    .line 575
     iput-object v9, v1, Lorg/telegram/ui/Components/UndoView;->currentActionRunnable:Ljava/lang/Runnable;
 
-    .line 575
+    .line 576
     sget v3, Lorg/telegram/messenger/R$raw;->sound_download:I
 
     const-wide/16 v4, 0xfa0
 
-    .line 576
+    .line 577
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     move-object v9, v2
@@ -3259,12 +3262,12 @@
 
     if-ne v2, v0, :cond_8
 
-    .line 578
+    .line 579
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 579
+    .line 580
     sget v0, Lorg/telegram/messenger/R$string;->ReportChatSent:I
 
     const-string v2, "ReportChatSent"
@@ -3273,7 +3276,7 @@
 
     move-result-object v0
 
-    .line 580
+    .line 581
     sget v2, Lorg/telegram/messenger/R$string;->ReportSentInfo:I
 
     new-array v4, v10, [Ljava/lang/Object;
@@ -3286,7 +3289,7 @@
 
     if-eqz v3, :cond_7
 
-    .line 583
+    .line 584
     invoke-interface {v2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -3306,12 +3309,12 @@
     :cond_7
     move-object v9, v2
 
-    .line 586
+    .line 587
     sget v3, Lorg/telegram/messenger/R$raw;->ic_admin:I
 
     const-wide/16 v4, 0xfa0
 
-    .line 587
+    .line 588
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2b
@@ -3321,24 +3324,24 @@
 
     if-ne v2, v0, :cond_a
 
-    .line 589
+    .line 590
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 590
+    .line 591
     move-object v2, v4
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 591
+    .line 592
     invoke-static {v2}, Lorg/telegram/messenger/ChatObject;->isChannelOrGiga(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v2
 
     if-eqz v2, :cond_9
 
-    .line 592
+    .line 593
     sget v2, Lorg/telegram/messenger/R$string;->VoipChannelInvitedUser:I
 
     const/4 v3, 0x1
@@ -3366,7 +3369,7 @@
     :cond_9
     const/4 v3, 0x1
 
-    .line 594
+    .line 595
     sget v2, Lorg/telegram/messenger/R$string;->VoipGroupInvitedUser:I
 
     new-array v4, v3, [Ljava/lang/Object;
@@ -3387,7 +3390,7 @@
 
     move-result-object v2
 
-    .line 598
+    .line 599
     :goto_1
     new-instance v3, Lorg/telegram/ui/Components/AvatarDrawable;
 
@@ -3395,29 +3398,29 @@
 
     const/16 v4, 0xc
 
-    .line 599
+    .line 600
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setTextSize(I)V
 
-    .line 600
+    .line 601
     invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 601
+    .line 602
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v4, v0, v3}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 602
+    .line 603
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, v10}, Landroid/view/View;->setVisibility(I)V
 
     const-wide/16 v3, 0xbb8
 
-    .line 603
+    .line 604
     iput-wide v3, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     move-object v0, v2
@@ -3432,29 +3435,29 @@
 
     if-ne v2, v0, :cond_e
 
-    .line 605
+    .line 606
     move-object v0, v4
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 606
+    .line 607
     instance-of v2, v3, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v2, :cond_c
 
-    .line 607
+    .line 608
     move-object v2, v3
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 608
+    .line 609
     invoke-static {v0}, Lorg/telegram/messenger/ChatObject;->isChannelOrGiga(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
 
     if-eqz v0, :cond_b
 
-    .line 609
+    .line 610
     sget v0, Lorg/telegram/messenger/R$string;->VoipChannelUserJoined:I
 
     const/4 v4, 0x1
@@ -3482,7 +3485,7 @@
     :cond_b
     const/4 v4, 0x1
 
-    .line 611
+    .line 612
     sget v0, Lorg/telegram/messenger/R$string;->VoipChatUserJoined:I
 
     new-array v5, v4, [Ljava/lang/Object;
@@ -3505,20 +3508,20 @@
 
     goto :goto_3
 
-    .line 614
+    .line 615
     :cond_c
     move-object v2, v3
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 615
+    .line 616
     invoke-static {v0}, Lorg/telegram/messenger/ChatObject;->isChannelOrGiga(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 616
+    .line 617
     sget v0, Lorg/telegram/messenger/R$string;->VoipChannelChatJoined:I
 
     const/4 v4, 0x1
@@ -3544,7 +3547,7 @@
     :cond_d
     const/4 v4, 0x1
 
-    .line 618
+    .line 619
     sget v0, Lorg/telegram/messenger/R$string;->VoipChatChatJoined:I
 
     new-array v5, v4, [Ljava/lang/Object;
@@ -3563,7 +3566,7 @@
 
     move-result-object v0
 
-    .line 623
+    .line 624
     :goto_3
     new-instance v2, Lorg/telegram/ui/Components/AvatarDrawable;
 
@@ -3571,31 +3574,31 @@
 
     const/16 v4, 0xc
 
-    .line 624
+    .line 625
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setTextSize(I)V
 
-    .line 625
+    .line 626
     check-cast v3, Lorg/telegram/tgnet/TLObject;
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLObject;)V
 
-    .line 626
+    .line 627
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v4, v3, v2}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 627
+    .line 628
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v2, v10}, Landroid/view/View;->setVisibility(I)V
 
     const-wide/16 v2, 0xbb8
 
-    .line 628
+    .line 629
     iput-wide v2, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2
@@ -3605,39 +3608,39 @@
 
     if-ne v2, v0, :cond_11
 
-    .line 630
+    .line 631
     new-instance v0, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     const/16 v2, 0xc
 
-    .line 631
+    .line 632
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setTextSize(I)V
 
-    .line 633
+    .line 634
     instance-of v2, v3, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v2, :cond_f
 
-    .line 634
+    .line 635
     move-object v2, v3
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 635
+    .line 636
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 636
+    .line 637
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v3, v2, v0}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 637
+    .line 638
     iget-object v0, v2, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -3648,37 +3651,37 @@
 
     goto :goto_4
 
-    .line 639
+    .line 640
     :cond_f
     move-object v2, v3
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 640
+    .line 641
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 641
+    .line 642
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v3, v2, v0}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 642
+    .line 643
     iget-object v0, v2, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 644
+    .line 645
     :goto_4
     move-object v2, v4
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 645
+    .line 646
     invoke-static {v2}, Lorg/telegram/messenger/ChatObject;->isChannelOrGiga(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v2
 
     if-eqz v2, :cond_10
 
-    .line 646
+    .line 647
     sget v2, Lorg/telegram/messenger/R$string;->VoipChannelUserChanged:I
 
     const/4 v3, 0x1
@@ -3702,7 +3705,7 @@
     :cond_10
     const/4 v3, 0x1
 
-    .line 648
+    .line 649
     sget v2, Lorg/telegram/messenger/R$string;->VoipGroupUserChanged:I
 
     new-array v4, v3, [Ljava/lang/Object;
@@ -3719,7 +3722,7 @@
 
     move-result-object v0
 
-    .line 652
+    .line 653
     :goto_5
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -3727,7 +3730,7 @@
 
     const-wide/16 v5, 0xbb8
 
-    .line 653
+    .line 654
     iput-wide v5, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2
@@ -3739,7 +3742,7 @@
 
     if-ne v2, v0, :cond_12
 
-    .line 655
+    .line 656
     sget v0, Lorg/telegram/messenger/R$string;->VoipGroupCopyInviteLinkCopied:I
 
     const-string v2, "VoipGroupCopyInviteLinkCopied"
@@ -3748,10 +3751,10 @@
 
     move-result-object v0
 
-    .line 657
+    .line 658
     sget v3, Lorg/telegram/messenger/R$raw;->voip_invite:I
 
-    .line 658
+    .line 659
     iput-wide v5, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2b
@@ -3761,20 +3764,20 @@
 
     if-ne v2, v0, :cond_13
 
-    .line 660
+    .line 661
     move-object v0, v3
 
     check-cast v0, Ljava/lang/CharSequence;
 
-    .line 662
+    .line 663
     sget v3, Lorg/telegram/messenger/R$raw;->payment_success:I
 
     const-wide/16 v5, 0x1388
 
-    .line 663
+    .line 664
     iput-wide v5, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 664
+    .line 665
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v2, :cond_63
@@ -3783,20 +3786,20 @@
 
     if-eqz v2, :cond_63
 
-    .line 665
+    .line 666
     move-object v2, v4
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 666
+    .line 667
     invoke-virtual {v1, v9}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 667
+    .line 668
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4, v9}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 668
+    .line 669
     new-instance v4, Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda2;
 
     invoke-direct {v4, v1, v2}, Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/UndoView;Lorg/telegram/tgnet/TLRPC$Message;)V
@@ -3810,24 +3813,24 @@
 
     if-ne v2, v0, :cond_16
 
-    .line 682
+    .line 683
     instance-of v0, v3, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_14
 
-    .line 683
+    .line 684
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 684
+    .line 685
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_6
 
-    .line 686
+    .line 687
     :cond_14
     move-object v0, v3
 
@@ -3839,11 +3842,11 @@
 
     goto :goto_6
 
-    .line 687
+    .line 688
     :cond_15
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 689
+    .line 690
     :goto_6
     sget v2, Lorg/telegram/messenger/R$string;->VoipGroupUserCantNowSpeak:I
 
@@ -3863,12 +3866,12 @@
 
     move-result-object v0
 
-    .line 691
+    .line 692
     sget v3, Lorg/telegram/messenger/R$raw;->voip_muted:I
 
     const-wide/16 v4, 0xbb8
 
-    .line 692
+    .line 693
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2b
@@ -3878,35 +3881,35 @@
 
     if-ne v2, v0, :cond_19
 
-    .line 695
+    .line 696
     instance-of v0, v3, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_17
 
-    .line 696
+    .line 697
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 697
+    .line 698
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_7
 
-    .line 698
+    .line 699
     :cond_17
     instance-of v0, v3, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v0, :cond_18
 
-    .line 699
+    .line 700
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 700
+    .line 701
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     goto :goto_7
@@ -3914,7 +3917,7 @@
     :cond_18
     move-object v0, v14
 
-    .line 704
+    .line 705
     :goto_7
     sget v2, Lorg/telegram/messenger/R$string;->VoipGroupUserCantNowSpeakForYou:I
 
@@ -3934,12 +3937,12 @@
 
     move-result-object v0
 
-    .line 706
+    .line 707
     sget v3, Lorg/telegram/messenger/R$raw;->voip_muted:I
 
     const-wide/16 v4, 0xbb8
 
-    .line 707
+    .line 708
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2b
@@ -3949,33 +3952,33 @@
 
     if-ne v2, v0, :cond_1b
 
-    .line 710
+    .line 711
     instance-of v0, v3, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_1a
 
-    .line 711
+    .line 712
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 712
+    .line 713
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_8
 
-    .line 714
+    .line 715
     :cond_1a
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 715
+    .line 716
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 717
+    .line 718
     :goto_8
     sget v2, Lorg/telegram/messenger/R$string;->VoipGroupUserCanNowSpeak:I
 
@@ -3995,12 +3998,12 @@
 
     move-result-object v0
 
-    .line 719
+    .line 720
     sget v3, Lorg/telegram/messenger/R$raw;->voip_unmuted:I
 
     const-wide/16 v4, 0xbb8
 
-    .line 720
+    .line 721
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2b
@@ -4010,17 +4013,17 @@
 
     if-ne v2, v0, :cond_1d
 
-    .line 722
+    .line 723
     instance-of v0, v3, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v0, :cond_1c
 
-    .line 723
+    .line 724
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 724
+    .line 725
     sget v2, Lorg/telegram/messenger/R$string;->VoipGroupYouCanNowSpeakIn:I
 
     const/4 v3, 0x1
@@ -4043,7 +4046,7 @@
 
     goto :goto_9
 
-    .line 726
+    .line 727
     :cond_1c
     sget v0, Lorg/telegram/messenger/R$string;->VoipGroupYouCanNowSpeak:I
 
@@ -4057,13 +4060,13 @@
 
     move-result-object v0
 
-    .line 729
+    .line 730
     :goto_9
     sget v3, Lorg/telegram/messenger/R$raw;->voip_allow_talk:I
 
     const-wide/16 v4, 0xbb8
 
-    .line 730
+    .line 731
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2b
@@ -4073,19 +4076,19 @@
 
     if-ne v2, v0, :cond_1f
 
-    .line 732
+    .line 733
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 733
+    .line 734
     invoke-static {v0}, Lorg/telegram/messenger/ChatObject;->isChannelOrGiga(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1e
 
-    .line 734
+    .line 735
     sget v0, Lorg/telegram/messenger/R$string;->VoipChannelSoundMuted:I
 
     const-string v2, "VoipChannelSoundMuted"
@@ -4100,7 +4103,7 @@
 
     goto :goto_a
 
-    .line 736
+    .line 737
     :cond_1e
     sget v0, Lorg/telegram/messenger/R$string;->VoipGroupSoundMuted:I
 
@@ -4114,13 +4117,13 @@
 
     move-result-object v0
 
-    .line 739
+    .line 740
     :goto_a
     sget v3, Lorg/telegram/messenger/R$raw;->ic_mute:I
 
     const-wide/16 v4, 0xbb8
 
-    .line 740
+    .line 741
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2b
@@ -4130,19 +4133,19 @@
 
     if-ne v2, v0, :cond_21
 
-    .line 742
+    .line 743
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 743
+    .line 744
     invoke-static {v0}, Lorg/telegram/messenger/ChatObject;->isChannelOrGiga(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
 
     if-eqz v0, :cond_20
 
-    .line 744
+    .line 745
     sget v0, Lorg/telegram/messenger/R$string;->VoipChannelSoundUnmuted:I
 
     const-string v2, "VoipChannelSoundUnmuted"
@@ -4157,7 +4160,7 @@
 
     goto :goto_b
 
-    .line 746
+    .line 747
     :cond_20
     sget v0, Lorg/telegram/messenger/R$string;->VoipGroupSoundUnmuted:I
 
@@ -4171,18 +4174,18 @@
 
     move-result-object v0
 
-    .line 749
+    .line 750
     :goto_b
     sget v3, Lorg/telegram/messenger/R$raw;->ic_unmute:I
 
     const-wide/16 v4, 0xbb8
 
-    .line 750
+    .line 751
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2b
 
-    .line 751
+    .line 752
     :cond_21
     iget v0, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
@@ -4210,33 +4213,33 @@
     :cond_23
     if-ne v2, v8, :cond_25
 
-    .line 777
+    .line 778
     instance-of v0, v3, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_24
 
-    .line 778
+    .line 779
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 779
+    .line 780
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_c
 
-    .line 781
+    .line 782
     :cond_24
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 782
+    .line 783
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 784
+    .line 785
     :goto_c
     sget v2, Lorg/telegram/messenger/R$string;->VoipGroupUserCanNowSpeakForYou:I
 
@@ -4256,12 +4259,12 @@
 
     move-result-object v0
 
-    .line 786
+    .line 787
     sget v3, Lorg/telegram/messenger/R$raw;->voip_unmuted:I
 
     const-wide/16 v4, 0xbb8
 
-    .line 787
+    .line 788
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2b
@@ -4271,33 +4274,33 @@
 
     if-ne v2, v5, :cond_27
 
-    .line 790
+    .line 791
     instance-of v0, v3, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_26
 
-    .line 791
+    .line 792
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 792
+    .line 793
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_d
 
-    .line 794
+    .line 795
     :cond_26
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 795
+    .line 796
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 797
+    .line 798
     :goto_d
     sget v2, Lorg/telegram/messenger/R$string;->VoipGroupRemovedFromGroup:I
 
@@ -4317,12 +4320,12 @@
 
     move-result-object v0
 
-    .line 799
+    .line 800
     sget v3, Lorg/telegram/messenger/R$raw;->voip_group_removed:I
 
     const-wide/16 v4, 0xbb8
 
-    .line 800
+    .line 801
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_2b
@@ -4343,12 +4346,12 @@
 
     if-ne v2, v5, :cond_29
 
-    .line 811
+    .line 812
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 812
+    .line 813
     sget v2, Lorg/telegram/messenger/R$string;->NowInContacts:I
 
     const/4 v3, 0x1
@@ -4367,7 +4370,7 @@
 
     move-result-object v0
 
-    .line 814
+    .line 815
     sget v3, Lorg/telegram/messenger/R$raw;->contact_check:I
 
     goto/16 :goto_2b
@@ -4377,7 +4380,7 @@
 
     if-ne v2, v5, :cond_2a
 
-    .line 816
+    .line 817
     sget v0, Lorg/telegram/messenger/R$string;->ProxyAddedSuccess:I
 
     new-array v2, v10, [Ljava/lang/Object;
@@ -4386,7 +4389,7 @@
 
     move-result-object v0
 
-    .line 818
+    .line 819
     sget v3, Lorg/telegram/messenger/R$raw;->contact_check:I
 
     goto/16 :goto_2b
@@ -4396,7 +4399,7 @@
 
     if-ne v2, v5, :cond_30
 
-    .line 820
+    .line 821
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v0
@@ -4405,7 +4408,7 @@
 
     if-nez v3, :cond_2b
 
-    .line 822
+    .line 823
     sget v0, Lorg/telegram/messenger/R$string;->MainProfilePhotoSetHint:I
 
     const-string v2, "MainProfilePhotoSetHint"
@@ -4416,7 +4419,7 @@
 
     goto :goto_e
 
-    .line 824
+    .line 825
     :cond_2b
     sget v0, Lorg/telegram/messenger/R$string;->MainProfileVideoSetHint:I
 
@@ -4428,7 +4431,7 @@
 
     goto :goto_e
 
-    .line 827
+    .line 828
     :cond_2c
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -4446,7 +4449,7 @@
 
     move-result-object v0
 
-    .line 828
+    .line 829
     invoke-static {v0}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v2
@@ -4459,7 +4462,7 @@
 
     if-nez v3, :cond_2d
 
-    .line 830
+    .line 831
     sget v0, Lorg/telegram/messenger/R$string;->MainChannelProfilePhotoSetHint:I
 
     const-string v2, "MainChannelProfilePhotoSetHint"
@@ -4470,7 +4473,7 @@
 
     goto :goto_e
 
-    .line 832
+    .line 833
     :cond_2d
     sget v0, Lorg/telegram/messenger/R$string;->MainChannelProfileVideoSetHint:I
 
@@ -4485,7 +4488,7 @@
     :cond_2e
     if-nez v3, :cond_2f
 
-    .line 836
+    .line 837
     sget v0, Lorg/telegram/messenger/R$string;->MainGroupProfilePhotoSetHint:I
 
     const-string v2, "MainGroupProfilePhotoSetHint"
@@ -4496,7 +4499,7 @@
 
     goto :goto_e
 
-    .line 838
+    .line 839
     :cond_2f
     sget v0, Lorg/telegram/messenger/R$string;->MainGroupProfileVideoSetHint:I
 
@@ -4506,7 +4509,7 @@
 
     move-result-object v0
 
-    .line 843
+    .line 844
     :goto_e
     sget v3, Lorg/telegram/messenger/R$raw;->contact_check:I
 
@@ -4517,7 +4520,7 @@
 
     if-ne v2, v5, :cond_31
 
-    .line 845
+    .line 846
     sget v0, Lorg/telegram/messenger/R$string;->ChatWasMovedToMainList:I
 
     const-string v2, "ChatWasMovedToMainList"
@@ -4526,7 +4529,7 @@
 
     move-result-object v0
 
-    .line 847
+    .line 848
     sget v3, Lorg/telegram/messenger/R$raw;->contact_check:I
 
     goto/16 :goto_2b
@@ -4538,7 +4541,7 @@
 
     if-eqz v3, :cond_32
 
-    .line 849
+    .line 850
     move-object v0, v3
 
     check-cast v0, Ljava/lang/Boolean;
@@ -4569,7 +4572,7 @@
     :goto_f
     if-eqz v3, :cond_33
 
-    .line 850
+    .line 851
     move-object v2, v3
 
     check-cast v2, Ljava/lang/Boolean;
@@ -4600,7 +4603,7 @@
     :goto_10
     move-object v9, v2
 
-    .line 851
+    .line 852
     sget v3, Lorg/telegram/messenger/R$raw;->chats_swipearchive:I
 
     const/16 v8, 0x30
@@ -4612,7 +4615,7 @@
 
     if-ne v0, v5, :cond_35
 
-    .line 854
+    .line 855
     sget v0, Lorg/telegram/messenger/R$string;->QuizWellDone:I
 
     const-string v2, "QuizWellDone"
@@ -4621,7 +4624,7 @@
 
     move-result-object v0
 
-    .line 855
+    .line 856
     sget v2, Lorg/telegram/messenger/R$string;->QuizWellDoneInfo:I
 
     const-string v3, "QuizWellDoneInfo"
@@ -4630,7 +4633,7 @@
 
     move-result-object v9
 
-    .line 856
+    .line 857
     sget v3, Lorg/telegram/messenger/R$raw;->wallet_congrats:I
 
     :goto_11
@@ -4643,7 +4646,7 @@
 
     if-ne v0, v5, :cond_36
 
-    .line 859
+    .line 860
     sget v0, Lorg/telegram/messenger/R$string;->QuizWrongAnswer:I
 
     const-string v2, "QuizWrongAnswer"
@@ -4652,7 +4655,7 @@
 
     move-result-object v0
 
-    .line 860
+    .line 861
     sget v2, Lorg/telegram/messenger/R$string;->QuizWrongAnswerInfo:I
 
     const-string v3, "QuizWrongAnswerInfo"
@@ -4661,7 +4664,7 @@
 
     move-result-object v9
 
-    .line 861
+    .line 862
     sget v3, Lorg/telegram/messenger/R$raw;->wallet_science:I
 
     goto :goto_11
@@ -4673,7 +4676,7 @@
 
     if-eqz v3, :cond_37
 
-    .line 864
+    .line 865
     move-object v0, v3
 
     check-cast v0, Ljava/lang/Boolean;
@@ -4694,7 +4697,7 @@
     :goto_12
     if-eqz v0, :cond_38
 
-    .line 865
+    .line 866
     sget v2, Lorg/telegram/messenger/R$string;->hidden_chats_pinned:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -4715,7 +4718,7 @@
     :goto_13
     if-nez v0, :cond_3a
 
-    .line 866
+    .line 867
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/UndoView;->isSortingDisabled()Z
 
     move-result v0
@@ -4742,7 +4745,7 @@
 
     if-eqz v0, :cond_3a
 
-    .line 867
+    .line 868
     :cond_39
     sget v0, Lorg/telegram/messenger/R$string;->ArchivePinnedInfo:I
 
@@ -4754,7 +4757,7 @@
 
     move-object v9, v0
 
-    .line 871
+    .line 872
     :cond_3a
     sget v3, Lorg/telegram/messenger/R$raw;->chats_infotip:I
 
@@ -4769,7 +4772,7 @@
 
     if-eq v2, v0, :cond_47
 
-    .line 872
+    .line 873
     sget v0, Lcom/iMe/common/IdFabric$CustomType;->UNDO_MOVE_TO_FOLDER:I
 
     if-ne v2, v0, :cond_3c
@@ -4781,10 +4784,10 @@
 
     if-ne v2, v0, :cond_3d
 
-    .line 939
+    .line 940
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoText:Ljava/lang/CharSequence;
 
-    .line 941
+    .line 942
     sget v3, Lorg/telegram/messenger/R$raw;->ic_delete:I
 
     goto/16 :goto_2b
@@ -4794,12 +4797,12 @@
 
     if-ne v2, v0, :cond_3f
 
-    .line 943
+    .line 944
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 944
+    .line 945
     iget-boolean v0, v0, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-eqz v0, :cond_3e
@@ -4838,7 +4841,7 @@
 
     if-ne v2, v0, :cond_41
 
-    .line 961
+    .line 962
     sget v0, Lorg/telegram/messenger/R$string;->ChatArchived:I
 
     const-string v2, "ChatArchived"
@@ -4849,7 +4852,7 @@
 
     goto :goto_15
 
-    .line 963
+    .line 964
     :cond_41
     sget v0, Lorg/telegram/messenger/R$string;->ChatsArchived:I
 
@@ -4859,7 +4862,7 @@
 
     move-result-object v0
 
-    .line 965
+    .line 966
     :goto_15
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/UndoView;->isSortingDisabled()Z
 
@@ -4887,7 +4890,7 @@
 
     if-eqz v2, :cond_43
 
-    .line 966
+    .line 967
     :cond_42
     sget v2, Lorg/telegram/messenger/R$string;->ChatArchivedInfo:I
 
@@ -4899,13 +4902,13 @@
 
     move-object v9, v2
 
-    .line 970
+    .line 971
     :cond_43
     sget v3, Lorg/telegram/messenger/R$raw;->chats_infotip:I
 
     goto/16 :goto_2b
 
-    .line 948
+    .line 949
     :cond_44
     :goto_16
     move-object v0, v3
@@ -4924,7 +4927,7 @@
 
     const-string v3, "PinnedDialogsCount"
 
-    .line 950
+    .line 951
     invoke-static {v3, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -4936,12 +4939,12 @@
 
     const-string v3, "UnpinnedDialogsCount"
 
-    .line 952
+    .line 953
     invoke-static {v3, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 955
+    .line 956
     :goto_17
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
@@ -4959,12 +4962,12 @@
     :goto_18
     move v3, v2
 
-    .line 956
+    .line 957
     instance-of v2, v4, Ljava/lang/Integer;
 
     if-eqz v2, :cond_63
 
-    .line 957
+    .line 958
     move-object v2, v4
 
     check-cast v2, Ljava/lang/Integer;
@@ -4979,22 +4982,22 @@
 
     goto/16 :goto_2b
 
-    .line 879
+    .line 880
     :cond_47
     :goto_19
     sget v0, Lcom/iMe/common/IdFabric$CustomType;->UNDO_MOVE_TO_FOLDER:I
 
     if-ne v2, v0, :cond_48
 
-    .line 880
+    .line 881
     check-cast v4, [Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    .line 881
+    .line 882
     aget-object v5, v4, v10
 
     const/4 v6, 0x1
 
-    .line 882
+    .line 883
     aget-object v4, v4, v6
 
     move-object v13, v5
@@ -5005,30 +5008,30 @@
 
     goto :goto_1b
 
-    .line 884
+    .line 885
     :cond_48
     instance-of v5, v4, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
     if-eqz v5, :cond_4b
 
-    .line 885
+    .line 886
     check-cast v4, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 886
+    .line 887
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/topics/TopicModel;->isUserTopic()Z
 
     move-result v5
 
     if-eqz v5, :cond_49
 
-    .line 887
+    .line 888
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getName()Ljava/lang/String;
 
     move-result-object v4
 
     goto :goto_1a
 
-    .line 888
+    .line 889
     :cond_49
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getIcon()Lcom/iMe/storage/data/repository/topics/Topic;
 
@@ -5036,7 +5039,7 @@
 
     if-eqz v5, :cond_4a
 
-    .line 889
+    .line 890
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getIcon()Lcom/iMe/storage/data/repository/topics/Topic;
 
     move-result-object v4
@@ -5069,7 +5072,7 @@
 
     goto :goto_1b
 
-    .line 892
+    .line 893
     :cond_4b
     check-cast v4, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
@@ -5088,14 +5091,14 @@
 
     if-eqz v15, :cond_56
 
-    .line 898
+    .line 899
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result v3
 
     if-eqz v3, :cond_4c
 
-    .line 899
+    .line 900
     iget v3, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5114,10 +5117,10 @@
 
     move-result-object v3
 
-    .line 900
+    .line 901
     iget-wide v11, v3, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
 
-    .line 902
+    .line 903
     :cond_4c
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
@@ -5125,7 +5128,7 @@
 
     if-eqz v3, :cond_51
 
-    .line 903
+    .line 904
     iget v3, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5142,7 +5145,7 @@
 
     if-ne v2, v0, :cond_4d
 
-    .line 906
+    .line 907
     sget v0, Lorg/telegram/messenger/R$string;->moved_to_folder:I
 
     const/4 v5, 0x3
@@ -5180,7 +5183,7 @@
 
     if-ne v2, v0, :cond_4f
 
-    .line 909
+    .line 910
     sget v0, Lorg/telegram/messenger/R$string;->FilterUserAddedToExisting:I
 
     new-array v4, v7, [Ljava/lang/Object;
@@ -5215,7 +5218,7 @@
 
     goto/16 :goto_22
 
-    .line 911
+    .line 912
     :cond_4f
     sget v0, Lorg/telegram/messenger/R$string;->FilterUserRemovedFrom:I
 
@@ -5251,7 +5254,7 @@
 
     goto/16 :goto_22
 
-    .line 914
+    .line 915
     :cond_51
     iget v3, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
@@ -5271,7 +5274,7 @@
 
     if-ne v2, v0, :cond_52
 
-    .line 917
+    .line 918
     sget v0, Lorg/telegram/messenger/R$string;->moved_to_folder:I
 
     const/4 v5, 0x3
@@ -5307,7 +5310,7 @@
 
     if-ne v2, v0, :cond_54
 
-    .line 920
+    .line 921
     sget v0, Lorg/telegram/messenger/R$string;->FilterChatAddedToExisting:I
 
     new-array v4, v7, [Ljava/lang/Object;
@@ -5340,7 +5343,7 @@
 
     goto/16 :goto_22
 
-    .line 922
+    .line 923
     :cond_54
     sget v0, Lorg/telegram/messenger/R$string;->FilterChatRemovedFrom:I
 
@@ -5377,7 +5380,7 @@
     :cond_56
     if-ne v2, v0, :cond_57
 
-    .line 928
+    .line 929
     sget v0, Lorg/telegram/messenger/R$string;->moved_to_folder:I
 
     const/4 v5, 0x3
@@ -5425,7 +5428,7 @@
 
     if-ne v2, v0, :cond_59
 
-    .line 931
+    .line 932
     sget v0, Lorg/telegram/messenger/R$string;->FilterChatsAddedToExisting:I
 
     new-array v4, v7, [Ljava/lang/Object;
@@ -5470,7 +5473,7 @@
 
     goto :goto_22
 
-    .line 933
+    .line 934
     :cond_59
     sget v0, Lorg/telegram/messenger/R$string;->FilterChatsRemovedFrom:I
 
@@ -5519,7 +5522,7 @@
 
     if-ne v2, v3, :cond_5b
 
-    .line 937
+    .line 938
     sget v2, Lorg/telegram/messenger/R$raw;->folder_in:I
 
     goto :goto_23
@@ -5532,7 +5535,7 @@
 
     goto/16 :goto_2b
 
-    .line 802
+    .line 803
     :cond_5c
     :goto_24
     move-object v0, v3
@@ -5543,7 +5546,7 @@
 
     if-ne v2, v3, :cond_5d
 
-    .line 804
+    .line 805
     sget v2, Lorg/telegram/messenger/R$string;->EditAdminTransferChannelToast:I
 
     const/4 v3, 0x1
@@ -5571,7 +5574,7 @@
     :cond_5d
     const/4 v3, 0x1
 
-    .line 806
+    .line 807
     sget v2, Lorg/telegram/messenger/R$string;->EditAdminTransferGroupToast:I
 
     new-array v4, v3, [Ljava/lang/Object;
@@ -5592,7 +5595,7 @@
 
     move-result-object v0
 
-    .line 809
+    .line 810
     :goto_25
     sget v3, Lorg/telegram/messenger/R$raw;->contact_check:I
 
@@ -5604,7 +5607,7 @@
 
     if-ne v0, v2, :cond_5f
 
-    .line 757
+    .line 758
     sget v0, Lorg/telegram/messenger/R$string;->VoipGroupAudioRecordSaved:I
 
     const-string v2, "VoipGroupAudioRecordSaved"
@@ -5621,15 +5624,15 @@
 
     move-result-object v0
 
-    .line 759
+    .line 760
     sget v3, Lorg/telegram/messenger/R$raw;->voip_record_saved:I
 
     const-wide/16 v4, 0xfa0
 
-    .line 760
+    .line 761
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 761
+    .line 762
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     new-instance v4, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
@@ -5638,21 +5641,21 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 762
+    .line 763
     new-instance v2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v2, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const-string v4, "**"
 
-    .line 763
+    .line 764
     invoke-virtual {v0, v4}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v4
 
     const-string v5, "**"
 
-    .line 764
+    .line 765
     invoke-virtual {v0, v5}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
     move-result v0
@@ -5665,15 +5668,15 @@
 
     add-int/lit8 v5, v0, 0x2
 
-    .line 766
+    .line 767
     invoke-virtual {v2, v0, v5, v14}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     add-int/lit8 v5, v4, 0x2
 
-    .line 767
+    .line 768
     invoke-virtual {v2, v4, v5, v14}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 769
+    .line 770
     :try_start_0
     new-instance v5, Lorg/telegram/ui/Components/URLSpanNoUnderline;
 
@@ -5716,7 +5719,7 @@
     :catch_0
     move-exception v0
 
-    .line 771
+    .line 772
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_60
@@ -5731,7 +5734,7 @@
 
     if-ne v0, v2, :cond_62
 
-    .line 752
+    .line 753
     sget v0, Lorg/telegram/messenger/R$string;->VoipGroupAudioRecordStarted:I
 
     const-string v2, "VoipGroupAudioRecordStarted"
@@ -5752,15 +5755,15 @@
 
     move-result-object v0
 
-    .line 754
+    .line 755
     sget v3, Lorg/telegram/messenger/R$raw;->voip_record_start:I
 
     const-wide/16 v4, 0xbb8
 
-    .line 755
+    .line 756
     iput-wide v4, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 973
+    .line 974
     :cond_63
     :goto_2b
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
@@ -5769,41 +5772,41 @@
 
     if-eqz v3, :cond_64
 
-    .line 978
+    .line 979
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v3, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 979
+    .line 980
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
 
     move-result-object v0
 
-    .line 980
+    .line 981
     invoke-virtual {v0, v10}, Lorg/telegram/ui/Components/RLottieDrawable;->setPlayInDirectionOfCustomEndFrame(Z)V
 
-    .line 981
+    .line 982
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->getFramesCount()I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 983
+    .line 984
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 985
+    .line 986
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 986
+    .line 987
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -5812,7 +5815,7 @@
 
     goto :goto_2c
 
-    .line 989
+    .line 990
     :cond_64
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -5825,7 +5828,7 @@
 
     const/16 v3, 0x3a
 
-    .line 993
+    .line 994
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -5836,21 +5839,21 @@
 
     const/4 v3, 0x6
 
-    .line 994
+    .line 995
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 995
+    .line 996
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 996
+    .line 997
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5859,24 +5862,24 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 997
+    .line 998
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     iput v3, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 998
+    .line 999
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 999
+    .line 1000
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1000
+    .line 1001
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
@@ -5885,7 +5888,7 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1001
+    .line 1002
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const-string v2, "fonts/rmedium.ttf"
@@ -5905,7 +5908,7 @@
 
     const/16 v2, 0x3a
 
-    .line 1003
+    .line 1004
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -5914,7 +5917,7 @@
 
     const/16 v0, 0xd
 
-    .line 1004
+    .line 1005
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -5923,19 +5926,19 @@
 
     const/16 v2, 0x8
 
-    .line 1005
+    .line 1006
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1006
+    .line 1007
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1007
+    .line 1008
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v3, 0x41700000    # 15.0f
@@ -5944,14 +5947,14 @@
 
     invoke-virtual {v0, v4, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1008
+    .line 1009
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1011
+    .line 1012
     :goto_2d
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
@@ -5966,7 +5969,7 @@
     :cond_67
     move-object/from16 v5, v16
 
-    .line 1012
+    .line 1013
     iget v15, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     sget v9, Lcom/iMe/common/IdFabric$CustomType;->UNDO_IMAGE_COPIED:I
@@ -6091,12 +6094,12 @@
 
     if-ne v15, v7, :cond_6a
 
-    .line 1294
+    .line 1295
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_authorization;
 
-    .line 1296
+    .line 1297
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->AuthAnotherClientOk:I
@@ -6109,7 +6112,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1297
+    .line 1298
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v3, Lorg/telegram/messenger/R$raw;->contact_check:I
@@ -6118,7 +6121,7 @@
 
     const/16 v2, 0x3a
 
-    .line 1299
+    .line 1300
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -6127,26 +6130,26 @@
 
     const/4 v2, 0x6
 
-    .line 1300
+    .line 1301
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1301
+    .line 1302
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_authorization;->app_name:Ljava/lang/String;
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1302
+    .line 1303
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1303
+    .line 1304
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
@@ -6155,7 +6158,7 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1304
+    .line 1305
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const-string v2, "fonts/rmedium.ttf"
@@ -6166,7 +6169,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1306
+    .line 1307
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
@@ -6177,31 +6180,31 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1307
+    .line 1308
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoImageView:Landroid/widget/ImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1308
+    .line 1309
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1309
+    .line 1310
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1311
+    .line 1312
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 1312
+    .line 1313
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -6217,10 +6220,10 @@
 
     const-wide/16 v2, 0x2710
 
-    .line 1314
+    .line 1315
     iput-wide v2, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 1315
+    .line 1316
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->Open:I
@@ -6233,7 +6236,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1316
+    .line 1317
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->FilterAvailableTitle:I
@@ -6246,14 +6249,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1317
+    .line 1318
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->filter_new:I
 
     invoke-virtual {v0, v2, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1318
+    .line 1319
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -6290,26 +6293,26 @@
 
     const/16 v2, 0x3a
 
-    .line 1320
+    .line 1321
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1321
+    .line 1322
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     const/4 v2, 0x6
 
-    .line 1322
+    .line 1323
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1324
+    .line 1325
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -6318,10 +6321,10 @@
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1325
+    .line 1326
     iput v0, v2, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1327
+    .line 1328
     sget v0, Lorg/telegram/messenger/R$string;->FilterAvailableText:I
 
     const-string v2, "FilterAvailableText"
@@ -6330,19 +6333,19 @@
 
     move-result-object v0
 
-    .line 1328
+    .line 1329
     new-instance v2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v2, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const/16 v3, 0x2a
 
-    .line 1329
+    .line 1330
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v4
 
-    .line 1330
+    .line 1331
     invoke-virtual {v0, v3}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v0
@@ -6355,15 +6358,15 @@
 
     add-int/lit8 v3, v0, 0x1
 
-    .line 1332
+    .line 1333
     invoke-virtual {v2, v0, v3, v14}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     add-int/lit8 v3, v4, 0x1
 
-    .line 1333
+    .line 1334
     invoke-virtual {v2, v4, v3, v14}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1334
+    .line 1335
     new-instance v3, Lorg/telegram/ui/Components/URLSpanNoUnderline;
 
     const-string v5, "tg://settings/folders"
@@ -6378,54 +6381,54 @@
 
     invoke-virtual {v2, v3, v4, v0, v5}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1336
+    .line 1337
     :cond_6b
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1337
+    .line 1338
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1338
+    .line 1339
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1339
+    .line 1340
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1340
+    .line 1341
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1341
+    .line 1342
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoImageView:Landroid/widget/ImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1342
+    .line 1343
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1344
+    .line 1345
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 1345
+    .line 1346
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -6450,7 +6453,7 @@
 
     if-eqz v4, :cond_6e
 
-    .line 1398
+    .line 1399
     move-object v0, v4
 
     check-cast v0, Ljava/lang/Integer;
@@ -6464,7 +6467,7 @@
     :cond_6e
     move v0, v10
 
-    .line 1399
+    .line 1400
     :goto_2f
     move-object v2, v3
 
@@ -6472,7 +6475,7 @@
 
     const/16 v3, 0xfa0
 
-    .line 1400
+    .line 1401
     invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
 
     move-result v4
@@ -6495,7 +6498,7 @@
 
     iput-wide v3, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 1401
+    .line 1402
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v4, 0x41600000    # 14.0f
@@ -6504,19 +6507,19 @@
 
     invoke-virtual {v3, v7, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1402
+    .line 1403
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/16 v4, 0x10
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1403
+    .line 1404
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1405
+    .line 1406
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     if-eqz v6, :cond_6f
@@ -6531,7 +6534,7 @@
     :goto_30
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1406
+    .line 1407
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     if-eqz v6, :cond_70
@@ -6548,7 +6551,7 @@
 
     const/16 v2, 0x3a
 
-    .line 1407
+    .line 1408
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -6557,7 +6560,7 @@
 
     if-eqz v6, :cond_71
 
-    .line 1410
+    .line 1411
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -6601,7 +6604,7 @@
     :cond_71
     const/16 v2, 0x8
 
-    .line 1412
+    .line 1413
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -6611,7 +6614,7 @@
     :goto_32
     const/4 v2, 0x6
 
-    .line 1413
+    .line 1414
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -6620,7 +6623,7 @@
 
     const/4 v2, 0x7
 
-    .line 1414
+    .line 1415
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -6629,17 +6632,17 @@
 
     const/4 v2, -0x1
 
-    .line 1415
+    .line 1416
     iput v2, v5, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     const/16 v2, 0x33
 
-    .line 1417
+    .line 1418
     iput v2, v13, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     const/16 v2, 0x8
 
-    .line 1418
+    .line 1419
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -6652,26 +6655,26 @@
 
     const/16 v3, 0x13
 
-    .line 1421
+    .line 1422
     iput v3, v13, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 1422
+    .line 1423
     iput v10, v13, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     iput v10, v13, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1424
+    .line 1425
     :cond_72
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1427
+    .line 1428
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1428
+    .line 1429
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     if-eqz v0, :cond_73
@@ -6684,19 +6687,19 @@
     :goto_33
     invoke-virtual {v2, v0, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1429
+    .line 1430
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 1430
+    .line 1431
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 1432
+    .line 1433
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     new-instance v2, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
@@ -6712,7 +6715,7 @@
 
     if-ne v15, v7, :cond_76
 
-    .line 1434
+    .line 1435
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->ColorThemeChanged:I
@@ -6725,7 +6728,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1435
+    .line 1436
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->toast_pallete:I
@@ -6734,7 +6737,7 @@
 
     const/16 v2, 0x3a
 
-    .line 1437
+    .line 1438
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -6743,7 +6746,7 @@
 
     const/16 v0, 0x30
 
-    .line 1438
+    .line 1439
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -6752,14 +6755,14 @@
 
     const/4 v2, 0x6
 
-    .line 1439
+    .line 1440
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1441
+    .line 1442
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -6770,14 +6773,14 @@
 
     const/16 v2, 0x30
 
-    .line 1442
+    .line 1443
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1444
+    .line 1445
     sget v0, Lorg/telegram/messenger/R$string;->ColorThemeChangedInfo:I
 
     const-string v2, "ColorThemeChangedInfo"
@@ -6786,19 +6789,19 @@
 
     move-result-object v0
 
-    .line 1445
+    .line 1446
     new-instance v2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v2, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const/16 v3, 0x2a
 
-    .line 1446
+    .line 1447
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v4
 
-    .line 1447
+    .line 1448
     invoke-virtual {v0, v3}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v0
@@ -6811,15 +6814,15 @@
 
     add-int/lit8 v3, v0, 0x1
 
-    .line 1449
+    .line 1450
     invoke-virtual {v2, v0, v3, v14}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     add-int/lit8 v3, v4, 0x1
 
-    .line 1450
+    .line 1451
     invoke-virtual {v2, v4, v3, v14}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1451
+    .line 1452
     new-instance v3, Lorg/telegram/ui/Components/URLSpanNoUnderline;
 
     const-string v5, "tg://settings/themes"
@@ -6834,42 +6837,42 @@
 
     invoke-virtual {v2, v3, v4, v0, v5}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1453
+    .line 1454
     :cond_75
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1454
+    .line 1455
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1455
+    .line 1456
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1456
+    .line 1457
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1457
+    .line 1458
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1458
+    .line 1459
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1459
+    .line 1460
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -6881,12 +6884,12 @@
 
     if-ne v15, v7, :cond_77
 
-    .line 1461
+    .line 1462
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1462
+    .line 1463
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41700000    # 15.0f
@@ -6895,14 +6898,14 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1463
+    .line 1464
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget-object v2, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1464
+    .line 1465
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->UnlockPremiumTranscriptionHint:I
@@ -6919,7 +6922,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1465
+    .line 1466
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->unlock_premium_transcription_hint:I
@@ -6930,31 +6933,31 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1466
+    .line 1467
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1467
+    .line 1468
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->voice_to_text:I
 
     invoke-virtual {v0, v2, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1468
+    .line 1469
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 1469
+    .line 1470
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 1471
+    .line 1472
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->PremiumMore:I
@@ -6969,14 +6972,14 @@
 
     const/16 v2, 0x3a
 
-    .line 1472
+    .line 1473
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1473
+    .line 1474
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -7015,7 +7018,7 @@
 
     const/4 v2, 0x6
 
-    .line 1474
+    .line 1475
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -7026,32 +7029,32 @@
 
     const/4 v0, -0x2
 
-    .line 1475
+    .line 1476
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1477
+    .line 1478
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1478
+    .line 1479
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1479
+    .line 1480
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1480
+    .line 1481
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1481
+    .line 1482
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -7063,12 +7066,12 @@
 
     if-ne v15, v7, :cond_78
 
-    .line 1483
+    .line 1484
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1484
+    .line 1485
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41700000    # 15.0f
@@ -7077,7 +7080,7 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1485
+    .line 1486
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const-string v2, "fonts/rmedium.ttf"
@@ -7088,7 +7091,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1486
+    .line 1487
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->SwipeToReplyHint:I
@@ -7101,12 +7104,12 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1487
+    .line 1488
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1488
+    .line 1489
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->hint_swipe_reply:I
@@ -7117,24 +7120,24 @@
 
     invoke-virtual {v0, v2, v3, v4}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1489
+    .line 1490
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 1490
+    .line 1491
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 1492
+    .line 1493
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1493
+    .line 1494
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->SwipeToReplyHintMessage:I
@@ -7149,14 +7152,14 @@
 
     const/16 v2, 0x3a
 
-    .line 1495
+    .line 1496
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1496
+    .line 1497
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -7195,7 +7198,7 @@
 
     const/4 v2, 0x6
 
-    .line 1497
+    .line 1498
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -7204,17 +7207,17 @@
 
     const/4 v0, -0x2
 
-    .line 1498
+    .line 1499
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1500
+    .line 1501
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1501
+    .line 1502
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
@@ -7257,7 +7260,7 @@
 
     if-eq v15, v7, :cond_8a
 
-    .line 1536
+    .line 1537
     sget v7, Lcom/iMe/common/IdFabric$CustomType;->UNDO_ACTION_CHAT_UNARCHIVED_FEW:I
 
     if-ne v15, v7, :cond_7a
@@ -7271,19 +7274,19 @@
 
     const/16 v2, 0x3a
 
-    .line 1566
+    .line 1567
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1568
+    .line 1569
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 1569
+    .line 1570
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     iget-boolean v3, v0, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
@@ -7308,12 +7311,12 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1570
+    .line 1571
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v10}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1571
+    .line 1572
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v3, 0x41700000    # 15.0f
@@ -7322,26 +7325,26 @@
 
     invoke-virtual {v2, v4, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1572
+    .line 1573
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1573
+    .line 1574
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1575
+    .line 1576
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v2, v10}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1576
+    .line 1577
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/4 v3, 0x2
@@ -7352,12 +7355,12 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 1577
+    .line 1578
     iget-object v2, v0, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
     if-eqz v2, :cond_7c
 
-    .line 1578
+    .line 1579
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_attachEmptyDrawable:Landroid/graphics/drawable/Drawable;
@@ -7368,13 +7371,13 @@
 
     goto/16 :goto_2e
 
-    .line 1579
+    .line 1580
     :cond_7c
     iget-object v2, v0, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     if-eqz v2, :cond_7e
 
-    .line 1580
+    .line 1581
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget v3, v0, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
@@ -7385,12 +7388,12 @@
 
     invoke-virtual {v2, v3, v4, v5}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IIZ)V
 
-    .line 1581
+    .line 1582
     iget-boolean v2, v0, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-eqz v2, :cond_7d
 
-    .line 1582
+    .line 1583
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -7425,7 +7428,7 @@
 
     goto/16 :goto_2e
 
-    .line 1584
+    .line 1585
     :cond_7d
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -7461,7 +7464,7 @@
 
     goto/16 :goto_2e
 
-    .line 1587
+    .line 1588
     :cond_7e
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -7474,7 +7477,7 @@
     :cond_7f
     const/16 v2, 0x2d
 
-    .line 1590
+    .line 1591
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -7483,17 +7486,17 @@
 
     const/16 v2, 0xd
 
-    .line 1591
+    .line 1592
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1592
+    .line 1593
     iput v10, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1594
+    .line 1595
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v6, 0x41700000    # 15.0f
@@ -7502,43 +7505,43 @@
 
     invoke-virtual {v2, v7, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1595
+    .line 1596
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v10}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1596
+    .line 1597
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget-object v6, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1597
+    .line 1598
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/16 v6, 0x8
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1598
+    .line 1599
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1600
+    .line 1601
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     const/16 v6, 0x58
 
     if-ne v2, v6, :cond_82
 
-    .line 1601
+    .line 1602
     move-object v2, v3
 
     check-cast v2, Ljava/lang/String;
 
-    .line 1602
+    .line 1603
     move-object v3, v4
 
     check-cast v3, Ljava/lang/Integer;
@@ -7549,7 +7552,7 @@
 
     if-lez v3, :cond_80
 
-    .line 1604
+    .line 1605
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v4}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -7586,26 +7589,26 @@
 
     const/16 v6, 0x30
 
-    .line 1606
+    .line 1607
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     iput v6, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1607
+    .line 1608
     iput v4, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     const/4 v6, 0x6
 
-    .line 1608
+    .line 1609
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     iput v6, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1610
+    .line 1611
     iget-object v5, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v5}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -7616,17 +7619,17 @@
 
     const/16 v6, 0x30
 
-    .line 1611
+    .line 1612
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
     iput v6, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1612
+    .line 1613
     iput v4, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1614
+    .line 1615
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v5, Lorg/telegram/messenger/R$string;->FolderLinkDeletedTitle:I
@@ -7645,7 +7648,7 @@
 
     invoke-virtual {v4, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1615
+    .line 1616
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const-string v4, "fonts/rmedium.ttf"
@@ -7656,12 +7659,12 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1617
+    .line 1618
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1618
+    .line 1619
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     new-array v4, v10, [Ljava/lang/Object;
@@ -7676,7 +7679,7 @@
 
     goto/16 :goto_36
 
-    .line 1620
+    .line 1621
     :cond_80
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -7684,7 +7687,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1621
+    .line 1622
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->FolderLinkDeleted:I
@@ -7738,7 +7741,7 @@
 
     if-ne v2, v3, :cond_84
 
-    .line 1626
+    .line 1627
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->ChatsDeletedUndo:I
@@ -7753,7 +7756,7 @@
 
     goto :goto_36
 
-    .line 1628
+    .line 1629
     :cond_84
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
 
@@ -7761,7 +7764,7 @@
 
     if-eqz v2, :cond_86
 
-    .line 1629
+    .line 1630
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -7778,7 +7781,7 @@
 
     move-result-object v2
 
-    .line 1630
+    .line 1631
     invoke-static {v2}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v3
@@ -7789,7 +7792,7 @@
 
     if-nez v2, :cond_85
 
-    .line 1631
+    .line 1632
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->ChannelDeletedUndo:I
@@ -7804,7 +7807,7 @@
 
     goto :goto_36
 
-    .line 1633
+    .line 1634
     :cond_85
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -7820,7 +7823,7 @@
 
     goto :goto_36
 
-    .line 1636
+    .line 1637
     :cond_86
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -7836,7 +7839,7 @@
 
     goto :goto_36
 
-    .line 1624
+    .line 1625
     :cond_87
     :goto_35
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
@@ -7851,7 +7854,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1639
+    .line 1640
     :goto_36
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
@@ -7861,7 +7864,7 @@
 
     move v2, v10
 
-    .line 1640
+    .line 1641
     :goto_37
     invoke-virtual/range {p1 .. p1}, Ljava/util/ArrayList;->size()I
 
@@ -7869,7 +7872,7 @@
 
     if-ge v2, v3, :cond_66
 
-    .line 1641
+    .line 1642
     iget v3, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -7910,14 +7913,14 @@
 
     goto :goto_37
 
-    .line 1538
+    .line 1539
     :cond_8a
     :goto_3a
     sget v0, Lcom/iMe/common/IdFabric$CustomType;->UNDO_ACTION_CHAT_UNARCHIVED_FEW:I
 
     if-ne v15, v0, :cond_8c
 
-    .line 1539
+    .line 1540
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     if-eqz v3, :cond_8b
@@ -7952,7 +7955,7 @@
 
     if-ne v15, v4, :cond_8e
 
-    .line 1541
+    .line 1542
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     if-eqz v3, :cond_8d
@@ -7984,7 +7987,7 @@
 
     if-ne v2, v4, :cond_90
 
-    .line 1544
+    .line 1545
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     if-eqz v3, :cond_8f
@@ -8011,7 +8014,7 @@
 
     goto :goto_3c
 
-    .line 1546
+    .line 1547
     :cond_90
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -8039,7 +8042,7 @@
 
     goto :goto_3c
 
-    .line 1548
+    .line 1549
     :goto_40
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -8049,14 +8052,14 @@
 
     const/16 v2, 0xd
 
-    .line 1549
+    .line 1550
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1551
+    .line 1552
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     const/16 v3, 0x17
@@ -8065,7 +8068,7 @@
 
     if-eqz v6, :cond_92
 
-    .line 1552
+    .line 1553
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -8106,11 +8109,11 @@
 
     goto :goto_41
 
-    .line 1554
+    .line 1555
     :cond_92
     iput v10, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1556
+    .line 1557
     :goto_41
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -8120,7 +8123,7 @@
 
     invoke-virtual {v2, v4, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1557
+    .line 1558
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     if-nez v6, :cond_93
@@ -8135,26 +8138,26 @@
     :goto_42
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1558
+    .line 1559
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1559
+    .line 1560
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1561
+    .line 1562
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1562
+    .line 1563
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     iget v3, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
@@ -8179,14 +8182,14 @@
     :goto_44
     invoke-virtual {v2, v0, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1563
+    .line 1564
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 1564
+    .line 1565
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -8202,7 +8205,7 @@
 
     goto :goto_47
 
-    .line 1510
+    .line 1511
     :pswitch_0
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -8218,29 +8221,19 @@
 
     goto :goto_46
 
-    .line 1522
+    .line 1523
     :pswitch_1
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
-    sget v2, Lorg/telegram/messenger/R$string;->BoostingWaitWarning:I
-
-    const/4 v3, 0x1
-
-    new-array v4, v3, [Ljava/lang/Object;
-
     invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->boostsPerSentGift()I
 
-    move-result v6
+    move-result v2
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-array v3, v10, [Ljava/lang/Object;
 
-    move-result-object v6
+    const-string v4, "BoostingWaitWarningPlural"
 
-    aput-object v6, v4, v10
-
-    const-string v6, "BoostingWaitWarning"
-
-    invoke-static {v6, v2, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -8252,29 +8245,21 @@
 
     goto :goto_46
 
+    .line 1520
     :pswitch_2
-    const/4 v3, 0x1
-
-    .line 1519
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
-
-    sget v2, Lorg/telegram/messenger/R$string;->BoostingSelectUpToWarningCountries:I
-
-    new-array v4, v3, [Ljava/lang/Object;
 
     invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->giveawayCountriesMax()J
 
-    move-result-wide v6
+    move-result-wide v2
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    long-to-int v2, v2
 
-    move-result-object v3
+    new-array v3, v10, [Ljava/lang/Object;
 
-    aput-object v3, v4, v10
+    const-string v4, "BoostingSelectUpToWarningCountriesPlural"
 
-    const-string v3, "BoostingSelectUpToWarningCountries"
-
-    invoke-static {v3, v2, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -8282,7 +8267,7 @@
 
     goto :goto_46
 
-    .line 1513
+    .line 1514
     :pswitch_3
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -8298,29 +8283,21 @@
 
     goto :goto_46
 
-    .line 1516
+    .line 1517
     :pswitch_4
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
-    sget v2, Lorg/telegram/messenger/R$string;->BoostingSelectUpToWarningChannels:I
-
-    const/4 v3, 0x1
-
-    new-array v4, v3, [Ljava/lang/Object;
-
     invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->giveawayAddPeersMax()J
 
-    move-result-wide v6
+    move-result-wide v2
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    long-to-int v2, v2
 
-    move-result-object v3
+    new-array v3, v10, [Ljava/lang/Object;
 
-    aput-object v3, v4, v10
+    const-string v4, "BoostingSelectUpToWarningChannelsPlural"
 
-    const-string v3, "BoostingSelectUpToWarningChannels"
-
-    invoke-static {v3, v2, v4}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -8328,7 +8305,7 @@
 
     goto :goto_46
 
-    .line 1525
+    .line 1526
     :goto_47
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -8338,14 +8315,14 @@
 
     const/16 v2, 0x8
 
-    .line 1526
+    .line 1527
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1527
+    .line 1528
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v3, 0x41700000    # 15.0f
@@ -8354,43 +8331,43 @@
 
     invoke-virtual {v0, v4, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1528
+    .line 1529
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 1529
+    .line 1530
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget-object v3, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1530
+    .line 1531
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1532
+    .line 1533
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1533
+    .line 1534
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->chats_infotip:I
 
     invoke-virtual {v0, v2, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1534
+    .line 1535
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 1535
+    .line 1536
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -8401,10 +8378,10 @@
     :goto_48
     const-wide/16 v6, 0xfa0
 
-    .line 1347
+    .line 1348
     iput-wide v6, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 1348
+    .line 1349
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
@@ -8413,14 +8390,14 @@
 
     invoke-virtual {v0, v4, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1349
+    .line 1350
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/16 v2, 0x10
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1350
+    .line 1351
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/16 v2, 0x1e
@@ -8431,21 +8408,21 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMinHeight(I)V
 
-    .line 1351
+    .line 1352
     move-object v0, v3
 
     check-cast v0, Ljava/lang/String;
 
     const-string v2, "\ud83c\udfb2"
 
-    .line 1352
+    .line 1353
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_98
 
-    .line 1353
+    .line 1354
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->DiceInfo2:I
@@ -8462,7 +8439,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1354
+    .line 1355
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->dice:I
@@ -8474,14 +8451,14 @@
     :cond_98
     const-string v2, "\ud83c\udfaf"
 
-    .line 1356
+    .line 1357
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_99
 
-    .line 1357
+    .line 1358
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->DartInfo:I
@@ -8503,7 +8480,7 @@
 
     goto :goto_4a
 
-    .line 1359
+    .line 1360
     :cond_99
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -8523,14 +8500,14 @@
 
     move-result-object v2
 
-    .line 1360
+    .line 1361
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-nez v3, :cond_9a
 
-    .line 1361
+    .line 1362
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v3}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -8555,7 +8532,7 @@
 
     goto :goto_49
 
-    .line 1363
+    .line 1364
     :cond_9a
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -8595,7 +8572,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1366
+    .line 1367
     :goto_4a
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -8605,49 +8582,49 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1367
+    .line 1368
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v2, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1368
+    .line 1369
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1369
+    .line 1370
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 1370
+    .line 1371
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v13, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1371
+    .line 1372
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v13, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1372
+    .line 1373
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v13, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1374
+    .line 1375
     :goto_4b
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
@@ -8661,14 +8638,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1377
+    .line 1378
     iget v0, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     const/16 v2, 0x10
 
     if-ne v0, v2, :cond_9b
 
-    .line 1378
+    .line 1379
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -8703,12 +8680,12 @@
 
     add-int/2addr v0, v2
 
-    .line 1379
+    .line 1380
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1380
+    .line 1381
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_undo_cancelColor:I
@@ -8719,14 +8696,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1381
+    .line 1382
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoImageView:Landroid/widget/ImageView;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1382
+    .line 1383
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v10}, Landroid/widget/LinearLayout;->setVisibility(I)V
@@ -8736,17 +8713,17 @@
     :cond_9b
     const/16 v3, 0x8
 
-    .line 1384
+    .line 1385
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 1385
+    .line 1386
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1386
+    .line 1387
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
@@ -8754,19 +8731,19 @@
     :goto_4c
     const/16 v2, 0x3a
 
-    .line 1389
+    .line 1390
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1390
+    .line 1391
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     const/4 v2, 0x6
 
-    .line 1391
+    .line 1392
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -8775,7 +8752,7 @@
 
     const/4 v0, 0x7
 
-    .line 1392
+    .line 1393
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -8784,17 +8761,17 @@
 
     const/4 v0, -0x1
 
-    .line 1393
+    .line 1394
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 1395
+    .line 1396
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1396
+    .line 1397
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -8805,7 +8782,7 @@
     :goto_4d
     const/16 v2, 0x8
 
-    .line 1241
+    .line 1242
     move-object v0, v3
 
     check-cast v0, Ljava/lang/Integer;
@@ -8814,24 +8791,24 @@
 
     move-result v0
 
-    .line 1242
+    .line 1243
     move-object v3, v4
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 1244
+    .line 1245
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->undoImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1245
+    .line 1246
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
     if-eqz v0, :cond_9e
 
-    .line 1248
+    .line 1249
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const-string v4, "fonts/rmedium.ttf"
@@ -8842,7 +8819,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1249
+    .line 1250
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v4, 0x41600000    # 14.0f
@@ -8851,12 +8828,12 @@
 
     invoke-virtual {v2, v6, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1250
+    .line 1251
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieImageView;->clearLayerColors()V
 
-    .line 1251
+    .line 1252
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_undo_infoColor:I
@@ -8869,7 +8846,7 @@
 
     invoke-virtual {v2, v7, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 1252
+    .line 1253
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v1, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -8880,7 +8857,7 @@
 
     invoke-virtual {v2, v7, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 1253
+    .line 1254
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v1, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -8891,7 +8868,7 @@
 
     invoke-virtual {v2, v7, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 1254
+    .line 1255
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v1, v4}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -8902,7 +8879,7 @@
 
     invoke-virtual {v2, v6, v4}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 1256
+    .line 1257
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->ProximityAlertSet:I
@@ -8915,7 +8892,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1257
+    .line 1258
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v4, Lorg/telegram/messenger/R$raw;->ic_unmute:I
@@ -8926,17 +8903,17 @@
 
     invoke-virtual {v2, v4, v6, v7}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1258
+    .line 1259
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1259
+    .line 1260
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1260
+    .line 1261
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/4 v4, 0x3
@@ -8945,7 +8922,7 @@
 
     if-eqz v3, :cond_9d
 
-    .line 1263
+    .line 1264
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->ProximityAlertSetInfoUser:I
@@ -8985,7 +8962,7 @@
 
     const/4 v6, 0x2
 
-    .line 1265
+    .line 1266
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->ProximityAlertSetInfoGroup2:I
@@ -9008,7 +8985,7 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1267
+    .line 1268
     :goto_4e
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
@@ -9018,7 +8995,7 @@
 
     const/4 v2, 0x6
 
-    .line 1269
+    .line 1270
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -9031,7 +9008,7 @@
 
     goto/16 :goto_4f
 
-    .line 1271
+    .line 1272
     :cond_9e
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -9039,7 +9016,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1272
+    .line 1273
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41700000    # 15.0f
@@ -9048,12 +9025,12 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1273
+    .line 1274
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->clearLayerColors()V
 
-    .line 1274
+    .line 1275
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_undo_infoColor:I
@@ -9066,7 +9043,7 @@
 
     invoke-virtual {v0, v4, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 1275
+    .line 1276
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -9077,7 +9054,7 @@
 
     invoke-virtual {v0, v4, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 1276
+    .line 1277
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -9088,7 +9065,7 @@
 
     invoke-virtual {v0, v4, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 1277
+    .line 1278
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -9099,7 +9076,7 @@
 
     invoke-virtual {v0, v4, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 1278
+    .line 1279
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/Components/UndoView;->getThemedColor(I)I
@@ -9112,14 +9089,14 @@
 
     const/16 v6, 0xe
 
-    .line 1280
+    .line 1281
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1282
+    .line 1283
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->ProximityAlertCancelled:I
@@ -9132,7 +9109,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1283
+    .line 1284
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->ic_mute:I
@@ -9143,14 +9120,14 @@
 
     invoke-virtual {v0, v2, v3, v4}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1284
+    .line 1285
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1285
+    .line 1286
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_undo_cancelColor:I
@@ -9161,14 +9138,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1286
+    .line 1287
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     const/16 v2, 0x3a
 
-    .line 1289
+    .line 1290
     :goto_4f
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -9176,14 +9153,14 @@
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1291
+    .line 1292
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 1292
+    .line 1293
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -9197,19 +9174,19 @@
     :goto_51
     const/16 v6, 0xe
 
-    .line 1018
+    .line 1019
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->undoImageView:Landroid/widget/ImageView;
 
     const/16 v7, 0x8
 
     invoke-virtual {v0, v7}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1019
+    .line 1020
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0, v10}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1021
+    .line 1022
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget-object v7, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
@@ -9218,7 +9195,7 @@
 
     const-wide/16 v19, -0x1
 
-    .line 1024
+    .line 1025
     iget v0, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     sget v7, Lcom/iMe/common/IdFabric$CustomType;->UNDO_ADD_TO_PLAYLIST:I
@@ -9236,7 +9213,7 @@
 
     if-ne v0, v7, :cond_a1
 
-    .line 1032
+    .line 1033
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->BroadcastGroupConvertSuccess:I
@@ -9249,7 +9226,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1033
+    .line 1034
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->gigagroup_convert:I
@@ -9258,14 +9235,14 @@
 
     const/16 v0, 0x9
 
-    .line 1035
+    .line 1036
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1036
+    .line 1037
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
@@ -9286,7 +9263,7 @@
 
     if-ne v0, v7, :cond_a2
 
-    .line 1038
+    .line 1039
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->GigagroupConvertCancelHint:I
@@ -9299,7 +9276,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1039
+    .line 1040
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->chats_infotip:I
@@ -9308,14 +9285,14 @@
 
     const/16 v0, 0x9
 
-    .line 1041
+    .line 1042
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1042
+    .line 1043
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
@@ -9331,12 +9308,12 @@
 
     if-ne v2, v7, :cond_a3
 
-    .line 1044
+    .line 1045
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 1045
+    .line 1046
     move-object v0, v4
 
     check-cast v0, Ljava/lang/Integer;
@@ -9345,17 +9322,17 @@
 
     move-result v0
 
-    .line 1046
+    .line 1047
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1047
+    .line 1048
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->formatTTLString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1048
+    .line 1049
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->AutoDeleteHintOnText:I
@@ -9374,7 +9351,7 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1049
+    .line 1050
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->fire_on:I
@@ -9383,7 +9360,7 @@
 
     const/16 v0, 0x9
 
-    .line 1050
+    .line 1051
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -9392,10 +9369,10 @@
 
     const-wide/16 v2, 0xfa0
 
-    .line 1051
+    .line 1052
     iput-wide v2, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 1053
+    .line 1054
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x3
@@ -9413,7 +9390,7 @@
 
     if-ne v0, v2, :cond_a4
 
-    .line 1055
+    .line 1056
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->AutoDeleteHintOffText:I
@@ -9426,14 +9403,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1056
+    .line 1057
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->fire_off:I
 
     invoke-virtual {v0, v2, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1057
+    .line 1058
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
@@ -9444,10 +9421,10 @@
 
     const-wide/16 v2, 0xbb8
 
-    .line 1058
+    .line 1059
     iput-wide v2, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 1059
+    .line 1060
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x4
@@ -9465,7 +9442,7 @@
 
     if-ne v0, v2, :cond_a5
 
-    .line 1061
+    .line 1062
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->ImportMutualError:I
@@ -9478,7 +9455,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1062
+    .line 1063
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->error:I
@@ -9487,14 +9464,14 @@
 
     const/16 v0, 0x9
 
-    .line 1064
+    .line 1065
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1065
+    .line 1066
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
@@ -9510,7 +9487,7 @@
 
     if-ne v0, v2, :cond_a6
 
-    .line 1067
+    .line 1068
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->ImportNotAdmin:I
@@ -9523,7 +9500,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1068
+    .line 1069
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->error:I
@@ -9532,14 +9509,14 @@
 
     const/16 v0, 0x9
 
-    .line 1070
+    .line 1071
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1071
+    .line 1072
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
@@ -9555,7 +9532,7 @@
 
     if-ne v0, v2, :cond_a7
 
-    .line 1073
+    .line 1074
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->ImportedInfo:I
@@ -9568,14 +9545,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1074
+    .line 1075
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->imported:I
 
     invoke-virtual {v0, v2, v8, v8}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1075
+    .line 1076
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x5
@@ -9588,14 +9565,14 @@
 
     const/16 v0, 0x9
 
-    .line 1077
+    .line 1078
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     iput v0, v5, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1078
+    .line 1079
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
@@ -9644,7 +9621,7 @@
 
     if-ne v0, v2, :cond_a9
 
-    .line 1109
+    .line 1110
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->ChannelNotifyMembersInfoOn:I
@@ -9657,7 +9634,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1110
+    .line 1111
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->silent_unmute:I
@@ -9668,10 +9645,10 @@
 
     const-wide/16 v2, 0xbb8
 
-    .line 1111
+    .line 1112
     iput-wide v2, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 1112
+    .line 1113
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41700000    # 15.0f
@@ -9687,7 +9664,7 @@
 
     if-ne v0, v2, :cond_aa
 
-    .line 1114
+    .line 1115
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->ChannelNotifyMembersInfoOff:I
@@ -9700,7 +9677,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1115
+    .line 1116
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->silent_mute:I
@@ -9711,10 +9688,10 @@
 
     const-wide/16 v2, 0xbb8
 
-    .line 1116
+    .line 1117
     iput-wide v2, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 1117
+    .line 1118
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41700000    # 15.0f
@@ -9732,7 +9709,7 @@
 
     if-nez v4, :cond_ad
 
-    .line 1120
+    .line 1121
     iget v0, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -9745,7 +9722,7 @@
 
     if-nez v0, :cond_ab
 
-    .line 1121
+    .line 1122
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->InvLinkToSavedMessages:I
@@ -9764,7 +9741,7 @@
 
     goto/16 :goto_53
 
-    .line 1123
+    .line 1124
     :cond_ab
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
 
@@ -9772,7 +9749,7 @@
 
     if-eqz v0, :cond_ac
 
-    .line 1124
+    .line 1125
     iget v0, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -9789,7 +9766,7 @@
 
     move-result-object v0
 
-    .line 1125
+    .line 1126
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->InvLinkToGroup:I
@@ -9816,7 +9793,7 @@
 
     goto :goto_53
 
-    .line 1127
+    .line 1128
     :cond_ac
     iget v0, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
@@ -9832,7 +9809,7 @@
 
     move-result-object v0
 
-    .line 1128
+    .line 1129
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->InvLinkToUser:I
@@ -9861,7 +9838,7 @@
 
     goto :goto_53
 
-    .line 1132
+    .line 1133
     :cond_ad
     move-object v0, v4
 
@@ -9871,7 +9848,7 @@
 
     move-result v0
 
-    .line 1133
+    .line 1134
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->InvLinkToChats:I
@@ -9902,7 +9879,7 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1135
+    .line 1136
     :goto_53
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -9912,7 +9889,7 @@
 
     const-wide/16 v2, 0xbb8
 
-    .line 1136
+    .line 1137
     iput-wide v2, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_66
@@ -9922,7 +9899,7 @@
 
     if-eq v0, v2, :cond_b3
 
-    .line 1137
+    .line 1138
     sget v2, Lcom/iMe/common/IdFabric$CustomType;->UNDO_MESSAGES_SAVE_TO_CLOUD:I
 
     if-eq v0, v2, :cond_b3
@@ -9938,14 +9915,14 @@
 
     if-ne v0, v2, :cond_d2
 
-    .line 1204
+    .line 1205
     move-object v0, v3
 
     check-cast v0, Ljava/lang/Integer;
 
     if-nez v4, :cond_b2
 
-    .line 1206
+    .line 1207
     iget v0, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -9958,7 +9935,7 @@
 
     if-nez v0, :cond_b0
 
-    .line 1207
+    .line 1208
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->BackgroundToSavedMessages:I
@@ -9975,7 +9952,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1208
+    .line 1209
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->saved_messages:I
@@ -9986,7 +9963,7 @@
 
     goto/16 :goto_55
 
-    .line 1210
+    .line 1211
     :cond_b0
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
 
@@ -9994,7 +9971,7 @@
 
     if-eqz v0, :cond_b1
 
-    .line 1211
+    .line 1212
     iget v0, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10011,7 +9988,7 @@
 
     move-result-object v0
 
-    .line 1212
+    .line 1213
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->BackgroundToGroup:I
@@ -10038,7 +10015,7 @@
 
     goto :goto_54
 
-    .line 1214
+    .line 1215
     :cond_b1
     iget v0, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
@@ -10054,7 +10031,7 @@
 
     move-result-object v0
 
-    .line 1215
+    .line 1216
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->BackgroundToUser:I
@@ -10081,7 +10058,7 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1217
+    .line 1218
     :goto_54
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -10093,7 +10070,7 @@
 
     goto :goto_55
 
-    .line 1220
+    .line 1221
     :cond_b2
     move-object v0, v4
 
@@ -10103,7 +10080,7 @@
 
     move-result v0
 
-    .line 1221
+    .line 1222
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->BackgroundToChats:I
@@ -10134,7 +10111,7 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1222
+    .line 1223
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v2, Lorg/telegram/messenger/R$raw;->forward:I
@@ -10146,12 +10123,12 @@
     :goto_55
     const-wide/16 v2, 0xbb8
 
-    .line 1224
+    .line 1225
     iput-wide v2, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_66
 
-    .line 1138
+    .line 1139
     :cond_b3
     :goto_56
     move-object v0, v3
@@ -10160,14 +10137,14 @@
 
     if-eqz v4, :cond_b6
 
-    .line 1139
+    .line 1140
     instance-of v2, v4, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     if-eqz v2, :cond_b4
 
     goto :goto_5a
 
-    .line 1192
+    .line 1193
     :cond_b4
     move-object v2, v4
 
@@ -10177,7 +10154,7 @@
 
     move-result v2
 
-    .line 1193
+    .line 1194
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -10186,7 +10163,7 @@
 
     if-ne v0, v3, :cond_b5
 
-    .line 1194
+    .line 1195
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     new-array v3, v10, [Ljava/lang/Object;
@@ -10205,7 +10182,7 @@
 
     goto :goto_57
 
-    .line 1196
+    .line 1197
     :cond_b5
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -10223,7 +10200,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1198
+    .line 1199
     :goto_57
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -10243,7 +10220,7 @@
 
     goto/16 :goto_63
 
-    .line 1140
+    .line 1141
     :cond_b6
     :goto_5a
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
@@ -10258,7 +10235,7 @@
 
     if-nez v2, :cond_bd
 
-    .line 1141
+    .line 1142
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     sget v3, Lcom/iMe/common/IdFabric$CustomType;->UNDO_AUDIO_SAVE_TO_CLOUD:I
@@ -10271,7 +10248,7 @@
 
     goto :goto_5b
 
-    .line 1150
+    .line 1151
     :cond_b7
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -10281,7 +10258,7 @@
 
     if-ne v0, v2, :cond_b8
 
-    .line 1151
+    .line 1152
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->FwdMessageToSavedMessages:I
@@ -10300,7 +10277,7 @@
 
     goto :goto_5d
 
-    .line 1153
+    .line 1154
     :cond_b8
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -10324,7 +10301,7 @@
     :goto_5b
     if-ne v2, v3, :cond_bb
 
-    .line 1144
+    .line 1145
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -10345,7 +10322,7 @@
     :cond_bb
     const/4 v2, 0x1
 
-    .line 1146
+    .line 1147
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -10359,7 +10336,7 @@
     :cond_bc
     sget v0, Lorg/telegram/messenger/R$string;->undo_cloud_albums_save_to_message:I
 
-    .line 1148
+    .line 1149
     :goto_5c
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -10385,7 +10362,7 @@
 
     invoke-virtual {v3, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1156
+    .line 1157
     :goto_5d
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -10395,7 +10372,7 @@
 
     goto/16 :goto_59
 
-    .line 1159
+    .line 1160
     :cond_bd
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
@@ -10421,7 +10398,7 @@
 
     goto/16 :goto_60
 
-    .line 1168
+    .line 1169
     :cond_be
     invoke-static {v11, v12}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
 
@@ -10429,7 +10406,7 @@
 
     if-eqz v2, :cond_c2
 
-    .line 1169
+    .line 1170
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10446,14 +10423,14 @@
 
     move-result-object v2
 
-    .line 1170
+    .line 1171
     move-object v3, v4
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     if-eqz v2, :cond_c8
 
-    .line 1173
+    .line 1174
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -10462,7 +10439,7 @@
 
     if-ne v0, v4, :cond_c0
 
-    .line 1174
+    .line 1175
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v7, Lorg/telegram/messenger/R$string;->FwdMessageToGroup:I
@@ -10495,7 +10472,7 @@
 
     goto/16 :goto_62
 
-    .line 1176
+    .line 1177
     :cond_c0
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -10531,7 +10508,7 @@
 
     goto/16 :goto_62
 
-    .line 1179
+    .line 1180
     :cond_c2
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAccount:I
 
@@ -10549,7 +10526,7 @@
 
     if-eqz v2, :cond_c8
 
-    .line 1182
+    .line 1183
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -10558,7 +10535,7 @@
 
     if-ne v0, v3, :cond_c3
 
-    .line 1183
+    .line 1184
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->FwdMessageToUser:I
@@ -10585,7 +10562,7 @@
 
     goto :goto_62
 
-    .line 1185
+    .line 1186
     :cond_c3
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -10613,14 +10590,14 @@
 
     goto :goto_62
 
-    .line 1161
+    .line 1162
     :cond_c4
     :goto_60
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     if-ne v2, v3, :cond_c6
 
-    .line 1162
+    .line 1163
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -10641,7 +10618,7 @@
     :cond_c6
     const/4 v2, 0x1
 
-    .line 1164
+    .line 1165
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -10655,7 +10632,7 @@
     :cond_c7
     sget v0, Lorg/telegram/messenger/R$string;->undo_cloud_albums_save_to_message:I
 
-    .line 1166
+    .line 1167
     :goto_61
     iget-object v3, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -10679,7 +10656,7 @@
 
     invoke-virtual {v3, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1188
+    .line 1189
     :cond_c8
     :goto_62
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -10692,20 +10669,20 @@
 
     goto/16 :goto_58
 
-    .line 1201
+    .line 1202
     :goto_63
     iput-wide v2, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     const-wide/16 v7, 0x2
 
-    .line 1202
+    .line 1203
     div-long v7, v2, v7
 
     iput-wide v7, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     goto/16 :goto_66
 
-    .line 1080
+    .line 1081
     :cond_c9
     :goto_64
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->shouldShowClipboardToast()Z
@@ -10716,16 +10693,16 @@
 
     return-void
 
-    .line 1083
+    .line 1084
     :cond_ca
     sget v0, Lorg/telegram/messenger/R$raw;->copy:I
 
-    .line 1085
+    .line 1086
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     if-ne v2, v9, :cond_cb
 
-    .line 1086
+    .line 1087
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->photo_viewer_image_copied:I
@@ -10743,7 +10720,7 @@
 
     if-ne v2, v3, :cond_cc
 
-    .line 1089
+    .line 1090
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->EmailCopied:I
@@ -10763,7 +10740,7 @@
 
     if-ne v2, v3, :cond_cd
 
-    .line 1091
+    .line 1092
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->PhoneCopied:I
@@ -10783,7 +10760,7 @@
 
     if-ne v2, v3, :cond_ce
 
-    .line 1093
+    .line 1094
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->UsernameCopied:I
@@ -10803,7 +10780,7 @@
 
     if-ne v2, v3, :cond_cf
 
-    .line 1095
+    .line 1096
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->HashtagCopied:I
@@ -10823,7 +10800,7 @@
 
     if-ne v2, v3, :cond_d0
 
-    .line 1097
+    .line 1098
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->MessageCopied:I
@@ -10843,10 +10820,10 @@
 
     if-ne v2, v3, :cond_d1
 
-    .line 1099
+    .line 1100
     sget v0, Lorg/telegram/messenger/R$raw;->voip_invite:I
 
-    .line 1100
+    .line 1101
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->LinkCopied:I
@@ -10861,7 +10838,7 @@
 
     goto :goto_65
 
-    .line 1102
+    .line 1103
     :cond_d1
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
@@ -10875,7 +10852,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1104
+    .line 1105
     :goto_65
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -10885,17 +10862,17 @@
 
     const-wide/16 v2, 0xbb8
 
-    .line 1105
+    .line 1106
     iput-wide v2, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
     const-wide/16 v7, 0x2
 
-    .line 1106
+    .line 1107
     div-long v7, v2, v7
 
     iput-wide v7, v1, Lorg/telegram/ui/Components/UndoView;->timeLeft:J
 
-    .line 1107
+    .line 1108
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41700000    # 15.0f
@@ -10912,7 +10889,7 @@
 
     goto :goto_6a
 
-    .line 1025
+    .line 1026
     :cond_d3
     :goto_67
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -10933,7 +10910,7 @@
 
     invoke-virtual {v2, v0, v3, v4}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 1026
+    .line 1027
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     iget v2, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
@@ -10954,7 +10931,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1027
+    .line 1028
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
@@ -10965,7 +10942,7 @@
 
     const/16 v0, 0x9
 
-    .line 1028
+    .line 1029
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -10974,7 +10951,7 @@
 
     goto/16 :goto_52
 
-    .line 1226
+    .line 1227
     :goto_6a
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
@@ -10982,7 +10959,7 @@
 
     invoke-virtual {v4, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1227
+    .line 1228
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->undoTextView:Landroid/widget/TextView;
 
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_undo_cancelColor:I
@@ -10993,35 +10970,35 @@
 
     invoke-virtual {v4, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1228
+    .line 1229
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->undoButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4, v7}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     const/16 v4, 0x3a
 
-    .line 1230
+    .line 1231
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     iput v4, v5, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 1231
+    .line 1232
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     iput v4, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1233
+    .line 1234
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v5, 0x0
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 1234
+    .line 1235
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -11032,7 +11009,7 @@
 
     if-lez v4, :cond_d6
 
-    .line 1236
+    .line 1237
     iget-object v4, v1, Lorg/telegram/ui/Components/UndoView;->leftImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     new-instance v5, Lorg/telegram/ui/Components/UndoView$$ExternalSyntheticLambda5;
@@ -11041,7 +11018,7 @@
 
     invoke-virtual {v4, v5, v2, v3}, Landroid/widget/ImageView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1646
+    .line 1647
     :cond_d6
     :goto_6b
     new-instance v2, Ljava/lang/StringBuilder;
@@ -11093,28 +11070,28 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->makeAccessibilityAnnouncement(Ljava/lang/CharSequence;)V
 
-    .line 1648
+    .line 1649
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/UndoView;->isMultilineSubInfo()Z
 
     move-result v2
 
     if-eqz v2, :cond_d9
 
-    .line 1649
+    .line 1650
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 1650
+    .line 1651
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v0
 
     if-nez v0, :cond_d8
 
-    .line 1652
+    .line 1653
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, v0, Landroid/graphics/Point;->x:I
@@ -11122,14 +11099,14 @@
     :cond_d8
     const/16 v2, 0x10
 
-    .line 1654
+    .line 1655
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     sub-int/2addr v0, v2
 
-    .line 1655
+    .line 1656
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     const/high16 v3, 0x40000000    # 2.0f
@@ -11160,7 +11137,7 @@
 
     invoke-virtual/range {p1 .. p6}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 1656
+    .line 1657
     iget-object v0, v1, Lorg/telegram/ui/Components/UndoView;->subinfoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getMeasuredHeight()I
@@ -11179,7 +11156,7 @@
 
     goto/16 :goto_6e
 
-    .line 1657
+    .line 1658
     :cond_d9
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/UndoView;->hasSubInfo()Z
 
@@ -11189,7 +11166,7 @@
 
     const/16 v2, 0x34
 
-    .line 1658
+    .line 1659
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -11198,7 +11175,7 @@
 
     goto/16 :goto_6e
 
-    .line 1659
+    .line 1660
     :cond_da
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -11208,14 +11185,14 @@
 
     if-eqz v2, :cond_e0
 
-    .line 1660
+    .line 1661
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
     check-cast v2, Landroid/view/ViewGroup;
 
-    .line 1661
+    .line 1662
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v3
@@ -11234,7 +11211,7 @@
 
     if-gtz v3, :cond_db
 
-    .line 1663
+    .line 1664
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v2, Landroid/graphics/Point;->x:I
@@ -11242,14 +11219,14 @@
     :cond_db
     const/16 v2, 0x10
 
-    .line 1665
+    .line 1666
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     sub-int/2addr v3, v4
 
-    .line 1666
+    .line 1667
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     const/high16 v4, 0x40000000    # 2.0f
@@ -11280,7 +11257,7 @@
 
     invoke-virtual/range {p1 .. p6}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 1667
+    .line 1668
     iget-object v2, v1, Lorg/telegram/ui/Components/UndoView;->infoTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getMeasuredHeight()I
@@ -11329,7 +11306,7 @@
 
     iput v2, v1, Lorg/telegram/ui/Components/UndoView;->undoViewHeight:I
 
-    .line 1668
+    .line 1669
     iget v3, v1, Lorg/telegram/ui/Components/UndoView;->currentAction:I
 
     const/16 v4, 0x12
@@ -11338,7 +11315,7 @@
 
     const/16 v4, 0x34
 
-    .line 1669
+    .line 1670
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -11358,7 +11335,7 @@
 
     const/16 v0, 0x32
 
-    .line 1671
+    .line 1672
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -11376,7 +11353,7 @@
 
     const/16 v3, 0x8
 
-    .line 1673
+    .line 1674
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -11385,7 +11362,7 @@
 
     iput v2, v1, Lorg/telegram/ui/Components/UndoView;->undoViewHeight:I
 
-    .line 1677
+    .line 1678
     :cond_e0
     :goto_6e
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -11394,10 +11371,10 @@
 
     if-eqz v0, :cond_e4
 
-    .line 1678
+    .line 1679
     invoke-virtual {v1, v10}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1679
+    .line 1680
     iget-boolean v0, v1, Lorg/telegram/ui/Components/UndoView;->fromTop:Z
 
     if-eqz v0, :cond_e1
@@ -11422,7 +11399,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/UndoView;->setEnterOffset(F)V
 
-    .line 1680
+    .line 1681
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -11435,7 +11412,7 @@
 
     new-array v2, v2, [F
 
-    .line 1681
+    .line 1682
     iget-boolean v4, v1, Lorg/telegram/ui/Components/UndoView;->fromTop:Z
 
     if-eqz v4, :cond_e2
@@ -11486,7 +11463,7 @@
 
     invoke-virtual {v0, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1682
+    .line 1683
     new-instance v2, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {v2}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
@@ -11495,14 +11472,16 @@
 
     const-wide/16 v2, 0xb4
 
-    .line 1683
+    .line 1684
     invoke-virtual {v0, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1684
+    .line 1685
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     :cond_e4
     return-void
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x5a

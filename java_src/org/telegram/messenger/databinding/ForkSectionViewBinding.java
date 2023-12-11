@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkSectionViewBinding implements ViewBinding {
     private ForkSectionViewBinding(View view, View view2) {
@@ -16,7 +16,7 @@ public final class ForkSectionViewBinding implements ViewBinding {
     }
 
     public static ForkSectionViewBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_section_view, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_section_view, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

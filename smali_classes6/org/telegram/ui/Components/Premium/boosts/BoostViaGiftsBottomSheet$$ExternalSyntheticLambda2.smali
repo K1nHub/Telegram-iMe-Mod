@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet$$ExternalSyntheticLambda2;->f$2:Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;->$r8$lambda$MnfTARTAsxF1CzVMnHt_Vsg5dmo(Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;Landroid/view/View;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;->$r8$lambda$Z10q28t9B0W-nnh1XW5qpJb4E6c(Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;Landroid/view/View;)V
 
     return-void
 .end method

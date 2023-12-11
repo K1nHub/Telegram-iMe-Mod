@@ -18,12 +18,12 @@ public final class IntermediateAddressSimpleTlbConstructor extends org.ton.tlb.T
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeInt(value.getWorkchainId(), 8);
-        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5118getAddrPfxsVKNKU());
+        cellBuilder.mo5193storeUInt64VKZWuLQ(value.m5100getAddrPfxsVKNKU());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public IntermediateAddressSimple loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new IntermediateAddressSimple(cellSlice.loadInt(8).intValue(), cellSlice.mo5221loadUInt64sVKNKU(), null);
+        return new IntermediateAddressSimple(cellSlice.loadInt(8).intValue(), cellSlice.mo5203loadUInt64sVKNKU(), null);
     }
 }

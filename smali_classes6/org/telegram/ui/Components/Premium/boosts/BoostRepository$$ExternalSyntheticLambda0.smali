@@ -35,7 +35,7 @@
 
     check-cast p1, Lcom/android/billingclient/api/BillingResult;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->$r8$lambda$IJPnAGqV1dkDhOLf6IKoYOljOtQ(Lcom/android/billingclient/api/BillingResult;Lorg/telegram/messenger/Utilities$Callback;Lcom/android/billingclient/api/BillingResult;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->$r8$lambda$JGcfs23cJE58ZVE6M3Rzro1hPd0(Lcom/android/billingclient/api/BillingResult;Lorg/telegram/messenger/Utilities$Callback;Lcom/android/billingclient/api/BillingResult;)V
 
     return-void
 .end method

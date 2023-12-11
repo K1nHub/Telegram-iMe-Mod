@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;I)V
     .locals 0
 
-    .line 1660
+    .line 1661
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     iput p2, p0, Lorg/telegram/ui/ContactsActivity$15;->val$from:I
@@ -42,7 +42,7 @@
 .method public onPreDraw()Z
     .locals 9
 
-    .line 1663
+    .line 1664
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 1664
+    .line 1665
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -66,7 +66,7 @@
 
     move-result v0
 
-    .line 1665
+    .line 1666
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -80,7 +80,7 @@
 
     if-ge v3, v0, :cond_1
 
-    .line 1667
+    .line 1668
     iget-object v5, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v5}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -91,7 +91,7 @@
 
     move-result-object v5
 
-    .line 1668
+    .line 1669
     iget-object v6, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -111,10 +111,10 @@
     :cond_0
     const/4 v6, 0x0
 
-    .line 1671
+    .line 1672
     invoke-virtual {v5, v6}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1672
+    .line 1673
     iget-object v6, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -139,7 +139,7 @@
 
     int-to-float v6, v6
 
-    .line 1673
+    .line 1674
     iget-object v7, p0, Lorg/telegram/ui/ContactsActivity$15;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v7}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -160,7 +160,7 @@
 
     float-to-int v6, v6
 
-    .line 1674
+    .line 1675
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     const/4 v8, 0x2
@@ -175,19 +175,19 @@
 
     int-to-long v6, v6
 
-    .line 1675
+    .line 1676
     invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setStartDelay(J)V
 
     const-wide/16 v6, 0xc8
 
-    .line 1676
+    .line 1677
     invoke-virtual {v5, v6, v7}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
     new-array v4, v4, [Landroid/animation/Animator;
 
     aput-object v5, v4, v2
 
-    .line 1677
+    .line 1678
     invoke-virtual {v1, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     :goto_1
@@ -195,7 +195,7 @@
 
     goto :goto_0
 
-    .line 1679
+    .line 1680
     :cond_1
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 

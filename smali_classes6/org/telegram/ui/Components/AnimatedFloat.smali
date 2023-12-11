@@ -792,7 +792,7 @@
 .method public setParent(Landroid/view/View;)V
     .locals 0
 
-    .line 201
+    .line 205
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedFloat;->parent:Landroid/view/View;
 
     return-void

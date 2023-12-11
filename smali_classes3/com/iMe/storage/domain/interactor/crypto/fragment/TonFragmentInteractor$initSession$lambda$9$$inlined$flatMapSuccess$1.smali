@@ -32,7 +32,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt$flatMapSuccess$1\n+ 2 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n*L\n1#1,101:1\n134#2,11:102\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt$flatMapSuccess$1\n+ 2 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n+ 3 base64.kt\norg/ton/crypto/Base64Kt\n*L\n1#1,101:1\n134#2,3:102\n137#2,3:106\n141#2:110\n12#3:105\n12#3:109\n*S KotlinDebug\n*F\n+ 1 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n*L\n136#1:105\n139#1:109\n*E\n"
 .end annotation
 
 
@@ -64,7 +64,7 @@
 
 # virtual methods
 .method public final invoke(Lcom/iMe/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
-    .locals 7
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,6 +91,13 @@
     if-eqz v0, :cond_0
 
     .line 102
+    iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$initSession$lambda$9$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;
+
+    invoke-static {v0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->access$getTonFragmentRepository$p(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
+
+    move-result-object v0
+
+    .line 104
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/Result;->getData()Ljava/lang/Object;
 
     move-result-object p1
@@ -99,64 +106,69 @@
 
     invoke-static {p1}, Lcom/iMe/storage/domain/utils/extensions/CryptoExtKt;->orEmpty([B)[B
 
-    move-result-object p1
+    move-result-object v3
 
-    .line 103
-    iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$initSession$lambda$9$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;
+    .line 12
+    sget-object p1, Lkotlin/io/encoding/Base64;->Default:Lkotlin/io/encoding/Base64$Default;
 
-    invoke-static {v0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->access$getTonFragmentRepository$p(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
+    const/4 v4, 0x0
 
-    move-result-object v0
+    const/4 v5, 0x0
 
-    .line 105
-    invoke-static {p1}, Lcom/google/android/gms/common/util/Base64Utils;->encodeUrlSafe([B)Ljava/lang/String;
+    const/4 v6, 0x6
 
-    move-result-object p1
+    const/4 v7, 0x0
 
-    const-string v2, "encodeUrlSafe(signatureBytes)"
+    move-object v2, p1
 
-    invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 106
-    iget-object v2, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$initSession$lambda$9$$inlined$flatMapSuccess$1;->$wallet$inlined:Lcom/iMe/storage/domain/model/crypto/Wallet;
-
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+    invoke-static/range {v2 .. v7}, Lkotlin/io/encoding/Base64;->encode$default(Lkotlin/io/encoding/Base64;[BIIILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 107
-    iget-object v3, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$initSession$lambda$9$$inlined$flatMapSuccess$1;->$walletVersion$inlined:Ljava/lang/String;
+    .line 106
+    iget-object v3, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$initSession$lambda$9$$inlined$flatMapSuccess$1;->$wallet$inlined:Lcom/iMe/storage/domain/model/crypto/Wallet;
 
-    .line 109
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 107
+    iget-object v10, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$initSession$lambda$9$$inlined$flatMapSuccess$1;->$walletVersion$inlined:Ljava/lang/String;
+
+    .line 108
     iget-object v4, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$initSession$lambda$9$$inlined$flatMapSuccess$1;->$wallet$inlined:Lcom/iMe/storage/domain/model/crypto/Wallet;
 
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getPublicKey()Ljava/lang/String;
 
     move-result-object v4
 
-    const/4 v5, 0x0
-
     const/4 v6, 0x1
 
     invoke-static {v4, v5, v6, v1}, Lcom/iMe/storage/domain/utils/extensions/CryptoExtKt;->hexToByteArray$default(Ljava/lang/String;ZILjava/lang/Object;)[B
 
-    move-result-object v1
+    move-result-object v5
 
-    .line 108
-    invoke-static {v1}, Lcom/google/android/gms/common/util/Base64Utils;->encodeUrlSafe([B)Ljava/lang/String;
+    const/4 v6, 0x0
 
-    move-result-object v1
+    const/4 v7, 0x0
 
-    const-string v4, "encodeUrlSafe(\n         \u2026                        )"
+    const/4 v8, 0x6
 
-    invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v9, 0x0
 
-    .line 104
-    invoke-interface {v0, p1, v2, v3, v1}, Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;->sendSessionSignature(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+    move-object v4, p1
+
+    .line 12
+    invoke-static/range {v4 .. v9}, Lkotlin/io/encoding/Base64;->encode$default(Lkotlin/io/encoding/Base64;[BIIILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 112
+    .line 103
+    invoke-interface {v0, v2, v3, v10, p1}, Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;->sendSessionSignature(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 110
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$initSession$lambda$9$$inlined$flatMapSuccess$1;->this$0:Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;
 
     invoke-static {v0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->access$getSchedulersProvider$p(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -173,7 +185,6 @@
 
     const-string v0, "tonFragmentRepository\n  \u2026(schedulersProvider.io())"
 
-    .line 108
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     goto :goto_0

@@ -45,7 +45,7 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.databinding.ForkFragmentCatalogUserChannelsBinding;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -365,18 +365,18 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
         ForkFragmentCatalogUserChannelsBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageEmpty;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3634R.raw.fork_catalog_empty, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3632R.raw.fork_catalog_empty, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
         int i = WhenMappings.$EnumSwitchMapping$0[this.chatType.ordinal()];
         if (i == 1) {
-            binding.textEmptyTitle.setText(getResourceManager().getString(C3634R.string.catalog_user_channels_empty_title));
-            binding.textEmptyDescription.setText(getResourceManager().getString(C3634R.string.catalog_user_channels_empty_description));
-            binding.buttonAdd.setText(getResourceManager().getString(C3634R.string.catalog_user_channels_empty_create));
+            binding.textEmptyTitle.setText(getResourceManager().getString(C3632R.string.catalog_user_channels_empty_title));
+            binding.textEmptyDescription.setText(getResourceManager().getString(C3632R.string.catalog_user_channels_empty_description));
+            binding.buttonAdd.setText(getResourceManager().getString(C3632R.string.catalog_user_channels_empty_create));
         } else if (i != 2) {
         } else {
-            binding.textEmptyTitle.setText(getResourceManager().getString(C3634R.string.catalog_user_groups_empty_title));
-            binding.textEmptyDescription.setText(getResourceManager().getString(C3634R.string.catalog_user_groups_empty_description));
-            binding.buttonAdd.setText(getResourceManager().getString(C3634R.string.catalog_user_groups_empty_create));
+            binding.textEmptyTitle.setText(getResourceManager().getString(C3632R.string.catalog_user_groups_empty_title));
+            binding.textEmptyDescription.setText(getResourceManager().getString(C3632R.string.catalog_user_groups_empty_description));
+            binding.buttonAdd.setText(getResourceManager().getString(C3632R.string.catalog_user_groups_empty_create));
         }
     }
 

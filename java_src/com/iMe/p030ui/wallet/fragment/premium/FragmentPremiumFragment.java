@@ -61,7 +61,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.databinding.ForkFragmentFragmentPremiumBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
@@ -78,7 +78,7 @@ import org.telegram.p043ui.ContactsActivity;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: FragmentPremiumFragment.kt */
 /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FragmentPremiumFragment extends WalletAuthBaseFragment implements FragmentPremiumView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(FragmentPremiumFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/fragment/premium/FragmentPremiumPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(FragmentPremiumFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentFragmentPremiumBinding;", 0)), Reflection.property1(new PropertyReference1Impl(FragmentPremiumFragment.class, "actionButton", "getActionButton()Lorg/telegram/ui/Components/Premium/PremiumButtonView;", 0)), Reflection.property1(new PropertyReference1Impl(FragmentPremiumFragment.class, "starParticlesView", "getStarParticlesView()Lorg/telegram/ui/Components/Premium/StarParticlesView;", 0)), Reflection.property1(new PropertyReference1Impl(FragmentPremiumFragment.class, "starTextureView", "getStarTextureView()Lorg/telegram/ui/Components/Premium/GLIcon/GLIconTextureView;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -356,7 +356,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
 
     @Override // com.iMe.p030ui.wallet.fragment.premium.FragmentPremiumView
     public void showActionSuccess() {
-        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3634R.string.cryptobox_create_success_title), getResourceManager().getString(C3634R.string.fragment_premium_gift_success_description), getResourceManager().getString(C3634R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment$$ExternalSyntheticLambda1
+        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3632R.string.cryptobox_create_success_title), getResourceManager().getString(C3632R.string.fragment_premium_gift_success_description), getResourceManager().getString(C3632R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 FragmentPremiumFragment.this.finishFragment();
@@ -367,7 +367,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
     @Override // com.iMe.p030ui.wallet.fragment.premium.FragmentPremiumView
     public void showActionError(String message) {
         Intrinsics.checkNotNullParameter(message, "message");
-        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3634R.string.common_error), message, getResourceManager().getString(C3634R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3632R.string.common_error), message, getResourceManager().getString(C3632R.string.common_ok), null, 8, null);
     }
 
     @Override // com.iMe.p030ui.wallet.fragment.premium.FragmentPremiumView
@@ -697,7 +697,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
         }
         setupViews$lambda$30$lambda$26.addView(getActionButton(), LayoutHelper.createFrame(-1, 48));
         ActionBarMenuItem setupViews$lambda$30$lambda$28 = binding.buttonBack;
-        setupViews$lambda$30$lambda$28.setIcon(C3634R.C3636drawable.ic_ab_back);
+        setupViews$lambda$30$lambda$28.setIcon(C3632R.C3634drawable.ic_ab_back);
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$30$lambda$28, "setupViews$lambda$30$lambda$28");
         ViewGroup.LayoutParams layoutParams = setupViews$lambda$30$lambda$28.getLayoutParams();
         Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
@@ -706,12 +706,12 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
         ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams3 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams3 : null;
         layoutParams2.setMargins(((ViewGroup.MarginLayoutParams) layoutParams2).leftMargin, (marginLayoutParams != null ? marginLayoutParams.topMargin : 0) + AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) layoutParams2).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin);
         setupViews$lambda$30$lambda$28.setLayoutParams(layoutParams2);
-        binding.textTitle.setText(getResourceManager().getString(C3634R.string.fragment_premium_title));
-        binding.textSubtitle.setText(getResourceManager().getString(C3634R.string.fragment_premium_subtitle));
-        binding.textRecipientTitle.setText(getResourceManager().getString(C3634R.string.wallet_binance_receive_choose_contact_title));
-        binding.textRecipientValue.setText(getResourceManager().getString(C3634R.string.wallet_binance_receive_choose_contact_hint));
-        binding.textDurationTitle.setText(getResourceManager().getString(C3634R.string.fragment_premium_choose_duration));
-        String string = getResourceManager().getString(C3634R.string.fragment_premium_balance);
+        binding.textTitle.setText(getResourceManager().getString(C3632R.string.fragment_premium_title));
+        binding.textSubtitle.setText(getResourceManager().getString(C3632R.string.fragment_premium_subtitle));
+        binding.textRecipientTitle.setText(getResourceManager().getString(C3632R.string.wallet_binance_receive_choose_contact_title));
+        binding.textRecipientValue.setText(getResourceManager().getString(C3632R.string.wallet_binance_receive_choose_contact_hint));
+        binding.textDurationTitle.setText(getResourceManager().getString(C3632R.string.fragment_premium_choose_duration));
+        String string = getResourceManager().getString(C3632R.string.fragment_premium_balance);
         TextView textView = binding.textBalance;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string + "xxxxxx");
         spannableStringBuilder.setSpan(new LoadingSpan(binding.textBalance, getLoadingSpanSize()), string.length(), spannableStringBuilder.length(), 33);
@@ -720,7 +720,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
 
     /* compiled from: FragmentPremiumFragment.kt */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

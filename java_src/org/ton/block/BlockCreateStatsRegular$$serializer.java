@@ -22,7 +22,7 @@ public final class BlockCreateStatsRegular$$serializer implements GeneratedSeria
         INSTANCE = blockCreateStatsRegular$$serializer;
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("block_create_stats", blockCreateStatsRegular$$serializer, 1);
         pluginGeneratedSerialDescriptor.addElement("counters", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7542x637df179("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7540x637df179("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

@@ -494,7 +494,7 @@ public final class ProtoBuf$Type extends GeneratedMessageLite.ExtendableMessage<
 
             @Override // kotlin.reflect.jvm.internal.impl.protobuf.GeneratedMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo2049clone() {
+            public Builder mo2051clone() {
                 return create().mergeFrom(buildPartial());
             }
 
@@ -924,7 +924,7 @@ public final class ProtoBuf$Type extends GeneratedMessageLite.ExtendableMessage<
 
         @Override // kotlin.reflect.jvm.internal.impl.protobuf.GeneratedMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo2049clone() {
+        public Builder mo2051clone() {
             return create().mergeFrom(buildPartial());
         }
 

@@ -10,6 +10,8 @@
 
 .field private final isUnused:Z
 
+.field private slug:Ljava/lang/String;
+
 
 # direct methods
 .method public static synthetic $r8$lambda$AusFeIsjXxR9K-78xBxwWNm3CLU(Ljava/util/concurrent/atomic/AtomicBoolean;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lorg/telegram/messenger/browser/Browser$Progress;Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;)V
@@ -39,10 +41,10 @@
 .method public constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZLorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;Ljava/lang/String;)V
     .locals 1
 
-    .line 104
+    .line 105
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZ)V
 
-    .line 105
+    .line 106
     iget p2, p4, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->used_date:I
 
     const/4 p3, 0x1
@@ -61,22 +63,25 @@
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->isUnused:Z
 
-    .line 106
+    .line 107
     iput-object p4, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->giftCode:Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
 
-    .line 107
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyTopPadding(Z)V
-
     .line 108
-    invoke-virtual {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
+    iput-object p5, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->slug:Ljava/lang/String;
 
     .line 109
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar()V
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyTopPadding(Z)V
 
     .line 110
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->updateTitle()V
+    invoke-virtual {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
 
     .line 111
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar()V
+
+    .line 112
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->updateTitle()V
+
+    .line 113
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->adapter:Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;
 
     invoke-virtual {p2, p1, p4, p5}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->init(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;Ljava/lang/String;)V
@@ -87,43 +92,52 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
     .locals 0
 
-    .line 31
+    .line 29
     iget-object p0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->giftCode:Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
 
     return-object p0
 .end method
 
-.method static synthetic access$100(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
+.method static synthetic access$100(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Ljava/lang/String;
     .locals 0
 
-    .line 31
+    .line 29
+    iget-object p0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->slug:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method static synthetic access$200(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
+    .locals 0
+
+    .line 29
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     return-object p0
 .end method
 
-.method static synthetic access$200(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$300(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
-    .line 31
+    .line 29
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object p0
 .end method
 
-.method static synthetic access$300(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)I
+.method static synthetic access$400(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)I
     .locals 0
 
-    .line 31
+    .line 29
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
 .end method
 
-.method static synthetic access$400(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$500(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
-    .line 31
+    .line 29
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object p0
@@ -296,7 +310,7 @@
 
     const/4 v0, 0x1
 
-    .line 37
+    .line 38
     invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     return-void
@@ -305,7 +319,7 @@
 .method private static synthetic lambda$show$1(Ljava/util/concurrent/atomic/AtomicBoolean;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lorg/telegram/messenger/browser/Browser$Progress;Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;)V
     .locals 6
 
-    .line 40
+    .line 41
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result p0
@@ -314,8 +328,18 @@
 
     return-void
 
-    .line 43
+    .line 44
     :cond_0
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
+
+    move-result-object p0
+
+    if-nez p0, :cond_1
+
+    return-void
+
+    .line 47
+    :cond_1
     new-instance p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
     const/4 v2, 0x0
@@ -332,25 +356,9 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZLorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;Ljava/lang/String;)V
 
-    if-eqz p1, :cond_1
-
-    .line 44
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_1
-
-    .line 45
+    .line 48
     invoke-virtual {p1, p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    goto :goto_0
-
-    .line 47
-    :cond_1
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
-
-    :goto_0
     if-eqz p3, :cond_2
 
     .line 50
@@ -382,30 +390,46 @@
     return-void
 .end method
 
+.method public static show(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    .line 63
+    invoke-static {p0, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->show(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lorg/telegram/messenger/browser/Browser$Progress;)V
+
+    return-void
+.end method
+
 .method public static show(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lorg/telegram/messenger/browser/Browser$Progress;)V
     .locals 2
 
-    .line 34
+    if-nez p0, :cond_0
+
+    return-void
+
+    .line 35
+    :cond_0
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
-    if-eqz p2, :cond_0
-
-    .line 36
-    invoke-virtual {p2}, Lorg/telegram/messenger/browser/Browser$Progress;->init()V
+    if-eqz p2, :cond_1
 
     .line 37
+    invoke-virtual {p2}, Lorg/telegram/messenger/browser/Browser$Progress;->init()V
+
+    .line 38
     new-instance v1, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$$ExternalSyntheticLambda0;-><init>(Ljava/util/concurrent/atomic/AtomicBoolean;)V
 
     invoke-virtual {p2, v1}, Lorg/telegram/messenger/browser/Browser$Progress;->onCancel(Ljava/lang/Runnable;)V
 
-    .line 39
-    :cond_0
+    .line 40
+    :cond_1
     new-instance v1, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, v0, p0, p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$$ExternalSyntheticLambda2;-><init>(Ljava/util/concurrent/atomic/AtomicBoolean;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Lorg/telegram/messenger/browser/Browser$Progress;)V
@@ -424,7 +448,7 @@
 .method protected createAdapter()Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
     .locals 2
 
-    .line 133
+    .line 135
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -439,7 +463,7 @@
 .method protected getTitle()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 127
+    .line 129
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->isUnused:Z
 
     if-eqz v0, :cond_0
@@ -454,7 +478,7 @@
 
     goto :goto_0
 
-    .line 128
+    .line 130
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->BoostingUsedGiftLink:I
 
@@ -471,10 +495,10 @@
 .method public onViewCreated(Landroid/widget/FrameLayout;)V
     .locals 1
 
-    .line 116
+    .line 118
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->onViewCreated(Landroid/widget/FrameLayout;)V
 
-    .line 117
+    .line 119
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$1;

@@ -30,14 +30,14 @@
 .method public constructor <init>(IILcom/iMe/ui/drawer/DrawerItem;)V
     .locals 1
 
-    .line 696
+    .line 697
     invoke-virtual {p3}, Lcom/iMe/ui/drawer/DrawerItem;->title()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;-><init>(ILjava/lang/String;I)V
 
-    .line 697
+    .line 698
     iput-object p3, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->rectIcon:Lcom/iMe/ui/drawer/DrawerItem;
 
     return-void
@@ -46,16 +46,16 @@
 .method public constructor <init>(ILjava/lang/String;I)V
     .locals 0
 
-    .line 707
+    .line 708
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 708
+    .line 709
     iput p3, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->icon:I
 
-    .line 709
+    .line 710
     iput p1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->id:I
 
-    .line 710
+    .line 711
     iput-object p2, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->text:Ljava/lang/String;
 
     return-void
@@ -64,13 +64,13 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;)V
     .locals 4
 
-    .line 713
+    .line 714
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 714
+    .line 715
     iput-object p1, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->bot:Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;
 
-    .line 715
+    .line 716
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->bot_id:J
 
     const/16 p1, 0x10
@@ -93,17 +93,17 @@
 .method public bind(Lorg/telegram/ui/Cells/DrawerActionCell;)V
     .locals 4
 
-    .line 719
+    .line 720
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->bot:Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;
 
     if-eqz v0, :cond_0
 
-    .line 720
+    .line 721
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/DrawerActionCell;->setBot(Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;)V
 
     goto :goto_1
 
-    .line 722
+    .line 723
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Adapters/DrawerLayoutAdapter$Item;->id:I
 

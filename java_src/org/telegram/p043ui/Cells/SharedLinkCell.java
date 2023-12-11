@@ -237,15 +237,15 @@ public class SharedLinkCell extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:225:0x0566  */
     /* JADX WARN: Removed duplicated region for block: B:226:0x0571  */
     /* JADX WARN: Removed duplicated region for block: B:229:0x058b  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x0609  */
-    /* JADX WARN: Removed duplicated region for block: B:239:0x060e  */
-    /* JADX WARN: Removed duplicated region for block: B:262:0x06a9  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x06b7  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x06d8  */
-    /* JADX WARN: Removed duplicated region for block: B:277:0x01fc A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:281:0x0308 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:285:0x0374 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x03c0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x060b  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x0610  */
+    /* JADX WARN: Removed duplicated region for block: B:264:0x06ab  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x06b9  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x06da  */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x01fc A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:283:0x0308 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x0374 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:291:0x03c0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r4v5, types: [java.lang.CharSequence] */
     /* JADX WARN: Type inference failed for: r7v40, types: [android.text.SpannableStringBuilder, android.text.Spannable] */
     /* JADX WARN: Type inference failed for: r7v61, types: [android.text.SpannableStringBuilder, android.text.Spannable] */
@@ -256,7 +256,7 @@ public class SharedLinkCell extends FrameLayout {
     */
     protected void onMeasure(int r28, int r29) {
         /*
-            Method dump skipped, instructions count: 1833
+            Method dump skipped, instructions count: 1835
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Cells.SharedLinkCell.onMeasure(int, int):void");

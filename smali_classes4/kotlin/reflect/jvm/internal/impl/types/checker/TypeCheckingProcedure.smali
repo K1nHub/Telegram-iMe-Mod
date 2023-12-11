@@ -186,7 +186,7 @@
     goto :goto_4
 
     :pswitch_10
-    const-string v5, "isSubtypeOf"
+    const-string/jumbo v5, "isSubtypeOf"
 
     aput-object v5, v4, v3
 
@@ -237,8 +237,6 @@
 
     :goto_5
     throw p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

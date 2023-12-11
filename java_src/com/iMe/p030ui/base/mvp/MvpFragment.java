@@ -38,7 +38,7 @@ import org.telegram.p043ui.ActionBar.BaseFragment;
 /* loaded from: classes3.dex */
 public abstract class MvpFragment extends BaseFragment implements MvpDelegateHolder, KoinComponent, BaseView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(MvpFragment.class, "hintUtils", "getHintUtils()Lcom/iMe/utils/hints/HintUtils;", 0))};
-    private final Lazy mvpBaseDelegate$delegate = LazyKt.lazy(new Function0<MvpFragment$mvpBaseDelegate$2.C19741>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2
+    private final Lazy mvpBaseDelegate$delegate = LazyKt.lazy(new Function0<MvpFragment$mvpBaseDelegate$2.C19711>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -47,7 +47,7 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         /* JADX WARN: Can't rename method to resolve collision */
         /* JADX WARN: Type inference failed for: r0v0, types: [com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2$1] */
         @Override // kotlin.jvm.functions.Function0
-        public final C19741 invoke() {
+        public final C19711 invoke() {
             return new MvpBaseDelegate<MvpFragment>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2.1
                 private final Lazy context$delegate;
 

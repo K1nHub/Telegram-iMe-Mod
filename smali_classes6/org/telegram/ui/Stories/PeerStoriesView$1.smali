@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 355
+    .line 352
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$1;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .method public onZoomFinished(Lorg/telegram/messenger/MessageObject;)V
     .locals 1
 
-    .line 363
+    .line 360
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$1;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
@@ -63,7 +63,7 @@
 .method public onZoomStarted(Lorg/telegram/messenger/MessageObject;)V
     .locals 1
 
-    .line 358
+    .line 355
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$1;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;

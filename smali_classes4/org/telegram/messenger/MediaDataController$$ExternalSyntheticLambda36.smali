@@ -10,94 +10,20 @@
 
 .field public final synthetic f$1:I
 
-.field public final synthetic f$10:J
-
-.field public final synthetic f$11:I
-
-.field public final synthetic f$12:Lorg/telegram/tgnet/TLRPC$User;
-
-.field public final synthetic f$13:Lorg/telegram/tgnet/TLRPC$Chat;
-
-.field public final synthetic f$2:Z
-
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLObject;
-
-.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$TL_messages_search;
-
-.field public final synthetic f$5:J
-
-.field public final synthetic f$6:J
-
-.field public final synthetic f$7:I
-
-.field public final synthetic f$8:Ljava/util/ArrayList;
-
-.field public final synthetic f$9:Z
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_account_emojiStatuses;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;IZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_messages_search;JJILjava/util/ArrayList;ZJILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;)V
-    .locals 3
-
-    move-object v0, p0
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;ILorg/telegram/tgnet/TLRPC$TL_account_emojiStatuses;)V
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v1, p1
+    iput-object p1, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/messenger/MediaDataController;
 
-    iput-object v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/messenger/MediaDataController;
+    iput p2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$1:I
 
-    move v1, p2
-
-    iput v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$1:I
-
-    move v1, p3
-
-    iput-boolean v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$2:Z
-
-    move-object v1, p4
-
-    iput-object v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$3:Lorg/telegram/tgnet/TLObject;
-
-    move-object v1, p5
-
-    iput-object v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$4:Lorg/telegram/tgnet/TLRPC$TL_messages_search;
-
-    move-wide v1, p6
-
-    iput-wide v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$5:J
-
-    move-wide v1, p8
-
-    iput-wide v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$6:J
-
-    move v1, p10
-
-    iput v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$7:I
-
-    move-object v1, p11
-
-    iput-object v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$8:Ljava/util/ArrayList;
-
-    move v1, p12
-
-    iput-boolean v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$9:Z
-
-    move-wide/from16 v1, p13
-
-    iput-wide v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$10:J
-
-    move/from16 v1, p15
-
-    iput v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$11:I
-
-    move-object/from16 v1, p16
-
-    iput-object v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$12:Lorg/telegram/tgnet/TLRPC$User;
-
-    move-object/from16 v1, p17
-
-    iput-object v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$13:Lorg/telegram/tgnet/TLRPC$Chat;
+    iput-object p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$2:Lorg/telegram/tgnet/TLRPC$TL_account_emojiStatuses;
 
     return-void
 .end method
@@ -105,47 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 19
+    .locals 3
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/messenger/MediaDataController;
 
-    iget-object v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/messenger/MediaDataController;
+    iget v1, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$1:I
 
-    iget v2, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$1:I
+    iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$2:Lorg/telegram/tgnet/TLRPC$TL_account_emojiStatuses;
 
-    iget-boolean v3, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$2:Z
-
-    iget-object v4, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$3:Lorg/telegram/tgnet/TLObject;
-
-    iget-object v5, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$4:Lorg/telegram/tgnet/TLRPC$TL_messages_search;
-
-    iget-wide v6, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$5:J
-
-    iget-wide v8, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$6:J
-
-    iget v10, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$7:I
-
-    iget-object v11, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$8:Ljava/util/ArrayList;
-
-    iget-boolean v12, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$9:Z
-
-    iget-wide v13, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$10:J
-
-    iget v15, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$11:I
-
-    move-object/from16 v18, v1
-
-    iget-object v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$12:Lorg/telegram/tgnet/TLRPC$User;
-
-    move-object/from16 v16, v1
-
-    iget-object v1, v0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda36;->f$13:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    move-object/from16 v17, v1
-
-    move-object/from16 v1, v18
-
-    invoke-static/range {v1 .. v17}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$mUDxYhTu86VH9rKCaPomLQ6CRwE(Lorg/telegram/messenger/MediaDataController;IZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_messages_search;JJILjava/util/ArrayList;ZJILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$SKrzeNrEy0sd3QQhqfxcAoZdrwM(Lorg/telegram/messenger/MediaDataController;ILorg/telegram/tgnet/TLRPC$TL_account_emojiStatuses;)V
 
     return-void
 .end method

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 5356
+    .line 5359
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .method public getClassGuid()I
     .locals 1
 
-    .line 5395
+    .line 5398
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$7700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
@@ -61,7 +61,7 @@
 .method public getDialogId()J
     .locals 2
 
-    .line 5400
+    .line 5403
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
@@ -74,7 +74,7 @@
 .method public getFragmentView()Landroid/view/View;
     .locals 1
 
-    .line 5359
+    .line 5362
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     return-object v0
@@ -83,7 +83,7 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 1
 
-    .line 5390
+    .line 5393
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -138,7 +138,7 @@
 
     return-void
 
-    .line 5367
+    .line 5370
     :cond_0
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -148,14 +148,14 @@
 
     if-eqz v3, :cond_6
 
-    .line 5368
+    .line 5371
     instance-of v4, v3, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemSkipped;
 
     if-eqz v4, :cond_1
 
     goto/16 :goto_1
 
-    .line 5371
+    .line 5374
     :cond_1
     invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
@@ -163,14 +163,14 @@
 
     iput-wide v4, v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
-    .line 5372
+    .line 5375
     iget-boolean v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-eqz v2, :cond_3
 
     if-eqz p2, :cond_2
 
-    .line 5374
+    .line 5377
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
@@ -221,7 +221,7 @@
 
     goto/16 :goto_0
 
-    .line 5376
+    .line 5379
     :cond_2
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -273,13 +273,13 @@
 
     goto/16 :goto_0
 
-    .line 5379
+    .line 5382
     :cond_3
     iget-object v2, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
 
     if-eqz v2, :cond_4
 
-    .line 5380
+    .line 5383
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
@@ -336,13 +336,13 @@
 
     goto :goto_0
 
-    .line 5381
+    .line 5384
     :cond_4
     iget-object v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     if-eqz v2, :cond_5
 
-    .line 5382
+    .line 5385
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
@@ -397,7 +397,7 @@
 
     invoke-static/range {v4 .. v24}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingPhoto(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroidx/core/view/inputmethod/InputContentInfoCompat;ILorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/CharSequence;Ljava/lang/String;)V
 
-    .line 5385
+    .line 5388
     :cond_5
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;

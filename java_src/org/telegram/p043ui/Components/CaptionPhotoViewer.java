@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
@@ -57,7 +57,7 @@ public class CaptionPhotoViewer extends CaptionContainerView {
         this.applyCaption = runnable;
         ImageView imageView = new ImageView(context);
         this.addPhotoButton = imageView;
-        imageView.setImageResource(C3634R.C3636drawable.filled_add_photo);
+        imageView.setImageResource(C3632R.C3634drawable.filled_add_photo);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         imageView.setBackground(Theme.createSelectorDrawable(1090519039, 1, AndroidUtilities.m104dp(18)));
@@ -101,13 +101,13 @@ public class CaptionPhotoViewer extends CaptionContainerView {
         ItemOptions makeOptions = ItemOptions.makeOptions(frameLayout, new DarkThemeResourceProvider(), this.timerButton);
         this.timerPopup = makeOptions;
         makeOptions.setDimAlpha(0);
-        this.timerPopup.addText(LocaleController.getString(C3634R.string.TimerPeriodHint), 13);
+        this.timerPopup.addText(LocaleController.getString(C3632R.string.TimerPeriodHint), 13);
         this.timerPopup.addGap();
         for (final int i : this.values) {
             if (i == 0) {
-                formatPluralString = LocaleController.getString(C3634R.string.TimerPeriodDoNotDelete);
+                formatPluralString = LocaleController.getString(C3632R.string.TimerPeriodDoNotDelete);
             } else if (i == Integer.MAX_VALUE) {
-                formatPluralString = LocaleController.getString(C3634R.string.TimerPeriodOnce);
+                formatPluralString = LocaleController.getString(C3632R.string.TimerPeriodOnce);
             } else {
                 formatPluralString = LocaleController.formatPluralString("Seconds", i, new Object[0]);
             }
@@ -259,14 +259,14 @@ public class CaptionPhotoViewer extends CaptionContainerView {
             callback.run(Integer.valueOf(i));
         }
         if (i == 0) {
-            replaceTags = LocaleController.getString(this.isVideo ? C3634R.string.TimerPeriodVideoKeep : C3634R.string.TimerPeriodPhotoKeep);
+            replaceTags = LocaleController.getString(this.isVideo ? C3632R.string.TimerPeriodVideoKeep : C3632R.string.TimerPeriodPhotoKeep);
             this.hint.setMaxWidthPx(getMeasuredWidth());
             this.hint.setMultilineText(false);
             this.hint.setInnerPadding(13, 4, 10, 4);
             this.hint.setIconMargin(0);
             this.hint.setIconTranslate(BitmapDescriptorFactory.HUE_RED, -AndroidUtilities.m104dp(1));
         } else if (i == Integer.MAX_VALUE) {
-            replaceTags = LocaleController.getString(this.isVideo ? C3634R.string.TimerPeriodVideoSetOnce : C3634R.string.TimerPeriodPhotoSetOnce);
+            replaceTags = LocaleController.getString(this.isVideo ? C3632R.string.TimerPeriodVideoSetOnce : C3632R.string.TimerPeriodPhotoSetOnce);
             this.hint.setMaxWidthPx(getMeasuredWidth());
             this.hint.setMultilineText(false);
             this.hint.setInnerPadding(13, 4, 10, 4);
@@ -285,7 +285,7 @@ public class CaptionPhotoViewer extends CaptionContainerView {
         }
         this.hint.setTranslationY((-Math.min(AndroidUtilities.m104dp(34), getEditTextHeight())) - AndroidUtilities.m104dp(14));
         this.hint.setText(replaceTags);
-        int i2 = i > 0 ? C3634R.raw.fire_on : C3634R.raw.fire_off;
+        int i2 = i > 0 ? C3632R.raw.fire_on : C3632R.raw.fire_off;
         RLottieDrawable rLottieDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m104dp(34), AndroidUtilities.m104dp(34));
         rLottieDrawable.start();
         this.hint.setIcon(rLottieDrawable);

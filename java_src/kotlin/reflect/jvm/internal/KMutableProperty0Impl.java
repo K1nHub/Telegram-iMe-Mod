@@ -67,12 +67,12 @@ public final class KMutableProperty0Impl<V> extends KProperty0Impl<V> implements
         /* JADX WARN: Multi-variable type inference failed */
         @Override // kotlin.jvm.functions.Function1
         public /* bridge */ /* synthetic */ Object invoke(Object obj) {
-            m2041invoke((Setter<R>) obj);
+            m2043invoke((Setter<R>) obj);
             return Unit.INSTANCE;
         }
 
         /* renamed from: invoke  reason: collision with other method in class */
-        public void m2041invoke(R r) {
+        public void m2043invoke(R r) {
             getProperty().set(r);
         }
     }

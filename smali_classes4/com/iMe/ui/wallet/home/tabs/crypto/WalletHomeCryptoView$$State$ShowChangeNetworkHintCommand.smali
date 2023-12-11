@@ -26,7 +26,7 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State;)V
     .locals 1
 
-    .line 535
+    .line 598
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showChangeNetworkHint"
@@ -41,7 +41,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V
     .locals 0
 
-    .line 540
+    .line 603
     invoke-interface {p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;->showChangeNetworkHint()V
 
     return-void
@@ -50,7 +50,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 533
+    .line 596
     check-cast p1, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChangeNetworkHintCommand;->apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V

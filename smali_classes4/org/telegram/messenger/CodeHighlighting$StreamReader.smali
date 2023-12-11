@@ -22,10 +22,10 @@
 .method public constructor <init>(Ljava/io/InputStream;)V
     .locals 0
 
-    .line 685
+    .line 675
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 686
+    .line 676
     iput-object p1, p0, Lorg/telegram/messenger/CodeHighlighting$StreamReader;->is:Ljava/io/InputStream;
 
     return-void
@@ -41,7 +41,7 @@
         }
     .end annotation
 
-    .line 696
+    .line 686
     iget-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$StreamReader;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
@@ -52,7 +52,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 698
+    .line 688
     iget-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$StreamReader;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
@@ -79,7 +79,7 @@
 
     or-int/2addr v0, v1
 
-    .line 700
+    .line 690
     :cond_0
     new-array v1, v0, [B
 
@@ -88,7 +88,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 702
+    .line 692
     iget-object v3, p0, Lorg/telegram/messenger/CodeHighlighting$StreamReader;->is:Ljava/io/InputStream;
 
     invoke-virtual {v3}, Ljava/io/InputStream;->read()I
@@ -103,7 +103,7 @@
 
     goto :goto_0
 
-    .line 703
+    .line 693
     :cond_1
     new-instance v0, Ljava/lang/String;
 
@@ -122,7 +122,7 @@
         }
     .end annotation
 
-    .line 693
+    .line 683
     iget-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$StreamReader;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I
@@ -154,7 +154,7 @@
         }
     .end annotation
 
-    .line 690
+    .line 680
     iget-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$StreamReader;->is:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->read()I

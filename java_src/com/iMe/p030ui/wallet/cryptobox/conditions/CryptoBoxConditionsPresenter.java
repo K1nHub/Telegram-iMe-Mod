@@ -39,7 +39,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC$Chat;
 import timber.log.Timber;
@@ -134,7 +134,7 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
         } else if (cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.WithDescription.CreateWallet) {
             startChooseWalletOptionsFlow(this.network.getBlockchainType());
         } else if (cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.Taken) {
-            ((CryptoBoxConditionsView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.cryptobox_taken_description));
+            ((CryptoBoxConditionsView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.cryptobox_taken_description));
         } else if (cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.Get) {
             participate();
         }
@@ -231,12 +231,12 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxParticipationData> result) {
-                m1681invoke(result);
+                m1682invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1681invoke(Result<? extends CryptoBoxParticipationData> it) {
+            public final void m1682invoke(Result<? extends CryptoBoxParticipationData> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoBoxParticipationData> result = it;
@@ -288,12 +288,12 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxParticipationResult> result) {
-                m1682invoke(result);
+                m1683invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1682invoke(Result<? extends CryptoBoxParticipationResult> it) {
+            public final void m1683invoke(Result<? extends CryptoBoxParticipationResult> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoBoxParticipationResult> result = it;
@@ -336,7 +336,7 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
     private final void subscribeToRequiredChat() {
         Long cryptoBoxChatId = getCryptoBoxChatId();
         if (cryptoBoxChatId == null) {
-            ((CryptoBoxConditionsView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.common_error_unexpected));
+            ((CryptoBoxConditionsView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.common_error_unexpected));
             return;
         }
         Observable<TLRPC$Chat> chatInfoById = this.telegramApi.getChatInfoById(cryptoBoxChatId.longValue());
@@ -409,10 +409,10 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
                 String message = th.getMessage();
                 if (Intrinsics.areEqual(message, "CHAT_ID_INVALID")) {
                     resourceManager2 = CryptoBoxConditionsPresenter.this.resourceManager;
-                    message = resourceManager2.getString(C3634R.string.cryptobox_participation_chat_unavailable);
+                    message = resourceManager2.getString(C3632R.string.cryptobox_participation_chat_unavailable);
                 } else if (message == null) {
                     resourceManager = CryptoBoxConditionsPresenter.this.resourceManager;
-                    message = resourceManager.getString(C3634R.string.common_error_unexpected);
+                    message = resourceManager.getString(C3632R.string.common_error_unexpected);
                 }
                 cryptoBoxConditionsView.showToast(message);
             }

@@ -166,7 +166,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/iMe/model/wallet/home/BannerSlide;->getTitle()I
+    invoke-virtual {v2}, Lcom/iMe/model/wallet/home/BannerSlide;->getTitleResId()I
 
     move-result v2
 
@@ -185,7 +185,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/iMe/model/wallet/home/BannerSlide;->getShortDescription()I
+    invoke-virtual {v2}, Lcom/iMe/model/wallet/home/BannerSlide;->getShortDescriptionResId()I
 
     move-result v2
 

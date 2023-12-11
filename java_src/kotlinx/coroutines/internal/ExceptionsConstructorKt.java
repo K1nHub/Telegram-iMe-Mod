@@ -31,19 +31,19 @@ public final class ExceptionsConstructorKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static final <E extends Throwable> E tryCopyException(E e) {
-        Object m1940constructorimpl;
+        Object m1942constructorimpl;
         if (e instanceof CopyableThrowable) {
             try {
                 Result.Companion companion = Result.Companion;
-                m1940constructorimpl = Result.m1940constructorimpl(((CopyableThrowable) e).createCopy());
+                m1942constructorimpl = Result.m1942constructorimpl(((CopyableThrowable) e).createCopy());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
+                m1942constructorimpl = Result.m1942constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m1945isFailureimpl(m1940constructorimpl)) {
-                m1940constructorimpl = null;
+            if (Result.m1947isFailureimpl(m1942constructorimpl)) {
+                m1942constructorimpl = null;
             }
-            return (E) m1940constructorimpl;
+            return (E) m1942constructorimpl;
         }
         return (E) ctorCache.get(e.getClass()).invoke(e);
     }
@@ -183,7 +183,7 @@ public final class ExceptionsConstructorKt {
 
             @Override // kotlin.jvm.functions.Function1
             public final Throwable invoke(Throwable th) {
-                Object m1940constructorimpl;
+                Object m1942constructorimpl;
                 Function1<Throwable, Throwable> function12 = function1;
                 try {
                     Result.Companion companion = Result.Companion;
@@ -191,31 +191,31 @@ public final class ExceptionsConstructorKt {
                     if (!Intrinsics.areEqual(th.getMessage(), invoke.getMessage()) && !Intrinsics.areEqual(invoke.getMessage(), th.toString())) {
                         invoke = null;
                     }
-                    m1940constructorimpl = Result.m1940constructorimpl(invoke);
+                    m1942constructorimpl = Result.m1942constructorimpl(invoke);
                 } catch (Throwable th2) {
                     Result.Companion companion2 = Result.Companion;
-                    m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th2));
+                    m1942constructorimpl = Result.m1942constructorimpl(ResultKt.createFailure(th2));
                 }
-                return Result.m1945isFailureimpl(m1940constructorimpl) ? null : m1940constructorimpl;
+                return Result.m1947isFailureimpl(m1942constructorimpl) ? null : m1942constructorimpl;
             }
         };
     }
 
     private static final int fieldsCountOrDefault(Class<?> cls, int i) {
-        Integer m1940constructorimpl;
+        Integer m1942constructorimpl;
         JvmClassMappingKt.getKotlinClass(cls);
         try {
             Result.Companion companion = Result.Companion;
-            m1940constructorimpl = Result.m1940constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
+            m1942constructorimpl = Result.m1942constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
+            m1942constructorimpl = Result.m1942constructorimpl(ResultKt.createFailure(th));
         }
         Integer valueOf = Integer.valueOf(i);
-        if (Result.m1945isFailureimpl(m1940constructorimpl)) {
-            m1940constructorimpl = valueOf;
+        if (Result.m1947isFailureimpl(m1942constructorimpl)) {
+            m1942constructorimpl = valueOf;
         }
-        return ((Number) m1940constructorimpl).intValue();
+        return ((Number) m1942constructorimpl).intValue();
     }
 
     static /* synthetic */ int fieldsCount$default(Class cls, int i, int i2, Object obj) {

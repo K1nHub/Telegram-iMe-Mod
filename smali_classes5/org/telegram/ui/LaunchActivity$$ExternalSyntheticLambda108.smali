@@ -2,38 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Lorg/telegram/messenger/FlagSecureReason$FlagSecureCondition;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;
+
+    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$0:Lorg/telegram/ui/LaunchActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
+.method public final run()Z
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda108;->f$0:Lorg/telegram/ui/LaunchActivity;
+    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$VTseAN9Scdn1waesj4hIC7WLkQo()Z
 
-    check-cast p1, Ljava/lang/Boolean;
+    move-result v0
 
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result p1
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Zy9PYJl5Ye6TxdSL1s_aPFjCo40(Lorg/telegram/ui/LaunchActivity;Z)V
-
-    return-void
+    return v0
 .end method

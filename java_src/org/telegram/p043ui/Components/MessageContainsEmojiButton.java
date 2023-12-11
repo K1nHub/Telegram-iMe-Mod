@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
@@ -109,11 +109,11 @@ public class MessageContainsEmojiButton extends FrameLayout implements Notificat
             }
         } else if (arrayList.size() == 1) {
             if (i2 == 0) {
-                string = LocaleController.getString("MessageContainsEmojiPack", C3634R.string.MessageContainsEmojiPack);
+                string = LocaleController.getString("MessageContainsEmojiPack", C3632R.string.MessageContainsEmojiPack);
             } else if (i2 == 3) {
-                string = LocaleController.getString("MessageContainsReactionPack", C3634R.string.MessageContainsReactionPack);
+                string = LocaleController.getString("MessageContainsReactionPack", C3632R.string.MessageContainsReactionPack);
             } else {
-                string = LocaleController.getString("MessageContainsReactionsPack", C3634R.string.MessageContainsReactionsPack);
+                string = LocaleController.getString("MessageContainsReactionsPack", C3632R.string.MessageContainsReactionsPack);
             }
             String[] split = string.split("%s");
             if (split.length <= 1) {

@@ -48,6 +48,9 @@
 .method public abstract didPressChannelAvatar(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$Chat;IFF)V
 .end method
 
+.method public abstract didPressCodeCopy(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/messenger/MessageObject$TextLayoutBlock;)V
+.end method
+
 .method public abstract didPressCommentButton(Lorg/telegram/ui/Cells/ChatMessageCell;)V
 .end method
 
@@ -97,6 +100,9 @@
 .end method
 
 .method public abstract didPressUserAvatar(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;FF)V
+.end method
+
+.method public abstract didPressUserStatus(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Document;)V
 .end method
 
 .method public abstract didPressViaBot(Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/String;)V

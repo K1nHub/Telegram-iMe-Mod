@@ -26,7 +26,7 @@ public final class Either$Right$$serializer<X, Y> implements GeneratedSerializer
         pluginGeneratedSerialDescriptor.addElement(AppMeasurementSdk.ConditionalUserProperty.VALUE, false);
         pluginGeneratedSerialDescriptor.addElement("x", true);
         pluginGeneratedSerialDescriptor.addElement("y", true);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7551x9f9cbbcf("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7549x9f9cbbcf("@type"));
         this.descriptor = pluginGeneratedSerialDescriptor;
     }
 

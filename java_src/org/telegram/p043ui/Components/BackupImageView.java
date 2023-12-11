@@ -13,7 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SecureDocument;
@@ -65,7 +65,7 @@ public class BackupImageView extends View {
     }
 
     public void setUser(TLRPC$User tLRPC$User) {
-        this.imageReceiver.setRoundRadius(getContext().getResources().getDimensionPixelSize(C3634R.dimen.telegram_avatar_size_medium) / 2);
+        this.imageReceiver.setRoundRadius(getContext().getResources().getDimensionPixelSize(C3632R.dimen.telegram_avatar_size_medium) / 2);
         AvatarDrawable avatarDrawable = new AvatarDrawable(tLRPC$User);
         avatarDrawable.setColor(Theme.getColor(Theme.key_avatar_backgroundInProfileBlue));
         setForUserOrChat(tLRPC$User, avatarDrawable);

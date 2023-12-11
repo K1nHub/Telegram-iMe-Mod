@@ -14,10 +14,10 @@ public final class AhmeRootTlbConstructor<X, Y> extends TlbConstructor<HashmapAu
     private final TlbCodec<HashmapAug<X, Y>> hashmapAug;
 
     /* renamed from: n */
-    private final int f2075n;
+    private final int f2076n;
 
     /* renamed from: y */
-    private final TlbCodec<Y> f2076y;
+    private final TlbCodec<Y> f2077y;
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
     public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
@@ -29,8 +29,8 @@ public final class AhmeRootTlbConstructor<X, Y> extends TlbConstructor<HashmapAu
         super("ahme_root$1 {n:#} {X:Type} {Y:Type} root:^(HashmapAug n X Y) extra:Y = HashmapAugE n X Y", null, 2, null);
         Intrinsics.checkNotNullParameter(x, "x");
         Intrinsics.checkNotNullParameter(y, "y");
-        this.f2075n = i;
-        this.f2076y = y;
+        this.f2076n = i;
+        this.f2077y = y;
         this.hashmapAug = HashmapAug.Companion.tlbCodec(i, x, y);
     }
 
@@ -38,17 +38,17 @@ public final class AhmeRootTlbConstructor<X, Y> extends TlbConstructor<HashmapAu
     public HashmapAugE.AhmeRoot<X, Y> loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
         TlbCodec<HashmapAug<X, Y>> tlbCodec = this.hashmapAug;
-        return new AhmeRootImpl(this.f2075n, CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) tlbCodec), this.f2076y.loadTlb(cellSlice));
+        return new AhmeRootImpl(this.f2076n, CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) tlbCodec), this.f2077y.loadTlb(cellSlice));
     }
 
     public void storeTlb(CellBuilder cellBuilder, HashmapAugE.AhmeRoot<X, Y> value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        if (value.getN() == this.f2075n) {
+        if (value.getN() == this.f2076n) {
             cellBuilder.storeRef(value.getRoot().toCell(this.hashmapAug));
-            this.f2076y.storeTlb(cellBuilder, value.getExtra());
+            this.f2077y.storeTlb(cellBuilder, value.getExtra());
             return;
         }
-        throw new IllegalArgumentException(("n mismatch, expected: " + this.f2075n + ", actual: " + value.getN()).toString());
+        throw new IllegalArgumentException(("n mismatch, expected: " + this.f2076n + ", actual: " + value.getN()).toString());
     }
 }

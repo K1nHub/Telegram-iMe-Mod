@@ -21,6 +21,8 @@
 
 .field changeBackgroundProgress:F
 
+.field private colorFilter:Landroid/graphics/ColorFilter;
+
 .field private cx:F
 
 .field private cy:F
@@ -48,20 +50,20 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
     .locals 4
 
-    .line 694
+    .line 696
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
-    .line 695
+    .line 697
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 683
+    .line 684
     new-instance v0, Lorg/telegram/ui/Components/GradientTools;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/GradientTools;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->gradientTools:Lorg/telegram/ui/Components/GradientTools;
 
-    .line 684
+    .line 685
     new-instance v0, Lorg/telegram/ui/Components/GradientTools;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/GradientTools;-><init>()V
@@ -70,10 +72,21 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 685
+    .line 686
     iput v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->changeBackgroundProgress:F
 
-    .line 688
+    .line 689
+    new-instance v0, Landroid/graphics/PorterDuffColorFilter;
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    const/4 v2, -0x1
+
+    invoke-direct {v0, v2, v1}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->colorFilter:Landroid/graphics/ColorFilter;
+
+    .line 690
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -86,17 +99,17 @@
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 690
+    .line 692
     iput v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->overrideExpandProgress:F
 
-    .line 696
+    .line 698
     new-instance v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView$1;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView$1;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;Landroid/content/Context;Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 715
+    .line 717
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object p1
@@ -105,7 +118,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setAutoRepeatCount(I)V
 
-    .line 716
+    .line 718
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -116,10 +129,10 @@
 
     const/4 p1, 0x0
 
-    .line 717
+    .line 719
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 718
+    .line 720
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 p2, 0x46
@@ -138,7 +151,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;)F
     .locals 0
 
-    .line 678
+    .line 679
     iget p0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cx:F
 
     return p0
@@ -147,7 +160,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;)F
     .locals 0
 
-    .line 678
+    .line 679
     iget p0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cy:F
 
     return p0
@@ -156,7 +169,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;)F
     .locals 0
 
-    .line 678
+    .line 679
     iget p0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->size:F
 
     return p0
@@ -165,7 +178,7 @@
 .method private drawBackround(Landroid/graphics/Canvas;FFFFLandroid/graphics/Paint;)V
     .locals 3
 
-    .line 804
+    .line 806
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->expandProgress:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
@@ -178,18 +191,18 @@
 
     if-nez v2, :cond_0
 
-    .line 806
+    .line 808
     invoke-virtual {p1, p2, p3, p5, p6}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     goto :goto_0
 
-    .line 808
+    .line 810
     :cond_0
     invoke-static {p4, v1, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result p4
 
-    .line 809
+    .line 811
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     sub-float v1, p2, p5
@@ -202,7 +215,7 @@
 
     invoke-virtual {v0, v1, v2, p2, p3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 810
+    .line 812
     invoke-virtual {p1, v0, p4, p4, p6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
     :goto_0
@@ -214,7 +227,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 749
+    .line 751
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -227,7 +240,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cx:F
 
-    .line 750
+    .line 752
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -238,7 +251,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cy:F
 
-    .line 751
+    .line 753
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->isLandscapeMode:Z
@@ -266,7 +279,7 @@
 
     int-to-float v0, v0
 
-    .line 752
+    .line 754
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->expandProgress:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -288,21 +301,21 @@
     :goto_1
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
 
-    .line 753
+    .line 755
     iget v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->overrideExpandProgress:F
 
     cmpl-float v3, v2, v4
 
     if-ltz v3, :cond_2
 
-    .line 754
+    .line 756
     iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->expandProgress:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 v5, 0x1
 
     invoke-virtual {v3, v2, v5}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 756
+    .line 758
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -326,7 +339,7 @@
 
     const/16 v3, 0x15
 
-    .line 757
+    .line 759
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -343,7 +356,7 @@
 
     iput v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->size:F
 
-    .line 758
+    .line 760
     iget v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cx:F
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -376,10 +389,10 @@
 
     iput v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cx:F
 
-    .line 761
+    .line 763
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 762
+    .line 764
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget v3, v2, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandedHeight:I
@@ -394,7 +407,7 @@
 
     div-float/2addr v2, v1
 
-    .line 763
+    .line 765
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v5
@@ -421,12 +434,12 @@
 
     invoke-virtual {p1, v4, v2, v5, v6}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 764
+    .line 766
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backgroundGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     if-eqz v2, :cond_5
 
-    .line 765
+    .line 767
     iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->gradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget v4, v2, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color1:I
@@ -439,7 +452,7 @@
 
     invoke-virtual {v3, v4, v5, v6, v2}, Lorg/telegram/ui/Components/GradientTools;->setColors(IIII)V
 
-    .line 766
+    .line 768
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->gradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cx:F
@@ -458,7 +471,7 @@
 
     invoke-virtual {v2, v5, v7, v3, v6}, Lorg/telegram/ui/Components/GradientTools;->setBounds(FFFF)V
 
-    .line 767
+    .line 769
     iget v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->changeBackgroundProgress:F
 
     cmpl-float v2, v2, v9
@@ -467,7 +480,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 768
+    .line 770
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->outGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cx:F
@@ -486,14 +499,14 @@
 
     invoke-virtual {v2, v6, v8, v4, v7}, Lorg/telegram/ui/Components/GradientTools;->setBounds(FFFF)V
 
-    .line 769
+    .line 771
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->outGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 770
+    .line 772
     iget v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cx:F
 
     iget v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cy:F
@@ -512,7 +525,7 @@
 
     invoke-direct/range {v2 .. v8}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->drawBackround(Landroid/graphics/Canvas;FFFFLandroid/graphics/Paint;)V
 
-    .line 771
+    .line 773
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->gradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -527,7 +540,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 772
+    .line 774
     iget v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cx:F
 
     iget v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cy:F
@@ -544,7 +557,7 @@
 
     invoke-direct/range {v2 .. v8}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->drawBackround(Landroid/graphics/Canvas;FFFFLandroid/graphics/Paint;)V
 
-    .line 773
+    .line 775
     iget v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->changeBackgroundProgress:F
 
     const v3, 0x3d83126f    # 0.064f
@@ -557,16 +570,16 @@
 
     if-lez v2, :cond_3
 
-    .line 775
+    .line 777
     iput v9, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->changeBackgroundProgress:F
 
-    .line 777
+    .line 779
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->invalidate()V
 
     goto :goto_2
 
-    .line 779
+    .line 781
     :cond_4
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->gradientTools:Lorg/telegram/ui/Components/GradientTools;
 
@@ -574,7 +587,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 780
+    .line 782
     iget v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cx:F
 
     iget v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->cy:F
@@ -593,7 +606,7 @@
 
     invoke-direct/range {v2 .. v8}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->drawBackround(Landroid/graphics/Canvas;FFFFLandroid/graphics/Paint;)V
 
-    .line 783
+    .line 785
     :cond_5
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
@@ -619,7 +632,7 @@
 
     move-result v0
 
-    .line 784
+    .line 786
     :goto_3
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -633,7 +646,7 @@
 
     const/16 v4, 0x2a
 
-    .line 785
+    .line 787
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -644,7 +657,7 @@
 
     float-to-int v3, v4
 
-    .line 786
+    .line 788
     iget-object v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->expandProgress:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
@@ -659,7 +672,7 @@
 
     int-to-float v2, v3
 
-    .line 787
+    .line 789
     iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget v3, v3, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
@@ -670,7 +683,7 @@
 
     div-float/2addr v0, v1
 
-    .line 789
+    .line 791
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v3, v2, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -679,14 +692,14 @@
 
     if-eqz v3, :cond_8
 
-    .line 790
+    .line 792
     invoke-virtual {v3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v2
 
     if-eqz v2, :cond_7
 
-    .line 791
+    .line 793
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -703,7 +716,7 @@
 
     invoke-virtual {v2, v1}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 793
+    .line 795
     :cond_7
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -731,7 +744,16 @@
 
     invoke-virtual {v1, v3, v5, v2, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 794
+    .line 796
+    iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    iget-object v0, v0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->colorFilter:Landroid/graphics/ColorFilter;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 797
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -740,7 +762,7 @@
 
     goto :goto_4
 
-    .line 797
+    .line 799
     :cond_8
     iget-object v2, v2, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -756,7 +778,7 @@
 
     invoke-virtual {v2, v3, v5, v0, v0}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 798
+    .line 800
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
@@ -767,7 +789,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 799
+    .line 801
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
@@ -781,21 +803,21 @@
 .method public getDuration()J
     .locals 4
 
-    .line 828
+    .line 830
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
 
-    .line 829
+    .line 831
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v1, :cond_0
 
-    .line 830
+    .line 832
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
@@ -807,7 +829,7 @@
 
     return-wide v1
 
-    .line 835
+    .line 837
     :cond_1
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -815,7 +837,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 836
+    .line 838
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getLottieAnimation()Lorg/telegram/ui/Components/RLottieDrawable;
 
     move-result-object v0
@@ -833,24 +855,31 @@
 .method public getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
     .locals 2
 
-    .line 842
+    .line 844
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
 
-    .line 843
+    .line 845
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v1, :cond_0
 
-    .line 844
+    .line 846
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 848
+    iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->colorFilter:Landroid/graphics/ColorFilter;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     :cond_0
     return-object v0
@@ -859,7 +888,7 @@
 .method public hasAnimation()Z
     .locals 1
 
-    .line 850
+    .line 855
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
@@ -898,10 +927,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 855
+    .line 860
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 856
+    .line 861
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$1800(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Landroid/view/View;
@@ -916,14 +945,14 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 740
+    .line 742
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->isLandscapeMode:Z
 
     if-eqz v0, :cond_0
 
-    .line 741
+    .line 743
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     goto :goto_0
@@ -931,7 +960,7 @@
     :cond_0
     const/16 p2, 0x8c
 
-    .line 743
+    .line 745
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -951,20 +980,20 @@
 .method public setExpanded(Z)V
     .locals 2
 
-    .line 722
+    .line 724
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->expanded:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 725
+    .line 727
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->expanded:Z
 
     if-eqz p1, :cond_2
 
-    .line 727
+    .line 729
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -977,7 +1006,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 728
+    .line 730
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -988,7 +1017,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
 
-    .line 730
+    .line 732
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -996,7 +1025,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
 
-    .line 732
+    .line 734
     :cond_2
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1004,7 +1033,7 @@
 
     if-lt p1, v0, :cond_3
 
-    .line 733
+    .line 735
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -1017,7 +1046,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 735
+    .line 737
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->invalidate()V
 
@@ -1027,12 +1056,12 @@
 .method public setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
     .locals 5
 
-    .line 815
+    .line 817
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backgroundGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     if-eqz v0, :cond_0
 
-    .line 816
+    .line 818
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->outGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget v2, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color1:I
@@ -1047,28 +1076,28 @@
 
     const/4 v0, 0x0
 
-    .line 817
+    .line 819
     iput v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->changeBackgroundProgress:F
 
-    .line 818
+    .line 820
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->wasChanged:Z
 
-    .line 820
+    .line 822
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backgroundGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
-    .line 821
+    .line 823
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x17
 
     if-lt p1, v0, :cond_1
 
-    .line 822
+    .line 824
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -1081,7 +1110,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 824
+    .line 826
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->invalidate()V
 

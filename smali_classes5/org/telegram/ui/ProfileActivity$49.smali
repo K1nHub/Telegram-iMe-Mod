@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 9704
+    .line 9701
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$49;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public dismiss()V
     .locals 1
 
-    .line 9708
+    .line 9705
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$49;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$4400(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -53,7 +53,7 @@
 .method public setAutoDeleteHistory(II)V
     .locals 1
 
-    .line 9713
+    .line 9710
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$49;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0, p1, p2}, Lorg/telegram/ui/ProfileActivity;->access$23300(Lorg/telegram/ui/ProfileActivity;II)V
@@ -64,7 +64,7 @@
 .method public showGlobalAutoDeleteScreen()V
     .locals 2
 
-    .line 9718
+    .line 9715
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$49;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     new-instance v1, Lorg/telegram/ui/AutoDeleteMessagesActivity;
@@ -73,7 +73,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 9719
+    .line 9716
     invoke-virtual {p0}, Lorg/telegram/ui/ProfileActivity$49;->dismiss()V
 
     return-void

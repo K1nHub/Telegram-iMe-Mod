@@ -45,6 +45,20 @@
     .end annotation
 .end method
 
+.method public abstract isValidMnemonic(Ljava/lang/String;)Lio/reactivex/Observable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/lang/Boolean;",
+            ">;>;"
+        }
+    .end annotation
+.end method
+
 .method public abstract sendTransaction(Ljava/lang/String;JILcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;I)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {

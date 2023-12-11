@@ -56,7 +56,7 @@
 .method private realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
     .locals 1
 
-    .line 99
+    .line 100
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -71,7 +71,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 305
+    .line 306
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->items:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -84,7 +84,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 300
+    .line 301
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->items:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -101,7 +101,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 155
+    .line 156
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -144,7 +144,7 @@
 .method public notifyDataSetChanged()V
     .locals 1
 
-    .line 150
+    .line 151
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -157,7 +157,7 @@
 .method public notifyItemChanged(I)V
     .locals 1
 
-    .line 104
+    .line 105
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -172,7 +172,7 @@
 .method public notifyItemMoved(II)V
     .locals 1
 
-    .line 119
+    .line 120
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -187,7 +187,7 @@
 .method public notifyItemRangeChanged(II)V
     .locals 1
 
-    .line 124
+    .line 125
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -202,7 +202,7 @@
 .method public notifyItemRangeChanged(IILjava/lang/Object;)V
     .locals 1
 
-    .line 129
+    .line 130
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -217,7 +217,7 @@
 .method public notifyItemRangeInserted(II)V
     .locals 1
 
-    .line 134
+    .line 135
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -232,7 +232,7 @@
 .method public notifyItemRangeRemoved(II)V
     .locals 1
 
-    .line 139
+    .line 140
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->realAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -247,12 +247,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 9
 
-    .line 221
+    .line 222
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
-    .line 222
+    .line 223
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->items:Ljava/util/List;
 
     invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -283,13 +283,13 @@
 
     goto/16 :goto_1
 
-    .line 235
+    .line 236
     :pswitch_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/BoostTypeSingleCell;
 
-    .line 236
+    .line 237
     iget-object p2, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->user:Ljava/lang/Object;
 
     check-cast p2, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;
@@ -298,27 +298,27 @@
 
     goto/16 :goto_1
 
-    .line 246
+    .line 247
     :pswitch_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/SubtitleWithCounterCell;
 
-    .line 247
+    .line 248
     iget-object v0, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
     const/4 v0, 0x0
 
-    .line 248
+    .line 249
     iget p2, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue:I
 
     invoke-virtual {p1, v0, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/SubtitleWithCounterCell;->updateCounter(ZI)V
 
     goto/16 :goto_1
 
-    .line 288
+    .line 289
     :pswitch_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -326,7 +326,7 @@
 
     check-cast v0, Lorg/telegram/ui/Components/Premium/boosts/cells/DurationCell;
 
-    .line 289
+    .line 290
     iget-object v1, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->object:Ljava/lang/Object;
 
     iget v2, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue:I
@@ -345,13 +345,13 @@
 
     goto/16 :goto_1
 
-    .line 278
+    .line 279
     :pswitch_3
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/ParticipantsTypeCell;
 
-    .line 279
+    .line 280
     iget v0, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->subType:I
 
     iget-boolean v1, p2, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->selectable:Z
@@ -366,36 +366,36 @@
 
     goto/16 :goto_1
 
-    .line 283
+    .line 284
     :pswitch_4
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/DateEndCell;
 
-    .line 284
+    .line 285
     iget-wide v0, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->longValue:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/Premium/boosts/cells/DateEndCell;->setDate(J)V
 
     goto/16 :goto_1
 
-    .line 263
+    .line 264
     :pswitch_5
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/ChatCell;
 
-    .line 264
+    .line 265
     iget-object v0, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     if-eqz v0, :cond_1
 
-    .line 266
+    .line 267
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_inputPeerChat;
 
     if-eqz v1, :cond_0
 
-    .line 267
+    .line 268
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -420,13 +420,13 @@
 
     goto :goto_0
 
-    .line 268
+    .line 269
     :cond_0
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_inputPeerChannel;
 
     if-eqz v1, :cond_2
 
-    .line 269
+    .line 270
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -451,7 +451,7 @@
 
     goto :goto_0
 
-    .line 272
+    .line 273
     :cond_1
     iget-object v0, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -461,7 +461,7 @@
 
     invoke-virtual {p1, v0, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/ChatCell;->setChat(Lorg/telegram/tgnet/TLRPC$Chat;IZ)V
 
-    .line 274
+    .line 275
     :cond_2
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->chatDeleteListener:Lorg/telegram/ui/Components/Premium/boosts/cells/ChatCell$ChatDeleteListener;
@@ -470,64 +470,64 @@
 
     goto :goto_1
 
-    .line 257
+    .line 258
     :cond_3
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/TextInfoCell;
 
-    .line 258
+    .line 259
     iget-object v0, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 259
+    .line 260
     iget-boolean p2, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->boolValue:Z
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/TextInfoCell;->setBackground(Z)V
 
     goto :goto_1
 
-    .line 252
+    .line 253
     :cond_4
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 253
+    .line 254
     iget-object p2, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->text:Ljava/lang/CharSequence;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
-    .line 240
+    .line 241
     :cond_5
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/SliderCell;
 
-    .line 241
+    .line 242
     iget-object v0, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->values:Ljava/util/List;
 
     iget p2, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue:I
 
     invoke-virtual {p1, v0, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/SliderCell;->setValues(Ljava/util/List;I)V
 
-    .line 242
+    .line 243
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->sliderCallback:Lorg/telegram/ui/Components/SlideChooseView$Callback;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/SliderCell;->setCallBack(Lorg/telegram/ui/Components/SlideChooseView$Callback;)V
 
     goto :goto_1
 
-    .line 230
+    .line 231
     :cond_6
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/BoostTypeCell;
 
-    .line 231
+    .line 232
     iget v0, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->subType:I
 
     iget v1, p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter$Item;->intValue:I
@@ -542,7 +542,7 @@
 
     goto :goto_1
 
-    .line 225
+    .line 226
     :cond_7
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -550,7 +550,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->headerCell:Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;
 
-    .line 226
+    .line 227
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;->setBoostViaGifsText()V
 
     :goto_1
@@ -568,198 +568,212 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 3
+    .locals 8
 
-    .line 167
+    .line 168
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    move-result-object p1
+    move-result-object v1
 
     packed-switch p2, :pswitch_data_0
 
-    .line 171
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;
+    .line 172
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     goto/16 :goto_0
 
-    .line 177
+    .line 178
     :pswitch_0
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/BoostTypeSingleCell;
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/BoostTypeSingleCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/BoostTypeSingleCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/BoostTypeSingleCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     goto/16 :goto_0
-
-    .line 199
-    :pswitch_1
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/SubtitleWithCounterCell;
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/SubtitleWithCounterCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     .line 200
-    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+    :pswitch_1
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/SubtitleWithCounterCell;
+
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/SubtitleWithCounterCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 201
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {p2, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result p1
+    move-result p2
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 212
+    .line 213
     :pswitch_2
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/DurationCell;
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/DurationCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/DurationCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/DurationCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 209
+    .line 210
     :pswitch_3
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/ParticipantsTypeCell;
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/ParticipantsTypeCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/ParticipantsTypeCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/ParticipantsTypeCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     goto :goto_0
 
-    .line 206
+    .line 207
     :pswitch_4
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/DateEndCell;
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/DateEndCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/DateEndCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/DateEndCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     goto :goto_0
 
-    .line 203
+    .line 204
     :pswitch_5
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/ChatCell;
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/ChatCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/ChatCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/ChatCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     goto :goto_0
 
-    .line 189
+    .line 190
     :pswitch_6
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/AddChannelCell;
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/AddChannelCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/AddChannelCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/AddChannelCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     goto :goto_0
 
-    .line 186
+    .line 187
     :pswitch_7
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/TextInfoCell;
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/TextInfoCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/TextInfoCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/TextInfoCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     goto :goto_0
-
-    .line 195
-    :pswitch_8
-    new-instance p2, Lorg/telegram/ui/Cells/HeaderCell;
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     .line 196
-    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+    :pswitch_8
+    new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
+    const/16 v3, 0x15
+
+    const/16 v4, 0xf
+
+    const/4 v5, 0x3
+
+    const/4 v6, 0x0
+
+    iget-object v7, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    move-object v0, p1
+
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 197
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {p2, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result p1
+    move-result p2
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_0
 
-    .line 192
+    .line 193
     :pswitch_9
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/SliderCell;
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/SliderCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/SliderCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/SliderCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     goto :goto_0
 
-    .line 183
+    .line 184
     :pswitch_a
-    new-instance p2, Lorg/telegram/ui/Cells/ShadowSectionCell;
+    new-instance p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
-    const/16 v0, 0xc
+    const/16 p2, 0xc
 
-    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v1
+    move-result v0
 
-    invoke-direct {p2, p1, v0, v1}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;II)V
+    invoke-direct {p1, v1, p2, v0}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;II)V
 
     goto :goto_0
 
-    .line 180
+    .line 181
     :pswitch_b
-    new-instance p2, Landroid/view/View;
+    new-instance p1, Landroid/view/View;
 
-    invoke-direct {p2, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     goto :goto_0
 
-    .line 174
+    .line 175
     :pswitch_c
-    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/cells/BoostTypeCell;
+    new-instance p1, Lorg/telegram/ui/Components/Premium/boosts/cells/BoostTypeCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/BoostTypeCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, v1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/BoostTypeCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 215
+    .line 216
     :goto_0
-    new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
+    new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
 
     const/4 v1, -0x2
 
-    invoke-direct {p1, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
+    invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 216
-    new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
+    .line 217
+    new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
 
-    return-object p1
+    return-object p2
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x2
@@ -812,12 +826,12 @@
 .method public setPausedStars(Z)V
     .locals 1
 
-    .line 93
+    .line 94
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->headerCell:Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;
 
     if-eqz v0, :cond_0
 
-    .line 94
+    .line 95
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;->setPaused(Z)V
 
     :cond_0
@@ -876,8 +890,13 @@
 
     goto :goto_0
 
-    .line 85
     :cond_2
+    const/16 p1, 0x8
+
+    .line 84
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->notifyItemChanged(I)V
+
+    .line 86
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->items:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -888,7 +907,7 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->notifyItemChanged(I)V
 
-    .line 86
+    .line 87
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->items:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -899,7 +918,7 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->notifyItemChanged(I)V
 
-    .line 87
+    .line 88
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->items:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -910,7 +929,7 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->notifyItemChanged(I)V
 
-    .line 88
+    .line 89
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->items:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -921,7 +940,7 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->notifyItemChanged(I)V
 
-    .line 89
+    .line 90
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/BoostAdapter;->items:Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->size()I

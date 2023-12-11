@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 5311
+    .line 5308
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public getView(J)Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
     .locals 2
 
-    .line 5323
+    .line 5320
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ProfileActivity;->getDialogId()J
@@ -53,7 +53,7 @@
 
     return-object p1
 
-    .line 5326
+    .line 5323
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
@@ -71,7 +71,7 @@
 .method public preLayout(JLjava/lang/Runnable;)V
     .locals 2
 
-    .line 5314
+    .line 5311
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$500(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
@@ -86,7 +86,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->setHasStories(Z)V
 
-    .line 5315
+    .line 5312
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ProfileActivity;->getDialogId()J
@@ -97,7 +97,7 @@
 
     if-nez p1, :cond_0
 
-    .line 5316
+    .line 5313
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$33;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$34900(Lorg/telegram/ui/ProfileActivity;)V
@@ -105,7 +105,7 @@
     :cond_0
     const-wide/16 p1, 0x1e
 
-    .line 5318
+    .line 5315
     invoke-static {p3, p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void

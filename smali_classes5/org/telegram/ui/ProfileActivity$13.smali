@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;[Lorg/telegram/ui/Cells/CheckBoxCell;)V
     .locals 0
 
-    .line 3834
+    .line 3831
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$13;->val$cells:[Lorg/telegram/ui/Cells/CheckBoxCell;
@@ -56,12 +56,12 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
 
-    .line 3837
+    .line 3834
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messages_reportReaction;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messages_reportReaction;-><init>()V
 
-    .line 3838
+    .line 3835
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -80,7 +80,7 @@
 
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_reportReaction;->user_id:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    .line 3839
+    .line 3836
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -99,7 +99,7 @@
 
     iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_reportReaction;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 3840
+    .line 3837
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$35700(Lorg/telegram/ui/ProfileActivity;)I
@@ -108,7 +108,7 @@
 
     iput p2, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_reportReaction;->id:I
 
-    .line 3841
+    .line 3838
     iget-object p2, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ProfileActivity;->access$35800(Lorg/telegram/ui/ProfileActivity;)I
@@ -123,7 +123,7 @@
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 3845
+    .line 3842
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->val$cells:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 p2, 0x0
@@ -140,7 +140,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3846
+    .line 3843
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -161,7 +161,7 @@
 
     move-result-object p1
 
-    .line 3847
+    .line 3844
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -178,18 +178,18 @@
 
     invoke-virtual {v0, v1, v2, p1}, Lorg/telegram/messenger/MessagesController;->deleteParticipantFromChat(JLorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 3850
+    .line 3847
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ProfileActivity;->access$35702(Lorg/telegram/ui/ProfileActivity;I)I
 
-    .line 3851
+    .line 3848
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ProfileActivity;->updateListAnimated(Z)V
 
-    .line 3852
+    .line 3849
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$13;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;

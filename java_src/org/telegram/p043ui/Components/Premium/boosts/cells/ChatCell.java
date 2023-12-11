@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -17,6 +17,7 @@ import org.telegram.tgnet.TLRPC$Chat;
 public class ChatCell extends BaseCell {
     private ChatDeleteListener chatDeleteListener;
     private final ImageView deleteImageView;
+    private boolean removable;
 
     /* renamed from: org.telegram.ui.Components.Premium.boosts.cells.ChatCell$ChatDeleteListener */
     /* loaded from: classes6.dex */
@@ -37,9 +38,9 @@ public class ChatCell extends BaseCell {
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_stickers_menuSelector)));
-        imageView.setImageResource(C3634R.C3636drawable.poll_remove);
+        imageView.setImageResource(C3632R.C3634drawable.poll_remove);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon), PorterDuff.Mode.MULTIPLY));
-        imageView.setContentDescription(LocaleController.getString("Delete", C3634R.string.Delete));
+        imageView.setContentDescription(LocaleController.getString("Delete", C3632R.string.Delete));
         boolean z = LocaleController.isRTL;
         addView(imageView, LayoutHelper.createFrame(48, 50, (z ? 3 : 5) | 17, z ? 3 : 0, 0, z ? 0 : 3, 0));
         this.titleTextView.setPadding(AndroidUtilities.m104dp(LocaleController.isRTL ? 24 : 0), 0, AndroidUtilities.m104dp(LocaleController.isRTL ? 0 : 24), 0);
@@ -53,11 +54,16 @@ public class ChatCell extends BaseCell {
     }
 
     public void setChat(final TLRPC$Chat tLRPC$Chat, int i, boolean z) {
+        this.removable = z;
         this.avatarDrawable.setInfo(tLRPC$Chat);
         this.imageView.setRoundRadius(AndroidUtilities.m104dp(20));
         this.imageView.setForUserOrChat(tLRPC$Chat, this.avatarDrawable);
         this.titleTextView.setText(Emoji.replaceEmoji(tLRPC$Chat.title, this.titleTextView.getPaint().getFontMetricsInt(), false));
-        setSubtitle(LocaleController.formatPluralString("BoostingChannelWillReceiveBoost", i, new Object[0]));
+        if (z) {
+            setSubtitle(null);
+        } else {
+            setSubtitle(LocaleController.formatPluralString("BoostingChannelWillReceiveBoost", i, new Object[0]));
+        }
         this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3, this.resourcesProvider));
         setDivider(true);
         if (z) {
@@ -86,6 +92,10 @@ public class ChatCell extends BaseCell {
     }
 
     public void setCounter(int i) {
-        setSubtitle(LocaleController.formatPluralString("BoostingChannelWillReceiveBoost", i, new Object[0]));
+        if (this.removable) {
+            setSubtitle(null);
+        } else {
+            setSubtitle(LocaleController.formatPluralString("BoostingChannelWillReceiveBoost", i, new Object[0]));
+        }
     }
 }

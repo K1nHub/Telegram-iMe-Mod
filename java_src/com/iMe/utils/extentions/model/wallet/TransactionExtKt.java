@@ -6,7 +6,7 @@ import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionProcessingType;
 import com.iMe.utils.formatter.BalanceFormatter;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* compiled from: TransactionExt.kt */
 /* loaded from: classes4.dex */
 public final class TransactionExtKt {
@@ -69,47 +69,47 @@ public final class TransactionExtKt {
     public static final int getIcon(Transaction transaction) {
         Intrinsics.checkNotNullParameter(transaction, "<this>");
         if (transaction.getStatus() == Status.CANCELLED) {
-            return C3634R.C3636drawable.fork_ic_transaction_cancelled;
+            return C3632R.C3634drawable.fork_ic_transaction_cancelled;
         }
         if (transaction instanceof Transaction.Crypto.Donation) {
             int i = WhenMappings.$EnumSwitchMapping$0[transaction.getDirection().ordinal()];
             if (i != 1) {
                 if (i == 2 || i == 3) {
-                    return C3634R.C3636drawable.fork_ic_transaction_donate_out;
+                    return C3632R.C3634drawable.fork_ic_transaction_donate_out;
                 }
                 return TransactionDirectionExtKt.icon(transaction.getDirection());
             }
-            return C3634R.C3636drawable.fork_ic_transaction_donate_in;
+            return C3632R.C3634drawable.fork_ic_transaction_donate_in;
         }
         if (transaction instanceof Transaction.Transfer ? true : transaction instanceof Transaction.Unsupported ? true : transaction instanceof Transaction.Crypto.Transfer ? true : transaction instanceof Transaction.Refund) {
             return TransactionDirectionExtKt.icon(transaction.getDirection());
         }
         if (transaction instanceof Transaction.Referral ? true : transaction instanceof Transaction.Lottery ? true : transaction instanceof Transaction.Registration) {
-            return C3634R.C3636drawable.fork_ic_transaction_bonus;
+            return C3632R.C3634drawable.fork_ic_transaction_bonus;
         }
         if (transaction instanceof Transaction.Purchase) {
-            return C3634R.C3636drawable.fork_ic_transaction_purchase;
+            return C3632R.C3634drawable.fork_ic_transaction_purchase;
         }
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-            return C3634R.C3636drawable.fork_ic_transaction_simplex;
+            return C3632R.C3634drawable.fork_ic_transaction_simplex;
         }
         if (transaction instanceof Transaction.Crypto.Approve) {
-            return C3634R.C3636drawable.fork_ic_transaction_approve;
+            return C3632R.C3634drawable.fork_ic_transaction_approve;
         }
         if (transaction instanceof Transaction.Crypto.Swap) {
             switch (WhenMappings.$EnumSwitchMapping$1[transaction.getProcessingType().ordinal()]) {
                 case 1:
                 case 2:
-                    return C3634R.C3636drawable.fork_ic_transaction_uniswap;
+                    return C3632R.C3634drawable.fork_ic_transaction_uniswap;
                 case 3:
-                    return C3634R.C3636drawable.fork_ic_transaction_pancakeswap;
+                    return C3632R.C3634drawable.fork_ic_transaction_pancakeswap;
                 case 4:
-                    return C3634R.C3636drawable.fork_ic_transaction_symbiosis;
+                    return C3632R.C3634drawable.fork_ic_transaction_symbiosis;
                 case 5:
                 case 6:
-                    return C3634R.C3636drawable.fork_ic_transaction_1_inch;
+                    return C3632R.C3634drawable.fork_ic_transaction_1_inch;
                 default:
-                    return C3634R.C3636drawable.fork_ic_transaction_uniswap;
+                    return C3632R.C3634drawable.fork_ic_transaction_uniswap;
             }
         }
         return TransactionDirectionExtKt.icon(transaction.getDirection());
@@ -121,37 +121,37 @@ public final class TransactionExtKt {
             return transaction.getDirection().getTitle();
         }
         if (transaction instanceof Transaction.Referral) {
-            return C3634R.string.wallet_transactions_type_referral_title;
+            return C3632R.string.wallet_transactions_type_referral_title;
         }
         if (transaction instanceof Transaction.Lottery) {
-            return C3634R.string.wallet_transactions_type_lottery_title;
+            return C3632R.string.wallet_transactions_type_lottery_title;
         }
         if (transaction instanceof Transaction.Registration) {
-            return C3634R.string.wallet_transactions_type_welcome_title;
+            return C3632R.string.wallet_transactions_type_welcome_title;
         }
         if (transaction instanceof Transaction.Purchase) {
-            return C3634R.string.wallet_transactions_type_in_app_purchase_title;
+            return C3632R.string.wallet_transactions_type_in_app_purchase_title;
         }
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-            return C3634R.string.wallet_transactions_type_simplex_title;
+            return C3632R.string.wallet_transactions_type_simplex_title;
         }
         if (!(transaction instanceof Transaction.Crypto.Swap)) {
-            return transaction instanceof Transaction.Refund ? C3634R.string.wallet_transactions_type_refund_title : transaction.getDirection().getTitle();
+            return transaction instanceof Transaction.Refund ? C3632R.string.wallet_transactions_type_refund_title : transaction.getDirection().getTitle();
         }
         switch (WhenMappings.$EnumSwitchMapping$1[transaction.getProcessingType().ordinal()]) {
             case 1:
             case 2:
-                return C3634R.string.wallet_transactions_type_uniswap_title;
+                return C3632R.string.wallet_transactions_type_uniswap_title;
             case 3:
-                return C3634R.string.wallet_transactions_type_pancakeswap_title;
+                return C3632R.string.wallet_transactions_type_pancakeswap_title;
             case 4:
-                return C3634R.string.wallet_transactions_type_symbiosis_title;
+                return C3632R.string.wallet_transactions_type_symbiosis_title;
             case 5:
-                return C3634R.string.wallet_transactions_type_1inch_title;
+                return C3632R.string.wallet_transactions_type_1inch_title;
             case 6:
-                return C3634R.string.wallet_transactions_type_1inch_fusion_title;
+                return C3632R.string.wallet_transactions_type_1inch_fusion_title;
             default:
-                return C3634R.string.wallet_transactions_type_uniswap_title;
+                return C3632R.string.wallet_transactions_type_uniswap_title;
         }
     }
 }

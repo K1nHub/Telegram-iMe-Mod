@@ -35,7 +35,7 @@ import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -166,14 +166,14 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             }
         };
         this.searchField = searchField;
-        searchField.setHint(LocaleController.getString("SearchMusic", C3634R.string.SearchMusic));
+        searchField.setHint(LocaleController.getString("SearchMusic", C3632R.string.SearchMusic));
         this.frameLayout.addView(this.searchField, LayoutHelper.createFrame(-1, -1, 51));
         this.searchField.setPadding(0, 0, AndroidUtilities.m104dp(40), 0);
         ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(context, null, 0, getThemedColor(Theme.key_dialogTextBlack), false, resourcesProvider);
         this.otherItem = actionBarMenuItem;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3634R.C3636drawable.ic_ab_other);
-        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+        actionBarMenuItem.setIcon(C3632R.C3634drawable.ic_ab_other);
+        actionBarMenuItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
         actionBarMenuItem.setSubMenuOpenSide(2);
         actionBarMenuItem.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: org.telegram.ui.Components.ChatAttachAlertAudioLayout$$ExternalSyntheticLambda4
             @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
@@ -188,8 +188,8 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 ChatAttachAlertAudioLayout.this.lambda$new$1(view);
             }
         });
-        actionBarMenuItem.addSubItem(ChatAttachAlertPhotoLayout.getSendWithoutGroupingSubItemId(), LocaleController.getString("SendWithoutGrouping", C3634R.string.SendWithoutGrouping));
-        actionBarMenuItem.addSubItem(ChatAttachAlertPhotoLayout.getOpenInSubItemId(), C3634R.C3636drawable.msg_openin, LocaleController.getString("OpenInExternalApp", C3634R.string.OpenInExternalApp));
+        actionBarMenuItem.addSubItem(ChatAttachAlertPhotoLayout.getSendWithoutGroupingSubItemId(), LocaleController.getString("SendWithoutGrouping", C3632R.string.SendWithoutGrouping));
+        actionBarMenuItem.addSubItem(ChatAttachAlertPhotoLayout.getOpenInSubItemId(), C3632R.C3634drawable.msg_openin, LocaleController.getString("OpenInExternalApp", C3632R.string.OpenInExternalApp));
         this.frameLayout.addView(actionBarMenuItem, LayoutHelper.createFrame(36, 36, 53, 0, 11, 9, 0));
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context, null, resourcesProvider);
         this.progressView = emptyTextProgressView;
@@ -211,7 +211,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
         });
         ImageView imageView = new ImageView(context);
         this.emptyImageView = imageView;
-        imageView.setImageResource(C3634R.C3636drawable.music_empty);
+        imageView.setImageResource(C3632R.C3634drawable.music_empty);
         this.emptyImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogEmptyImage), PorterDuff.Mode.MULTIPLY));
         this.emptyView.addView(this.emptyImageView, LayoutHelper.createLinear(-2, -2));
         TextView textView = new TextView(context);
@@ -365,10 +365,10 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             this.emptyView.setVisibility(8);
         } else {
             if (this.listView.getAdapter() == this.searchAdapter) {
-                this.emptyTitleTextView.setText(LocaleController.getString("NoAudioFound", C3634R.string.NoAudioFound));
+                this.emptyTitleTextView.setText(LocaleController.getString("NoAudioFound", C3632R.string.NoAudioFound));
             } else {
-                this.emptyTitleTextView.setText(LocaleController.getString("NoAudioFiles", C3634R.string.NoAudioFiles));
-                this.emptySubtitleTextView.setText(LocaleController.getString("NoAudioFilesInfo", C3634R.string.NoAudioFilesInfo));
+                this.emptyTitleTextView.setText(LocaleController.getString("NoAudioFiles", C3632R.string.NoAudioFiles));
+                this.emptySubtitleTextView.setText(LocaleController.getString("NoAudioFilesInfo", C3632R.string.NoAudioFilesInfo));
             }
             this.currentEmptyView = this.emptyView;
             this.progressView.setVisibility(8);
@@ -565,7 +565,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
     }
 
     private void showErrorBox(String str) {
-        new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString("AppName", C3634R.string.AppName)).setMessage(str).setPositiveButton(LocaleController.getString("OK", C3634R.string.OK), null).show();
+        new AlertDialog.Builder(getContext(), this.resourcesProvider).setTitle(LocaleController.getString("AppName", C3632R.string.AppName)).setMessage(str).setPositiveButton(LocaleController.getString("OK", C3632R.string.OK), null).show();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x008a  */
@@ -625,7 +625,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
             int r1 = r1.size()
             int r4 = r12.maxSelectedFiles
             if (r1 < r4) goto L75
-            int r13 = org.telegram.messenger.C3634R.string.PassportUploadMaxReached
+            int r13 = org.telegram.messenger.C3632R.string.PassportUploadMaxReached
             java.lang.Object[] r0 = new java.lang.Object[r3]
             java.lang.Object[] r1 = new java.lang.Object[r2]
             java.lang.String r3 = "Files"
@@ -954,7 +954,7 @@ public class ChatAttachAlertAudioLayout extends ChatAttachAlert.AttachAlertLayou
                 ChatAttachAlertAudioLayout.this.listView.setAdapter(ChatAttachAlertAudioLayout.this.searchAdapter);
             }
             if (ChatAttachAlertAudioLayout.this.listView.getAdapter() == ChatAttachAlertAudioLayout.this.searchAdapter) {
-                ChatAttachAlertAudioLayout.this.emptySubtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoAudioFoundInfo", C3634R.string.NoAudioFoundInfo, str)));
+                ChatAttachAlertAudioLayout.this.emptySubtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoAudioFoundInfo", C3632R.string.NoAudioFoundInfo, str)));
             }
             this.searchResult = arrayList;
             notifyDataSetChanged();

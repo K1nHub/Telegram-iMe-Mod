@@ -35,7 +35,7 @@ public final class ActorSelectorManager extends SelectorManagerSupport implement
         this.continuation = new ContinuationHolder<>();
         this.selectionQueue = new LockFreeMPSCQueue<>();
         this.coroutineContext = context.plus(new CoroutineName("selector"));
-        BuildersKt__Builders_commonKt.launch$default(this, null, null, new C26631(null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this, null, null, new C26601(null), 3, null);
     }
 
     @Override // kotlinx.coroutines.CoroutineScope
@@ -47,24 +47,24 @@ public final class ActorSelectorManager extends SelectorManagerSupport implement
     @DebugMetadata(m145c = "io.ktor.network.selector.ActorSelectorManager$1", m144f = "ActorSelectorManager.kt", m143l = {43}, m142m = "invokeSuspend")
     /* renamed from: io.ktor.network.selector.ActorSelectorManager$1 */
     /* loaded from: classes4.dex */
-    static final class C26631 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    static final class C26601 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
 
-        C26631(Continuation<? super C26631> continuation) {
+        C26601(Continuation<? super C26601> continuation) {
             super(2, continuation);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C26631(continuation);
+            return new C26601(continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((C26631) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C26601) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
@@ -184,7 +184,7 @@ public final class ActorSelectorManager extends SelectorManagerSupport implement
                 r7.<init>(r0)
                 throw r7
             */
-            throw new UnsupportedOperationException("Method not decompiled: io.ktor.network.selector.ActorSelectorManager.C26631.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: io.ktor.network.selector.ActorSelectorManager.C26601.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
@@ -474,7 +474,7 @@ public final class ActorSelectorManager extends SelectorManagerSupport implement
                 return false;
             }
             Result.Companion companion = Result.Companion;
-            andSet.resumeWith(Result.m1940constructorimpl(r));
+            andSet.resumeWith(Result.m1942constructorimpl(r));
             return true;
         }
     }

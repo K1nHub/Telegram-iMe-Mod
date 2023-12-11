@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 10945
+    .line 10955
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$65;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setTranslationY(F)V
     .locals 2
 
-    .line 10948
+    .line 10958
     invoke-super {p0, p1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 10949
+    .line 10959
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$65;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$31100(Lorg/telegram/ui/ChatActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -63,7 +63,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 10950
+    .line 10960
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$65;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$23000(Lorg/telegram/ui/ChatActivity;)Z
@@ -78,7 +78,7 @@
 
     if-gez v0, :cond_0
 
-    .line 10951
+    .line 10961
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$65;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$31000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/PinnedLineView;
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 10953
+    .line 10963
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$65;->this$0:Lorg/telegram/ui/ChatActivity;
 

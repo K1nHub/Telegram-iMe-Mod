@@ -71,12 +71,12 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.databinding.ForkFragmentWalletSendBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -389,7 +389,7 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
         Intrinsics.checkNotNullParameter(insertedAmountInDollarsText, "insertedAmountInDollarsText");
         ForkFragmentWalletSendBinding binding = getBinding();
         if (this.screenType == WalletSendScreenType.BINANCE_REPLENISH) {
-            binding.inputRecipient.getInputView().setEditHint(getResourceManager().getString(C3634R.string.common_progress_state_title));
+            binding.inputRecipient.getInputView().setEditHint(getResourceManager().getString(C3632R.string.common_progress_state_title));
         }
         LinkActionView inputView = binding.inputToken.getInputView();
         inputView.setText(tokenText);
@@ -426,7 +426,7 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
     @Override // com.iMe.p030ui.wallet.send.WalletSendView
     public void showSuccessSend(String message) {
         Intrinsics.checkNotNullParameter(message, "message");
-        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3634R.string.wallet_amount_success_send_title), message, getResourceManager().getString(C3634R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.send.WalletSendFragment$$ExternalSyntheticLambda6
+        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3632R.string.wallet_amount_success_send_title), message, getResourceManager().getString(C3632R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.send.WalletSendFragment$$ExternalSyntheticLambda6
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletSendFragment.showSuccessSend$lambda$8(WalletSendFragment.this);
@@ -460,12 +460,12 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
 
     public void showAlertError(String text) {
         Intrinsics.checkNotNullParameter(text, "text");
-        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3634R.string.common_unexpected_error_title), text, getResourceManager().getString(C3634R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3632R.string.common_unexpected_error_title), text, getResourceManager().getString(C3632R.string.common_ok), null, 8, null);
     }
 
     @Override // com.iMe.p030ui.wallet.send.WalletSendView
     public void showRecipientNotFoundError() {
-        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3634R.string.wallet_amount_error_invalid_user_title), getResourceManager().getString(C3634R.string.wallet_amount_error_invalid_user_description), getResourceManager().getString(C3634R.string.wallet_amount_error_invalid_user_btn_txt), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.send.WalletSendFragment$$ExternalSyntheticLambda9
+        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3632R.string.wallet_amount_error_invalid_user_title), getResourceManager().getString(C3632R.string.wallet_amount_error_invalid_user_description), getResourceManager().getString(C3632R.string.wallet_amount_error_invalid_user_btn_txt), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.send.WalletSendFragment$$ExternalSyntheticLambda9
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletSendFragment.showRecipientNotFoundError$lambda$9(WalletSendFragment.this);
@@ -481,7 +481,7 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
 
     @Override // com.iMe.p030ui.wallet.send.WalletSendView
     public void showRecipientWalletNotActivatedError() {
-        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3634R.string.wallet_amount_error_invalid_user_title), getResourceManager().getString(C3634R.string.wallet_amount_error_user_wallet_not_activated_description), getResourceManager().getString(C3634R.string.wallet_amount_error_invalid_user_btn_txt), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.send.WalletSendFragment$$ExternalSyntheticLambda7
+        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3632R.string.wallet_amount_error_invalid_user_title), getResourceManager().getString(C3632R.string.wallet_amount_error_user_wallet_not_activated_description), getResourceManager().getString(C3632R.string.wallet_amount_error_invalid_user_btn_txt), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.send.WalletSendFragment$$ExternalSyntheticLambda7
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletSendFragment.showRecipientWalletNotActivatedError$lambda$10(WalletSendFragment.this);
@@ -503,7 +503,7 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
         ref$BooleanRef.element = true;
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        showDialog(DialogUtils.createCheckBoxAlert$default(parentActivity, model, getResourceManager().getString(C3634R.string.wallet_amount_send_message_checkbox_title), z, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.send.WalletSendFragment$$ExternalSyntheticLambda2
+        showDialog(DialogUtils.createCheckBoxAlert$default(parentActivity, model, getResourceManager().getString(C3632R.string.wallet_amount_send_message_checkbox_title), z, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.send.WalletSendFragment$$ExternalSyntheticLambda2
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
                 WalletSendFragment.onSuccessValidation$lambda$11(Ref$BooleanRef.this, (Boolean) obj);
@@ -545,7 +545,7 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
     public void resetScreen() {
         ForkFragmentWalletSendBinding binding = getBinding();
         LinkActionView inputView = binding.inputRecipient.getInputView();
-        inputView.setEditHint(getResourceManager().getString(C3634R.string.wallet_amount_send_enter_address_hint));
+        inputView.setEditHint(getResourceManager().getString(C3632R.string.wallet_amount_send_enter_address_hint));
         inputView.resetField();
         setupRecipientInputErrorState(false);
         binding.inputToken.getInputView().resetField();
@@ -592,14 +592,14 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
         TransactionActionButtonsView transactionActionButtonsView = getBinding().buttonSend;
         int i = WhenMappings.$EnumSwitchMapping$1[state.ordinal()];
         if (i == 1) {
-            transactionActionButtonsView.setActionButtonText(getResourceManager().getString(C3634R.string.wallet_amount_button_txt));
+            transactionActionButtonsView.setActionButtonText(getResourceManager().getString(C3632R.string.wallet_amount_button_txt));
             transactionActionButtonsView.setActionButtonEnabled(false);
         } else if (i == 2) {
-            transactionActionButtonsView.setActionButtonText(getResourceManager().getString(C3634R.string.common_progress_state_title));
+            transactionActionButtonsView.setActionButtonText(getResourceManager().getString(C3632R.string.common_progress_state_title));
             transactionActionButtonsView.setActionButtonEnabled(false);
         } else if (i != 3) {
         } else {
-            transactionActionButtonsView.setActionButtonText(getResourceManager().getString(C3634R.string.wallet_amount_button_txt));
+            transactionActionButtonsView.setActionButtonText(getResourceManager().getString(C3632R.string.wallet_amount_button_txt));
             transactionActionButtonsView.setActionButtonEnabled(true);
         }
     }
@@ -614,21 +614,21 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
     public void setupRecipientInputErrorState(boolean z) {
         TitledInputFieldView titledInputFieldView = getBinding().inputRecipient;
         Intrinsics.checkNotNullExpressionValue(titledInputFieldView, "binding.inputRecipient");
-        setErrorStateTitledInputFieldView$default(this, titledInputFieldView, getResourceManager().getString(C3634R.string.wallet_amount_send_error_incorrect_address), z, null, 8, null);
+        setErrorStateTitledInputFieldView$default(this, titledInputFieldView, getResourceManager().getString(C3632R.string.wallet_amount_send_error_incorrect_address), z, null, 8, null);
     }
 
     @Override // com.iMe.p030ui.wallet.send.WalletSendView
     public void setupTokenInputErrorState(boolean z) {
         TitledInputFieldView titledInputFieldView = getBinding().inputToken;
         Intrinsics.checkNotNullExpressionValue(titledInputFieldView, "binding.inputToken");
-        setErrorStateTitledInputFieldView$default(this, titledInputFieldView, getResourceManager().getString(C3634R.string.wallet_amount_send_error_unsupported_token), z, null, 8, null);
+        setErrorStateTitledInputFieldView$default(this, titledInputFieldView, getResourceManager().getString(C3632R.string.wallet_amount_send_error_unsupported_token), z, null, 8, null);
     }
 
     @Override // com.iMe.p030ui.wallet.send.WalletSendView
     public void setupAmountInputErrorState(boolean z, String str) {
         TitledInputFieldView titledInputFieldView = getBinding().inputAmount;
         Intrinsics.checkNotNullExpressionValue(titledInputFieldView, "binding.inputAmount");
-        String string = getResourceManager().getString(C3634R.string.wallet_amount_send_error_insufficient_funds);
+        String string = getResourceManager().getString(C3632R.string.wallet_amount_send_error_insufficient_funds);
         if (str == null) {
             str = "";
         }
@@ -688,7 +688,7 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
     private final void showBalance(String str, String str2) {
         ForkFragmentWalletSendBinding binding = getBinding();
         TextView showBalance$lambda$23$lambda$21 = binding.textTokenBalance;
-        showBalance$lambda$23$lambda$21.setText(AndroidUtilities.replaceTags(getResourceManager().getString(C3634R.string.wallet_swap_process_my_balance, str)));
+        showBalance$lambda$23$lambda$21.setText(AndroidUtilities.replaceTags(getResourceManager().getString(C3632R.string.wallet_swap_process_my_balance, str)));
         Intrinsics.checkNotNullExpressionValue(showBalance$lambda$23$lambda$21, "showBalance$lambda$23$lambda$21");
         showBalance$lambda$23$lambda$21.setVisibility(0);
         TextView showBalance$lambda$23$lambda$22 = binding.textTokenBalanceInDollars;
@@ -776,11 +776,11 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_user_id_dialog_transfer_action));
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.send.WalletSendFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.wallet_user_id_dialog_transfer_action));
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.send.WalletSendFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSendFragment.this.finishFragment();
@@ -794,19 +794,19 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
         ForkFragmentWalletSendBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageHeader;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3634R.raw.fork_crypto_transfers, 96, 96);
+        rLottieImageView.setAnimation(C3632R.raw.fork_crypto_transfers, 96, 96);
         rLottieImageView.playAnimation();
         TextView textView = binding.textHeader;
         ResourceManager resourceManager = getResourceManager();
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.screenType.ordinal()];
         if (i2 == 1) {
-            i = C3634R.string.wallet_banner_slide_crypto_transfers_long_description;
+            i = C3632R.string.wallet_banner_slide_crypto_transfers_long_description;
         } else if (i2 == 2) {
-            i = C3634R.string.binance_replenish_token_description;
+            i = C3632R.string.binance_replenish_token_description;
         } else if (i2 != 3) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3634R.string.channel_donations_description;
+            i = C3632R.string.channel_donations_description;
         }
         textView.setText(resourceManager.getString(i));
         WalletSendScreenType walletSendScreenType = this.screenType;
@@ -816,11 +816,11 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
             Intrinsics.checkNotNullExpressionValue(choiceAddressButtons, "choiceAddressButtons");
             ViewExtKt.gone$default(choiceAddressButtons, false, 1, null);
         }
-        String string = getResourceManager().getString(this.isBinanceTokenReplenish ? C3634R.string.common_progress_state_title : C3634R.string.wallet_amount_send_enter_address_hint);
+        String string = getResourceManager().getString(this.isBinanceTokenReplenish ? C3632R.string.common_progress_state_title : C3632R.string.wallet_amount_send_enter_address_hint);
         TitledInputFieldView titledInputFieldView = binding.inputRecipient;
         titledInputFieldView.setCustomView(new TextView(titledInputFieldView.getContext()));
         Intrinsics.checkNotNullExpressionValue(titledInputFieldView, "this");
-        String string2 = getResourceManager().getString(C3634R.string.wallet_binance_receive_choose_contact_hint);
+        String string2 = getResourceManager().getString(C3632R.string.wallet_binance_receive_choose_contact_hint);
         boolean z = this.screenType != walletSendScreenType2;
         titledInputFieldView.setTitle(string2);
         final LinkActionView inputView = titledInputFieldView.getInputView();
@@ -873,7 +873,7 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
                     Intrinsics.checkNotNullParameter(it, "it");
                     WalletSendFragment walletSendFragment = WalletSendFragment.this;
                     resourceManager2 = walletSendFragment.getResourceManager();
-                    walletSendFragment.showAlertError(resourceManager2.getString(C3634R.string.binance_replenish_custom_address_unsupported));
+                    walletSendFragment.showAlertError(resourceManager2.getString(C3632R.string.binance_replenish_custom_address_unsupported));
                 }
             }, 1, null);
         }
@@ -883,8 +883,8 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
         TitledInputFieldView titledInputFieldView2 = binding.inputToken;
         titledInputFieldView2.setCustomView(new TextView(titledInputFieldView2.getContext()));
         Intrinsics.checkNotNullExpressionValue(titledInputFieldView2, "this");
-        String string3 = getResourceManager().getString(C3634R.string.wallet_binance_receive_select_token_hint);
-        String string4 = getResourceManager().getString(C3634R.string.wallet_binance_receive_select_token_title);
+        String string3 = getResourceManager().getString(C3632R.string.wallet_binance_receive_select_token_hint);
+        String string4 = getResourceManager().getString(C3632R.string.wallet_binance_receive_select_token_title);
         titledInputFieldView2.setTitle(string3);
         LinkActionView inputView2 = titledInputFieldView2.getInputView();
         inputView2.setGravity(16);
@@ -901,8 +901,8 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
         titledInputFieldView2.setupInputLayoutParams(-1, i3);
         TitledInputFieldView inputComment = binding.inputComment;
         Intrinsics.checkNotNullExpressionValue(inputComment, "inputComment");
-        String string5 = getResourceManager().getString(C3634R.string.wallet_transfer_comment_title);
-        String string6 = getResourceManager().getString(C3634R.string.wallet_transfer_comment_hint);
+        String string5 = getResourceManager().getString(C3632R.string.wallet_transfer_comment_title);
+        String string6 = getResourceManager().getString(C3632R.string.wallet_transfer_comment_hint);
         inputComment.setTitle(string5);
         LinkActionView inputView3 = inputComment.getInputView();
         inputView3.setGravity(16);
@@ -931,8 +931,8 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
         TitledInputFieldView titledInputFieldView3 = binding.inputAmount;
         titledInputFieldView3.setCustomView(new TextView(titledInputFieldView3.getContext()));
         Intrinsics.checkNotNullExpressionValue(titledInputFieldView3, "this");
-        String string7 = getResourceManager().getString(C3634R.string.wallet_crypto_buy_amount_title);
-        String string8 = getResourceManager().getString(C3634R.string.wallet_binance_receive_amount_title);
+        String string7 = getResourceManager().getString(C3632R.string.wallet_crypto_buy_amount_title);
+        String string8 = getResourceManager().getString(C3632R.string.wallet_binance_receive_amount_title);
         titledInputFieldView3.setTitle(string7);
         LinkActionView inputView4 = titledInputFieldView3.getInputView();
         inputView4.setGravity(16);
@@ -978,7 +978,7 @@ public final class WalletSendFragment extends WalletAuthBaseFragment implements 
         titledInputFieldView3.setupInputLayoutParams(-1, i3);
         TransactionActionButtonsView buttonSend = binding.buttonSend;
         Intrinsics.checkNotNullExpressionValue(buttonSend, "buttonSend");
-        buttonSend.setupViewData(getResourceManager().getString(C3634R.string.wallet_amount_button_txt), (r14 & 2) != 0, (r14 & 4) != 0 ? false : false, (r14 & 8) == 0 ? false : false, (r14 & 16) != 0 ? new Callbacks$Callback() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$$ExternalSyntheticLambda1
+        buttonSend.setupViewData(getResourceManager().getString(C3632R.string.wallet_amount_button_txt), (r14 & 2) != 0, (r14 & 4) != 0 ? false : false, (r14 & 8) == 0 ? false : false, (r14 & 16) != 0 ? new Callbacks$Callback() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 TransactionActionButtonsView.setupViewData$lambda$0();

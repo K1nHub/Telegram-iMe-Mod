@@ -181,7 +181,7 @@
     goto :goto_4
 
     :pswitch_4
-    const-string v8, "isSameClassifier"
+    const-string/jumbo v8, "isSameClassifier"
 
     aput-object v8, v7, v4
 
@@ -228,8 +228,6 @@
 
     :goto_5
     throw p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

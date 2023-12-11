@@ -15,7 +15,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: WalletRootPresenter.kt */
 @InjectViewState
@@ -34,7 +34,7 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
         this.cryptoAccessManager = cryptoAccessManager;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.rxEventBus = rxEventBus;
-        this.selectedTabId = C3634R.C3637id.wallet_root_bottom_navigation_home;
+        this.selectedTabId = C3632R.C3635id.wallet_root_bottom_navigation_home;
     }
 
     public final void selectTab(int i) {
@@ -48,11 +48,11 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
         listenEvents();
-        selectTab(C3634R.C3637id.wallet_root_bottom_navigation_home);
+        selectTab(C3632R.C3635id.wallet_root_bottom_navigation_home);
     }
 
     private final boolean isDefaultTabSelected() {
-        return this.selectedTabId == C3634R.C3637id.wallet_root_bottom_navigation_home;
+        return this.selectedTabId == C3632R.C3635id.wallet_root_bottom_navigation_home;
     }
 
     private final void listenEvents() {
@@ -66,12 +66,12 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1619invoke(rxEvent);
+                m1620invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1619invoke(RxEvent it) {
+            public final void m1620invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (Intrinsics.areEqual(rxEvent, DomainRxEvents.AllWalletsReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletCreated.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletRestored.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.SuccessSaveBackup.INSTANCE)) {
@@ -79,7 +79,7 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
                     return;
                 }
                 if (Intrinsics.areEqual(rxEvent, AppRxEvents.BinanceOpenAuthScreen.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.SelectWalletCryptoTab.INSTANCE)) {
-                    WalletRootPresenter.this.selectTab(C3634R.C3637id.wallet_root_bottom_navigation_home);
+                    WalletRootPresenter.this.selectTab(C3632R.C3635id.wallet_root_bottom_navigation_home);
                 } else if (Intrinsics.areEqual(rxEvent, DomainRxEvents.NetworkUpdated.INSTANCE)) {
                     WalletRootPresenter.this.updateWalletConnectItemVisibility();
                 }

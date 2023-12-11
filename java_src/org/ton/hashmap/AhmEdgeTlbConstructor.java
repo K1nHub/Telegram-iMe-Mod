@@ -13,13 +13,13 @@ import org.ton.tlb.TlbNegatedResult;
 public final class AhmEdgeTlbConstructor<X, Y> extends TlbConstructor<HashmapAug.AhmEdge<X, Y>> {
 
     /* renamed from: n */
-    private final int f2067n;
+    private final int f2068n;
 
     /* renamed from: x */
-    private final TlbCodec<X> f2068x;
+    private final TlbCodec<X> f2069x;
 
     /* renamed from: y */
-    private final TlbCodec<Y> f2069y;
+    private final TlbCodec<Y> f2070y;
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
     public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
@@ -31,28 +31,28 @@ public final class AhmEdgeTlbConstructor<X, Y> extends TlbConstructor<HashmapAug
         super("ahm_edge#_ {n:#} {X:Type} {Y:Type} {l:#} {m:#} label:(HmLabel ~l n) {n = (~m) + l} node:(HashmapAugNode m X Y) = HashmapAug n X Y", null, 2, null);
         Intrinsics.checkNotNullParameter(x, "x");
         Intrinsics.checkNotNullParameter(y, "y");
-        this.f2067n = i;
-        this.f2068x = x;
-        this.f2069y = y;
+        this.f2068n = i;
+        this.f2069x = x;
+        this.f2070y = y;
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public HashmapAug.AhmEdge<X, Y> loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        TlbNegatedResult<HmLabel> loadNegatedTlb = HmLabel.Companion.tlbCodec(this.f2067n).loadNegatedTlb(cellSlice);
-        int component1 = this.f2067n - loadNegatedTlb.component1();
-        return HashmapAug.Companion.edge(this.f2067n, loadNegatedTlb.component2(), HashmapAugNode.Companion.tlbCodec(this.f2068x, this.f2069y, component1).loadTlb(cellSlice));
+        TlbNegatedResult<HmLabel> loadNegatedTlb = HmLabel.Companion.tlbCodec(this.f2068n).loadNegatedTlb(cellSlice);
+        int component1 = this.f2068n - loadNegatedTlb.component1();
+        return HashmapAug.Companion.edge(this.f2068n, loadNegatedTlb.component2(), HashmapAugNode.Companion.tlbCodec(this.f2069x, this.f2070y, component1).loadTlb(cellSlice));
     }
 
     public void storeTlb(CellBuilder cellBuilder, HashmapAug.AhmEdge<X, Y> value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         int n = value.getN();
-        int i = this.f2067n;
+        int i = this.f2068n;
         if (n == i) {
-            HashmapAugNode.Companion.tlbCodec(this.f2068x, this.f2069y, this.f2067n - HmLabel.Companion.tlbCodec(i).storeNegatedTlb(cellBuilder, value.getLabel())).storeTlb(cellBuilder, value.getNode());
+            HashmapAugNode.Companion.tlbCodec(this.f2069x, this.f2070y, this.f2068n - HmLabel.Companion.tlbCodec(i).storeNegatedTlb(cellBuilder, value.getLabel())).storeTlb(cellBuilder, value.getNode());
             return;
         }
-        throw new IllegalStateException(("Invalid n, expected: " + this.f2067n + ", actual: " + value.getN()).toString());
+        throw new IllegalStateException(("Invalid n, expected: " + this.f2068n + ", actual: " + value.getN()).toString());
     }
 }

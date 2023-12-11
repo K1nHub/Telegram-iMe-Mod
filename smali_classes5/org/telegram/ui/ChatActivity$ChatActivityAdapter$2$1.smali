@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;Lorg/telegram/ui/Cells/ChatActionCell;)V
     .locals 0
 
-    .line 32424
+    .line 32434
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2$1;->val$cell:Lorg/telegram/ui/Cells/ChatActionCell;
@@ -45,7 +45,7 @@
 .method private synthetic lambda$end$0(Lorg/telegram/ui/Cells/ChatActionCell;)V
     .locals 2
 
-    .line 32438
+    .line 32448
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;
@@ -54,7 +54,7 @@
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48500(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 32439
+    .line 32449
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatActionCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v0
@@ -63,7 +63,7 @@
 
     iput-boolean v1, v0, Lorg/telegram/messenger/MessageObject;->flickerLoading:Z
 
-    .line 32440
+    .line 32450
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatActionCell;->invalidate()V
 
     return-void
@@ -76,7 +76,7 @@
 
     if-nez p1, :cond_0
 
-    .line 32437
+    .line 32447
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2$1;->val$cell:Lorg/telegram/ui/Cells/ChatActionCell;
 
     new-instance v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2$1$$ExternalSyntheticLambda0;
@@ -94,7 +94,7 @@
 .method public init()V
     .locals 2
 
-    .line 32427
+    .line 32437
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;
@@ -113,7 +113,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48202(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 32428
+    .line 32438
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;
@@ -124,7 +124,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48302(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 32429
+    .line 32439
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2$1;->this$2:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;
@@ -135,7 +135,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48402(Lorg/telegram/ui/ChatActivity;Landroid/text/style/CharacterStyle;)Landroid/text/style/CharacterStyle;
 
-    .line 32430
+    .line 32440
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2$1;->val$cell:Lorg/telegram/ui/Cells/ChatActionCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatActionCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
@@ -146,7 +146,7 @@
 
     iput-boolean v1, v0, Lorg/telegram/messenger/MessageObject;->flickerLoading:Z
 
-    .line 32431
+    .line 32441
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter$2$1;->val$cell:Lorg/telegram/ui/Cells/ChatActionCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatActionCell;->invalidate()V

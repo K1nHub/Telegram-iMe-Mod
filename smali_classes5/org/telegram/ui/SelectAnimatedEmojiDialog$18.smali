@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 1018
+    .line 1019
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$18;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;Z)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 1021
+    .line 1022
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$18;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$3500(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$BackgroundDelegate;
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1022
+    .line 1023
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$18;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$3500(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$BackgroundDelegate;
@@ -103,7 +103,7 @@
 
     invoke-interface/range {v1 .. v8}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$BackgroundDelegate;->drawRect(Landroid/graphics/Canvas;IIIIFF)V
 
-    .line 1024
+    .line 1025
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -113,7 +113,7 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 1029
+    .line 1030
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result v0
@@ -122,10 +122,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1030
+    .line 1031
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1031
+    .line 1032
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$18;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$3500(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$BackgroundDelegate;
@@ -134,7 +134,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1032
+    .line 1033
     invoke-virtual {p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->invalidate()V
 
     :cond_0

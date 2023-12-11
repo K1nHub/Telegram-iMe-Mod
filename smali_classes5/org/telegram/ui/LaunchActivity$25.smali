@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;I)V
     .locals 0
 
-    .line 8348
+    .line 8381
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iput p2, p0, Lorg/telegram/ui/LaunchActivity$25;->val$toColor:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 8351
+    .line 8384
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$25;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iget v0, p0, Lorg/telegram/ui/LaunchActivity$25;->val$toColor:I

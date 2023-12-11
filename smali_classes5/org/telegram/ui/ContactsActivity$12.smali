@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;Landroid/widget/EditText;)V
     .locals 0
 
-    .line 1332
+    .line 1333
     iput-object p2, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,20 +40,20 @@
 
     const-string v0, ""
 
-    .line 1346
+    .line 1347
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1347
+    .line 1348
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 1348
+    .line 1349
     invoke-static {p1}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
     move-result-object v1
@@ -64,14 +64,14 @@
 
     if-gez v1, :cond_0
 
-    .line 1350
+    .line 1351
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
     const-string v0, "0"
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1351
+    .line 1352
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->length()I
@@ -87,14 +87,14 @@
 
     if-le v1, v2, :cond_1
 
-    .line 1353
+    .line 1354
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
     const-string v0, "300"
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1354
+    .line 1355
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->length()I
@@ -105,7 +105,7 @@
 
     goto :goto_0
 
-    .line 1355
+    .line 1356
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -125,7 +125,7 @@
 
     if-nez p1, :cond_2
 
-    .line 1356
+    .line 1357
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -142,7 +142,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1357
+    .line 1358
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$12;->val$editTextFinal:Landroid/widget/EditText;
 
     invoke-virtual {p1}, Landroid/widget/EditText;->length()I
@@ -158,7 +158,7 @@
     :catch_0
     move-exception p1
 
-    .line 1361
+    .line 1362
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2

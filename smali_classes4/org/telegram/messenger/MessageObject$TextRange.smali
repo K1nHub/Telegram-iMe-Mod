@@ -30,13 +30,13 @@
 .method public constructor <init>(II)V
     .locals 0
 
-    .line 9370
+    .line 9599
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 9371
+    .line 9600
     iput p1, p0, Lorg/telegram/messenger/MessageObject$TextRange;->start:I
 
-    .line 9372
+    .line 9601
     iput p2, p0, Lorg/telegram/messenger/MessageObject$TextRange;->end:I
 
     return-void
@@ -45,22 +45,22 @@
 .method public constructor <init>(IIZZLjava/lang/String;)V
     .locals 0
 
-    .line 9374
+    .line 9603
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 9375
+    .line 9604
     iput p1, p0, Lorg/telegram/messenger/MessageObject$TextRange;->start:I
 
-    .line 9376
+    .line 9605
     iput p2, p0, Lorg/telegram/messenger/MessageObject$TextRange;->end:I
 
-    .line 9377
+    .line 9606
     iput-boolean p3, p0, Lorg/telegram/messenger/MessageObject$TextRange;->quote:Z
 
-    .line 9378
+    .line 9607
     iput-boolean p4, p0, Lorg/telegram/messenger/MessageObject$TextRange;->code:Z
 
-    .line 9379
+    .line 9608
     iput-object p5, p0, Lorg/telegram/messenger/MessageObject$TextRange;->language:Ljava/lang/String;
 
     return-void

@@ -105,7 +105,7 @@ public class DraftsController {
             if (r4 == 0) goto L31
             org.telegram.ui.Stories.recorder.DraftsController$StoryDraft r5 = new org.telegram.ui.Stories.recorder.DraftsController$StoryDraft     // Catch: java.lang.Exception -> L4d java.lang.Throwable -> L55
             r5.<init>(r4, r3)     // Catch: java.lang.Exception -> L4d java.lang.Throwable -> L55
-            r5.f1986id = r6     // Catch: java.lang.Exception -> L4d java.lang.Throwable -> L55
+            r5.f1987id = r6     // Catch: java.lang.Exception -> L4d java.lang.Throwable -> L55
             r0.add(r5)     // Catch: java.lang.Exception -> L4d java.lang.Throwable -> L55
             goto L51
         L4d:
@@ -300,7 +300,7 @@ public class DraftsController {
             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyDraft.getObjectSize());
             storyDraft.toStream(nativeByteBuffer);
             int i = 1;
-            sQLitePreparedStatement.bindLong(1, storyDraft.f1986id);
+            sQLitePreparedStatement.bindLong(1, storyDraft.f1987id);
             sQLitePreparedStatement.bindLong(2, storyDraft.date);
             sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer);
             if (!storyDraft.isEdit) {
@@ -384,7 +384,7 @@ public class DraftsController {
         final MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         StringBuilder sb2 = new StringBuilder();
         sb2.append("StoryDraft append ");
-        sb2.append(storyDraft.f1986id);
+        sb2.append(storyDraft.f1987id);
         sb2.append(" (edit=");
         sb2.append(storyDraft.isEdit);
         if (storyDraft.isEdit) {
@@ -444,7 +444,7 @@ public class DraftsController {
             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(storyDraft.getObjectSize());
             storyDraft.toStream(nativeByteBuffer);
             int i = 1;
-            sQLitePreparedStatement.bindLong(1, storyDraft.f1986id);
+            sQLitePreparedStatement.bindLong(1, storyDraft.f1987id);
             sQLitePreparedStatement.bindLong(2, storyDraft.date);
             sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer);
             if (!storyDraft.isEdit) {
@@ -645,7 +645,7 @@ public class DraftsController {
         public int height;
 
         /* renamed from: id */
-        public long f1986id;
+        public long f1987id;
         public int invert;
         public boolean isEdit;
         public boolean isError;
@@ -677,7 +677,7 @@ public class DraftsController {
             this.parts = arrayList2;
             this.audioRight = 1.0f;
             this.audioVolume = 1.0f;
-            this.f1986id = storyEntry.draftId;
+            this.f1987id = storyEntry.draftId;
             this.date = storyEntry.draftDate;
             File file = storyEntry.draftThumbFile;
             this.thumb = file == null ? "" : file.toString();
@@ -734,7 +734,7 @@ public class DraftsController {
 
         public StoryEntry toEntry() {
             StoryEntry storyEntry = new StoryEntry();
-            storyEntry.draftId = this.f1986id;
+            storyEntry.draftId = this.f1987id;
             storyEntry.isDraft = true;
             storyEntry.draftDate = this.date;
             if (!TextUtils.isEmpty(this.thumb)) {
@@ -768,7 +768,11 @@ public class DraftsController {
             storyEntry.gradientTopColor = this.gradientTopColor;
             storyEntry.gradientBottomColor = this.gradientBottomColor;
             if (this.caption != null) {
-                CharSequence replaceEmoji = Emoji.replaceEmoji(new SpannableString(this.caption), Theme.chat_msgTextPaint.getFontMetricsInt(), true);
+                SpannableString spannableString = new SpannableString(this.caption);
+                if (Theme.chat_msgTextPaint == null) {
+                    Theme.createCommonMessageResources();
+                }
+                CharSequence replaceEmoji = Emoji.replaceEmoji(spannableString, Theme.chat_msgTextPaint.getFontMetricsInt(), true);
                 MessageObject.addEntitiesToText(replaceEmoji, this.captionEntities, true, false, true, false);
                 storyEntry.caption = replaceEmoji;
             } else {
@@ -794,7 +798,7 @@ public class DraftsController {
             storyEntry.parts.addAll(this.parts);
             storyEntry.partsMaxId = 0;
             for (int i = 0; i < this.parts.size(); i++) {
-                storyEntry.partsMaxId = Math.max(storyEntry.partsMaxId, this.parts.get(i).f1992id);
+                storyEntry.partsMaxId = Math.max(storyEntry.partsMaxId, this.parts.get(i).f1993id);
             }
             storyEntry.isEdit = this.isEdit;
             storyEntry.editStoryId = this.editStoryId;

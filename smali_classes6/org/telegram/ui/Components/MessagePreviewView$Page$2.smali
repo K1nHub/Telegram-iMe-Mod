@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView$Page;Landroid/content/Context;Lorg/telegram/ui/Components/MessagePreviewView;)V
     .locals 0
 
-    .line 333
+    .line 346
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$2;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 342
+    .line 355
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -54,7 +54,7 @@
 
     return p1
 
-    .line 345
+    .line 358
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -66,7 +66,7 @@
 .method protected getNewDrawable()Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 336
+    .line 349
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$2;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView$Page;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
@@ -101,7 +101,7 @@
 
     goto :goto_1
 
-    .line 337
+    .line 350
     :cond_1
     invoke-super {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->getNewDrawable()Landroid/graphics/drawable/Drawable;
 

@@ -2,7 +2,7 @@ package org.telegram.p043ui.Components.Premium.boosts.cells;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserObject;
@@ -46,27 +46,27 @@ public class BoostTypeCell extends BaseCell {
     public void setType(int i, int i2, TLRPC$User tLRPC$User, boolean z) {
         this.selectedType = i;
         if (i == TYPE_GIVEAWAY) {
-            this.titleTextView.setText(LocaleController.formatString("BoostingCreateGiveaway", C3634R.string.BoostingCreateGiveaway, new Object[0]));
-            setSubtitle(LocaleController.formatString("BoostingWinnersRandomly", C3634R.string.BoostingWinnersRandomly, new Object[0]));
+            this.titleTextView.setText(LocaleController.formatString("BoostingCreateGiveaway", C3632R.string.BoostingCreateGiveaway, new Object[0]));
+            setSubtitle(LocaleController.formatString("BoostingWinnersRandomly", C3632R.string.BoostingWinnersRandomly, new Object[0]));
             this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3, this.resourcesProvider));
             this.avatarDrawable.setAvatarType(16);
             this.avatarDrawable.setColor(-15292942, -15630089);
             setDivider(true);
-            setBackground(Theme.getThemedDrawableByKey(getContext(), C3634R.C3636drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+            setBackground(Theme.getThemedDrawableByKey(getContext(), C3632R.C3634drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
         } else if (i == TYPE_SPECIFIC_USERS) {
-            this.titleTextView.setText(LocaleController.formatString("BoostingAwardSpecificUsers", C3634R.string.BoostingAwardSpecificUsers, new Object[0]));
+            this.titleTextView.setText(LocaleController.formatString("BoostingAwardSpecificUsers", C3632R.string.BoostingAwardSpecificUsers, new Object[0]));
             if (i2 == 1 && tLRPC$User != null) {
                 setSubtitle(withArrow(Emoji.replaceEmoji(UserObject.getUserName(tLRPC$User), this.subtitleTextView.getPaint().getFontMetricsInt(), false)));
             } else if (i2 > 0) {
                 setSubtitle(withArrow(LocaleController.formatPluralString("Recipient", i2, new Object[0])));
             } else {
-                setSubtitle(withArrow(LocaleController.getString("BoostingSelectRecipients", C3634R.string.BoostingSelectRecipients)));
+                setSubtitle(withArrow(LocaleController.getString("BoostingSelectRecipients", C3632R.string.BoostingSelectRecipients)));
             }
             this.subtitleTextView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2, this.resourcesProvider));
             this.avatarDrawable.setAvatarType(6);
             this.avatarDrawable.setColor(-3905294, -6923014);
             setDivider(false);
-            setBackground(Theme.getThemedDrawableByKey(getContext(), C3634R.C3636drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
+            setBackground(Theme.getThemedDrawableByKey(getContext(), C3632R.C3634drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
         }
         this.radioButton.setChecked(z, false);
         this.imageView.setImageDrawable(this.avatarDrawable);

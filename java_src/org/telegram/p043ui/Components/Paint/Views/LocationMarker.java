@@ -17,7 +17,7 @@ import android.text.TextUtils;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
@@ -73,7 +73,7 @@ public class LocationMarker extends View {
         imageReceiver.setCrossfadeWithOldImage(true);
         this.padx = (int) (3.0f * f);
         this.pady = (int) (1.0f * f);
-        this.icon = context.getResources().getDrawable(C3634R.C3636drawable.map_pin3).mutate();
+        this.icon = context.getResources().getDrawable(C3632R.C3634drawable.map_pin3).mutate();
         textPaint.setTextSize(f * 24.0f);
         textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
     }

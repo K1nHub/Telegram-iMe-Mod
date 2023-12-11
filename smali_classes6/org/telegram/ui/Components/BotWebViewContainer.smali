@@ -48,7 +48,7 @@
 
 .field private dialogSequentialOpenTimes:I
 
-.field private flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
+.field private final flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
 .field private flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -376,37 +376,37 @@
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
     .line 112
-    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
-    move-result v0
+    move-result v1
 
-    iput v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonColor:I
+    iput v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonColor:I
 
     .line 113
-    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
-    move-result v0
+    move-result v1
 
-    iput v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonTextColor:I
+    iput v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonTextColor:I
 
-    const-string v0, ""
+    const-string v1, ""
 
     .line 114
-    iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonText:Ljava/lang/String;
+    iput-object v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonText:Ljava/lang/String;
 
-    const/4 v0, -0x1
+    const/4 v1, -0x1
 
     .line 1628
-    iput v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastDialogType:I
+    iput v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastDialogType:I
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 1629
-    iput v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->shownDialogsCount:I
+    iput v2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->shownDialogsCount:I
 
     .line 147
     iput-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -425,16 +425,14 @@
 
     .line 153
     :cond_0
-    iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
+    iput-boolean v2, v0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->drawFrame:Z
 
-    iput-boolean v1, p2, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->drawFrame:Z
-
-    const/16 v2, 0x99
+    const/16 p2, 0x99
 
     const/16 v3, 0xcc
 
     .line 154
-    invoke-virtual {p2, p3, v2, v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setColors(III)V
+    invoke-virtual {v0, p3, p2, v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setColors(III)V
 
     .line 155
     new-instance p2, Lorg/telegram/ui/Components/BotWebViewContainer$1;
@@ -446,15 +444,15 @@
     .line 185
     new-instance p3, Landroid/graphics/PorterDuffColorFilter;
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchHint:I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchHint:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
-    move-result v2
+    move-result v0
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {p3, v2, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {p3, v0, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
     invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/BackupImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
@@ -472,15 +470,15 @@
     .line 187
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
-    const/16 v2, 0x30
+    const/16 v0, 0x30
 
     const/4 v3, -0x2
 
-    invoke-static {v0, v3, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v1, v3, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {p0, p2, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 189
     new-instance p2, Landroid/widget/TextView;
@@ -545,14 +543,14 @@
     .line 197
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailableText:Landroid/widget/TextView;
 
-    invoke-static {v0, v3, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v1, v3, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 199
-    invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setFocusable(Z)V
+    invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     return-void
 .end method

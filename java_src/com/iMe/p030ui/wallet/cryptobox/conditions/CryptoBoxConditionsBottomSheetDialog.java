@@ -39,7 +39,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkContentCryptoboxConditionsBinding;
@@ -169,13 +169,13 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
         Intrinsics.checkNotNullParameter(explorer, "explorer");
         ForkContentCryptoboxConditionsBinding binding = getBinding();
         binding.viewHeader.setupViewData(new ImageHeaderView.IconData.RemoteImage(tokenLogoUrl), networkIconUrl, name, description);
-        binding.viewRewardPerUserCell.setupViewData(getResourceManager().getString(C3634R.string.cryptobox_conditions_reward_per_user), rewardPerUserText, C3634R.C3636drawable.fork_ic_cryptobox, true);
-        binding.viewMembersCell.setupViewData(getResourceManager().getString(C3634R.string.cryptobox_details_members), membersText, C3634R.C3636drawable.msg_groups, true);
-        binding.viewBalanceCell.setupViewData(getResourceManager().getString(C3634R.string.cryptobox_details_balance), balanceText, C3634R.C3636drawable.fork_ic_donations_24, true);
+        binding.viewRewardPerUserCell.setupViewData(getResourceManager().getString(C3632R.string.cryptobox_conditions_reward_per_user), rewardPerUserText, C3632R.C3634drawable.fork_ic_cryptobox, true);
+        binding.viewMembersCell.setupViewData(getResourceManager().getString(C3632R.string.cryptobox_details_members), membersText, C3632R.C3634drawable.msg_groups, true);
+        binding.viewBalanceCell.setupViewData(getResourceManager().getString(C3632R.string.cryptobox_details_balance), balanceText, C3632R.C3634drawable.fork_ic_donations_24, true);
         DetailsIconCellView viewStartDateCell = binding.viewStartDateCell;
         Intrinsics.checkNotNullExpressionValue(viewStartDateCell, "viewStartDateCell");
-        DetailsIconCellView.setupViewData$default(viewStartDateCell, getResourceManager().getString(C3634R.string.staking_conditions_start), startDate, C3634R.C3636drawable.fork_ic_start, false, 8, null);
-        binding.itemMoreOptions.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3634R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
+        DetailsIconCellView.setupViewData$default(viewStartDateCell, getResourceManager().getString(C3632R.string.staking_conditions_start), startDate, C3632R.C3634drawable.fork_ic_start, false, 8, null);
+        binding.itemMoreOptions.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3632R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
     }
 
     @Override // com.iMe.p030ui.wallet.cryptobox.conditions.CryptoBoxConditionsView
@@ -188,7 +188,7 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
             actionButton.setOverlayColor(num.intValue());
         } else {
             if (Intrinsics.areEqual(buttonType, CryptoBoxActionButtonType.Taken.INSTANCE) ? true : Intrinsics.areEqual(buttonType, CryptoBoxActionButtonType.Finished.INSTANCE) ? true : Intrinsics.areEqual(buttonType, CryptoBoxActionButtonType.Stopped.INSTANCE)) {
-                num = Integer.valueOf(getResourceManager().getColor(C3634R.C3635color.cell_button_green));
+                num = Integer.valueOf(getResourceManager().getColor(C3632R.C3633color.cell_button_green));
                 actionButton.setOverlayColor(num.intValue());
             } else {
                 num = null;
@@ -285,7 +285,7 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
 
     @Override // com.iMe.p030ui.wallet.cryptobox.conditions.CryptoBoxConditionsView
     public void showParticipationSuccess() {
-        DialogsFactoryKt.showSuccessAlert(this.fragment, getResourceManager().getString(C3634R.string.cryptobox_participation_success_title), getResourceManager().getString(C3634R.string.cryptobox_participation_success_description), getResourceManager().getString(C3634R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsBottomSheetDialog$$ExternalSyntheticLambda0
+        DialogsFactoryKt.showSuccessAlert(this.fragment, getResourceManager().getString(C3632R.string.cryptobox_participation_success_title), getResourceManager().getString(C3632R.string.cryptobox_participation_success_description), getResourceManager().getString(C3632R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 CryptoBoxConditionsBottomSheetDialog.this.dismiss();
@@ -303,11 +303,11 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
         final ActionBarMenuItem setupViews$lambda$12$lambda$11 = binding.itemMoreOptions;
         setupViews$lambda$12$lambda$11.setLongClickEnabled(false);
         setupViews$lambda$12$lambda$11.setSubMenuOpenSide(2);
-        setupViews$lambda$12$lambda$11.setIcon(C3634R.C3636drawable.ic_ab_other);
+        setupViews$lambda$12$lambda$11.setIcon(C3632R.C3634drawable.ic_ab_other);
         setupViews$lambda$12$lambda$11.setIconColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayIcon));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$12$lambda$11, "setupViews$lambda$12$lambda$11");
         ViewExtKt.setCircleRippleBackground(setupViews$lambda$12$lambda$11);
-        setupViews$lambda$12$lambda$11.addSubItem(IdFabric$Menu.COPY, C3634R.C3636drawable.msg_copy, getResourceManager().getString(C3634R.string.cryptobox_copy_name));
+        setupViews$lambda$12$lambda$11.addSubItem(IdFabric$Menu.COPY, C3632R.C3634drawable.msg_copy, getResourceManager().getString(C3632R.string.cryptobox_copy_name));
         ViewExtKt.safeThrottledClick$default(setupViews$lambda$12$lambda$11, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsBottomSheetDialog$setupViews$1$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -332,7 +332,7 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
                 CryptoBoxConditionsBottomSheetDialog.setupViews$lambda$12$lambda$11$lambda$10(CryptoBoxConditionsBottomSheetDialog.this, i);
             }
         });
-        setupViews$lambda$12$lambda$11.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+        setupViews$lambda$12$lambda$11.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
     }
 
     public static final void setupViews$lambda$12$lambda$11$lambda$10(CryptoBoxConditionsBottomSheetDialog this$0, int i) {

@@ -248,7 +248,7 @@ public class StoriesViewPager extends ViewPager {
                 L90:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Stories.StoriesViewPager.C71383.onPageScrolled(int, float, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Stories.StoriesViewPager.C71363.onPageScrolled(int, float, int):void");
             }
 
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener

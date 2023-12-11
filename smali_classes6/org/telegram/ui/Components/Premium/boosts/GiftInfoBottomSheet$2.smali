@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 133
+    .line 135
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$afterCodeApplied$0()V
     .locals 7
 
-    .line 142
+    .line 144
     new-instance v6, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
@@ -52,13 +52,13 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$300(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)I
 
     move-result v2
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$500(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v5
 
@@ -72,17 +72,17 @@
 
     const/4 v0, 0x1
 
-    .line 143
+    .line 145
     invoke-virtual {v6, v0}, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;->setAnimateConfetti(Z)Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;
 
     move-result-object v1
 
-    .line 144
+    .line 146
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;->setOutboundGift(Z)Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;
 
     move-result-object v0
 
-    .line 145
+    .line 147
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -99,7 +99,7 @@
 .method protected afterCodeApplied()V
     .locals 3
 
-    .line 141
+    .line 143
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;)V
@@ -114,7 +114,7 @@
 .method protected dismiss()V
     .locals 1
 
-    .line 136
+    .line 138
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
@@ -123,9 +123,57 @@
 .end method
 
 .method protected onHiddenLinkClicked()V
-    .locals 3
+    .locals 4
 
-    .line 167
+    .line 170
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$100(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$100(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
+
+    move-result-object v0
+
+    iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->to_id:J
+
+    const-wide/16 v2, -0x1
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_1
+
+    .line 171
+    sget v0, Lorg/telegram/messenger/R$string;->BoostingOnlyGiveawayCreatorSeeLink:I
+
+    const-string v1, "BoostingOnlyGiveawayCreatorSeeLink"
+
+    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 173
+    :cond_1
     sget v0, Lorg/telegram/messenger/R$string;->BoostingOnlyRecipientCode:I
 
     const-string v1, "BoostingOnlyRecipientCode"
@@ -134,16 +182,17 @@
 
     move-result-object v0
 
-    .line 168
+    .line 175
+    :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$100(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
+    invoke-static {v1}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$200(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     move-result-object v1
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$200(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v2}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$300(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v2
 
@@ -167,15 +216,15 @@
 .method protected onObjectClicked(Lorg/telegram/tgnet/TLObject;)V
     .locals 3
 
-    .line 151
+    .line 153
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->dismiss()V
 
-    .line 152
+    .line 154
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v0, :cond_0
 
-    .line 153
+    .line 155
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -196,13 +245,13 @@
 
     goto :goto_0
 
-    .line 154
+    .line 156
     :cond_0
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_1
 
-    .line 155
+    .line 157
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -221,13 +270,13 @@
 
     goto :goto_0
 
-    .line 157
+    .line 159
     :cond_1
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 158
+    .line 160
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
@@ -246,7 +295,7 @@
 
     invoke-virtual {p1, v2, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 159
+    .line 161
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;)Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
@@ -259,12 +308,12 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 160
+    .line 162
     new-instance v0, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 161
+    .line 163
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/boosts/GiftInfoBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;

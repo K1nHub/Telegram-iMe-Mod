@@ -99,7 +99,7 @@ public class ClassTypeConstructorImpl extends AbstractClassTypeConstructor {
 
     @Override // kotlin.reflect.jvm.internal.impl.types.ClassifierBasedTypeConstructor, kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getDeclarationDescriptor */
-    public ClassDescriptor mo2051getDeclarationDescriptor() {
+    public ClassDescriptor mo2053getDeclarationDescriptor() {
         ClassDescriptor classDescriptor = this.classDescriptor;
         if (classDescriptor == null) {
             $$$reportNull$$$0(5);

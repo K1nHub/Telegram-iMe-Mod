@@ -48,7 +48,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: StakingProgrammesPresenter.kt */
 @InjectViewState
@@ -170,12 +170,12 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingProgrammes> result) {
-                m1820invoke(result);
+                m1822invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1820invoke(Result<? extends StakingProgrammes> it) {
+            public final void m1822invoke(Result<? extends StakingProgrammes> it) {
                 RxEventBus rxEventBus;
                 StakingTabType stakingTabType;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -374,7 +374,7 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
         }
         if (this.items.isEmpty()) {
             List<BaseNode> list2 = this.items;
-            listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new NoChildNode[]{new HeaderItemWithRightButton(this.resourceManager.getString(C3634R.string.staking_programmes_count, Integer.valueOf(i)), C3634R.C3636drawable.fork_ic_sort_28), getFiltersListItem()});
+            listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new NoChildNode[]{new HeaderItemWithRightButton(this.resourceManager.getString(C3632R.string.staking_programmes_count, Integer.valueOf(i)), C3632R.C3634drawable.fork_ic_sort_28), getFiltersListItem()});
             list2.addAll(listOfNotNull);
         }
         this.stakingProgrammes.addAll(list);
@@ -409,7 +409,7 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
     public final void renderGlobalStateItemsList(GlobalState globalState) {
         List listOfNotNull;
         List<BaseNode> mutableList;
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new NoChildNode[]{new HeaderItemWithRightButton(this.resourceManager.getString(C3634R.string.staking_list_header), C3634R.C3636drawable.fork_ic_sort_28), getFiltersListItem(), new GlobalStateItem(globalState)});
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull((Object[]) new NoChildNode[]{new HeaderItemWithRightButton(this.resourceManager.getString(C3632R.string.staking_list_header), C3632R.C3634drawable.fork_ic_sort_28), getFiltersListItem(), new GlobalStateItem(globalState)});
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) listOfNotNull);
         ((StakingProgrammesView) getViewState()).renderItems(mutableList);
     }
@@ -425,12 +425,12 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends AccountLevel> result) {
-                m1819invoke(result);
+                m1821invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1819invoke(Result<? extends AccountLevel> it) {
+            public final void m1821invoke(Result<? extends AccountLevel> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends AccountLevel> result = it;
@@ -490,12 +490,12 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.StakingProgrammesRefresh stakingProgrammesRefresh) {
-                m1818invoke(stakingProgrammesRefresh);
+                m1820invoke(stakingProgrammesRefresh);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1818invoke(DomainRxEvents.StakingProgrammesRefresh it) {
+            public final void m1820invoke(DomainRxEvents.StakingProgrammesRefresh it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 StakingProgrammesPresenter.reload$default(StakingProgrammesPresenter.this, false, 1, null);
             }

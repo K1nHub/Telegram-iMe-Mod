@@ -35,7 +35,7 @@ import org.json.JSONObject;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
@@ -50,7 +50,7 @@ import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ChatActivity;
 import org.telegram.p043ui.Components.BotWebViewContainer;
@@ -179,12 +179,12 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
                 return;
             }
             onCheckDismissByUser();
-        } else if (i == C3634R.C3637id.menu_open_bot) {
+        } else if (i == C3632R.C3635id.menu_open_bot) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", this.botId);
             this.parentAlert.baseFragment.presentFragment(new ChatActivity(bundle));
             this.parentAlert.dismiss();
-        } else if (i == C3634R.C3637id.menu_reload_page) {
+        } else if (i == C3632R.C3635id.menu_reload_page) {
             if (this.webViewContainer.getWebView() != null) {
                 this.webViewContainer.getWebView().animate().cancel();
                 this.webViewContainer.getWebView().animate().alpha(BitmapDescriptorFactory.HUE_RED).start();
@@ -195,7 +195,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
             this.webViewContainer.setBotUser(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.botId)));
             this.webViewContainer.loadFlickerAndSettingsItem(this.currentAccount, this.botId, this.settingsItem);
             this.webViewContainer.reload();
-        } else if (i == C3634R.C3637id.menu_delete_bot) {
+        } else if (i == C3632R.C3635id.menu_delete_bot) {
             Iterator<TLRPC$TL_attachMenuBot> it = MediaDataController.getInstance(this.currentAccount).getAttachMenuBots().bots.iterator();
             while (it.hasNext()) {
                 TLRPC$TL_attachMenuBot next = it.next();
@@ -204,7 +204,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
                     return;
                 }
             }
-        } else if (i == C3634R.C3637id.menu_settings) {
+        } else if (i == C3632R.C3635id.menu_settings) {
             this.webViewContainer.onSettingsButtonPressed();
         }
     }
@@ -217,14 +217,14 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
                 ChatAttachAlertBotWebViewLayout.this.lambda$new$2();
             }
         };
-        ActionBarMenuItem addItem = this.parentAlert.actionBar.createMenu().addItem(0, C3634R.C3636drawable.ic_ab_other);
+        ActionBarMenuItem addItem = this.parentAlert.actionBar.createMenu().addItem(0, C3632R.C3634drawable.ic_ab_other);
         this.otherItem = addItem;
-        addItem.addSubItem(C3634R.C3637id.menu_open_bot, C3634R.C3636drawable.msg_bot, LocaleController.getString(C3634R.string.BotWebViewOpenBot));
-        ActionBarMenuSubItem addSubItem = this.otherItem.addSubItem(C3634R.C3637id.menu_settings, C3634R.C3636drawable.msg_settings, LocaleController.getString(C3634R.string.BotWebViewSettings));
+        addItem.addSubItem(C3632R.C3635id.menu_open_bot, C3632R.C3634drawable.msg_bot, LocaleController.getString(C3632R.string.BotWebViewOpenBot));
+        ActionBarMenuSubItem addSubItem = this.otherItem.addSubItem(C3632R.C3635id.menu_settings, C3632R.C3634drawable.msg_settings, LocaleController.getString(C3632R.string.BotWebViewSettings));
         this.settingsItem = addSubItem;
         addSubItem.setVisibility(8);
-        this.otherItem.addSubItem(C3634R.C3637id.menu_reload_page, C3634R.C3636drawable.msg_retry, LocaleController.getString(C3634R.string.BotWebViewReloadPage));
-        this.otherItem.addSubItem(C3634R.C3637id.menu_delete_bot, C3634R.C3636drawable.msg_delete, LocaleController.getString(C3634R.string.BotWebViewDeleteBot));
+        this.otherItem.addSubItem(C3632R.C3635id.menu_reload_page, C3632R.C3634drawable.msg_retry, LocaleController.getString(C3632R.string.BotWebViewReloadPage));
+        this.otherItem.addSubItem(C3632R.C3635id.menu_delete_bot, C3632R.C3634drawable.msg_delete, LocaleController.getString(C3632R.string.BotWebViewDeleteBot));
         this.webViewContainer = new BotWebViewContainer(context, resourcesProvider, getThemedColor(Theme.key_dialogBackground)) { // from class: org.telegram.ui.Components.ChatAttachAlertBotWebViewLayout.1
             @Override // android.view.ViewGroup, android.view.View
             public boolean dispatchTouchEvent(MotionEvent motionEvent) {
@@ -243,7 +243,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
         WebViewSwipeContainer webViewSwipeContainer = new WebViewSwipeContainer(context) { // from class: org.telegram.ui.Components.ChatAttachAlertBotWebViewLayout.2
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i2) - C3706ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m104dp(84)) + ChatAttachAlertBotWebViewLayout.this.measureOffsetY, 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i2) - C3704ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m104dp(84)) + ChatAttachAlertBotWebViewLayout.this.measureOffsetY, 1073741824));
             }
         };
         this.swipeContainer = webViewSwipeContainer;
@@ -353,12 +353,12 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
     public boolean onCheckDismissByUser() {
         if (this.needCloseConfirmation) {
             TLRPC$User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.botId));
-            AlertDialog create = new AlertDialog.Builder(getContext()).setTitle(user != null ? ContactsController.formatName(user.first_name, user.last_name) : null).setMessage(LocaleController.getString(C3634R.string.BotWebViewChangesMayNotBeSaved)).setPositiveButton(LocaleController.getString(C3634R.string.BotWebViewCloseAnyway), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda2
+            AlertDialog create = new AlertDialog.Builder(getContext()).setTitle(user != null ? ContactsController.formatName(user.first_name, user.last_name) : null).setMessage(LocaleController.getString(C3632R.string.BotWebViewChangesMayNotBeSaved)).setPositiveButton(LocaleController.getString(C3632R.string.BotWebViewCloseAnyway), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertBotWebViewLayout$$ExternalSyntheticLambda2
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     ChatAttachAlertBotWebViewLayout.this.lambda$onCheckDismissByUser$9(dialogInterface, i);
                 }
-            }).setNegativeButton(LocaleController.getString(C3634R.string.Cancel), null).create();
+            }).setNegativeButton(LocaleController.getString(C3632R.string.Cancel), null).create();
             create.show();
             ((TextView) create.getButton(-1)).setTextColor(getThemedColor(Theme.key_text_RedBold));
             return false;
@@ -506,7 +506,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
         if (this.webViewContainer.isBackButtonVisible()) {
             return;
         }
-        AndroidUtilities.updateImageViewImageAnimated(this.parentAlert.actionBar.getBackButton(), C3634R.C3636drawable.ic_close_white);
+        AndroidUtilities.updateImageViewImageAnimated(this.parentAlert.actionBar.getBackButton(), C3632R.C3634drawable.ic_close_white);
     }
 
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
@@ -650,7 +650,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
         this.otherItem.setVisibility(8);
         this.isBotButtonAvailable = false;
         if (!this.webViewContainer.isBackButtonVisible()) {
-            AndroidUtilities.updateImageViewImageAnimated(this.parentAlert.actionBar.getBackButton(), C3634R.C3636drawable.ic_ab_back);
+            AndroidUtilities.updateImageViewImageAnimated(this.parentAlert.actionBar.getBackButton(), C3632R.C3634drawable.ic_ab_back);
         }
         this.parentAlert.actionBar.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundWhite));
         if (this.webViewContainer.hasUserPermissions()) {
@@ -798,11 +798,11 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
         }
         boolean z = tLRPC$TL_attachMenuBot.show_in_side_menu;
         if (z && tLRPC$TL_attachMenuBot.show_in_attach_menu) {
-            formatString = LocaleController.formatString("BotAttachMenuShortcatAddedAttachAndSide", C3634R.string.BotAttachMenuShortcatAddedAttachAndSide, user.first_name);
+            formatString = LocaleController.formatString("BotAttachMenuShortcatAddedAttachAndSide", C3632R.string.BotAttachMenuShortcatAddedAttachAndSide, user.first_name);
         } else if (z) {
-            formatString = LocaleController.formatString("BotAttachMenuShortcatAddedSide", C3634R.string.BotAttachMenuShortcatAddedSide, user.first_name);
+            formatString = LocaleController.formatString("BotAttachMenuShortcatAddedSide", C3632R.string.BotAttachMenuShortcatAddedSide, user.first_name);
         } else {
-            formatString = LocaleController.formatString("BotAttachMenuShortcatAddedAttach", C3634R.string.BotAttachMenuShortcatAddedAttach, user.first_name);
+            formatString = LocaleController.formatString("BotAttachMenuShortcatAddedAttach", C3632R.string.BotAttachMenuShortcatAddedAttach, user.first_name);
         }
         if (tLRPC$TL_attachMenuBot.bot_id == 1985737506) {
             if (tLRPC$TL_attachMenuBot.show_in_side_menu) {
@@ -834,7 +834,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$showJustAddedBulletin$15(String str) {
-        BulletinFactory.m63of(this.parentAlert.getContainer(), this.resourcesProvider).createSimpleBulletin(C3634R.raw.contact_check, AndroidUtilities.replaceTags(str)).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show(true);
+        BulletinFactory.m63of(this.parentAlert.getContainer(), this.resourcesProvider).createSimpleBulletin(C3632R.raw.contact_check, AndroidUtilities.replaceTags(str)).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show(true);
     }
 
     /* renamed from: org.telegram.ui.Components.ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer */
@@ -889,7 +889,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
 
         public WebViewSwipeContainer(Context context) {
             super(context);
-            this.topActionBarOffsetY = C3706ActionBar.getCurrentActionBarHeight();
+            this.topActionBarOffsetY = C3704ActionBar.getCurrentActionBarHeight();
             this.offsetY = BitmapDescriptorFactory.HUE_RED;
             this.pendingOffsetY = -1.0f;
             this.pendingSwipeOffsetY = -2.14748365E9f;
@@ -946,7 +946,7 @@ public class ChatAttachAlertBotWebViewLayout extends ChatAttachAlert.AttachAlert
                         Method dump skipped, instructions count: 535
                         To view this dump add '--comments-level debug' option
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer.C47101.onScroll(android.view.MotionEvent, android.view.MotionEvent, float, float):boolean");
+                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.ChatAttachAlertBotWebViewLayout.WebViewSwipeContainer.C47071.onScroll(android.view.MotionEvent, android.view.MotionEvent, float, float):boolean");
                 }
             });
             updateStickyRange();

@@ -27,7 +27,7 @@ import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.ActionBar.DrawerLayoutContainer */
@@ -99,7 +99,7 @@ public class DrawerLayoutContainer extends FrameLayout {
             });
             setSystemUiVisibility(1280);
         }
-        this.shadowLeft = getResources().getDrawable(C3634R.C3636drawable.menu_shadow);
+        this.shadowLeft = getResources().getDrawable(C3632R.C3634drawable.menu_shadow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -774,11 +774,11 @@ public class DrawerLayoutContainer extends FrameLayout {
             canvas.save();
             int i = bounds.left;
             int i2 = bounds.top;
-            canvas.clipRect(i, i2, bounds.right, C3706ActionBar.getCurrentActionBarHeight() + i2);
+            canvas.clipRect(i, i2, bounds.right, C3704ActionBar.getCurrentActionBarHeight() + i2);
             this.topDrawable.draw(canvas);
             canvas.restore();
             canvas.save();
-            canvas.clipRect(bounds.left, bounds.top + C3706ActionBar.getCurrentActionBarHeight(), bounds.right, bounds.bottom);
+            canvas.clipRect(bounds.left, bounds.top + C3704ActionBar.getCurrentActionBarHeight(), bounds.right, bounds.bottom);
             this.bottomDrawable.draw(canvas);
             canvas.restore();
         }

@@ -30,10 +30,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView;Landroid/view/View;II)V
     .locals 5
 
-    .line 2597
+    .line 2670
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 2598
+    .line 2671
     new-instance p1, Lorg/telegram/ui/Components/RLottieDrawable;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -64,29 +64,29 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 2599
+    .line 2672
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RLottieDrawable;->setMasterParent(Landroid/view/View;)V
 
-    .line 2600
+    .line 2673
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 p3, 0x1
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
-    .line 2601
+    .line 2674
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/RLottieDrawable;->setPlayInDirectionOfCustomEndFrame(Z)V
 
-    .line 2602
+    .line 2675
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setAutoRepeat(I)V
 
-    .line 2604
+    .line 2677
     new-instance p1, Lorg/telegram/ui/Components/RLottieDrawable;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -113,25 +113,25 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state2:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 2605
+    .line 2678
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RLottieDrawable;->setMasterParent(Landroid/view/View;)V
 
-    .line 2606
+    .line 2679
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state2:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/RLottieDrawable;->setAllowDecodeSingleFrame(Z)V
 
-    .line 2607
+    .line 2680
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state2:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/RLottieDrawable;->setPlayInDirectionOfCustomEndFrame(Z)V
 
-    .line 2608
+    .line 2681
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state2:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setAutoRepeat(I)V
 
-    .line 2610
+    .line 2683
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->currentState:Lorg/telegram/ui/Components/RLottieDrawable;
@@ -144,18 +144,18 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 2636
+    .line 2709
     iget-boolean v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->detached:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 2639
+    .line 2712
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
-    .line 2640
+    .line 2713
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
@@ -172,7 +172,7 @@
 
     sub-int/2addr v1, v3
 
-    .line 2641
+    .line 2714
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v3
@@ -187,7 +187,7 @@
 
     sub-int/2addr v3, v4
 
-    .line 2642
+    .line 2715
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v4
@@ -202,7 +202,7 @@
 
     add-int/2addr v4, v5
 
-    .line 2643
+    .line 2716
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v5
@@ -217,10 +217,10 @@
 
     add-int/2addr v5, v2
 
-    .line 2639
+    .line 2712
     invoke-virtual {v0, v1, v3, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2645
+    .line 2718
     iget-object v1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->currentState:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RLottieDrawable;->isLastFrame()Z
@@ -247,7 +247,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 2646
+    .line 2719
     iget-object v1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
     goto :goto_1
@@ -258,7 +258,7 @@
     :goto_1
     iput-object v1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->currentState:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 2647
+    .line 2720
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RLottieDrawable;->getFramesCount()I
 
     move-result v2
@@ -267,13 +267,13 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 2649
+    .line 2722
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->currentState:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 2650
+    .line 2723
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->currentState:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -286,7 +286,7 @@
 
     const/16 v0, 0x18
 
-    .line 2677
+    .line 2750
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -299,7 +299,7 @@
 
     const/16 v0, 0x18
 
-    .line 2672
+    .line 2745
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -318,12 +318,12 @@
 .method public setAlpha(I)V
     .locals 1
 
-    .line 2655
+    .line 2728
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
 
-    .line 2656
+    .line 2729
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state2:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
@@ -334,12 +334,12 @@
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
 
-    .line 2661
+    .line 2734
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/BitmapDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2662
+    .line 2735
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state2:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/BitmapDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
@@ -350,14 +350,14 @@
 .method public setState(ZZ)V
     .locals 0
 
-    .line 2622
+    .line 2695
     iput-boolean p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->isState1:Z
 
     if-eqz p2, :cond_1
 
     if-eqz p1, :cond_0
 
-    .line 2624
+    .line 2697
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
     goto :goto_0
@@ -368,19 +368,19 @@
     :goto_0
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->currentState:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 2625
+    .line 2698
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 2626
+    .line 2699
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state2:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    .line 2627
+    .line 2700
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->currentState:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
@@ -390,7 +390,7 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 2629
+    .line 2702
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->state1:Lorg/telegram/ui/Components/RLottieDrawable;
 
     goto :goto_1
@@ -401,7 +401,7 @@
     :goto_1
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$RLottieToggleDrawable;->currentState:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 2630
+    .line 2703
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->getFramesCount()I
 
     move-result p2

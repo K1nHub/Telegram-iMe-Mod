@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TonControllerImpl.kt */
-@DebugMetadata(m145c = "com.iMe.storage.data.manager.ton.TonControllerImpl", m144f = "TonControllerImpl.kt", m143l = {126}, m142m = "initLiteClient")
+@DebugMetadata(m145c = "com.iMe.storage.data.manager.ton.TonControllerImpl", m144f = "TonControllerImpl.kt", m143l = {132}, m142m = "initLiteClient")
 /* loaded from: classes3.dex */
 public final class TonControllerImpl$initLiteClient$1 extends ContinuationImpl {
     Object L$0;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 9071
+    .line 9081
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/ReportAlert;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method protected onSend(ILjava/lang/String;)V
     .locals 3
 
-    .line 9074
+    .line 9084
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -44,7 +44,7 @@
 
     move v1, v0
 
-    .line 9075
+    .line 9085
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -60,7 +60,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 9076
+    .line 9086
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$3600(Lorg/telegram/ui/ChatActivity;)[Landroid/util/SparseArray;
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 9078
+    .line 9088
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -104,7 +104,7 @@
 
     move-result-object v1
 
-    .line 9079
+    .line 9089
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -114,12 +114,12 @@
 
     invoke-static {v1, v2, p2, p1, v0}, Lorg/telegram/ui/Components/AlertsCreator;->sendReport(Lorg/telegram/tgnet/TLRPC$InputPeer;ILjava/lang/String;Ljava/util/ArrayList;I)V
 
-    .line 9080
+    .line 9090
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->finishFragment()V
 
-    .line 9081
+    .line 9091
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$46;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;

@@ -25,7 +25,7 @@ import com.iMe.storage.domain.model.templates.TemplateModel;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -63,7 +63,7 @@ public class BotCommandsMenuView extends View {
     public void setTemplatesMode(boolean z, final ChatActivity chatActivity) {
         this.isTemplatesMode = z;
         if (z) {
-            this.templatesDrawable = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.fork_templates);
+            this.templatesDrawable = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.fork_templates);
             setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Components.BotCommandsMenuView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view) {
@@ -108,7 +108,7 @@ public class BotCommandsMenuView extends View {
             }
         };
         this.backDrawable = menuDrawable;
-        int i = C3634R.raw.bot_webview_sheet_to_cross;
+        int i = C3632R.raw.bot_webview_sheet_to_cross;
         this.webViewAnimation = new RLottieDrawable(i, String.valueOf(i) + hashCode(), AndroidUtilities.m104dp(20), AndroidUtilities.m104dp(20)) { // from class: org.telegram.ui.Components.BotCommandsMenuView.2
             @Override // android.graphics.drawable.Drawable
             public void invalidateSelf() {
@@ -123,7 +123,7 @@ public class BotCommandsMenuView extends View {
                 BotCommandsMenuView.this.invalidate();
             }
         };
-        this.menuText = LocaleController.getString(C3634R.string.BotsMenuTitle);
+        this.menuText = LocaleController.getString(C3632R.string.BotsMenuTitle);
         this.drawBackgroundDrawable = true;
         updateColors();
         menuDrawable.setMiniIcon(true);
@@ -135,7 +135,7 @@ public class BotCommandsMenuView extends View {
         Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(16), 0, Theme.getColor(Theme.key_featuredStickers_addButtonPressed));
         this.backgroundDrawable = createSimpleSelectorRoundRectDrawable;
         createSimpleSelectorRoundRectDrawable.setCallback(this);
-        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3634R.string.AccDescrBotMenu));
+        setContentDescription(LocaleController.getString("AccDescrBotMenu", C3632R.string.AccDescrBotMenu));
     }
 
     public void setDrawBackgroundDrawable(boolean z) {
@@ -215,7 +215,7 @@ public class BotCommandsMenuView extends View {
 
     public boolean setMenuText(String str) {
         if (str == null) {
-            str = LocaleController.getString(C3634R.string.BotsMenuTitle);
+            str = LocaleController.getString(C3632R.string.BotsMenuTitle);
         }
         String str2 = this.menuText;
         boolean z = str2 == null || !str2.equals(str);
@@ -394,7 +394,7 @@ public class BotCommandsMenuView extends View {
         public BotCommandView(Context context) {
             super(context);
             setOrientation(0);
-            setPadding(AndroidUtilities.m104dp(16), 0, AndroidUtilities.m104dp(16), 0);
+            setPadding(AndroidUtilities.m104dp(16), AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(16), AndroidUtilities.m104dp(8));
             TextView textView = new TextView(this, context) { // from class: org.telegram.ui.Components.BotCommandsMenuView.BotCommandView.1
                 @Override // android.widget.TextView
                 public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
@@ -408,7 +408,7 @@ public class BotCommandsMenuView extends View {
             int i = Theme.key_windowBackgroundWhiteBlackText;
             textView2.setTextColor(Theme.getColor(i));
             this.description.setTag(Integer.valueOf(i));
-            this.description.setLines(1);
+            this.description.setMaxLines(2);
             this.description.setEllipsize(TextUtils.TruncateAt.END);
             addView(this.description, LayoutHelper.createLinear(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.m104dp(8), 0));
             TextView textView3 = new TextView(context);
@@ -419,11 +419,6 @@ public class BotCommandsMenuView extends View {
             textView4.setTextColor(Theme.getColor(i2));
             this.command.setTag(Integer.valueOf(i2));
             addView(this.command, LayoutHelper.createLinear(-2, -2, BitmapDescriptorFactory.HUE_RED, 16));
-        }
-
-        @Override // android.widget.LinearLayout, android.view.View
-        protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(36), 1073741824));
         }
 
         public String getCommand() {

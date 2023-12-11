@@ -935,6 +935,12 @@ Approval will be given for this smart contract:
     <string name="no_unread_bots">У вас нет непрочитанных ботов</string>
     <string name="no_unread_groups">У вас нет непрочитанных групп</string>
     <string name="no_unread_personal_chats">У вас нет непрочитанных личных чатов</string>
+    <string name="notification_open">Открыть</string>
+    <string name="notifications_cleaned">Уведомления успешно очищены</string>
+    <string name="notifications_clear_all">Очистить историю уведомлений</string>
+    <string name="notifications_clear_confirmation_description">Все ваши уведомления будут удалены</string>
+    <string name="notifications_clear_confirmation_title">Очистить уведомления</string>
+    <string name="notifications_group_common">iMe</string>
     <string name="open_telegram_alert_auth">С 18.02.2023, вступили новые правила авторизации в Telegram, согласно которым пользователи альтернативных клиентов могут получать код SMS только из официального клиента Telegram. Пожалуйста, установите Telegram и войдите в свой аккаунт там, если вам требуется код SMS, после чего сможете повторно запросить код в iMe (он придет в сервисный чат с Telegram).</string>
     <string name="open_telegram_alert_change_phone_number">К сожалению, в соответствии с новыми правилами Telegram, пользователи альтернативных клиентов не могут получать код SMS для смены номера телефона. Пожалуйста, скачайте официальный клиент Telegram и повторите попытку.</string>
     <string name="password_toggle_content_description">Показать пароль</string>
@@ -1065,6 +1071,7 @@ Approval will be given for this smart contract:
     <string name="setting_tools_drawer_holiday_icon_menu_14">День св. Валентина</string>
     <string name="setting_tools_drawer_holiday_icon_menu_hw">Хэллоуин</string>
     <string name="setting_tools_drawer_holiday_icon_menu_ny">Новый Год</string>
+    <string name="settings_colored_replies">Цветные ответы</string>
     <string name="settings_emoji_premium_suggest_sets">Предлагать наборы эмодзи</string>
     <string name="settings_help_alert_channel_item_title">Канал iMe</string>
     <string name="settings_help_alert_channel_username">https://t.me/ime_ru</string>
@@ -1595,6 +1602,8 @@ Approval will be given for this smart contract:
     <string name="wallet_amount_send_message_open_etherscan">"
 🔎 Посмотреть на %s
 ␣␣␣␣␣␣␣␣"</string>
+    <string name="wallet_amount_send_message_open_scanner">"
+🔎 %s"</string>
     <string name="wallet_amount_send_message_payload">"🚀 %1$s на %2$s были отправлены ✅
 
 ⬅️ От: %3$s
@@ -1668,6 +1677,12 @@ Approval will be given for this smart contract:
     <string name="wallet_banner_slide_ascendeex_description">Глобальная платформа для криптоторговли</string>
     <string name="wallet_banner_slide_ascendeex_long_description">Зарегистрируйтесь на бирже AscendEX и получите статус VIP2 на 60 дней. Торгуйте LIME и другими валютами на выгодных условиях.</string>
     <string name="wallet_banner_slide_ascendeex_title">AscendEX</string>
+    <string name="wallet_banner_slide_attractor_giveaway_description">Участвуйте и выигрывайте призы</string>
+    <string name="wallet_banner_slide_attractor_giveaway_link">https://gleam.io/YEy9e/attractor-giveaway</string>
+    <string name="wallet_banner_slide_attractor_giveaway_title">ATTRACTOR giveaway</string>
+    <string name="wallet_banner_slide_attractor_testnet_description">Запуск нативной монеты в 2024</string>
+    <string name="wallet_banner_slide_attractor_testnet_link">https://t.me/AttractorOfficial</string>
+    <string name="wallet_banner_slide_attractor_testnet_title">ATTRACTOR Testnet запущен!</string>
     <string name="wallet_banner_slide_binance_pay_faq_action_link">https://www.binance.com/ru/support/faq/d6fabc736d1f4e7fb60e56afe6d1f3b9</string>
     <string name="wallet_banner_slide_binance_pay_faq_description">Краткое описание и инструкции</string>
     <string name="wallet_banner_slide_binance_pay_faq_long_description">Что такое Binance Pay, как создать аккаунт и как пользоваться сервисом? А также обучающее видео, поддерживаемые криптовалюты и другая полезная информация.</string>

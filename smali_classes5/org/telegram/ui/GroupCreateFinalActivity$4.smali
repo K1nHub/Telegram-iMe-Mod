@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/GroupCreateFinalActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 489
+    .line 490
     iput-object p1, p0, Lorg/telegram/ui/GroupCreateFinalActivity$4;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public invalidate()V
     .locals 1
 
-    .line 492
+    .line 493
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$4;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$600(Lorg/telegram/ui/GroupCreateFinalActivity;)Landroid/view/View;
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 493
+    .line 494
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$4;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$600(Lorg/telegram/ui/GroupCreateFinalActivity;)Landroid/view/View;
@@ -53,7 +53,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 495
+    .line 496
     :cond_0
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 
@@ -63,7 +63,7 @@
 .method public invalidate(IIII)V
     .locals 1
 
-    .line 500
+    .line 501
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$4;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$600(Lorg/telegram/ui/GroupCreateFinalActivity;)Landroid/view/View;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 501
+    .line 502
     iget-object v0, p0, Lorg/telegram/ui/GroupCreateFinalActivity$4;->this$0:Lorg/telegram/ui/GroupCreateFinalActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/GroupCreateFinalActivity;->access$600(Lorg/telegram/ui/GroupCreateFinalActivity;)Landroid/view/View;
@@ -81,7 +81,7 @@
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 503
+    .line 504
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->invalidate(IIII)V
 

@@ -37,7 +37,7 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -45,7 +45,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.GroupCreateSectionCell;
@@ -334,11 +334,11 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.allSpans.clear();
         this.selectedContacts.clear();
         this.currentDeletingSpan = null;
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("InviteFriends", C3634R.string.InviteFriends));
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.InviteContactsActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("InviteFriends", C3632R.string.InviteFriends));
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.InviteContactsActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     InviteContactsActivity.this.finishFragment();
@@ -438,7 +438,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.editText.setImeOptions(268435462);
         this.editText.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         this.spansContainer.addView(this.editText);
-        this.editText.setHintText(LocaleController.getString("SearchFriends", C3634R.string.SearchFriends));
+        this.editText.setHintText(LocaleController.getString("SearchFriends", C3632R.string.SearchFriends));
         this.editText.setCustomSelectionActionModeCallback(new ActionMode.Callback(this) { // from class: org.telegram.ui.InviteContactsActivity.5
             @Override // android.view.ActionMode.Callback
             public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
@@ -493,7 +493,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     InviteContactsActivity.this.adapter.searchDialogs(InviteContactsActivity.this.editText.getText().toString());
                     InviteContactsActivity.this.listView.setFastScrollVisible(false);
                     InviteContactsActivity.this.listView.setVerticalScrollBarEnabled(true);
-                    InviteContactsActivity.this.emptyView.setText(LocaleController.getString("NoResult", C3634R.string.NoResult));
+                    InviteContactsActivity.this.emptyView.setText(LocaleController.getString("NoResult", C3632R.string.NoResult));
                     return;
                 }
                 InviteContactsActivity.this.closeSearch();
@@ -505,7 +505,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         } else {
             this.emptyView.showTextView();
         }
-        this.emptyView.setText(LocaleController.getString("NoContacts", C3634R.string.NoContacts));
+        this.emptyView.setText(LocaleController.getString("NoContacts", C3632R.string.NoContacts));
         viewGroup2.addView(this.emptyView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context, 1, false);
         RecyclerListView recyclerListView = new RecyclerListView(context);
@@ -545,7 +545,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         int i2 = Theme.key_contacts_inviteText;
         textView2.setTextColor(Theme.getColor(i2));
         this.infoTextView.setGravity(17);
-        this.infoTextView.setText(LocaleController.getString("InviteFriendsHelp", C3634R.string.InviteFriendsHelp));
+        this.infoTextView.setText(LocaleController.getString("InviteFriendsHelp", C3632R.string.InviteFriendsHelp));
         this.infoTextView.setTextSize(1, 13.0f);
         this.infoTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.infoTextView.setPadding(AndroidUtilities.m104dp(17), AndroidUtilities.m104dp(9), AndroidUtilities.m104dp(17), AndroidUtilities.m104dp(9));
@@ -580,7 +580,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.textView.setTextColor(Theme.getColor(i2));
         this.textView.setGravity(17);
         this.textView.setCompoundDrawablePadding(AndroidUtilities.m104dp(8));
-        this.textView.setText(LocaleController.getString("InviteToTelegram", C3634R.string.InviteToTelegram).toUpperCase());
+        this.textView.setText(LocaleController.getString("InviteToTelegram", C3632R.string.InviteToTelegram).toUpperCase());
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         linearLayout.addView(this.textView, LayoutHelper.createLinear(-2, -2, 16));
         updateHint();
@@ -710,7 +710,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         this.adapter.searchDialogs(null);
         this.listView.setFastScrollVisible(true);
         this.listView.setVerticalScrollBarEnabled(false);
-        this.emptyView.setText(LocaleController.getString("NoContacts", C3634R.string.NoContacts));
+        this.emptyView.setText(LocaleController.getString("NoContacts", C3632R.string.NoContacts));
     }
 
     private void fetchContacts() {
@@ -783,7 +783,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             FrameLayout frameLayout;
             if (i == 1) {
                 InviteTextCell inviteTextCell = new InviteTextCell(this.context);
-                inviteTextCell.setTextAndIcon(LocaleController.getString("ShareTelegram", C3634R.string.ShareTelegram), C3634R.C3636drawable.share);
+                inviteTextCell.setTextAndIcon(LocaleController.getString("ShareTelegram", C3632R.string.ShareTelegram), C3632R.C3634drawable.share);
                 frameLayout = inviteTextCell;
             } else {
                 frameLayout = new InviteUserCell(this.context, true);
@@ -840,16 +840,16 @@ public class InviteContactsActivity extends BaseFragment implements Notification
             }
             Timer timer2 = new Timer();
             this.searchTimer = timer2;
-            timer2.schedule(new C62691(str), 200L, 300L);
+            timer2.schedule(new C62651(str), 200L, 300L);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.InviteContactsActivity$InviteAdapter$1 */
         /* loaded from: classes5.dex */
-        public class C62691 extends TimerTask {
+        public class C62651 extends TimerTask {
             final /* synthetic */ String val$query;
 
-            C62691(String str) {
+            C62651(String str) {
                 this.val$query = str;
             }
 
@@ -865,7 +865,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$InviteAdapter$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteContactsActivity.InviteAdapter.C62691.this.lambda$run$1(str);
+                        InviteContactsActivity.InviteAdapter.C62651.this.lambda$run$1(str);
                     }
                 });
             }
@@ -875,7 +875,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                 Utilities.searchQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.InviteContactsActivity$InviteAdapter$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        InviteContactsActivity.InviteAdapter.C62691.this.lambda$run$0(str);
+                        InviteContactsActivity.InviteAdapter.C62651.this.lambda$run$0(str);
                     }
                 });
             }
@@ -1004,7 +1004,7 @@ public class InviteContactsActivity extends BaseFragment implements Notification
                     org.telegram.p043ui.InviteContactsActivity.InviteAdapter.access$2600(r3, r1, r2)
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.InviteContactsActivity.InviteAdapter.C62691.lambda$run$0(java.lang.String):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.InviteContactsActivity.InviteAdapter.C62651.lambda$run$0(java.lang.String):void");
             }
         }
 
@@ -1054,10 +1054,10 @@ public class InviteContactsActivity extends BaseFragment implements Notification
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_windowBackgroundWhite;
         arrayList.add(new ThemeDescription(view, i, null, null, null, null, i2));
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i3 = ThemeDescription.FLAG_BACKGROUND;
         int i4 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3706ActionBar, i3, null, null, null, null, i4));
+        arrayList.add(new ThemeDescription(c3704ActionBar, i3, null, null, null, null, i4));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i4));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

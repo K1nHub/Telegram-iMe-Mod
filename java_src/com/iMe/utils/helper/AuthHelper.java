@@ -47,7 +47,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
@@ -406,12 +406,12 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.utils.helper.AuthHelper$runHiddenAuthWithRemoteConfigCheck$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1875invoke(result);
+                m1877invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1875invoke(Result<? extends Boolean> it) {
+            public final void m1877invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
                 if (result instanceof Result.Success) {
@@ -636,7 +636,7 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void onError$default(AuthHelper authHelper, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = authHelper.getResourceManager().getString(C3634R.string.common_error_unexpected);
+            str = authHelper.getResourceManager().getString(C3632R.string.common_error_unexpected);
         }
         authHelper.onError(str);
     }

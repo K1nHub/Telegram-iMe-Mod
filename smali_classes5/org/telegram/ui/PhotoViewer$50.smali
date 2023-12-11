@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 9318
+    .line 9320
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0, p2}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 1
 
-    .line 9344
+    .line 9346
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$20200(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/ImageView;
@@ -54,7 +54,7 @@
 
     return p1
 
-    .line 9347
+    .line 9349
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -66,10 +66,10 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 9321
+    .line 9323
     invoke-super {p0, p1, p2}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->onMeasure(II)V
 
-    .line 9322
+    .line 9324
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$5100(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/ImageView;
@@ -78,7 +78,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 9323
+    .line 9325
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$5100(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/ImageView;
@@ -89,21 +89,21 @@
 
     move-result-object p1
 
-    .line 9324
+    .line 9326
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p2
 
     iput p2, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 9325
+    .line 9327
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result p2
 
     iput p2, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 9327
+    .line 9329
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -115,7 +115,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 9328
+    .line 9330
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$5300(Lorg/telegram/ui/PhotoViewer;)Landroid/view/TextureView;
@@ -138,7 +138,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/TextureView;->setPivotX(F)V
 
-    .line 9329
+    .line 9331
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$4300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FirstFrameView;
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 9331
+    .line 9333
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -175,7 +175,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 9332
+    .line 9334
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$5300(Lorg/telegram/ui/PhotoViewer;)Landroid/view/TextureView;
@@ -184,7 +184,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/TextureView;->setPivotX(F)V
 
-    .line 9334
+    .line 9336
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -194,7 +194,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 9335
+    .line 9337
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$5200(Lorg/telegram/ui/PhotoViewer;)Landroid/view/SurfaceView;
@@ -203,7 +203,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/SurfaceView;->setPivotX(F)V
 
-    .line 9337
+    .line 9339
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -213,7 +213,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setPivotX(F)V
 
-    .line 9339
+    .line 9341
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$50;->this$0:Lorg/telegram/ui/PhotoViewer;
 

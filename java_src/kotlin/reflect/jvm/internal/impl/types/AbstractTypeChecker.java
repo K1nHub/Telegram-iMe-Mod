@@ -272,12 +272,12 @@ public final class AbstractTypeChecker {
                 } else {
                     TypeSystemContext typeSystemContext2 = typeCheckerState.getTypeSystemContext();
                     for (KotlinTypeMarker kotlinTypeMarker : typeSystemContext2.supertypes(typeSystemContext2.typeConstructor(current))) {
-                        SimpleTypeMarker mo2055transformType = supertypesPolicy.mo2055transformType(typeCheckerState, kotlinTypeMarker);
-                        if (typeSystemContext.isNothingConstructor(typeSystemContext.typeConstructor(mo2055transformType))) {
+                        SimpleTypeMarker mo2057transformType = supertypesPolicy.mo2057transformType(typeCheckerState, kotlinTypeMarker);
+                        if (typeSystemContext.isNothingConstructor(typeSystemContext.typeConstructor(mo2057transformType))) {
                             typeCheckerState.clear();
                             return true;
                         }
-                        supertypesDeque.add(mo2055transformType);
+                        supertypesDeque.add(mo2057transformType);
                     }
                     continue;
                 }
@@ -658,7 +658,7 @@ public final class AbstractTypeChecker {
                     if (substitutionSupertypePolicy != null) {
                         TypeSystemContext typeSystemContext2 = typeCheckerState.getTypeSystemContext();
                         for (KotlinTypeMarker kotlinTypeMarker : typeSystemContext2.supertypes(typeSystemContext2.typeConstructor(current))) {
-                            supertypesDeque.add(substitutionSupertypePolicy.mo2055transformType(typeCheckerState, kotlinTypeMarker));
+                            supertypesDeque.add(substitutionSupertypePolicy.mo2057transformType(typeCheckerState, kotlinTypeMarker));
                         }
                     }
                 }
@@ -751,7 +751,7 @@ public final class AbstractTypeChecker {
                 if (supertypesPolicy != null) {
                     TypeSystemContext typeSystemContext2 = state.getTypeSystemContext();
                     for (KotlinTypeMarker kotlinTypeMarker : typeSystemContext2.supertypes(typeSystemContext2.typeConstructor(current))) {
-                        supertypesDeque.add(supertypesPolicy.mo2055transformType(state, kotlinTypeMarker));
+                        supertypesDeque.add(supertypesPolicy.mo2057transformType(state, kotlinTypeMarker));
                     }
                 }
             }

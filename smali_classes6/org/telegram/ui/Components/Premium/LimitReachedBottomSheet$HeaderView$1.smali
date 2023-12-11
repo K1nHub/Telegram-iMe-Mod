@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$HeaderView;Landroid/content/Context;IIIFLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)V
     .locals 7
 
-    .line 1163
+    .line 1154
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$HeaderView$1;->this$1:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$HeaderView;
 
     move-object v0, p0
@@ -49,7 +49,7 @@
 .method public invalidate()V
     .locals 1
 
-    .line 1166
+    .line 1157
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$HeaderView$1;->this$1:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$HeaderView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$HeaderView;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
@@ -62,7 +62,7 @@
 
     return-void
 
-    .line 1169
+    .line 1160
     :cond_0
     invoke-super {p0}, Landroid/widget/LinearLayout;->invalidate()V
 

@@ -20,10 +20,10 @@ public final class HmlLong implements HmLabel {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: n */
-    private final int f2091n;
+    private final int f2092n;
 
     /* renamed from: s */
-    private final BitString f2092s;
+    private final BitString f2093s;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -31,45 +31,45 @@ public final class HmlLong implements HmLabel {
         }
         if (obj instanceof HmlLong) {
             HmlLong hmlLong = (HmlLong) obj;
-            return this.f2091n == hmlLong.f2091n && Intrinsics.areEqual(this.f2092s, hmlLong.f2092s);
+            return this.f2092n == hmlLong.f2092n && Intrinsics.areEqual(this.f2093s, hmlLong.f2093s);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.f2091n * 31) + this.f2092s.hashCode();
+        return (this.f2092n * 31) + this.f2093s.hashCode();
     }
 
     public /* synthetic */ HmlLong(int i, int i2, BitString bitString, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, HmlLong$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2091n = i2;
-        this.f2092s = bitString;
+        this.f2092n = i2;
+        this.f2093s = bitString;
     }
 
     public HmlLong(int i, BitString s) {
         Intrinsics.checkNotNullParameter(s, "s");
-        this.f2091n = i;
-        this.f2092s = s;
+        this.f2092n = i;
+        this.f2093s = s;
     }
 
     public static final /* synthetic */ void write$Self(HmlLong hmlLong, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
-        compositeEncoder.encodeIntElement(serialDescriptor, 0, hmlLong.f2091n);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, FiftHexBitStringSerializer.INSTANCE, hmlLong.f2092s);
+        compositeEncoder.encodeIntElement(serialDescriptor, 0, hmlLong.f2092n);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, FiftHexBitStringSerializer.INSTANCE, hmlLong.f2093s);
     }
 
     public final int getN() {
-        return this.f2091n;
+        return this.f2092n;
     }
 
     public final BitString getS() {
-        return this.f2092s;
+        return this.f2093s;
     }
 
     @Override // org.ton.hashmap.HmLabel
     public BitString toBitString() {
-        return this.f2092s;
+        return this.f2093s;
     }
 
     public String toString() {
@@ -99,8 +99,8 @@ public final class HmlLong implements HmLabel {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("hml_long");
-        open.field("n", Integer.valueOf(this.f2091n));
-        open.field("s", this.f2092s);
+        open.field("n", Integer.valueOf(this.f2092n));
+        open.field("s", this.f2093s);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

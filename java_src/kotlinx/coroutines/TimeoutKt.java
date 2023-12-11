@@ -22,8 +22,8 @@ public final class TimeoutKt {
     }
 
     /* renamed from: withTimeout-KLykuaI  reason: not valid java name */
-    public static final <T> Object m2097withTimeoutKLykuaI(long j, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
-        return withTimeout(DelayKt.m2095toDelayMillisLRDsOJo(j), function2, continuation);
+    public static final <T> Object m2099withTimeoutKLykuaI(long j, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
+        return withTimeout(DelayKt.m2097toDelayMillisLRDsOJo(j), function2, continuation);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
@@ -115,8 +115,8 @@ public final class TimeoutKt {
     }
 
     /* renamed from: withTimeoutOrNull-KLykuaI  reason: not valid java name */
-    public static final <T> Object m2098withTimeoutOrNullKLykuaI(long j, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
-        return withTimeoutOrNull(DelayKt.m2095toDelayMillisLRDsOJo(j), function2, continuation);
+    public static final <T> Object m2100withTimeoutOrNullKLykuaI(long j, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
+        return withTimeoutOrNull(DelayKt.m2097toDelayMillisLRDsOJo(j), function2, continuation);
     }
 
     private static final <U, T extends U> Object setupTimeout(TimeoutCoroutine<U, ? super T> timeoutCoroutine, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2) {
@@ -144,7 +144,7 @@ public final class TimeoutKt {
             kotlin.time.Duration$Companion r0 = kotlin.time.Duration.Companion
             kotlin.time.DurationUnit r0 = kotlin.time.DurationUnit.MILLISECONDS
             long r0 = kotlin.time.DurationKt.toDuration(r2, r0)
-            java.lang.String r4 = r4.m2096timeoutMessageLRDsOJo(r0)
+            java.lang.String r4 = r4.m2098timeoutMessageLRDsOJo(r0)
             if (r4 != 0) goto L2e
         L18:
             java.lang.StringBuilder r4 = new java.lang.StringBuilder

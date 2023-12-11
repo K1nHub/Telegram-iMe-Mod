@@ -46,14 +46,14 @@ public final class ProcessedUpto implements TlbObject {
     }
 
     public int hashCode() {
-        return (ULong.m1996hashCodeimpl(this.lastMsgLt) * 31) + this.lastMsgHash.hashCode();
+        return (ULong.m1998hashCodeimpl(this.lastMsgLt) * 31) + this.lastMsgHash.hashCode();
     }
 
     private ProcessedUpto(int i, ULong uLong, BitString bitString, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, ProcessedUpto$$serializer.INSTANCE.getDescriptor());
         }
-        this.lastMsgLt = uLong.m1998unboximpl();
+        this.lastMsgLt = uLong.m2000unboximpl();
         this.lastMsgHash = bitString;
     }
 
@@ -64,12 +64,12 @@ public final class ProcessedUpto implements TlbObject {
     }
 
     public static final /* synthetic */ void write$Self(ProcessedUpto processedUpto, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ULongSerializer.INSTANCE, ULong.m1993boximpl(processedUpto.lastMsgLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ULongSerializer.INSTANCE, ULong.m1995boximpl(processedUpto.lastMsgLt));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, FiftHexBitStringSerializer.INSTANCE, processedUpto.lastMsgHash);
     }
 
     /* renamed from: getLastMsgLt-s-VKNKU  reason: not valid java name */
-    public final long m5147getLastMsgLtsVKNKU() {
+    public final long m5129getLastMsgLtsVKNKU() {
         return this.lastMsgLt;
     }
 
@@ -127,7 +127,7 @@ public final class ProcessedUpto implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("processed_upto");
-        open.field("last_msg_lt", ULong.m1993boximpl(this.lastMsgLt));
+        open.field("last_msg_lt", ULong.m1995boximpl(this.lastMsgLt));
         open.field("last_msg_hash", this.lastMsgHash);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;

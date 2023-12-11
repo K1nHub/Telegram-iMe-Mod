@@ -118,7 +118,7 @@ public final class InteractorModuleKt {
             List emptyList25;
             List emptyList26;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C19181 c19181 = new Function2<Scope, ParametersHolder, TranslationInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.1
+            C19151 c19151 = new Function2<Scope, ParametersHolder, TranslationInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final TranslationInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -130,13 +130,13 @@ public final class InteractorModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationInteractor.class), null, c19181, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationInteractor.class), null, c19151, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C19292 c19292 = new Function2<Scope, ParametersHolder, SessionInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.2
+            C19262 c19262 = new Function2<Scope, ParametersHolder, SessionInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final SessionInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -146,13 +146,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SessionInteractor.class), null, c19292, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SessionInteractor.class), null, c19262, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C19373 c19373 = new Function2<Scope, ParametersHolder, WalletInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.3
+            C19343 c19343 = new Function2<Scope, ParametersHolder, WalletInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -162,13 +162,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, c19373, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletInteractor.class), null, c19343, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
-            C19384 c19384 = new Function2<Scope, ParametersHolder, PushNotificationInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.4
+            C19354 c19354 = new Function2<Scope, ParametersHolder, PushNotificationInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final PushNotificationInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -178,13 +178,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(PushNotificationInteractor.class), null, c19384, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(PushNotificationInteractor.class), null, c19354, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);
             }
             new KoinDefinition(module, singleInstanceFactory4);
-            C19395 c19395 = new Function2<Scope, ParametersHolder, GoogleServicesInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.5
+            C19365 c19365 = new Function2<Scope, ParametersHolder, GoogleServicesInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final GoogleServicesInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -194,13 +194,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(GoogleServicesInteractor.class), null, c19395, kind, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(GoogleServicesInteractor.class), null, c19365, kind, emptyList5));
             module.indexPrimaryType(singleInstanceFactory5);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory5);
             }
             new KoinDefinition(module, singleInstanceFactory5);
-            C19406 c19406 = new Function2<Scope, ParametersHolder, RemoteConfigInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.6
+            C19376 c19376 = new Function2<Scope, ParametersHolder, RemoteConfigInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final RemoteConfigInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -210,13 +210,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(RemoteConfigInteractor.class), null, c19406, kind, emptyList6));
+            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(RemoteConfigInteractor.class), null, c19376, kind, emptyList6));
             module.indexPrimaryType(singleInstanceFactory6);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory6);
             }
             new KoinDefinition(module, singleInstanceFactory6);
-            C19417 c19417 = new Function2<Scope, ParametersHolder, DynamicLinksInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.7
+            C19387 c19387 = new Function2<Scope, ParametersHolder, DynamicLinksInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.7
                 @Override // kotlin.jvm.functions.Function2
                 public final DynamicLinksInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -226,13 +226,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
             emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(DynamicLinksInteractor.class), null, c19417, kind, emptyList7));
+            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(DynamicLinksInteractor.class), null, c19387, kind, emptyList7));
             module.indexPrimaryType(singleInstanceFactory7);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory7);
             }
             new KoinDefinition(module, singleInstanceFactory7);
-            C19428 c19428 = new Function2<Scope, ParametersHolder, KiklikoInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.8
+            C19398 c19398 = new Function2<Scope, ParametersHolder, KiklikoInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.8
                 @Override // kotlin.jvm.functions.Function2
                 public final KiklikoInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -242,13 +242,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
             emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(KiklikoInteractor.class), null, c19428, kind, emptyList8));
+            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(KiklikoInteractor.class), null, c19398, kind, emptyList8));
             module.indexPrimaryType(singleInstanceFactory8);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory8);
             }
             new KoinDefinition(module, singleInstanceFactory8);
-            C19439 c19439 = new Function2<Scope, ParametersHolder, CatalogInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.9
+            C19409 c19409 = new Function2<Scope, ParametersHolder, CatalogInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.9
                 @Override // kotlin.jvm.functions.Function2
                 public final CatalogInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -258,13 +258,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
             emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(CatalogInteractor.class), null, c19439, kind, emptyList9));
+            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(CatalogInteractor.class), null, c19409, kind, emptyList9));
             module.indexPrimaryType(singleInstanceFactory9);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory9);
             }
             new KoinDefinition(module, singleInstanceFactory9);
-            C191910 c191910 = new Function2<Scope, ParametersHolder, TwitterInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.10
+            C191610 c191610 = new Function2<Scope, ParametersHolder, TwitterInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.10
                 @Override // kotlin.jvm.functions.Function2
                 public final TwitterInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -274,13 +274,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
             emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(TwitterInteractor.class), null, c191910, kind, emptyList10));
+            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(TwitterInteractor.class), null, c191610, kind, emptyList10));
             module.indexPrimaryType(singleInstanceFactory10);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory10);
             }
             new KoinDefinition(module, singleInstanceFactory10);
-            C192011 c192011 = new Function2<Scope, ParametersHolder, CryptoWalletInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.11
+            C191711 c191711 = new Function2<Scope, ParametersHolder, CryptoWalletInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.11
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoWalletInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -290,13 +290,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
             emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, c192011, kind, emptyList11));
+            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, c191711, kind, emptyList11));
             module.indexPrimaryType(singleInstanceFactory11);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory11);
             }
             new KoinDefinition(module, singleInstanceFactory11);
-            C192112 c192112 = new Function2<Scope, ParametersHolder, PinCodeInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.12
+            C191812 c191812 = new Function2<Scope, ParametersHolder, PinCodeInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.12
                 @Override // kotlin.jvm.functions.Function2
                 public final PinCodeInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -306,13 +306,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
             emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(PinCodeInteractor.class), null, c192112, kind, emptyList12));
+            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(PinCodeInteractor.class), null, c191812, kind, emptyList12));
             module.indexPrimaryType(singleInstanceFactory12);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory12);
             }
             new KoinDefinition(module, singleInstanceFactory12);
-            C192213 c192213 = new Function2<Scope, ParametersHolder, SimplexInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.13
+            C191913 c191913 = new Function2<Scope, ParametersHolder, SimplexInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.13
                 @Override // kotlin.jvm.functions.Function2
                 public final SimplexInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -322,13 +322,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
             emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(SimplexInteractor.class), null, c192213, kind, emptyList13));
+            SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(SimplexInteractor.class), null, c191913, kind, emptyList13));
             module.indexPrimaryType(singleInstanceFactory13);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory13);
             }
             new KoinDefinition(module, singleInstanceFactory13);
-            C192314 c192314 = new Function2<Scope, ParametersHolder, SwapInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.14
+            C192014 c192014 = new Function2<Scope, ParametersHolder, SwapInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.14
                 @Override // kotlin.jvm.functions.Function2
                 public final SwapInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -338,13 +338,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
             emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(SwapInteractor.class), null, c192314, kind, emptyList14));
+            SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(SwapInteractor.class), null, c192014, kind, emptyList14));
             module.indexPrimaryType(singleInstanceFactory14);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory14);
             }
             new KoinDefinition(module, singleInstanceFactory14);
-            C192415 c192415 = new Function2<Scope, ParametersHolder, AccountLevelInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.15
+            C192115 c192115 = new Function2<Scope, ParametersHolder, AccountLevelInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.15
                 @Override // kotlin.jvm.functions.Function2
                 public final AccountLevelInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -354,13 +354,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier15 = companion.getRootScopeQualifier();
             emptyList15 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, c192415, kind, emptyList15));
+            SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(AccountLevelInteractor.class), null, c192115, kind, emptyList15));
             module.indexPrimaryType(singleInstanceFactory15);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory15);
             }
             new KoinDefinition(module, singleInstanceFactory15);
-            C192516 c192516 = new Function2<Scope, ParametersHolder, CancelInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.16
+            C192216 c192216 = new Function2<Scope, ParametersHolder, CancelInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.16
                 @Override // kotlin.jvm.functions.Function2
                 public final CancelInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -370,13 +370,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier16 = companion.getRootScopeQualifier();
             emptyList16 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(CancelInteractor.class), null, c192516, kind, emptyList16));
+            SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(CancelInteractor.class), null, c192216, kind, emptyList16));
             module.indexPrimaryType(singleInstanceFactory16);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory16);
             }
             new KoinDefinition(module, singleInstanceFactory16);
-            C192617 c192617 = new Function2<Scope, ParametersHolder, DonationsInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.17
+            C192317 c192317 = new Function2<Scope, ParametersHolder, DonationsInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.17
                 @Override // kotlin.jvm.functions.Function2
                 public final DonationsInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -386,13 +386,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier17 = companion.getRootScopeQualifier();
             emptyList17 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(DonationsInteractor.class), null, c192617, kind, emptyList17));
+            SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(DonationsInteractor.class), null, c192317, kind, emptyList17));
             module.indexPrimaryType(singleInstanceFactory17);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory17);
             }
             new KoinDefinition(module, singleInstanceFactory17);
-            C192718 c192718 = new Function2<Scope, ParametersHolder, BoostInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.18
+            C192418 c192418 = new Function2<Scope, ParametersHolder, BoostInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.18
                 @Override // kotlin.jvm.functions.Function2
                 public final BoostInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -402,13 +402,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier18 = companion.getRootScopeQualifier();
             emptyList18 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(BoostInteractor.class), null, c192718, kind, emptyList18));
+            SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(BoostInteractor.class), null, c192418, kind, emptyList18));
             module.indexPrimaryType(singleInstanceFactory18);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory18);
             }
             new KoinDefinition(module, singleInstanceFactory18);
-            C192819 c192819 = new Function2<Scope, ParametersHolder, CryptoPermissionInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.19
+            C192519 c192519 = new Function2<Scope, ParametersHolder, CryptoPermissionInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.19
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoPermissionInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -418,13 +418,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier19 = companion.getRootScopeQualifier();
             emptyList19 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(CryptoPermissionInteractor.class), null, c192819, kind, emptyList19));
+            SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(CryptoPermissionInteractor.class), null, c192519, kind, emptyList19));
             module.indexPrimaryType(singleInstanceFactory19);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory19);
             }
             new KoinDefinition(module, singleInstanceFactory19);
-            C193020 c193020 = new Function2<Scope, ParametersHolder, BinanceInternalInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.20
+            C192720 c192720 = new Function2<Scope, ParametersHolder, BinanceInternalInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.20
                 @Override // kotlin.jvm.functions.Function2
                 public final BinanceInternalInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -434,13 +434,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier20 = companion.getRootScopeQualifier();
             emptyList20 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, c193020, kind, emptyList20));
+            SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(BinanceInternalInteractor.class), null, c192720, kind, emptyList20));
             module.indexPrimaryType(singleInstanceFactory20);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory20);
             }
             new KoinDefinition(module, singleInstanceFactory20);
-            C193121 c193121 = new Function2<Scope, ParametersHolder, WalletConnectInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.21
+            C192821 c192821 = new Function2<Scope, ParametersHolder, WalletConnectInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.21
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -450,13 +450,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier21 = companion.getRootScopeQualifier();
             emptyList21 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(WalletConnectInteractor.class), null, c193121, kind, emptyList21));
+            SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(WalletConnectInteractor.class), null, c192821, kind, emptyList21));
             module.indexPrimaryType(singleInstanceFactory21);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory21);
             }
             new KoinDefinition(module, singleInstanceFactory21);
-            C193222 c193222 = new Function2<Scope, ParametersHolder, AirdropInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.22
+            C192922 c192922 = new Function2<Scope, ParametersHolder, AirdropInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.22
                 @Override // kotlin.jvm.functions.Function2
                 public final AirdropInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -466,13 +466,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier22 = companion.getRootScopeQualifier();
             emptyList22 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(AirdropInteractor.class), null, c193222, kind, emptyList22));
+            SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(AirdropInteractor.class), null, c192922, kind, emptyList22));
             module.indexPrimaryType(singleInstanceFactory22);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory22);
             }
             new KoinDefinition(module, singleInstanceFactory22);
-            C193323 c193323 = new Function2<Scope, ParametersHolder, NftInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.23
+            C193023 c193023 = new Function2<Scope, ParametersHolder, NftInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.23
                 @Override // kotlin.jvm.functions.Function2
                 public final NftInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -482,13 +482,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier23 = companion.getRootScopeQualifier();
             emptyList23 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(NftInteractor.class), null, c193323, kind, emptyList23));
+            SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(NftInteractor.class), null, c193023, kind, emptyList23));
             module.indexPrimaryType(singleInstanceFactory23);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory23);
             }
             new KoinDefinition(module, singleInstanceFactory23);
-            C193424 c193424 = new Function2<Scope, ParametersHolder, CryptoBoxInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.24
+            C193124 c193124 = new Function2<Scope, ParametersHolder, CryptoBoxInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.24
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoBoxInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -498,13 +498,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier24 = companion.getRootScopeQualifier();
             emptyList24 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(CryptoBoxInteractor.class), null, c193424, kind, emptyList24));
+            SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(CryptoBoxInteractor.class), null, c193124, kind, emptyList24));
             module.indexPrimaryType(singleInstanceFactory24);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory24);
             }
             new KoinDefinition(module, singleInstanceFactory24);
-            C193525 c193525 = new Function2<Scope, ParametersHolder, TonFragmentInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.25
+            C193225 c193225 = new Function2<Scope, ParametersHolder, TonFragmentInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.25
                 @Override // kotlin.jvm.functions.Function2
                 public final TonFragmentInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -514,13 +514,13 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier25 = companion.getRootScopeQualifier();
             emptyList25 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory25 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(TonFragmentInteractor.class), null, c193525, kind, emptyList25));
+            SingleInstanceFactory<?> singleInstanceFactory25 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(TonFragmentInteractor.class), null, c193225, kind, emptyList25));
             module.indexPrimaryType(singleInstanceFactory25);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory25);
             }
             new KoinDefinition(module, singleInstanceFactory25);
-            C193626 c193626 = new Function2<Scope, ParametersHolder, ReactionInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.26
+            C193326 c193326 = new Function2<Scope, ParametersHolder, ReactionInteractor>() { // from class: com.iMe.storage.domain.di.module.InteractorModuleKt$interactorModule$1.26
                 @Override // kotlin.jvm.functions.Function2
                 public final ReactionInteractor invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -530,7 +530,7 @@ public final class InteractorModuleKt {
             };
             StringQualifier rootScopeQualifier26 = companion.getRootScopeQualifier();
             emptyList26 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory26 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(ReactionInteractor.class), null, c193626, kind, emptyList26));
+            SingleInstanceFactory<?> singleInstanceFactory26 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(ReactionInteractor.class), null, c193326, kind, emptyList26));
             module.indexPrimaryType(singleInstanceFactory26);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory26);

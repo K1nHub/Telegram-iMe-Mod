@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity;ZLandroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 490
+    .line 493
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$5;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/StatisticActivity$5;->val$isChannel:Z
@@ -49,7 +49,7 @@
 .method public createView(I)Landroid/view/View;
     .locals 1
 
-    .line 504
+    .line 507
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$5;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$100(Lorg/telegram/ui/StatisticActivity;)Z
@@ -58,7 +58,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 505
+    .line 508
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$5;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/StatisticActivity;->access$200(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/ChannelBoostLayout;
@@ -70,7 +70,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 507
+    .line 510
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$5;->val$statisticLayout:Landroid/widget/FrameLayout;
 
     goto :goto_0
@@ -89,7 +89,7 @@
 .method public getItemCount()I
     .locals 2
 
-    .line 493
+    .line 496
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$5;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$100(Lorg/telegram/ui/StatisticActivity;)Z
@@ -102,7 +102,7 @@
 
     return v1
 
-    .line 496
+    .line 499
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/StatisticActivity$5;->val$isChannel:Z
 

@@ -26,7 +26,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
@@ -694,12 +694,12 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 break;
             case 2:
                 flickerLoadingView = new HeaderCell(this.mContext);
-                flickerLoadingView.setText(LocaleController.getString("RecentlyViewed", C3634R.string.RecentlyViewed));
+                flickerLoadingView.setText(LocaleController.getString("RecentlyViewed", C3632R.string.RecentlyViewed));
                 TextView textView = new TextView(this.mContext);
                 textView.setTextSize(1, 15.0f);
                 textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
-                textView.setText(LocaleController.getString("RecentlyViewedHide", C3634R.string.RecentlyViewedHide));
+                textView.setText(LocaleController.getString("RecentlyViewedHide", C3632R.string.RecentlyViewedHide));
                 textView.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
                 flickerLoadingView.addView(textView, LayoutHelper.createFrame(-1, -1, (LocaleController.isRTL ? 3 : 5) | 48, 17, 15, 17, 0));
                 textView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Adapters.DialogsAdapter$$ExternalSyntheticLambda0
@@ -718,7 +718,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 };
                 flickerLoadingView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
                 View view3 = new View(this.mContext);
-                view3.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3634R.C3636drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                view3.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3632R.C3634drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 flickerLoadingView.addView(view3, LayoutHelper.createFrame(-1, -1));
                 break;
             case 4:
@@ -736,7 +736,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 break;
             case 8:
                 flickerLoadingView = new ShadowSectionCell(this.mContext);
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3634R.C3636drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3632R.C3634drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable.setFullsize(true);
                 flickerLoadingView.setBackgroundDrawable(combinedDrawable);
                 break;
@@ -805,7 +805,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                         }
                     }
                 };
-                CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3634R.C3636drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3632R.C3634drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 combinedDrawable2.setFullsize(true);
                 flickerLoadingView.setBackgroundDrawable(combinedDrawable2);
                 break;
@@ -900,26 +900,26 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 if (tLRPC$Chat != null) {
                     String str3 = tLRPC$Chat.title;
                     if (DialogsActivity.isAlbumsDialogsType(this.initialDialogsType)) {
-                        lowerCase = LocaleController.getInternalString(C3634R.string.cloud_album).toLowerCase();
+                        lowerCase = LocaleController.getInternalString(C3632R.string.cloud_album).toLowerCase();
                     } else if (ChatObject.isChannel(tLRPC$Chat) && !tLRPC$Chat.megagroup) {
                         int i3 = tLRPC$Chat.participants_count;
                         if (i3 != 0) {
                             lowerCase = LocaleController.formatPluralStringComma("Subscribers", i3);
                         } else if (!ChatObject.isPublic(tLRPC$Chat)) {
-                            lowerCase = LocaleController.getString("ChannelPrivate", C3634R.string.ChannelPrivate).toLowerCase();
+                            lowerCase = LocaleController.getString("ChannelPrivate", C3632R.string.ChannelPrivate).toLowerCase();
                         } else {
-                            lowerCase = LocaleController.getString("ChannelPublic", C3634R.string.ChannelPublic).toLowerCase();
+                            lowerCase = LocaleController.getString("ChannelPublic", C3632R.string.ChannelPublic).toLowerCase();
                         }
                     } else {
                         int i4 = tLRPC$Chat.participants_count;
                         if (i4 != 0) {
                             lowerCase = LocaleController.formatPluralStringComma("Members", i4);
                         } else if (tLRPC$Chat.has_geo) {
-                            lowerCase = LocaleController.getString("MegaLocation", C3634R.string.MegaLocation);
+                            lowerCase = LocaleController.getString("MegaLocation", C3632R.string.MegaLocation);
                         } else if (!ChatObject.isPublic(tLRPC$Chat)) {
-                            lowerCase = LocaleController.getString("MegaPrivate", C3634R.string.MegaPrivate).toLowerCase();
+                            lowerCase = LocaleController.getString("MegaPrivate", C3632R.string.MegaPrivate).toLowerCase();
                         } else {
-                            lowerCase = LocaleController.getString("MegaPublic", C3634R.string.MegaPublic).toLowerCase();
+                            lowerCase = LocaleController.getString("MegaPublic", C3632R.string.MegaPublic).toLowerCase();
                         }
                     }
                     str2 = lowerCase;
@@ -935,7 +935,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                             tLRPC$User = user;
                         } else {
                             if (user.bot) {
-                                formatUserStatus = LocaleController.getString("Bot", C3634R.string.Bot);
+                                formatUserStatus = LocaleController.getString("Bot", C3632R.string.Bot);
                             } else {
                                 formatUserStatus = LocaleController.formatUserStatus(this.currentAccount, user);
                             }
@@ -1018,17 +1018,17 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
             int i7 = this.dialogsType;
             if (i7 != 11 && i7 != 12 && i7 != 13) {
-                headerCell.setText(LocaleController.getString((this.dialogsCount == 0 && this.forceUpdatingContacts) ? C3634R.string.ConnectingYourContacts : C3634R.string.YourContacts));
+                headerCell.setText(LocaleController.getString((this.dialogsCount == 0 && this.forceUpdatingContacts) ? C3632R.string.ConnectingYourContacts : C3632R.string.YourContacts));
             } else if (i == 0) {
-                headerCell.setText(LocaleController.getString("ImportHeader", C3634R.string.ImportHeader));
+                headerCell.setText(LocaleController.getString("ImportHeader", C3632R.string.ImportHeader));
             } else {
-                headerCell.setText(LocaleController.getString("ImportHeaderContacts", C3634R.string.ImportHeaderContacts));
+                headerCell.setText(LocaleController.getString("ImportHeaderContacts", C3632R.string.ImportHeaderContacts));
             }
         } else if (itemViewType == 11) {
             TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-            textInfoPrivacyCell.setText(LocaleController.getString("TapOnThePencil", C3634R.string.TapOnThePencil));
+            textInfoPrivacyCell.setText(LocaleController.getString("TapOnThePencil", C3632R.string.TapOnThePencil));
             if (this.arrowDrawable == null) {
-                Drawable drawable = this.mContext.getResources().getDrawable(C3634R.C3636drawable.arrow_newchat);
+                Drawable drawable = this.mContext.getResources().getDrawable(C3632R.C3634drawable.arrow_newchat);
                 this.arrowDrawable = drawable;
                 drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4), PorterDuff.Mode.MULTIPLY));
             }
@@ -1046,13 +1046,13 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                     headerCell2.setBackgroundColor(Theme.getColor(Theme.key_graySection));
                     int i8 = ((DialogsActivity.DialogsHeader) getItem(i)).headerType;
                     if (i8 == 0) {
-                        headerCell2.setText(LocaleController.getString("MyChannels", C3634R.string.MyChannels));
+                        headerCell2.setText(LocaleController.getString("MyChannels", C3632R.string.MyChannels));
                         break;
                     } else if (i8 == 1) {
-                        headerCell2.setText(LocaleController.getString("MyGroups", C3634R.string.MyGroups));
+                        headerCell2.setText(LocaleController.getString("MyGroups", C3632R.string.MyGroups));
                         break;
                     } else if (i8 == 2) {
-                        headerCell2.setText(LocaleController.getString("FilterGroups", C3634R.string.FilterGroups));
+                        headerCell2.setText(LocaleController.getString("FilterGroups", C3632R.string.FilterGroups));
                         break;
                     }
                     break;
@@ -1083,12 +1083,12 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             TLRPC$RequestPeerType tLRPC$RequestPeerType = this.requestPeerType;
             if (tLRPC$RequestPeerType != null) {
                 if (tLRPC$RequestPeerType instanceof TLRPC$TL_requestPeerTypeBroadcast) {
-                    textCell.setTextAndIcon(LocaleController.getString("CreateChannelForThis", C3634R.string.CreateChannelForThis), C3634R.C3636drawable.msg_channel_create, true);
+                    textCell.setTextAndIcon(LocaleController.getString("CreateChannelForThis", C3632R.string.CreateChannelForThis), C3632R.C3634drawable.msg_channel_create, true);
                 } else {
-                    textCell.setTextAndIcon(LocaleController.getString("CreateGroupForThis", C3634R.string.CreateGroupForThis), C3634R.C3636drawable.msg_groups_create, true);
+                    textCell.setTextAndIcon(LocaleController.getString("CreateGroupForThis", C3632R.string.CreateGroupForThis), C3632R.C3634drawable.msg_groups_create, true);
                 }
             } else {
-                textCell.setTextAndIcon(LocaleController.getString("CreateGroupForImport", C3634R.string.CreateGroupForImport), C3634R.C3636drawable.msg_groups_create, this.dialogsCount != 0);
+                textCell.setTextAndIcon(LocaleController.getString("CreateGroupForImport", C3632R.string.CreateGroupForImport), C3632R.C3634drawable.msg_groups_create, this.dialogsCount != 0);
             }
             textCell.setIsInDialogs();
             textCell.setOffsetFromImage(75);
@@ -1286,16 +1286,16 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
             long longValue = this.preloadDialogsPool.remove(0).longValue();
             this.currentRequestCount++;
             this.loadingDialogs.add(Long.valueOf(longValue));
-            MessagesController.getInstance(UserConfig.selectedAccount).ensureMessagesLoaded(longValue, 0, new C38301(longValue));
+            MessagesController.getInstance(UserConfig.selectedAccount).ensureMessagesLoaded(longValue, 0, new C38271(longValue));
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Adapters.DialogsAdapter$DialogsPreloader$1 */
         /* loaded from: classes5.dex */
-        public class C38301 implements MessagesController.MessagesLoadedCallback {
+        public class C38271 implements MessagesController.MessagesLoadedCallback {
             final /* synthetic */ long val$dialog_id;
 
-            C38301(long j) {
+            C38271(long j) {
                 this.val$dialog_id = j;
             }
 
@@ -1305,7 +1305,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsAdapter$DialogsPreloader$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DialogsAdapter.DialogsPreloader.C38301.this.lambda$onMessagesLoaded$0(z, j);
+                        DialogsAdapter.DialogsPreloader.C38271.this.lambda$onMessagesLoaded$0(z, j);
                     }
                 });
             }
@@ -1336,7 +1336,7 @@ public class DialogsAdapter extends RecyclerListView.SelectionAdapter implements
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.DialogsAdapter$DialogsPreloader$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DialogsAdapter.DialogsPreloader.C38301.this.lambda$onError$1(j);
+                        DialogsAdapter.DialogsPreloader.C38271.this.lambda$onError$1(j);
                     }
                 });
             }

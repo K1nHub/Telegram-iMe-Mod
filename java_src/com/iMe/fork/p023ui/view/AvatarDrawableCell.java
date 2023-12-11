@@ -17,7 +17,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
@@ -140,7 +140,7 @@ public final class AvatarDrawableCell extends FrameLayout {
         Theme.dialogs_pinnedDrawable.setAlpha(255);
         pinnedImageView.setBackground(Theme.createCircleDrawable(20, Theme.getColor(this.backgroundColorKey)));
         pinnedImageView.setColorFilter(Theme.getColor(Theme.key_chats_pinnedIcon));
-        pinnedImageView.setImageResource(C3634R.C3636drawable.list_pin);
+        pinnedImageView.setImageResource(C3632R.C3634drawable.list_pin);
         Theme.dialogs_pinnedDrawable.setAlpha(alpha);
         CounterView counterView = getCounterView();
         counterView.setColors(Theme.key_chats_unreadCounterText, Theme.key_chats_unreadCounter);

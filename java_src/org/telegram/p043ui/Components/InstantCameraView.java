@@ -74,7 +74,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.AutoDeleteMediaTask;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -346,7 +346,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         ImageView imageView = new ImageView(context);
         this.switchCameraButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.switchCameraButton.setContentDescription(LocaleController.getString("AccDescrSwitchCamera", C3634R.string.AccDescrSwitchCamera));
+        this.switchCameraButton.setContentDescription(LocaleController.getString("AccDescrSwitchCamera", C3632R.string.AccDescrSwitchCamera));
         addView(this.switchCameraButton, LayoutHelper.createFrame(62, 62, 83, 8, 0, 0, 0));
         this.switchCameraButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.InstantCameraView$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
@@ -357,7 +357,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         ImageView imageView2 = new ImageView(context);
         this.muteImageView = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        this.muteImageView.setImageResource(C3634R.C3636drawable.video_mute);
+        this.muteImageView.setImageResource(C3632R.C3634drawable.video_mute);
         this.muteImageView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         addView(this.muteImageView, LayoutHelper.createFrame(48, 48, 17));
         final Paint paint3 = new Paint(1);
@@ -605,11 +605,11 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             return;
         }
         if (Build.VERSION.SDK_INT >= 21) {
-            AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.avd_flip);
+            AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.avd_flip);
             this.switchCameraDrawable = animatedVectorDrawable;
             this.switchCameraButton.setImageDrawable(animatedVectorDrawable);
         } else {
-            this.switchCameraButton.setImageResource(C3634R.C3636drawable.vd_flip);
+            this.switchCameraButton.setImageResource(C3632R.C3634drawable.vd_flip);
         }
         this.textureOverlayView.setAlpha(1.0f);
         this.textureOverlayView.invalidate();
@@ -626,7 +626,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         if (bitmap != null) {
             this.textureOverlayView.setImageBitmap(bitmap);
         } else {
-            this.textureOverlayView.setImageResource(C3634R.C3636drawable.icplaceholder);
+            this.textureOverlayView.setImageResource(C3632R.C3634drawable.icplaceholder);
         }
         this.cameraReady = false;
         if (z) {
@@ -1307,13 +1307,13 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
         }
         Timer timer2 = new Timer();
         this.progressTimer = timer2;
-        timer2.schedule(new C509811(), 0L, 17L);
+        timer2.schedule(new C509511(), 0L, 17L);
     }
 
     /* renamed from: org.telegram.ui.Components.InstantCameraView$11 */
     /* loaded from: classes6.dex */
-    public class C509811 extends TimerTask {
-        C509811() {
+    public class C509511 extends TimerTask {
+        C509511() {
             InstantCameraView.this = r1;
         }
 
@@ -1322,7 +1322,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.InstantCameraView$11$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    InstantCameraView.C509811.this.lambda$run$0();
+                    InstantCameraView.C509511.this.lambda$run$0();
                 }
             });
         }
@@ -1928,13 +1928,13 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
             this.lastCameraId = 0;
             this.buffers = new ArrayBlockingQueue<>(10);
             this.keyframeThumbs = new ArrayList<>();
-            this.recorderRunnable = new RunnableC51091();
+            this.recorderRunnable = new RunnableC51061();
         }
 
         /* renamed from: org.telegram.ui.Components.InstantCameraView$VideoRecorder$1 */
         /* loaded from: classes6.dex */
-        public class RunnableC51091 implements Runnable {
-            RunnableC51091() {
+        public class RunnableC51061 implements Runnable {
+            RunnableC51061() {
                 VideoRecorder.this = r1;
             }
 
@@ -1951,7 +1951,7 @@ public class InstantCameraView extends FrameLayout implements NotificationCenter
                     Method dump skipped, instructions count: 373
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.InstantCameraView.VideoRecorder.RunnableC51091.run():void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.InstantCameraView.VideoRecorder.RunnableC51061.run():void");
             }
 
             public /* synthetic */ void lambda$run$0(double d) {

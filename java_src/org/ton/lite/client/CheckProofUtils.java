@@ -37,7 +37,7 @@ public final class CheckProofUtils {
             throw new IllegalStateException(("Invalid hash for block: " + blockId + ", expected: " + blockId.rootHash() + ", actual: " + hash$default).toString());
         }
         Block loadTlb = Block.Companion.loadTlb(root);
-        return new BlockHeaderResult(loadTlb.getInfo().getValue().m5089getGenUtimepVg5ArA(), loadTlb.getInfo().getValue().m5087getEndLtsVKNKU(), z ? CellRef.DefaultImpls.toCell$default(loadTlb.getStateUpdate(), null, 1, null).getRefs().get(1).hash(0) : null);
+        return new BlockHeaderResult(loadTlb.getInfo().getValue().m5071getGenUtimepVg5ArA(), loadTlb.getInfo().getValue().m5069getEndLtsVKNKU(), z ? CellRef.DefaultImpls.toCell$default(loadTlb.getStateUpdate(), null, 1, null).getRefs().get(1).hash(0) : null);
     }
 
     public final FullAccountState checkAccountProof(byte[] proof, TonNodeBlockIdExt shardBlock, AddrStd address, Cell root) {
@@ -60,14 +60,14 @@ public final class CheckProofUtils {
         }
         ShardState loadTlb = ShardState.Companion.loadTlb(virtualize$default);
         Intrinsics.checkNotNull(loadTlb, "null cannot be cast to non-null type org.ton.block.ShardStateUnsplit");
-        HashmapAugNode.AhmnLeaf ahmnLeaf = ((ShardStateUnsplit) loadTlb).getAccounts().getValue().m5155unboximpl().get(address.address());
+        HashmapAugNode.AhmnLeaf ahmnLeaf = ((ShardStateUnsplit) loadTlb).getAccounts().getValue().m5137unboximpl().get(address.address());
         ShardAccount shardAccount = ahmnLeaf != null ? (ShardAccount) ahmnLeaf.getValue() : null;
         if (shardAccount == null) {
             throw new IllegalStateException(("Shard account " + address.address() + " not found in shard state").toString());
         } else if (!Intrinsics.areEqual(shardAccount.getAccount().hash(), Cell.DefaultImpls.hash$default(root, 0, 1, null))) {
             throw new IllegalStateException(("Account state hash mismatch, expected: " + shardAccount.getAccount().hash() + ", actual: " + Cell.DefaultImpls.hash$default(root, 0, 1, null)).toString());
         } else {
-            return new FullAccountState(shardBlock, address, new TransactionId(shardAccount.getLastTransHash(), shardAccount.m5148getLastTransLtsVKNKU()), valueOf);
+            return new FullAccountState(shardBlock, address, new TransactionId(shardAccount.getLastTransHash(), shardAccount.m5130getLastTransLtsVKNKU()), valueOf);
         }
     }
 }

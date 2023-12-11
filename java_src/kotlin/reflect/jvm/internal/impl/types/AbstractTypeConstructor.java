@@ -184,7 +184,7 @@ public abstract class AbstractTypeConstructor extends ClassifierBasedTypeConstru
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getSupertypes */
-    public List<KotlinType> mo2052getSupertypes() {
+    public List<KotlinType> mo2054getSupertypes() {
         return this.supertypes.invoke().getSupertypesWithoutCycles();
     }
 
@@ -218,7 +218,7 @@ public abstract class AbstractTypeConstructor extends ClassifierBasedTypeConstru
                 public final List<? extends KotlinType> invoke() {
                     KotlinTypeRefiner kotlinTypeRefiner2;
                     kotlinTypeRefiner2 = AbstractTypeConstructor.ModuleViewTypeConstructor.this.kotlinTypeRefiner;
-                    return KotlinTypeRefinerKt.refineTypes(kotlinTypeRefiner2, abstractTypeConstructor.mo2052getSupertypes());
+                    return KotlinTypeRefinerKt.refineTypes(kotlinTypeRefiner2, abstractTypeConstructor.mo2054getSupertypes());
                 }
             });
             this.refinedSupertypes$delegate = lazy;
@@ -237,7 +237,7 @@ public abstract class AbstractTypeConstructor extends ClassifierBasedTypeConstru
 
         @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
         /* renamed from: getSupertypes */
-        public List<KotlinType> mo2052getSupertypes() {
+        public List<KotlinType> mo2054getSupertypes() {
             return getRefinedSupertypes();
         }
 
@@ -248,8 +248,8 @@ public abstract class AbstractTypeConstructor extends ClassifierBasedTypeConstru
 
         @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
         /* renamed from: getDeclarationDescriptor */
-        public ClassifierDescriptor mo2051getDeclarationDescriptor() {
-            return this.this$0.mo2051getDeclarationDescriptor();
+        public ClassifierDescriptor mo2053getDeclarationDescriptor() {
+            return this.this$0.mo2053getDeclarationDescriptor();
         }
 
         @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
@@ -337,7 +337,7 @@ public abstract class AbstractTypeConstructor extends ClassifierBasedTypeConstru
             if (r4 == 0) goto L22
             goto L2c
         L22:
-            java.util.Collection r4 = r3.mo2052getSupertypes()
+            java.util.Collection r4 = r3.mo2054getSupertypes()
             java.lang.String r3 = "supertypes"
             kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r4, r3)
         L2c:

@@ -8,6 +8,7 @@ import com.iMe.model.wallet.ItemOptionsModel;
 import com.iMe.model.wallet.crypto.NetworkItem;
 import com.iMe.model.wallet.crypto.create.WalletCreationType;
 import com.iMe.model.wallet.details.TokenDetailsArgs;
+import com.iMe.model.wallet.home.BannerSlide;
 import com.iMe.model.wallet.home.NetworkChoosePurpose;
 import com.iMe.model.wallet.home.TokenSortingData;
 import com.iMe.model.wallet.transfer.TransferScreenArgs;
@@ -138,6 +139,32 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
             view.openWalletDetails(tokenDetailsArgs);
         }
         this.viewCommands.afterApply(openWalletDetailsCommand);
+    }
+
+    @Override // com.iMe.p030ui.wallet.home.tabs.crypto.WalletHomeCryptoView
+    public void openBrowserUrl(String str) {
+        OpenBrowserUrlCommand openBrowserUrlCommand = new OpenBrowserUrlCommand(this, str);
+        this.viewCommands.beforeApply(openBrowserUrlCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.openBrowserUrl(str);
+        }
+        this.viewCommands.afterApply(openBrowserUrlCommand);
+    }
+
+    @Override // com.iMe.p030ui.wallet.home.tabs.crypto.WalletHomeCryptoView
+    public void openActionIntroScreen(BannerSlide bannerSlide) {
+        OpenActionIntroScreenCommand openActionIntroScreenCommand = new OpenActionIntroScreenCommand(this, bannerSlide);
+        this.viewCommands.beforeApply(openActionIntroScreenCommand);
+        if (hasNotView().booleanValue()) {
+            return;
+        }
+        for (View view : this.views) {
+            view.openActionIntroScreen(bannerSlide);
+        }
+        this.viewCommands.afterApply(openActionIntroScreenCommand);
     }
 
     @Override // com.iMe.p030ui.wallet.home.tabs.crypto.WalletHomeCryptoView
@@ -425,6 +452,40 @@ public class WalletHomeCryptoView$$State extends MvpViewState<WalletHomeCryptoVi
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletHomeCryptoView walletHomeCryptoView) {
             walletHomeCryptoView.openWalletDetails(this.tokenDetailsArgs);
+        }
+    }
+
+    /* compiled from: WalletHomeCryptoView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$OpenBrowserUrlCommand */
+    /* loaded from: classes4.dex */
+    public class OpenBrowserUrlCommand extends ViewCommand<WalletHomeCryptoView> {
+        public final String url;
+
+        OpenBrowserUrlCommand(WalletHomeCryptoView$$State walletHomeCryptoView$$State, String str) {
+            super("openBrowserUrl", OneExecutionStateStrategy.class);
+            this.url = str;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletHomeCryptoView walletHomeCryptoView) {
+            walletHomeCryptoView.openBrowserUrl(this.url);
+        }
+    }
+
+    /* compiled from: WalletHomeCryptoView$$State.java */
+    /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView$$State$OpenActionIntroScreenCommand */
+    /* loaded from: classes4.dex */
+    public class OpenActionIntroScreenCommand extends ViewCommand<WalletHomeCryptoView> {
+        public final BannerSlide bannerSlide;
+
+        OpenActionIntroScreenCommand(WalletHomeCryptoView$$State walletHomeCryptoView$$State, BannerSlide bannerSlide) {
+            super("openActionIntroScreen", OneExecutionStateStrategy.class);
+            this.bannerSlide = bannerSlide;
+        }
+
+        @Override // moxy.viewstate.ViewCommand
+        public void apply(WalletHomeCryptoView walletHomeCryptoView) {
+            walletHomeCryptoView.openActionIntroScreen(this.bannerSlide);
         }
     }
 

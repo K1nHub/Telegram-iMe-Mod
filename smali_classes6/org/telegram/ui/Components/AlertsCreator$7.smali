@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->createBotLaunchAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;Lorg/telegram/tgnet/TLRPC$User;Ljava/util/concurrent/atomic/AtomicBoolean;Ljava/lang/Runnable;)V
+    value = Lorg/telegram/ui/Components/AlertsCreator;->createBotLaunchAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/util/concurrent/atomic/AtomicBoolean;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Landroid/content/Context;[Lorg/telegram/ui/Cells/CheckBoxCell;)V
     .locals 0
 
-    .line 1914
+    .line 1917
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$7;->val$cell:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 1917
+    .line 1920
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 1918
+    .line 1921
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$7;->val$cell:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 p2, 0x0
@@ -47,7 +47,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1919
+    .line 1922
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1

@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;)V
     .locals 0
 
-    .line 175
+    .line 191
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$3;->this$0:Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$3;->val$rightSheet:Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;
@@ -50,14 +50,14 @@
         }
     .end annotation
 
-    .line 178
+    .line 194
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$3;->val$rightSheet:Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->prepare(Ljava/util/List;I)V
 
-    .line 179
+    .line 195
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$3;->this$0:Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
@@ -82,14 +82,14 @@
         }
     .end annotation
 
-    .line 190
+    .line 206
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$3;->val$rightSheet:Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;
 
     const/4 v1, 0x3
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->prepare(Ljava/util/List;I)V
 
-    .line 191
+    .line 207
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$3;->this$0:Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;
@@ -114,14 +114,14 @@
         }
     .end annotation
 
-    .line 184
+    .line 200
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$3;->val$rightSheet:Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->prepare(Ljava/util/List;I)V
 
-    .line 185
+    .line 201
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet$3;->this$0:Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/boosts/BoostPagerBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;

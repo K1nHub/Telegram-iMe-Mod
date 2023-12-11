@@ -42,21 +42,21 @@ public final class TlReader {
 
     public final byte[] readBytes() {
         int i;
-        int m1950constructorimpl = UByte.m1950constructorimpl(this.input.readByte()) & 255;
-        if (m1950constructorimpl < 254) {
-            i = m1950constructorimpl + 1;
-        } else if (m1950constructorimpl == 254) {
-            m1950constructorimpl = (UByte.m1950constructorimpl(this.input.readByte()) & 255) | ((UByte.m1950constructorimpl(this.input.readByte()) & 255) << 8) | ((UByte.m1950constructorimpl(this.input.readByte()) & 255) << 16);
-            i = m1950constructorimpl + 4;
+        int m1952constructorimpl = UByte.m1952constructorimpl(this.input.readByte()) & 255;
+        if (m1952constructorimpl < 254) {
+            i = m1952constructorimpl + 1;
+        } else if (m1952constructorimpl == 254) {
+            m1952constructorimpl = (UByte.m1952constructorimpl(this.input.readByte()) & 255) | ((UByte.m1952constructorimpl(this.input.readByte()) & 255) << 8) | ((UByte.m1952constructorimpl(this.input.readByte()) & 255) << 16);
+            i = m1952constructorimpl + 4;
         } else {
-            long m1950constructorimpl2 = (UByte.m1950constructorimpl(this.input.readByte()) & 255) | ((UByte.m1950constructorimpl(this.input.readByte()) & 255) << 8) | ((UByte.m1950constructorimpl(this.input.readByte()) & 255) << 16) | ((UByte.m1950constructorimpl(this.input.readByte()) & 255) << 24) | ((UByte.m1950constructorimpl(this.input.readByte()) & 255) << 32) | ((UByte.m1950constructorimpl(this.input.readByte()) & 255) << 40) | ((UByte.m1950constructorimpl(this.input.readByte()) & 255) << 48);
-            if (m1950constructorimpl2 > 2147483647L) {
-                throw new IllegalStateException("Too big byte array: " + m1950constructorimpl2);
+            long m1952constructorimpl2 = (UByte.m1952constructorimpl(this.input.readByte()) & 255) | ((UByte.m1952constructorimpl(this.input.readByte()) & 255) << 8) | ((UByte.m1952constructorimpl(this.input.readByte()) & 255) << 16) | ((UByte.m1952constructorimpl(this.input.readByte()) & 255) << 24) | ((UByte.m1952constructorimpl(this.input.readByte()) & 255) << 32) | ((UByte.m1952constructorimpl(this.input.readByte()) & 255) << 40) | ((UByte.m1952constructorimpl(this.input.readByte()) & 255) << 48);
+            if (m1952constructorimpl2 > 2147483647L) {
+                throw new IllegalStateException("Too big byte array: " + m1952constructorimpl2);
             }
-            m1950constructorimpl = (int) m1950constructorimpl2;
-            i = m1950constructorimpl + 8;
+            m1952constructorimpl = (int) m1952constructorimpl2;
+            i = m1952constructorimpl + 8;
         }
-        byte[] readBytes = StringsKt.readBytes(this.input, m1950constructorimpl);
+        byte[] readBytes = StringsKt.readBytes(this.input, m1952constructorimpl);
         while (true) {
             int i2 = i + 1;
             if (i % 4 <= 0) {

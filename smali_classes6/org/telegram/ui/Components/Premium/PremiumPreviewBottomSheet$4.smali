@@ -17,6 +17,8 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;
 
+.field final synthetic val$startEnterFromDrawable:Landroid/graphics/drawable/Drawable;
+
 
 # direct methods
 .method public static synthetic $r8$lambda$0Czbxd5f2Qw5tmx8VDQADMAxPRI(Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4;Landroid/graphics/drawable/Drawable;Landroid/animation/ValueAnimator;)V
@@ -27,11 +29,13 @@
     return-void
 .end method
 
-.method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;)V
+.method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 727
+    .line 768
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4;->val$startEnterFromDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -41,7 +45,7 @@
 .method private synthetic lambda$onAnimationEnd$0(Landroid/graphics/drawable/Drawable;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 736
+    .line 777
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -54,13 +58,27 @@
 
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 737
+    .line 778
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;
 
-    iget-object p1, p1, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;->startEnterFromView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object p1, p1, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;->startEnterFromView:Landroid/view/View;
 
+    instance-of p2, p1, Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    if-eqz p2, :cond_0
+
+    .line 779
+    check-cast p1, Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidateOutbounds()V
+
+    goto :goto_0
+
+    .line 781
+    :cond_0
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
+    :goto_0
     return-void
 .end method
 
@@ -69,7 +87,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 730
+    .line 771
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;
 
     const/4 v1, 0x0
@@ -78,45 +96,44 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 731
+    .line 772
     iput v1, v0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;->enterTransitionProgress:F
 
-    .line 732
+    .line 773
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;->iconContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
+
+    .line 774
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4;->val$startEnterFromDrawable:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_0
 
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
-    .line 733
+    .line 775
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofInt([I)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
-    .line 734
-    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4;->this$0:Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;
+    .line 776
+    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4;->val$startEnterFromDrawable:Landroid/graphics/drawable/Drawable;
 
-    iget-object v1, v1, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;->startEnterFromView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getRightDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    .line 735
     new-instance v2, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0, v1}, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$4;Landroid/graphics/drawable/Drawable;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 739
+    .line 784
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 740
+    .line 786
+    :cond_0
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
     return-void

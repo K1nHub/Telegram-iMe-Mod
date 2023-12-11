@@ -9,7 +9,7 @@ import com.iMe.fork.utils.Callbacks$Callback1;
 import java.util.ArrayList;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.SendMessagesHelper;
@@ -137,7 +137,16 @@ public abstract class GiftInfoAdapter extends RecyclerListView.SelectionAdapter 
         } else if (itemViewType == 1) {
             LinkCell linkCell = (LinkCell) viewHolder.itemView;
             linkCell.setSlug(this.slug);
-            if (this.giftCode.boost != null) {
+            if (this.giftCode.boost != null && this.slug == null) {
+                linkCell.hideSlug(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.adapters.GiftInfoAdapter$$ExternalSyntheticLambda2
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        GiftInfoAdapter.this.onHiddenLinkClicked();
+                    }
+                });
+            }
+            String str = this.slug;
+            if ((str == null || str.isEmpty()) && this.giftCode.to_id == -1) {
                 linkCell.hideSlug(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.adapters.GiftInfoAdapter$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -165,7 +174,7 @@ public abstract class GiftInfoAdapter extends RecyclerListView.SelectionAdapter 
                 }
             });
             TLRPC$TL_payments_checkedGiftCode tLRPC$TL_payments_checkedGiftCode2 = this.giftCode;
-            if (tLRPC$TL_payments_checkedGiftCode2.boost != null || tLRPC$TL_payments_checkedGiftCode2.to_id == -1) {
+            if (tLRPC$TL_payments_checkedGiftCode2.boost != null || tLRPC$TL_payments_checkedGiftCode2.flags == -1) {
                 actionBtnCell.setCloseStyle();
                 actionBtnCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.adapters.GiftInfoAdapter$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
@@ -182,17 +191,17 @@ public abstract class GiftInfoAdapter extends RecyclerListView.SelectionAdapter 
             textInfoCell.setBottomPadding(15);
             TLRPC$TL_payments_checkedGiftCode tLRPC$TL_payments_checkedGiftCode3 = this.giftCode;
             if (tLRPC$TL_payments_checkedGiftCode3.boost != null) {
-                String str = this.slug;
-                if (str == null || str.isEmpty()) {
-                    textInfoCell.setText(LocaleController.getString("BoostingLinkNotActivated", C3634R.string.BoostingLinkNotActivated));
+                String str2 = this.slug;
+                if (str2 == null || str2.isEmpty()) {
+                    textInfoCell.setText(LocaleController.getString("BoostingLinkNotActivated", C3632R.string.BoostingLinkNotActivated));
                 } else {
                     textInfoCell.setText("");
                 }
             } else if (this.isUnused) {
                 if (tLRPC$TL_payments_checkedGiftCode3.to_id == -1) {
-                    string = LocaleController.getString("BoostingSendLinkToAnyone", C3634R.string.BoostingSendLinkToAnyone);
+                    string = LocaleController.getString("BoostingSendLinkToAnyone", C3632R.string.BoostingSendLinkToAnyone);
                 } else {
-                    string = LocaleController.getString("BoostingSendLinkToFriends", C3634R.string.BoostingSendLinkToFriends);
+                    string = LocaleController.getString("BoostingSendLinkToFriends", C3632R.string.BoostingSendLinkToFriends);
                 }
                 textInfoCell.setText(AndroidUtilities.replaceSingleTag(string, Theme.key_chat_messageLinkIn, 0, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.adapters.GiftInfoAdapter$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
@@ -202,7 +211,7 @@ public abstract class GiftInfoAdapter extends RecyclerListView.SelectionAdapter 
                 }, this.resourcesProvider));
             } else {
                 Date date = new Date(this.giftCode.used_date * 1000);
-                textInfoCell.setText(LocaleController.formatString("BoostingUsedLinkDate", C3634R.string.BoostingUsedLinkDate, LocaleController.formatString("formatDateAtTime", C3634R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(date), LocaleController.getInstance().formatterDay.format(date))));
+                textInfoCell.setText(LocaleController.formatString("BoostingUsedLinkDate", C3632R.string.BoostingUsedLinkDate, LocaleController.formatString("formatDateAtTime", C3632R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(date), LocaleController.getInstance().formatterDay.format(date))));
             }
         }
     }

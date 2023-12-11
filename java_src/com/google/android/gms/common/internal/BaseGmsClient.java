@@ -203,8 +203,8 @@ public abstract class BaseGmsClient<T extends IInterface> {
     }
 
     /*  JADX ERROR: NullPointerException in pass: RegionMakerVisitor
-        java.lang.NullPointerException: Cannot read field "wordsInUse" because "set" is null
-        	at java.base/java.util.BitSet.or(BitSet.java:943)
+        java.lang.NullPointerException
+        	at java.base/java.util.BitSet.or(BitSet.java:941)
         	at jadx.core.utils.BlockUtils.getPathCross(BlockUtils.java:732)
         	at jadx.core.utils.BlockUtils.getPathCross(BlockUtils.java:811)
         	at jadx.core.dex.visitors.regions.IfMakerHelper.restructureIf(IfMakerHelper.java:88)

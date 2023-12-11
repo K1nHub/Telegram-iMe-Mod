@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -77,7 +77,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         addView(this.colorClickableView, LayoutHelper.createFrame(24, 24, 48, 0, 0, 16, 0));
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.alignView = rLottieImageView;
-        rLottieImageView.setAnimation(C3634R.raw.photo_text_allign, 24, 24);
+        rLottieImageView.setAnimation(C3632R.raw.photo_text_allign, 24, 24);
         RLottieDrawable animatedDrawable = this.alignView.getAnimatedDrawable();
         animatedDrawable.setPlayInDirectionOfCustomEndFrame(true);
         animatedDrawable.setCustomEndFrame(20);
@@ -93,7 +93,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         addView(this.alignView, LayoutHelper.createFrame(28, 28, 16, 0, 0, 16, 0));
         ImageView imageView = new ImageView(context);
         this.outlineView = imageView;
-        imageView.setImageResource(C3634R.C3636drawable.msg_text_outlined);
+        imageView.setImageResource(C3632R.C3634drawable.msg_text_outlined);
         this.outlineView.setPadding(AndroidUtilities.m104dp(1), AndroidUtilities.m104dp(1), AndroidUtilities.m104dp(1), AndroidUtilities.m104dp(1));
         this.outlineView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
@@ -104,7 +104,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         addView(this.outlineView, LayoutHelper.createFrame(28, 28, 16, 0, 0, 16, 0));
         ImageView imageView2 = new ImageView(context);
         this.plusView = imageView2;
-        imageView2.setImageResource(C3634R.C3636drawable.msg_add);
+        imageView2.setImageResource(C3632R.C3634drawable.msg_add);
         this.plusView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         this.plusView.setBackground(Theme.createSelectorDrawable(1090519039));
         this.plusView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintTextOptionsView$$ExternalSyntheticLambda0
@@ -205,7 +205,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
 
     public void animatePlusToIcon(int i) {
         if (i == 0) {
-            i = C3634R.C3636drawable.msg_add;
+            i = C3632R.C3634drawable.msg_add;
         }
         if (this.plusIcon != i) {
             ImageView imageView = this.plusView;
@@ -229,13 +229,13 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
         }
         this.outlineType = i;
         if (i == 1) {
-            i2 = C3634R.C3636drawable.msg_photo_text_framed2;
+            i2 = C3632R.C3634drawable.msg_photo_text_framed2;
         } else if (i == 2) {
-            i2 = C3634R.C3636drawable.msg_photo_text_framed3;
+            i2 = C3632R.C3634drawable.msg_photo_text_framed3;
         } else if (i != 3) {
-            i2 = C3634R.C3636drawable.msg_photo_text_framed;
+            i2 = C3632R.C3634drawable.msg_photo_text_framed;
         } else {
-            i2 = C3634R.C3636drawable.msg_photo_text_regular;
+            i2 = C3632R.C3634drawable.msg_photo_text_regular;
         }
         if (z) {
             AndroidUtilities.updateImageViewImageAnimated(this.outlineView, i2);
@@ -355,7 +355,7 @@ public class PaintTextOptionsView extends FrameLayout implements NotificationCen
                 setBackground(Theme.AdaptiveRipple.rect(-14145495));
             }
             if (this.isCurrent && this.expandDrawable == null) {
-                Drawable drawable = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.photo_expand);
+                Drawable drawable = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.photo_expand);
                 this.expandDrawable = drawable;
                 drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             }

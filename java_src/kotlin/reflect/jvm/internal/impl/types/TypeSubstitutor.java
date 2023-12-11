@@ -214,8 +214,8 @@ public class TypeSubstitutor {
             return unsafeSubstitute.isStarProjection() ? unsafeSubstitute : new TypeProjectionImpl(unsafeSubstitute.getProjectionKind(), TypeWithEnhancementKt.wrapEnhancement(unsafeSubstitute.getType().unwrap(), substitute(enhancement, typeProjection.getProjectionKind())));
         }
         if (!DynamicTypesKt.isDynamic(type) && !(type.unwrap() instanceof RawType)) {
-            TypeProjection mo2056get = this.substitution.mo2056get(type);
-            TypeProjection projectedTypeForConflictedTypeWithUnsafeVariance = mo2056get != null ? projectedTypeForConflictedTypeWithUnsafeVariance(type, mo2056get, typeParameterDescriptor, typeProjection) : null;
+            TypeProjection mo2058get = this.substitution.mo2058get(type);
+            TypeProjection projectedTypeForConflictedTypeWithUnsafeVariance = mo2058get != null ? projectedTypeForConflictedTypeWithUnsafeVariance(type, mo2058get, typeParameterDescriptor, typeProjection) : null;
             Variance projectionKind = typeProjection.getProjectionKind();
             if (projectedTypeForConflictedTypeWithUnsafeVariance == null && FlexibleTypesKt.isFlexible(type) && !TypeCapabilitiesKt.isCustomTypeParameter(type)) {
                 FlexibleType asFlexibleType = FlexibleTypesKt.asFlexibleType(type);
@@ -227,7 +227,7 @@ public class TypeSubstitutor {
                 if (projectedTypeForConflictedTypeWithUnsafeVariance != null) {
                     VarianceConflictType conflictType = conflictType(projectionKind, projectedTypeForConflictedTypeWithUnsafeVariance.getProjectionKind());
                     if (!CapturedTypeConstructorKt.isCaptured(type)) {
-                        int i3 = C34812.f1389x4790888d[conflictType.ordinal()];
+                        int i3 = C34782.f1389x4790888d[conflictType.ordinal()];
                         if (i3 == 1) {
                             throw new SubstitutionException("Out-projection in in-position");
                         }
@@ -264,7 +264,7 @@ public class TypeSubstitutor {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: kotlin.reflect.jvm.internal.impl.types.TypeSubstitutor$2 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C34812 {
+    public static /* synthetic */ class C34782 {
 
         /* renamed from: $SwitchMap$org$jetbrains$kotlin$types$TypeSubstitutor$VarianceConflictType */
         static final /* synthetic */ int[] f1389x4790888d;
@@ -339,7 +339,7 @@ public class TypeSubstitutor {
     private TypeProjection substituteCompoundType(TypeProjection typeProjection, int i) throws SubstitutionException {
         KotlinType type = typeProjection.getType();
         Variance projectionKind = typeProjection.getProjectionKind();
-        if (type.getConstructor().mo2051getDeclarationDescriptor() instanceof TypeParameterDescriptor) {
+        if (type.getConstructor().mo2053getDeclarationDescriptor() instanceof TypeParameterDescriptor) {
             return typeProjection;
         }
         SimpleType abbreviation = SpecialTypesKt.getAbbreviation(type);
@@ -358,7 +358,7 @@ public class TypeSubstitutor {
             TypeParameterDescriptor typeParameterDescriptor = list.get(i2);
             TypeProjection typeProjection = list2.get(i2);
             TypeProjection unsafeSubstitute = unsafeSubstitute(typeProjection, typeParameterDescriptor, i + 1);
-            int i3 = C34812.f1389x4790888d[conflictType(typeParameterDescriptor.getVariance(), unsafeSubstitute.getProjectionKind()).ordinal()];
+            int i3 = C34782.f1389x4790888d[conflictType(typeParameterDescriptor.getVariance(), unsafeSubstitute.getProjectionKind()).ordinal()];
             if (i3 == 1 || i3 == 2) {
                 unsafeSubstitute = TypeUtils.makeStarProjection(typeParameterDescriptor);
             } else if (i3 == 3) {

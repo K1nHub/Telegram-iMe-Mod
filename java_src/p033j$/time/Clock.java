@@ -8,13 +8,13 @@ public abstract class Clock {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.time.Clock$a */
     /* loaded from: classes2.dex */
-    public static final class C2675a extends Clock implements Serializable {
+    public static final class C2672a extends Clock implements Serializable {
 
         /* renamed from: a */
-        private final AbstractC2728n f480a;
+        private final AbstractC2725n f480a;
 
-        C2675a(AbstractC2728n abstractC2728n) {
-            this.f480a = abstractC2728n;
+        C2672a(AbstractC2725n abstractC2725n) {
+            this.f480a = abstractC2725n;
         }
 
         @Override // p033j$.time.Clock
@@ -25,8 +25,8 @@ public abstract class Clock {
 
         @Override // p033j$.time.Clock
         public boolean equals(Object obj) {
-            if (obj instanceof C2675a) {
-                return this.f480a.equals(((C2675a) obj).f480a);
+            if (obj instanceof C2672a) {
+                return this.f480a.equals(((C2672a) obj).f480a);
             }
             return false;
         }
@@ -42,7 +42,7 @@ public abstract class Clock {
         }
 
         public String toString() {
-            StringBuilder m961a = AbstractC2679a.m961a("SystemClock[");
+            StringBuilder m961a = AbstractC2676a.m961a("SystemClock[");
             m961a.append(this.f480a);
             m961a.append("]");
             return m961a.toString();
@@ -53,7 +53,7 @@ public abstract class Clock {
     }
 
     public static Clock systemUTC() {
-        return new C2675a(C2729o.f610e);
+        return new C2672a(C2726o.f610e);
     }
 
     /* renamed from: a */

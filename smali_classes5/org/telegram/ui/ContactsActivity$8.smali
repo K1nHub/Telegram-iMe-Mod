@@ -81,7 +81,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;)V
     .locals 0
 
-    .line 1060
+    .line 1061
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -92,7 +92,7 @@
 .method private synthetic lambda$onItemClick$0(J)V
     .locals 1
 
-    .line 1081
+    .line 1082
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->of(J)Lorg/telegram/ui/ChatActivity;
@@ -107,7 +107,7 @@
 .method private synthetic lambda$onItemClick$1(J)V
     .locals 1
 
-    .line 1084
+    .line 1085
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ProfileActivity;->of(J)Lorg/telegram/ui/ProfileActivity;
@@ -122,7 +122,7 @@
 .method private synthetic lambda$onItemClick$2(Ljava/lang/String;JLorg/telegram/tgnet/TLRPC$User;)V
     .locals 3
 
-    .line 1087
+    .line 1088
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$2900(Lorg/telegram/ui/ContactsActivity;)I
@@ -159,7 +159,7 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 1088
+    .line 1089
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$3000(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/messenger/NotificationsController;
@@ -174,7 +174,7 @@
 
     goto :goto_0
 
-    .line 1089
+    .line 1090
     :cond_0
     iget-object p1, p4, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
@@ -185,19 +185,19 @@
     :goto_0
     const-string p2, " "
 
-    .line 1090
+    .line 1091
     invoke-virtual {p1, p2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result p2
 
     if-lez p2, :cond_1
 
-    .line 1092
+    .line 1093
     invoke-virtual {p1, v1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1094
+    .line 1095
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
@@ -243,7 +243,7 @@
 .method private synthetic lambda$onItemClick$3(Ljava/lang/String;JLorg/telegram/tgnet/TLRPC$User;)V
     .locals 3
 
-    .line 1097
+    .line 1098
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$2700(Lorg/telegram/ui/ContactsActivity;)I
@@ -280,7 +280,7 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 1098
+    .line 1099
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ContactsActivity;->access$2800(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/messenger/NotificationsController;
@@ -297,7 +297,7 @@
 
     goto :goto_0
 
-    .line 1099
+    .line 1100
     :cond_0
     iget-object p1, p4, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
@@ -308,19 +308,19 @@
     :goto_0
     const-string p2, " "
 
-    .line 1100
+    .line 1101
     invoke-virtual {p1, p2}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result p2
 
     if-lez p2, :cond_1
 
-    .line 1102
+    .line 1103
     invoke-virtual {p1, v0, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1104
+    .line 1105
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
@@ -364,7 +364,7 @@
 .method private synthetic lambda$onItemClick$4(J)V
     .locals 7
 
-    .line 1112
+    .line 1113
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -391,7 +391,7 @@
 .method private synthetic lambda$onItemClick$5(J)V
     .locals 7
 
-    .line 1115
+    .line 1116
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -418,7 +418,7 @@
 .method private synthetic lambda$onItemClick$6(JLorg/telegram/tgnet/TLRPC$User;)V
     .locals 7
 
-    .line 1109
+    .line 1110
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -439,26 +439,26 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Stories/StoriesController;->toggleHidden(JZZZ)V
 
-    .line 1110
+    .line 1111
     new-instance v0, Lorg/telegram/ui/Components/BulletinFactory$UndoObject;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/BulletinFactory$UndoObject;-><init>()V
 
-    .line 1111
+    .line 1112
     new-instance v1, Lorg/telegram/ui/ContactsActivity$8$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0, p1, p2}, Lorg/telegram/ui/ContactsActivity$8$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ContactsActivity$8;J)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/BulletinFactory$UndoObject;->onUndo:Ljava/lang/Runnable;
 
-    .line 1114
+    .line 1115
     new-instance v1, Lorg/telegram/ui/ContactsActivity$8$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0, p1, p2}, Lorg/telegram/ui/ContactsActivity$8$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ContactsActivity$8;J)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/BulletinFactory$UndoObject;->onAction:Ljava/lang/Runnable;
 
-    .line 1117
+    .line 1118
     invoke-static {}, Lorg/telegram/ui/Components/BulletinFactory;->global()Lorg/telegram/ui/Components/BulletinFactory;
 
     move-result-object p1
@@ -471,7 +471,7 @@
 
     aput-object p3, v1, v2
 
-    .line 1118
+    .line 1119
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
@@ -486,7 +486,7 @@
 
     const/16 v5, 0x14
 
-    .line 1119
+    .line 1120
     invoke-static {p3, v4, v5}, Lorg/telegram/messenger/ContactsController;->formatName(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p3
@@ -503,12 +503,12 @@
 
     move-result-object p2
 
-    .line 1117
+    .line 1118
     invoke-virtual {p1, v1, p2, v4, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createUsersBulletin(Ljava/util/List;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/telegram/ui/Components/BulletinFactory$UndoObject;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
-    .line 1122
+    .line 1123
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
     return-void
@@ -525,7 +525,7 @@
 
     move/from16 v1, p2
 
-    .line 1063
+    .line 1064
     iget-object v2, v6, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ContactsActivity;->access$500(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Adapters/ContactsAdapter;
@@ -536,7 +536,7 @@
 
     move-result v2
 
-    .line 1064
+    .line 1065
     iget-object v3, v6, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ContactsActivity;->access$500(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Adapters/ContactsAdapter;
@@ -547,14 +547,14 @@
 
     move-result v1
 
-    .line 1065
+    .line 1066
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v3
 
     if-eqz v3, :cond_0
 
-    .line 1066
+    .line 1067
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v3
@@ -570,7 +570,7 @@
 
     goto/16 :goto_0
 
-    .line 1071
+    .line 1072
     :cond_1
     iget-object v1, v6, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
@@ -590,17 +590,17 @@
 
     if-eqz v1, :cond_2
 
-    .line 1072
+    .line 1073
     move-object v1, v0
 
     check-cast v1, Lorg/telegram/ui/Cells/UserCell;
 
-    .line 1073
+    .line 1074
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/UserCell;->getDialogId()J
 
     move-result-wide v8
 
-    .line 1074
+    .line 1075
     iget-object v1, v6, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ContactsActivity;->access$2400(Lorg/telegram/ui/ContactsActivity;)I
@@ -619,12 +619,12 @@
 
     move-result-object v10
 
-    .line 1075
+    .line 1076
     invoke-static {v8, v9, v3}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 1076
+    .line 1077
     iget-object v1, v6, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ContactsActivity;->access$2500(Lorg/telegram/ui/ContactsActivity;)I
@@ -637,7 +637,7 @@
 
     xor-int/lit8 v12, v1, 0x1
 
-    .line 1077
+    .line 1078
     iget-object v1, v6, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v1, v0}, Lorg/telegram/ui/Components/ItemOptions;->makeOptions(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/View;)Lorg/telegram/ui/Components/ItemOptions;
@@ -646,7 +646,7 @@
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    .line 1079
+    .line 1080
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
@@ -665,7 +665,7 @@
 
     const-string v3, "SendMessage"
 
-    .line 1080
+    .line 1081
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -684,7 +684,7 @@
 
     const-string v3, "OpenProfile"
 
-    .line 1083
+    .line 1084
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -705,7 +705,7 @@
 
     const-string v1, "NotificationsStoryMute"
 
-    .line 1086
+    .line 1087
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
@@ -738,7 +738,7 @@
 
     const-string v1, "NotificationsStoryUnmute"
 
-    .line 1096
+    .line 1097
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v13
@@ -755,7 +755,7 @@
 
     move-result-object v0
 
-    .line 1107
+    .line 1108
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_viewintopic:I
 
     sget v2, Lorg/telegram/messenger/R$string;->ShowInChats:I
@@ -776,12 +776,12 @@
 
     const/4 v1, 0x5
 
-    .line 1139
+    .line 1140
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ItemOptions;->setGravity(I)Lorg/telegram/ui/Components/ItemOptions;
 
     move-result-object v0
 
-    .line 1140
+    .line 1141
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ItemOptions;->show()Lorg/telegram/ui/Components/ItemOptions;
 
     const/4 v0, 0x1
@@ -791,7 +791,7 @@
     :cond_2
     move-object v4, v6
 
-    .line 1144
+    .line 1145
     instance-of v1, v0, Lorg/telegram/ui/Cells/UserCell;
 
     if-eqz v1, :cond_3
@@ -804,7 +804,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 1145
+    .line 1146
     iget-object v1, v4, Lorg/telegram/ui/ContactsActivity$8;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     check-cast v0, Lorg/telegram/ui/Cells/UserCell;

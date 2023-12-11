@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkContentWalletChooseRecipientOptionsBinding implements ViewBinding {
     public final FrameLayout frameContacts;
@@ -38,7 +38,7 @@ public final class ForkContentWalletChooseRecipientOptionsBinding implements Vie
     }
 
     public static ForkContentWalletChooseRecipientOptionsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_content_wallet_choose_recipient_options, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_content_wallet_choose_recipient_options, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -46,22 +46,22 @@ public final class ForkContentWalletChooseRecipientOptionsBinding implements Vie
     }
 
     public static ForkContentWalletChooseRecipientOptionsBinding bind(View view) {
-        int i = C3634R.C3637id.frame_contacts;
+        int i = C3632R.C3635id.frame_contacts;
         FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
         if (frameLayout != null) {
-            i = C3634R.C3637id.frame_paste;
+            i = C3632R.C3635id.frame_paste;
             FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(view, i);
             if (frameLayout2 != null) {
-                i = C3634R.C3637id.frame_qr;
+                i = C3632R.C3635id.frame_qr;
                 FrameLayout frameLayout3 = (FrameLayout) ViewBindings.findChildViewById(view, i);
                 if (frameLayout3 != null) {
-                    i = C3634R.C3637id.text_contacts;
+                    i = C3632R.C3635id.text_contacts;
                     TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView != null) {
-                        i = C3634R.C3637id.text_paste;
+                        i = C3632R.C3635id.text_paste;
                         TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView2 != null) {
-                            i = C3634R.C3637id.text_qr;
+                            i = C3632R.C3635id.text_qr;
                             TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                             if (textView3 != null) {
                                 return new ForkContentWalletChooseRecipientOptionsBinding((LinearLayoutCompat) view, frameLayout, frameLayout2, frameLayout3, textView, textView2, textView3);

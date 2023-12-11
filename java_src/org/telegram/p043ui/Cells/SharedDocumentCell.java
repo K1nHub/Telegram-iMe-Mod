@@ -25,7 +25,7 @@ import java.io.File;
 import java.util.Date;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -205,7 +205,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             boolean z10 = LocaleController.isRTL;
             addView(view7, LayoutHelper.createFrame(-1, -2, (z10 ? 5 : 3) | 48, z10 ? 8 : 72, 5, z10 ? 72 : 8, 0));
         }
-        this.statusDrawable = new RLottieDrawable(C3634R.raw.download_arrow, "download_arrow", AndroidUtilities.m104dp(14), AndroidUtilities.m104dp(14), true, null);
+        this.statusDrawable = new RLottieDrawable(C3632R.raw.download_arrow, "download_arrow", AndroidUtilities.m104dp(14), AndroidUtilities.m104dp(14), true, null);
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.statusImageView = rLottieImageView;
         rLottieImageView.setAnimation(this.statusDrawable);
@@ -299,16 +299,16 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
                 }
             } else {
                 CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m104dp(42), i);
-                if (i == C3634R.C3636drawable.files_storage) {
+                if (i == C3632R.C3634drawable.files_storage) {
                     i2 = Theme.key_chat_attachLocationBackground;
                     i3 = Theme.key_chat_attachIcon;
-                } else if (i == C3634R.C3636drawable.files_gallery) {
+                } else if (i == C3632R.C3634drawable.files_gallery) {
                     i2 = Theme.key_chat_attachContactBackground;
                     i3 = Theme.key_chat_attachIcon;
-                } else if (i == C3634R.C3636drawable.files_music) {
+                } else if (i == C3632R.C3634drawable.files_music) {
                     i2 = Theme.key_chat_attachAudioBackground;
                     i3 = Theme.key_chat_attachIcon;
-                } else if (i == C3634R.C3636drawable.files_internal) {
+                } else if (i == C3632R.C3634drawable.files_internal) {
                     i2 = Theme.key_chat_attachGalleryBackground;
                     i3 = Theme.key_chat_attachIcon;
                 } else {
@@ -438,7 +438,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             }
             String documentFileName = (messageObject.isVideo() || (messageObject.messageOwner.media instanceof TLRPC$TL_messageMediaPhoto) || MessageObject.isGifDocument(document)) ? null : FileLoader.getDocumentFileName(document);
             if (TextUtils.isEmpty(documentFileName) && (str = document.mime_type) != null) {
-                documentFileName = str.startsWith("video") ? MessageObject.isGifDocument(document) ? LocaleController.getString("AttachGif", C3634R.string.AttachGif) : LocaleController.getString("AttachVideo", C3634R.string.AttachVideo) : document.mime_type.startsWith("image") ? MessageObject.isGifDocument(document) ? LocaleController.getString("AttachGif", C3634R.string.AttachGif) : LocaleController.getString("AttachPhoto", C3634R.string.AttachPhoto) : document.mime_type.startsWith("audio") ? LocaleController.getString("AttachAudio", C3634R.string.AttachAudio) : LocaleController.getString("AttachDocument", C3634R.string.AttachDocument);
+                documentFileName = str.startsWith("video") ? MessageObject.isGifDocument(document) ? LocaleController.getString("AttachGif", C3632R.string.AttachGif) : LocaleController.getString("AttachVideo", C3632R.string.AttachVideo) : document.mime_type.startsWith("image") ? MessageObject.isGifDocument(document) ? LocaleController.getString("AttachGif", C3632R.string.AttachGif) : LocaleController.getString("AttachPhoto", C3632R.string.AttachPhoto) : document.mime_type.startsWith("audio") ? LocaleController.getString("AttachAudio", C3632R.string.AttachAudio) : LocaleController.getString("AttachDocument", C3632R.string.AttachDocument);
             }
             if (str4 == null) {
                 str4 = documentFileName;
@@ -529,7 +529,7 @@ public class SharedDocumentCell extends FrameLayout implements DownloadControlle
             this.rightDateTextView.setText(LocaleController.stringForMessageListDate(this.message.messageOwner.date));
             return;
         }
-        this.dateTextView.setText(String.format("%s, %s", format, LocaleController.formatString("formatDateAtTime", C3634R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(new Date(j)), LocaleController.getInstance().formatterDay.format(new Date(j)))));
+        this.dateTextView.setText(String.format("%s, %s", format, LocaleController.formatString("formatDateAtTime", C3632R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(new Date(j)), LocaleController.getInstance().formatterDay.format(new Date(j)))));
     }
 
     public void updateFileExistIcon(boolean z) {

@@ -33,14 +33,14 @@ public final class DefaultBufferPool extends DefaultPool<ChunkBuffer> {
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // io.ktor.utils.p032io.pool.DefaultPool
     public ChunkBuffer produceInstance() {
-        return new ChunkBuffer(this.allocator.mo1908allocgFvZug(this.bufferSize), null, this, null);
+        return new ChunkBuffer(this.allocator.mo1910allocgFvZug(this.bufferSize), null, this, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // io.ktor.utils.p032io.pool.DefaultPool
     public void disposeInstance(ChunkBuffer instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
-        this.allocator.mo1909free3GNKZMM(instance.m1917getMemorySK3TCg8());
+        this.allocator.mo1911free3GNKZMM(instance.m1919getMemorySK3TCg8());
         super.disposeInstance((DefaultBufferPool) instance);
         instance.unlink$ktor_io();
     }
@@ -50,12 +50,12 @@ public final class DefaultBufferPool extends DefaultPool<ChunkBuffer> {
     public void validateInstance(ChunkBuffer instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
         super.validateInstance((DefaultBufferPool) instance);
-        if (!(((long) instance.m1917getMemorySK3TCg8().limit()) == ((long) this.bufferSize))) {
+        if (!(((long) instance.m1919getMemorySK3TCg8().limit()) == ((long) this.bufferSize))) {
             StringBuilder sb = new StringBuilder();
             sb.append("Buffer size mismatch. Expected: ");
             sb.append(this.bufferSize);
             sb.append(", actual: ");
-            sb.append(instance.m1917getMemorySK3TCg8().limit());
+            sb.append(instance.m1919getMemorySK3TCg8().limit());
             throw new IllegalStateException(sb.toString().toString());
         }
         if (!(instance != ChunkBuffer.Companion.getEmpty())) {

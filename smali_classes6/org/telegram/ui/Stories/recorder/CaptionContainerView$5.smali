@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/CaptionContainerView;Z)V
     .locals 0
 
-    .line 602
+    .line 604
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$5;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$5;->val$show:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 605
+    .line 607
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$5;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 606
+    .line 608
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$5;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->applyButton:Landroid/widget/ImageView;
@@ -53,23 +53,23 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 607
+    .line 609
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$5;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 
     if-eqz p1, :cond_0
 
-    .line 608
+    .line 610
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 611
+    .line 613
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$5;->val$show:Z
 
     if-eqz p1, :cond_1
 
-    .line 612
+    .line 614
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$5;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->editText:Lorg/telegram/ui/Components/EditTextEmoji;
@@ -82,7 +82,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setAllowDrawCursor(Z)V
 
-    .line 614
+    .line 616
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$5;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView;
 

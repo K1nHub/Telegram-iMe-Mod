@@ -1,6 +1,5 @@
 package com.iMe.storage.domain.interactor.crypto.fragment;
 
-import com.google.android.gms.common.util.Base64Utils;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.error.ErrorModel;
 import com.iMe.storage.data.network.model.error.IErrorStatus;
@@ -28,6 +27,7 @@ import java.util.concurrent.Callable;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.p034io.encoding.Base64;
 import kotlin.text.Charsets;
 /* compiled from: TonFragmentInteractor.kt */
 /* loaded from: classes3.dex */
@@ -324,15 +324,10 @@ public final class TonFragmentInteractor {
                             }
                             return Observable.empty();
                         }
-                        byte[] orEmpty = CryptoExtKt.orEmpty(result2.getData());
                         tonFragmentRepository = TonFragmentInteractor.this.tonFragmentRepository;
-                        String encodeUrlSafe = Base64Utils.encodeUrlSafe(orEmpty);
-                        Intrinsics.checkNotNullExpressionValue(encodeUrlSafe, "encodeUrlSafe(signatureBytes)");
-                        String address2 = wallet2.getAddress();
-                        String str = r3;
-                        String encodeUrlSafe2 = Base64Utils.encodeUrlSafe(CryptoExtKt.hexToByteArray$default(wallet2.getPublicKey(), false, 1, null));
-                        Intrinsics.checkNotNullExpressionValue(encodeUrlSafe2, "encodeUrlSafe(\n         …                        )");
-                        Observable<Result<Boolean>> sendSessionSignature = tonFragmentRepository.sendSessionSignature(encodeUrlSafe, address2, str, encodeUrlSafe2);
+                        byte[] orEmpty = CryptoExtKt.orEmpty(result2.getData());
+                        Base64.Default r12 = Base64.Default;
+                        Observable<Result<Boolean>> sendSessionSignature = tonFragmentRepository.sendSessionSignature(Base64.encode$default(r12, orEmpty, 0, 0, 6, null), wallet2.getAddress(), r3, Base64.encode$default(r12, CryptoExtKt.hexToByteArray$default(wallet2.getPublicKey(), false, 1, null), 0, 0, 6, null));
                         schedulersProvider2 = TonFragmentInteractor.this.schedulersProvider;
                         Observable<Result<Boolean>> subscribeOn = sendSessionSignature.subscribeOn(schedulersProvider2.mo1011io());
                         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonFragmentRepository\n  …(schedulersProvider.io())");
@@ -373,10 +368,7 @@ public final class TonFragmentInteractor {
                 TonFragmentRepository tonFragmentRepository;
                 Intrinsics.checkNotNullParameter(publicKeyBytes, "publicKeyBytes");
                 tonFragmentRepository = TonFragmentInteractor.this.tonFragmentRepository;
-                String str2 = str;
-                String encodeUrlSafe = Base64Utils.encodeUrlSafe(publicKeyBytes);
-                Intrinsics.checkNotNullExpressionValue(encodeUrlSafe, "encodeUrlSafe(publicKeyBytes)");
-                return tonFragmentRepository.preparePremiumBuyTransaction(str2, encodeUrlSafe);
+                return tonFragmentRepository.preparePremiumBuyTransaction(str, Base64.encode$default(Base64.Default, publicKeyBytes, 0, 0, 6, null));
             }
         };
         Observable<Result<PremiumBuyTransactionParams>> subscribeOn = tonPublicKeyBytes.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$$ExternalSyntheticLambda1
@@ -411,11 +403,7 @@ public final class TonFragmentInteractor {
                 TonFragmentRepository tonFragmentRepository;
                 Intrinsics.checkNotNullParameter(publicKeyBytes, "publicKeyBytes");
                 tonFragmentRepository = TonFragmentInteractor.this.tonFragmentRepository;
-                String str3 = str;
-                String str4 = str2;
-                String encodeUrlSafe = Base64Utils.encodeUrlSafe(publicKeyBytes);
-                Intrinsics.checkNotNullExpressionValue(encodeUrlSafe, "encodeUrlSafe(publicKeyBytes)");
-                return tonFragmentRepository.prepareProductBuyTransaction(str3, str4, encodeUrlSafe);
+                return tonFragmentRepository.prepareProductBuyTransaction(str, str2, Base64.encode$default(Base64.Default, publicKeyBytes, 0, 0, 6, null));
             }
         };
         Observable<Result<ProductBuyTransactionParams>> subscribeOn = tonPublicKeyBytes.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$$ExternalSyntheticLambda2

@@ -78,9 +78,9 @@ public final class CompletedPoint {
     }
 
     /* renamed from: double  reason: not valid java name */
-    public final CompletedPoint m1901double(ProjectivePoint pp) {
+    public final CompletedPoint m1903double(ProjectivePoint pp) {
         Intrinsics.checkNotNullParameter(pp, "pp");
-        return Companion.m1902double(pp, this);
+        return Companion.m1904double(pp, this);
     }
 
     /* compiled from: CompletedPoint.kt */
@@ -94,7 +94,7 @@ public final class CompletedPoint {
         }
 
         /* renamed from: double  reason: not valid java name */
-        public final CompletedPoint m1902double(ProjectivePoint pp, CompletedPoint output) {
+        public final CompletedPoint m1904double(ProjectivePoint pp, CompletedPoint output) {
             Intrinsics.checkNotNullParameter(pp, "pp");
             Intrinsics.checkNotNullParameter(output, "output");
             FieldElement.Companion companion = FieldElement.Companion;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;Landroid/view/View;Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 16003
+    .line 16011
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;-><init>(Landroid/view/View;)V
@@ -35,7 +35,7 @@
 .method protected heightAnimationEnabled()Z
     .locals 7
 
-    .line 16081
+    .line 16089
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -44,7 +44,7 @@
 
     move-result-object v0
 
-    .line 16082
+    .line 16090
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v1, v1, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -85,7 +85,7 @@
 
     goto/16 :goto_0
 
-    .line 16086
+    .line 16094
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -105,7 +105,7 @@
 
     return v2
 
-    .line 16090
+    .line 16098
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -129,7 +129,7 @@
 
     return v2
 
-    .line 16093
+    .line 16101
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -184,7 +184,7 @@
 
     goto :goto_0
 
-    .line 16096
+    .line 16104
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -231,7 +231,7 @@
 .method protected onPanTranslationUpdate(FFZ)V
     .locals 3
 
-    .line 16034
+    .line 16042
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -258,7 +258,7 @@
 
     return-void
 
-    .line 16037
+    .line 16045
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -266,7 +266,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->access$18302(Lorg/telegram/ui/ChatActivity;F)F
 
-    .line 16038
+    .line 16046
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -281,14 +281,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 16039
+    .line 16047
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->access$35600(Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;F)V
 
     goto/16 :goto_0
 
-    .line 16041
+    .line 16049
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -300,7 +300,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTranslationY(F)V
 
-    .line 16042
+    .line 16050
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -313,7 +313,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 16043
+    .line 16051
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -326,7 +326,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 16045
+    .line 16053
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -340,7 +340,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 16046
+    .line 16054
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -351,7 +351,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->setBackgroundTranslation(I)V
 
-    .line 16047
+    .line 16055
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -362,7 +362,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 16048
+    .line 16056
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -373,7 +373,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/InstantCameraView;->onPanTranslationUpdate(F)V
 
-    .line 16050
+    .line 16058
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -385,7 +385,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 16051
+    .line 16059
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -398,7 +398,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/BlurBehindDrawable;->onPanTranslationUpdate(F)V
 
-    .line 16053
+    .line 16061
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -406,21 +406,21 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->setFragmentPanTranslationOffset(I)V
 
-    .line 16054
+    .line 16062
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$10000(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 16055
+    .line 16063
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->invalidateMessagesVisiblePart()V
 
-    .line 16057
+    .line 16065
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -432,14 +432,14 @@
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 16058
+    .line 16066
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$10100(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 16059
+    .line 16067
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -448,10 +448,10 @@
 
     if-eqz v0, :cond_5
 
-    .line 16060
+    .line 16068
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Components/ChatActivityEnterView;->onAdjustPanTransitionUpdate(FFZ)V
 
-    .line 16062
+    .line 16070
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -461,10 +461,10 @@
 
     if-eqz p2, :cond_6
 
-    .line 16063
+    .line 16071
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/MentionsContainerView;->onPanTransitionUpdate(F)V
 
-    .line 16065
+    .line 16073
     :cond_6
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
@@ -484,7 +484,7 @@
 
     if-eqz p2, :cond_7
 
-    .line 16066
+    .line 16074
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object p2, p2, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -503,17 +503,17 @@
 
     move-result-object p2
 
-    .line 16067
+    .line 16075
     instance-of p3, p2, Lorg/telegram/ui/DialogsActivity;
 
     if-eqz p3, :cond_7
 
-    .line 16068
+    .line 16076
     check-cast p2, Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/DialogsActivity;->setPanTranslationOffset(F)V
 
-    .line 16071
+    .line 16079
     :cond_7
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -539,7 +539,7 @@
 
     if-nez p2, :cond_8
 
-    .line 16072
+    .line 16080
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object p2, p2, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -562,7 +562,7 @@
 
     invoke-virtual {p2, p3, v0}, Lorg/telegram/ui/Components/HintView;->showForView(Landroid/view/View;Z)Z
 
-    .line 16074
+    .line 16082
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -574,7 +574,7 @@
 
     if-eqz p2, :cond_9
 
-    .line 16075
+    .line 16083
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object p2, p2, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -592,7 +592,7 @@
 .method protected onTransitionEnd()V
     .locals 3
 
-    .line 16021
+    .line 16029
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -601,10 +601,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 16022
+    .line 16030
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->onAdjustPanTransitionEnd()V
 
-    .line 16024
+    .line 16032
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -614,10 +614,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 16025
+    .line 16033
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->onPanTransitionEnd()V
 
-    .line 16027
+    .line 16035
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -643,7 +643,7 @@
 
     if-nez v0, :cond_2
 
-    .line 16028
+    .line 16036
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -673,7 +673,7 @@
 .method protected onTransitionStart(ZI)V
     .locals 2
 
-    .line 16007
+    .line 16015
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -682,7 +682,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$2902(Lorg/telegram/ui/ChatActivity;Z)Z
 
-    .line 16008
+    .line 16016
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -691,10 +691,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 16009
+    .line 16017
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->onAdjustPanTransitionStart(ZI)V
 
-    .line 16011
+    .line 16019
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -704,10 +704,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 16012
+    .line 16020
     invoke-virtual {p1}, Lorg/telegram/ui/Components/MentionsContainerView;->onPanTransitionStart()V
 
-    .line 16014
+    .line 16022
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
@@ -719,7 +719,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 16015
+    .line 16023
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -739,7 +739,7 @@
 .method protected startOffset()I
     .locals 2
 
-    .line 16104
+    .line 16112
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->getKeyboardHeight()I
@@ -748,7 +748,7 @@
 
     const/16 v1, 0x14
 
-    .line 16105
+    .line 16113
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -767,7 +767,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 16106
+    .line 16114
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView$1;->this$1:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;->this$0:Lorg/telegram/ui/ChatActivity;

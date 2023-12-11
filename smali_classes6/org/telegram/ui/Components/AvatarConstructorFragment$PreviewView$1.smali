@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;Landroid/content/Context;Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
     .locals 0
 
-    .line 696
+    .line 698
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 699
+    .line 701
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 
-    .line 700
+    .line 702
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->invalidate()V
@@ -49,10 +49,10 @@
 .method public invalidate(IIII)V
     .locals 0
 
-    .line 711
+    .line 713
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->invalidate(IIII)V
 
-    .line 712
+    .line 714
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->invalidate()V
@@ -63,10 +63,10 @@
 .method public invalidate(Landroid/graphics/Rect;)V
     .locals 0
 
-    .line 705
+    .line 707
     invoke-super {p0, p1}, Landroid/view/View;->invalidate(Landroid/graphics/Rect;)V
 
-    .line 706
+    .line 708
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->invalidate()V

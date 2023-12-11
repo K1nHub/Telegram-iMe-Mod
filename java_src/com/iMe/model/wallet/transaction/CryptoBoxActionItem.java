@@ -11,7 +11,7 @@ import com.iMe.utils.formatter.DateFormatter;
 import java.math.BigDecimal;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CryptoBoxActionItem.kt */
 /* loaded from: classes3.dex */
@@ -205,11 +205,11 @@ public final class CryptoBoxActionItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3634R.string.cryptobox_action_type_create;
+            i = C3632R.string.cryptobox_action_type_create;
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3634R.string.cryptobox_action_type_stop;
+            i = C3632R.string.cryptobox_action_type_stop;
         }
         return resourceManager.getString(i);
     }
@@ -237,11 +237,11 @@ public final class CryptoBoxActionItem extends NoChildNode {
         int i = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i != 1) {
             if (i == 2) {
-                return C3634R.C3636drawable.fork_ic_transaction_staking_withdraw;
+                return C3632R.C3634drawable.fork_ic_transaction_staking_withdraw;
             }
             throw new NoWhenBranchMatchedException();
         }
-        return C3634R.C3636drawable.fork_ic_transaction_sent;
+        return C3632R.C3634drawable.fork_ic_transaction_sent;
     }
 
     public final String getTransactionTimeText() {

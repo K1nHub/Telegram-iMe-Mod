@@ -696,14 +696,14 @@
     goto/16 :goto_4
 
     :pswitch_59
-    const-string v3, "isThrowable"
+    const-string/jumbo v3, "isThrowable"
 
     aput-object v3, v2, v1
 
     goto/16 :goto_4
 
     :pswitch_5a
-    const-string v3, "isThrowableOrNullableThrowable"
+    const-string/jumbo v3, "isThrowableOrNullableThrowable"
 
     aput-object v3, v2, v1
 
@@ -724,7 +724,7 @@
     goto/16 :goto_4
 
     :pswitch_5d
-    const-string v3, "isSetOrNullableSet"
+    const-string/jumbo v3, "isSetOrNullableSet"
 
     aput-object v3, v2, v1
 
@@ -773,7 +773,7 @@
     goto/16 :goto_4
 
     :pswitch_64
-    const-string v3, "isUnitOrNullableUnit"
+    const-string/jumbo v3, "isUnitOrNullableUnit"
 
     aput-object v3, v2, v1
 
@@ -787,7 +787,7 @@
     goto/16 :goto_4
 
     :pswitch_66
-    const-string v3, "isUnit"
+    const-string/jumbo v3, "isUnit"
 
     aput-object v3, v2, v1
 
@@ -857,56 +857,56 @@
     goto/16 :goto_4
 
     :pswitch_70
-    const-string v3, "isULongArray"
+    const-string/jumbo v3, "isULongArray"
 
     aput-object v3, v2, v1
 
     goto/16 :goto_4
 
     :pswitch_71
-    const-string v3, "isUIntArray"
+    const-string/jumbo v3, "isUIntArray"
 
     aput-object v3, v2, v1
 
     goto/16 :goto_4
 
     :pswitch_72
-    const-string v3, "isUShortArray"
+    const-string/jumbo v3, "isUShortArray"
 
     aput-object v3, v2, v1
 
     goto/16 :goto_4
 
     :pswitch_73
-    const-string v3, "isUByteArray"
+    const-string/jumbo v3, "isUByteArray"
 
     aput-object v3, v2, v1
 
     goto/16 :goto_4
 
     :pswitch_74
-    const-string v3, "isULong"
+    const-string/jumbo v3, "isULong"
 
     aput-object v3, v2, v1
 
     goto/16 :goto_4
 
     :pswitch_75
-    const-string v3, "isUInt"
+    const-string/jumbo v3, "isUInt"
 
     aput-object v3, v2, v1
 
     goto/16 :goto_4
 
     :pswitch_76
-    const-string v3, "isUShort"
+    const-string/jumbo v3, "isUShort"
 
     aput-object v3, v2, v1
 
     goto/16 :goto_4
 
     :pswitch_77
-    const-string v3, "isUByte"
+    const-string/jumbo v3, "isUByte"
 
     aput-object v3, v2, v1
 
@@ -934,7 +934,7 @@
     goto/16 :goto_4
 
     :pswitch_7b
-    const-string v3, "isShort"
+    const-string/jumbo v3, "isShort"
 
     aput-object v3, v2, v1
 
@@ -1011,7 +1011,7 @@
     goto/16 :goto_4
 
     :pswitch_86
-    const-string v3, "isSpecialClassWithNoSupertypes"
+    const-string/jumbo v3, "isSpecialClassWithNoSupertypes"
 
     aput-object v3, v2, v1
 
@@ -1032,7 +1032,7 @@
     goto/16 :goto_4
 
     :pswitch_89
-    const-string v3, "isTypeConstructorForGivenClass"
+    const-string/jumbo v3, "isTypeConstructorForGivenClass"
 
     aput-object v3, v2, v1
 
@@ -1177,7 +1177,7 @@
     goto :goto_4
 
     :pswitch_a0
-    const-string v3, "isUnderKotlinPackage"
+    const-string/jumbo v3, "isUnderKotlinPackage"
 
     aput-object v3, v2, v1
 
@@ -1224,8 +1224,6 @@
 
     :goto_5
     throw p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x3

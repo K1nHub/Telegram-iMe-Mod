@@ -28,7 +28,7 @@ public final class MsgDiscardTr implements InMsg {
     private final Cell proofDelivered;
     private final long transactionId;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), null, null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Cell.class), new Annotation[]{new C7574x6f655aa4("@type")})};
+    private static final KSerializer<Object>[] $childSerializers = {new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), null, null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Cell.class), new Annotation[]{new C7572x6f655aa4("@type")})};
 
     public /* synthetic */ MsgDiscardTr(int i, CellRef cellRef, ULong uLong, Coins coins, Cell cell, SerializationConstructorMarker serializationConstructorMarker, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, cellRef, uLong, coins, cell, serializationConstructorMarker);
@@ -50,11 +50,11 @@ public final class MsgDiscardTr implements InMsg {
     }
 
     public int hashCode() {
-        return (((((this.inMsg.hashCode() * 31) + ULong.m1996hashCodeimpl(this.transactionId)) * 31) + this.fwdFee.hashCode()) * 31) + this.proofDelivered.hashCode();
+        return (((((this.inMsg.hashCode() * 31) + ULong.m1998hashCodeimpl(this.transactionId)) * 31) + this.fwdFee.hashCode()) * 31) + this.proofDelivered.hashCode();
     }
 
     public String toString() {
-        return "MsgDiscardTr(inMsg=" + this.inMsg + ", transactionId=" + ((Object) ULong.m1997toStringimpl(this.transactionId)) + ", fwdFee=" + this.fwdFee + ", proofDelivered=" + this.proofDelivered + ')';
+        return "MsgDiscardTr(inMsg=" + this.inMsg + ", transactionId=" + ((Object) ULong.m1999toStringimpl(this.transactionId)) + ", fwdFee=" + this.fwdFee + ", proofDelivered=" + this.proofDelivered + ')';
     }
 
     private MsgDiscardTr(int i, CellRef<MsgEnvelope> cellRef, ULong uLong, Coins coins, Cell cell, SerializationConstructorMarker serializationConstructorMarker) {
@@ -62,7 +62,7 @@ public final class MsgDiscardTr implements InMsg {
             PluginExceptionsKt.throwMissingFieldException(i, 15, MsgDiscardTr$$serializer.INSTANCE.getDescriptor());
         }
         this.inMsg = cellRef;
-        this.transactionId = uLong.m1998unboximpl();
+        this.transactionId = uLong.m2000unboximpl();
         this.fwdFee = coins;
         this.proofDelivered = cell;
     }
@@ -80,7 +80,7 @@ public final class MsgDiscardTr implements InMsg {
     public static final /* synthetic */ void write$Self(MsgDiscardTr msgDiscardTr, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, kSerializerArr[0], msgDiscardTr.inMsg);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1993boximpl(msgDiscardTr.transactionId));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1995boximpl(msgDiscardTr.transactionId));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 2, Coins$$serializer.INSTANCE, msgDiscardTr.fwdFee);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 3, kSerializerArr[3], msgDiscardTr.proofDelivered);
     }
@@ -90,7 +90,7 @@ public final class MsgDiscardTr implements InMsg {
     }
 
     /* renamed from: getTransactionId-s-VKNKU  reason: not valid java name */
-    public final long m5127getTransactionIdsVKNKU() {
+    public final long m5109getTransactionIdsVKNKU() {
         return this.transactionId;
     }
 
@@ -149,7 +149,7 @@ public final class MsgDiscardTr implements InMsg {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("msg_discard_tr");
         open.field("in_msg", this.inMsg);
-        open.field("transaction_id", ULong.m1993boximpl(this.transactionId));
+        open.field("transaction_id", ULong.m1995boximpl(this.transactionId));
         open.field("fwd_fee", this.fwdFee);
         open.field("proof_delivered", this.proofDelivered);
         TlbPrettyPrinter.close$default(open, null, 1, null);

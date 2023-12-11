@@ -4,6 +4,7 @@ import com.google.android.exoplayer2.audio.AacUtil;
 import io.ktor.utils.p032io.charsets.CharsetJVMKt;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
+import java.util.Collection;
 import java.util.List;
 import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
@@ -55,6 +56,22 @@ public final class Mnemonic {
         return generate(str, i, list, random, continuation);
     }
 
+    public static final boolean isPasswordNeeded(List<String> mnemonic) {
+        Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
+        byte[] entropy$default = toEntropy$default(mnemonic, null, 2, null);
+        return isPasswordSeed(entropy$default) && !isBasicSeed(entropy$default);
+    }
+
+    public static /* synthetic */ boolean isValid$default(List list, String str, List list2, int i, Object obj) {
+        if ((i & 2) != 0) {
+            str = "";
+        }
+        if ((i & 4) != 0) {
+            list2 = INSTANCE.mnemonicWords();
+        }
+        return isValid(list, str, list2);
+    }
+
     public static /* synthetic */ byte[] toSeed$default(List list, String str, int i, Object obj) {
         if ((i & 2) != 0) {
             str = "";
@@ -75,6 +92,13 @@ public final class Mnemonic {
         until = RangesKt___RangesKt.until(0, 32);
         sliceArray = ArraysKt___ArraysKt.sliceArray(generateDerivedParameters, until);
         return sliceArray;
+    }
+
+    public static /* synthetic */ byte[] toEntropy$default(List list, String str, int i, Object obj) {
+        if ((i & 2) != 0) {
+            str = "";
+        }
+        return toEntropy(list, str);
     }
 
     public static final byte[] toEntropy(List<String> mnemonic, String password) {
@@ -106,6 +130,20 @@ public final class Mnemonic {
         return bArr;
     }
 
+    public static final boolean isBasicSeed(byte[] entropy) {
+        boolean basicValidation;
+        Intrinsics.checkNotNullParameter(entropy, "entropy");
+        basicValidation = MnemonicKt.basicValidation(new PKCSS2ParametersGenerator(Digest.Companion.sha512()), entropy);
+        return basicValidation;
+    }
+
+    public static final boolean isPasswordSeed(byte[] entropy) {
+        boolean passwordValidation;
+        Intrinsics.checkNotNullParameter(entropy, "entropy");
+        passwordValidation = MnemonicKt.passwordValidation(new PKCSS2ParametersGenerator(Digest.Companion.sha512()), entropy);
+        return passwordValidation;
+    }
+
     public static final Object generate(String str, int i, List<String> list, Random random, Continuation<? super List<String>> continuation) {
         Continuation intercepted;
         CoroutineName coroutineName;
@@ -123,5 +161,28 @@ public final class Mnemonic {
             DebugProbesKt.probeCoroutineSuspended(continuation);
         }
         return result;
+    }
+
+    public static final boolean isValid(List<String> mnemonic, String password, List<String> wordlist) {
+        boolean z;
+        Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
+        Intrinsics.checkNotNullParameter(password, "password");
+        Intrinsics.checkNotNullParameter(wordlist, "wordlist");
+        if (!(mnemonic instanceof Collection) || !mnemonic.isEmpty()) {
+            for (String str : mnemonic) {
+                if (!wordlist.contains(str)) {
+                    z = false;
+                    break;
+                }
+            }
+        }
+        z = true;
+        if (z) {
+            if (!(password.length() > 0) || isPasswordNeeded(mnemonic)) {
+                return isBasicSeed(toEntropy(mnemonic, password));
+            }
+            return false;
+        }
+        return false;
     }
 }

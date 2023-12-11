@@ -20,13 +20,13 @@ public final class StorageInfoTlbConstructor extends org.ton.tlb.TlbConstructor<
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         StorageUsed.Companion.storeTlb(cellBuilder, (CellBuilder) value.used());
-        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.lastPaid());
+        cellBuilder.mo5192storeUInt32WZ4Q5Ns(value.lastPaid());
         maybeCoins.storeTlb(cellBuilder, value.duePayment());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public StorageInfo loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new StorageInfo(StorageUsed.Companion.loadTlb(cellSlice), cellSlice.mo5220loadUInt32pVg5ArA(), maybeCoins.loadTlb(cellSlice), null);
+        return new StorageInfo(StorageUsed.Companion.loadTlb(cellSlice), cellSlice.mo5202loadUInt32pVg5ArA(), maybeCoins.loadTlb(cellSlice), null);
     }
 }

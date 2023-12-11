@@ -160,7 +160,7 @@
 
     new-array v2, v1, [I
 
-    .line 96
+    .line 97
     fill-array-data v2, :array_0
 
     const/4 v3, 0x0
@@ -277,10 +277,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ImageUpdater;Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;)V
     .locals 1
 
-    .line 114
+    .line 115
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
 
-    .line 93
+    .line 94
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
@@ -289,23 +289,23 @@
 
     const/4 v0, 0x1
 
-    .line 105
+    .line 106
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->finishOnDone:Z
 
     const/4 v0, 0x0
 
-    .line 1286
+    .line 1291
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->isLightInternal:Z
 
     const/4 v0, 0x0
 
-    .line 1287
+    .line 1292
     iput v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToLightStatusBar:F
 
-    .line 115
+    .line 116
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->imageUpdater:Lorg/telegram/ui/Components/ImageUpdater;
 
-    .line 116
+    .line 117
     iput-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->avatarFor:Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;
 
     return-void
@@ -314,7 +314,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
     .locals 0
 
-    .line 62
+    .line 63
     invoke-direct {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->discardEditor()V
 
     return-void
@@ -323,7 +323,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
     .locals 0
 
-    .line 62
+    .line 63
     invoke-direct {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->onDonePressed()V
 
     return-void
@@ -332,7 +332,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/Components/AvatarConstructorFragment;ZZZ)V
     .locals 0
 
-    .line 62
+    .line 63
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setExpanded(ZZZ)V
 
     return-void
@@ -341,7 +341,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/Components/AvatarConstructorFragment;JLorg/telegram/tgnet/TLRPC$Document;)V
     .locals 0
 
-    .line 62
+    .line 63
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setPreview(JLorg/telegram/tgnet/TLRPC$Document;)V
 
     return-void
@@ -350,7 +350,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -359,7 +359,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Landroid/view/View;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p0
@@ -368,7 +368,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -377,7 +377,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Landroid/view/View;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p0
@@ -386,7 +386,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/Components/AvatarConstructorFragment;)I
     .locals 0
 
-    .line 62
+    .line 63
     iget p0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->gradientBackgroundItemWidth:I
 
     return p0
@@ -395,7 +395,7 @@
 .method static synthetic access$1902(Lorg/telegram/ui/Components/AvatarConstructorFragment;I)I
     .locals 0
 
-    .line 62
+    .line 63
     iput p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->gradientBackgroundItemWidth:I
 
     return p1
@@ -404,7 +404,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/AvatarConstructorFragment;FZ)V
     .locals 0
 
-    .line 62
+    .line 63
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setProgressToExpand(FZ)V
 
     return-void
@@ -413,7 +413,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
     .locals 0
 
-    .line 62
+    .line 63
     invoke-direct {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->showColorPicker()V
 
     return-void
@@ -422,7 +422,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->backgroundSelectView:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     return-object p0
@@ -431,7 +431,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Landroid/view/View;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p0
@@ -440,7 +440,7 @@
 .method static synthetic access$2302(Lorg/telegram/ui/Components/AvatarConstructorFragment;Lorg/telegram/ui/ActionBar/BottomSheet;)Lorg/telegram/ui/ActionBar/BottomSheet;
     .locals 0
 
-    .line 62
+    .line 63
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     return-object p1
@@ -449,7 +449,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -458,7 +458,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Landroid/widget/TextView;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
 
     return-object p0
@@ -467,7 +467,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Landroid/widget/TextView;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
 
     return-object p0
@@ -476,7 +476,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Lorg/telegram/ui/SelectAnimatedEmojiDialog;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     return-object p0
@@ -485,7 +485,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -494,7 +494,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/Components/AvatarConstructorFragment;Z)V
     .locals 0
 
-    .line 62
+    .line 63
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->createKeyboardVisibleAnimator(Z)V
 
     return-void
@@ -503,7 +503,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/Components/AvatarConstructorFragment;)Lorg/telegram/ui/ActionBar/ActionBar;
     .locals 0
 
-    .line 62
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     return-object p0
@@ -512,7 +512,7 @@
 .method private createKeyboardVisibleAnimator(Z)V
     .locals 5
 
-    .line 507
+    .line 508
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->isLandscapeMode:Z
 
     if-eqz v0, :cond_0
@@ -524,7 +524,7 @@
 
     new-array v0, v0, [F
 
-    .line 510
+    .line 511
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
 
     const/4 v2, 0x0
@@ -553,7 +553,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibilityAnimator:Landroid/animation/ValueAnimator;
 
-    .line 511
+    .line 512
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandedHeight:I
 
     iget v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->collapsedHeight:I
@@ -572,12 +572,12 @@
 
     if-eqz p1, :cond_2
 
-    .line 514
+    .line 515
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->setExpanded(Z)V
 
-    .line 515
+    .line 516
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getTranslationY()F
@@ -586,7 +586,7 @@
 
     goto :goto_1
 
-    .line 519
+    .line 520
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
@@ -594,7 +594,7 @@
 
     move-result v1
 
-    .line 521
+    .line 522
     :goto_1
     iget-boolean v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandWithKeyboard:Z
 
@@ -602,18 +602,18 @@
 
     if-nez p1, :cond_3
 
-    .line 522
+    .line 523
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->setExpanded(Z)V
 
     goto :goto_2
 
-    .line 524
+    .line 525
     :cond_3
     iput-boolean v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandWithKeyboard:Z
 
-    .line 526
+    .line 527
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibilityAnimator:Landroid/animation/ValueAnimator;
 
@@ -623,7 +623,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 541
+    .line 542
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibilityAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$9;
@@ -632,21 +632,21 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 548
+    .line 549
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibilityAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0xfa
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 549
+    .line 550
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibilityAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 550
+    .line 551
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibilityAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -657,7 +657,7 @@
 .method private discardEditor()V
     .locals 3
 
-    .line 489
+    .line 490
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -666,13 +666,13 @@
 
     return-void
 
-    .line 492
+    .line 493
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->wasChanged:Z
 
     if-eqz v0, :cond_1
 
-    .line 493
+    .line 494
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -681,7 +681,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 494
+    .line 495
     sget v1, Lorg/telegram/messenger/R$string;->PhotoEditorDiscardAlert:I
 
     const-string v2, "PhotoEditorDiscardAlert"
@@ -692,7 +692,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 495
+    .line 496
     sget v1, Lorg/telegram/messenger/R$string;->DiscardChanges:I
 
     const-string v2, "DiscardChanges"
@@ -703,7 +703,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 496
+    .line 497
     sget v1, Lorg/telegram/messenger/R$string;->PassportDiscard:I
 
     const-string v2, "PassportDiscard"
@@ -718,7 +718,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 497
+    .line 498
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -731,20 +731,20 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 498
+    .line 499
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 499
+    .line 500
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 500
+    .line 501
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->redPositive()V
 
     goto :goto_0
 
-    .line 502
+    .line 503
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
@@ -755,7 +755,7 @@
 .method private synthetic lambda$createView$0(Landroid/view/View;)V
     .locals 0
 
-    .line 452
+    .line 453
     invoke-direct {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->onDonePressed()V
 
     return-void
@@ -764,7 +764,7 @@
 .method private synthetic lambda$createView$1()V
     .locals 0
 
-    .line 462
+    .line 463
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->onPreviewClick()V
 
     return-void
@@ -773,7 +773,7 @@
 .method private synthetic lambda$discardEditor$2(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 496
+    .line 497
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     return-void
@@ -782,7 +782,7 @@
 .method private synthetic lambda$isLightStatusBar$6(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1310
+    .line 1315
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -801,7 +801,7 @@
 .method private synthetic lambda$setExpanded$3(ZLandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 581
+    .line 582
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -814,17 +814,17 @@
 
     const/4 v0, 0x0
 
-    .line 582
+    .line 583
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setProgressToExpand(FZ)V
 
     if-eqz p1, :cond_0
 
-    .line 584
+    .line 585
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     iput p2, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->overrideExpandProgress:F
 
-    .line 585
+    .line 586
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->invalidate()V
 
     :cond_0
@@ -850,7 +850,7 @@
 
     goto :goto_0
 
-    .line 1075
+    .line 1080
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -862,7 +862,7 @@
 
     if-nez p1, :cond_2
 
-    .line 1076
+    .line 1081
     :cond_1
     invoke-virtual {p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->copy()Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -870,12 +870,12 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
-    .line 1077
+    .line 1082
     iget-object p3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {p3, p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 1079
+    .line 1084
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -883,7 +883,7 @@
 
     goto :goto_0
 
-    .line 1068
+    .line 1073
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -895,7 +895,7 @@
 
     if-nez p1, :cond_5
 
-    .line 1069
+    .line 1074
     :cond_4
     invoke-virtual {p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->copy()Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -903,12 +903,12 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
-    .line 1070
+    .line 1075
     iget-object p3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {p3, p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 1072
+    .line 1077
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -916,7 +916,7 @@
 
     goto :goto_0
 
-    .line 1061
+    .line 1066
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -928,7 +928,7 @@
 
     if-nez p1, :cond_8
 
-    .line 1062
+    .line 1067
     :cond_7
     invoke-virtual {p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->copy()Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -936,12 +936,12 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
-    .line 1063
+    .line 1068
     iget-object p3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {p3, p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 1065
+    .line 1070
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -949,7 +949,7 @@
 
     goto :goto_0
 
-    .line 1054
+    .line 1059
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -961,7 +961,7 @@
 
     if-nez p1, :cond_b
 
-    .line 1055
+    .line 1060
     :cond_a
     invoke-virtual {p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->copy()Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -969,18 +969,18 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
-    .line 1056
+    .line 1061
     iget-object p3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {p3, p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 1058
+    .line 1063
     :cond_b
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     iput p1, p2, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color1:I
 
-    .line 1082
+    .line 1087
     :goto_0
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -988,7 +988,7 @@
 
     if-lt p1, p2, :cond_c
 
-    .line 1083
+    .line 1088
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -1001,7 +1001,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1085
+    .line 1090
     :cond_c
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
@@ -1017,17 +1017,17 @@
 
     const/4 v0, 0x1
 
-    .line 1122
+    .line 1127
     aput-boolean v0, p1, p2
 
-    .line 1123
+    .line 1128
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->backgroundSelectView:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->selectGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 1124
+    .line 1129
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
@@ -1038,7 +1038,7 @@
 .method private onDonePressed()V
     .locals 7
 
-    .line 554
+    .line 555
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -1061,13 +1061,13 @@
 
     goto :goto_0
 
-    .line 557
+    .line 558
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->delegate:Lorg/telegram/ui/Components/AvatarConstructorFragment$Delegate;
 
     if-eqz v1, :cond_1
 
-    .line 558
+    .line 559
     iget-object v6, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     iget-object v2, v6, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backgroundGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
@@ -1078,13 +1078,13 @@
 
     invoke-interface/range {v1 .. v6}, Lorg/telegram/ui/Components/AvatarConstructorFragment$Delegate;->onDone(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;JLorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;)V
 
-    .line 560
+    .line 561
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->finishOnDone:Z
 
     if-eqz v0, :cond_2
 
-    .line 561
+    .line 562
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     :cond_2
@@ -1095,14 +1095,14 @@
 .method private setExpanded(ZZZ)V
     .locals 4
 
-    .line 567
+    .line 568
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->isLandscapeMode:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 572
+    .line 573
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->cancelExpandAnimator()V
 
@@ -1110,7 +1110,7 @@
 
     new-array v0, v0, [F
 
-    .line 573
+    .line 574
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
     const/4 v2, 0x0
@@ -1139,21 +1139,21 @@
 
     if-eqz p2, :cond_2
 
-    .line 575
+    .line 576
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->overrideExpandProgress:F
 
-    .line 576
+    .line 577
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_2
 
-    .line 577
+    .line 578
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1164,7 +1164,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 580
+    .line 581
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
@@ -1174,7 +1174,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 588
+    .line 589
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/Components/AvatarConstructorFragment$10;
@@ -1185,21 +1185,21 @@
 
     if-eqz p3, :cond_3
 
-    .line 601
+    .line 602
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 602
+    .line 603
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0x15e
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 603
+    .line 604
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0x96
@@ -1208,7 +1208,7 @@
 
     goto :goto_1
 
-    .line 605
+    .line 606
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
@@ -1216,14 +1216,14 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 606
+    .line 607
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0xfa
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 608
+    .line 609
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
@@ -1241,12 +1241,12 @@
 
     move-object/from16 v10, p3
 
-    .line 469
+    .line 470
     iget-object v3, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     iput-wide v1, v3, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->documentId:J
 
-    .line 470
+    .line 471
     iput-object v10, v3, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     const-wide/16 v12, 0x0
@@ -1255,14 +1255,14 @@
 
     if-nez v4, :cond_0
 
-    .line 472
+    .line 473
     iget-object v1, v3, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
-    .line 473
+    .line 474
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
     const v2, 0x3e4ccccd    # 0.2f
@@ -1271,7 +1271,7 @@
 
     move-result-object v6
 
-    .line 474
+    .line 475
     iget-object v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -1302,7 +1302,7 @@
 
     goto :goto_0
 
-    .line 476
+    .line 477
     :cond_0
     iget-object v3, v3, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -1316,7 +1316,7 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
-    .line 477
+    .line 478
     iget-object v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -1327,7 +1327,7 @@
 
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
-    .line 479
+    .line 480
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
@@ -1351,7 +1351,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 480
+    .line 481
     iget-object v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -1364,7 +1364,7 @@
 
     invoke-virtual {v1, v12, v13, v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->seekTo(JZ)V
 
-    .line 482
+    .line 483
     :cond_1
     iget-object v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
@@ -1386,7 +1386,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 483
+    .line 484
     iget-object v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -1401,7 +1401,7 @@
 
     invoke-virtual {v1, v3, v3, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZZ)V
 
-    .line 485
+    .line 486
     :cond_2
     iput-boolean v2, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->wasChanged:Z
 
@@ -1411,10 +1411,10 @@
 .method private setProgressToExpand(FZ)V
     .locals 3
 
-    .line 621
+    .line 622
     iput p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
-    .line 623
+    .line 624
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandedHeight:I
 
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->collapsedHeight:I
@@ -1429,7 +1429,7 @@
 
     mul-float/2addr v0, p1
 
-    .line 624
+    .line 625
     iget v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
 
     const/4 v2, 0x0
@@ -1438,17 +1438,17 @@
 
     if-nez v1, :cond_0
 
-    .line 625
+    .line 626
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->setTranslationY(F)V
 
-    .line 626
+    .line 627
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 628
+    .line 629
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
@@ -1470,14 +1470,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 629
+    .line 630
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     if-eqz p2, :cond_2
 
-    .line 631
+    .line 632
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     const/high16 v0, 0x3f000000    # 0.5f
@@ -1503,40 +1503,40 @@
 .method private setProgressToLightStatusBar(F)V
     .locals 3
 
-    .line 1322
+    .line 1327
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToLightStatusBar:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 1323
+    .line 1328
     iput p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToLightStatusBar:F
 
     const/high16 v0, -0x1000000
 
     const/4 v1, -0x1
 
-    .line 1324
+    .line 1329
     invoke-static {v0, v1, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result p1
 
     const/16 v0, 0x3c
 
-    .line 1325
+    .line 1330
     invoke-static {p1, v0}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v0
 
-    .line 1326
+    .line 1331
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, p1, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 1327
+    .line 1332
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setPhotoItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const/4 v1, 0x3
@@ -1554,14 +1554,14 @@
 .method private showColorPicker()V
     .locals 14
 
-    .line 995
+    .line 1000
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 998
+    .line 1003
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
@@ -1571,10 +1571,10 @@
 
     if-nez v0, :cond_1
 
-    .line 999
+    .line 1004
     invoke-direct {p0, v1, v1, v1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setExpanded(ZZZ)V
 
-    .line 1003
+    .line 1008
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
@@ -1586,7 +1586,7 @@
 
     aput-boolean v2, v0, v2
 
-    .line 1008
+    .line 1013
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -1597,7 +1597,7 @@
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustNothing(Landroid/app/Activity;I)V
 
-    .line 1009
+    .line 1014
     new-instance v3, Lorg/telegram/ui/Components/AvatarConstructorFragment$11;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -1608,18 +1608,18 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    .line 1032
+    .line 1037
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar()V
 
-    .line 1033
+    .line 1038
     iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iput-boolean v2, v3, Lorg/telegram/ui/ActionBar/BottomSheet;->pauseAllHeavyOperations:Z
 
-    .line 1035
+    .line 1040
     iput-boolean v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->drawForBlur:Z
 
-    .line 1036
+    .line 1041
     iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerPreviewView:Landroid/view/View;
 
     new-instance v4, Landroid/graphics/drawable/BitmapDrawable;
@@ -1646,30 +1646,30 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1037
+    .line 1042
     iput-boolean v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->drawForBlur:Z
 
-    .line 1038
+    .line 1043
     iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerPreviewView:Landroid/view/View;
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1039
+    .line 1044
     iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerPreviewView:Landroid/view/View;
 
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1040
+    .line 1045
     iput-boolean v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerInAnimatoin:Z
 
-    .line 1041
+    .line 1046
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->invalidate()V
 
-    .line 1042
+    .line 1047
     iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerPreviewView:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1686,7 +1686,7 @@
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 1048
+    .line 1053
     invoke-virtual {v3, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
@@ -1699,14 +1699,14 @@
 
     invoke-virtual {v3}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1050
+    .line 1055
     new-instance v3, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     invoke-direct {v3}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;-><init>()V
 
     iput-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
-    .line 1051
+    .line 1056
     new-instance v3, Lorg/telegram/ui/Components/AvatarConstructorFragment$13;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -1719,14 +1719,14 @@
 
     invoke-direct {v3, p0, v4, v2, v5}, Lorg/telegram/ui/Components/AvatarConstructorFragment$13;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;ZLorg/telegram/ui/Components/ColorPicker$ColorPickerDelegate;)V
 
-    .line 1093
+    .line 1098
     iget-object v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backgroundGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     if-eqz v4, :cond_2
 
-    .line 1094
+    .line 1099
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     iget v4, v4, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color4:I
@@ -1737,7 +1737,7 @@
 
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
 
-    .line 1095
+    .line 1100
     iget-object v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
@@ -1752,7 +1752,7 @@
 
     invoke-virtual {v3, v5, v4}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
 
-    .line 1096
+    .line 1101
     iget-object v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
@@ -1765,7 +1765,7 @@
 
     invoke-virtual {v3, v5, v1}, Lorg/telegram/ui/Components/ColorPicker;->setColor(II)V
 
-    .line 1097
+    .line 1102
     iget-object v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
@@ -1785,7 +1785,7 @@
 
     const/4 v7, 0x4
 
-    .line 1100
+    .line 1105
     iget-object v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->colorsCount()I
@@ -1802,14 +1802,14 @@
 
     invoke-virtual/range {v4 .. v11}, Lorg/telegram/ui/Components/ColorPicker;->setType(IZIIZIZ)V
 
-    .line 1102
+    .line 1107
     iget-object v4, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 1104
+    .line 1109
     new-instance v4, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -1818,22 +1818,22 @@
 
     invoke-direct {v4, v5}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1105
+    .line 1110
     invoke-virtual {v4, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v5, 0x8
 
-    .line 1106
+    .line 1111
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     invoke-virtual {v4, v2, v5, v2, v2}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 1107
+    .line 1112
     invoke-virtual {v4, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 1109
+    .line 1114
     new-instance v3, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -1842,7 +1842,7 @@
 
     invoke-direct {v3, v5}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1110
+    .line 1115
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     new-array v6, v1, [F
@@ -1857,7 +1857,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1112
+    .line 1117
     new-instance v5, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -1868,10 +1868,10 @@
 
     const/high16 v6, 0x41600000    # 14.0f
 
-    .line 1113
+    .line 1118
     invoke-virtual {v5, v1, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1114
+    .line 1119
     sget v6, Lorg/telegram/messenger/R$string;->SetColor:I
 
     const-string v7, "SetColor"
@@ -1884,19 +1884,19 @@
 
     const/16 v6, 0x11
 
-    .line 1115
+    .line 1120
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setGravity(I)V
 
     const-string v7, "fonts/rmedium.ttf"
 
-    .line 1116
+    .line 1121
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v7
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1117
+    .line 1122
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1907,7 +1907,7 @@
 
     const/4 v7, -0x2
 
-    .line 1118
+    .line 1123
     invoke-static {v7, v7, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
@@ -1926,39 +1926,39 @@
 
     const/16 v13, 0x10
 
-    .line 1120
+    .line 1125
     invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v4, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1121
+    .line 1126
     new-instance v5, Lorg/telegram/ui/Components/AvatarConstructorFragment$$ExternalSyntheticLambda4;
 
     invoke-direct {v5, p0, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;[Z)V
 
     invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1126
+    .line 1131
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
-    .line 1127
+    .line 1132
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iput-boolean v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->smoothKeyboardAnimationEnabled:Z
 
-    .line 1128
+    .line 1133
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->setDimBehind(Z)V
 
-    .line 1129
+    .line 1134
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
-    .line 1130
+    .line 1135
     invoke-virtual {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->isLightStatusBar()Z
 
     return-void
@@ -1969,22 +1969,22 @@
 .method cancelExpandAnimator()V
     .locals 1
 
-    .line 613
+    .line 614
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 614
+    .line 615
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 615
+    .line 616
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 616
+    .line 617
     iput-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
@@ -1992,41 +1992,41 @@
 .end method
 
 .method public createView(Landroid/content/Context;)Landroid/view/View;
-    .locals 30
+    .locals 24
 
-    move-object/from16 v8, p0
+    move-object/from16 v11, p0
 
-    const/4 v9, 0x1
-
-    .line 121
-    iput-boolean v9, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->hasOwnBackground:Z
+    const/4 v12, 0x1
 
     .line 122
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iput-boolean v12, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->hasOwnBackground:Z
+
+    .line 123
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 123
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    const/4 v10, 0x0
-
-    invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/ActionBar;->setCastShadows(Z)V
-
     .line 124
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/ActionBar;->setAddToContainer(Z)V
+    const/4 v13, 0x0
+
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setCastShadows(Z)V
 
     .line 125
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {v0, v9}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setAddToContainer(Z)V
 
     .line 126
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+
+    invoke-virtual {v0, v12}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
+
+    .line 127
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
@@ -2036,17 +2036,17 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleColor(I)V
 
-    .line 127
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 128
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    invoke-virtual {v0, v1, v10}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
+    invoke-virtual {v0, v1, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 128
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 129
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
@@ -2054,24 +2054,24 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1, v10}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
+    invoke-virtual {v0, v1, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    .line 129
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 130
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v1, Lorg/telegram/ui/ActionBar/BackDrawable;
 
-    invoke-direct {v1, v10}, Lorg/telegram/ui/ActionBar/BackDrawable;-><init>(Z)V
+    invoke-direct {v1, v13}, Lorg/telegram/ui/ActionBar/BackDrawable;-><init>(Z)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 130
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
-
     .line 131
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
+
+    .line 132
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->PhotoEditor:I
 
@@ -2083,17 +2083,17 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 132
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 133
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v1, Lorg/telegram/ui/Components/AvatarConstructorFragment$1;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Components/AvatarConstructorFragment$1;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
+    invoke-direct {v1, v11}, Lorg/telegram/ui/Components/AvatarConstructorFragment$1;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 140
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 141
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->getTitleTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -2103,7 +2103,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 142
+    .line 143
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -2112,92 +2112,92 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    .line 143
-    invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/ActionBar;->setCastShadows(Z)V
+    iput-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     .line 144
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/ActionBar;->setAddToContainer(Z)V
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setCastShadows(Z)V
 
     .line 145
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {v0, v9}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setAddToContainer(Z)V
 
     .line 146
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {v0, v10}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
+    invoke-virtual {v0, v12}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
 
-    const/4 v11, -0x1
+    .line 147
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+
+    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
+
+    const/4 v14, -0x1
 
     const/16 v0, 0x3c
 
-    .line 147
-    invoke-static {v11, v0}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
+    .line 148
+    invoke-static {v14, v0}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v0
 
-    .line 148
-    iget-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 149
+    iget-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {v1, v11, v10}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
+    invoke-virtual {v1, v14, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 150
-    iget-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 151
+    iget-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v2, Lorg/telegram/ui/ActionBar/BackDrawable;
 
-    invoke-direct {v2, v10}, Lorg/telegram/ui/ActionBar/BackDrawable;-><init>(Z)V
+    invoke-direct {v2, v13}, Lorg/telegram/ui/ActionBar/BackDrawable;-><init>(Z)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 151
-    iget-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    invoke-virtual {v1, v10}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
-
     .line 152
-    iget-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {v1, v0, v10}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
+    invoke-virtual {v1, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
     .line 153
-    iget-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+
+    invoke-virtual {v1, v0, v13}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
+
+    .line 154
+    iget-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/ActionBar;->createMenu()Lorg/telegram/ui/ActionBar/ActionBarMenu;
 
     move-result-object v1
 
-    .line 154
-    invoke-virtual {v1, v10}, Landroid/widget/LinearLayout;->setClipChildren(Z)V
-
     .line 155
-    iget-object v2, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->avatarFor:Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;
+    invoke-virtual {v1, v13}, Landroid/widget/LinearLayout;->setClipChildren(Z)V
 
-    const-string v12, "SuggestPhoto"
+    .line 156
+    iget-object v2, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->avatarFor:Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;
 
-    const/4 v13, 0x2
+    const-string v15, "SuggestPhoto"
+
+    const/4 v10, 0x2
 
     if-eqz v2, :cond_0
 
     iget v2, v2, Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;->type:I
 
-    if-ne v2, v13, :cond_0
+    if-ne v2, v10, :cond_0
 
-    .line 156
+    .line 157
     sget v2, Lorg/telegram/messenger/R$string;->SuggestPhoto:I
 
-    invoke-static {v12, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v15, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
     goto :goto_0
 
-    .line 157
+    .line 158
     :cond_0
     sget v2, Lorg/telegram/messenger/R$string;->SetPhoto:I
 
@@ -2207,86 +2207,86 @@
 
     move-result-object v2
 
-    .line 155
+    .line 156
     :goto_0
-    invoke-virtual {v1, v9, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItem(ILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    invoke-virtual {v1, v12, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenu;->addItem(ILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     move-result-object v1
 
-    iput-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setPhotoItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    iput-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setPhotoItem:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const/4 v2, 0x3
 
-    .line 159
+    .line 160
     invoke-static {v0, v2}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 160
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 161
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v1, Lorg/telegram/ui/Components/AvatarConstructorFragment$2;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Components/AvatarConstructorFragment$2;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
+    invoke-direct {v1, v11}, Lorg/telegram/ui/Components/AvatarConstructorFragment$2;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 172
+    .line 173
     new-instance v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$3;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v8, v1}, Lorg/telegram/ui/Components/AvatarConstructorFragment$3;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
+    invoke-direct {v0, v11, v1}, Lorg/telegram/ui/Components/AvatarConstructorFragment$3;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
 
-    iput-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+    iput-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
-    .line 182
-    new-instance v14, Lorg/telegram/ui/Components/AvatarConstructorFragment$4;
+    .line 183
+    new-instance v9, Lorg/telegram/ui/Components/AvatarConstructorFragment$4;
 
     move-object/from16 v0, p1
 
-    invoke-direct {v14, v8, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$4;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
-
-    .line 350
-    invoke-virtual {v14, v9}, Landroid/widget/FrameLayout;->setFitsSystemWindows(Z)V
+    invoke-direct {v9, v11, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$4;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
 
     .line 351
+    invoke-virtual {v9, v12}, Landroid/widget/FrameLayout;->setFitsSystemWindows(Z)V
+
+    .line 352
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    invoke-virtual {v14, v0}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
-
-    .line 354
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->setClipChildren(Z)V
+    invoke-virtual {v9, v0}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
     .line 355
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->setClipToPadding(Z)V
+    invoke-virtual {v0, v13}, Landroid/widget/LinearLayout;->setClipChildren(Z)V
 
     .line 356
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0, v13}, Landroid/widget/LinearLayout;->setClipToPadding(Z)V
+
+    .line 357
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    invoke-virtual {v0, v10, v1, v10, v10}, Landroid/widget/LinearLayout;->setPadding(IIII)V
-
-    .line 357
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0, v9}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    invoke-virtual {v0, v13, v1, v13, v13}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
     .line 358
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0, v12}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    .line 359
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
     new-instance v1, Lorg/telegram/ui/Components/AvatarConstructorFragment$5;
 
@@ -2294,13 +2294,13 @@
 
     move-result-object v2
 
-    invoke-direct {v1, v8, v2, v14}, Lorg/telegram/ui/Components/AvatarConstructorFragment$5;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;)V
+    invoke-direct {v1, v11, v2, v9}, Lorg/telegram/ui/Components/AvatarConstructorFragment$5;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;)V
 
-    iput-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
+    iput-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 366
+    .line 367
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -2309,9 +2309,9 @@
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
+    iput-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
 
-    .line 367
+    .line 368
     sget v1, Lorg/telegram/messenger/R$string;->ChooseBackground:I
 
     const-string v2, "ChooseBackground"
@@ -2322,8 +2322,8 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 368
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
+    .line 369
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
@@ -2333,24 +2333,24 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 369
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
-
-    const/high16 v15, 0x41600000    # 14.0f
-
-    invoke-virtual {v0, v9, v15}, Landroid/widget/TextView;->setTextSize(IF)V
-
     .line 370
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
+
+    const/high16 v8, 0x41600000    # 14.0f
+
+    invoke-virtual {v0, v12, v8}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    .line 371
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
 
     const/16 v7, 0x11
 
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 371
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+    .line 372
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
-    iget-object v2, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
+    iget-object v2, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseBackgroundHint:Landroid/widget/TextView;
 
     const/16 v16, -0x1
 
@@ -2372,30 +2372,30 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 373
+    .line 374
     new-instance v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$6;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-direct {v0, v8, v2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$6;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
+    invoke-direct {v0, v11, v2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$6;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
 
-    .line 393
+    .line 394
     new-instance v2, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
-    invoke-direct {v2, v8, v3}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
+    invoke-direct {v2, v11, v3}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
 
-    iput-object v2, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->backgroundSelectView:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
+    iput-object v2, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->backgroundSelectView:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 394
-    iget-object v2, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+    .line 395
+    iget-object v2, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
     const/16 v17, 0x30
 
@@ -2413,7 +2413,7 @@
 
     invoke-virtual {v2, v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 396
+    .line 397
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -2422,9 +2422,9 @@
 
     invoke-direct {v0, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
+    iput-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
 
-    .line 397
+    .line 398
     sget v2, Lorg/telegram/messenger/R$string;->ChooseEmojiOrSticker:I
 
     const-string v3, "ChooseEmojiOrSticker"
@@ -2435,8 +2435,8 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 398
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
+    .line 399
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
@@ -2444,20 +2444,20 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 399
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v9, v15}, Landroid/widget/TextView;->setTextSize(IF)V
-
     .line 400
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
+
+    invoke-virtual {v0, v12, v8}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    .line 401
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
 
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 401
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+    .line 402
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
-    iget-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
+    iget-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->chooseEmojiHint:Landroid/widget/TextView;
 
     const/16 v17, -0x2
 
@@ -2475,7 +2475,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 403
+    .line 404
     new-instance v6, Lorg/telegram/ui/Components/AvatarConstructorFragment$7;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -2488,73 +2488,105 @@
 
     const/16 v16, 0x4
 
-    const/16 v17, 0x0
+    const/16 v17, 0x1
 
+    const/16 v18, 0x0
+
+    const/16 v19, 0x10
+
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    move/from16 v20, v14
+
+    goto :goto_1
+
+    :cond_1
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
+
+    invoke-virtual {v11, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
+
+    move-result v0
+
+    move/from16 v20, v0
+
+    :goto_1
     move-object v0, v6
 
     move-object/from16 v1, p0
 
     move-object/from16 v2, p0
 
-    move-object v11, v6
+    move-object v14, v6
 
     move/from16 v6, v16
 
-    move-object/from16 v7, v17
+    move/from16 v7, v17
 
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Components/AvatarConstructorFragment$7;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    move-object/from16 v8, v18
 
-    iput-object v11, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    move-object/from16 v23, v9
 
-    .line 421
-    iget-boolean v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->forGroup:Z
+    move/from16 v9, v19
 
-    xor-int/2addr v0, v9
+    move/from16 v10, v20
 
-    iput-boolean v0, v11, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->forUser:Z
+    invoke-direct/range {v0 .. v10}, Lorg/telegram/ui/Components/AvatarConstructorFragment$7;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
 
-    .line 423
-    iget-boolean v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentBeginToShow:Z
+    iput-object v14, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    invoke-virtual {v11, v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->setAnimationsEnabled(Z)V
+    .line 422
+    iget-boolean v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->forGroup:Z
+
+    xor-int/2addr v0, v12
+
+    iput-boolean v0, v14, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->forUser:Z
 
     .line 424
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    iget-boolean v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentBeginToShow:Z
 
-    invoke-virtual {v0, v10}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
+    invoke-virtual {v14, v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->setAnimationsEnabled(Z)V
 
     .line 425
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    iget-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    const/16 v23, -0x1
+    .line 426
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
-    const/16 v24, -0x1
+    iget-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    const/16 v25, 0x0
+    const/4 v2, -0x1
 
-    const/16 v26, 0xc
+    const/4 v3, -0x1
 
-    const/16 v27, 0x0
+    const/4 v4, 0x0
 
-    const/16 v28, 0xc
+    const/16 v5, 0xc
 
-    const/16 v29, 0xc
+    const/4 v6, 0x0
 
-    invoke-static/range {v23 .. v29}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    const/16 v7, 0xc
+
+    const/16 v8, 0xc
+
+    invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 427
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0, v10}, Landroid/widget/LinearLayout;->setClipChildren(Z)V
-
     .line 428
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v0, v13}, Landroid/widget/LinearLayout;->setClipChildren(Z)V
+
+    .line 429
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->linearLayout:Landroid/widget/LinearLayout;
 
     const/4 v1, -0x1
 
@@ -2562,11 +2594,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
-
     const/4 v5, 0x0
-
-    const/4 v6, 0x0
 
     const/16 v7, 0x40
 
@@ -2574,9 +2602,11 @@
 
     move-result-object v1
 
-    invoke-virtual {v14, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    move-object/from16 v2, v23
 
-    .line 430
+    invoke-virtual {v2, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 431
     new-instance v0, Landroid/view/View;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -2585,14 +2615,14 @@
 
     invoke-direct {v0, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerPreviewView:Landroid/view/View;
+    iput-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerPreviewView:Landroid/view/View;
 
     const/16 v1, 0x8
 
-    .line 431
+    .line 432
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 434
+    .line 435
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -2601,24 +2631,24 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
+    iput-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
 
-    .line 435
+    .line 436
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    new-array v2, v9, [F
+    new-array v3, v12, [F
 
-    const/high16 v3, 0x41000000    # 8.0f
+    const/high16 v4, 0x41000000    # 8.0f
 
-    aput v3, v2, v10
+    aput v4, v3, v13
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 437
+    .line 438
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -2627,160 +2657,164 @@
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 438
-    invoke-virtual {v0, v9, v15}, Landroid/widget/TextView;->setTextSize(IF)V
+    const/high16 v1, 0x41600000    # 14.0f
 
     .line 439
-    iget-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->imageUpdater:Lorg/telegram/ui/Components/ImageUpdater;
+    invoke-virtual {v0, v12, v1}, Landroid/widget/TextView;->setTextSize(IF)V
+
+    .line 440
+    iget-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->imageUpdater:Lorg/telegram/ui/Components/ImageUpdater;
 
     iget v1, v1, Lorg/telegram/ui/Components/ImageUpdater;->setForType:I
 
-    if-ne v1, v9, :cond_1
+    if-ne v1, v12, :cond_2
 
-    .line 440
+    .line 441
     sget v1, Lorg/telegram/messenger/R$string;->SetChannelPhoto:I
 
-    const-string v2, "SetChannelPhoto"
+    const-string v3, "SetChannelPhoto"
 
-    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :goto_1
+    :goto_2
     const/16 v1, 0x11
+
+    goto :goto_3
+
+    :cond_2
+    const/4 v3, 0x2
+
+    if-ne v1, v3, :cond_3
+
+    .line 443
+    sget v1, Lorg/telegram/messenger/R$string;->SetGroupPhoto:I
+
+    const-string v3, "SetGroupPhoto"
+
+    invoke-static {v3, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
-    :cond_1
-    if-ne v1, v13, :cond_2
+    .line 444
+    :cond_3
+    iget-object v1, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->avatarFor:Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;
 
-    .line 442
-    sget v1, Lorg/telegram/messenger/R$string;->SetGroupPhoto:I
-
-    const-string v2, "SetGroupPhoto"
-
-    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    goto :goto_1
-
-    .line 443
-    :cond_2
-    iget-object v1, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->avatarFor:Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;
-
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     iget v1, v1, Lorg/telegram/ui/Components/ImageUpdater$AvatarFor;->type:I
 
-    if-ne v1, v13, :cond_3
+    if-ne v1, v3, :cond_4
 
-    .line 444
+    .line 445
     sget v1, Lorg/telegram/messenger/R$string;->SuggestPhoto:I
 
-    invoke-static {v12, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v15, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 446
-    :cond_3
+    .line 447
+    :cond_4
     sget v1, Lorg/telegram/messenger/R$string;->SetProfilePhotoAvatarConstructor:I
 
-    const-string v2, "SetProfilePhotoAvatarConstructor"
+    const-string v3, "SetProfilePhotoAvatarConstructor"
 
-    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_1
-
-    .line 448
-    :goto_2
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
-
-    const-string v2, "fonts/rmedium.ttf"
+    goto :goto_2
 
     .line 449
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    :goto_3
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    const-string v3, "fonts/rmedium.ttf"
 
     .line 450
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    move-result-object v3
 
-    move-result v2
-
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 451
-    iget-object v2, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    const/4 v3, -0x2
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-static {v3, v3, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    move-result v3
+
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 452
+    iget-object v3, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
+
+    const/4 v4, -0x2
+
+    invoke-static {v4, v4, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
-    invoke-virtual {v2, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v3, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 452
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
+    .line 453
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
 
     new-instance v1, Lorg/telegram/ui/Components/AvatarConstructorFragment$$ExternalSyntheticLambda3;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Components/AvatarConstructorFragment$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
+    invoke-direct {v1, v11}, Lorg/telegram/ui/Components/AvatarConstructorFragment$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 454
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
+    .line 455
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->button:Landroid/widget/FrameLayout;
 
-    const/4 v1, -0x1
+    const/4 v3, -0x1
 
-    const/16 v2, 0x30
+    const/16 v4, 0x30
 
-    const/16 v3, 0x50
-
-    const/16 v4, 0x10
-
-    const/16 v5, 0x10
+    const/16 v5, 0x50
 
     const/16 v6, 0x10
 
     const/16 v7, 0x10
 
-    invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    const/16 v8, 0x10
+
+    const/16 v9, 0x10
+
+    invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
-    invoke-virtual {v14, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 455
-    iget-object v0, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    .line 456
+    iget-object v0, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {v14, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 457
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    invoke-virtual {v14, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     .line 458
-    iget-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerPreviewView:Landroid/view/View;
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->overlayActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+
+    invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    .line 459
+    iget-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerPreviewView:Landroid/view/View;
 
     const/4 v1, -0x1
 
@@ -2788,32 +2822,32 @@
 
     move-result-object v1
 
-    invoke-virtual {v14, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 460
-    new-instance v0, Lorg/telegram/ui/Components/CanvasButton;
-
-    invoke-direct {v0, v14}, Lorg/telegram/ui/Components/CanvasButton;-><init>(Landroid/view/View;)V
-
-    iput-object v0, v8, Lorg/telegram/ui/Components/AvatarConstructorFragment;->avatarClickableArea:Lorg/telegram/ui/Components/CanvasButton;
+    invoke-virtual {v2, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 461
+    new-instance v0, Lorg/telegram/ui/Components/CanvasButton;
+
+    invoke-direct {v0, v2}, Lorg/telegram/ui/Components/CanvasButton;-><init>(Landroid/view/View;)V
+
+    iput-object v0, v11, Lorg/telegram/ui/Components/AvatarConstructorFragment;->avatarClickableArea:Lorg/telegram/ui/Components/CanvasButton;
+
+    .line 462
     new-instance v1, Lorg/telegram/ui/Components/AvatarConstructorFragment$$ExternalSyntheticLambda5;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Components/AvatarConstructorFragment$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
+    invoke-direct {v1, v11}, Lorg/telegram/ui/Components/AvatarConstructorFragment$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CanvasButton;->setDelegate(Ljava/lang/Runnable;)V
 
-    .line 464
-    iput-object v14, v8, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
+    .line 465
+    iput-object v2, v11, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    return-object v14
+    return-object v2
 .end method
 
 .method public isLightStatusBar()Z
     .locals 7
 
-    .line 1293
+    .line 1298
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     const v1, 0x3f389375    # 0.721f
@@ -2840,7 +2874,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 1294
+    .line 1299
     :cond_0
     iget-object v0, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backgroundGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
@@ -2848,7 +2882,7 @@
 
     move-result v0
 
-    .line 1295
+    .line 1300
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->computePerceivedBrightness(I)F
 
     move-result v0
@@ -2867,7 +2901,7 @@
 
     goto :goto_1
 
-    .line 1297
+    .line 1302
     :cond_2
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
@@ -2885,16 +2919,16 @@
 
     goto :goto_0
 
-    .line 1299
+    .line 1304
     :goto_1
     iget-boolean v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->isLightInternal:Z
 
     if-eq v1, v0, :cond_7
 
-    .line 1300
+    .line 1305
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->isLightInternal:Z
 
-    .line 1301
+    .line 1306
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getAlpha()F
@@ -2914,22 +2948,22 @@
     :cond_3
     move v4, v5
 
-    .line 1302
+    .line 1307
     :goto_2
     invoke-direct {p0, v4}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setProgressToLightStatusBar(F)V
 
     goto :goto_4
 
-    .line 1304
+    .line 1309
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->lightProgressAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v1, :cond_5
 
-    .line 1305
+    .line 1310
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 1306
+    .line 1311
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->lightProgressAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->cancel()V
@@ -2939,7 +2973,7 @@
 
     new-array v1, v1, [F
 
-    .line 1308
+    .line 1313
     iget v6, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToLightStatusBar:F
 
     aput v6, v1, v3
@@ -2960,14 +2994,14 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->lightProgressAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1309
+    .line 1314
     new-instance v2, Lorg/telegram/ui/Components/AvatarConstructorFragment$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1312
+    .line 1317
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->lightProgressAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0x96
@@ -2978,14 +3012,14 @@
 
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1315
+    .line 1320
     :cond_7
     :goto_4
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->bottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     if-eqz v1, :cond_8
 
-    .line 1316
+    .line 1321
     invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
@@ -3007,7 +3041,7 @@
 .method public onBackPressed()Z
     .locals 1
 
-    .line 1429
+    .line 1434
     invoke-direct {p0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->discardEditor()V
 
     const/4 v0, 0x0
@@ -3018,14 +3052,14 @@
 .method public onPreviewClick()V
     .locals 3
 
-    .line 1336
+    .line 1341
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->isLandscapeMode:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1339
+    .line 1344
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
 
@@ -3037,20 +3071,20 @@
 
     if-lez v0, :cond_2
 
-    .line 1340
+    .line 1345
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibilityAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1341
+    .line 1346
     iput v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
-    .line 1342
+    .line 1347
     iput-boolean v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->expandWithKeyboard:Z
 
-    .line 1344
+    .line 1349
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
@@ -3058,7 +3092,7 @@
 
     return-void
 
-    .line 1347
+    .line 1352
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
@@ -3076,10 +3110,10 @@
 .method public onResume()V
     .locals 2
 
-    .line 1439
+    .line 1444
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 1440
+    .line 1445
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -3096,7 +3130,7 @@
 .method public setDelegate(Lorg/telegram/ui/Components/AvatarConstructorFragment$Delegate;)V
     .locals 0
 
-    .line 1332
+    .line 1337
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->delegate:Lorg/telegram/ui/Components/AvatarConstructorFragment$Delegate;
 
     return-void
@@ -3105,12 +3139,12 @@
 .method public startFrom(Lorg/telegram/tgnet/TLRPC$VideoSize;)V
     .locals 9
 
-    .line 651
+    .line 652
     new-instance v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;-><init>()V
 
-    .line 652
+    .line 653
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$VideoSize;->background_colors:Ljava/util/ArrayList;
 
     const/4 v2, 0x0
@@ -3133,7 +3167,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color1:I
 
-    .line 653
+    .line 654
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$VideoSize;->background_colors:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -3168,7 +3202,7 @@
     :goto_0
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color2:I
 
-    .line 654
+    .line 655
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$VideoSize;->background_colors:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -3203,7 +3237,7 @@
     :goto_1
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color3:I
 
-    .line 655
+    .line 656
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$VideoSize;->background_colors:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -3238,19 +3272,19 @@
     :goto_2
     iput v1, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color4:I
 
-    .line 656
+    .line 657
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 659
+    .line 660
     instance-of v1, p1, Lorg/telegram/tgnet/TLRPC$TL_videoSizeEmojiMarkup;
 
     const/4 v3, 0x0
 
     if-eqz v1, :cond_3
 
-    .line 660
+    .line 661
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_videoSizeEmojiMarkup;
 
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$TL_videoSizeEmojiMarkup;->emoji_id:J
@@ -3259,13 +3293,13 @@
 
     goto :goto_4
 
-    .line 662
+    .line 663
     :cond_3
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_videoSizeStickerMarkup;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_videoSizeStickerMarkup;-><init>()V
 
-    .line 663
+    .line 664
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -3280,7 +3314,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 666
+    .line 667
     :goto_3
     iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
@@ -3290,7 +3324,7 @@
 
     if-ge v2, v5, :cond_5
 
-    .line 667
+    .line 668
     iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3307,7 +3341,7 @@
 
     if-nez v5, :cond_4
 
-    .line 668
+    .line 669
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3324,16 +3358,16 @@
     :cond_5
     const-wide/16 v1, 0x0
 
-    .line 672
+    .line 673
     invoke-direct {p0, v1, v2, v3}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->setPreview(JLorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 674
+    .line 675
     :goto_4
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->backgroundSelectView:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->selectGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 675
+    .line 676
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->setForUser(Z)V
@@ -3344,30 +3378,30 @@
 .method public startFrom(Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;)V
     .locals 7
 
-    .line 636
+    .line 637
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->getBackgroundGradient()Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     move-result-object v0
 
-    .line 637
+    .line 638
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     if-nez v1, :cond_0
 
     return-void
 
-    .line 640
+    .line 641
     :cond_0
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 641
+    .line 642
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->getAnimatedEmoji()Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     move-result-object v1
 
     if-eqz v1, :cond_1
 
-    .line 642
+    .line 643
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->getAnimatedEmoji()Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     move-result-object v1
@@ -3376,12 +3410,12 @@
 
     move-result-wide v1
 
-    .line 643
+    .line 644
     iget-object v3, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->previewView:Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;
 
     iput-wide v1, v3, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->documentId:J
 
-    .line 644
+    .line 645
     iget-object v3, v3, Lorg/telegram/ui/Components/AvatarConstructorFragment$PreviewView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     new-instance v4, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
@@ -3394,13 +3428,13 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/BackupImageView;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
-    .line 646
+    .line 647
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->backgroundSelectView:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->selectGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 647
+    .line 648
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment;->selectAnimatedEmojiDialog:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iget-boolean p1, p1, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->forUser:Z

@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UnconfirmedAuthController;
@@ -63,7 +63,7 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getString(C3634R.string.UnconfirmedAuthTitle));
+        textView.setText(LocaleController.getString(C3632R.string.UnconfirmedAuthTitle));
         linearLayout.addView(textView, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 55, 28, 11, 28, 0));
         TextView textView2 = new TextView(context);
         this.messageTextView = textView2;
@@ -80,7 +80,7 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
         textViewWithLoading.setPadding(AndroidUtilities.m104dp(10), AndroidUtilities.m104dp(5), AndroidUtilities.m104dp(10), AndroidUtilities.m104dp(7));
         textViewWithLoading.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textViewWithLoading.setTextSize(1, 14.22f);
-        textViewWithLoading.setText(LocaleController.getString(C3634R.string.UnconfirmedAuthConfirm));
+        textViewWithLoading.setText(LocaleController.getString(C3632R.string.UnconfirmedAuthConfirm));
         linearLayout2.addView(textViewWithLoading, LayoutHelper.createLinear(-2, 30));
         linearLayout2.addView(new Space(context), LayoutHelper.createLinear(-2, 1, 17.0f, 1));
         TextViewWithLoading textViewWithLoading2 = new TextViewWithLoading(context);
@@ -88,7 +88,7 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
         textViewWithLoading2.setPadding(AndroidUtilities.m104dp(10), AndroidUtilities.m104dp(5), AndroidUtilities.m104dp(10), AndroidUtilities.m104dp(7));
         textViewWithLoading2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textViewWithLoading2.setTextSize(1, 14.22f);
-        textViewWithLoading2.setText(LocaleController.getString(C3634R.string.UnconfirmedAuthDeny));
+        textViewWithLoading2.setText(LocaleController.getString(C3632R.string.UnconfirmedAuthDeny));
         linearLayout2.addView(textViewWithLoading2, LayoutHelper.createLinear(-2, 30));
         linearLayout2.addView(new Space(context), LayoutHelper.createLinear(-2, 1, 17.0f, 1));
         linearLayout.addView(linearLayout2, LayoutHelper.createLinear(-1, -2, 28, 7, 28, 8));
@@ -98,17 +98,17 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
 
     public void set(final BaseFragment baseFragment, final int i) {
         final ArrayList<UnconfirmedAuthController.UnconfirmedAuth> arrayList = MessagesController.getInstance(i).getUnconfirmedAuthController().auths;
-        this.titleTextView.setText(LocaleController.getString(C3634R.string.UnconfirmedAuthTitle));
-        this.yesButton.setText(LocaleController.getString(C3634R.string.UnconfirmedAuthConfirm));
+        this.titleTextView.setText(LocaleController.getString(C3632R.string.UnconfirmedAuthTitle));
+        this.yesButton.setText(LocaleController.getString(C3632R.string.UnconfirmedAuthConfirm));
         this.yesButton.setLoading(false, false);
-        this.noButton.setText(LocaleController.getString(C3634R.string.UnconfirmedAuthDeny));
+        this.noButton.setText(LocaleController.getString(C3632R.string.UnconfirmedAuthDeny));
         this.noButton.setLoading(false, false);
         if (arrayList != null && arrayList.size() == 1) {
             String str = "" + arrayList.get(0).device;
             if (!TextUtils.isEmpty(arrayList.get(0).location) && !str.isEmpty()) {
                 str = str + ", ";
             }
-            this.messageTextView.setText(LocaleController.formatString(C3634R.string.UnconfirmedAuthSingle, str + arrayList.get(0).location));
+            this.messageTextView.setText(LocaleController.formatString(C3632R.string.UnconfirmedAuthSingle, str + arrayList.get(0).location));
         } else if (arrayList != null && arrayList.size() > 1) {
             String str2 = arrayList.get(0).location;
             int i2 = 1;
@@ -144,7 +144,7 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$set$2(final BaseFragment baseFragment, int i, ArrayList arrayList, View view) {
-        String string = LocaleController.getString(C3634R.string.UnconfirmedAuthConfirmedMessage);
+        String string = LocaleController.getString(C3632R.string.UnconfirmedAuthConfirmedMessage);
         int i2 = Theme.key_undo_cancelColor;
         SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i2, 0, new Runnable() { // from class: org.telegram.ui.Cells.UnconfirmedAuthHintCell$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
@@ -153,13 +153,13 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
             }
         });
         SpannableString spannableString = new SpannableString(">");
-        ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3634R.C3636drawable.attach_arrow_right);
+        ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3632R.C3634drawable.attach_arrow_right);
         coloredImageSpan.setOverrideColor(Theme.getColor(i2));
         coloredImageSpan.setScale(0.7f, 0.7f);
         coloredImageSpan.setWidth(AndroidUtilities.m104dp(12));
         spannableString.setSpan(coloredImageSpan, 0, spannableString.length(), 33);
         AndroidUtilities.replaceCharSequence(">", replaceSingleTag, spannableString);
-        BulletinFactory.m62of(baseFragment).createSimpleBulletin(C3634R.raw.contact_check, LocaleController.getString(C3634R.string.UnconfirmedAuthConfirmed), replaceSingleTag).show();
+        BulletinFactory.m62of(baseFragment).createSimpleBulletin(C3632R.raw.contact_check, LocaleController.getString(C3632R.string.UnconfirmedAuthConfirmed), replaceSingleTag).show();
         MessagesController.getInstance(i).getUnconfirmedAuthController().confirm(arrayList, new Utilities.Callback() { // from class: org.telegram.ui.Cells.UnconfirmedAuthHintCell$$ExternalSyntheticLambda6
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
@@ -290,14 +290,14 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
 
     public void showLoginPreventedSheet(ArrayList<UnconfirmedAuthController.UnconfirmedAuth> arrayList) {
         if (arrayList == null || arrayList.size() == 0) {
-            BulletinFactory.m63of(Bulletin.BulletinWindow.make(getContext()), null).createErrorBulletin(LocaleController.getString(C3634R.string.UnknownError)).show();
+            BulletinFactory.m63of(Bulletin.BulletinWindow.make(getContext()), null).createErrorBulletin(LocaleController.getString(C3632R.string.UnknownError)).show();
             return;
         }
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
         RLottieImageView rLottieImageView = new RLottieImageView(getContext());
         rLottieImageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        rLottieImageView.setAnimation(C3634R.raw.ic_ban, 50, 50);
+        rLottieImageView.setAnimation(C3632R.raw.ic_ban, 50, 50);
         rLottieImageView.playAnimation();
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m104dp(80), Theme.getColor(Theme.key_windowBackgroundWhiteValueText)));
@@ -313,13 +313,13 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(17);
         if (arrayList.size() == 1) {
-            textView2.setText(LocaleController.formatString(C3634R.string.UnconfirmedAuthDeniedMessageSingle, from(arrayList.get(0))));
+            textView2.setText(LocaleController.formatString(C3632R.string.UnconfirmedAuthDeniedMessageSingle, from(arrayList.get(0))));
         } else {
             String str = "\n";
             for (int i = 0; i < Math.min(arrayList.size(), 10); i++) {
                 str = str + "• " + from(arrayList.get(i)) + "\n";
             }
-            textView2.setText(LocaleController.formatString(C3634R.string.UnconfirmedAuthDeniedMessageMultiple, str));
+            textView2.setText(LocaleController.formatString(C3632R.string.UnconfirmedAuthDeniedMessageMultiple, str));
         }
         textView2.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         linearLayout.addView(textView2, LayoutHelper.createLinear(-1, -2, 40, 9, 40, 0));
@@ -333,12 +333,12 @@ public class UnconfirmedAuthHintCell extends FrameLayout {
         textView3.setTextSize(1, 14.0f);
         textView3.setGravity(17);
         textView3.setTextColor(Theme.getColor(i2));
-        textView3.setText(LocaleController.getString(C3634R.string.UnconfirmedAuthDeniedWarning));
+        textView3.setText(LocaleController.getString(C3632R.string.UnconfirmedAuthDeniedWarning));
         frameLayout.addView(textView3, LayoutHelper.createFrame(-1, -1, 119));
         linearLayout.addView(frameLayout, LayoutHelper.createLinear(-1, -2, 14, 19, 14, 0));
         final ButtonWithCounterView buttonWithCounterView = new ButtonWithCounterView(getContext(), null);
         ScaleStateListAnimator.apply(buttonWithCounterView, 0.02f, 1.5f);
-        buttonWithCounterView.setText(LocaleController.getString(C3634R.string.GotIt), false);
+        buttonWithCounterView.setText(LocaleController.getString(C3632R.string.GotIt), false);
         linearLayout.addView(buttonWithCounterView, LayoutHelper.createLinear(-1, 48, 14, 20, 14, 4));
         final BottomSheet show = new BottomSheet.Builder(getContext()).setCustomView(linearLayout).show();
         show.setCanDismissWithSwipe(false);

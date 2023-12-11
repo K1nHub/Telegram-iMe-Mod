@@ -393,13 +393,15 @@
 
     const/4 v1, 0x1
 
+    const/16 v2, 0x384
+
     if-eq v0, v1, :cond_1
 
     const/4 v1, 0x2
 
     if-eq v0, v1, :cond_0
 
-    const/16 v0, 0x190
+    const/16 v0, 0x2d0
 
     .line 95
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -414,7 +416,7 @@
 
     int-to-float v1, v1
 
-    const v2, 0x3f59999a    # 0.85f
+    const v2, 0x3f333333    # 0.7f
 
     mul-float/2addr v1, v2
 
@@ -425,58 +427,54 @@
     move-result v0
 
     return v0
-
-    :cond_0
-    const/16 v0, 0x384
 
     .line 90
-    sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
+    :cond_0
+    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
-    iget v2, v1, Landroid/graphics/Point;->x:I
+    iget v1, v0, Landroid/graphics/Point;->x:I
 
-    iget v1, v1, Landroid/graphics/Point;->y:I
+    iget v0, v0, Landroid/graphics/Point;->y:I
 
-    invoke-static {v2, v1}, Ljava/lang/Math;->min(II)I
+    invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
 
-    move-result v1
+    move-result v0
 
-    int-to-float v1, v1
+    int-to-float v0, v0
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v0, v1
 
-    float-to-int v1, v1
+    float-to-int v0, v0
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    invoke-static {v2, v0}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
     return v0
 
-    :cond_1
-    const/16 v0, 0x200
-
     .line 92
-    sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
+    :cond_1
+    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
-    iget v2, v1, Landroid/graphics/Point;->x:I
+    iget v1, v0, Landroid/graphics/Point;->x:I
 
-    iget v1, v1, Landroid/graphics/Point;->y:I
+    iget v0, v0, Landroid/graphics/Point;->y:I
 
-    invoke-static {v2, v1}, Ljava/lang/Math;->min(II)I
+    invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
 
-    move-result v1
+    move-result v0
 
-    int-to-float v1, v1
+    int-to-float v0, v0
 
-    const v2, 0x3f733333    # 0.95f
+    const v1, 0x3f4ccccd    # 0.8f
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v0, v1
 
-    float-to-int v1, v1
+    float-to-int v0, v0
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    invoke-static {v2, v0}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 

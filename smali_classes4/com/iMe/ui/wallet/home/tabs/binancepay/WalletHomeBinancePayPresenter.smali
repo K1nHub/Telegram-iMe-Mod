@@ -554,9 +554,9 @@
     .locals 6
 
     .line 368
-    sget-object v0, Lcom/iMe/model/wallet/home/BannerSlide;->Companion:Lcom/iMe/model/wallet/home/BannerSlide$Companion;
+    sget-object v0, Lcom/iMe/model/wallet/home/BannerSlide$Binance;->Companion:Lcom/iMe/model/wallet/home/BannerSlide$Binance$Companion;
 
-    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/BannerSlide$Companion;->getBinancePayBanners()[Lcom/iMe/model/wallet/home/BannerSlide;
+    invoke-virtual {v0}, Lcom/iMe/model/wallet/home/BannerSlide$Binance$Companion;->getBanners()[Lcom/iMe/model/wallet/home/BannerSlide$Binance;
 
     move-result-object v0
 

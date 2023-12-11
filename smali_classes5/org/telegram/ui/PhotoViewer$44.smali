@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/Components/VideoPlayerSeekBar$SeekBarDelegate;)V
     .locals 0
 
-    .line 8185
+    .line 8187
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$44;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$44;->val$seekBarDelegate:Lorg/telegram/ui/Components/VideoPlayerSeekBar$SeekBarDelegate;
@@ -39,7 +39,7 @@
 .method public bridge synthetic getContentDescription(Landroid/view/View;)Ljava/lang/CharSequence;
     .locals 0
 
-    .line 8185
+    .line 8187
     invoke-virtual {p0, p1}, Lorg/telegram/ui/PhotoViewer$44;->getContentDescription(Landroid/view/View;)Ljava/lang/String;
 
     move-result-object p1
@@ -50,7 +50,7 @@
 .method public getContentDescription(Landroid/view/View;)Ljava/lang/String;
     .locals 8
 
-    .line 8200
+    .line 8202
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -103,7 +103,7 @@
 
     move-result-object p1
 
-    .line 8201
+    .line 8203
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -146,7 +146,7 @@
 
     move-result-object v0
 
-    .line 8202
+    .line 8204
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrPlayerDuration:I
 
     const/4 v3, 0x2
@@ -169,7 +169,7 @@
 .method public getProgress()F
     .locals 1
 
-    .line 8188
+    .line 8190
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$44;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayerSeekBar;
@@ -186,12 +186,12 @@
 .method public setProgress(F)V
     .locals 1
 
-    .line 8193
+    .line 8195
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$44;->val$seekBarDelegate:Lorg/telegram/ui/Components/VideoPlayerSeekBar$SeekBarDelegate;
 
     invoke-interface {v0, p1}, Lorg/telegram/ui/Components/VideoPlayerSeekBar$SeekBarDelegate;->onSeekBarDrag(F)V
 
-    .line 8194
+    .line 8196
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$44;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayerSeekBar;
@@ -200,7 +200,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->setProgress(F)V
 
-    .line 8195
+    .line 8197
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$44;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1300(Lorg/telegram/ui/PhotoViewer;)Landroid/view/View;

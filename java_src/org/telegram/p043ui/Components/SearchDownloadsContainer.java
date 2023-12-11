@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
@@ -300,7 +300,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
             updateListInternal(z, this.currentLoadingFilesTmp, this.recentLoadingFilesTmp);
             if (this.rowCount == 0) {
                 this.emptyView.showProgress(false, false);
-                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewDownloads", C3634R.string.SearchEmptyViewDownloads));
+                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewDownloads", C3632R.string.SearchEmptyViewDownloads));
                 this.emptyView.subtitle.setVisibility(8);
             }
             this.emptyView.setStickerType(9);
@@ -371,9 +371,9 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
             updateListInternal(true, arrayList, arrayList2);
             if (this.rowCount == 0) {
                 this.emptyView.showProgress(false, true);
-                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3634R.string.SearchEmptyViewTitle2));
+                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3632R.string.SearchEmptyViewTitle2));
                 this.emptyView.subtitle.setVisibility(0);
-                this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3634R.string.SearchEmptyViewFilteredSubtitle2));
+                this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3632R.string.SearchEmptyViewFilteredSubtitle2));
             }
         }
     }

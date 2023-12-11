@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -43,7 +43,7 @@ public class ActionBtnCell extends FrameLayout {
         this.button.setShowZero(true);
         this.button.setEnabled(true);
         this.button.setCount(i, z);
-        this.button.setText(LocaleController.formatString("BoostingStartGiveaway", C3634R.string.BoostingStartGiveaway, new Object[0]), z);
+        this.button.setText(LocaleController.formatString("BoostingStartGiveaway", C3632R.string.BoostingStartGiveaway, new Object[0]), z);
         this.backgroundView.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground, this.resourcesProvider));
     }
 
@@ -53,7 +53,7 @@ public class ActionBtnCell extends FrameLayout {
         this.button.setShowZero(true);
         this.button.setEnabled(z2);
         this.button.setCount(i, z);
-        this.button.setText(LocaleController.formatString("GiftPremium", C3634R.string.GiftPremium, new Object[0]), z);
+        this.button.setText(LocaleController.formatString("GiftPremium", C3632R.string.GiftPremium, new Object[0]), z);
         this.backgroundView.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground, this.resourcesProvider));
     }
 
@@ -83,13 +83,13 @@ public class ActionBtnCell extends FrameLayout {
         this.drawDivider = false;
         this.button.setShowZero(false);
         this.button.setEnabled(true);
-        this.button.setText(z ? LocaleController.formatString("BoostingUseLink", C3634R.string.BoostingUseLink, new Object[0]) : LocaleController.formatString("OK", C3634R.string.OK, new Object[0]), false);
+        this.button.setText(z ? LocaleController.formatString("BoostingUseLink", C3632R.string.BoostingUseLink, new Object[0]) : LocaleController.formatString("OK", C3632R.string.OK, new Object[0]), false);
     }
 
     public void setCloseStyle() {
         this.drawDivider = false;
         this.button.setShowZero(false);
         this.button.setEnabled(true);
-        this.button.setText(LocaleController.formatString("Close", C3634R.string.Close, new Object[0]), false);
+        this.button.setText(LocaleController.formatString("Close", C3632R.string.Close, new Object[0]), false);
     }
 }

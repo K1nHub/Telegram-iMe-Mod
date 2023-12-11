@@ -8449,7 +8449,7 @@
 
     iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity;->accent:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
-    if-eqz v2, :cond_0
+    if-nez v2, :cond_0
 
     goto/16 :goto_14
 

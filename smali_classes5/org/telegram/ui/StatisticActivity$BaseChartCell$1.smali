@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity$BaseChartCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 1361
+    .line 1364
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onLayout(ZIIII)V
     .locals 3
 
-    .line 1383
+    .line 1386
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result p1
@@ -45,7 +45,7 @@
     :goto_0
     if-ge p3, p1, :cond_1
 
-    .line 1385
+    .line 1388
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -62,7 +62,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 1387
+    .line 1390
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object p4
@@ -75,13 +75,13 @@
 
     move p4, p2
 
-    .line 1389
+    .line 1392
     :cond_0
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 1390
+    .line 1393
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -92,7 +92,7 @@
 
     add-int/2addr v1, p4
 
-    .line 1391
+    .line 1394
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -103,10 +103,10 @@
 
     add-int/2addr v2, p5
 
-    .line 1389
+    .line 1392
     invoke-virtual {v0, p4, p5, v1, v2}, Landroid/view/View;->layout(IIII)V
 
-    .line 1393
+    .line 1396
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -128,10 +128,10 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 1364
+    .line 1367
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 1367
+    .line 1370
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result p1
@@ -140,7 +140,7 @@
 
     if-lez p1, :cond_0
 
-    .line 1368
+    .line 1371
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -164,7 +164,7 @@
     :goto_1
     if-ge v1, p1, :cond_2
 
-    .line 1370
+    .line 1373
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
@@ -181,7 +181,7 @@
 
     if-le v4, v5, :cond_1
 
-    .line 1372
+    .line 1375
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
@@ -194,7 +194,7 @@
 
     move v3, p2
 
-    .line 1374
+    .line 1377
     :cond_1
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
@@ -210,7 +210,7 @@
 
     goto :goto_1
 
-    .line 1376
+    .line 1379
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 

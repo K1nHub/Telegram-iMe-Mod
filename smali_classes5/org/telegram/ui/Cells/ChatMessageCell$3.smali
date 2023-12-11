@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/view/View;)V
     .locals 0
 
-    .line 1520
+    .line 1530
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$3;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SeekBar;-><init>(Landroid/view/View;)V
@@ -35,7 +35,7 @@
 .method protected onTimestampUpdate(Lorg/telegram/ui/Components/URLSpanNoUnderline;)V
     .locals 1
 
-    .line 1523
+    .line 1533
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$3;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlightedSpan(Landroid/text/style/CharacterStyle;)Z

@@ -11,7 +11,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.dialogs.DialogsFactoryKt;
 import com.iMe.utils.extentions.common.ContextExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 /* compiled from: TokenBuyCoordinator.kt */
@@ -50,7 +50,7 @@ public final class TokenBuyCoordinator {
             actionBarLayout.presentFragment(companion.newInstance(new WalletSwapScreenType.Crypto(swapProtocol, args.getFromToken(), args.getTokenTo(), args.getNetworkId())), z);
             return;
         }
-        ContextExtKt.toast(this.resourceManager.getString(C3634R.string.common_unexpected_error_title));
+        ContextExtKt.toast(this.resourceManager.getString(C3632R.string.common_unexpected_error_title));
     }
 
     public final void showNoEnoughMoneyDialog(final INavigationLayout actionBarLayout, final TokenBuyCoordinatorArgs args) {
@@ -59,7 +59,7 @@ public final class TokenBuyCoordinator {
         if ((args.getFromToken() != null || args.getTokenTo() != null) && FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(this.cryptoPreferenceHelper.getNetworkId())) {
             BaseFragment lastFragment = actionBarLayout.getLastFragment();
             Intrinsics.checkNotNullExpressionValue(lastFragment, "actionBarLayout.lastFragment");
-            DialogsFactoryKt.showErrorAlert(lastFragment, this.resourceManager.getString(C3634R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3634R.string.wallet_common_error_not_enough_money_description), this.resourceManager.getString(C3634R.string.wallet_common_error_not_enough_money_btn_txt), new Callbacks$Callback() { // from class: com.iMe.navigation.wallet.coordinator.TokenBuyCoordinator$$ExternalSyntheticLambda0
+            DialogsFactoryKt.showErrorAlert(lastFragment, this.resourceManager.getString(C3632R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3632R.string.wallet_common_error_not_enough_money_description), this.resourceManager.getString(C3632R.string.wallet_common_error_not_enough_money_btn_txt), new Callbacks$Callback() { // from class: com.iMe.navigation.wallet.coordinator.TokenBuyCoordinator$$ExternalSyntheticLambda0
                 @Override // com.iMe.fork.utils.Callbacks$Callback
                 public final void invoke() {
                     TokenBuyCoordinator.showNoEnoughMoneyDialog$lambda$0(TokenBuyCoordinator.this, actionBarLayout, args);
@@ -69,7 +69,7 @@ public final class TokenBuyCoordinator {
         }
         BaseFragment lastFragment2 = actionBarLayout.getLastFragment();
         Intrinsics.checkNotNullExpressionValue(lastFragment2, "actionBarLayout.lastFragment");
-        DialogsFactoryKt.showErrorAlert$default(lastFragment2, this.resourceManager.getString(C3634R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3634R.string.wallet_common_error_not_enough_money_simple_description), this.resourceManager.getString(C3634R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(lastFragment2, this.resourceManager.getString(C3632R.string.wallet_common_error_not_enough_money_title), this.resourceManager.getString(C3632R.string.wallet_common_error_not_enough_money_simple_description), this.resourceManager.getString(C3632R.string.common_ok), null, 8, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

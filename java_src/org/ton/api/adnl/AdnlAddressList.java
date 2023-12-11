@@ -27,7 +27,7 @@ import p033j$.util.Spliterator;
 import p033j$.util.function.Consumer;
 import p033j$.util.function.IntFunction;
 import p033j$.util.function.Predicate;
-import p033j$.util.stream.AbstractC3086o1;
+import p033j$.util.stream.AbstractC3083o1;
 import p033j$.util.stream.Stream;
 import p033j$.wrappers.C$r8$wrapper$java$util$function$Predicate$VWRP;
 /* compiled from: AdnlAddressList.kt */
@@ -85,7 +85,7 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
         return false;
     }
 
-    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2674e
+    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2671e
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$CC.$default$forEach(this, consumer);
     }
@@ -112,7 +112,7 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream parallelStream() {
         Stream m399y;
-        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), true);
+        m399y = AbstractC3083o1.m399y(Collection.EL.m695b(this), true);
         return m399y;
     }
 
@@ -141,7 +141,7 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, p033j$.util.Collection, p033j$.lang.InterfaceC2674e
+    @Override // java.util.Collection, java.lang.Iterable, p033j$.util.Collection, p033j$.lang.InterfaceC2671e
     public /* synthetic */ Spliterator spliterator() {
         return Collection.CC.$default$spliterator(this);
     }
@@ -149,7 +149,7 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream stream() {
         Stream m399y;
-        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), false);
+        m399y = AbstractC3083o1.m399y(Collection.EL.m695b(this), false);
         return m399y;
     }
 
@@ -404,6 +404,6 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
         KClass[] kClassArr = {Reflection.getOrCreateKotlinClass(AdnlAddressTunnel.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp6.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp6.class)};
         AdnlAddressUdp$$serializer adnlAddressUdp$$serializer = AdnlAddressUdp$$serializer.INSTANCE;
         AdnlAddressUdp6$$serializer adnlAddressUdp6$$serializer = AdnlAddressUdp6$$serializer.INSTANCE;
-        $childSerializers = new KSerializer[]{new ArrayListSerializer(new SealedClassSerializer("org.ton.api.adnl.AdnlAddress", orCreateKotlinClass, kClassArr, new KSerializer[]{AdnlAddressTunnel$$serializer.INSTANCE, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer}, new Annotation[]{new C7500x7048dd0e("@type")})), null, null, null, null};
+        $childSerializers = new KSerializer[]{new ArrayListSerializer(new SealedClassSerializer("org.ton.api.adnl.AdnlAddress", orCreateKotlinClass, kClassArr, new KSerializer[]{AdnlAddressTunnel$$serializer.INSTANCE, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer}, new Annotation[]{new C7498x7048dd0e("@type")})), null, null, null, null};
     }
 }

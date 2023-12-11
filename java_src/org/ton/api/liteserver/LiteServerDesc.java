@@ -28,10 +28,10 @@ import org.ton.api.pub.PublicKeyUnencrypted$$serializer;
 public final class LiteServerDesc {
 
     /* renamed from: id */
-    private final PublicKey f2031id;
+    private final PublicKey f2032id;
 
     /* renamed from: ip */
-    private final int f2032ip;
+    private final int f2033ip;
     private final int port;
     public static final Companion Companion = new Companion(null);
     private static final KSerializer<Object>[] $childSerializers = {new SealedClassSerializer("org.ton.api.pub.PublicKey", Reflection.getOrCreateKotlinClass(PublicKey.class), new KClass[]{Reflection.getOrCreateKotlinClass(PublicKeyAes.class), Reflection.getOrCreateKotlinClass(PublicKeyEd25519.class), Reflection.getOrCreateKotlinClass(PublicKeyOverlay.class), Reflection.getOrCreateKotlinClass(PublicKeyUnencrypted.class)}, new KSerializer[]{PublicKeyAes$$serializer.INSTANCE, PublicKeyEd25519$$serializer.INSTANCE, PublicKeyOverlay$$serializer.INSTANCE, PublicKeyUnencrypted$$serializer.INSTANCE}, new Annotation[]{new JsonClassDiscriminator("@type") { // from class: org.ton.api.liteserver.LiteServerDesc$Companion$annotationImpl$kotlinx_serialization_json_JsonClassDiscriminator$0
@@ -74,13 +74,13 @@ public final class LiteServerDesc {
         }
         if (obj instanceof LiteServerDesc) {
             LiteServerDesc liteServerDesc = (LiteServerDesc) obj;
-            return Intrinsics.areEqual(this.f2031id, liteServerDesc.f2031id) && this.f2032ip == liteServerDesc.f2032ip && this.port == liteServerDesc.port;
+            return Intrinsics.areEqual(this.f2032id, liteServerDesc.f2032id) && this.f2033ip == liteServerDesc.f2033ip && this.port == liteServerDesc.port;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.f2031id.hashCode() * 31) + this.f2032ip) * 31) + this.port;
+        return (((this.f2032id.hashCode() * 31) + this.f2033ip) * 31) + this.port;
     }
 
     /* compiled from: LiteServerDesc.kt */
@@ -102,23 +102,23 @@ public final class LiteServerDesc {
         if (7 != (i & 7)) {
             PluginExceptionsKt.throwMissingFieldException(i, 7, LiteServerDesc$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2031id = publicKey;
-        this.f2032ip = i2;
+        this.f2032id = publicKey;
+        this.f2033ip = i2;
         this.port = i3;
     }
 
     public static final /* synthetic */ void write$Self(LiteServerDesc liteServerDesc, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, $childSerializers[0], liteServerDesc.f2031id);
-        compositeEncoder.encodeIntElement(serialDescriptor, 1, liteServerDesc.f2032ip);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, $childSerializers[0], liteServerDesc.f2032id);
+        compositeEncoder.encodeIntElement(serialDescriptor, 1, liteServerDesc.f2033ip);
         compositeEncoder.encodeIntElement(serialDescriptor, 2, liteServerDesc.port);
     }
 
     public final PublicKey getId() {
-        return this.f2031id;
+        return this.f2032id;
     }
 
     public final int getIp() {
-        return this.f2032ip;
+        return this.f2033ip;
     }
 
     public final int getPort() {
@@ -127,11 +127,11 @@ public final class LiteServerDesc {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f2032ip);
+        sb.append(this.f2033ip);
         sb.append(':');
         sb.append(this.port);
         sb.append(':');
-        sb.append(this.f2031id);
+        sb.append(this.f2032id);
         return sb.toString();
     }
 }

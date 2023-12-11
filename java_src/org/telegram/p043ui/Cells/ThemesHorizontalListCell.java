@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -174,8 +174,8 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
             this.bitmapPaint = new Paint(3);
             this.shaderMatrix = new Matrix();
             setWillNotDraw(false);
-            this.inDrawable = context.getResources().getDrawable(C3634R.C3636drawable.minibubble_in).mutate();
-            this.outDrawable = context.getResources().getDrawable(C3634R.C3636drawable.minibubble_out).mutate();
+            this.inDrawable = context.getResources().getDrawable(C3632R.C3634drawable.minibubble_in).mutate();
+            this.outDrawable = context.getResources().getDrawable(C3632R.C3634drawable.minibubble_out).mutate();
             this.textPaint.setTextSize(AndroidUtilities.m104dp(13));
             RadioButton radioButton = new RadioButton(context);
             this.button = radioButton;
@@ -400,7 +400,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                 updateColors(false);
                 this.optionsDrawable = null;
             } else {
-                this.optionsDrawable = getResources().getDrawable(C3634R.C3636drawable.preview_dots).mutate();
+                this.optionsDrawable = getResources().getDrawable(C3632R.C3634drawable.preview_dots).mutate();
                 int previewBackgroundColor = this.themeInfo.getPreviewBackgroundColor();
                 this.backColor = previewBackgroundColor;
                 this.oldBackColor = previewBackgroundColor;
@@ -471,7 +471,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                     if (tLRPC$TL_theme.document != null) {
                         themeInfo2.themeLoaded = false;
                         this.placeholderAlpha = 1.0f;
-                        Drawable mutate = getResources().getDrawable(C3634R.C3636drawable.msg_theme).mutate();
+                        Drawable mutate = getResources().getDrawable(C3632R.C3634drawable.msg_theme).mutate();
                         this.loadingDrawable = mutate;
                         int color = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText7);
                         this.loadingColor = color;
@@ -486,7 +486,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
                             }
                         }
                     } else {
-                        Drawable mutate2 = getResources().getDrawable(C3634R.C3636drawable.preview_custom).mutate();
+                        Drawable mutate2 = getResources().getDrawable(C3632R.C3634drawable.preview_custom).mutate();
                         this.loadingDrawable = mutate2;
                         int color2 = Theme.getColor(Theme.key_windowBackgroundWhiteGrayText7);
                         this.loadingColor = color2;
@@ -729,7 +729,7 @@ public class ThemesHorizontalListCell extends RecyclerListView implements Notifi
             accessibilityNodeInfo.setEnabled(true);
             if (Build.VERSION.SDK_INT >= 21) {
                 accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK);
-                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions)));
+                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions)));
             }
         }
     }

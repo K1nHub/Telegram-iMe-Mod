@@ -4,7 +4,7 @@ import com.iMe.p030ui.folder.FilterIconInfo;
 import com.iMe.storage.domain.model.filters.FilterIcon;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* compiled from: FilterIconExt.kt */
 /* loaded from: classes4.dex */
 public final class FilterIconExtKt {
@@ -192,89 +192,89 @@ public final class FilterIconExtKt {
         Intrinsics.checkNotNullParameter(filterIcon, "<this>");
         switch (WhenMappings.$EnumSwitchMapping$0[filterIcon.ordinal()]) {
             case 1:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_grid_2x2, C3634R.C3636drawable.fork_filter_icon_grid_2x2_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_grid_2x2, C3632R.C3634drawable.fork_filter_icon_grid_2x2_filled);
             case 2:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_eye, C3634R.C3636drawable.fork_filter_icon_eye_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_eye, C3632R.C3634drawable.fork_filter_icon_eye_filled);
             case 3:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_user, C3634R.C3636drawable.fork_filter_icon_user_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_user, C3632R.C3634drawable.fork_filter_icon_user_filled);
             case 4:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_users, C3634R.C3636drawable.fork_filter_icon_users_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_users, C3632R.C3634drawable.fork_filter_icon_users_filled);
             case 5:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_channel, C3634R.C3636drawable.fork_filter_icon_channel_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_channel, C3632R.C3634drawable.fork_filter_icon_channel_filled);
             case 6:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_bot, C3634R.C3636drawable.fork_filter_icon_bot_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_bot, C3632R.C3634drawable.fork_filter_icon_bot_filled);
             case 7:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_lock, C3634R.C3636drawable.fork_filter_icon_lock_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_lock, C3632R.C3634drawable.fork_filter_icon_lock_filled);
             case 8:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_cloud, C3634R.C3636drawable.fork_filter_icon_cloud_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_cloud, C3632R.C3634drawable.fork_filter_icon_cloud_filled);
             case 9:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_crown, C3634R.C3636drawable.fork_filter_icon_crown_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_crown, C3632R.C3634drawable.fork_filter_icon_crown_filled);
             case 10:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_bear, C3634R.C3636drawable.fork_filter_icon_bear_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_bear, C3632R.C3634drawable.fork_filter_icon_bear_filled);
             case 11:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_suitcase, C3634R.C3636drawable.fork_filter_icon_suitcase_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_suitcase, C3632R.C3634drawable.fork_filter_icon_suitcase_filled);
             case 12:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_bell, C3634R.C3636drawable.fork_filter_icon_bell_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_bell, C3632R.C3634drawable.fork_filter_icon_bell_filled);
             case 13:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_wineglass, C3634R.C3636drawable.fork_filter_icon_wineglass_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_wineglass, C3632R.C3634drawable.fork_filter_icon_wineglass_filled);
             case 14:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_computer, C3634R.C3636drawable.fork_filter_icon_computer_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_computer, C3632R.C3634drawable.fork_filter_icon_computer_filled);
             case 15:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_home, C3634R.C3636drawable.fork_filter_icon_home_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_home, C3632R.C3634drawable.fork_filter_icon_home_filled);
             case 16:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_heart, C3634R.C3636drawable.fork_filter_icon_heart_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_heart, C3632R.C3634drawable.fork_filter_icon_heart_filled);
             case 17:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_plane, C3634R.C3636drawable.fork_filter_icon_plane_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_plane, C3632R.C3634drawable.fork_filter_icon_plane_filled);
             case 18:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_flower, C3634R.C3636drawable.fork_filter_icon_flower_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_flower, C3632R.C3634drawable.fork_filter_icon_flower_filled);
             case 19:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_grid_3x3, C3634R.C3636drawable.fork_filter_icon_grid_3x3_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_grid_3x3, C3632R.C3634drawable.fork_filter_icon_grid_3x3_filled);
             case 20:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_star, C3634R.C3636drawable.fork_filter_icon_star_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_star, C3632R.C3634drawable.fork_filter_icon_star_filled);
             case 21:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_bubbles, C3634R.C3636drawable.fork_filter_icon_bubbles_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_bubbles, C3632R.C3634drawable.fork_filter_icon_bubbles_filled);
             case 22:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_bubble, C3634R.C3636drawable.fork_filter_icon_bubble_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_bubble, C3632R.C3634drawable.fork_filter_icon_bubble_filled);
             case 23:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_bubble_point, C3634R.C3636drawable.fork_filter_icon_bubble_point_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_bubble_point, C3632R.C3634drawable.fork_filter_icon_bubble_point_filled);
             case 24:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_chart, C3634R.C3636drawable.fork_filter_icon_chart_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_chart, C3632R.C3634drawable.fork_filter_icon_chart_filled);
             case 25:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_micro, C3634R.C3636drawable.fork_filter_icon_micro_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_micro, C3632R.C3634drawable.fork_filter_icon_micro_filled);
             case 26:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_headset, C3634R.C3636drawable.fork_filter_icon_headset_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_headset, C3632R.C3634drawable.fork_filter_icon_headset_filled);
             case 27:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_call, C3634R.C3636drawable.fork_filter_icon_call_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_call, C3632R.C3634drawable.fork_filter_icon_call_filled);
             case 28:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_globe, C3634R.C3636drawable.fork_filter_icon_globe_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_globe, C3632R.C3634drawable.fork_filter_icon_globe_filled);
             case 29:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_folder, C3634R.C3636drawable.fork_filter_icon_folder_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_folder, C3632R.C3634drawable.fork_filter_icon_folder_filled);
             case 30:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_gallery, C3634R.C3636drawable.fork_filter_icon_gallery_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_gallery, C3632R.C3634drawable.fork_filter_icon_gallery_filled);
             case 31:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_camera, C3634R.C3636drawable.fork_filter_icon_camera_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_camera, C3632R.C3634drawable.fork_filter_icon_camera_filled);
             case 32:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_mask, C3634R.C3636drawable.fork_filter_icon_mask_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_mask, C3632R.C3634drawable.fork_filter_icon_mask_filled);
             case 33:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_ball, C3634R.C3636drawable.fork_filter_icon_ball_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_ball, C3632R.C3634drawable.fork_filter_icon_ball_filled);
             case 34:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_gear, C3634R.C3636drawable.fork_filter_icon_gear_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_gear, C3632R.C3634drawable.fork_filter_icon_gear_filled);
             case 35:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_game, C3634R.C3636drawable.fork_filter_icon_game_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_game, C3632R.C3634drawable.fork_filter_icon_game_filled);
             case 36:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_telephone, C3634R.C3636drawable.fork_filter_icon_telephone_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_telephone, C3632R.C3634drawable.fork_filter_icon_telephone_filled);
             case 37:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_flittermouse, C3634R.C3636drawable.fork_filter_icon_flittermouse_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_flittermouse, C3632R.C3634drawable.fork_filter_icon_flittermouse_filled);
             case 38:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_pumpkin, C3634R.C3636drawable.fork_filter_icon_pumpkin_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_pumpkin, C3632R.C3634drawable.fork_filter_icon_pumpkin_filled);
             case 39:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_security, C3634R.C3636drawable.fork_filter_icon_security_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_security, C3632R.C3634drawable.fork_filter_icon_security_filled);
             case 40:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_favorites, C3634R.C3636drawable.fork_filter_icon_favorites_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_favorites, C3632R.C3634drawable.fork_filter_icon_favorites_filled);
             case 41:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_gift, C3634R.C3636drawable.fork_filter_icon_gift_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_gift, C3632R.C3634drawable.fork_filter_icon_gift_filled);
             case 42:
-                return new FilterIconInfo(C3634R.C3636drawable.fork_filter_icon_support, C3634R.C3636drawable.fork_filter_icon_support_filled);
+                return new FilterIconInfo(C3632R.C3634drawable.fork_filter_icon_support, C3632R.C3634drawable.fork_filter_icon_support_filled);
             default:
                 throw new NoWhenBranchMatchedException();
         }

@@ -8,7 +8,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.Cells.StickerSetCell;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -43,8 +43,8 @@ public final class TwitterInviteProvider$convert$1 extends Lambda implements Fun
         final TwitterInviteProvider twitterInviteProvider = this.this$0;
         String nickname = twitterInviteItem.getNickname();
         resourceManager = twitterInviteProvider.resourceManager;
-        stickerSetCell.setText(nickname, resourceManager.getString(C3634R.string.twitter_search_invite_subtitle), C3634R.C3636drawable.fork_drawer_social_twitter, true);
-        stickerSetCell.setCustomButtonText(LocaleController.getString("Invite", C3634R.string.Invite));
+        stickerSetCell.setText(nickname, resourceManager.getString(C3632R.string.twitter_search_invite_subtitle), C3632R.C3634drawable.fork_drawer_social_twitter, true);
+        stickerSetCell.setCustomButtonText(LocaleController.getString("Invite", C3632R.string.Invite));
         stickerSetCell.setCustomButtonAction(new Callbacks$Callback() { // from class: com.iMe.ui.adapter.provider.TwitterInviteProvider$convert$1$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {

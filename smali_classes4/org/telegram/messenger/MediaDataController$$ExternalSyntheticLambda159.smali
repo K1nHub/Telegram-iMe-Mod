@@ -31,7 +31,7 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$U9XH0vCKym8m2YE7vFuLyefd8CU(Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)I
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$37vtIPJbTy4wzuT7Yu6khYBPTFA(Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)I
 
     move-result p1
 

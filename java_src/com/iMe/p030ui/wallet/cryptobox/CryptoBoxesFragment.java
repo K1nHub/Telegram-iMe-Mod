@@ -57,11 +57,11 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentCryptoboxesBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.ChatRightsEditActivity;
@@ -312,20 +312,20 @@ public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.cryptoboxes_title));
-        c3706ActionBar.setAllowOverlayTitle(true);
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.cryptoboxes_title));
+        c3704ActionBar.setAllowOverlayTitle(true);
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-        ActionBarMenuItem setupActionBar$lambda$4$lambda$3 = c3706ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        ActionBarMenuItem setupActionBar$lambda$4$lambda$3 = c3704ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
         setupActionBar$lambda$4$lambda$3.disableRipple();
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$4$lambda$3, "setupActionBar$lambda$4$lambda$3");
         ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$4$lambda$3, AndroidUtilities.m104dp(14));
         setupActionBar$lambda$4$lambda$3.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.cryptobox.CryptoBoxesFragment$setupActionBar$1$2
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.cryptobox.CryptoBoxesFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 CryptoBoxesPresenter presenter;
                 if (i == -1) {
@@ -384,9 +384,9 @@ public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3634R.C3637id.button_action) {
+        if (id == C3632R.C3635id.button_action) {
             this$0.getPresenter().onCreateCryptoBoxClick();
-        } else if (id == C3634R.C3637id.image_order) {
+        } else if (id == C3632R.C3635id.image_order) {
             this$0.getPresenter().onSelectOrderClick();
         }
     }
@@ -402,7 +402,7 @@ public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements
         CryptoBoxesRecycleAdapter cryptoBoxesAdapter = getCryptoBoxesAdapter();
         GlobalStateProvider globalStateProvider = cryptoBoxesAdapter.getGlobalStateProvider();
         globalStateProvider.setWhiteBackground(true);
-        globalStateProvider.setCustomElevation(recyclerView.getResources().getDimension(C3634R.dimen.wallet_card_elevation));
+        globalStateProvider.setCustomElevation(recyclerView.getResources().getDimension(C3632R.dimen.wallet_card_elevation));
         globalStateProvider.setOnRetryButtonClickAction(new Function0<Unit>() { // from class: com.iMe.ui.wallet.cryptobox.CryptoBoxesFragment$setupRecycleView$1$1$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {

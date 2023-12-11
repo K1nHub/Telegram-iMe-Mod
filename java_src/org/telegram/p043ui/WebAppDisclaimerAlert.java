@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.exoplayer2.util.Consumer;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.p043ui.ActionBar.AlertDialog;
@@ -26,7 +26,7 @@ public class WebAppDisclaimerAlert {
     public static void show(final Context context, final Consumer<Boolean> consumer, TLRPC$User tLRPC$User) {
         final WebAppDisclaimerAlert webAppDisclaimerAlert = new WebAppDisclaimerAlert();
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(LocaleController.getString("TermsOfUse", C3634R.string.TermsOfUse));
+        builder.setTitle(LocaleController.getString("TermsOfUse", C3632R.string.TermsOfUse));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         TextView textView = new TextView(context);
@@ -41,21 +41,21 @@ public class WebAppDisclaimerAlert {
         checkBoxCell.getTextView().getLayoutParams().width = -1;
         webAppDisclaimerAlert.cell.getTextView().setTextSize(1, 14.0f);
         linearLayout.addView(webAppDisclaimerAlert.cell, LayoutHelper.createLinear(-1, 48, 3, 8, 0, 8, 0));
-        textView.setText(AndroidUtilities.replaceTags(LocaleController.getString("BotWebAppDisclaimerSubtitle", C3634R.string.BotWebAppDisclaimerSubtitle)));
-        webAppDisclaimerAlert.cell.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString("BotWebAppDisclaimerCheck", C3634R.string.BotWebAppDisclaimerCheck), new Runnable() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda3
+        textView.setText(AndroidUtilities.replaceTags(LocaleController.getString("BotWebAppDisclaimerSubtitle", C3632R.string.BotWebAppDisclaimerSubtitle)));
+        webAppDisclaimerAlert.cell.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString("BotWebAppDisclaimerCheck", C3632R.string.BotWebAppDisclaimerCheck), new Runnable() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 WebAppDisclaimerAlert.lambda$show$0(context);
             }
         }), "", false, false);
         builder.setView(linearLayout);
-        builder.setPositiveButton(LocaleController.getString("Continue", C3634R.string.Continue), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda0
+        builder.setPositiveButton(LocaleController.getString("Continue", C3632R.string.Continue), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 WebAppDisclaimerAlert.lambda$show$1(Consumer.this, dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda1
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.WebAppDisclaimerAlert$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
@@ -79,7 +79,7 @@ public class WebAppDisclaimerAlert {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$show$0(Context context) {
-        Browser.openUrl(context, LocaleController.getString("WebAppDisclaimerUrl", C3634R.string.WebAppDisclaimerUrl));
+        Browser.openUrl(context, LocaleController.getString("WebAppDisclaimerUrl", C3632R.string.WebAppDisclaimerUrl));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

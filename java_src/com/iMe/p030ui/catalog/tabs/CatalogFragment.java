@@ -50,7 +50,7 @@ import org.koin.core.qualifier.StringQualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentCatalogTabsBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -351,7 +351,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
     /* JADX INFO: Access modifiers changed from: private */
     public final List<CatalogNavigationTab> initPageTabs() {
         List<CatalogNavigationTab> listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CatalogNavigationTab[]{new CatalogNavigationTab(C3634R.C3637id.catalog_all, new TabbedFragmentPage(getResourceManager().getString(C3634R.string.catalog_all), 0, CatalogAllFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$1
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CatalogNavigationTab[]{new CatalogNavigationTab(C3632R.C3635id.catalog_all, new TabbedFragmentPage(getResourceManager().getString(C3632R.string.catalog_all), 0, CatalogAllFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -363,9 +363,9 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
                 NavigationRouter navigationRouter;
                 navigationRouter = CatalogFragment.this.getNavigationRouter();
                 Intrinsics.checkNotNull(navigationRouter, "null cannot be cast to non-null type com.iMe.navigation.common.router.base.BaseNavigationRouter<com.iMe.ui.catalog.tabs.CatalogTabFragment>");
-                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3634R.C3637id.catalog_all);
+                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3632R.C3635id.catalog_all);
             }
-        }, 2, null)), new CatalogNavigationTab(C3634R.C3637id.catalog_categories, new TabbedFragmentPage(getResourceManager().getString(C3634R.string.catalog_categories), 0, CatalogCategoriesFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$2
+        }, 2, null)), new CatalogNavigationTab(C3632R.C3635id.catalog_categories, new TabbedFragmentPage(getResourceManager().getString(C3632R.string.catalog_categories), 0, CatalogCategoriesFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -377,9 +377,9 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
                 NavigationRouter navigationRouter;
                 navigationRouter = CatalogFragment.this.getNavigationRouter();
                 Intrinsics.checkNotNull(navigationRouter, "null cannot be cast to non-null type com.iMe.navigation.common.router.base.BaseNavigationRouter<com.iMe.ui.catalog.tabs.CatalogTabFragment>");
-                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3634R.C3637id.catalog_categories);
+                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3632R.C3635id.catalog_categories);
             }
-        }, 2, null)), new CatalogNavigationTab(C3634R.C3637id.catalog_user_channels, new TabbedFragmentPage(getResourceManager().getString(C3634R.string.catalog_user_channels), 0, CatalogUserChannelsFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$3
+        }, 2, null)), new CatalogNavigationTab(C3632R.C3635id.catalog_user_channels, new TabbedFragmentPage(getResourceManager().getString(C3632R.string.catalog_user_channels), 0, CatalogUserChannelsFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -391,7 +391,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
                 NavigationRouter navigationRouter;
                 navigationRouter = CatalogFragment.this.getNavigationRouter();
                 Intrinsics.checkNotNull(navigationRouter, "null cannot be cast to non-null type com.iMe.navigation.common.router.base.BaseNavigationRouter<com.iMe.ui.catalog.tabs.CatalogTabFragment>");
-                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3634R.C3637id.catalog_user_channels);
+                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3632R.C3635id.catalog_user_channels);
             }
         }, 2, null))});
         for (CatalogNavigationTab catalogNavigationTab : listOf) {

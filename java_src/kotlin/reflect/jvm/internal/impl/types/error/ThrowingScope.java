@@ -24,7 +24,7 @@ public final class ThrowingScope extends ErrorScope {
 
     @Override // kotlin.reflect.jvm.internal.impl.types.error.ErrorScope, kotlin.reflect.jvm.internal.impl.resolve.scopes.ResolutionScope
     /* renamed from: getContributedClassifier */
-    public ClassifierDescriptor mo2053getContributedClassifier(Name name, LookupLocation location) {
+    public ClassifierDescriptor mo2055getContributedClassifier(Name name, LookupLocation location) {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(location, "location");
         throw new IllegalStateException(getDebugMessage() + ", required name: " + name);

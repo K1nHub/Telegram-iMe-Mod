@@ -11,7 +11,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: FragmentUsernamesView.kt */
 @OneExecution
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView */
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public interface FragmentUsernamesView extends BaseView, SwipeRefreshView {
     @AddToEndSingle
     void renderItems(List<BaseNode> list);

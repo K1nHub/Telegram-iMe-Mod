@@ -2628,7 +2628,7 @@
 
     move-result v2
 
-    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachCheckBoxBackground:I
 
     invoke-virtual {v8, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
@@ -12392,7 +12392,7 @@
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert;->writeButtonDrawable:Landroid/graphics/drawable/Drawable;
 
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachCheckBoxBackground:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 

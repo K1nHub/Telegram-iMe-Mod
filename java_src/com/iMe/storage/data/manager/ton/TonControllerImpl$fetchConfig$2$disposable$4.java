@@ -26,6 +26,6 @@ import kotlin.jvm.internal.Intrinsics;
     public final void invoke2(Throwable p0) {
         Intrinsics.checkNotNullParameter(p0, "p0");
         Result.Companion companion = Result.Companion;
-        ((Continuation) this.receiver).resumeWith(Result.m1940constructorimpl(ResultKt.createFailure(p0)));
+        ((Continuation) this.receiver).resumeWith(Result.m1942constructorimpl(ResultKt.createFailure(p0)));
     }
 }

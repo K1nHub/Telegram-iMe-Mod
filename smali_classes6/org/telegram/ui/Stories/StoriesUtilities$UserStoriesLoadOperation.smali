@@ -56,10 +56,10 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1256
+    .line 1255
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1258
+    .line 1257
     invoke-static {}, Lorg/telegram/tgnet/ConnectionsManager;->generateClassGuid()I
 
     return-void
@@ -68,10 +68,10 @@
 .method private synthetic lambda$load$0(Landroid/view/View;J)V
     .locals 1
 
-    .line 1293
+    .line 1292
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 1294
+    .line 1293
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -92,7 +92,7 @@
 .method private synthetic lambda$load$1(Landroid/view/View;JLorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;)V
     .locals 3
 
-    .line 1292
+    .line 1291
     new-instance v0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;Landroid/view/View;J)V
@@ -103,7 +103,7 @@
 
     const/4 p1, 0x0
 
-    .line 1296
+    .line 1295
     invoke-virtual {p4, p2, p3, p1}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->openStory(JLjava/lang/Runnable;)V
 
     return-void
@@ -118,10 +118,10 @@
 
     if-eqz p1, :cond_0
 
-    .line 1284
+    .line 1283
     check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_peerStories;
 
-    .line 1285
+    .line 1284
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -132,7 +132,7 @@
 
     invoke-virtual {v2, v3, v1}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 1286
+    .line 1285
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -143,10 +143,10 @@
 
     invoke-virtual {v2, v3, v1}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
-    .line 1287
+    .line 1286
     iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_peerStories;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    .line 1288
+    .line 1287
     iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -155,7 +155,7 @@
 
     if-nez v2, :cond_0
 
-    .line 1289
+    .line 1288
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -168,7 +168,7 @@
 
     invoke-virtual {v2, p2, p3, p1}, Lorg/telegram/ui/Stories/StoriesController;->putStories(JLorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
-    .line 1291
+    .line 1290
     new-instance v2, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation$$ExternalSyntheticLambda1;
 
     move-object v3, v2
@@ -201,7 +201,7 @@
 
     if-lez p5, :cond_1
 
-    .line 1302
+    .line 1301
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -212,10 +212,10 @@
 
     if-eqz v3, :cond_1
 
-    .line 1304
+    .line 1303
     iput-boolean v0, v3, Lorg/telegram/tgnet/TLRPC$User;->stories_unavailable:Z
 
-    .line 1305
+    .line 1304
     iget v4, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -228,7 +228,7 @@
 
     invoke-virtual {v4, v5, v2, v1, v0}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
-    .line 1306
+    .line 1305
     invoke-virtual {p6, v3, v1}, Lorg/telegram/messenger/MessagesController;->putUser(Lorg/telegram/tgnet/TLRPC$User;Z)Z
 
     :cond_1
@@ -236,7 +236,7 @@
 
     neg-long v3, p2
 
-    .line 1311
+    .line 1310
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p5
@@ -247,10 +247,10 @@
 
     if-eqz p5, :cond_2
 
-    .line 1313
+    .line 1312
     iput-boolean v0, p5, Lorg/telegram/tgnet/TLRPC$Chat;->stories_unavailable:Z
 
-    .line 1314
+    .line 1313
     iget v3, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -263,16 +263,16 @@
 
     invoke-virtual {v3, v2, v4, v1, v0}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
-    .line 1315
+    .line 1314
     invoke-virtual {p6, p5, v1}, Lorg/telegram/messenger/MessagesController;->putChat(Lorg/telegram/tgnet/TLRPC$Chat;Z)V
 
     :cond_2
     if-eqz p1, :cond_3
 
-    .line 1321
+    .line 1320
     invoke-virtual {p4}, Landroid/view/View;->invalidate()V
 
-    .line 1322
+    .line 1321
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -292,7 +292,7 @@
 .method private synthetic lambda$load$3(JLandroid/view/View;Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 8
 
-    .line 1280
+    .line 1279
     new-instance p7, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation$$ExternalSyntheticLambda2;
 
     move-object v0, p7
@@ -321,7 +321,7 @@
 .method cancel()V
     .locals 3
 
-    .line 1328
+    .line 1327
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -340,35 +340,35 @@
 .method load(JLandroid/view/View;Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;)V
     .locals 10
 
-    .line 1268
+    .line 1267
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v0, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
-    .line 1272
+    .line 1271
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v7
 
-    .line 1273
+    .line 1272
     invoke-virtual {v7}, Lorg/telegram/messenger/MessagesController;->getStoriesController()Lorg/telegram/ui/Stories/StoriesController;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    .line 1275
+    .line 1274
     invoke-virtual {v0, p1, p2, v1}, Lorg/telegram/ui/Stories/StoriesController;->setLoading(JZ)V
 
-    .line 1276
+    .line 1275
     invoke-virtual {p3}, Landroid/view/View;->invalidate()V
 
-    .line 1278
+    .line 1277
     new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getPeerStories;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getPeerStories;-><init>()V
 
-    .line 1279
+    .line 1278
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -381,7 +381,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getPeerStories;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 1280
+    .line 1279
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesUtilities$UserStoriesLoadOperation;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;

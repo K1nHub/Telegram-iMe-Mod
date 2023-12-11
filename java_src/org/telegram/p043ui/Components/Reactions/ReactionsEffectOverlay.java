@@ -84,7 +84,7 @@ public class ReactionsEffectOverlay {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.ReactionsEffectOverlay$1 */
     /* loaded from: classes6.dex */
-    public class C54881 extends FrameLayout {
+    public class C54841 extends FrameLayout {
         final /* synthetic */ int val$animationType;
         final /* synthetic */ ChatMessageCell val$cell;
         final /* synthetic */ ChatActivity val$chatActivity;
@@ -98,7 +98,7 @@ public class ReactionsEffectOverlay {
         final /* synthetic */ ReactionsLayoutInBubble.VisibleReaction val$visibleReaction;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C54881(Context context, BaseFragment baseFragment, ChatMessageCell chatMessageCell, boolean z, ChatActivity chatActivity, int i, int i2, boolean z2, float f, float f2, float f3, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
+        C54841(Context context, BaseFragment baseFragment, ChatMessageCell chatMessageCell, boolean z, ChatActivity chatActivity, int i, int i2, boolean z2, float f, float f2, float f3, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
             super(context);
             this.val$fragment = baseFragment;
             this.val$cell = chatMessageCell;
@@ -135,7 +135,7 @@ public class ReactionsEffectOverlay {
                 Method dump skipped, instructions count: 1681
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Reactions.ReactionsEffectOverlay.C54881.dispatchDraw(android.graphics.Canvas):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.Reactions.ReactionsEffectOverlay.C54841.dispatchDraw(android.graphics.Canvas):void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -511,7 +511,7 @@ public class ReactionsEffectOverlay {
         private AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay) {
         }
 
-        /* synthetic */ AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay, C54881 c54881) {
+        /* synthetic */ AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay, C54841 c54841) {
             this(reactionsEffectOverlay);
         }
     }

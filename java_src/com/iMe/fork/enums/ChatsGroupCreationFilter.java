@@ -4,7 +4,7 @@ import com.iMe.common.IdFabric$Menu;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 /* compiled from: ChatsGroupCreationFilter.kt */
@@ -105,39 +105,39 @@ public enum ChatsGroupCreationFilter {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String string = LocaleController.getString("AllChats", C3634R.string.AllChats);
+                String string = LocaleController.getString("AllChats", C3632R.string.AllChats);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"AllChats\", R.string.AllChats)");
                 return string;
             case 2:
-                String internalString = LocaleController.getInternalString(C3634R.string.sorting_settings_tab_personal_chats_item_title);
+                String internalString = LocaleController.getInternalString(C3632R.string.sorting_settings_tab_personal_chats_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…ersonal_chats_item_title)");
                 return internalString;
             case 3:
-                String internalString2 = LocaleController.getInternalString(C3634R.string.sorting_settings_tab_groups_item_title);
+                String internalString2 = LocaleController.getInternalString(C3632R.string.sorting_settings_tab_groups_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…gs_tab_groups_item_title)");
                 return internalString2;
             case 4:
-                String internalString3 = LocaleController.getInternalString(C3634R.string.sorting_settings_tab_private_groups_item_title);
+                String internalString3 = LocaleController.getInternalString(C3632R.string.sorting_settings_tab_private_groups_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…rivate_groups_item_title)");
                 return internalString3;
             case 5:
-                String internalString4 = LocaleController.getInternalString(C3634R.string.sorting_settings_tab_public_groups_item_title);
+                String internalString4 = LocaleController.getInternalString(C3632R.string.sorting_settings_tab_public_groups_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…public_groups_item_title)");
                 return internalString4;
             case 6:
-                String internalString5 = LocaleController.getInternalString(C3634R.string.sorting_settings_tab_channels_item_title);
+                String internalString5 = LocaleController.getInternalString(C3632R.string.sorting_settings_tab_channels_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString5, "getInternalString(R.stri…_tab_channels_item_title)");
                 return internalString5;
             case 7:
-                String internalString6 = LocaleController.getInternalString(C3634R.string.sorting_settings_tab_admin_item_title);
+                String internalString6 = LocaleController.getInternalString(C3632R.string.sorting_settings_tab_admin_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString6, "getInternalString(R.stri…ngs_tab_admin_item_title)");
                 return internalString6;
             case 8:
-                String internalString7 = LocaleController.getInternalString(C3634R.string.sorting_settings_tab_owner_item_title);
+                String internalString7 = LocaleController.getInternalString(C3632R.string.sorting_settings_tab_owner_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString7, "getInternalString(R.stri…ngs_tab_owner_item_title)");
                 return internalString7;
             case 9:
-                String internalString8 = LocaleController.getInternalString(C3634R.string.sorting_settings_tab_bots_item_title);
+                String internalString8 = LocaleController.getInternalString(C3632R.string.sorting_settings_tab_bots_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString8, "getInternalString(R.stri…ings_tab_bots_item_title)");
                 return internalString8;
             default:

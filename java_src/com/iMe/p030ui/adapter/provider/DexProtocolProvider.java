@@ -7,7 +7,7 @@ import com.iMe.model.wallet.swap.DexProtocolItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: DexProtocolProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.DexProtocolProvider */
@@ -21,7 +21,7 @@ public final class DexProtocolProvider extends BaseNodeProvider<DexProtocolItem>
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.SWAP_PROTOCOL;
-        this.layoutId = C3634R.layout.fork_recycle_item_wallet_card_icon_title_subtitle;
+        this.layoutId = C3632R.layout.fork_recycle_item_wallet_card_icon_title_subtitle;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -38,11 +38,11 @@ public final class DexProtocolProvider extends BaseNodeProvider<DexProtocolItem>
     public void convert(BaseViewHolder helper, DexProtocolItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3634R.C3637id.card_root;
+        int i = C3632R.C3635id.card_root;
         BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(helper, i, Theme.key_windowBackgroundWhite);
-        int i2 = C3634R.C3637id.text_title;
+        int i2 = C3632R.C3635id.text_title;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i2, Theme.key_chat_messagePanelText);
-        int i3 = C3634R.C3637id.text_subtitle;
-        BaseQuickAdapterExtKt.setForeground(BaseQuickAdapterExtKt.setAlpha(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, Theme.key_windowBackgroundWhiteGrayText2).setImageResource(C3634R.C3637id.image_icon, item.getInfo().getLogo()), i2).setText(i2, this.resourceManager.getString(item.getInfo().getName())).setText(i3, this.resourceManager.getString(item.getInfo().getDescription())), C3634R.C3637id.frame_root, item.isEnabled() ? 1.0f : 0.3f), i, item.isEnabled() ? Theme.getSelectorDrawable(false) : null);
+        int i3 = C3632R.C3635id.text_subtitle;
+        BaseQuickAdapterExtKt.setForeground(BaseQuickAdapterExtKt.setAlpha(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, Theme.key_windowBackgroundWhiteGrayText2).setImageResource(C3632R.C3635id.image_icon, item.getInfo().getLogo()), i2).setText(i2, this.resourceManager.getString(item.getInfo().getName())).setText(i3, this.resourceManager.getString(item.getInfo().getDescription())), C3632R.C3635id.frame_root, item.isEnabled() ? 1.0f : 0.3f), i, item.isEnabled() ? Theme.getSelectorDrawable(false) : null);
     }
 }

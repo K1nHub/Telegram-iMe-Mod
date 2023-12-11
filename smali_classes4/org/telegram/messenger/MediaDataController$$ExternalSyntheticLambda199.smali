@@ -93,7 +93,7 @@
 
     move-object/from16 v15, p2
 
-    invoke-static/range {v1 .. v15}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$MYqvguNuqRS3afzjim5VBtM01Uk(Lorg/telegram/messenger/MediaDataController;JLorg/telegram/tgnet/TLRPC$TL_messages_search;JIIILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ZZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v1 .. v15}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$SiOka9UkU8pbFJAgINzs2BwT_6g(Lorg/telegram/messenger/MediaDataController;JLorg/telegram/tgnet/TLRPC$TL_messages_search;JIIILorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ZZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

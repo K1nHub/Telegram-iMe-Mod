@@ -417,7 +417,7 @@
 .method protected onGetVersionCode()I
     .locals 1
 
-    const v0, 0xf9069
+    const v0, 0xf92c1
 
     return v0
 .end method
@@ -425,7 +425,7 @@
 .method protected onGetVersionName()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "10.2.0"
+    const-string v0, "10.2.6"
 
     return-object v0
 .end method
@@ -501,7 +501,7 @@
 
     const/4 v3, 0x1
 
-    const v4, 0x7f111e05
+    const v4, 0x7f111e7d
 
     invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 

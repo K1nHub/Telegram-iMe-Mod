@@ -41,13 +41,13 @@ public final class BagOfCellsUtilsKt {
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    return (UByte.m1950constructorimpl(input.readByte()) & 255) | ((UByte.m1950constructorimpl(input.readByte()) & 255) << 16) | ((UByte.m1950constructorimpl(input.readByte()) & 255) << 8);
+                    return (UByte.m1952constructorimpl(input.readByte()) & 255) | ((UByte.m1952constructorimpl(input.readByte()) & 255) << 16) | ((UByte.m1952constructorimpl(input.readByte()) & 255) << 8);
                 }
-                return UInt.m1972constructorimpl(InputPrimitivesKt.readInt(input));
+                return UInt.m1974constructorimpl(InputPrimitivesKt.readInt(input));
             }
-            return UShort.m2016constructorimpl(InputPrimitivesKt.readShort(input)) & 65535;
+            return UShort.m2018constructorimpl(InputPrimitivesKt.readShort(input)) & 65535;
         }
-        return UByte.m1950constructorimpl(input.readByte()) & 255;
+        return UByte.m1952constructorimpl(input.readByte()) & 255;
     }
 
     public static final BagOfCells readBagOfCell(ByteReadPacket byteReadPacket) {
@@ -61,7 +61,7 @@ public final class BagOfCellsUtilsKt {
                 if (readInt == 1761568243) {
                     throw new NotImplementedError(null, 1, null);
                 }
-                throw new IllegalArgumentException("Unknown magic prefix: " + UStringsKt.m2058toStringV7xB4Y4(UInt.m1972constructorimpl(readInt), 16));
+                throw new IllegalArgumentException("Unknown magic prefix: " + UStringsKt.m2060toStringV7xB4Y4(UInt.m1974constructorimpl(readInt), 16));
             }
             int readByte = byteReadPacket.readByte() & 255;
             boolean z2 = (readByte & 128) != 0;

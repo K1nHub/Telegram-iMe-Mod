@@ -4,7 +4,7 @@ import kotlin.reflect.jvm.internal.impl.resolve.constants.ConstantValue;
 /* loaded from: classes4.dex */
 public interface VariableDescriptor extends ValueDescriptor {
     /* renamed from: getCompileTimeInitializer */
-    ConstantValue<?> mo2047getCompileTimeInitializer();
+    ConstantValue<?> mo2049getCompileTimeInitializer();
 
     boolean isConst();
 

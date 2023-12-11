@@ -166,7 +166,7 @@ public final class TonNodeBlockIdExt implements TonNodeBlockId {
         sb.append("(");
         sb.append(getWorkchain());
         sb.append(":");
-        String upperCase = UStringsKt.m2057toStringJSWoG40(ULong.m1994constructorimpl(getShard()), 16).toUpperCase(Locale.ROOT);
+        String upperCase = UStringsKt.m2059toStringJSWoG40(ULong.m1996constructorimpl(getShard()), 16).toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         sb.append(upperCase);
         sb.append(":");

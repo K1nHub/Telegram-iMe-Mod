@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 4900
+    .line 4897
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$25;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/LinkSpanDrawable$ClickableSmallTextView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 4904
+    .line 4901
     invoke-super {p0, p1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 4905
+    .line 4902
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$25;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$17300(Lorg/telegram/ui/ProfileActivity;)V
@@ -49,10 +49,10 @@
 .method public setTextColor(I)V
     .locals 2
 
-    .line 4924
+    .line 4921
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 4925
+    .line 4922
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$25;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$11200(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -65,7 +65,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4926
+    .line 4923
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$25;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$11200(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -76,7 +76,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 4927
+    .line 4924
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$25;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$11200(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -96,10 +96,10 @@
 .method public setTranslationX(F)V
     .locals 2
 
-    .line 4917
+    .line 4914
     invoke-super {p0, p1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 4918
+    .line 4915
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$25;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$11200(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -112,7 +112,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 4919
+    .line 4916
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$25;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$11200(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -131,10 +131,10 @@
 .method public setTranslationY(F)V
     .locals 2
 
-    .line 4910
+    .line 4907
     invoke-super {p0, p1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 4911
+    .line 4908
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$25;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$11200(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -147,7 +147,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 4912
+    .line 4909
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$25;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$11200(Lorg/telegram/ui/ProfileActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;

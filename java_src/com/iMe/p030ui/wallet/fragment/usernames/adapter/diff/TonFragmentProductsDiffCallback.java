@@ -9,7 +9,7 @@ import com.iMe.model.wallet.fragment.TonFragmentItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TonFragmentProductsDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.adapter.diff.TonFragmentProductsDiffCallback */
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class TonFragmentProductsDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {

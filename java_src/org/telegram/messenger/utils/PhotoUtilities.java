@@ -5,7 +5,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.ImageLocation;
@@ -167,7 +167,7 @@ public class PhotoUtilities {
             if (runnable != null) {
                 runnable.run();
             }
-            BulletinFactory.m62of(iNavigationLayout.getLastFragment()).createUsersBulletin(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString("ApplyAvatarHintTitle", C3634R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString("ApplyAvatarHint", C3634R.string.ApplyAvatarHint), new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda0
+            BulletinFactory.m62of(iNavigationLayout.getLastFragment()).createUsersBulletin(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString("ApplyAvatarHintTitle", C3632R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString("ApplyAvatarHint", C3632R.string.ApplyAvatarHint), new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
                     PhotoUtilities.lambda$setImageAsAvatar$0(i, iNavigationLayout);
@@ -298,7 +298,7 @@ public class PhotoUtilities {
             TLRPC$UserFull userFull = chatActivity.getMessagesController().getUserFull(j);
             userFull.profile_photo = tLRPC$TL_photos_photo.photo;
             chatActivity.getMessagesStorage().updateUserInfo(userFull, false);
-            BulletinFactory.m62of(chatActivity).createUsersBulletin(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString("ApplyAvatarHintTitle", C3634R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString("ApplyAvatarHint", C3634R.string.ApplyAvatarHint), new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda1
+            BulletinFactory.m62of(chatActivity).createUsersBulletin(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString("ApplyAvatarHintTitle", C3632R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString("ApplyAvatarHint", C3632R.string.ApplyAvatarHint), new Runnable() { // from class: org.telegram.messenger.utils.PhotoUtilities$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
                     PhotoUtilities.lambda$showAvatartConstructorForUpdateUserPhoto$5(j, chatActivity);

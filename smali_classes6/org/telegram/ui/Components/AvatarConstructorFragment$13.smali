@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;ZLorg/telegram/ui/Components/ColorPicker$ColorPickerDelegate;)V
     .locals 0
 
-    .line 1086
+    .line 1091
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/ColorPicker;-><init>(Landroid/content/Context;ZLorg/telegram/ui/Components/ColorPicker$ColorPickerDelegate;)V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/16 p2, 0x12c
 
-    .line 1089
+    .line 1094
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

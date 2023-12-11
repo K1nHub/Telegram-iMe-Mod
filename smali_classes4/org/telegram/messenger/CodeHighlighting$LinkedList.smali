@@ -26,15 +26,15 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 491
+    .line 481
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 489
+    .line 479
     iput v0, p0, Lorg/telegram/messenger/CodeHighlighting$LinkedList;->length:I
 
-    .line 492
+    .line 482
     new-instance v0, Lorg/telegram/messenger/CodeHighlighting$Node;
 
     const/4 v1, 0x0
@@ -43,19 +43,19 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$LinkedList;->head:Lorg/telegram/messenger/CodeHighlighting$Node;
 
-    .line 493
+    .line 483
     new-instance v0, Lorg/telegram/messenger/CodeHighlighting$Node;
 
     invoke-direct {v0, v1}, Lorg/telegram/messenger/CodeHighlighting$Node;-><init>(Lorg/telegram/messenger/CodeHighlighting$1;)V
 
     iput-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$LinkedList;->tail:Lorg/telegram/messenger/CodeHighlighting$Node;
 
-    .line 494
+    .line 484
     iget-object v1, p0, Lorg/telegram/messenger/CodeHighlighting$LinkedList;->head:Lorg/telegram/messenger/CodeHighlighting$Node;
 
     iput-object v0, v1, Lorg/telegram/messenger/CodeHighlighting$Node;->next:Lorg/telegram/messenger/CodeHighlighting$Node;
 
-    .line 495
+    .line 485
     iput-object v1, v0, Lorg/telegram/messenger/CodeHighlighting$Node;->prev:Lorg/telegram/messenger/CodeHighlighting$Node;
 
     return-void
@@ -66,32 +66,32 @@
 .method public addAfter(Lorg/telegram/messenger/CodeHighlighting$Node;Lorg/telegram/messenger/CodeHighlighting$StringToken;)Lorg/telegram/messenger/CodeHighlighting$Node;
     .locals 3
 
-    .line 499
+    .line 489
     iget-object v0, p1, Lorg/telegram/messenger/CodeHighlighting$Node;->next:Lorg/telegram/messenger/CodeHighlighting$Node;
 
-    .line 500
+    .line 490
     new-instance v1, Lorg/telegram/messenger/CodeHighlighting$Node;
 
     const/4 v2, 0x0
 
     invoke-direct {v1, v2}, Lorg/telegram/messenger/CodeHighlighting$Node;-><init>(Lorg/telegram/messenger/CodeHighlighting$1;)V
 
-    .line 501
+    .line 491
     iput-object p2, v1, Lorg/telegram/messenger/CodeHighlighting$Node;->value:Lorg/telegram/messenger/CodeHighlighting$StringToken;
 
-    .line 502
+    .line 492
     iput-object p1, v1, Lorg/telegram/messenger/CodeHighlighting$Node;->prev:Lorg/telegram/messenger/CodeHighlighting$Node;
 
-    .line 503
+    .line 493
     iput-object v0, v1, Lorg/telegram/messenger/CodeHighlighting$Node;->next:Lorg/telegram/messenger/CodeHighlighting$Node;
 
-    .line 504
+    .line 494
     iput-object v1, p1, Lorg/telegram/messenger/CodeHighlighting$Node;->next:Lorg/telegram/messenger/CodeHighlighting$Node;
 
-    .line 505
+    .line 495
     iput-object v1, v0, Lorg/telegram/messenger/CodeHighlighting$Node;->prev:Lorg/telegram/messenger/CodeHighlighting$Node;
 
-    .line 506
+    .line 496
     iget p1, p0, Lorg/telegram/messenger/CodeHighlighting$LinkedList;->length:I
 
     add-int/lit8 p1, p1, 0x1
@@ -104,7 +104,7 @@
 .method public removeRange(Lorg/telegram/messenger/CodeHighlighting$Node;I)V
     .locals 3
 
-    .line 511
+    .line 501
     iget-object v0, p1, Lorg/telegram/messenger/CodeHighlighting$Node;->next:Lorg/telegram/messenger/CodeHighlighting$Node;
 
     const/4 v1, 0x0
@@ -112,26 +112,26 @@
     :goto_0
     if-ge v1, p2, :cond_0
 
-    .line 513
+    .line 503
     iget-object v2, p0, Lorg/telegram/messenger/CodeHighlighting$LinkedList;->tail:Lorg/telegram/messenger/CodeHighlighting$Node;
 
     if-eq v0, v2, :cond_0
 
-    .line 514
+    .line 504
     iget-object v0, v0, Lorg/telegram/messenger/CodeHighlighting$Node;->next:Lorg/telegram/messenger/CodeHighlighting$Node;
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 516
+    .line 506
     :cond_0
     iput-object v0, p1, Lorg/telegram/messenger/CodeHighlighting$Node;->next:Lorg/telegram/messenger/CodeHighlighting$Node;
 
-    .line 517
+    .line 507
     iput-object p1, v0, Lorg/telegram/messenger/CodeHighlighting$Node;->prev:Lorg/telegram/messenger/CodeHighlighting$Node;
 
-    .line 518
+    .line 508
     iget p1, p0, Lorg/telegram/messenger/CodeHighlighting$LinkedList;->length:I
 
     sub-int/2addr p1, v1
@@ -144,19 +144,19 @@
 .method public toArray()[Lorg/telegram/messenger/CodeHighlighting$StringToken;
     .locals 4
 
-    .line 522
+    .line 512
     iget v0, p0, Lorg/telegram/messenger/CodeHighlighting$LinkedList;->length:I
 
     new-array v0, v0, [Lorg/telegram/messenger/CodeHighlighting$StringToken;
 
-    .line 523
+    .line 513
     iget-object v1, p0, Lorg/telegram/messenger/CodeHighlighting$LinkedList;->head:Lorg/telegram/messenger/CodeHighlighting$Node;
 
     iget-object v1, v1, Lorg/telegram/messenger/CodeHighlighting$Node;->next:Lorg/telegram/messenger/CodeHighlighting$Node;
 
     const/4 v2, 0x0
 
-    .line 524
+    .line 514
     :goto_0
     iget v3, p0, Lorg/telegram/messenger/CodeHighlighting$LinkedList;->length:I
 
@@ -166,12 +166,12 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 525
+    .line 515
     iget-object v3, v1, Lorg/telegram/messenger/CodeHighlighting$Node;->value:Lorg/telegram/messenger/CodeHighlighting$StringToken;
 
     aput-object v3, v0, v2
 
-    .line 524
+    .line 514
     iget-object v1, v1, Lorg/telegram/messenger/CodeHighlighting$Node;->next:Lorg/telegram/messenger/CodeHighlighting$Node;
 
     add-int/lit8 v2, v2, 0x1

@@ -96,7 +96,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 799
+    .line 798
     sget p2, Lorg/telegram/messenger/R$string;->StoryEditing:I
 
     const-string v0, "StoryEditing"
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 801
+    .line 800
     :cond_0
     sget p2, Lorg/telegram/messenger/R$string;->UploadingStory:I
 
@@ -120,24 +120,24 @@
     :goto_0
     const-string v0, "\u2026"
 
-    .line 803
+    .line 802
     invoke-virtual {p2, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
     if-lez v0, :cond_1
 
-    .line 805
+    .line 804
     invoke-static {p2}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p2
 
-    .line 806
+    .line 805
     new-instance v0, Lorg/telegram/ui/Stories/UploadingDotsSpannable;
 
     invoke-direct {v0}, Lorg/telegram/ui/Stories/UploadingDotsSpannable;-><init>()V
 
-    .line 807
+    .line 806
     invoke-virtual {p2}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v1
@@ -152,15 +152,15 @@
 
     invoke-virtual {p2, v0, v1, v2, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 808
+    .line 807
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/Stories/UploadingDotsSpannable;->setParent(Landroid/view/View;Z)V
 
-    .line 809
+    .line 808
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     goto :goto_1
 
-    .line 811
+    .line 810
     :cond_1
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
@@ -175,7 +175,7 @@
 
     return-void
 
-    .line 865
+    .line 864
     :cond_0
     iget-wide v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
@@ -197,19 +197,19 @@
 
     if-nez v0, :cond_2
 
-    .line 866
+    .line 865
     iget-object v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->views:Lorg/telegram/tgnet/tl/TL_stories$StoryViews;
 
     if-nez v0, :cond_1
 
-    .line 867
+    .line 866
     new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_storyViews;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_storyViews;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->views:Lorg/telegram/tgnet/tl/TL_stories$StoryViews;
 
-    .line 869
+    .line 868
     :cond_1
     iget-object p0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->views:Lorg/telegram/tgnet/tl/TL_stories$StoryViews;
 
@@ -219,10 +219,10 @@
 
     const/4 v0, 0x1
 
-    .line 870
+    .line 869
     iput v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryViews;->views_count:I
 
-    .line 871
+    .line 870
     iget-object p0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryViews;->recent_viewers:Ljava/util/ArrayList;
 
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -240,26 +240,26 @@
 .method private static checkGrayPaint(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 3
 
-    .line 533
+    .line 532
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->grayPaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    .line 534
+    .line 533
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     sput-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->grayPaint:Landroid/graphics/Paint;
 
-    .line 535
+    .line 534
     sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 536
+    .line 535
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->grayPaint:Landroid/graphics/Paint;
 
     const v2, 0x3fa66666    # 1.3f
@@ -270,14 +270,14 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 537
+    .line 536
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->grayPaint:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 539
+    .line 538
     :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
@@ -285,15 +285,15 @@
 
     move-result p0
 
-    .line 540
+    .line 539
     sget v0, Lorg/telegram/ui/Stories/StoriesUtilities;->grayLastColor:I
 
     if-eq v0, p0, :cond_4
 
-    .line 541
+    .line 540
     sput p0, Lorg/telegram/ui/Stories/StoriesUtilities;->grayLastColor:I
 
-    .line 542
+    .line 541
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->computePerceivedBrightness(I)F
 
     move-result v0
@@ -322,7 +322,7 @@
 
     if-gez v0, :cond_2
 
-    .line 546
+    .line 545
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->grayPaint:Landroid/graphics/Paint;
 
     invoke-static {p0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
@@ -333,7 +333,7 @@
 
     goto :goto_1
 
-    .line 548
+    .line 547
     :cond_2
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->grayPaint:Landroid/graphics/Paint;
 
@@ -347,7 +347,7 @@
 
     goto :goto_1
 
-    .line 551
+    .line 550
     :cond_3
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->grayPaint:Landroid/graphics/Paint;
 
@@ -367,21 +367,21 @@
 .method private static checkStoriesGradientTools(Z)V
     .locals 3
 
-    .line 610
+    .line 609
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
     aget-object v1, v0, p0
 
     if-nez v1, :cond_1
 
-    .line 611
+    .line 610
     new-instance v1, Lorg/telegram/ui/Components/GradientTools;
 
     invoke-direct {v1}, Lorg/telegram/ui/Components/GradientTools;-><init>()V
 
     aput-object v1, v0, p0
 
-    .line 612
+    .line 611
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
     aget-object v1, v0, p0
@@ -390,14 +390,14 @@
 
     iput-boolean v2, v1, Lorg/telegram/ui/Components/GradientTools;->isDiagonal:Z
 
-    .line 613
+    .line 612
     aget-object v1, v0, p0
 
     iput-boolean v2, v1, Lorg/telegram/ui/Components/GradientTools;->isRotate:Z
 
     if-eqz p0, :cond_0
 
-    .line 615
+    .line 614
     aget-object v0, v0, p0
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_stories_circle_dialog1:I
@@ -416,7 +416,7 @@
 
     goto :goto_0
 
-    .line 617
+    .line 616
     :cond_0
     aget-object v0, v0, p0
 
@@ -434,7 +434,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/GradientTools;->setColors(II)V
 
-    .line 619
+    .line 618
     :goto_0
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
@@ -450,7 +450,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 620
+    .line 619
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
     aget-object v0, v0, p0
@@ -461,7 +461,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 621
+    .line 620
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
     aget-object p0, v0, p0
@@ -479,7 +479,7 @@
 .method private static checkStoryCellGrayPaint(ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 3
 
-    .line 509
+    .line 508
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storyCellGreyPaint:[Landroid/graphics/Paint;
 
     aget-object v1, v0, p0
@@ -488,14 +488,14 @@
 
     if-nez v1, :cond_0
 
-    .line 510
+    .line 509
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
     aput-object v1, v0, p0
 
-    .line 511
+    .line 510
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storyCellGreyPaint:[Landroid/graphics/Paint;
 
     aget-object v0, v0, p0
@@ -504,7 +504,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 512
+    .line 511
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storyCellGreyPaint:[Landroid/graphics/Paint;
 
     aget-object v0, v0, p0
@@ -517,7 +517,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 513
+    .line 512
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storyCellGreyPaint:[Landroid/graphics/Paint;
 
     aget-object v0, v0, p0
@@ -529,7 +529,7 @@
     :cond_0
     if-nez p0, :cond_1
 
-    .line 515
+    .line 514
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
     goto :goto_0
@@ -542,15 +542,15 @@
 
     move-result p1
 
-    .line 516
+    .line 515
     sget v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storyCellGrayLastColor:I
 
     if-eq v0, p1, :cond_5
 
-    .line 517
+    .line 516
     sput p1, Lorg/telegram/ui/Stories/StoriesUtilities;->storyCellGrayLastColor:I
 
-    .line 518
+    .line 517
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->computePerceivedBrightness(I)F
 
     move-result v0
@@ -579,7 +579,7 @@
 
     if-gez v0, :cond_3
 
-    .line 522
+    .line 521
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storyCellGreyPaint:[Landroid/graphics/Paint;
 
     aget-object p0, v0, p0
@@ -592,7 +592,7 @@
 
     goto :goto_2
 
-    .line 524
+    .line 523
     :cond_3
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storyCellGreyPaint:[Landroid/graphics/Paint;
 
@@ -608,7 +608,7 @@
 
     goto :goto_2
 
-    .line 527
+    .line 526
     :cond_4
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storyCellGreyPaint:[Landroid/graphics/Paint;
 
@@ -630,7 +630,7 @@
 .method public static createExpiredStoryString()Ljava/lang/CharSequence;
     .locals 4
 
-    .line 830
+    .line 829
     sget v0, Lorg/telegram/messenger/R$string;->ExpiredStory:I
 
     const/4 v1, 0x0
@@ -649,14 +649,14 @@
 .method public static varargs createExpiredStoryString(ZLjava/lang/String;I[Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 2
 
-    .line 834
+    .line 833
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v0}, Landroid/text/SpannableStringBuilder;-><init>()V
 
     const-string v1, "d "
 
-    .line 835
+    .line 834
     invoke-virtual {v0, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v1
@@ -667,7 +667,7 @@
 
     invoke-virtual {v1, p1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 836
+    .line 835
     new-instance p1, Lorg/telegram/ui/Components/ColoredImageSpan;
 
     sget p2, Lorg/telegram/messenger/R$drawable;->msg_mini_bomb:I
@@ -678,7 +678,7 @@
 
     const p0, 0x3f4ccccd    # 0.8f
 
-    .line 838
+    .line 837
     invoke-virtual {p1, p0, p0}, Lorg/telegram/ui/Components/ColoredImageSpan;->setScale(FF)V
 
     goto :goto_0
@@ -686,7 +686,7 @@
     :cond_0
     const/4 p0, -0x1
 
-    .line 840
+    .line 839
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/ColoredImageSpan;->setTopOffset(I)V
 
     :goto_0
@@ -694,7 +694,7 @@
 
     const/4 p2, 0x0
 
-    .line 842
+    .line 841
     invoke-virtual {v0, p1, p2, p0, p2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     return-object v0
@@ -703,14 +703,14 @@
 .method public static createReplyStoryString()Ljava/lang/CharSequence;
     .locals 4
 
-    .line 847
+    .line 846
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v0}, Landroid/text/SpannableStringBuilder;-><init>()V
 
     const-string v1, "d "
 
-    .line 848
+    .line 847
     invoke-virtual {v0, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v1
@@ -725,7 +725,7 @@
 
     invoke-virtual {v1, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 849
+    .line 848
     new-instance v1, Lorg/telegram/ui/Components/ColoredImageSpan;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_mini_replystory2:I
@@ -736,7 +736,7 @@
 
     const/4 v3, 0x1
 
-    .line 850
+    .line 849
     invoke-virtual {v0, v1, v2, v3, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     return-object v0
@@ -763,7 +763,7 @@
 
     if-gez v0, :cond_0
 
-    .line 882
+    .line 881
     invoke-static/range {p4 .. p5}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
@@ -782,7 +782,7 @@
 
     move-object v5, p2
 
-    .line 884
+    .line 883
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
     goto :goto_0
@@ -790,7 +790,7 @@
     :cond_0
     const/4 v10, 0x0
 
-    .line 887
+    .line 886
     :goto_0
     invoke-static {p3, v8}, Ljava/lang/Math;->max(FF)F
 
@@ -800,7 +800,7 @@
 
     add-float v0, p5, v0
 
-    .line 888
+    .line 887
     invoke-static {p4, v0}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
@@ -832,7 +832,7 @@
 
     move-object v5, p2
 
-    .line 891
+    .line 890
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
     :cond_2
@@ -849,7 +849,7 @@
 
     move-object v5, p2
 
-    .line 896
+    .line 895
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
     return-void
@@ -2235,7 +2235,7 @@
 .method private static drawCircleInternal(Landroid/graphics/Canvas;Landroid/view/View;Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;Landroid/graphics/Paint;)V
     .locals 8
 
-    .line 557
+    .line 556
     iget p1, p2, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToArc:F
 
     const/4 p2, 0x0
@@ -2246,7 +2246,7 @@
 
     if-nez p2, :cond_0
 
-    .line 558
+    .line 557
     sget-object p1, Lorg/telegram/ui/Stories/StoriesUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p1}, Landroid/graphics/RectF;->centerX()F
@@ -2267,7 +2267,7 @@
 
     goto :goto_0
 
-    .line 560
+    .line 559
     :cond_0
     sget-object v3, Lorg/telegram/ui/Stories/StoriesUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -2294,20 +2294,20 @@
 .method private static drawProgress(Landroid/graphics/Canvas;Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;Landroid/view/View;Landroid/graphics/Paint;)V
     .locals 12
 
-    .line 490
+    .line 489
     invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->access$200(Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;)V
 
-    .line 491
+    .line 490
     invoke-virtual {p2}, Landroid/view/View;->invalidate()V
 
-    .line 493
+    .line 492
     iget-boolean p2, p1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->inc:Z
 
     const/high16 v0, 0x43b40000    # 360.0f
 
     if-eqz p2, :cond_0
 
-    .line 494
+    .line 493
     sget-object v2, Lorg/telegram/ui/Stories/StoriesUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget v3, p1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->globalAngle:F
@@ -2326,7 +2326,7 @@
 
     goto :goto_0
 
-    .line 496
+    .line 495
     :cond_0
     sget-object v7, Lorg/telegram/ui/Stories/StoriesUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -2372,7 +2372,7 @@
 
     sub-float v5, v1, v0
 
-    .line 503
+    .line 502
     sget-object v3, Lorg/telegram/ui/Stories/StoriesUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget v1, p1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->globalAngle:F
@@ -2398,7 +2398,7 @@
 .method private static drawSegment(Landroid/graphics/Canvas;Landroid/graphics/RectF;Landroid/graphics/Paint;FFLorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;)V
     .locals 10
 
-    .line 565
+    .line 564
     iget-boolean v0, p5, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->isFirst:Z
 
     const/high16 v1, 0x43340000    # 180.0f
@@ -2417,7 +2417,7 @@
 
     if-gez v0, :cond_0
 
-    .line 567
+    .line 566
     iget p5, p5, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToArc:F
 
     neg-float v0, p5
@@ -2440,7 +2440,7 @@
 
     goto :goto_0
 
-    .line 569
+    .line 568
     :cond_0
     iget p5, p5, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToArc:F
 
@@ -2468,13 +2468,13 @@
 
     goto :goto_0
 
-    .line 571
+    .line 570
     :cond_1
     iget-boolean v3, p5, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->isLast:Z
 
     if-eqz v3, :cond_2
 
-    .line 572
+    .line 571
     iget p5, p5, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToArc:F
 
     neg-float v0, p5
@@ -2504,7 +2504,7 @@
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 575
+    .line 574
     iget p5, p5, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToArc:F
 
     neg-float v0, p5
@@ -2540,7 +2540,7 @@
 
     move-object v5, p2
 
-    .line 577
+    .line 576
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
     :goto_0
@@ -2838,7 +2838,7 @@
     .line 395
     invoke-virtual {v12, v13}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     :cond_a
     const/high16 v1, 0x43b40000    # 360.0f
@@ -2983,9 +2983,9 @@
 
     if-lt v5, v2, :cond_11
 
-    move-object/from16 v1, p5
+    goto :goto_e
 
-    .line 421
+    .line 420
     :cond_11
     iget-object v2, v10, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
@@ -3017,9 +3017,9 @@
     :goto_c
     move-object v4, v1
 
-    goto :goto_e
+    goto :goto_f
 
-    .line 422
+    .line 421
     :cond_13
     :goto_d
     iget-object v1, v10, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
@@ -3036,12 +3036,13 @@
 
     move-object/from16 v4, p6
 
-    goto :goto_e
+    goto :goto_f
 
     :cond_14
+    :goto_e
     move-object/from16 v4, p5
 
-    :goto_e
+    :goto_f
     int-to-float v1, v5
 
     mul-float v1, v1, v16
@@ -3056,7 +3057,7 @@
 
     sub-float v19, v2, v17
 
-    .line 434
+    .line 433
     sget-object v20, Lorg/telegram/ui/Stories/StoriesUtilities;->rectTmp:Landroid/graphics/RectF;
 
     move-object/from16 v1, p0
@@ -3079,7 +3080,7 @@
 
     invoke-static/range {v1 .. v6}, Lorg/telegram/ui/Stories/StoriesUtilities;->drawSegment(Landroid/graphics/Canvas;Landroid/graphics/RectF;Landroid/graphics/Paint;FFLorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;)V
 
-    .line 435
+    .line 434
     iget v1, v7, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToSegments:F
 
     cmpl-float v1, v1, v15
@@ -3088,10 +3089,10 @@
 
     if-eq v8, v12, :cond_15
 
-    .line 436
+    .line 435
     invoke-virtual {v12}, Landroid/graphics/Paint;->getStrokeWidth()F
 
-    .line 438
+    .line 437
     iget v1, v7, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToSegments:F
 
     sub-float v1, v15, v1
@@ -3114,10 +3115,10 @@
 
     move-object/from16 v6, p3
 
-    .line 439
+    .line 438
     invoke-static/range {v1 .. v6}, Lorg/telegram/ui/Stories/StoriesUtilities;->drawSegment(Landroid/graphics/Canvas;Landroid/graphics/RectF;Landroid/graphics/Paint;FFLorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;)V
 
-    .line 441
+    .line 440
     invoke-virtual {v12, v13}, Landroid/graphics/Paint;->setAlpha(I)V
 
     :cond_15
@@ -3130,7 +3131,7 @@
     goto/16 :goto_a
 
     :cond_16
-    :goto_f
+    :goto_10
     return-void
 .end method
 
@@ -3143,7 +3144,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 930
+    .line 929
     iget-object v2, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
@@ -3172,7 +3173,7 @@
 
     goto/16 :goto_5
 
-    .line 935
+    .line 934
     :cond_0
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -3182,7 +3183,7 @@
 
     iget-object v2, v2, Lorg/telegram/messenger/MessagesController;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
-    .line 936
+    .line 935
     iget-object v3, v2, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-object v4, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -3199,7 +3200,7 @@
 
     move v5, v4
 
-    .line 938
+    .line 937
     :goto_0
     iget-object v6, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
@@ -3209,7 +3210,7 @@
 
     if-ge v5, v6, :cond_2
 
-    .line 939
+    .line 938
     iget-object v6, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3222,7 +3223,7 @@
 
     if-le v6, v3, :cond_1
 
-    .line 940
+    .line 939
     iget-object v3, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3244,7 +3245,7 @@
     :goto_1
     if-nez v3, :cond_3
 
-    .line 945
+    .line 944
     iget-object v3, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3253,7 +3254,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 948
+    .line 947
     :cond_3
     iget-object v5, v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -3269,7 +3270,7 @@
 
     if-eqz v9, :cond_5
 
-    .line 949
+    .line 948
     sget v5, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -3286,19 +3287,19 @@
 
     if-eqz v5, :cond_4
 
-    .line 950
+    .line 949
     invoke-virtual {v5}, Ljava/io/File;->exists()Z
 
     move-result v5
 
     if-eqz v5, :cond_4
 
-    .line 951
+    .line 950
     invoke-interface/range {p1 .. p1}, Ljava/lang/Runnable;->run()V
 
     return-object v1
 
-    .line 954
+    .line 953
     :cond_4
     sget v5, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -3316,7 +3317,7 @@
 
     if-eqz v5, :cond_7
 
-    .line 957
+    .line 956
     :try_start_0
     invoke-virtual {v5}, Ljava/io/File;->getName()Ljava/lang/String;
 
@@ -3330,7 +3331,7 @@
 
     if-lez v7, :cond_7
 
-    .line 959
+    .line 958
     new-instance v9, Ljava/io/File;
 
     invoke-virtual {v5}, Ljava/io/File;->getParentFile()Ljava/io/File;
@@ -3361,7 +3362,7 @@
 
     invoke-direct {v9, v10, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 960
+    .line 959
     invoke-virtual {v9}, Ljava/io/File;->exists()Z
 
     move-result v5
@@ -3378,7 +3379,7 @@
 
     if-lez v5, :cond_7
 
-    .line 961
+    .line 960
     invoke-interface/range {p1 .. p1}, Ljava/lang/Runnable;->run()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -3388,7 +3389,7 @@
     :cond_5
     if-eqz v5, :cond_6
 
-    .line 970
+    .line 969
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     goto :goto_2
@@ -3399,17 +3400,17 @@
     :goto_2
     if-eqz v5, :cond_b
 
-    .line 971
+    .line 970
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     if-eqz v5, :cond_b
 
-    .line 972
+    .line 971
     invoke-static {v5, v6}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v5
 
-    .line 973
+    .line 972
     sget v9, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v9}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -3422,19 +3423,19 @@
 
     if-eqz v5, :cond_7
 
-    .line 974
+    .line 973
     invoke-virtual {v5}, Ljava/io/File;->exists()Z
 
     move-result v5
 
     if-eqz v5, :cond_7
 
-    .line 975
+    .line 974
     invoke-interface/range {p1 .. p1}, Ljava/lang/Runnable;->run()V
 
     return-object v1
 
-    .line 984
+    .line 983
     :catch_0
     :cond_7
     new-instance v15, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;
@@ -3447,7 +3448,7 @@
 
     invoke-direct {v15, v2, v9, v10, v1}, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;-><init>(Lorg/telegram/ui/Stories/StoriesController;JLorg/telegram/ui/Stories/StoriesUtilities$1;)V
 
-    .line 985
+    .line 984
     new-instance v0, Lorg/telegram/ui/Stories/StoriesUtilities$$ExternalSyntheticLambda0;
 
     move-object/from16 v2, p1
@@ -3458,41 +3459,41 @@
 
     new-array v0, v8, [Ljava/lang/Runnable;
 
-    .line 992
+    .line 991
     new-instance v2, Lorg/telegram/ui/Stories/StoriesUtilities$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, v0, v15}, Lorg/telegram/ui/Stories/StoriesUtilities$$ExternalSyntheticLambda1;-><init>([Ljava/lang/Runnable;Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;)V
 
     aput-object v2, v0, v4
 
-    .line 999
+    .line 998
     aget-object v2, v0, v4
 
     const-wide/16 v4, 0xbb8
 
     invoke-static {v2, v4, v5}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 1000
+    .line 999
     new-instance v2, Lorg/telegram/ui/Stories/StoriesUtilities$2;
 
     invoke-direct {v2, v0, v15}, Lorg/telegram/ui/Stories/StoriesUtilities$2;-><init>([Ljava/lang/Runnable;Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;)V
 
     iput-object v2, v15, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 1012
+    .line 1011
     invoke-virtual {v2, v8}, Lorg/telegram/messenger/ImageReceiver;->setAllowLoadingOnAttachedOnly(Z)V
 
-    .line 1013
+    .line 1012
     iget-object v0, v15, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 1015
+    .line 1014
     invoke-static {}, Lorg/telegram/ui/Stories/StoriesUtilities;->getStoryImageFilter()Ljava/lang/String;
 
     move-result-object v9
 
-    .line 1017
+    .line 1016
     iget-object v0, v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     if-eqz v0, :cond_8
@@ -3501,7 +3502,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 1018
+    .line 1017
     iget-object v5, v15, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {v2}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
@@ -3549,7 +3550,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 1020
+    .line 1019
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     goto :goto_3
@@ -3560,17 +3561,17 @@
     :goto_3
     if-eqz v0, :cond_a
 
-    .line 1021
+    .line 1020
     iget-object v4, v0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_a
 
-    .line 1022
+    .line 1021
     invoke-static {v4, v6}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v1
 
-    .line 1023
+    .line 1022
     iget-object v5, v2, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v6, 0x0
@@ -3600,7 +3601,7 @@
     :goto_4
     return-object v2
 
-    .line 1025
+    .line 1024
     :cond_a
     iget-object v0, v2, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->runnable:Ljava/lang/Runnable;
 
@@ -3611,7 +3612,7 @@
     :cond_b
     move-object/from16 v2, p1
 
-    .line 979
+    .line 978
     invoke-interface/range {p1 .. p1}, Ljava/lang/Runnable;->run()V
 
     return-object v1
@@ -3620,7 +3621,7 @@
     :goto_5
     move-object/from16 v2, p1
 
-    .line 931
+    .line 930
     invoke-interface/range {p1 .. p1}, Ljava/lang/Runnable;->run()V
 
     return-object v1
@@ -3629,12 +3630,12 @@
 .method public static getCloseFriendsPaint(Lorg/telegram/messenger/ImageReceiver;)Landroid/graphics/Paint;
     .locals 4
 
-    .line 644
+    .line 643
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->closeFriendsGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     if-nez v0, :cond_0
 
-    .line 645
+    .line 644
     new-instance v0, Lorg/telegram/ui/Components/GradientTools;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/GradientTools;-><init>()V
@@ -3643,13 +3644,13 @@
 
     const/4 v1, 0x1
 
-    .line 646
+    .line 645
     iput-boolean v1, v0, Lorg/telegram/ui/Components/GradientTools;->isDiagonal:Z
 
-    .line 647
+    .line 646
     iput-boolean v1, v0, Lorg/telegram/ui/Components/GradientTools;->isRotate:Z
 
-    .line 648
+    .line 647
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_stories_circle_closeFriends1:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -3664,7 +3665,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/GradientTools;->setColors(II)V
 
-    .line 649
+    .line 648
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->closeFriendsGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3677,7 +3678,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 650
+    .line 649
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->closeFriendsGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3686,7 +3687,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 651
+    .line 650
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->closeFriendsGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3695,7 +3696,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 653
+    .line 652
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->closeFriendsGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
@@ -3717,7 +3718,7 @@
 
     invoke-virtual {v0, v1, v2, v3, p0}, Lorg/telegram/ui/Components/GradientTools;->setBounds(FFFF)V
 
-    .line 654
+    .line 653
     sget-object p0, Lorg/telegram/ui/Stories/StoriesUtilities;->closeFriendsGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object p0, p0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3728,12 +3729,12 @@
 .method public static getErrorPaint(Landroid/graphics/RectF;)Landroid/graphics/Paint;
     .locals 4
 
-    .line 675
+    .line 674
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     if-nez v0, :cond_0
 
-    .line 676
+    .line 675
     new-instance v0, Lorg/telegram/ui/Components/GradientTools;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/GradientTools;-><init>()V
@@ -3742,20 +3743,20 @@
 
     const/4 v1, 0x1
 
-    .line 677
+    .line 676
     iput-boolean v1, v0, Lorg/telegram/ui/Components/GradientTools;->isDiagonal:Z
 
-    .line 678
+    .line 677
     iput-boolean v1, v0, Lorg/telegram/ui/Components/GradientTools;->isRotate:Z
 
-    .line 679
+    .line 678
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_color_orange:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    .line 680
+    .line 679
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -3764,17 +3765,17 @@
 
     const/high16 v2, 0x3e800000    # 0.25f
 
-    .line 681
+    .line 680
     invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v0
 
-    .line 682
+    .line 681
     sget-object v2, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     invoke-virtual {v2, v0, v1}, Lorg/telegram/ui/Components/GradientTools;->setColors(II)V
 
-    .line 683
+    .line 682
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3787,7 +3788,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 684
+    .line 683
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3796,7 +3797,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 685
+    .line 684
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3805,7 +3806,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 687
+    .line 686
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
@@ -3819,7 +3820,7 @@
 
     invoke-virtual {v0, v1, v2, v3, p0}, Lorg/telegram/ui/Components/GradientTools;->setBounds(FFFF)V
 
-    .line 688
+    .line 687
     sget-object p0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object p0, p0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3830,12 +3831,12 @@
 .method public static getErrorPaint(Lorg/telegram/messenger/ImageReceiver;)Landroid/graphics/Paint;
     .locals 4
 
-    .line 658
+    .line 657
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     if-nez v0, :cond_0
 
-    .line 659
+    .line 658
     new-instance v0, Lorg/telegram/ui/Components/GradientTools;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/GradientTools;-><init>()V
@@ -3844,20 +3845,20 @@
 
     const/4 v1, 0x1
 
-    .line 660
+    .line 659
     iput-boolean v1, v0, Lorg/telegram/ui/Components/GradientTools;->isDiagonal:Z
 
-    .line 661
+    .line 660
     iput-boolean v1, v0, Lorg/telegram/ui/Components/GradientTools;->isRotate:Z
 
-    .line 662
+    .line 661
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_color_orange:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    .line 663
+    .line 662
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -3866,17 +3867,17 @@
 
     const/high16 v2, 0x3e800000    # 0.25f
 
-    .line 664
+    .line 663
     invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v0
 
-    .line 665
+    .line 664
     sget-object v2, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     invoke-virtual {v2, v0, v1}, Lorg/telegram/ui/Components/GradientTools;->setColors(II)V
 
-    .line 666
+    .line 665
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3889,7 +3890,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 667
+    .line 666
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3898,7 +3899,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 668
+    .line 667
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3907,7 +3908,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 670
+    .line 669
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
@@ -3929,7 +3930,7 @@
 
     invoke-virtual {v0, v1, v2, v3, p0}, Lorg/telegram/ui/Components/GradientTools;->setBounds(FFFF)V
 
-    .line 671
+    .line 670
     sget-object p0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object p0, p0, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
@@ -3940,7 +3941,7 @@
 .method public static getExpiredStoryDrawable()Landroid/graphics/drawable/Drawable;
     .locals 6
 
-    .line 762
+    .line 761
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->expiredStoryDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez v0, :cond_0
@@ -3949,7 +3950,7 @@
 
     const/16 v1, 0xb4
 
-    .line 763
+    .line 762
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -3958,15 +3959,15 @@
 
     const v1, -0x777778
 
-    .line 764
+    .line 763
     invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 765
+    .line 764
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 766
+    .line 765
     new-instance v2, Landroid/text/TextPaint;
 
     const/4 v3, 0x1
@@ -3975,10 +3976,10 @@
 
     const/high16 v3, 0x41700000    # 15.0f
 
-    .line 767
+    .line 766
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 768
+    .line 767
     sget-object v3, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setTextAlign(Landroid/graphics/Paint$Align;)V
@@ -3987,7 +3988,7 @@
 
     const/16 v4, 0x64
 
-    .line 769
+    .line 768
     invoke-static {v3, v4}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v3
@@ -4000,24 +4001,24 @@
 
     const/high16 v5, 0x43340000    # 180.0f
 
-    .line 770
+    .line 769
     invoke-virtual {v1, v4, v5, v3, v2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     const/high16 v3, 0x42d40000    # 106.0f
 
     const-string v4, "story"
 
-    .line 771
+    .line 770
     invoke-virtual {v1, v4, v5, v3, v2}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 772
+    .line 771
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-direct {v1, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
     sput-object v1, Lorg/telegram/ui/Stories/StoriesUtilities;->expiredStoryDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 774
+    .line 773
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->expiredStoryDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -4038,7 +4039,7 @@
 
     if-ne p0, p1, :cond_1
 
-    .line 587
+    .line 586
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
@@ -4052,7 +4053,7 @@
 
     const/4 p0, 0x4
 
-    .line 589
+    .line 588
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
@@ -4085,7 +4086,7 @@
 
     if-lez v0, :cond_4
 
-    .line 453
+    .line 452
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesController;->isContactsAvatarsEnabled()Z
 
     move-result v0
@@ -4094,7 +4095,7 @@
 
     return v1
 
-    .line 457
+    .line 456
     :cond_1
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -4110,7 +4111,7 @@
 
     move-result-object v0
 
-    .line 458
+    .line 457
     sget v4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -4133,14 +4134,14 @@
 
     if-nez v4, :cond_3
 
-    .line 459
+    .line 458
     iget-object p0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-virtual {p0, p1, p2, v1}, Lorg/telegram/messenger/support/LongSparseIntArray;->get(JI)I
 
     move-result p0
 
-    .line 460
+    .line 459
     iget p1, v0, Lorg/telegram/tgnet/TLRPC$User;->stories_max_id:I
 
     if-le p1, p0, :cond_2
@@ -4153,7 +4154,7 @@
     :cond_3
     return v1
 
-    .line 470
+    .line 469
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesController;->isChannelsAvatarsEnabled()Z
 
@@ -4163,7 +4164,7 @@
 
     return v1
 
-    .line 474
+    .line 473
     :cond_5
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -4183,7 +4184,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 475
+    .line 474
     iget v4, v0, Lorg/telegram/tgnet/TLRPC$Chat;->stories_max_id:I
 
     if-lez v4, :cond_7
@@ -4192,14 +4193,14 @@
 
     if-nez v4, :cond_7
 
-    .line 476
+    .line 475
     iget-object p0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-virtual {p0, p1, p2, v1}, Lorg/telegram/messenger/support/LongSparseIntArray;->get(JI)I
 
     move-result p0
 
-    .line 477
+    .line 476
     iget p1, v0, Lorg/telegram/tgnet/TLRPC$Chat;->stories_max_id:I
 
     if-le p1, p0, :cond_6
@@ -4216,7 +4217,7 @@
 .method public static getStoryImageFilter()Ljava/lang/String;
     .locals 3
 
-    .line 904
+    .line 903
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getRealScreenSize()Landroid/graphics/Point;
 
     move-result-object v0
@@ -4235,14 +4236,14 @@
 
     int-to-float v0, v0
 
-    .line 905
+    .line 904
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     div-float/2addr v0, v1
 
     float-to-int v0, v0
 
-    .line 906
+    .line 905
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4265,10 +4266,10 @@
 .method public static getUnreadCirclePaint(Landroid/graphics/RectF;Z)Landroid/graphics/Paint;
     .locals 4
 
-    .line 603
+    .line 602
     invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesUtilities;->checkStoriesGradientTools(Z)V
 
-    .line 604
+    .line 603
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
     aget-object v0, v0, p1
@@ -4283,7 +4284,7 @@
 
     invoke-virtual {v0, v1, v2, v3, p0}, Lorg/telegram/ui/Components/GradientTools;->setBounds(FFFF)V
 
-    .line 605
+    .line 604
     sget-object p0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
     aget-object p0, p0, p1
@@ -4296,10 +4297,10 @@
 .method public static getUnreadCirclePaint(Lorg/telegram/messenger/ImageReceiver;Z)Landroid/graphics/Paint;
     .locals 4
 
-    .line 596
+    .line 595
     invoke-static {p1}, Lorg/telegram/ui/Stories/StoriesUtilities;->checkStoriesGradientTools(Z)V
 
-    .line 597
+    .line 596
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
     aget-object v0, v0, p1
@@ -4322,7 +4323,7 @@
 
     invoke-virtual {v0, v1, v2, v3, p0}, Lorg/telegram/ui/Components/GradientTools;->setBounds(FFFF)V
 
-    .line 598
+    .line 597
     sget-object p0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
     aget-object p0, p0, p1
@@ -4337,7 +4338,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 780
+    .line 779
     sget p2, Lorg/telegram/messenger/R$string;->StoryEditing:I
 
     const-string v0, "StoryEditing"
@@ -4348,7 +4349,7 @@
 
     goto :goto_0
 
-    .line 782
+    .line 781
     :cond_0
     sget p2, Lorg/telegram/messenger/R$string;->UploadingStory:I
 
@@ -4361,24 +4362,24 @@
     :goto_0
     const-string v0, "\u2026"
 
-    .line 784
+    .line 783
     invoke-virtual {p2, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
 
     if-lez v0, :cond_1
 
-    .line 786
+    .line 785
     invoke-static {p2}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p2
 
-    .line 787
+    .line 786
     new-instance v0, Lorg/telegram/ui/Stories/UploadingDotsSpannable;
 
     invoke-direct {v0}, Lorg/telegram/ui/Stories/UploadingDotsSpannable;-><init>()V
 
-    .line 788
+    .line 787
     invoke-virtual {p2}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v1
@@ -4393,7 +4394,7 @@
 
     invoke-virtual {p2, v0, v1, v2, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 789
+    .line 788
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/Stories/UploadingDotsSpannable;->setParent(Landroid/view/View;Z)V
 
     :cond_1
@@ -4409,7 +4410,7 @@
 
     return v0
 
-    .line 858
+    .line 857
     :cond_0
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -4438,7 +4439,7 @@
 .method public static isExpired(ILorg/telegram/tgnet/tl/TL_stories$StoryItem;)Z
     .locals 0
 
-    .line 900
+    .line 899
     invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p0
@@ -4465,7 +4466,7 @@
 .method private static synthetic lambda$ensureStoryFileLoaded$0(Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 986
+    .line 985
     invoke-static {p0}, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->access$400(Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;)Z
 
     move-result p0
@@ -4474,7 +4475,7 @@
 
     return-void
 
-    .line 989
+    .line 988
     :cond_0
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
@@ -4488,20 +4489,20 @@
 
     const/4 v1, 0x0
 
-    .line 993
+    .line 992
     aput-object v1, p0, v0
 
-    .line 994
+    .line 993
     iget-object p0, p1, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->runnable:Ljava/lang/Runnable;
 
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
-    .line 995
+    .line 994
     iget-object p0, p1, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz p0, :cond_0
 
-    .line 996
+    .line 995
     invoke-virtual {p0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
     :cond_0
@@ -4513,7 +4514,7 @@
 
     const-string v0, "320_320"
 
-    .line 710
+    .line 709
     invoke-static {p0, p1, v0}, Lorg/telegram/ui/Stories/StoriesUtilities;->setImage(Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Ljava/lang/String;)V
 
     return-void
@@ -4530,7 +4531,7 @@
 
     return-void
 
-    .line 717
+    .line 716
     :cond_0
     iget-object v0, v14, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -4542,14 +4543,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 718
+    .line 717
     iget-object v0, v2, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v0
 
-    .line 719
+    .line 718
     iget-object v1, v14, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -4586,7 +4587,7 @@
 
     invoke-virtual/range {v0 .. v10}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 720
+    .line 719
     new-instance v0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator;
 
     invoke-direct {v0, v14}, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator;-><init>(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
@@ -4598,7 +4599,7 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 722
+    .line 721
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     goto :goto_0
@@ -4606,13 +4607,13 @@
     :cond_2
     const/4 v2, 0x0
 
-    .line 723
+    .line 722
     :goto_0
     instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaUnsupported;
 
     if-eqz v0, :cond_3
 
-    .line 724
+    .line 723
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     const/16 v1, 0xa
@@ -4627,17 +4628,17 @@
 
     const v3, 0x3e4ccccd    # 0.2f
 
-    .line 725
+    .line 724
     invoke-static {v1, v2, v3}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 726
+    .line 725
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 727
+    .line 726
     new-instance v0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator;
 
     invoke-direct {v0, v14}, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator;-><init>(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
@@ -4649,12 +4650,12 @@
     :cond_3
     if-eqz v2, :cond_4
 
-    .line 728
+    .line 727
     iget-object v0, v2, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_4
 
-    .line 729
+    .line 728
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v0
@@ -4663,7 +4664,7 @@
 
     const/4 v3, 0x0
 
-    .line 730
+    .line 729
     invoke-static {v0, v2}, Lorg/telegram/messenger/ImageLocation;->getForPhoto(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Photo;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v4
@@ -4696,7 +4697,7 @@
 
     invoke-virtual/range {v0 .. v12}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 731
+    .line 730
     new-instance v0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator;
 
     invoke-direct {v0, v14}, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator;-><init>(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
@@ -4705,7 +4706,7 @@
 
     goto :goto_1
 
-    .line 733
+    .line 732
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
@@ -4716,14 +4717,14 @@
 .method public static setImage(Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
     .locals 11
 
-    .line 739
+    .line 738
     iget-object v0, p1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     if-eqz v0, :cond_0
 
-    .line 740
+    .line 739
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->firstFramePath:Ljava/lang/String;
 
     invoke-static {p1}, Lorg/telegram/messenger/ImageLocation;->getForPath(Ljava/lang/String;)Lorg/telegram/messenger/ImageLocation;
@@ -4752,7 +4753,7 @@
 
     goto :goto_0
 
-    .line 742
+    .line 741
     :cond_0
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->path:Ljava/lang/String;
 
@@ -4791,7 +4792,7 @@
 
     return-void
 
-    .line 695
+    .line 694
     :cond_0
     iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -4801,14 +4802,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 696
+    .line 695
     iget-object v0, v1, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     invoke-static {v0, v2}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v0
 
-    .line 697
+    .line 696
     iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -4850,7 +4851,7 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 699
+    .line 698
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     goto :goto_0
@@ -4861,12 +4862,12 @@
     :goto_0
     if-eqz v0, :cond_3
 
-    .line 700
+    .line 699
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_3
 
-    .line 701
+    .line 700
     invoke-static {v1, v2}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object v1
@@ -4875,7 +4876,7 @@
 
     const/4 v3, 0x0
 
-    .line 702
+    .line 701
     invoke-static {v1, v0}, Lorg/telegram/messenger/ImageLocation;->getForPhoto(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Photo;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v4
@@ -4914,7 +4915,7 @@
 
     goto :goto_1
 
-    .line 704
+    .line 703
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
@@ -4931,7 +4932,7 @@
 
     move/from16 v1, p3
 
-    .line 747
+    .line 746
     iget-object v2, v11, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     const-string v3, "_"
@@ -4948,7 +4949,7 @@
 
     if-eqz v7, :cond_0
 
-    .line 748
+    .line 747
     iget-object v2, v7, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     invoke-static/range {p2 .. p3}, Ljava/lang/Math;->max(II)I
@@ -4963,7 +4964,7 @@
 
     move-result-object v2
 
-    .line 749
+    .line 748
     iget-object v4, v11, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -5031,7 +5032,7 @@
     :cond_0
     if-eqz v2, :cond_1
 
-    .line 751
+    .line 750
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     goto :goto_0
@@ -5042,12 +5043,12 @@
     :goto_0
     if-eqz v2, :cond_2
 
-    .line 752
+    .line 751
     iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     if-eqz v7, :cond_2
 
-    .line 753
+    .line 752
     invoke-static/range {p2 .. p3}, Ljava/lang/Math;->max(II)I
 
     move-result v8
@@ -5064,7 +5065,7 @@
 
     const/4 v6, 0x0
 
-    .line 754
+    .line 753
     invoke-static {v4, v2}, Lorg/telegram/messenger/ImageLocation;->getForPhoto(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Photo;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v4
@@ -5127,7 +5128,7 @@
 
     goto :goto_1
 
-    .line 756
+    .line 755
     :cond_2
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
@@ -5138,12 +5139,12 @@
 .method public static updateColors()V
     .locals 3
 
-    .line 626
+    .line 625
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->closeFriendsGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     if-eqz v0, :cond_0
 
-    .line 627
+    .line 626
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_stories_circle_closeFriends1:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5158,7 +5159,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/GradientTools;->setColors(II)V
 
-    .line 629
+    .line 628
     :cond_0
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
@@ -5168,7 +5169,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 630
+    .line 629
     aget-object v0, v0, v1
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_stories_circle_dialog1:I
@@ -5185,7 +5186,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/GradientTools;->setColors(II)V
 
-    .line 632
+    .line 631
     :cond_1
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->storiesGradientTools:[Lorg/telegram/ui/Components/GradientTools;
 
@@ -5195,7 +5196,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 633
+    .line 632
     aget-object v0, v0, v1
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_stories_circle1:I
@@ -5212,20 +5213,20 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/GradientTools;->setColors(II)V
 
-    .line 635
+    .line 634
     :cond_2
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     if-eqz v0, :cond_3
 
-    .line 636
+    .line 635
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_color_orange:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    .line 637
+    .line 636
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5234,12 +5235,12 @@
 
     const/high16 v2, 0x3e800000    # 0.25f
 
-    .line 638
+    .line 637
     invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v0
 
-    .line 639
+    .line 638
     sget-object v2, Lorg/telegram/ui/Stories/StoriesUtilities;->errorGradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     invoke-virtual {v2, v0, v1}, Lorg/telegram/ui/Components/GradientTools;->setColors(II)V

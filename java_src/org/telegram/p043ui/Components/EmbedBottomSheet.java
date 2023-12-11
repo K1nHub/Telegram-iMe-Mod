@@ -45,7 +45,7 @@ import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BringAppForegroundService;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -620,7 +620,7 @@ public class EmbedBottomSheet extends BottomSheet {
         int i6 = Theme.key_dialogButtonSelector;
         textView3.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(i6), 0));
         textView3.setPadding(AndroidUtilities.m104dp(18), 0, AndroidUtilities.m104dp(18), 0);
-        textView3.setText(LocaleController.getString("Close", C3634R.string.Close).toUpperCase());
+        textView3.setText(LocaleController.getString("Close", C3632R.string.Close).toUpperCase());
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         frameLayout3.addView(textView3, LayoutHelper.createLinear(-2, -1, 51));
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda1
@@ -636,8 +636,8 @@ public class EmbedBottomSheet extends BottomSheet {
         ImageView imageView = new ImageView(context);
         this.pipButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.pipButton.setImageResource(C3634R.C3636drawable.ic_goinline);
-        this.pipButton.setContentDescription(LocaleController.getString("AccDescrPipMode", C3634R.string.AccDescrPipMode));
+        this.pipButton.setImageResource(C3632R.C3634drawable.ic_goinline);
+        this.pipButton.setContentDescription(LocaleController.getString("AccDescrPipMode", C3632R.string.AccDescrPipMode));
         this.pipButton.setEnabled(false);
         this.pipButton.setAlpha(0.5f);
         this.pipButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i5), PorterDuff.Mode.MULTIPLY));
@@ -657,8 +657,8 @@ public class EmbedBottomSheet extends BottomSheet {
         };
         ImageView imageView2 = new ImageView(context);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        imageView2.setImageResource(C3634R.C3636drawable.msg_copy);
-        imageView2.setContentDescription(LocaleController.getString("CopyLink", C3634R.string.CopyLink));
+        imageView2.setImageResource(C3632R.C3634drawable.msg_copy);
+        imageView2.setContentDescription(LocaleController.getString("CopyLink", C3632R.string.CopyLink));
         imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i5), PorterDuff.Mode.MULTIPLY));
         imageView2.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(i6), 0));
         this.imageButtonsContainer.addView(imageView2, LayoutHelper.createFrame(48, 48, 51));
@@ -672,7 +672,7 @@ public class EmbedBottomSheet extends BottomSheet {
         this.copyTextButton.setEllipsize(TextUtils.TruncateAt.END);
         this.copyTextButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(i6), 0));
         this.copyTextButton.setPadding(AndroidUtilities.m104dp(18), 0, AndroidUtilities.m104dp(18), 0);
-        this.copyTextButton.setText(LocaleController.getString("Copy", C3634R.string.Copy).toUpperCase());
+        this.copyTextButton.setText(LocaleController.getString("Copy", C3632R.string.Copy).toUpperCase());
         this.copyTextButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         linearLayout.addView(this.copyTextButton, LayoutHelper.createFrame(-2, -1, 51));
         this.copyTextButton.setOnClickListener(onClickListener);
@@ -684,7 +684,7 @@ public class EmbedBottomSheet extends BottomSheet {
         textView5.setEllipsize(TextUtils.TruncateAt.END);
         textView5.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(i6), 0));
         textView5.setPadding(AndroidUtilities.m104dp(18), 0, AndroidUtilities.m104dp(18), 0);
-        textView5.setText(LocaleController.getString("OpenInBrowser", C3634R.string.OpenInBrowser).toUpperCase());
+        textView5.setText(LocaleController.getString("OpenInBrowser", C3632R.string.OpenInBrowser).toUpperCase());
         textView5.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         linearLayout.addView(textView5, LayoutHelper.createFrame(-2, -1, 51));
         textView5.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.EmbedBottomSheet$$ExternalSyntheticLambda2

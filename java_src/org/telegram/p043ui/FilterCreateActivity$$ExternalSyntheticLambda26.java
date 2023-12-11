@@ -13,6 +13,6 @@ public final /* synthetic */ class FilterCreateActivity$$ExternalSyntheticLambda
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        FilterCreateActivity.m4123$r8$lambda$ycHBfbT9s2mexxEqTZ5iY5oLw0(this.f$0, (TL_chatlists$TL_exportedChatlistInvite) obj);
+        this.f$0.onDelete((TL_chatlists$TL_exportedChatlistInvite) obj);
     }
 }

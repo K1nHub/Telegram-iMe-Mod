@@ -23,6 +23,6 @@ public final class AdnlClientImpl$sendQuery$1 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.m5070sendQuery8Mi8wO0(null, 0L, this);
+        return this.this$0.m5052sendQuery8Mi8wO0(null, 0L, this);
     }
 }

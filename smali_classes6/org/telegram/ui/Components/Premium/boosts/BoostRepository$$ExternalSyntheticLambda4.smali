@@ -61,7 +61,7 @@
 
     move-object v7, p2
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->$r8$lambda$PHM2TW-Ule0fzrX2T--1yUc-gnk(Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumGiveaway;Lorg/telegram/tgnet/TLRPC$TL_premiumGiftCodeOption;Lorg/telegram/tgnet/ConnectionsManager;Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->$r8$lambda$akXBPgfNyaNC3u_JMxdfMDTHeXM(Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumGiveaway;Lorg/telegram/tgnet/TLRPC$TL_premiumGiftCodeOption;Lorg/telegram/tgnet/ConnectionsManager;Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
 
     return-void
 .end method

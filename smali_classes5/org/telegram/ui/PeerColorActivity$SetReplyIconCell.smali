@@ -28,13 +28,13 @@
 .method public constructor <init>(Lorg/telegram/ui/PeerColorActivity;Landroid/content/Context;)V
     .locals 7
 
-    .line 547
+    .line 599
     iput-object p1, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
-    .line 548
+    .line 600
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 550
+    .line 602
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -43,7 +43,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 552
+    .line 604
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -54,10 +54,10 @@
 
     const/high16 v1, 0x41800000    # 16.0f
 
-    .line 553
+    .line 605
     invoke-virtual {v0, p2, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 554
+    .line 606
     iget-object p2, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->textView:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -68,7 +68,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 555
+    .line 607
     iget-object p2, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->textView:Landroid/widget/TextView;
 
     invoke-static {p1}, Lorg/telegram/ui/PeerColorActivity;->access$000(Lorg/telegram/ui/PeerColorActivity;)Z
@@ -91,7 +91,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 556
+    .line 608
     iget-object p1, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->textView:Landroid/widget/TextView;
 
     const/4 v0, -0x1
@@ -114,7 +114,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 558
+    .line 610
     new-instance p1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     const/4 p2, 0x0
@@ -137,7 +137,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
     .locals 0
 
-    .line 541
+    .line 593
     iget-object p0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->imageDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     return-object p0
@@ -148,13 +148,13 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 584
+    .line 636
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 585
+    .line 637
     invoke-virtual {p0}, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->updateImageBounds()V
 
-    .line 586
+    .line 638
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->imageDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {p0}, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->getColor()I
@@ -167,12 +167,12 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->setColor(Ljava/lang/Integer;)V
 
-    .line 587
+    .line 639
     iget-object v2, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->offText:Lorg/telegram/ui/Components/Text;
 
     if-eqz v2, :cond_0
 
-    .line 588
+    .line 640
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 590
+    .line 642
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->imageDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
@@ -234,12 +234,12 @@
 .end method
 
 .method public getColor()I
-    .locals 2
+    .locals 3
 
-    .line 595
+    .line 647
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PeerColorActivity;->access$700(Lorg/telegram/ui/PeerColorActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/PeerColorActivity;->access$800(Lorg/telegram/ui/PeerColorActivity;)I
 
     move-result v0
 
@@ -247,16 +247,16 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 596
+    .line 648
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PeerColorActivity;->access$700(Lorg/telegram/ui/PeerColorActivity;)I
+    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[I
 
-    move-result v1
+    invoke-static {v0}, Lorg/telegram/ui/PeerColorActivity;->access$800(Lorg/telegram/ui/PeerColorActivity;)I
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/AvatarDrawable;->getNameColorKey1For(I)I
+    move-result v2
 
-    move-result v1
+    aget v1, v1, v2
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
@@ -264,7 +264,7 @@
 
     return v0
 
-    .line 598
+    .line 650
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
@@ -280,10 +280,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 600
+    .line 652
     iget-object v1, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/PeerColorActivity;->access$700(Lorg/telegram/ui/PeerColorActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/PeerColorActivity;->access$800(Lorg/telegram/ui/PeerColorActivity;)I
 
     move-result v1
 
@@ -293,22 +293,22 @@
 
     if-eqz v0, :cond_1
 
-    .line 602
+    .line 654
     invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController$PeerColor;->getColor1()I
 
     move-result v0
 
     return v0
 
-    .line 606
+    .line 658
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
-    const/4 v1, 0x0
+    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[I
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/AvatarDrawable;->getNameColorKey1For(I)I
+    const/4 v2, 0x0
 
-    move-result v1
+    aget v1, v1, v2
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
@@ -320,10 +320,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 625
+    .line 677
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 626
+    .line 678
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->imageDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->attach()V
@@ -334,10 +334,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 619
+    .line 671
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 620
+    .line 672
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->imageDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->detach()V
@@ -348,7 +348,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 612
+    .line 664
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -361,7 +361,7 @@
 
     const/16 v0, 0x32
 
-    .line 613
+    .line 665
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -370,7 +370,7 @@
 
     move-result p2
 
-    .line 611
+    .line 663
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -379,7 +379,7 @@
 .method public update(Z)V
     .locals 4
 
-    .line 562
+    .line 614
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->this$0:Lorg/telegram/ui/PeerColorActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PeerColorActivity;->access$1100(Lorg/telegram/ui/PeerColorActivity;)J
@@ -394,7 +394,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 563
+    .line 615
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->imageDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     iget-object v2, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->this$0:Lorg/telegram/ui/PeerColorActivity;
@@ -405,23 +405,23 @@
 
     invoke-virtual {v0, v2, v3, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)Z
 
-    .line 564
+    .line 616
     iput-object v1, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->offText:Lorg/telegram/ui/Components/Text;
 
     goto :goto_1
 
-    .line 566
+    .line 618
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->imageDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(Landroid/graphics/drawable/Drawable;Z)V
 
-    .line 567
+    .line 619
     iget-object p1, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->offText:Lorg/telegram/ui/Components/Text;
 
     if-nez p1, :cond_2
 
-    .line 568
+    .line 620
     new-instance p1, Lorg/telegram/ui/Components/Text;
 
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->this$0:Lorg/telegram/ui/PeerColorActivity;
@@ -458,10 +458,10 @@
 .method public updateImageBounds()V
     .locals 6
 
-    .line 574
+    .line 626
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$SetReplyIconCell;->imageDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    .line 575
+    .line 627
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
@@ -482,7 +482,7 @@
 
     sub-int/2addr v1, v3
 
-    .line 576
+    .line 628
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v3
@@ -497,7 +497,7 @@
 
     div-int/lit8 v3, v3, 0x2
 
-    .line 577
+    .line 629
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v4
@@ -508,7 +508,7 @@
 
     sub-int/2addr v4, v2
 
-    .line 578
+    .line 630
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v2
@@ -523,7 +523,7 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    .line 574
+    .line 626
     invoke-virtual {v0, v1, v3, v4, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     return-void

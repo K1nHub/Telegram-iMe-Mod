@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkContentCryptoboxInfoBinding implements ViewBinding {
     public final AppCompatImageView imageInfo;
@@ -42,7 +42,7 @@ public final class ForkContentCryptoboxInfoBinding implements ViewBinding {
     }
 
     public static ForkContentCryptoboxInfoBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_content_cryptobox_info, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_content_cryptobox_info, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -50,28 +50,28 @@ public final class ForkContentCryptoboxInfoBinding implements ViewBinding {
     }
 
     public static ForkContentCryptoboxInfoBinding bind(View view) {
-        int i = C3634R.C3637id.image_info;
+        int i = C3632R.C3635id.image_info;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3634R.C3637id.text_creation_fee_title;
+            i = C3632R.C3635id.text_creation_fee_title;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3634R.C3637id.text_creation_fee_value;
+                i = C3632R.C3635id.text_creation_fee_value;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
-                    i = C3634R.C3637id.text_title;
+                    i = C3632R.C3635id.text_title;
                     AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView3 != null) {
-                        i = C3634R.C3637id.text_total_fee_title;
+                        i = C3632R.C3635id.text_total_fee_title;
                         AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView4 != null) {
-                            i = C3634R.C3637id.text_total_fee_value;
+                            i = C3632R.C3635id.text_total_fee_value;
                             AppCompatTextView appCompatTextView5 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView5 != null) {
-                                i = C3634R.C3637id.text_total_users_fee_title;
+                                i = C3632R.C3635id.text_total_users_fee_title;
                                 AppCompatTextView appCompatTextView6 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView6 != null) {
-                                    i = C3634R.C3637id.text_total_users_fee_value;
+                                    i = C3632R.C3635id.text_total_users_fee_value;
                                     AppCompatTextView appCompatTextView7 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                     if (appCompatTextView7 != null) {
                                         return new ForkContentCryptoboxInfoBinding((ConstraintLayout) view, appCompatImageView, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4, appCompatTextView5, appCompatTextView6, appCompatTextView7);

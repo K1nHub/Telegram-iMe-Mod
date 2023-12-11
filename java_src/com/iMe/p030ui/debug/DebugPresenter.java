@@ -11,7 +11,7 @@ import com.iMe.storage.domain.storage.CryptoPreferenceHelper;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* compiled from: DebugPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.debug.DebugPresenter */
@@ -65,6 +65,6 @@ public final class DebugPresenter extends BasePresenter<DebugView> {
     }
 
     private final DialogModel getConfirmSwitchEnvironmentDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.debug_option_choose_wallet_environment_dialog_title), this.resourceManager.getString(C3634R.string.debug_option_choose_wallet_environment_dialog_message), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3632R.string.debug_option_choose_wallet_environment_dialog_title), this.resourceManager.getString(C3632R.string.debug_option_choose_wallet_environment_dialog_message), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.common_confirm));
     }
 }

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 12524
+    .line 12534
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$80;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,7 +62,7 @@
 .method public openReplyMessage(I)V
     .locals 7
 
-    .line 12527
+    .line 12537
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$80;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v2, 0x0
@@ -85,7 +85,7 @@
 .method public openSearch(Ljava/lang/String;)V
     .locals 1
 
-    .line 12532
+    .line 12542
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$80;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->access$13800(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)V

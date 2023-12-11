@@ -228,7 +228,7 @@ public final class BinaryClassAnnotationAndConstantLoaderImpl extends AbstractBi
 
         @Override // kotlin.reflect.jvm.internal.impl.load.kotlin.KotlinJvmBinaryClass.AnnotationArgumentVisitor
         public KotlinJvmBinaryClass.AnnotationArrayArgumentVisitor visitArray(Name name) {
-            return new C3364x4262547b(BinaryClassAnnotationAndConstantLoaderImpl.this, name, this);
+            return new C3361x4262547b(BinaryClassAnnotationAndConstantLoaderImpl.this, name, this);
         }
 
         @Override // kotlin.reflect.jvm.internal.impl.load.kotlin.KotlinJvmBinaryClass.AnnotationArgumentVisitor

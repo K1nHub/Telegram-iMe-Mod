@@ -649,26 +649,18 @@
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiveawayCell;
 
     .line 292
-    sget v1, Lorg/telegram/messenger/R$string;->TelegramPremiumCount:I
+    iget v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;->quantity:I
 
-    new-array v2, v3, [Ljava/lang/Object;
+    new-array v2, v4, [Ljava/lang/Object;
 
-    iget v6, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;->quantity:I
+    const-string v6, "BoostingTelegramPremiumCountPlural"
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    aput-object v6, v2, v4
-
-    const-string v6, "TelegramPremiumCount"
-
-    invoke-static {v6, v1, v2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v1, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v8
 
     .line 293
-    sget v1, Lorg/telegram/messenger/R$string;->SubscriptionsCount:I
+    iget v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_prepaidGiveaway;->quantity:I
 
     new-array v2, v3, [Ljava/lang/Object;
 
@@ -676,7 +668,7 @@
 
     new-array v7, v4, [Ljava/lang/Object;
 
-    const-string v9, "GiftMonths"
+    const-string v9, "PrepaidGiveawayMonths"
 
     invoke-static {v9, v6, v7}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -684,9 +676,9 @@
 
     aput-object v6, v2, v4
 
-    const-string v4, "SubscriptionsCount"
+    const-string v4, "BoostingSubscriptionsCountPlural"
 
-    invoke-static {v4, v1, v2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v1, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v9
 

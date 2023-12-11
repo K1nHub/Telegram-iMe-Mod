@@ -133,7 +133,7 @@
 
     aput-object v1, v0, v2
 
-    const-string v1, "BoostingSubscriptionsCount"
+    const-string v1, "BoostingBoostsCountTitle"
 
     invoke-static {v1, p2, v0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 

@@ -24,7 +24,7 @@
 .method public constructor <init>(IIFF)V
     .locals 3
 
-    .line 965
+    .line 1113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x2
@@ -39,7 +39,7 @@
 
     aput p2, v1, p1
 
-    .line 966
+    .line 1114
     iput-object v1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
     new-array p2, v0, [F
@@ -48,7 +48,7 @@
 
     aput p4, p2, p1
 
-    .line 967
+    .line 1115
     iput-object p2, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->heights:[F
 
     return-void
@@ -57,7 +57,7 @@
 .method public constructor <init>(IIIFFF)V
     .locals 3
 
-    .line 970
+    .line 1118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x3
@@ -76,7 +76,7 @@
 
     aput p3, v1, p2
 
-    .line 971
+    .line 1119
     iput-object v1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
     new-array p3, v0, [F
@@ -87,7 +87,7 @@
 
     aput p6, p3, p2
 
-    .line 972
+    .line 1120
     iput-object p3, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->heights:[F
 
     return-void
@@ -96,7 +96,7 @@
 .method public constructor <init>(IIIIFFFF)V
     .locals 3
 
-    .line 975
+    .line 1123
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x4
@@ -119,7 +119,7 @@
 
     aput p4, v1, p3
 
-    .line 976
+    .line 1124
     iput-object v1, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->lineCounts:[I
 
     new-array p4, v0, [F
@@ -132,7 +132,7 @@
 
     aput p8, p4, p3
 
-    .line 977
+    .line 1125
     iput-object p4, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$MessageGroupedLayoutAttempt;->heights:[F
 
     return-void

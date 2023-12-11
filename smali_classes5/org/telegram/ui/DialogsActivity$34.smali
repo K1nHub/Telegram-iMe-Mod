@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 6823
+    .line 6826
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$34;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public getView(J)Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
     .locals 1
 
-    .line 6850
+    .line 6853
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$34;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/DialogsActivity;->dialogStoriesCell:Lorg/telegram/ui/Stories/DialogStoriesCell;
@@ -65,7 +65,7 @@
 .method public preLayout(JLjava/lang/Runnable;)V
     .locals 4
 
-    .line 6826
+    .line 6829
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$34;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-object v1, v0, Lorg/telegram/ui/DialogsActivity;->dialogStoriesCell:Lorg/telegram/ui/Stories/DialogStoriesCell;
@@ -76,18 +76,18 @@
 
     const/4 v2, 0x1
 
-    .line 6827
+    .line 6830
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/DialogsActivity;->scrollToTop(ZZ)V
 
-    .line 6828
+    .line 6831
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$34;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/DialogsActivity;->access$3902(Lorg/telegram/ui/DialogsActivity;Z)Z
 
-    .line 6829
+    .line 6832
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$34;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$42300(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$42400(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
 
     move-result-object v0
 
@@ -99,7 +99,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 6830
+    .line 6833
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$34;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
@@ -116,7 +116,7 @@
 
     goto :goto_0
 
-    .line 6833
+    .line 6836
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$34;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -126,7 +126,7 @@
 
     goto :goto_1
 
-    .line 6831
+    .line 6834
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$34;->this$0:Lorg/telegram/ui/DialogsActivity;
@@ -135,7 +135,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->scrollToFirstCell()V
 
-    .line 6835
+    .line 6838
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$34;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -159,7 +159,7 @@
 
     goto :goto_2
 
-    .line 6844
+    .line 6847
     :cond_2
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 

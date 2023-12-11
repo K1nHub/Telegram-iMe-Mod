@@ -18,7 +18,7 @@ import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
@@ -234,13 +234,13 @@ public class StoryMediaAreasView extends FrameLayout implements View.OnClickList
                     this.hintView = null;
                 }
                 boolean z = this.selectedArea.getTranslationY() < ((float) AndroidUtilities.m104dp(100));
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString("StoryViewLocation", C3634R.string.StoryViewLocation));
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString("StoryViewLocation", C3632R.string.StoryViewLocation));
                 SpannableString spannableString = new SpannableString(">");
-                ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3634R.C3636drawable.photos_arrow);
+                ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3632R.C3634drawable.photos_arrow);
                 coloredImageSpan.translate(AndroidUtilities.m104dp(2), AndroidUtilities.m104dp(1));
                 spannableString.setSpan(coloredImageSpan, 0, spannableString.length(), 33);
                 SpannableString spannableString2 = new SpannableString("<");
-                ColoredImageSpan coloredImageSpan2 = new ColoredImageSpan(C3634R.C3636drawable.attach_arrow_right);
+                ColoredImageSpan coloredImageSpan2 = new ColoredImageSpan(C3632R.C3634drawable.attach_arrow_right);
                 coloredImageSpan2.translate(AndroidUtilities.m104dp(-2), AndroidUtilities.m104dp(1));
                 coloredImageSpan2.setScale(-1.0f, 1.0f);
                 spannableString2.setSpan(coloredImageSpan2, 0, spannableString2.length(), 33);

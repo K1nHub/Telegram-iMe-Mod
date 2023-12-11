@@ -63,6 +63,7 @@ public class BoostAdapter extends AdapterWithDiffUtils {
                 ((ChatCell) childAt).setCounter(i);
             }
         }
+        notifyItemChanged(8);
         notifyItemChanged(this.items.size() - 1);
         notifyItemChanged(this.items.size() - 2);
         notifyItemChanged(this.items.size() - 3);
@@ -140,7 +141,7 @@ public class BoostAdapter extends AdapterWithDiffUtils {
                 boostTypeCell = new SliderCell(context, this.resourcesProvider);
                 break;
             case 6:
-                boostTypeCell = new org.telegram.p043ui.Cells.HeaderCell(context, this.resourcesProvider);
+                boostTypeCell = new org.telegram.p043ui.Cells.HeaderCell(context, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, 3, false, this.resourcesProvider);
                 boostTypeCell.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground, this.resourcesProvider));
                 break;
             case 7:

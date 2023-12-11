@@ -35,7 +35,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -82,7 +82,7 @@ public class TimelineView extends View {
     private final Paint ellipsizePaint;
 
     /* renamed from: h */
-    private int f2018h;
+    private int f2019h;
     private boolean hadDragChange;
     private boolean hasAudio;
     private boolean hasVideo;
@@ -93,7 +93,7 @@ public class TimelineView extends View {
     private final Runnable onLongPress;
 
     /* renamed from: ph */
-    private int f2019ph;
+    private int f2020ph;
     private int pressHandle;
     private long pressTime;
     private boolean pressVideo;
@@ -102,10 +102,10 @@ public class TimelineView extends View {
     private final Paint progressWhitePaint;
 
     /* renamed from: px */
-    private int f2020px;
+    private int f2021px;
 
     /* renamed from: py */
-    private int f2021py;
+    private int f2022py;
     private final Paint regionCutPaint;
     private final Paint regionHandlePaint;
     private final Paint regionPaint;
@@ -118,7 +118,7 @@ public class TimelineView extends View {
     final float[] selectedVideoRadii;
 
     /* renamed from: sw */
-    private int f2022sw;
+    private int f2023sw;
     private VideoThumbsLoader thumbs;
     private VelocityTracker velocityTracker;
     private final RectF videoBounds;
@@ -130,7 +130,7 @@ public class TimelineView extends View {
     private float videoRight;
 
     /* renamed from: w */
-    private int f2023w;
+    private int f2024w;
     private int wasScrollX;
     private AudioWaveformLoader waveform;
     private boolean waveformIsLoaded;
@@ -234,7 +234,7 @@ public class TimelineView extends View {
         paint3.setColor(-16777216);
         paint5.setColor(-1);
         paint4.setColor(637534208);
-        Drawable mutate = getContext().getResources().getDrawable(C3634R.C3636drawable.filled_widget_music).mutate();
+        Drawable mutate = getContext().getResources().getDrawable(C3632R.C3634drawable.filled_widget_music).mutate();
         this.audioIcon = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         this.backgroundBlur = new BlurringShader.StoryBlurDrawer(blurManager, this, 0);
@@ -260,17 +260,17 @@ public class TimelineView extends View {
             }
         });
         long min = Math.min(getBaseDuration(), 120000L);
-        int i2 = this.f2023w;
-        int i3 = this.f2020px;
-        int i4 = this.f2019ph;
-        float min2 = Math.min((i2 - i3) - i4, i3 + i4 + (((((float) (this.audioOffset - this.scroll)) + (AndroidUtilities.lerp(this.audioRight, 1.0f, this.audioSelectedT.get()) * ((float) this.audioDuration))) / ((float) min)) * this.f2022sw));
-        ItemOptions forceTop = ItemOptions.makeOptions(viewGroup, resourcesProvider, this).addView(onValueChange).addSpaceGap().add(C3634R.C3636drawable.msg_delete, LocaleController.getString(C3634R.string.StoryAudioRemove), new Runnable() { // from class: org.telegram.ui.Stories.recorder.TimelineView$$ExternalSyntheticLambda0
+        int i2 = this.f2024w;
+        int i3 = this.f2021px;
+        int i4 = this.f2020ph;
+        float min2 = Math.min((i2 - i3) - i4, i3 + i4 + (((((float) (this.audioOffset - this.scroll)) + (AndroidUtilities.lerp(this.audioRight, 1.0f, this.audioSelectedT.get()) * ((float) this.audioDuration))) / ((float) min)) * this.f2023sw));
+        ItemOptions forceTop = ItemOptions.makeOptions(viewGroup, resourcesProvider, this).addView(onValueChange).addSpaceGap().add(C3632R.C3634drawable.msg_delete, LocaleController.getString(C3632R.string.StoryAudioRemove), new Runnable() { // from class: org.telegram.ui.Stories.recorder.TimelineView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 TimelineView.this.lambda$new$1();
             }
         }).setGravity(5).forceTop(true);
-        float m104dp = (-(this.f2023w - min2)) + AndroidUtilities.m104dp(18);
+        float m104dp = (-(this.f2024w - min2)) + AndroidUtilities.m104dp(18);
         int m104dp2 = AndroidUtilities.m104dp(4);
         if (this.hasVideo) {
             i = 0;
@@ -505,16 +505,16 @@ public class TimelineView extends View {
         float x = motionEvent.getX();
         float y = motionEvent.getY();
         float min = (float) Math.min(getBaseDuration(), 120000L);
-        float clamp = this.f2020px + this.f2019ph + (this.f2022sw * (((float) ((Utilities.clamp(this.progress, getBaseDuration(), 0L) + (!this.hasVideo ? this.audioOffset : 0L)) - this.scroll)) / min));
+        float clamp = this.f2021px + this.f2020ph + (this.f2023sw * (((float) ((Utilities.clamp(this.progress, getBaseDuration(), 0L) + (!this.hasVideo ? this.audioOffset : 0L)) - this.scroll)) / min));
         if (x < clamp - AndroidUtilities.m104dp(12) || x > clamp + AndroidUtilities.m104dp(12)) {
-            boolean z = y > (((float) (this.f2018h - this.f2021py)) - getVideoHeight()) - ((float) AndroidUtilities.m104dp(2));
+            boolean z = y > (((float) (this.f2019h - this.f2022py)) - getVideoHeight()) - ((float) AndroidUtilities.m104dp(2));
             if (z) {
-                int i2 = this.f2020px;
-                int i3 = this.f2019ph;
+                int i2 = this.f2021px;
+                int i3 = this.f2020ph;
                 float f = this.videoLeft;
                 long j = this.videoDuration;
                 long j2 = this.scroll;
-                int i4 = this.f2022sw;
+                int i4 = this.f2023sw;
                 float f2 = i2 + i3 + ((((f * ((float) j)) - ((float) j2)) / min) * i4);
                 float f3 = i2 + i3 + ((((this.videoRight * ((float) j)) - ((float) j2)) / min) * i4);
                 if (x >= f2 - AndroidUtilities.m104dp(15) && x <= AndroidUtilities.m104dp(5) + f2) {
@@ -527,14 +527,14 @@ public class TimelineView extends View {
                     return 4;
                 }
             } else if (this.hasAudio) {
-                int i5 = this.f2020px;
-                int i6 = this.f2019ph;
+                int i5 = this.f2021px;
+                int i6 = this.f2020ph;
                 long j3 = this.audioOffset;
                 float f4 = this.audioLeft;
                 long j4 = this.audioDuration;
                 float f5 = ((float) j3) + (f4 * ((float) j4));
                 long j5 = this.scroll;
-                int i7 = this.f2022sw;
+                int i7 = this.f2023sw;
                 float f6 = i5 + i6 + (((f5 - ((float) j5)) / min) * i7);
                 float f7 = i5 + i6 + ((((((float) j3) + (this.audioRight * ((float) j4))) - ((float) j5)) / min) * i7);
                 if (this.audioSelected || !this.hasVideo) {
@@ -554,11 +554,11 @@ public class TimelineView extends View {
                         Math.min(1.0f, Math.max((float) BitmapDescriptorFactory.HUE_RED, ((float) (this.scroll - this.audioOffset)) + ((float) Math.min(120000L, getBaseDuration()))) / ((float) this.audioDuration));
                         return !this.hasVideo ? 8 : 5;
                     }
-                    int i8 = this.f2020px;
-                    int i9 = this.f2019ph;
+                    int i8 = this.f2021px;
+                    int i9 = this.f2020ph;
                     long j6 = this.audioOffset;
                     long j7 = this.scroll;
-                    int i10 = this.f2022sw;
+                    int i10 = this.f2023sw;
                     f7 = i8 + i9 + ((((float) ((j6 + this.audioDuration) - j7)) / min) * i10);
                     f6 = i8 + i9 + ((((float) (j6 - j7)) / min) * i10);
                 }
@@ -585,7 +585,7 @@ public class TimelineView extends View {
 
     private boolean setProgressAt(float f, boolean z) {
         if (this.hasVideo || this.hasAudio) {
-            float min = (((f - this.f2020px) - this.f2019ph) / this.f2022sw) * ((float) Math.min(getBaseDuration(), 120000L));
+            float min = (((f - this.f2021px) - this.f2020ph) / this.f2023sw) * ((float) Math.min(getBaseDuration(), 120000L));
             boolean z2 = this.hasVideo;
             final long clamp = Utilities.clamp(min + ((float) (!z2 ? -this.audioOffset : 0L)) + ((float) this.scroll), (float) (z2 ? this.videoDuration : this.audioDuration), (float) BitmapDescriptorFactory.HUE_RED);
             boolean z3 = this.hasVideo;
@@ -803,11 +803,11 @@ public class TimelineView extends View {
             int currX = this.scroller.getCurrX();
             long min = Math.min(getBaseDuration(), 120000L);
             if (this.scrollingVideo) {
-                this.scroll = Math.max((float) BitmapDescriptorFactory.HUE_RED, (((currX - this.f2020px) - this.f2019ph) / this.f2022sw) * ((float) min));
+                this.scroll = Math.max((float) BitmapDescriptorFactory.HUE_RED, (((currX - this.f2021px) - this.f2020ph) / this.f2023sw) * ((float) min));
             } else {
-                int i = this.f2020px;
-                int i2 = this.f2019ph;
-                int i3 = this.f2022sw;
+                int i = this.f2021px;
+                int i2 = this.f2020ph;
+                int i3 = this.f2023sw;
                 float f = (float) min;
                 moveAudioOffset(((((currX - i) - i2) / i3) * f) - ((((this.wasScrollX - i) - i2) / i3) * f));
             }
@@ -865,8 +865,8 @@ public class TimelineView extends View {
         private void layout(float f, float f2, float f3, float f4, float f5, long j, float f6, float f7, float f8) {
             TimelineView.this.waveformPath.rewind();
             float round = Math.round(AndroidUtilities.dpf2(3.3333f));
-            int min = Math.min(TimelineView.this.waveform.getCount() - 1, (int) Math.ceil(((TimelineView.this.f2019ph + f3) - f) / round));
-            for (int max = Math.max(0, (int) (((f2 - TimelineView.this.f2019ph) - f) / round)); max <= min; max++) {
+            int min = Math.min(TimelineView.this.waveform.getCount() - 1, (int) Math.ceil(((TimelineView.this.f2020ph + f3) - f) / round));
+            for (int max = Math.max(0, (int) (((f2 - TimelineView.this.f2020ph) - f) / round)); max <= min; max++) {
                 float f9 = max;
                 float m104dp = (f9 * round) + f + AndroidUtilities.m104dp(2);
                 float bar = f6 <= BitmapDescriptorFactory.HUE_RED ? 0.0f : (TimelineView.this.waveform.getBar(max) / f6) * f7 * 0.6f;
@@ -909,7 +909,7 @@ public class TimelineView extends View {
         }
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(f3 - AndroidUtilities.m104dp(10), f, f4 + AndroidUtilities.m104dp(10), f2);
-        canvas.saveLayerAlpha(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.f2023w, this.f2018h, 255, 31);
+        canvas.saveLayerAlpha(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.f2024w, this.f2019h, 255, 31);
         int i = (int) (255.0f * f5);
         this.regionPaint.setAlpha(i);
         canvas.drawRoundRect(rectF, AndroidUtilities.m104dp(6), AndroidUtilities.m104dp(6), this.regionPaint);
@@ -939,7 +939,7 @@ public class TimelineView extends View {
     }
 
     private void drawProgress(Canvas canvas, float f, float f2, long j, float f3) {
-        float clamp = this.f2020px + this.f2019ph + (this.f2022sw * (((float) ((Utilities.clamp(j, getBaseDuration(), 0L) + (!this.hasVideo ? this.audioOffset : 0L)) - this.scroll)) / ((float) Math.min(getBaseDuration(), 120000L))));
+        float clamp = this.f2021px + this.f2020ph + (this.f2023sw * (((float) ((Utilities.clamp(j, getBaseDuration(), 0L) + (!this.hasVideo ? this.audioOffset : 0L)) - this.scroll)) / ((float) Math.min(getBaseDuration(), 120000L))));
         float f4 = (((f + f2) / 2.0f) / 2.0f) * (1.0f - f3);
         float f5 = f + f4;
         float f6 = f2 - f4;
@@ -969,18 +969,18 @@ public class TimelineView extends View {
         fArr2[5] = 0.0f;
         fArr2[4] = 0.0f;
         int m104dp2 = AndroidUtilities.m104dp(12);
-        this.f2020px = m104dp2;
+        this.f2021px = m104dp2;
         int m104dp3 = AndroidUtilities.m104dp(5);
-        this.f2021py = m104dp3;
+        this.f2022py = m104dp3;
         setPadding(m104dp2, m104dp3, AndroidUtilities.m104dp(12), AndroidUtilities.m104dp(5));
         int size = View.MeasureSpec.getSize(i);
-        this.f2023w = size;
+        this.f2024w = size;
         int m104dp4 = AndroidUtilities.m104dp(80);
-        this.f2018h = m104dp4;
+        this.f2019h = m104dp4;
         setMeasuredDimension(size, m104dp4);
         int m104dp5 = AndroidUtilities.m104dp(10);
-        this.f2019ph = m104dp5;
-        this.f2022sw = (this.f2023w - (m104dp5 * 2)) - (this.f2020px * 2);
+        this.f2020ph = m104dp5;
+        this.f2023sw = (this.f2024w - (m104dp5 * 2)) - (this.f2021px * 2);
         if (this.videoPath != null && this.thumbs == null) {
             setupVideoThumbs();
         }

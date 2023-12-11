@@ -59,7 +59,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: WalletHomeCryptoTokensSettingsPresenter.kt */
 @InjectViewState
@@ -232,12 +232,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                    m1774invoke(result);
+                    m1776invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1774invoke(Result<? extends Boolean> it) {
+                public final void m1776invoke(Result<? extends Boolean> it) {
                     List list;
                     ResourceManager resourceManager;
                     RxEventBus rxEventBus;
@@ -393,12 +393,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends FoundTokenItem>> result) {
-                m1770invoke(result);
+                m1772invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1770invoke(Result<? extends List<? extends FoundTokenItem>> it) {
+            public final void m1772invoke(Result<? extends List<? extends FoundTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends FoundTokenItem>> result = it;
                 if (result instanceof Result.Success) {
@@ -494,7 +494,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
             this.tokenVisibilitySubject.onNext(foundTokenItem);
             return;
         }
-        ((WalletHomeCryptoTokensSettingsView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.token_search_coin));
+        ((WalletHomeCryptoTokensSettingsView) getViewState()).showToast(this.resourceManager.getString(C3632R.string.token_search_coin));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -612,12 +612,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Map<TokenDetailed, ? extends Boolean>> result) {
-                m1769invoke(result);
+                m1771invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1769invoke(Result<? extends Map<TokenDetailed, ? extends Boolean>> it) {
+            public final void m1771invoke(Result<? extends Map<TokenDetailed, ? extends Boolean>> it) {
                 ResourceManager resourceManager;
                 CryptoPreferenceHelper cryptoPreferenceHelper;
                 List mutableList;
@@ -703,12 +703,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.TokensSettingsChanged tokensSettingsChanged) {
-                m1771invoke(tokensSettingsChanged);
+                m1773invoke(tokensSettingsChanged);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1771invoke(DomainRxEvents.TokensSettingsChanged it) {
+            public final void m1773invoke(DomainRxEvents.TokensSettingsChanged it) {
                 String str;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.TokensSettingsChanged tokensSettingsChanged = it;
@@ -824,12 +824,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends FoundTokenItem>> result) {
-                m1772invoke(result);
+                m1774invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1772invoke(Result<? extends List<? extends FoundTokenItem>> it) {
+            public final void m1774invoke(Result<? extends List<? extends FoundTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends FoundTokenItem>> result = it;
                 if (result instanceof Result.Success) {
@@ -911,7 +911,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 return subscribeToTokenVisibilitySwitch$lambda$26;
             }
         }).debounce(200L, TimeUnit.MILLISECONDS).observeOn(this.schedulersProvider.mo1011io());
-        final C2396xee15b4fa c2396xee15b4fa = new C2396xee15b4fa(this);
+        final C2393xee15b4fa c2393xee15b4fa = new C2393xee15b4fa(this);
         Observable flatMap = observeOn2.flatMap(new Function() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -930,12 +930,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> pair) {
-                m1773invoke(pair);
+                m1775invoke(pair);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1773invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> it) {
+            public final void m1775invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> it) {
                 ResourceManager resourceManager;
                 List<BaseNode> list;
                 FoundTokenItem copy;

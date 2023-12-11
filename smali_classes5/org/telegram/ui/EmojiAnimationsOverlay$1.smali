@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/EmojiAnimationsOverlay;II)V
     .locals 0
 
-    .line 214
+    .line 215
     iput-object p1, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$1;->this$0:Lorg/telegram/ui/EmojiAnimationsOverlay;
 
     iput p2, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$1;->val$messageId:I
@@ -46,7 +46,7 @@
 .method public run()V
     .locals 3
 
-    .line 217
+    .line 218
     iget-object v0, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$1;->this$0:Lorg/telegram/ui/EmojiAnimationsOverlay;
 
     iget v1, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$1;->val$messageId:I

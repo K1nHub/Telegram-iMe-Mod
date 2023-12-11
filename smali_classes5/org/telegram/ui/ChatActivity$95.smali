@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;[Z)V
     .locals 0
 
-    .line 18368
+    .line 18376
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$95;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$95;->val$entries:Ljava/util/ArrayList;
@@ -59,7 +59,7 @@
 .method public isPhotoChecked(I)Z
     .locals 1
 
-    .line 18391
+    .line 18399
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$95;->val$checked:[Z
 
     aget-boolean p1, v0, p1
@@ -70,7 +70,7 @@
 .method public sendButtonPressed(ILorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;Z)V
     .locals 6
 
-    .line 18376
+    .line 18384
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$95;->val$entries:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -82,14 +82,14 @@
     :goto_0
     if-ltz p1, :cond_1
 
-    .line 18377
+    .line 18385
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$95;->val$checked:[Z
 
     aget-boolean p2, p2, p1
 
     if-nez p2, :cond_0
 
-    .line 18378
+    .line 18386
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$95;->val$entries:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -99,7 +99,7 @@
 
     goto :goto_0
 
-    .line 18381
+    .line 18389
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$95;->this$0:Lorg/telegram/ui/ChatActivity;
 

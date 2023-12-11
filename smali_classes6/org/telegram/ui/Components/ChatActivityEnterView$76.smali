@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 11217
+    .line 11216
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$76;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$76;->val$animationEndRunnable:Ljava/lang/Runnable;
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 11220
+    .line 11219
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$76;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$10602(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/animation/Animator;)Landroid/animation/Animator;
 
-    .line 11221
+    .line 11220
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$76;->val$animationEndRunnable:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V

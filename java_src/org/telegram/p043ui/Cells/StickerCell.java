@@ -10,7 +10,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -203,9 +203,9 @@ public class StickerCell extends FrameLayout {
             }
         }
         if (str != null) {
-            accessibilityNodeInfo.setText(str + " " + LocaleController.getString("AttachSticker", C3634R.string.AttachSticker));
+            accessibilityNodeInfo.setText(str + " " + LocaleController.getString("AttachSticker", C3632R.string.AttachSticker));
         } else {
-            accessibilityNodeInfo.setText(LocaleController.getString("AttachSticker", C3634R.string.AttachSticker));
+            accessibilityNodeInfo.setText(LocaleController.getString("AttachSticker", C3632R.string.AttachSticker));
         }
         accessibilityNodeInfo.setEnabled(true);
     }

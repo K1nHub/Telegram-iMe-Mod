@@ -19,11 +19,11 @@ public abstract class BlockchainCryptoWalletManager {
 
     public abstract Observable<Result<Wallet>> createWallet();
 
-    public abstract Observable<Result<String>> generateAddressByMnemonic(String str);
-
     public abstract Observable<Result<Wallet>> importWallet(String str, String str2, String str3);
 
     public abstract Observable<Result<Boolean>> isValidAddress(String str);
+
+    public abstract Observable<Result<Boolean>> isValidMnemonic(String str);
 
     public abstract Observable<Result<Wallet>> unlockWallet(String str, String str2, String str3, String str4);
 

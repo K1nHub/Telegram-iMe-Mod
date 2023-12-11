@@ -10,16 +10,16 @@ public interface Predicate<T> {
     public final /* synthetic */ class CC {
         public static Predicate $default$and(Predicate predicate, Predicate predicate2) {
             Objects.requireNonNull(predicate2);
-            return new C2837w(predicate, predicate2, 0);
+            return new C2834w(predicate, predicate2, 0);
         }
 
         public static Predicate $default$negate(Predicate predicate) {
-            return new C2815a(predicate);
+            return new C2812a(predicate);
         }
 
         public static Predicate $default$or(Predicate predicate, Predicate predicate2) {
             Objects.requireNonNull(predicate2);
-            return new C2837w(predicate, predicate2, 1);
+            return new C2834w(predicate, predicate2, 1);
         }
     }
 

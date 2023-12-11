@@ -35,7 +35,7 @@
 .method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$RJQ2UoJg0uEVc1bWB41zbvxSZqs(Landroid/content/DialogInterface;I)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$LYZkXHkH5dOxGc6cvoJ4KailD1o(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

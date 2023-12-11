@@ -196,16 +196,16 @@ public final class TypeParameterUpperBoundEraser {
         Set<KotlinType> build;
         createSetBuilder = SetsKt__SetsJVMKt.createSetBuilder();
         for (KotlinType kotlinType : list) {
-            ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-            if (mo2051getDeclarationDescriptor instanceof ClassDescriptor) {
+            ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+            if (mo2053getDeclarationDescriptor instanceof ClassDescriptor) {
                 createSetBuilder.add(Companion.replaceArgumentsOfUpperBound(kotlinType, typeSubstitutor, erasureTypeAttributes.getVisitedTypeParameters(), this.options.getLeaveNonTypeParameterTypes()));
-            } else if (mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor) {
+            } else if (mo2053getDeclarationDescriptor instanceof TypeParameterDescriptor) {
                 Set<TypeParameterDescriptor> visitedTypeParameters = erasureTypeAttributes.getVisitedTypeParameters();
                 boolean z = true;
-                if ((visitedTypeParameters == null || !visitedTypeParameters.contains(mo2051getDeclarationDescriptor)) ? false : false) {
+                if ((visitedTypeParameters == null || !visitedTypeParameters.contains(mo2053getDeclarationDescriptor)) ? false : false) {
                     createSetBuilder.add(getDefaultType(erasureTypeAttributes));
                 } else {
-                    List<KotlinType> upperBounds = ((TypeParameterDescriptor) mo2051getDeclarationDescriptor).getUpperBounds();
+                    List<KotlinType> upperBounds = ((TypeParameterDescriptor) mo2053getDeclarationDescriptor).getUpperBounds();
                     Intrinsics.checkNotNullExpressionValue(upperBounds, "declaration.upperBounds");
                     createSetBuilder.addAll(substituteErasedUpperBounds(typeSubstitutor, upperBounds, erasureTypeAttributes));
                 }

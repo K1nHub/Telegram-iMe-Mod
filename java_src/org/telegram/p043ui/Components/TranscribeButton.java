@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
@@ -111,7 +111,7 @@ public class TranscribeButton {
         Rect rect = new Rect(this.bounds);
         this.pressBounds = rect;
         rect.inset(AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8));
-        RLottieDrawable rLottieDrawable = new RLottieDrawable(C3634R.raw.transcribe_out, "transcribe_out", AndroidUtilities.m104dp(26), AndroidUtilities.m104dp(26));
+        RLottieDrawable rLottieDrawable = new RLottieDrawable(C3632R.raw.transcribe_out, "transcribe_out", AndroidUtilities.m104dp(26), AndroidUtilities.m104dp(26));
         this.outIconDrawable = rLottieDrawable;
         rLottieDrawable.setCurrentFrame(0);
         this.outIconDrawable.setCallback(chatMessageCell);
@@ -122,7 +122,7 @@ public class TranscribeButton {
             }
         }, 19);
         this.outIconDrawable.setAllowDecodeSingleFrame(true);
-        RLottieDrawable rLottieDrawable2 = new RLottieDrawable(C3634R.raw.transcribe_in, "transcribe_in", AndroidUtilities.m104dp(26), AndroidUtilities.m104dp(26));
+        RLottieDrawable rLottieDrawable2 = new RLottieDrawable(C3632R.raw.transcribe_in, "transcribe_in", AndroidUtilities.m104dp(26), AndroidUtilities.m104dp(26));
         this.inIconDrawable = rLottieDrawable2;
         rLottieDrawable2.setCurrentFrame(0);
         this.inIconDrawable.setCallback(chatMessageCell);
@@ -632,7 +632,7 @@ public class TranscribeButton {
         public LoadingPointsDrawable(TextPaint textPaint) {
             this.paint = textPaint;
             float textSize = textPaint.getTextSize() * 0.89f;
-            RLottieDrawable rLottieDrawable = new RLottieDrawable(this, C3634R.raw.dots_loading, "dots_loading", (int) textSize, (int) (textSize * 1.25f)) { // from class: org.telegram.ui.Components.TranscribeButton.LoadingPointsDrawable.1
+            RLottieDrawable rLottieDrawable = new RLottieDrawable(this, C3632R.raw.dots_loading, "dots_loading", (int) textSize, (int) (textSize * 1.25f)) { // from class: org.telegram.ui.Components.TranscribeButton.LoadingPointsDrawable.1
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // org.telegram.p043ui.Components.RLottieDrawable
                 public boolean hasParentView() {

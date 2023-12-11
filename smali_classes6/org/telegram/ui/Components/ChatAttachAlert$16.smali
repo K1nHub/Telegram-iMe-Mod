@@ -245,7 +245,7 @@
 
     iget-object v7, p0, Lorg/telegram/ui/Components/ChatAttachAlert$16;->this$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
-    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBox:I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachCheckBoxBackground:I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/ChatAttachAlert;->access$14200(Lorg/telegram/ui/Components/ChatAttachAlert;I)I
 

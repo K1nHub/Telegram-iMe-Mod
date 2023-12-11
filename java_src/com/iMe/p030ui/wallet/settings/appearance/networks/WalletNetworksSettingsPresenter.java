@@ -259,12 +259,12 @@ public final class WalletNetworksSettingsPresenter extends BasePresenter<WalletN
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<? extends NetworkSettingsItem> list) {
-                m1807invoke(list);
+                m1809invoke(list);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1807invoke(List<? extends NetworkSettingsItem> it) {
+            public final void m1809invoke(List<? extends NetworkSettingsItem> it) {
                 List list;
                 List<NetworkSettingsItem> mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");

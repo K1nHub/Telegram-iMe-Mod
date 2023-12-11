@@ -5,7 +5,7 @@ import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum LINK uses external variables
@@ -60,12 +60,12 @@ public final class UsernameFragmentDialogAction {
     }
 
     static {
-        int i = C3634R.C3636drawable.msg_link2;
-        String internalString = LocaleController.getInternalString(C3634R.string.fragment_usernames_link);
+        int i = C3632R.C3634drawable.msg_link2;
+        String internalString = LocaleController.getInternalString(C3632R.string.fragment_usernames_link);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri….fragment_usernames_link)");
         LINK = new UsernameFragmentDialogAction("LINK", 0, i, internalString);
-        int i2 = C3634R.C3636drawable.fork_ic_donations_24;
-        String internalString2 = LocaleController.getInternalString(C3634R.string.fragment_usernames_buy);
+        int i2 = C3632R.C3634drawable.fork_ic_donations_24;
+        String internalString2 = LocaleController.getInternalString(C3632R.string.fragment_usernames_buy);
         Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.string.fragment_usernames_buy)");
         BUY = new UsernameFragmentDialogAction("BUY", 1, i2, internalString2);
         $VALUES = $values();

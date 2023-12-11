@@ -32,12 +32,12 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
     .locals 0
 
-    .line 10813
+    .line 10823
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$64;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/BlurredFrameLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
 
-    .line 10819
+    .line 10829
     new-instance p1, Lorg/telegram/ui/ChatActivity$64$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChatActivity$64$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$64;)V
@@ -50,7 +50,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)Z
     .locals 1
 
-    .line 10820
+    .line 10830
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result p1
@@ -67,7 +67,7 @@
 
     goto :goto_0
 
-    .line 10824
+    .line 10834
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$64;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -89,7 +89,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 3
 
-    .line 10864
+    .line 10874
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$64;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$31000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/PinnedLineView;
@@ -100,10 +100,10 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 10865
+    .line 10875
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 10866
+    .line 10876
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -116,7 +116,7 @@
 
     invoke-virtual {p1, v1, v1, v0, v2}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 10869
+    .line 10879
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$64;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -142,13 +142,13 @@
 
     goto :goto_0
 
-    .line 10875
+    .line 10885
     :cond_1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p3
 
-    .line 10876
+    .line 10886
     iget-object p4, p0, Lorg/telegram/ui/ChatActivity$64;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p4}, Lorg/telegram/ui/ChatActivity;->access$31000(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/PinnedLineView;
@@ -157,17 +157,17 @@
 
     if-ne p2, p4, :cond_3
 
-    .line 10877
+    .line 10887
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_1
 
-    .line 10870
+    .line 10880
     :cond_2
     :goto_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 10871
+    .line 10881
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -186,12 +186,12 @@
 
     invoke-virtual {p1, v1, v1, v0, v2}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 10872
+    .line 10882
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p3
 
-    .line 10873
+    .line 10883
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3
@@ -202,10 +202,10 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 10851
+    .line 10861
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 10852
+    .line 10862
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$64;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$30800(Lorg/telegram/ui/ChatActivity;)Z
@@ -218,7 +218,7 @@
 
     move p2, p1
 
-    .line 10853
+    .line 10863
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$64;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -230,7 +230,7 @@
 
     if-ge p2, v0, :cond_1
 
-    .line 10854
+    .line 10864
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$64;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$30900(Lorg/telegram/ui/ChatActivity;)[Landroid/animation/AnimatorSet;
@@ -241,7 +241,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 10855
+    .line 10865
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$64;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$30900(Lorg/telegram/ui/ChatActivity;)[Landroid/animation/AnimatorSet;
@@ -257,7 +257,7 @@
 
     goto :goto_0
 
-    .line 10858
+    .line 10868
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/ChatActivity$64;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -270,7 +270,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 10833
+    .line 10843
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1

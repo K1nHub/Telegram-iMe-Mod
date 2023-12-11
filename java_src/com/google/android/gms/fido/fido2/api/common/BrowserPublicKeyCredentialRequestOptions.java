@@ -36,7 +36,7 @@ public class BrowserPublicKeyCredentialRequestOptions extends BrowserRequestOpti
             jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: com.google.android.gms.fido.fido2.api.common.BrowserPublicKeyCredentialRequestOptions.zzb(byte[]):byte[]
             	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
             	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-            Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+            Caused by: java.lang.NullPointerException
             	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
             	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
             	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
@@ -59,7 +59,7 @@ public class BrowserPublicKeyCredentialRequestOptions extends BrowserRequestOpti
             jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: com.google.android.gms.fido.fido2.api.common.BrowserPublicKeyCredentialRequestOptions.zza(android.net.Uri):android.net.Uri
             	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
             	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-            Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+            Caused by: java.lang.NullPointerException
             	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
             	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
             	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
@@ -99,7 +99,7 @@ public class BrowserPublicKeyCredentialRequestOptions extends BrowserRequestOpti
     }
 
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        java.lang.NullPointerException
         	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
         	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
         	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
@@ -116,7 +116,7 @@ public class BrowserPublicKeyCredentialRequestOptions extends BrowserRequestOpti
     }
 
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        java.lang.NullPointerException
         	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
         	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
         	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)

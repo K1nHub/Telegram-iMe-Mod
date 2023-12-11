@@ -45,7 +45,7 @@ public final class AdnlConnection$timeout$1 extends SuspendLambda implements Fun
         AdnlConnection$timeout$1 adnlConnection$timeout$1;
         Function0 function0;
         AtomicRef atomicRef;
-        long m2124minus5sfh64U;
+        long m2126minus5sfh64U;
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -63,16 +63,16 @@ public final class AdnlConnection$timeout$1 extends SuspendLambda implements Fun
         do {
             try {
                 atomicRef = adnlConnection$timeout$1.this$0.lastActivity;
-                m2124minus5sfh64U = ((Instant) atomicRef.getValue()).m2126plusLRDsOJo(AdnlConnection.Companion.m5071getMAX_IDLE_TIMEUwyO8pc()).m2124minus5sfh64U(Clock$System.INSTANCE.now());
+                m2126minus5sfh64U = ((Instant) atomicRef.getValue()).m2128plusLRDsOJo(AdnlConnection.Companion.m5053getMAX_IDLE_TIMEUwyO8pc()).m2126minus5sfh64U(Clock$System.INSTANCE.now());
             } catch (Throwable unused2) {
             }
-            if (Duration.m2062compareToLRDsOJo(m2124minus5sfh64U, Duration.Companion.m2092getZEROUwyO8pc()) <= 0) {
+            if (Duration.m2064compareToLRDsOJo(m2126minus5sfh64U, Duration.Companion.m2094getZEROUwyO8pc()) <= 0) {
                 function0 = adnlConnection$timeout$1.this$0.onDone;
                 function0.invoke();
                 return Unit.INSTANCE;
             }
             adnlConnection$timeout$1.label = 1;
-        } while (DelayKt.m2094delayVtjQ1oo(m2124minus5sfh64U, adnlConnection$timeout$1) != coroutine_suspended);
+        } while (DelayKt.m2096delayVtjQ1oo(m2126minus5sfh64U, adnlConnection$timeout$1) != coroutine_suspended);
         return coroutine_suspended;
     }
 }

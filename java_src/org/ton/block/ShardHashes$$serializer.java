@@ -43,13 +43,13 @@ public final class ShardHashes$$serializer implements GeneratedSerializer<ShardH
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public /* bridge */ /* synthetic */ Object deserialize(Decoder decoder) {
-        return ShardHashes.m5180boximpl(m5188deserializenCYawEE(decoder));
+        return ShardHashes.m5162boximpl(m5170deserializenCYawEE(decoder));
     }
 
     /* renamed from: deserialize-nCYawEE  reason: not valid java name */
-    public HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5188deserializenCYawEE(Decoder decoder) {
+    public HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5170deserializenCYawEE(Decoder decoder) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
-        return ShardHashes.m5181constructorimpl((HashMapE) decoder.decodeInline(getDescriptor()).decodeSerializableValue(new SealedClassSerializer("org.ton.hashmap.HashMapE", Reflection.getOrCreateKotlinClass(HashMapE.class), new KClass[]{Reflection.getOrCreateKotlinClass(HmeEmpty.class), Reflection.getOrCreateKotlinClass(HmeRoot.class)}, new KSerializer[]{HmeEmpty.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), HmeRoot.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7596xdec07ac5("@type")})));
+        return ShardHashes.m5163constructorimpl((HashMapE) decoder.decodeInline(getDescriptor()).decodeSerializableValue(new SealedClassSerializer("org.ton.hashmap.HashMapE", Reflection.getOrCreateKotlinClass(HashMapE.class), new KClass[]{Reflection.getOrCreateKotlinClass(HmeEmpty.class), Reflection.getOrCreateKotlinClass(HmeRoot.class)}, new KSerializer[]{HmeEmpty.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), HmeRoot.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7594xdec07ac5("@type")})));
     }
 
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
@@ -59,18 +59,18 @@ public final class ShardHashes$$serializer implements GeneratedSerializer<ShardH
 
     @Override // kotlinx.serialization.SerializationStrategy
     public /* bridge */ /* synthetic */ void serialize(Encoder encoder, Object obj) {
-        m5189serializeZFAh1YI(encoder, ((ShardHashes) obj).m5187unboximpl());
+        m5171serializeZFAh1YI(encoder, ((ShardHashes) obj).m5169unboximpl());
     }
 
     /* renamed from: serialize-ZFAh1YI  reason: not valid java name */
-    public void m5189serializeZFAh1YI(Encoder encoder, HashMapE<CellRef<? extends BinTree<ShardDescr>>> value) {
+    public void m5171serializeZFAh1YI(Encoder encoder, HashMapE<CellRef<? extends BinTree<ShardDescr>>> value) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
         Intrinsics.checkNotNullParameter(value, "value");
         Encoder encodeInline = encoder.encodeInline(getDescriptor());
         if (encodeInline == null) {
             return;
         }
-        encodeInline.encodeSerializableValue(new SealedClassSerializer("org.ton.hashmap.HashMapE", Reflection.getOrCreateKotlinClass(HashMapE.class), new KClass[]{Reflection.getOrCreateKotlinClass(HmeEmpty.class), Reflection.getOrCreateKotlinClass(HmeRoot.class)}, new KSerializer[]{HmeEmpty.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), HmeRoot.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7596xdec07ac5("@type")}), value);
+        encodeInline.encodeSerializableValue(new SealedClassSerializer("org.ton.hashmap.HashMapE", Reflection.getOrCreateKotlinClass(HashMapE.class), new KClass[]{Reflection.getOrCreateKotlinClass(HmeEmpty.class), Reflection.getOrCreateKotlinClass(HmeRoot.class)}, new KSerializer[]{HmeEmpty.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), HmeRoot.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7594xdec07ac5("@type")}), value);
     }
 
     @Override // kotlinx.serialization.internal.GeneratedSerializer

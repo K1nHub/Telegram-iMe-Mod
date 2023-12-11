@@ -46,7 +46,7 @@
 .method static constructor <clinit>()V
     .locals 21
 
-    .line 139
+    .line 140
     new-instance v6, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     sget v3, Lorg/telegram/messenger/R$raw;->ic_download:I
@@ -71,7 +71,7 @@
 
     sput-object v6, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->SAVED_TO_DOWNLOADS:Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
-    .line 140
+    .line 141
     new-instance v0, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     sget v12, Lorg/telegram/messenger/R$raw;->ic_save_to_gallery:I
@@ -98,7 +98,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->SAVED_TO_GALLERY:Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
-    .line 141
+    .line 142
     new-instance v1, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     sget v18, Lorg/telegram/messenger/R$raw;->ic_save_to_music:I
@@ -119,7 +119,7 @@
 
     sput-object v1, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->SAVED_TO_MUSIC:Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
-    .line 142
+    .line 143
     new-instance v2, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     sget v10, Lorg/telegram/messenger/R$raw;->ic_save_to_gifs:I
@@ -162,7 +162,7 @@
 
     aput-object v2, v3, v0
 
-    .line 137
+    .line 138
     sput-object v3, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->$VALUES:[Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     return-void
@@ -178,16 +178,16 @@
         }
     .end annotation
 
-    .line 148
+    .line 149
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 149
+    .line 150
     iput p3, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->resId:I
 
-    .line 150
+    .line 151
     iput p4, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->paddingBottom:I
 
-    .line 151
+    .line 152
     iput-object p5, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->layers:[Ljava/lang/String;
 
     return-void
@@ -196,7 +196,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;)I
     .locals 0
 
-    .line 137
+    .line 138
     iget p0, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->resId:I
 
     return p0
@@ -205,7 +205,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;)[Ljava/lang/String;
     .locals 0
 
-    .line 137
+    .line 138
     iget-object p0, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->layers:[Ljava/lang/String;
 
     return-object p0
@@ -214,7 +214,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;)I
     .locals 0
 
-    .line 137
+    .line 138
     iget p0, p0, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->paddingBottom:I
 
     return p0
@@ -223,7 +223,7 @@
 .method public static valueOf(Ljava/lang/String;)Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
     .locals 1
 
-    .line 137
+    .line 138
     const-class v0, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -238,7 +238,7 @@
 .method public static values()[Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
     .locals 1
 
-    .line 137
+    .line 138
     sget-object v0, Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->$VALUES:[Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;
 
     invoke-virtual {v0}, [Lorg/telegram/ui/Components/BulletinFactory$FileType$Icon;->clone()Ljava/lang/Object;

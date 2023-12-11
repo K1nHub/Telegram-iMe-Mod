@@ -8,18 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
+
+.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda85;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda85;->f$1:Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda85;->f$1:Lorg/telegram/tgnet/TLObject;
+
+    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda85;->f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     return-void
 .end method
@@ -27,13 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda85;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda85;->f$1:Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda85;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$dXvtEp4bbp-xuYHMp8EaRnLWsbk(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;)V
+    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda85;->f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$RWZ3WBaUuEc4-NiGy9x35Qv5jzc(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
 
     return-void
 .end method

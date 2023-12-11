@@ -328,7 +328,7 @@ public final class ProtoBuf$ValueParameter extends GeneratedMessageLite.Extendab
 
         @Override // kotlin.reflect.jvm.internal.impl.protobuf.GeneratedMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo2049clone() {
+        public Builder mo2051clone() {
             return create().mergeFrom(buildPartial());
         }
 

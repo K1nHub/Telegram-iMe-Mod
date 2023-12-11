@@ -18,7 +18,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.RLottieImageView;
@@ -159,7 +159,7 @@ public final class FloatingActionButton extends FrameLayout {
         RLottieImageView iconView = getIconView();
         if (this.isLoading) {
             iconView.setAutoRepeat(true);
-            iconView.setAnimation(C3634R.raw.fork_state_progress, getLoadingAnimationSize(), getLoadingAnimationSize());
+            iconView.setAnimation(C3632R.raw.fork_state_progress, getLoadingAnimationSize(), getLoadingAnimationSize());
             iconView.playAnimation();
             return;
         }

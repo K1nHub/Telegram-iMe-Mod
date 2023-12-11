@@ -67,12 +67,12 @@ public final class WalletAccountSettingsPresenter extends BasePresenter<WalletAc
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
-                m1644invoke(cryptoEvent);
+                m1645invoke(cryptoEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1644invoke(DomainRxEvents.CryptoEvent it) {
+            public final void m1645invoke(DomainRxEvents.CryptoEvent it) {
                 CryptoAccessManager cryptoAccessManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.CryptoEvent cryptoEvent = it;

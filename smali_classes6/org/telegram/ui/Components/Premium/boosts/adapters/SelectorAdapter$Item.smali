@@ -36,12 +36,12 @@
 .method private constructor <init>(IZ)V
     .locals 0
 
-    .line 229
+    .line 241
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     const/4 p1, -0x1
 
-    .line 226
+    .line 238
     iput p1, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->padHeight:I
 
     return-void
@@ -50,7 +50,7 @@
 .method public static asCountry(Lorg/telegram/tgnet/TLRPC$TL_help_country;Z)Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
     .locals 3
 
-    .line 254
+    .line 266
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
 
     const/4 v1, 0x6
@@ -59,10 +59,10 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;-><init>(IZ)V
 
-    .line 255
+    .line 267
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->country:Lorg/telegram/tgnet/TLRPC$TL_help_country;
 
-    .line 256
+    .line 268
     iput-boolean p1, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->checked:Z
 
     return-object v0
@@ -71,7 +71,7 @@
 .method public static asLetter(Ljava/lang/String;)Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
     .locals 3
 
-    .line 248
+    .line 260
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
 
     const/4 v1, 0x7
@@ -80,7 +80,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;-><init>(IZ)V
 
-    .line 249
+    .line 261
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->text:Ljava/lang/String;
 
     return-object v0
@@ -89,7 +89,7 @@
 .method public static asNoUsers()Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
     .locals 3
 
-    .line 279
+    .line 291
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
 
     const/4 v1, 0x5
@@ -104,7 +104,7 @@
 .method public static asPad(I)Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
     .locals 3
 
-    .line 233
+    .line 245
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
 
     const/4 v1, -0x1
@@ -113,7 +113,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;-><init>(IZ)V
 
-    .line 234
+    .line 246
     iput p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->padHeight:I
 
     return-object v0
@@ -122,7 +122,7 @@
 .method public static asPeer(Lorg/telegram/tgnet/TLRPC$InputPeer;Z)Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
     .locals 3
 
-    .line 261
+    .line 273
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
 
     const/4 v1, 0x3
@@ -131,18 +131,18 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;-><init>(IZ)V
 
-    .line 262
+    .line 274
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     const/4 p0, 0x0
 
-    .line 263
+    .line 275
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->user:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 264
+    .line 276
     iput-object p0, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 265
+    .line 277
     iput-boolean p1, v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->checked:Z
 
     return-object v0
@@ -164,7 +164,7 @@
 
     if-eqz p1, :cond_9
 
-    .line 285
+    .line 297
     const-class v2, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -175,11 +175,11 @@
 
     goto :goto_0
 
-    .line 286
+    .line 298
     :cond_1
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
 
-    .line 287
+    .line 299
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -193,7 +193,7 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 290
+    .line 302
     iget v3, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->padHeight:I
 
     iget v4, p1, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->padHeight:I
@@ -207,7 +207,7 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 292
+    .line 304
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-object v4, p1, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->user:Lorg/telegram/tgnet/TLRPC$User;
@@ -246,7 +246,7 @@
 
     if-ne v2, v3, :cond_7
 
-    .line 294
+    .line 306
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->country:Lorg/telegram/tgnet/TLRPC$TL_help_country;
 
     iget-object v4, p1, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->country:Lorg/telegram/tgnet/TLRPC$TL_help_country;
@@ -267,7 +267,7 @@
 
     if-ne v2, v3, :cond_8
 
-    .line 296
+    .line 308
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->text:Ljava/lang/String;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->text:Ljava/lang/String;

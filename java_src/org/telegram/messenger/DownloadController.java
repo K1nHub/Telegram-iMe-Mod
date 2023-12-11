@@ -119,7 +119,7 @@ public class DownloadController extends BaseController implements NotificationCe
         public long[] sizes;
 
         public Preset(int[] iArr, long j, long j2, long j3, boolean z, boolean z2, boolean z3, boolean z4, int i, boolean z5) {
-            int[] iArr2 = new int[5];
+            int[] iArr2 = new int[4];
             this.mask = iArr2;
             this.sizes = new long[4];
             System.arraycopy(iArr, 0, iArr2, 0, Math.max(iArr.length, iArr2.length));
@@ -138,7 +138,7 @@ public class DownloadController extends BaseController implements NotificationCe
 
         public Preset(String str, String str2) {
             String[] split;
-            this.mask = new int[5];
+            this.mask = new int[4];
             this.sizes = new long[4];
             String[] split2 = str.split("_");
             if (split2.length >= 11) {
@@ -1452,7 +1452,7 @@ public class DownloadController extends BaseController implements NotificationCe
         if (z) {
             getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.onDownloadingFilesChanged, new Object[0]);
             if (i == 0) {
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.formatString("MessageNotFound", C3634R.string.MessageNotFound, new Object[0]));
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.formatString("MessageNotFound", C3632R.string.MessageNotFound, new Object[0]));
             } else if (i == -1) {
                 LaunchActivity.checkFreeDiscSpaceStatic(2);
             }

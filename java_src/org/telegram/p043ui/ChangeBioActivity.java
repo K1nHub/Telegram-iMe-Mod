@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.AlertsCreator;
@@ -57,13 +57,13 @@ public class ChangeBioActivity extends BaseFragment {
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
         String str;
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        int i = C3634R.string.UserBio;
-        c3706ActionBar.setTitle(LocaleController.getString("UserBio", i));
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChangeBioActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        int i = C3632R.string.UserBio;
+        c3704ActionBar.setTitle(LocaleController.getString("UserBio", i));
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChangeBioActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     ChangeBioActivity.this.finishFragment();
@@ -72,9 +72,9 @@ public class ChangeBioActivity extends BaseFragment {
                 }
             }
         });
-        ActionBarMenuItem addItemWithWidth = this.actionBar.createMenu().addItemWithWidth(1, C3634R.C3636drawable.ic_ab_done, AndroidUtilities.m104dp(56));
+        ActionBarMenuItem addItemWithWidth = this.actionBar.createMenu().addItemWithWidth(1, C3632R.C3634drawable.ic_ab_done, AndroidUtilities.m104dp(56));
         this.doneButton = addItemWithWidth;
-        addItemWithWidth.setContentDescription(LocaleController.getString("Done", C3634R.string.Done));
+        addItemWithWidth.setContentDescription(LocaleController.getString("Done", C3632R.string.Done));
         LinearLayout linearLayout = new LinearLayout(context);
         this.fragmentView = linearLayout;
         LinearLayout linearLayout2 = linearLayout;
@@ -172,7 +172,7 @@ public class ChangeBioActivity extends BaseFragment {
         this.helpTextView.setTextSize(1, 15.0f);
         this.helpTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText8));
         this.helpTextView.setGravity(LocaleController.isRTL ? 5 : 3);
-        this.helpTextView.setText(AndroidUtilities.replaceTags(LocaleController.getString("UserBioInfo", C3634R.string.UserBioInfo)));
+        this.helpTextView.setText(AndroidUtilities.replaceTags(LocaleController.getString("UserBioInfo", C3632R.string.UserBioInfo)));
         linearLayout2.addView(this.helpTextView, LayoutHelper.createLinear(-2, -2, LocaleController.isRTL ? 5 : 3, 24, 10, 24, 0));
         TLRPC$UserFull userFull = MessagesController.getInstance(this.currentAccount).getUserFull(UserConfig.getInstance(this.currentAccount).getClientUserId());
         if (userFull != null && (str = userFull.about) != null) {

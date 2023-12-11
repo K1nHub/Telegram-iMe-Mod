@@ -317,17 +317,17 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f2178wallet;
+        public final Wallet f2179wallet;
 
         CreateNewWalletCommand(CreateWalletView$$State createWalletView$$State, Wallet wallet2, String str) {
             super("createNewWallet", OneExecutionStateStrategy.class);
-            this.f2178wallet = wallet2;
+            this.f2179wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletView createWalletView) {
-            createWalletView.createNewWallet(this.f2178wallet, this.password);
+            createWalletView.createNewWallet(this.f2179wallet, this.password);
         }
     }
 
@@ -338,17 +338,17 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f2177wallet;
+        public final Wallet f2178wallet;
 
         AddNewWalletCommand(CreateWalletView$$State createWalletView$$State, Wallet wallet2, String str) {
             super("addNewWallet", OneExecutionStateStrategy.class);
-            this.f2177wallet = wallet2;
+            this.f2178wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletView createWalletView) {
-            createWalletView.addNewWallet(this.f2177wallet, this.password);
+            createWalletView.addNewWallet(this.f2178wallet, this.password);
         }
     }
 

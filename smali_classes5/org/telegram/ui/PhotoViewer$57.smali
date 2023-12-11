@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 10924
+    .line 10926
     iput-object v0, v11, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     move-object v0, p0
@@ -61,7 +61,7 @@
 .method protected didSetAnimatedSticker(Lorg/telegram/ui/Components/RLottieDrawable;)V
     .locals 6
 
-    .line 10963
+    .line 10965
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -72,7 +72,7 @@
 
     return-void
 
-    .line 10966
+    .line 10968
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -117,7 +117,7 @@
 .method protected getPKeyboardHeight()I
     .locals 1
 
-    .line 10941
+    .line 10943
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
@@ -126,7 +126,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 10942
+    .line 10944
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
@@ -148,7 +148,7 @@
 .method protected onEmojiViewCloseByClick()V
     .locals 1
 
-    .line 10949
+    .line 10951
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
@@ -157,7 +157,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 10950
+    .line 10952
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
@@ -173,7 +173,7 @@
 .method protected onOpenCloseStickersAlert(Z)V
     .locals 2
 
-    .line 10927
+    .line 10929
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -184,7 +184,7 @@
 
     return-void
 
-    .line 10930
+    .line 10932
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -192,14 +192,14 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$2702(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 10931
+    .line 10933
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$2800(Lorg/telegram/ui/PhotoViewer;)V
 
     if-eqz p1, :cond_1
 
-    .line 10933
+    .line 10935
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -210,7 +210,7 @@
 
     goto :goto_0
 
-    .line 10935
+    .line 10937
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -227,7 +227,7 @@
 .method protected onTextAdd()V
     .locals 1
 
-    .line 10971
+    .line 10973
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6600(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/FrameLayout;
@@ -242,7 +242,7 @@
 .method protected updateKeyboard()V
     .locals 1
 
-    .line 10956
+    .line 10958
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
@@ -251,7 +251,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 10957
+    .line 10959
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$57;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$24700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;

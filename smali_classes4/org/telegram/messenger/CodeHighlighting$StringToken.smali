@@ -30,28 +30,28 @@
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 1
 
-    .line 541
+    .line 531
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 542
+    .line 532
     iput-boolean v0, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->token:Z
 
-    .line 543
+    .line 533
     iput p1, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->group:I
 
-    .line 544
+    .line 534
     iput-object p2, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->string:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 545
+    .line 535
     iput-object p1, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->inside:Lorg/telegram/messenger/CodeHighlighting$LinkedList;
 
     const/4 p1, 0x0
 
-    .line 546
+    .line 536
     iput p1, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->insideLength:I
 
     return-void
@@ -60,26 +60,26 @@
 .method public constructor <init>(ILorg/telegram/messenger/CodeHighlighting$LinkedList;I)V
     .locals 1
 
-    .line 548
+    .line 538
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 549
+    .line 539
     iput-boolean v0, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->token:Z
 
-    .line 550
+    .line 540
     iput p1, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->group:I
 
     const/4 p1, 0x0
 
-    .line 551
+    .line 541
     iput-object p1, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->string:Ljava/lang/String;
 
-    .line 552
+    .line 542
     iput-object p2, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->inside:Lorg/telegram/messenger/CodeHighlighting$LinkedList;
 
-    .line 553
+    .line 543
     iput p3, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->insideLength:I
 
     return-void
@@ -88,28 +88,28 @@
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 2
 
-    .line 555
+    .line 545
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 556
+    .line 546
     iput-boolean v0, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->token:Z
 
     const/4 v1, -0x1
 
-    .line 557
+    .line 547
     iput v1, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->group:I
 
-    .line 558
+    .line 548
     iput-object p1, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->string:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 559
+    .line 549
     iput-object p1, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->inside:Lorg/telegram/messenger/CodeHighlighting$LinkedList;
 
-    .line 560
+    .line 550
     iput v0, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->insideLength:I
 
     return-void
@@ -120,19 +120,19 @@
 .method public length()I
     .locals 1
 
-    .line 564
+    .line 554
     iget-object v0, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->string:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
-    .line 565
+    .line 555
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v0
 
     return v0
 
-    .line 567
+    .line 557
     :cond_0
     iget v0, p0, Lorg/telegram/messenger/CodeHighlighting$StringToken;->insideLength:I
 

@@ -220,6 +220,15 @@
 
 
 # virtual methods
+.method public getCheckBox()Lorg/telegram/ui/Components/CheckBoxSquare;
+    .locals 1
+
+    .line 50
+    iget-object v0, p0, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;->checkBox:Lorg/telegram/ui/Components/CheckBoxSquare;
+
+    return-object v0
+.end method
+
 .method public getTextView()Landroid/widget/TextView;
     .locals 1
 
@@ -232,18 +241,18 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 59
+    .line 63
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 61
+    .line 65
     iget-object v0, p0, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     if-eqz v0, :cond_1
 
-    .line 62
+    .line 66
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 63
+    .line 67
     iget-object v0, p0, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLeft()I
@@ -262,7 +271,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 64
+    .line 68
     iget-object v0, p0, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;->links:Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->draw(Landroid/graphics/Canvas;)Z
@@ -271,10 +280,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 65
+    .line 69
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 67
+    .line 71
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -285,7 +294,7 @@
 .method public setChecked(Z)V
     .locals 2
 
-    .line 54
+    .line 58
     iget-object v0, p0, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;->checkBox:Lorg/telegram/ui/Components/CheckBoxSquare;
 
     const/4 v1, 0x1
@@ -298,7 +307,7 @@
 .method public setText(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 50
+    .line 54
     iget-object v0, p0, Lorg/telegram/ui/Cells/RecurrentPaymentsAcceptCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V

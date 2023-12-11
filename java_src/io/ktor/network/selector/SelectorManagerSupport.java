@@ -131,7 +131,7 @@ public abstract class SelectorManagerSupport implements SelectorManager {
             for (int i = 0; i < length; i++) {
                 if ((flags[i] & readyOps) != 0 && (removeSuspension = suspensions.removeSuspension(i)) != null) {
                     Result.Companion companion = Result.Companion;
-                    removeSuspension.resumeWith(Result.m1940constructorimpl(Unit.INSTANCE));
+                    removeSuspension.resumeWith(Result.m1942constructorimpl(Unit.INSTANCE));
                 }
             }
             int i2 = (~readyOps) & interestOps;
@@ -188,7 +188,7 @@ public abstract class SelectorManagerSupport implements SelectorManager {
             CancellableContinuation<Unit> removeSuspension = suspensions.removeSuspension(selectInterest);
             if (removeSuspension != null) {
                 Result.Companion companion = Result.Companion;
-                removeSuspension.resumeWith(Result.m1940constructorimpl(ResultKt.createFailure(cause)));
+                removeSuspension.resumeWith(Result.m1942constructorimpl(ResultKt.createFailure(cause)));
             }
         }
     }

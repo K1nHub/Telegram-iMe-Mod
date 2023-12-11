@@ -321,8 +321,8 @@ public final class UtilKt {
                 KClassValue.Value.NormalClass normalClass = (KClassValue.Value.NormalClass) value2;
                 return loadClass(classLoader, normalClass.getClassId(), normalClass.getArrayDimensions());
             } else if (value2 instanceof KClassValue.Value.LocalClass) {
-                ClassifierDescriptor mo2051getDeclarationDescriptor = ((KClassValue.Value.LocalClass) value2).getType().getConstructor().mo2051getDeclarationDescriptor();
-                ClassDescriptor classDescriptor = mo2051getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2051getDeclarationDescriptor : null;
+                ClassifierDescriptor mo2053getDeclarationDescriptor = ((KClassValue.Value.LocalClass) value2).getType().getConstructor().mo2053getDeclarationDescriptor();
+                ClassDescriptor classDescriptor = mo2053getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2053getDeclarationDescriptor : null;
                 if (classDescriptor != null) {
                     return toJavaClass(classDescriptor);
                 }

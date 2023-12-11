@@ -50,7 +50,7 @@ import timber.log.Timber;
 /* loaded from: classes4.dex */
 public final class ViewExtKt {
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        java.lang.NullPointerException
         	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
         	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
         	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)

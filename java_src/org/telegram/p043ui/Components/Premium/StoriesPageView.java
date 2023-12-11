@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -47,13 +47,13 @@ public class StoriesPageView extends BaseListPageView {
         super(context, resourcesProvider);
         this.items = new ArrayList<>();
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new Item(this, 1, C3634R.C3636drawable.msg_stories_order, LocaleController.getString("PremiumStoriesPriority", C3634R.string.PremiumStoriesPriority), LocaleController.getString("PremiumStoriesPriorityDescription", C3634R.string.PremiumStoriesPriorityDescription), 20));
-        arrayList.add(new Item(this, 1, C3634R.C3636drawable.msg_stories_stealth, LocaleController.getString("PremiumStoriesStealth", C3634R.string.PremiumStoriesStealth), LocaleController.getString("PremiumStoriesStealthDescription", C3634R.string.PremiumStoriesStealthDescription), 15));
-        arrayList.add(new Item(this, 1, C3634R.C3636drawable.msg_stories_views, LocaleController.getString("PremiumStoriesViews", C3634R.string.PremiumStoriesViews), LocaleController.getString("PremiumStoriesViewsDescription", C3634R.string.PremiumStoriesViewsDescription), 16));
-        arrayList.add(new Item(this, 1, C3634R.C3636drawable.msg_stories_timer, LocaleController.getString("PremiumStoriesExpiration", C3634R.string.PremiumStoriesExpiration), LocaleController.getString("PremiumStoriesExpirationDescription", C3634R.string.PremiumStoriesExpirationDescription), 17));
-        arrayList.add(new Item(this, 1, C3634R.C3636drawable.msg_stories_save, LocaleController.getString("PremiumStoriesSaveToGallery", C3634R.string.PremiumStoriesSaveToGallery), LocaleController.getString("PremiumStoriesSaveToGalleryDescription", C3634R.string.PremiumStoriesSaveToGalleryDescription), 18));
-        arrayList.add(new Item(this, 1, C3634R.C3636drawable.msg_stories_caption, LocaleController.getString("PremiumStoriesCaption", C3634R.string.PremiumStoriesCaption), LocaleController.getString("PremiumStoriesCaptionDescription", C3634R.string.PremiumStoriesCaptionDescription), 21));
-        arrayList.add(new Item(this, 1, C3634R.C3636drawable.msg_stories_link, LocaleController.getString("PremiumStoriesFormatting", C3634R.string.PremiumStoriesFormatting), LocaleController.getString("PremiumStoriesFormattingDescription", C3634R.string.PremiumStoriesFormattingDescription), 19));
+        arrayList.add(new Item(this, 1, C3632R.C3634drawable.msg_stories_order, LocaleController.getString("PremiumStoriesPriority", C3632R.string.PremiumStoriesPriority), LocaleController.getString("PremiumStoriesPriorityDescription", C3632R.string.PremiumStoriesPriorityDescription), 20));
+        arrayList.add(new Item(this, 1, C3632R.C3634drawable.msg_stories_stealth, LocaleController.getString("PremiumStoriesStealth", C3632R.string.PremiumStoriesStealth), LocaleController.getString("PremiumStoriesStealthDescription", C3632R.string.PremiumStoriesStealthDescription), 15));
+        arrayList.add(new Item(this, 1, C3632R.C3634drawable.msg_stories_views, LocaleController.getString("PremiumStoriesViews", C3632R.string.PremiumStoriesViews), LocaleController.getString("PremiumStoriesViewsDescription", C3632R.string.PremiumStoriesViewsDescription), 16));
+        arrayList.add(new Item(this, 1, C3632R.C3634drawable.msg_stories_timer, LocaleController.getString("PremiumStoriesExpiration", C3632R.string.PremiumStoriesExpiration), LocaleController.getString("PremiumStoriesExpirationDescription", C3632R.string.PremiumStoriesExpirationDescription), 17));
+        arrayList.add(new Item(this, 1, C3632R.C3634drawable.msg_stories_save, LocaleController.getString("PremiumStoriesSaveToGallery", C3632R.string.PremiumStoriesSaveToGallery), LocaleController.getString("PremiumStoriesSaveToGalleryDescription", C3632R.string.PremiumStoriesSaveToGalleryDescription), 18));
+        arrayList.add(new Item(this, 1, C3632R.C3634drawable.msg_stories_caption, LocaleController.getString("PremiumStoriesCaption", C3632R.string.PremiumStoriesCaption), LocaleController.getString("PremiumStoriesCaptionDescription", C3632R.string.PremiumStoriesCaptionDescription), 21));
+        arrayList.add(new Item(this, 1, C3632R.C3634drawable.msg_stories_link, LocaleController.getString("PremiumStoriesFormatting", C3632R.string.PremiumStoriesFormatting), LocaleController.getString("PremiumStoriesFormattingDescription", C3632R.string.PremiumStoriesFormattingDescription), 19));
         final MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
         Collections.sort(arrayList, new Comparator() { // from class: org.telegram.ui.Components.Premium.StoriesPageView$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
@@ -171,7 +171,7 @@ public class StoriesPageView extends BaseListPageView {
             textView.setTextSize(1, 20.0f);
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, storiesPageView.resourcesProvider));
-            textView.setText(LocaleController.getString("UpgradedStories", C3634R.string.UpgradedStories));
+            textView.setText(LocaleController.getString("UpgradedStories", C3632R.string.UpgradedStories));
             addView(textView, LayoutHelper.createFrame(-2, -2, 1, 0, 111, 0, 0));
             GradientTools gradientTools = this.gradientTools;
             gradientTools.isLinear = true;

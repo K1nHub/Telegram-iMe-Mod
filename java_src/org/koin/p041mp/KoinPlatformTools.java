@@ -68,7 +68,7 @@ public final class KoinPlatformTools {
     }
 
     /* renamed from: synchronized  reason: not valid java name */
-    public final <R> R m2169synchronized(Object lock, Function0<? extends R> block) {
+    public final <R> R m2171synchronized(Object lock, Function0<? extends R> block) {
         R invoke;
         Intrinsics.checkNotNullParameter(lock, "lock");
         Intrinsics.checkNotNullParameter(block, "block");

@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class MemoryJvmKt {
     /* renamed from: copyTo-9zorpBc  reason: not valid java name */
-    public static final void m1915copyTo9zorpBc(ByteBuffer copyTo, byte[] destination, int i, int i2, int i3) {
+    public static final void m1917copyTo9zorpBc(ByteBuffer copyTo, byte[] destination, int i, int i2, int i3) {
         Intrinsics.checkNotNullParameter(copyTo, "$this$copyTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         if (copyTo.hasArray() && !copyTo.isReadOnly()) {
@@ -19,7 +19,7 @@ public final class MemoryJvmKt {
     }
 
     /* renamed from: copyTo-62zg_DM  reason: not valid java name */
-    public static final void m1914copyTo62zg_DM(ByteBuffer copyTo, ByteBuffer destination, int i) {
+    public static final void m1916copyTo62zg_DM(ByteBuffer copyTo, ByteBuffer destination, int i) {
         Intrinsics.checkNotNullParameter(copyTo, "$this$copyTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         int remaining = destination.remaining();
@@ -36,7 +36,7 @@ public final class MemoryJvmKt {
     }
 
     /* renamed from: copyTo-SG11BkQ  reason: not valid java name */
-    public static final void m1916copyToSG11BkQ(ByteBuffer copyTo, ByteBuffer destination, int i) {
+    public static final void m1918copyToSG11BkQ(ByteBuffer copyTo, ByteBuffer destination, int i) {
         Intrinsics.checkNotNullParameter(copyTo, "$this$copyTo");
         Intrinsics.checkNotNullParameter(destination, "destination");
         if (copyTo.hasArray() && !copyTo.isReadOnly()) {
@@ -46,7 +46,7 @@ public final class MemoryJvmKt {
             int remaining = copyTo.remaining();
             ByteBuffer order = ByteBuffer.wrap(array, arrayOffset, remaining).slice().order(ByteOrder.BIG_ENDIAN);
             Intrinsics.checkNotNullExpressionValue(order, "wrap(this, offset, lengt…der(ByteOrder.BIG_ENDIAN)");
-            Memory.m1911copyToJT6ljtQ(Memory.m1910constructorimpl(order), destination, 0, remaining, i);
+            Memory.m1913copyToJT6ljtQ(Memory.m1912constructorimpl(order), destination, 0, remaining, i);
             copyTo.position(copyTo.limit());
             return;
         }

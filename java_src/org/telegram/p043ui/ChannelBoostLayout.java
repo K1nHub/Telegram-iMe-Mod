@@ -24,7 +24,7 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
@@ -134,9 +134,9 @@ public class ChannelBoostLayout extends FrameLayout {
                         frameLayout = linkActionView;
                         break;
                     case 4:
-                        LimitPreviewView limitPreviewView = new LimitPreviewView(ChannelBoostLayout.this.getContext(), C3634R.C3636drawable.filled_limit_boost, 0, 0, ChannelBoostLayout.this.resourcesProvider);
+                        LimitPreviewView limitPreviewView = new LimitPreviewView(ChannelBoostLayout.this.getContext(), C3632R.C3634drawable.filled_limit_boost, 0, 0, ChannelBoostLayout.this.resourcesProvider);
                         limitPreviewView.isStatistic = true;
-                        CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(ChannelBoostLayout.this.getContext(), C3634R.C3636drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, ChannelBoostLayout.this.resourcesProvider)), 0, 0);
+                        CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(ChannelBoostLayout.this.getContext(), C3632R.C3634drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, ChannelBoostLayout.this.resourcesProvider)), 0, 0);
                         combinedDrawable.setFullsize(true);
                         limitPreviewView.setPadding(0, AndroidUtilities.m104dp(20), 0, AndroidUtilities.m104dp(20));
                         limitPreviewView.setBackground(combinedDrawable);
@@ -148,7 +148,7 @@ public class ChannelBoostLayout extends FrameLayout {
                         break;
                     case 6:
                         View textInfoPrivacyCell = new TextInfoPrivacyCell(viewGroup.getContext(), 20, ChannelBoostLayout.this.resourcesProvider);
-                        CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(ChannelBoostLayout.this.getContext(), C3634R.C3636drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, ChannelBoostLayout.this.resourcesProvider)), 0, 0);
+                        CombinedDrawable combinedDrawable2 = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawable(ChannelBoostLayout.this.getContext(), C3632R.C3634drawable.greydivider, Theme.getColor(Theme.key_windowBackgroundGrayShadow, ChannelBoostLayout.this.resourcesProvider)), 0, 0);
                         combinedDrawable2.setFullsize(true);
                         textInfoPrivacyCell.setBackground(combinedDrawable2);
                         frameLayout = textInfoPrivacyCell;
@@ -165,7 +165,7 @@ public class ChannelBoostLayout extends FrameLayout {
                             }
                         };
                         TextView textView = new TextView(ChannelBoostLayout.this.getContext());
-                        textView.setText(LocaleController.getString("NoBoostersHint", C3634R.string.NoBoostersHint));
+                        textView.setText(LocaleController.getString("NoBoostersHint", C3632R.string.NoBoostersHint));
                         textView.setTextSize(1, 14.0f);
                         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
                         textView.setGravity(17);
@@ -184,7 +184,7 @@ public class ChannelBoostLayout extends FrameLayout {
                         break;
                     case 10:
                         TextCell textCell = new TextCell(ChannelBoostLayout.this.getContext());
-                        textCell.setTextAndIcon(LocaleController.formatString("BoostingGetBoostsViaGifts", C3634R.string.BoostingGetBoostsViaGifts, new Object[0]), C3634R.C3636drawable.msg_gift_premium, false);
+                        textCell.setTextAndIcon(LocaleController.formatString("BoostingGetBoostsViaGifts", C3632R.string.BoostingGetBoostsViaGifts, new Object[0]), C3632R.C3634drawable.msg_gift_premium, false);
                         textCell.offsetFromImage = 64;
                         int i2 = Theme.key_windowBackgroundWhiteBlueText4;
                         textCell.setColors(i2, i2);
@@ -259,28 +259,28 @@ public class ChannelBoostLayout extends FrameLayout {
                     }
                 } else if (viewHolder.getItemViewType() == 0) {
                     StatisticActivity.OverviewCell overviewCell = (StatisticActivity.OverviewCell) viewHolder.itemView;
-                    overviewCell.setData(0, Integer.toString(ChannelBoostLayout.this.boostsStatus.level), null, LocaleController.getString("BoostsLevel2", C3634R.string.BoostsLevel2));
+                    overviewCell.setData(0, Integer.toString(ChannelBoostLayout.this.boostsStatus.level), null, LocaleController.getString("BoostsLevel2", C3632R.string.BoostsLevel2));
                     TLRPC$TL_statsPercentValue tLRPC$TL_statsPercentValue = ChannelBoostLayout.this.boostsStatus.premium_audience;
                     if (tLRPC$TL_statsPercentValue != null) {
                         if (tLRPC$TL_statsPercentValue.total != 0.0d) {
-                            overviewCell.setData(1, "~" + ((int) ChannelBoostLayout.this.boostsStatus.premium_audience.part), String.format(Locale.US, "%.1f", Float.valueOf((((float) tLRPC$TL_statsPercentValue.part) / ((float) d)) * 100.0f)) + "%", LocaleController.getString("PremiumSubscribers", C3634R.string.PremiumSubscribers));
-                            overviewCell.setData(2, String.valueOf(ChannelBoostLayout.this.boostsStatus.boosts), null, LocaleController.getString("BoostsExisting", C3634R.string.BoostsExisting));
+                            overviewCell.setData(1, "~" + ((int) ChannelBoostLayout.this.boostsStatus.premium_audience.part), String.format(Locale.US, "%.1f", Float.valueOf((((float) tLRPC$TL_statsPercentValue.part) / ((float) d)) * 100.0f)) + "%", LocaleController.getString("PremiumSubscribers", C3632R.string.PremiumSubscribers));
+                            overviewCell.setData(2, String.valueOf(ChannelBoostLayout.this.boostsStatus.boosts), null, LocaleController.getString("BoostsExisting", C3632R.string.BoostsExisting));
                             TL_stories$TL_premium_boostsStatus tL_stories$TL_premium_boostsStatus = ChannelBoostLayout.this.boostsStatus;
-                            overviewCell.setData(3, String.valueOf(Math.max(0, tL_stories$TL_premium_boostsStatus.next_level_boosts - tL_stories$TL_premium_boostsStatus.boosts)), null, LocaleController.getString("BoostsToLevel", C3634R.string.BoostsToLevel));
+                            overviewCell.setData(3, String.valueOf(Math.max(0, tL_stories$TL_premium_boostsStatus.next_level_boosts - tL_stories$TL_premium_boostsStatus.boosts)), null, LocaleController.getString("BoostsToLevel", C3632R.string.BoostsToLevel));
                         }
                     }
-                    overviewCell.setData(1, "~0", "0%", LocaleController.getString("PremiumSubscribers", C3634R.string.PremiumSubscribers));
-                    overviewCell.setData(2, String.valueOf(ChannelBoostLayout.this.boostsStatus.boosts), null, LocaleController.getString("BoostsExisting", C3634R.string.BoostsExisting));
+                    overviewCell.setData(1, "~0", "0%", LocaleController.getString("PremiumSubscribers", C3632R.string.PremiumSubscribers));
+                    overviewCell.setData(2, String.valueOf(ChannelBoostLayout.this.boostsStatus.boosts), null, LocaleController.getString("BoostsExisting", C3632R.string.BoostsExisting));
                     TL_stories$TL_premium_boostsStatus tL_stories$TL_premium_boostsStatus2 = ChannelBoostLayout.this.boostsStatus;
-                    overviewCell.setData(3, String.valueOf(Math.max(0, tL_stories$TL_premium_boostsStatus2.next_level_boosts - tL_stories$TL_premium_boostsStatus2.boosts)), null, LocaleController.getString("BoostsToLevel", C3634R.string.BoostsToLevel));
+                    overviewCell.setData(3, String.valueOf(Math.max(0, tL_stories$TL_premium_boostsStatus2.next_level_boosts - tL_stories$TL_premium_boostsStatus2.boosts)), null, LocaleController.getString("BoostsToLevel", C3632R.string.BoostsToLevel));
                 } else if (viewHolder.getItemViewType() == 5) {
                     TL_stories$TL_boost tL_stories$TL_boost = ((ItemInternal) ChannelBoostLayout.this.items.get(i)).booster;
                     TLRPC$User user = MessagesController.getInstance(ChannelBoostLayout.this.currentAccount).getUser(Long.valueOf(tL_stories$TL_boost.user_id));
                     GiftedUserCell giftedUserCell = (GiftedUserCell) viewHolder.itemView;
                     if (tL_stories$TL_boost.multiplier > 1) {
-                        formatString = LocaleController.formatString("BoostsExpireOn", C3634R.string.BoostsExpireOn, LocaleController.formatDate(tL_stories$TL_boost.expires));
+                        formatString = LocaleController.formatString("BoostsExpireOn", C3632R.string.BoostsExpireOn, LocaleController.formatDate(tL_stories$TL_boost.expires));
                     } else {
-                        formatString = LocaleController.formatString("BoostExpireOn", C3634R.string.BoostExpireOn, LocaleController.formatDate(tL_stories$TL_boost.expires));
+                        formatString = LocaleController.formatString("BoostExpireOn", C3632R.string.BoostExpireOn, LocaleController.formatDate(tL_stories$TL_boost.expires));
                     }
                     giftedUserCell.setData(user, ContactsController.formatName(user), formatString, 0, !((ItemInternal) ChannelBoostLayout.this.items.get(i)).isLast);
                     giftedUserCell.setStatus(tL_stories$TL_boost);
@@ -290,16 +290,16 @@ public class ChannelBoostLayout extends FrameLayout {
                 } else if (viewHolder.getItemViewType() == 9) {
                     ManageChatTextCell manageChatTextCell = (ManageChatTextCell) viewHolder.itemView;
                     if (ChannelBoostLayout.this.selectedTab == 0) {
-                        manageChatTextCell.setText(LocaleController.formatPluralString("BoostingShowMoreBoosts", ChannelBoostLayout.this.nextBoostRemaining, new Object[0]), null, C3634R.C3636drawable.arrow_more, false);
+                        manageChatTextCell.setText(LocaleController.formatPluralString("BoostingShowMoreBoosts", ChannelBoostLayout.this.nextBoostRemaining, new Object[0]), null, C3632R.C3634drawable.arrow_more, false);
                     } else {
-                        manageChatTextCell.setText(LocaleController.formatPluralString("BoostingShowMoreGifts", ChannelBoostLayout.this.nextGiftsRemaining, new Object[0]), null, C3634R.C3636drawable.arrow_more, false);
+                        manageChatTextCell.setText(LocaleController.formatPluralString("BoostingShowMoreGifts", ChannelBoostLayout.this.nextGiftsRemaining, new Object[0]), null, C3632R.C3634drawable.arrow_more, false);
                     }
                 } else if (viewHolder.getItemViewType() == 3) {
                     ((LinkActionView) viewHolder.itemView).setLink(((ItemInternal) ChannelBoostLayout.this.items.get(i)).title);
                 } else if (viewHolder.getItemViewType() == 11) {
                     TL_stories$TL_prepaidGiveaway tL_stories$TL_prepaidGiveaway = ((ItemInternal) ChannelBoostLayout.this.items.get(i)).prepaidGiveaway;
                     GiveawayCell giveawayCell = (GiveawayCell) viewHolder.itemView;
-                    giveawayCell.setData(tL_stories$TL_prepaidGiveaway, LocaleController.formatString("TelegramPremiumCount", C3634R.string.TelegramPremiumCount, Integer.valueOf(tL_stories$TL_prepaidGiveaway.quantity)), LocaleController.formatString("SubscriptionsCount", C3634R.string.SubscriptionsCount, LocaleController.formatPluralString("GiftMonths", tL_stories$TL_prepaidGiveaway.months, new Object[0])), 0, !itemInternal.isLast);
+                    giveawayCell.setData(tL_stories$TL_prepaidGiveaway, LocaleController.formatPluralString("BoostingTelegramPremiumCountPlural", tL_stories$TL_prepaidGiveaway.quantity, new Object[0]), LocaleController.formatPluralString("BoostingSubscriptionsCountPlural", tL_stories$TL_prepaidGiveaway.quantity, LocaleController.formatPluralString("PrepaidGiveawayMonths", tL_stories$TL_prepaidGiveaway.months, new Object[0])), 0, !itemInternal.isLast);
                     giveawayCell.setImage(tL_stories$TL_prepaidGiveaway);
                     giveawayCell.setAvatarPadding(5);
                 } else if (viewHolder.getItemViewType() == 13) {
@@ -376,6 +376,7 @@ public class ChannelBoostLayout extends FrameLayout {
                 tLRPC$TL_payments_checkedGiftCode.months = ((boost.expires - i2) / 30) / 86400;
                 if (boost.unclaimed) {
                     tLRPC$TL_payments_checkedGiftCode.to_id = -1L;
+                    tLRPC$TL_payments_checkedGiftCode.flags = -1;
                 } else {
                     tLRPC$TL_payments_checkedGiftCode.boost = boost;
                 }
@@ -384,8 +385,8 @@ public class ChannelBoostLayout extends FrameLayout {
                 boolean z2 = boost.giveaway;
                 if (z2 && boost.user_id == -1) {
                     Bulletin.LottieLayout lottieLayout = new Bulletin.LottieLayout(baseFragment.getParentActivity(), baseFragment.getResourceProvider());
-                    lottieLayout.setAnimation(C3634R.raw.chats_infotip, 36, 36, new String[0]);
-                    lottieLayout.textView.setText(LocaleController.getString("BoostingRecipientWillBeSelected", C3634R.string.BoostingRecipientWillBeSelected));
+                    lottieLayout.setAnimation(C3632R.raw.chats_infotip, 36, 36, new String[0]);
+                    lottieLayout.textView.setText(LocaleController.getString("BoostingRecipientWillBeSelected", C3632R.string.BoostingRecipientWillBeSelected));
                     lottieLayout.textView.setSingleLine(false);
                     lottieLayout.textView.setMaxLines(2);
                     Bulletin.make(baseFragment, lottieLayout, 2750).show();
@@ -410,19 +411,19 @@ public class ChannelBoostLayout extends FrameLayout {
         this.items.clear();
         if (this.boostsStatus != null) {
             this.items.add(new ItemInternal(this, 4, false));
-            this.items.add(new ItemInternal(this, 1, LocaleController.getString("StatisticOverview", C3634R.string.StatisticOverview)));
+            this.items.add(new ItemInternal(this, 1, LocaleController.getString("StatisticOverview", C3632R.string.StatisticOverview)));
             this.items.add(new ItemInternal(this, 0, false));
             this.items.add(new ItemInternal(this, 2, false));
             if (this.boostsStatus.prepaid_giveaways.size() > 0) {
-                this.items.add(new ItemInternal(this, 12, LocaleController.getString("BoostingPreparedGiveaways", C3634R.string.BoostingPreparedGiveaways)));
+                this.items.add(new ItemInternal(this, 12, LocaleController.getString("BoostingPreparedGiveaways", C3632R.string.BoostingPreparedGiveaways)));
                 int i = 0;
                 while (i < this.boostsStatus.prepaid_giveaways.size()) {
                     this.items.add(new ItemInternal(this, 11, this.boostsStatus.prepaid_giveaways.get(i), i == this.boostsStatus.prepaid_giveaways.size() - 1));
                     i++;
                 }
-                this.items.add(new ItemInternal(this, 6, LocaleController.getString("BoostingSelectPaidGiveaway", C3634R.string.BoostingSelectPaidGiveaway)));
+                this.items.add(new ItemInternal(this, 6, LocaleController.getString("BoostingSelectPaidGiveaway", C3632R.string.BoostingSelectPaidGiveaway)));
             }
-            this.items.add(new ItemInternal(this, 13, LocaleController.getString("Boosters", C3634R.string.Boosters)));
+            this.items.add(new ItemInternal(this, 13, LocaleController.getString("Boosters", C3632R.string.Boosters)));
             if (this.selectedTab == 0) {
                 if (this.boosters.isEmpty()) {
                     this.items.add(new ItemInternal(this, 8, false));
@@ -438,7 +439,7 @@ public class ChannelBoostLayout extends FrameLayout {
                     } else {
                         this.items.add(new ItemInternal(this, 7, false));
                     }
-                    this.items.add(new ItemInternal(this, 6, LocaleController.getString("BoostersInfoDescription", C3634R.string.BoostersInfoDescription)));
+                    this.items.add(new ItemInternal(this, 6, LocaleController.getString("BoostersInfoDescription", C3632R.string.BoostersInfoDescription)));
                 }
             } else if (this.gifts.isEmpty()) {
                 this.items.add(new ItemInternal(this, 8, false));
@@ -454,14 +455,14 @@ public class ChannelBoostLayout extends FrameLayout {
                 } else {
                     this.items.add(new ItemInternal(this, 7, false));
                 }
-                this.items.add(new ItemInternal(this, 6, LocaleController.getString("BoostersInfoDescription", C3634R.string.BoostersInfoDescription)));
+                this.items.add(new ItemInternal(this, 6, LocaleController.getString("BoostersInfoDescription", C3632R.string.BoostersInfoDescription)));
             }
-            this.items.add(new ItemInternal(this, 1, LocaleController.getString("LinkForBoosting", C3634R.string.LinkForBoosting)));
+            this.items.add(new ItemInternal(this, 1, LocaleController.getString("LinkForBoosting", C3632R.string.LinkForBoosting)));
             this.items.add(new ItemInternal(this, 3, this.boostsStatus.boost_url));
             if (MessagesController.getInstance(this.currentAccount).giveawayGiftsPurchaseAvailable && ChatObject.hasAdminRights(this.currentChat) && ChatObject.canPost(this.currentChat)) {
-                this.items.add(new ItemInternal(this, 6, LocaleController.getString("BoostingShareThisLink", C3634R.string.BoostingShareThisLink)));
+                this.items.add(new ItemInternal(this, 6, LocaleController.getString("BoostingShareThisLink", C3632R.string.BoostingShareThisLink)));
                 this.items.add(new ItemInternal(this, 10, true));
-                this.items.add(new ItemInternal(this, 6, LocaleController.getString("BoostingGetMoreBoosts", C3634R.string.BoostingGetMoreBoosts)));
+                this.items.add(new ItemInternal(this, 6, LocaleController.getString("BoostingGetMoreBoosts", C3632R.string.BoostingGetMoreBoosts)));
             }
         }
         if (z) {
@@ -752,7 +753,7 @@ public class ChannelBoostLayout extends FrameLayout {
         linearLayout.setOrientation(1);
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3634R.raw.statistic_preload, 120, 120);
+        rLottieImageView.setAnimation(C3632R.raw.statistic_preload, 120, 120);
         rLottieImageView.playAnimation();
         TextView textView = new TextView(context);
         textView.setTextSize(1, 20.0f);
@@ -760,14 +761,14 @@ public class ChannelBoostLayout extends FrameLayout {
         int i = Theme.key_player_actionBarTitle;
         textView.setTextColor(Theme.getColor(i));
         textView.setTag(Integer.valueOf(i));
-        textView.setText(LocaleController.getString("LoadingStats", C3634R.string.LoadingStats));
+        textView.setText(LocaleController.getString("LoadingStats", C3632R.string.LoadingStats));
         textView.setGravity(1);
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 15.0f);
         int i2 = Theme.key_player_actionBarSubtitle;
         textView2.setTextColor(Theme.getColor(i2));
         textView2.setTag(Integer.valueOf(i2));
-        textView2.setText(LocaleController.getString("LoadingStatsDescription", C3634R.string.LoadingStatsDescription));
+        textView2.setText(LocaleController.getString("LoadingStatsDescription", C3632R.string.LoadingStatsDescription));
         textView2.setGravity(1);
         this.progressLayout.addView(rLottieImageView, LayoutHelper.createLinear(120, 120, 1, 0, 0, 0, 20));
         this.progressLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1, 0, 0, 0, 10));

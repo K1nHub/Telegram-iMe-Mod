@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 28938
+    .line 28946
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$125;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 2
 
-    .line 28941
+    .line 28949
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -50,12 +50,12 @@
 
     if-nez v0, :cond_0
 
-    .line 28942
+    .line 28950
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$125;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->closeMenu()V
 
-    .line 28944
+    .line 28952
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
@@ -67,12 +67,12 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 28949
+    .line 28957
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    .line 28950
+    .line 28958
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -81,7 +81,7 @@
 
     if-nez v0, :cond_0
 
-    .line 28951
+    .line 28959
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$125;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->closeMenu()V

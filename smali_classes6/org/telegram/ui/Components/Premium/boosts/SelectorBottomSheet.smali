@@ -830,7 +830,7 @@
 .method private drawFilledStatusBar(Landroid/graphics/Canvas;I)V
     .locals 6
 
-    .line 497
+    .line 498
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->backgroundPaint:Landroid/graphics/Paint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
@@ -845,12 +845,12 @@
 
     const/4 v0, 0x0
 
-    .line 498
+    .line 499
     invoke-static {v0, p2}, Ljava/lang/Math;->max(II)I
 
     move-result p2
 
-    .line 499
+    .line 500
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->statusBarT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
@@ -873,7 +873,7 @@
 
     move-result p2
 
-    .line 500
+    .line 501
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
@@ -912,7 +912,7 @@
 
     invoke-virtual {v0, v1, p2, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 501
+    .line 502
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -931,7 +931,7 @@
 
     mul-float/2addr p2, v1
 
-    .line 502
+    .line 503
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, p2, p2, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
@@ -942,7 +942,7 @@
 .method private isSearching()Z
     .locals 1
 
-    .line 567
+    .line 568
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->query:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1536,12 +1536,12 @@
 .method private synthetic lambda$updateSectionCell$13(Landroid/view/View;)V
     .locals 1
 
-    .line 553
+    .line 554
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectedIds:Ljava/util/HashSet;
 
     invoke-virtual {p1}, Ljava/util/HashSet;->clear()V
 
-    .line 554
+    .line 555
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->searchField:Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorSearchCell;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorSearchCell;->spansContainer:Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorSearchCell$SpansContainer;
@@ -1552,7 +1552,7 @@
 
     const/4 p1, 0x0
 
-    .line 555
+    .line 556
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->updateList(ZZ)V
 
     return-void
@@ -1632,7 +1632,7 @@
 .method private matchLocal(Lorg/telegram/tgnet/TLObject;Ljava/lang/String;)Z
     .locals 4
 
-    .line 623
+    .line 624
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -1643,16 +1643,16 @@
 
     return v1
 
-    .line 626
+    .line 627
     :cond_0
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;
 
     if-eqz v0, :cond_3
 
-    .line 627
+    .line 628
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;
 
-    .line 628
+    .line 629
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;->default_name:Ljava/lang/String;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->translitSafe(Ljava/lang/String;)Ljava/lang/String;
@@ -1663,7 +1663,7 @@
 
     move-result-object v0
 
-    .line 629
+    .line 630
     invoke-virtual {v0, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -1692,7 +1692,7 @@
 
     goto :goto_0
 
-    .line 632
+    .line 633
     :cond_1
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;->iso2:Ljava/lang/String;
 
@@ -1704,7 +1704,7 @@
 
     move-result-object p1
 
-    .line 633
+    .line 634
     invoke-virtual {p1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -1742,10 +1742,10 @@
 .method private onSearch(Ljava/lang/String;)V
     .locals 5
 
-    .line 525
+    .line 526
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->query:Ljava/lang/String;
 
-    .line 526
+    .line 527
     iget p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->type:I
 
     const-wide/16 v0, 0x15e
@@ -1766,16 +1766,16 @@
 
     goto :goto_0
 
-    .line 544
+    .line 545
     :cond_0
     invoke-virtual {p0, v4, v2}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->updateItems(ZZ)V
 
-    .line 545
+    .line 546
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->scrollToTop(Z)V
 
     goto :goto_0
 
-    .line 528
+    .line 529
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->isSearching()Z
 
@@ -1783,17 +1783,17 @@
 
     if-nez p1, :cond_2
 
-    .line 529
+    .line 530
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->remoteSearchRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 530
+    .line 531
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->peers:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 531
+    .line 532
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->peers:Ljava/util/ArrayList;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -1806,34 +1806,34 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 532
+    .line 533
     invoke-virtual {p0, v4, v2}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->updateItems(ZZ)V
 
-    .line 533
+    .line 534
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->scrollToTop(Z)V
 
     goto :goto_0
 
-    .line 535
+    .line 536
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->remoteSearchRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 536
+    .line 537
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->remoteSearchRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     goto :goto_0
 
-    .line 540
+    .line 541
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->remoteSearchRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 541
+    .line 542
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->remoteSearchRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
@@ -2146,78 +2146,66 @@
 .end method
 
 .method private showMaximumUsersToast()V
-    .locals 6
+    .locals 3
 
-    .line 437
+    .line 438
     iget v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->type:I
 
     const/4 v1, 0x1
 
     if-eq v0, v1, :cond_2
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    if-eq v0, v2, :cond_1
+    if-eq v0, v1, :cond_1
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
-    if-eq v0, v2, :cond_0
+    if-eq v0, v1, :cond_0
 
     const-string v0, ""
 
     goto :goto_0
 
-    .line 445
+    .line 446
     :cond_0
-    sget v0, Lorg/telegram/messenger/R$string;->BoostingSelectUpToWarningCountries:I
-
-    new-array v1, v1, [Ljava/lang/Object;
-
     invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->giveawayCountriesMax()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    long-to-int v0, v0
 
-    move-result-object v2
+    new-array v1, v2, [Ljava/lang/Object;
 
-    aput-object v2, v1, v3
+    const-string v2, "BoostingSelectUpToWarningCountriesPlural"
 
-    const-string v2, "BoostingSelectUpToWarningCountries"
-
-    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 439
+    .line 440
     :cond_1
-    sget v0, Lorg/telegram/messenger/R$string;->BoostingSelectUpToWarningChannels:I
-
-    new-array v1, v1, [Ljava/lang/Object;
-
     invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->giveawayAddPeersMax()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    long-to-int v0, v0
 
-    move-result-object v2
+    new-array v1, v2, [Ljava/lang/Object;
 
-    aput-object v2, v1, v3
+    const-string v2, "BoostingSelectUpToWarningChannelsPlural"
 
-    const-string v2, "BoostingSelectUpToWarningChannels"
-
-    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 442
+    .line 443
     :cond_2
     sget v0, Lorg/telegram/messenger/R$string;->BoostingSelectUpToWarningUsers:I
 
@@ -2227,13 +2215,13 @@
 
     move-result-object v0
 
-    .line 448
+    .line 449
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectedObjectsListener:Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet$SelectedObjectsListener;
 
     if-eqz v1, :cond_3
 
-    .line 449
+    .line 450
     invoke-interface {v1, v0}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet$SelectedObjectsListener;->onShowToast(Ljava/lang/String;)V
 
     :cond_3
@@ -2243,14 +2231,14 @@
 .method private updateActionButton(Z)V
     .locals 4
 
-    .line 506
+    .line 507
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->actionButton:Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setShowZero(Z)V
 
-    .line 508
+    .line 509
     iget v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->type:I
 
     const/4 v2, 0x1
@@ -2269,7 +2257,7 @@
 
     goto :goto_0
 
-    .line 511
+    .line 512
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->Save:I
 
@@ -2281,7 +2269,7 @@
 
     goto :goto_0
 
-    .line 514
+    .line 515
     :cond_1
     sget v0, Lorg/telegram/messenger/R$string;->BoostingSaveRecipients:I
 
@@ -2291,13 +2279,13 @@
 
     move-result-object v0
 
-    .line 519
+    .line 520
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->actionButton:Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
     invoke-virtual {v3, v0, p1}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 520
+    .line 521
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->actionButton:Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectedIds:Ljava/util/HashSet;
@@ -2308,7 +2296,7 @@
 
     invoke-virtual {v0, v3, p1}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->setCount(IZ)V
 
-    .line 521
+    .line 522
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->actionButton:Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectedIds:Ljava/util/HashSet;
@@ -2332,7 +2320,7 @@
 
     const/4 v0, 0x0
 
-    .line 460
+    .line 461
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -2342,19 +2330,19 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 461
+    .line 462
     iget-object v1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 462
+    .line 463
     instance-of v2, v1, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorUserCell;
 
     if-eqz v2, :cond_3
 
-    .line 463
+    .line 464
     iget-object v2, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
@@ -2365,7 +2353,7 @@
 
     goto :goto_2
 
-    .line 467
+    .line 468
     :cond_0
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->items:Ljava/util/ArrayList;
 
@@ -2377,24 +2365,24 @@
 
     check-cast v2, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
 
-    .line 468
+    .line 469
     move-object v3, v1
 
     check-cast v3, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorUserCell;
 
-    .line 469
+    .line 470
     iget-boolean v4, v2, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->checked:Z
 
     invoke-virtual {v3, v4, p1}, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorUserCell;->setChecked(ZZ)V
 
-    .line 470
+    .line 471
     iget-object v2, v2, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     const/high16 v4, 0x3f800000    # 1.0f
 
     if-eqz v2, :cond_2
 
-    .line 471
+    .line 472
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectorAdapter:Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter;
 
     invoke-virtual {v5, v2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter;->getParticipantsCount(Lorg/telegram/tgnet/TLRPC$Chat;)I
@@ -2412,21 +2400,21 @@
 
     goto :goto_1
 
-    .line 473
+    .line 474
     :cond_2
     invoke-virtual {v3, v4, p1}, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorUserCell;->setCheckboxAlpha(FZ)V
 
-    .line 476
+    .line 477
     :cond_3
     :goto_1
     instance-of v2, v1, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell;
 
     if-eqz v2, :cond_4
 
-    .line 477
+    .line 478
     check-cast v1, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell;
 
-    .line 478
+    .line 479
     invoke-virtual {v1}, Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorCountryCell;->getCountry()Lorg/telegram/tgnet/TLRPC$TL_help_country;
 
     move-result-object v2
@@ -2439,7 +2427,7 @@
 
     int-to-long v2, v2
 
-    .line 479
+    .line 480
     iget-object v4, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectedIds:Ljava/util/HashSet;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2467,22 +2455,22 @@
 .method private updateList(ZZ)V
     .locals 0
 
-    .line 454
+    .line 455
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->updateItems(ZZ)V
 
-    .line 455
+    .line 456
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->updateCheckboxes(Z)V
 
-    .line 456
+    .line 457
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->updateActionButton(Z)V
 
     return-void
 .end method
 
 .method private updateSection()V
-    .locals 8
+    .locals 5
 
-    .line 416
+    .line 417
     iget v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->type:I
 
     const/16 v1, 0x20
@@ -2495,8 +2483,6 @@
 
     const/4 v4, 0x2
 
-    const-string v5, "BoostingSelectUpTo"
-
     if-eq v0, v4, :cond_1
 
     const/4 v1, 0x3
@@ -2507,61 +2493,53 @@
 
     goto :goto_0
 
-    .line 426
+    .line 427
     :cond_0
-    sget v0, Lorg/telegram/messenger/R$string;->BoostingSelectUpToCountries:I
-
-    new-array v1, v3, [Ljava/lang/Object;
-
     invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->giveawayCountriesMax()J
 
-    move-result-wide v6
+    move-result-wide v0
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    long-to-int v0, v0
 
-    move-result-object v4
+    new-array v1, v2, [Ljava/lang/Object;
 
-    aput-object v4, v1, v2
+    const-string v2, "BoostingSelectUpToCountriesPlural"
 
-    invoke-static {v5, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 427
+    .line 428
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->sectionCell:Lorg/telegram/ui/Cells/GraySectionCell;
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Cells/GraySectionCell;->setLayerHeight(I)V
 
     goto :goto_0
 
-    .line 418
+    .line 419
     :cond_1
-    sget v0, Lorg/telegram/messenger/R$string;->BoostingSelectUpTo:I
-
-    new-array v3, v3, [Ljava/lang/Object;
-
     invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->giveawayAddPeersMax()J
 
-    move-result-wide v6
+    move-result-wide v3
 
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    long-to-int v0, v3
 
-    move-result-object v4
+    new-array v2, v2, [Ljava/lang/Object;
 
-    aput-object v4, v3, v2
+    const-string v3, "BoostingSelectUpToPlural"
 
-    invoke-static {v5, v0, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 419
+    .line 420
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->sectionCell:Lorg/telegram/ui/Cells/GraySectionCell;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Cells/GraySectionCell;->setLayerHeight(I)V
 
     goto :goto_0
 
-    .line 422
+    .line 423
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectorAdapter:Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter;
 
@@ -2583,12 +2561,12 @@
 
     move-result-object v0
 
-    .line 423
+    .line 424
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->sectionCell:Lorg/telegram/ui/Cells/GraySectionCell;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Cells/GraySectionCell;->setLayerHeight(I)V
 
-    .line 432
+    .line 433
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->sectionCell:Lorg/telegram/ui/Cells/GraySectionCell;
 
@@ -2600,7 +2578,7 @@
 .method private updateSectionCell(Z)V
     .locals 3
 
-    .line 551
+    .line 552
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectedIds:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->size()I
@@ -2615,7 +2593,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 552
+    .line 553
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->sectionCell:Lorg/telegram/ui/Cells/GraySectionCell;
 
     sget v0, Lorg/telegram/messenger/R$string;->UsersDeselectAll:I
@@ -2639,14 +2617,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 559
+    .line 560
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->sectionCell:Lorg/telegram/ui/Cells/GraySectionCell;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/GraySectionCell;->setRightText(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 561
+    .line 562
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->sectionCell:Lorg/telegram/ui/Cells/GraySectionCell;
 
@@ -2661,7 +2639,7 @@
 .method protected createAdapter()Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
     .locals 3
 
-    .line 661
+    .line 662
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2709,7 +2687,7 @@
 .method protected getTitle()Ljava/lang/CharSequence;
     .locals 2
 
-    .line 648
+    .line 649
     iget v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->type:I
 
     const/4 v1, 0x1
@@ -2728,7 +2706,7 @@
 
     return-object v0
 
-    .line 654
+    .line 655
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->BoostingSelectCountry:I
 
@@ -2740,7 +2718,7 @@
 
     return-object v0
 
-    .line 650
+    .line 651
     :cond_1
     sget v0, Lorg/telegram/messenger/R$string;->BoostingAddChannel:I
 
@@ -2752,7 +2730,7 @@
 
     return-object v0
 
-    .line 652
+    .line 653
     :cond_2
     sget v0, Lorg/telegram/messenger/R$string;->GiftPremium:I
 
@@ -2876,14 +2854,14 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 1
 
-    .line 642
+    .line 643
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
     const/4 p1, 0x0
 
     const/4 v0, 0x1
 
-    .line 643
+    .line 644
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->updateItems(ZZ)V
 
     return-void
@@ -2892,10 +2870,10 @@
 .method protected onPreDraw(Landroid/graphics/Canvas;IF)V
     .locals 2
 
-    .line 486
+    .line 487
     iput p2, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->top:I
 
-    .line 487
+    .line 488
     sget p3, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     int-to-float p3, p3
@@ -2928,17 +2906,17 @@
 
     int-to-float v0, p2
 
-    .line 488
+    .line 489
     invoke-static {v0, p3}, Ljava/lang/Math;->max(FF)F
 
     move-result p3
 
-    .line 489
+    .line 490
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->headerView:Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorHeaderCell;
 
     invoke-virtual {v0, p3}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 490
+    .line 491
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->searchField:Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorSearchCell;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->headerView:Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorHeaderCell;
@@ -2959,7 +2937,7 @@
 
     invoke-virtual {p3, v0}, Landroid/widget/ScrollView;->setTranslationY(F)V
 
-    .line 491
+    .line 492
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->sectionCell:Lorg/telegram/ui/Cells/GraySectionCell;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->searchField:Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorSearchCell;
@@ -2980,7 +2958,7 @@
 
     invoke-virtual {p3, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 492
+    .line 493
     iget-object p3, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->headerView:Lorg/telegram/ui/Components/Premium/boosts/cells/selector/SelectorHeaderCell;
@@ -3017,7 +2995,7 @@
 
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
-    .line 493
+    .line 494
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->drawFilledStatusBar(Landroid/graphics/Canvas;I)V
 
     return-void
@@ -3285,13 +3263,14 @@
     .line 411
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->updateActionButton(Z)V
 
+    .line 412
+    invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->scrollToTop(Z)V
+
     return-void
 .end method
 
 .method public scrollToTop(Z)V
-    .locals 4
-
-    const/4 v0, 0x1
+    .locals 3
 
     if-eqz p1, :cond_0
 
@@ -3300,13 +3279,15 @@
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    const v3, 0x3f19999a    # 0.6f
+    const v2, 0x3f19999a    # 0.6f
 
-    invoke-direct {p1, v1, v2, v3}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;IF)V
+    invoke-direct {p1, v0, v1, v2}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;IF)V
+
+    const/4 v0, 0x1
 
     .line 275
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
@@ -3335,6 +3316,8 @@
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
+    const/4 v0, 0x0
+
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->scrollToPosition(I)V
 
     :goto_0
@@ -3362,24 +3345,24 @@
 .method public updateItems(ZZ)V
     .locals 10
 
-    .line 572
+    .line 573
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->oldItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 573
+    .line 574
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->oldItems:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 574
+    .line 575
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 577
+    .line 578
     iget v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->type:I
 
     const/4 v1, 0x0
@@ -3388,7 +3371,7 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 578
+    .line 579
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->countriesLetters:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -3411,12 +3394,12 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 579
+    .line 580
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 580
+    .line 581
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->countriesMap:Ljava/util/Map;
 
     invoke-interface {v5, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3442,14 +3425,14 @@
 
     check-cast v6, Lorg/telegram/tgnet/TLRPC$TL_help_country;
 
-    .line 581
+    .line 582
     invoke-direct {p0}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->isSearching()Z
 
     move-result v7
 
     if-eqz v7, :cond_1
 
-    .line 582
+    .line 583
     iget-object v7, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->query:Ljava/lang/String;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->translitSafe(Ljava/lang/String;)Ljava/lang/String;
@@ -3460,7 +3443,7 @@
 
     move-result-object v7
 
-    .line 583
+    .line 584
     invoke-direct {p0, v6, v7}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->matchLocal(Lorg/telegram/tgnet/TLObject;Ljava/lang/String;)Z
 
     move-result v7
@@ -3472,14 +3455,14 @@
     :cond_1
     const/16 v7, 0x2c
 
-    .line 587
+    .line 588
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
 
     add-int/2addr v2, v7
 
-    .line 588
+    .line 589
     iget-object v7, v6, Lorg/telegram/tgnet/TLRPC$TL_help_country;->default_name:Ljava/lang/String;
 
     invoke-virtual {v7}, Ljava/lang/String;->hashCode()I
@@ -3488,7 +3471,7 @@
 
     int-to-long v7, v7
 
-    .line 589
+    .line 590
     iget-object v9, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectedIds:Ljava/util/HashSet;
 
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3507,7 +3490,7 @@
 
     goto :goto_1
 
-    .line 592
+    .line 593
     :cond_2
     invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
 
@@ -3517,14 +3500,14 @@
 
     const/16 v5, 0x20
 
-    .line 593
+    .line 594
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     add-int/2addr v2, v5
 
-    .line 594
+    .line 595
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->items:Ljava/util/ArrayList;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->asLetter(Ljava/lang/String;)Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
@@ -3533,7 +3516,7 @@
 
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 595
+    .line 596
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -3543,7 +3526,7 @@
     :cond_3
     move v2, v1
 
-    .line 600
+    .line 601
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->peers:Ljava/util/ArrayList;
 
@@ -3566,14 +3549,14 @@
 
     const/16 v4, 0x38
 
-    .line 601
+    .line 602
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     add-int/2addr v2, v4
 
-    .line 602
+    .line 603
     iget-object v4, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->items:Ljava/util/ArrayList;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectedIds:Ljava/util/HashSet;
@@ -3598,7 +3581,7 @@
 
     goto :goto_2
 
-    .line 604
+    .line 605
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->items:Ljava/util/ArrayList;
 
@@ -3608,7 +3591,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 605
+    .line 606
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->items:Ljava/util/ArrayList;
 
     invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;->asNoUsers()Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter$Item;
@@ -3619,14 +3602,14 @@
 
     const/16 v0, 0x96
 
-    .line 606
+    .line 607
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     add-int/2addr v2, v0
 
-    .line 608
+    .line 609
     :cond_6
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -3640,7 +3623,7 @@
 
     float-to-int v0, v0
 
-    .line 609
+    .line 610
     iget-object v3, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->items:Ljava/util/ArrayList;
 
     sub-int/2addr v0, v2
@@ -3655,19 +3638,19 @@
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 611
+    .line 612
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->updateSectionCell(Z)V
 
     if-eqz p2, :cond_8
 
-    .line 613
+    .line 614
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->selectorAdapter:Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter;
 
     if-eqz p2, :cond_8
 
     if-eqz p1, :cond_7
 
-    .line 615
+    .line 616
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->oldItems:Ljava/util/ArrayList;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/SelectorBottomSheet;->items:Ljava/util/ArrayList;
@@ -3676,7 +3659,7 @@
 
     goto :goto_3
 
-    .line 617
+    .line 618
     :cond_7
     invoke-virtual {p2}, Lorg/telegram/ui/Components/Premium/boosts/adapters/SelectorAdapter;->notifyDataSetChanged()V
 

@@ -9,41 +9,41 @@ public final class UShort implements Comparable<UShort> {
     private final short data;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ UShort m2015boximpl(short s) {
+    public static final /* synthetic */ UShort m2017boximpl(short s) {
         return new UShort(s);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static short m2016constructorimpl(short s) {
+    public static short m2018constructorimpl(short s) {
         return s;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m2017equalsimpl(short s, Object obj) {
-        return (obj instanceof UShort) && s == ((UShort) obj).m2020unboximpl();
+    public static boolean m2019equalsimpl(short s, Object obj) {
+        return (obj instanceof UShort) && s == ((UShort) obj).m2022unboximpl();
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m2018hashCodeimpl(short s) {
+    public static int m2020hashCodeimpl(short s) {
         return s;
     }
 
     public boolean equals(Object obj) {
-        return m2017equalsimpl(this.data, obj);
+        return m2019equalsimpl(this.data, obj);
     }
 
     public int hashCode() {
-        return m2018hashCodeimpl(this.data);
+        return m2020hashCodeimpl(this.data);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ short m2020unboximpl() {
+    public final /* synthetic */ short m2022unboximpl() {
         return this.data;
     }
 
     @Override // java.lang.Comparable
     public /* bridge */ /* synthetic */ int compareTo(UShort uShort) {
-        return Intrinsics.compare(m2020unboximpl() & 65535, uShort.m2020unboximpl() & 65535);
+        return Intrinsics.compare(m2022unboximpl() & 65535, uShort.m2022unboximpl() & 65535);
     }
 
     private /* synthetic */ UShort(short s) {
@@ -62,11 +62,11 @@ public final class UShort implements Comparable<UShort> {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m2019toStringimpl(short s) {
+    public static String m2021toStringimpl(short s) {
         return String.valueOf(s & 65535);
     }
 
     public String toString() {
-        return m2019toStringimpl(this.data);
+        return m2021toStringimpl(this.data);
     }
 }

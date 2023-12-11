@@ -2,38 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/util/Comparator;
+.field public final synthetic f$0:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+.field public final synthetic f$1:Lorg/telegram/messenger/Utilities$Callback;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
+
+.field public final synthetic f$3:Lorg/telegram/messenger/Utilities$Callback;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/Comparator;)V
+.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/Utilities$Callback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda28;->f$0:Ljava/util/Comparator;
+    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda28;->f$0:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda28;->f$1:Lorg/telegram/messenger/Utilities$Callback;
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda28;->f$2:Lorg/telegram/tgnet/TLObject;
+
+    iput-object p4, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda28;->f$3:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda28;->f$0:Ljava/util/Comparator;
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda28;->f$0:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_help_country;
+    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda28;->f$1:Lorg/telegram/messenger/Utilities$Callback;
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_help_country;
+    iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda28;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->$r8$lambda$bvwKrg2Md_RKRRpEnunRG5YLM74(Ljava/util/Comparator;Lorg/telegram/tgnet/TLRPC$TL_help_country;Lorg/telegram/tgnet/TLRPC$TL_help_country;)I
+    iget-object v3, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda28;->f$3:Lorg/telegram/messenger/Utilities$Callback;
 
-    move-result p1
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->$r8$lambda$1DMSTaOL_yi87d7MDGlrlc3-axA(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/Utilities$Callback;)V
 
-    return p1
+    return-void
 .end method

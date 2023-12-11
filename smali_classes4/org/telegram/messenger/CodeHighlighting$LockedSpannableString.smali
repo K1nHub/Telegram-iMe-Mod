@@ -22,7 +22,7 @@
 .method public constructor <init>(Ljava/lang/CharSequence;)V
     .locals 0
 
-    .line 146
+    .line 136
     invoke-direct {p0, p1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
     return-void
@@ -33,7 +33,7 @@
 .method public getSpanEnd(Ljava/lang/Object;)I
     .locals 1
 
-    .line 174
+    .line 164
     iget-boolean v0, p0, Lorg/telegram/messenger/CodeHighlighting$LockedSpannableString;->ready:Z
 
     if-nez v0, :cond_0
@@ -42,7 +42,7 @@
 
     return p1
 
-    .line 175
+    .line 165
     :cond_0
     invoke-super {p0, p1}, Landroid/text/SpannableString;->getSpanEnd(Ljava/lang/Object;)I
 
@@ -54,7 +54,7 @@
 .method public getSpanFlags(Ljava/lang/Object;)I
     .locals 1
 
-    .line 180
+    .line 170
     iget-boolean v0, p0, Lorg/telegram/messenger/CodeHighlighting$LockedSpannableString;->ready:Z
 
     if-nez v0, :cond_0
@@ -63,7 +63,7 @@
 
     return p1
 
-    .line 181
+    .line 171
     :cond_0
     invoke-super {p0, p1}, Landroid/text/SpannableString;->getSpanFlags(Ljava/lang/Object;)I
 
@@ -75,7 +75,7 @@
 .method public getSpanStart(Ljava/lang/Object;)I
     .locals 1
 
-    .line 168
+    .line 158
     iget-boolean v0, p0, Lorg/telegram/messenger/CodeHighlighting$LockedSpannableString;->ready:Z
 
     if-nez v0, :cond_0
@@ -84,7 +84,7 @@
 
     return p1
 
-    .line 169
+    .line 159
     :cond_0
     invoke-super {p0, p1}, Landroid/text/SpannableString;->getSpanStart(Ljava/lang/Object;)I
 
@@ -105,7 +105,7 @@
         }
     .end annotation
 
-    .line 156
+    .line 146
     iget-boolean v0, p0, Lorg/telegram/messenger/CodeHighlighting$LockedSpannableString;->ready:Z
 
     if-nez v0, :cond_0
@@ -120,7 +120,7 @@
 
     return-object p1
 
-    .line 157
+    .line 147
     :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/text/SpannableString;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
 
@@ -132,14 +132,14 @@
 .method public nextSpanTransition(IILjava/lang/Class;)I
     .locals 1
 
-    .line 162
+    .line 152
     iget-boolean v0, p0, Lorg/telegram/messenger/CodeHighlighting$LockedSpannableString;->ready:Z
 
     if-nez v0, :cond_0
 
     return p2
 
-    .line 163
+    .line 153
     :cond_0
     invoke-super {p0, p1, p2, p3}, Landroid/text/SpannableString;->nextSpanTransition(IILjava/lang/Class;)I
 
@@ -153,7 +153,7 @@
 
     const/4 v0, 0x1
 
-    .line 151
+    .line 141
     iput-boolean v0, p0, Lorg/telegram/messenger/CodeHighlighting$LockedSpannableString;->ready:Z
 
     return-void

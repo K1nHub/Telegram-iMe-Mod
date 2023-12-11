@@ -25,7 +25,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BottomSheet;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -129,7 +129,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
             }
         });
         this.saveButton$delegate = lazy5;
-        setTitle(LocaleController.getInternalString(C3634R.string.create_folder_change_fab_title), true);
+        setTitle(LocaleController.getInternalString(C3632R.string.create_folder_change_fab_title), true);
         setApplyBottomPadding(false);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: com.iMe.fork.ui.dialog.SelectFabsBottomSheet.1
             @Override // android.widget.FrameLayout, android.view.View
@@ -220,7 +220,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_dialogBackground), Theme.getColor(Theme.key_listSelector)));
-        textView.setText(LocaleController.getString("Save", C3634R.string.Save));
+        textView.setText(LocaleController.getString("Save", C3632R.string.Save));
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2));
         return textView;

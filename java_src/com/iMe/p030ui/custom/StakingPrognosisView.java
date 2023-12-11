@@ -28,7 +28,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkContentStakingPrognosisBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.StatisticActivity;
@@ -165,12 +165,12 @@ public final class StakingPrognosisView extends FrameLayout implements KoinCompo
     private final void setupView() {
         setupColors();
         ForkContentStakingPrognosisBinding forkContentStakingPrognosisBinding = this.binding;
-        forkContentStakingPrognosisBinding.textStatistics.setText(getResourceManager().getString(C3634R.string.staking_calculator_statistics));
-        forkContentStakingPrognosisBinding.textModeTitle.setText(getResourceManager().getString(C3634R.string.staking_calculator_mode));
-        forkContentStakingPrognosisBinding.textProfitTitle.setText(getResourceManager().getString(C3634R.string.staking_calculator_income_profit));
-        forkContentStakingPrognosisBinding.textDepositTitle.setText(getResourceManager().getString(C3634R.string.staking_calculator_deposit_title));
-        forkContentStakingPrognosisBinding.textDepositDescription.setText(getResourceManager().getString(C3634R.string.staking_calculator_deposit_description));
-        forkContentStakingPrognosisBinding.buttonDeposit.setText(getResourceManager().getString(C3634R.string.wallet_operation_deposit));
+        forkContentStakingPrognosisBinding.textStatistics.setText(getResourceManager().getString(C3632R.string.staking_calculator_statistics));
+        forkContentStakingPrognosisBinding.textModeTitle.setText(getResourceManager().getString(C3632R.string.staking_calculator_mode));
+        forkContentStakingPrognosisBinding.textProfitTitle.setText(getResourceManager().getString(C3632R.string.staking_calculator_income_profit));
+        forkContentStakingPrognosisBinding.textDepositTitle.setText(getResourceManager().getString(C3632R.string.staking_calculator_deposit_title));
+        forkContentStakingPrognosisBinding.textDepositDescription.setText(getResourceManager().getString(C3632R.string.staking_calculator_deposit_description));
+        forkContentStakingPrognosisBinding.buttonDeposit.setText(getResourceManager().getString(C3632R.string.wallet_operation_deposit));
         addView(this.binding.getRoot());
     }
 }

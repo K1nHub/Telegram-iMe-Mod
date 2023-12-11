@@ -28,7 +28,7 @@ public final class ExtOutMsgInfo$$serializer implements GeneratedSerializer<ExtO
         pluginGeneratedSerialDescriptor.addElement("dest", false);
         pluginGeneratedSerialDescriptor.addElement("created_lt", false);
         pluginGeneratedSerialDescriptor.addElement("created_at", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7553xb643addd("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7551xb643addd("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

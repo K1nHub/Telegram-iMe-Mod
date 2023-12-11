@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.HeaderCell;
 import org.telegram.p043ui.Cells.TextCheckCell;
@@ -48,11 +48,11 @@ public class ArchiveSettingsActivity extends BaseFragment implements Notificatio
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString("ArchiveSettings"));
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ArchiveSettingsActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ArchiveSettingsActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     ArchiveSettingsActivity.this.finishFragment();
@@ -121,7 +121,7 @@ public class ArchiveSettingsActivity extends BaseFragment implements Notificatio
         } else if (i2 == 7) {
             if (!getUserConfig().isPremium() && !getMessagesController().autoarchiveAvailable && !this.settings.archive_and_mute_new_noncontact_peers) {
                 Bulletin.SimpleLayout simpleLayout = new Bulletin.SimpleLayout(getContext(), getResourceProvider());
-                simpleLayout.textView.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(C3634R.string.UnlockPremium), Theme.key_undo_cancelColor, 0, new Runnable() { // from class: org.telegram.ui.ArchiveSettingsActivity$$ExternalSyntheticLambda0
+                simpleLayout.textView.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(C3632R.string.UnlockPremium), Theme.key_undo_cancelColor, 0, new Runnable() { // from class: org.telegram.ui.ArchiveSettingsActivity$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
                         ArchiveSettingsActivity.this.lambda$createView$0();
@@ -129,7 +129,7 @@ public class ArchiveSettingsActivity extends BaseFragment implements Notificatio
                 }));
                 simpleLayout.textView.setSingleLine(false);
                 simpleLayout.textView.setPadding(0, AndroidUtilities.m104dp(4), 0, AndroidUtilities.m104dp(4));
-                simpleLayout.imageView.setImageResource(C3634R.C3636drawable.msg_settings_premium);
+                simpleLayout.imageView.setImageResource(C3632R.C3634drawable.msg_settings_premium);
                 Bulletin.make(this, simpleLayout, 3500).show();
                 int i3 = -this.shiftDp;
                 this.shiftDp = i3;
@@ -247,9 +247,9 @@ public class ArchiveSettingsActivity extends BaseFragment implements Notificatio
                     textInfoPrivacyCell.setText(itemInner.text);
                 }
                 if (z2) {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(ArchiveSettingsActivity.this.getContext(), C3634R.C3636drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(ArchiveSettingsActivity.this.getContext(), C3632R.C3634drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 } else {
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(ArchiveSettingsActivity.this.getContext(), C3634R.C3636drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(ArchiveSettingsActivity.this.getContext(), C3632R.C3634drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 }
             } else if (viewHolder.getItemViewType() == 1) {
                 TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
@@ -265,7 +265,7 @@ public class ArchiveSettingsActivity extends BaseFragment implements Notificatio
                 } else {
                     z = ArchiveSettingsActivity.this.settings.archive_and_mute_new_noncontact_peers;
                     if (!ArchiveSettingsActivity.this.getUserConfig().isPremium() && !ArchiveSettingsActivity.this.getMessagesController().autoarchiveAvailable) {
-                        i3 = C3634R.C3636drawable.permission_locked;
+                        i3 = C3632R.C3634drawable.permission_locked;
                     }
                     textCheckCell.setCheckBoxIcon(i3);
                 }

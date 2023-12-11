@@ -103,7 +103,7 @@ public final class C0728R {
     /* renamed from: com.google.android.gms.wallet.R$string */
     /* loaded from: classes3.dex */
     public static final class string {
-        public static final int wallet_buy_button_place_holder = 2131830156;
+        public static final int wallet_buy_button_place_holder = 2131830290;
 
         private string() {
         }

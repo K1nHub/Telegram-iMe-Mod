@@ -108,7 +108,7 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagePreviewParams;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/ui/Components/MessagePreviewView$ResourcesDelegate;IZ)V
     .locals 3
 
-    .line 1954
+    .line 2012
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x1
@@ -116,14 +116,14 @@
     .line 94
     iput-boolean v0, p0, Lorg/telegram/ui/Components/MessagePreviewView;->isFirstUpdateMessages:Z
 
-    .line 1940
+    .line 1998
     new-instance v1, Lorg/telegram/ui/Components/MessagePreviewView$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/MessagePreviewView$1;-><init>(Lorg/telegram/ui/Components/MessagePreviewView;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/MessagePreviewView;->changeBoundsRunnable:Ljava/lang/Runnable;
 
-    .line 1949
+    .line 2007
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -132,35 +132,35 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/MessagePreviewView;->drawingGroups:Ljava/util/ArrayList;
 
-    .line 1955
+    .line 2013
     iput-boolean p9, p0, Lorg/telegram/ui/Components/MessagePreviewView;->showOutdatedQuote:Z
 
-    .line 1956
+    .line 2014
     iput-object p2, p0, Lorg/telegram/ui/Components/MessagePreviewView;->chatActivity:Lorg/telegram/ui/ChatActivity;
 
-    .line 1957
+    .line 2015
     iput p6, p0, Lorg/telegram/ui/Components/MessagePreviewView;->currentAccount:I
 
-    .line 1958
+    .line 2016
     iput-object p4, p0, Lorg/telegram/ui/Components/MessagePreviewView;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 1959
+    .line 2017
     iput-object p5, p0, Lorg/telegram/ui/Components/MessagePreviewView;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 1960
+    .line 2018
     iput-object p3, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
-    .line 1961
+    .line 2019
     iput-object p7, p0, Lorg/telegram/ui/Components/MessagePreviewView;->resourcesProvider:Lorg/telegram/ui/Components/MessagePreviewView$ResourcesDelegate;
 
-    .line 1963
+    .line 2021
     new-instance p2, Lorg/telegram/ui/Components/MessagePreviewView$2;
 
     invoke-direct {p2, p0, p1, p7}, Lorg/telegram/ui/Components/MessagePreviewView$2;-><init>(Lorg/telegram/ui/Components/MessagePreviewView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/MessagePreviewView;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
-    .line 1992
+    .line 2050
     new-instance p2, Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
     invoke-direct {p2, p1, p7}, Lorg/telegram/ui/Components/MessagePreviewView$TabsView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -180,12 +180,12 @@
 
     if-nez p4, :cond_0
 
-    .line 1995
+    .line 2053
     iget-object p6, p3, Lorg/telegram/messenger/MessagePreviewParams;->replyMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     if-eqz p6, :cond_0
 
-    .line 1996
+    .line 2054
     iget-object p6, p0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
     sget p7, Lorg/telegram/messenger/R$string;->MessageOptionsReply:I
@@ -201,14 +201,14 @@
     :cond_0
     if-ne p4, v0, :cond_1
 
-    .line 1997
+    .line 2055
     iget-object p6, p3, Lorg/telegram/messenger/MessagePreviewParams;->forwardMessages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     if-eqz p6, :cond_1
 
     if-nez p9, :cond_1
 
-    .line 1998
+    .line 2056
     iget-object p6, p0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
     sget p7, Lorg/telegram/messenger/R$string;->MessageOptionsForward:I
@@ -226,14 +226,14 @@
 
     if-ne p4, p6, :cond_2
 
-    .line 1999
+    .line 2057
     iget-object p7, p3, Lorg/telegram/messenger/MessagePreviewParams;->linkMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     if-eqz p7, :cond_2
 
     if-nez p9, :cond_2
 
-    .line 2000
+    .line 2058
     iget-object p7, p0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
     sget v1, Lorg/telegram/messenger/R$string;->MessageOptionsLink:I
@@ -247,7 +247,7 @@
     :goto_1
     if-ne p4, p8, :cond_2
 
-    .line 2005
+    .line 2063
     iget-object p5, p0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
     iget-object p5, p5, Lorg/telegram/ui/Components/MessagePreviewView$TabsView;->tabs:Ljava/util/ArrayList;
@@ -263,7 +263,7 @@
 
     goto :goto_0
 
-    .line 2009
+    .line 2067
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Components/MessagePreviewView;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -273,19 +273,19 @@
 
     invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/ViewPagerFixed;->setAdapter(Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;)V
 
-    .line 2030
+    .line 2088
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     invoke-virtual {p1, p5}, Lorg/telegram/ui/Components/ViewPagerFixed;->setPosition(I)V
 
-    .line 2031
+    .line 2089
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
     int-to-float p2, p5
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/MessagePreviewView$TabsView;->setSelectedTab(F)V
 
-    .line 2034
+    .line 2092
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
     const/4 p2, -0x1
@@ -300,7 +300,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2035
+    .line 2093
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
     const/4 p2, -0x1
@@ -323,7 +323,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2040
+    .line 2098
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
     new-instance p2, Lorg/telegram/ui/Components/MessagePreviewView$$ExternalSyntheticLambda3;
@@ -332,30 +332,30 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/MessagePreviewView$TabsView;->setOnTabClick(Lorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 2060
+    .line 2118
     new-instance p1, Lorg/telegram/ui/Components/MessagePreviewView$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0, p9}, Lorg/telegram/ui/Components/MessagePreviewView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/MessagePreviewView;Z)V
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 2066
+    .line 2124
     iput-boolean v0, p0, Lorg/telegram/ui/Components/MessagePreviewView;->showing:Z
 
     const/4 p1, 0x0
 
-    .line 2067
+    .line 2125
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     const p1, 0x3f733333    # 0.95f
 
-    .line 2068
+    .line 2126
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 2069
+    .line 2127
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 2070
+    .line 2128
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -384,7 +384,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
-    .line 2071
+    .line 2129
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -395,7 +395,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->setUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 2073
+    .line 2131
     invoke-direct {p0}, Lorg/telegram/ui/Components/MessagePreviewView;->updateColors()V
 
     return-void
@@ -539,7 +539,7 @@
 .method private synthetic lambda$dismiss$3(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 2102
+    .line 2160
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getAlpha()F
 
     move-result p1
@@ -554,7 +554,7 @@
 .method private synthetic lambda$new$0(Ljava/lang/Integer;)V
     .locals 4
 
-    .line 2041
+    .line 2099
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView$TabsView;->tabs:Ljava/util/ArrayList;
@@ -586,7 +586,7 @@
 
     move v1, v0
 
-    .line 2046
+    .line 2104
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
@@ -598,7 +598,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 2047
+    .line 2105
     iget-object v2, p0, Lorg/telegram/ui/Components/MessagePreviewView;->tabsView:Lorg/telegram/ui/Components/MessagePreviewView$TabsView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/MessagePreviewView$TabsView;->tabs:Ljava/util/ArrayList;
@@ -626,7 +626,7 @@
 
     goto :goto_0
 
-    .line 2053
+    .line 2111
     :cond_2
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
@@ -639,7 +639,7 @@
 
     return-void
 
-    .line 2057
+    .line 2115
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -651,7 +651,7 @@
 .method private synthetic lambda$new$1(ZLandroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 2061
+    .line 2119
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p2
@@ -662,7 +662,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2062
+    .line 2120
     invoke-virtual {p0, p3}, Lorg/telegram/ui/Components/MessagePreviewView;->dismiss(Z)V
 
     :cond_0
@@ -672,7 +672,7 @@
 .method private synthetic lambda$new$2(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 2071
+    .line 2129
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getAlpha()F
 
     move-result p1
@@ -725,17 +725,17 @@
 .method public dismiss(Z)V
     .locals 4
 
-    .line 2081
+    .line 2139
     iget-boolean v0, p0, Lorg/telegram/ui/Components/MessagePreviewView;->showing:Z
 
     if-eqz v0, :cond_2
 
     const/4 v0, 0x0
 
-    .line 2082
+    .line 2140
     iput-boolean v0, p0, Lorg/telegram/ui/Components/MessagePreviewView;->showing:Z
 
-    .line 2083
+    .line 2141
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
@@ -774,7 +774,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 2093
+    .line 2151
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/MessagePreviewView;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -784,24 +784,24 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 2094
+    .line 2152
     aget-object v2, v1, v0
 
     instance-of v2, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     if-eqz v2, :cond_0
 
-    .line 2095
+    .line 2153
     aget-object v1, v1, v0
 
     check-cast v1, Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
-    .line 2096
+    .line 2154
     iget v2, v1, Lorg/telegram/ui/Components/MessagePreviewView$Page;->currentTab:I
 
     if-nez v2, :cond_0
 
-    .line 2097
+    .line 2155
     invoke-virtual {v1}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->updateSelection()V
 
     goto :goto_1
@@ -811,7 +811,7 @@
 
     goto :goto_0
 
-    .line 2102
+    .line 2160
     :cond_1
     :goto_1
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -824,7 +824,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 2103
+    .line 2161
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/MessagePreviewView;->onDismiss(Z)V
 
     :cond_2
@@ -834,7 +834,7 @@
 .method public getThemedColor(I)I
     .locals 1
 
-    .line 2311
+    .line 2369
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView;->resourcesProvider:Lorg/telegram/ui/Components/MessagePreviewView$ResourcesDelegate;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -847,7 +847,7 @@
 .method public isShowing()Z
     .locals 1
 
-    .line 2120
+    .line 2178
     iget-boolean v0, p0, Lorg/telegram/ui/Components/MessagePreviewView;->showing:Z
 
     return v0
@@ -860,7 +860,7 @@
 
     move v1, v0
 
-    .line 2482
+    .line 2547
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/MessagePreviewView;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -870,7 +870,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 2483
+    .line 2548
     aget-object v3, v2, v1
 
     if-eqz v3, :cond_0
@@ -883,7 +883,7 @@
 
     if-nez v3, :cond_0
 
-    .line 2484
+    .line 2549
     aget-object v0, v2, v1
 
     check-cast v0, Lorg/telegram/ui/Components/MessagePreviewView$Page;
@@ -1015,7 +1015,7 @@
 
     move v1, v0
 
-    .line 2447
+    .line 2508
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/MessagePreviewView;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -1023,28 +1023,28 @@
 
     array-length v3, v2
 
-    if-ge v1, v3, :cond_8
+    if-ge v1, v3, :cond_9
 
-    .line 2448
+    .line 2509
     aget-object v3, v2, v1
 
     instance-of v3, v3, Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_8
 
-    .line 2449
+    .line 2510
     aget-object v2, v2, v1
 
     check-cast v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
-    .line 2450
+    .line 2511
     iget v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->currentTab:I
 
     const/4 v4, 0x1
 
     if-ne v3, v4, :cond_0
 
-    .line 2451
+    .line 2512
     iget-object v3, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
     iget-object v3, v3, Lorg/telegram/messenger/MessagePreviewParams;->forwardMessages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
@@ -1056,7 +1056,7 @@
     :cond_0
     if-nez v3, :cond_1
 
-    .line 2453
+    .line 2514
     iget-object v3, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
     iget-object v3, v3, Lorg/telegram/messenger/MessagePreviewParams;->replyMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
@@ -1070,41 +1070,72 @@
 
     if-ne v3, v5, :cond_2
 
-    .line 2455
+    .line 2516
     iget-object v3, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
     iget-object v3, v3, Lorg/telegram/messenger/MessagePreviewParams;->linkMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     iput-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->messages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
-    .line 2457
+    .line 2518
     :cond_2
     :goto_1
     invoke-static {v2}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->access$000(Lorg/telegram/ui/Components/MessagePreviewView$Page;)V
 
-    .line 2458
+    .line 2519
     iget v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->currentTab:I
 
-    if-nez v3, :cond_5
+    if-nez v3, :cond_6
 
-    .line 2459
+    .line 2520
     iget-boolean v3, p0, Lorg/telegram/ui/Components/MessagePreviewView;->showOutdatedQuote:Z
 
-    if-eqz v3, :cond_3
-
-    .line 2460
-    invoke-virtual {v2}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->getReplyMessage()Lorg/telegram/messenger/MessageObject;
-
-    move-result-object v3
+    const/4 v5, 0x0
 
     if-eqz v3, :cond_4
 
-    .line 2462
+    iget-object v3, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
+
+    iget-boolean v3, v3, Lorg/telegram/messenger/MessagePreviewParams;->isSecret:Z
+
+    if-nez v3, :cond_4
+
+    .line 2522
+    iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->textSelectionHelper:Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;
+
+    invoke-virtual {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getSelectedCell()Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_3
+
+    .line 2523
+    iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->textSelectionHelper:Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;
+
+    invoke-virtual {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getSelectedCell()Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
+
+    move-result-object v3
+
+    check-cast v3, Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v5
+
+    .line 2525
+    :cond_3
+    invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->getReplyMessage(Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_5
+
+    .line 2527
     iget-object v5, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
     iput v0, v5, Lorg/telegram/messenger/MessagePreviewParams;->quoteStart:I
 
-    .line 2463
+    .line 2528
     iget v6, p0, Lorg/telegram/ui/Components/MessagePreviewView;->currentAccount:I
 
     invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1127,7 +1158,7 @@
 
     iput v6, v5, Lorg/telegram/messenger/MessagePreviewParams;->quoteEnd:I
 
-    .line 2464
+    .line 2529
     iget-object v5, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
     iget v6, v5, Lorg/telegram/messenger/MessagePreviewParams;->quoteStart:I
@@ -1140,7 +1171,7 @@
 
     iput-object v3, v5, Lorg/telegram/messenger/MessagePreviewParams;->quote:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-    .line 2465
+    .line 2530
     iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->textSelectionHelper:Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->getReplyMessageCell()Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -1157,34 +1188,32 @@
 
     goto :goto_2
 
-    .line 2468
-    :cond_3
+    .line 2533
+    :cond_4
     iget-object v3, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
-
-    const/4 v5, 0x0
 
     iput-object v5, v3, Lorg/telegram/messenger/MessagePreviewParams;->quote:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-    .line 2469
+    .line 2534
     iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->textSelectionHelper:Lorg/telegram/ui/Cells/TextSelectionHelper$ChatListTextSelectionHelper;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->clear()V
 
-    .line 2470
+    .line 2535
     invoke-static {v2, v0, v4}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->access$400(Lorg/telegram/ui/Components/MessagePreviewView$Page;ZZ)V
 
-    .line 2472
-    :cond_4
+    .line 2537
+    :cond_5
     :goto_2
     invoke-static {v2, v4}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->access$1200(Lorg/telegram/ui/Components/MessagePreviewView$Page;Z)V
 
-    .line 2474
-    :cond_5
+    .line 2539
+    :cond_6
     iget-object v2, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->changeSizeBtn:Lorg/telegram/ui/Components/MessagePreviewView$ToggleButton;
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
-    .line 2475
+    .line 2540
     invoke-virtual {v2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
@@ -1193,13 +1222,13 @@
 
     iget-boolean v3, v3, Lorg/telegram/messenger/MessagePreviewParams;->hasMedia:Z
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     const/high16 v3, 0x3f800000    # 1.0f
 
     goto :goto_3
 
-    :cond_6
+    :cond_7
     const/high16 v3, 0x3f000000    # 0.5f
 
     :goto_3
@@ -1209,12 +1238,12 @@
 
     invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    :cond_7
+    :cond_8
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_0
 
-    :cond_8
+    :cond_9
     return-void
 .end method
 
@@ -1225,7 +1254,7 @@
 
     move v1, v0
 
-    .line 2434
+    .line 2492
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/MessagePreviewView;->viewPager:Lorg/telegram/ui/Components/ViewPagerFixed;
 
@@ -1233,12 +1262,12 @@
 
     array-length v3, v2
 
-    if-ge v1, v3, :cond_3
+    if-ge v1, v3, :cond_5
 
-    .line 2435
+    .line 2493
     aget-object v3, v2, v1
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_4
 
     aget-object v3, v2, v1
 
@@ -1248,15 +1277,15 @@
 
     const/4 v4, 0x2
 
-    if-ne v3, v4, :cond_2
+    if-ne v3, v4, :cond_4
 
-    .line 2436
+    .line 2494
     aget-object v2, v2, v1
 
     check-cast v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
-    .line 2437
-    iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->changeSizeBtn:Lorg/telegram/ui/Components/MessagePreviewView$ToggleButton;
+    .line 2495
+    iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->changeSizeBtnContainer:Landroid/widget/FrameLayout;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
 
@@ -1276,12 +1305,50 @@
     move v4, v0
 
     :goto_1
-    invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2438
+    .line 2496
     iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->changeSizeBtn:Lorg/telegram/ui/Components/MessagePreviewView$ToggleButton;
 
-    invoke-virtual {v3}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+    iget-object v4, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
+
+    iget-boolean v4, v4, Lorg/telegram/messenger/MessagePreviewParams;->isVideo:Z
+
+    const/4 v5, 0x4
+
+    if-eqz v4, :cond_1
+
+    move v4, v5
+
+    goto :goto_2
+
+    :cond_1
+    move v4, v0
+
+    :goto_2
+    invoke-virtual {v3, v4}, Landroid/view/View;->setVisibility(I)V
+
+    .line 2497
+    iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->videoChangeSizeBtn:Lorg/telegram/ui/Components/MessagePreviewView$ToggleButton;
+
+    iget-object v4, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
+
+    iget-boolean v4, v4, Lorg/telegram/messenger/MessagePreviewParams;->isVideo:Z
+
+    if-nez v4, :cond_2
+
+    goto :goto_3
+
+    :cond_2
+    move v5, v0
+
+    :goto_3
+    invoke-virtual {v3, v5}, Landroid/view/View;->setVisibility(I)V
+
+    .line 2498
+    iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->changeSizeBtnContainer:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v3}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
 
@@ -1289,23 +1356,23 @@
 
     iget-boolean v4, v4, Lorg/telegram/messenger/MessagePreviewParams;->hasMedia:Z
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_3
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    goto :goto_2
+    goto :goto_4
 
-    :cond_1
+    :cond_3
     const/high16 v4, 0x3f000000    # 0.5f
 
-    :goto_2
+    :goto_4
     invoke-virtual {v3, v4}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
 
     invoke-virtual {v3}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 2439
+    .line 2499
     iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->changeSizeBtn:Lorg/telegram/ui/Components/MessagePreviewView$ToggleButton;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
@@ -1316,7 +1383,16 @@
 
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/Components/MessagePreviewView$ToggleButton;->setState(ZZ)V
 
-    .line 2440
+    .line 2500
+    iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->videoChangeSizeBtn:Lorg/telegram/ui/Components/MessagePreviewView$ToggleButton;
+
+    iget-object v4, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
+
+    iget-boolean v4, v4, Lorg/telegram/messenger/MessagePreviewParams;->webpageSmall:Z
+
+    invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/Components/MessagePreviewView$ToggleButton;->setState(ZZ)V
+
+    .line 2501
     iget-object v3, v2, Lorg/telegram/ui/Components/MessagePreviewView$Page;->changePositionBtn:Lorg/telegram/ui/Components/MessagePreviewView$ToggleButton;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/MessagePreviewView;->messagePreviewParams:Lorg/telegram/messenger/MessagePreviewParams;
@@ -1327,14 +1403,14 @@
 
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/Components/MessagePreviewView$ToggleButton;->setState(ZZ)V
 
-    .line 2441
+    .line 2502
     invoke-static {v2}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->access$000(Lorg/telegram/ui/Components/MessagePreviewView$Page;)V
 
-    :cond_2
+    :cond_4
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_3
+    :cond_5
     return-void
 .end method

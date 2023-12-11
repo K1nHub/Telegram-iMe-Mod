@@ -17,7 +17,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkContentImageHeaderBinding;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AvatarDrawable;
@@ -52,7 +52,7 @@ public final class ImageHeaderView extends FrameLayout {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(ImageHeaderView.this.getResources().getDimension(C3634R.dimen.icon_size_medium) / 2);
+                return Float.valueOf(ImageHeaderView.this.getResources().getDimension(C3632R.dimen.icon_size_medium) / 2);
             }
         });
         this.networkIconCornerSize$delegate = lazy;
@@ -112,7 +112,7 @@ public final class ImageHeaderView extends FrameLayout {
         ForkContentImageHeaderBinding forkContentImageHeaderBinding = this.binding;
         AppCompatImageView imageIcon = forkContentImageHeaderBinding.imageIcon;
         Intrinsics.checkNotNullExpressionValue(imageIcon, "imageIcon");
-        ImageViewExtKt.loadFrom$default(imageIcon, iconUrl, Integer.valueOf(C3634R.C3636drawable.fork_ic_internal_logo), false, 4, null);
+        ImageViewExtKt.loadFrom$default(imageIcon, iconUrl, Integer.valueOf(C3632R.C3634drawable.fork_ic_internal_logo), false, 4, null);
         forkContentImageHeaderBinding.textTitle.setText(titleText);
         forkContentImageHeaderBinding.textSubtitle.setText(subtitleText);
     }

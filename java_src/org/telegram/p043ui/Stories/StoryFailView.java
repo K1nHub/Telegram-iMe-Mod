@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -36,7 +36,7 @@ public class StoryFailView extends FrameLayout {
         TextView textView = new TextView(context);
         this.titleTextView = textView;
         textView.setTextSize(1, 14.0f);
-        textView.setText(LocaleController.getString(C3634R.string.StoryError));
+        textView.setText(LocaleController.getString(C3632R.string.StoryError));
         textView.setTextColor(-1);
         addView(textView, LayoutHelper.createFrame(-2, -2, 19, 44, 0, 0, 0));
         TextView textView2 = new TextView(context);
@@ -51,7 +51,7 @@ public class StoryFailView extends FrameLayout {
         textView3.setPadding(AndroidUtilities.m104dp(13), 0, AndroidUtilities.m104dp(13), 0);
         textView3.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(16), 536870911, 956301311));
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString(C3634R.string.TryAgain));
+        textView3.setText(LocaleController.getString(C3632R.string.TryAgain));
         textView3.setTextSize(1, 14.0f);
         textView3.setTextColor(-1);
         textView3.setGravity(17);

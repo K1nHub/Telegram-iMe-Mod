@@ -10,6 +10,9 @@
     }
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # instance fields
 .field private animatorSet:Landroid/animation/AnimatorSet;
@@ -75,7 +78,7 @@
 
     const/4 v1, 0x0
 
-    .line 87
+    .line 88
     invoke-direct {p0, p1, p2, v0, v1}, Lorg/telegram/ui/Components/HintView;-><init>(Landroid/content/Context;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -86,7 +89,7 @@
 
     const/4 v0, 0x0
 
-    .line 95
+    .line 96
     invoke-direct {p0, p1, p2, v0, p3}, Lorg/telegram/ui/Components/HintView;-><init>(Landroid/content/Context;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -97,7 +100,7 @@
 
     const/4 v0, 0x0
 
-    .line 91
+    .line 92
     invoke-direct {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Components/HintView;-><init>(Landroid/content/Context;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -114,33 +117,33 @@
 
     move/from16 v3, p3
 
-    .line 99
+    .line 100
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const-wide/16 v4, 0x7d0
 
-    .line 77
+    .line 78
     iput-wide v4, v0, Lorg/telegram/ui/Components/HintView;->showingDuration:J
 
     move-object/from16 v4, p4
 
-    .line 100
+    .line 101
     iput-object v4, v0, Lorg/telegram/ui/Components/HintView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 102
+    .line 103
     iput v2, v0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
-    .line 103
+    .line 104
     iput-boolean v3, v0, Lorg/telegram/ui/Components/HintView;->isTopArrow:Z
 
-    .line 105
+    .line 106
     new-instance v4, Lorg/telegram/ui/Components/CorrectlyMeasuringTextView;
 
     invoke-direct {v4, v1}, Lorg/telegram/ui/Components/CorrectlyMeasuringTextView;-><init>(Landroid/content/Context;)V
 
     iput-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
-    .line 106
+    .line 107
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_gifSaveHintText:I
 
     invoke-direct {v0, v5}, Lorg/telegram/ui/Components/HintView;->getThemedColor(I)I
@@ -149,7 +152,7 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 107
+    .line 108
     iget-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     const/4 v6, 0x1
@@ -158,7 +161,7 @@
 
     invoke-virtual {v4, v6, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 108
+    .line 109
     iget-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     const/4 v6, 0x2
@@ -184,7 +187,7 @@
 
     if-ne v2, v7, :cond_1
 
-    .line 112
+    .line 113
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     const/16 v8, 0x118
@@ -197,7 +200,7 @@
 
     goto :goto_1
 
-    .line 114
+    .line 115
     :cond_1
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
@@ -211,7 +214,7 @@
 
     goto :goto_1
 
-    .line 110
+    .line 111
     :cond_2
     :goto_0
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
@@ -224,7 +227,7 @@
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setMaxWidth(I)V
 
-    .line 116
+    .line 117
     :goto_1
     iget v7, v0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
@@ -236,14 +239,14 @@
 
     if-ne v7, v8, :cond_5
 
-    .line 117
+    .line 118
     iget-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     const/16 v6, 0x13
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 118
+    .line 119
     iget-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     const/4 v6, 0x5
@@ -264,7 +267,7 @@
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 119
+    .line 120
     iget-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     const/16 v6, 0xa
@@ -279,7 +282,7 @@
 
     invoke-virtual {v4, v7, v10, v6, v10}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 120
+    .line 121
     iget-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     const/4 v11, -0x2
@@ -320,7 +323,7 @@
 
     goto :goto_7
 
-    .line 122
+    .line 123
     :cond_5
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
@@ -328,7 +331,7 @@
 
     invoke-virtual {v7, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 123
+    .line 124
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -347,7 +350,7 @@
 
     invoke-virtual {v7, v11}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 124
+    .line 125
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     iget v11, v0, Lorg/telegram/ui/Components/HintView;->currentType:I
@@ -380,7 +383,7 @@
 
     invoke-virtual {v7, v11, v4, v12, v6}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 125
+    .line 126
     iget-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     const/4 v11, -0x2
@@ -422,7 +425,7 @@
     :goto_7
     if-nez v2, :cond_9
 
-    .line 129
+    .line 130
     iget-object v2, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->AutoplayVideoInfo:I
@@ -435,26 +438,26 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 131
+    .line 132
     new-instance v2, Landroid/widget/ImageView;
 
     invoke-direct {v2, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/HintView;->imageView:Landroid/widget/ImageView;
 
-    .line 132
+    .line 133
     sget v4, Lorg/telegram/messenger/R$drawable;->tooltip_sound:I
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 133
+    .line 134
     iget-object v2, v0, Lorg/telegram/ui/Components/HintView;->imageView:Landroid/widget/ImageView;
 
     sget-object v4, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 134
+    .line 135
     iget-object v2, v0, Lorg/telegram/ui/Components/HintView;->imageView:Landroid/widget/ImageView;
 
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
@@ -469,7 +472,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 135
+    .line 136
     iget-object v2, v0, Lorg/telegram/ui/Components/HintView;->imageView:Landroid/widget/ImageView;
 
     const/16 v9, 0x26
@@ -492,7 +495,7 @@
 
     invoke-virtual {v0, v2, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 138
+    .line 139
     :cond_9
     new-instance v2, Landroid/widget/ImageView;
 
@@ -502,7 +505,7 @@
 
     if-eqz v3, :cond_a
 
-    .line 139
+    .line 140
     sget v1, Lorg/telegram/messenger/R$drawable;->tooltip_arrow_up:I
 
     goto :goto_8
@@ -513,7 +516,7 @@
     :goto_8
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 140
+    .line 141
     iget-object v1, v0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
@@ -530,7 +533,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 141
+    .line 142
     iget-object v1, v0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     const/16 v9, 0xe
@@ -569,7 +572,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/Components/HintView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -578,7 +581,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/HintView;)Z
     .locals 0
 
-    .line 42
+    .line 43
     iget-boolean p0, p0, Lorg/telegram/ui/Components/HintView;->hasCloseButton:Z
 
     return p0
@@ -587,7 +590,7 @@
 .method static synthetic access$202(Lorg/telegram/ui/Components/HintView;Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView;->hideRunnable:Ljava/lang/Runnable;
 
     return-object p1
@@ -596,7 +599,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/HintView;)I
     .locals 0
 
-    .line 42
+    .line 43
     iget p0, p0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
     return p0
@@ -605,7 +608,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/HintView;)J
     .locals 2
 
-    .line 42
+    .line 43
     iget-wide v0, p0, Lorg/telegram/ui/Components/HintView;->showingDuration:J
 
     return-wide v0
@@ -614,7 +617,7 @@
 .method static synthetic access$502(Lorg/telegram/ui/Components/HintView;Landroid/view/View;)Landroid/view/View;
     .locals 0
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView;->currentView:Landroid/view/View;
 
     return-object p1
@@ -623,7 +626,7 @@
 .method static synthetic access$602(Lorg/telegram/ui/Components/HintView;Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell;
     .locals 0
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView;->messageCell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     return-object p1
@@ -632,7 +635,7 @@
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 585
+    .line 586
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -647,7 +650,7 @@
 
     const/4 p1, 0x1
 
-    .line 154
+    .line 155
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/HintView;->hide(Z)V
 
     return-void
@@ -656,7 +659,7 @@
 .method private updatePosition(Landroid/view/View;)V
     .locals 12
 
-    .line 404
+    .line 405
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, v0, Landroid/graphics/Point;->x:I
@@ -681,12 +684,12 @@
 
     new-array v1, v0, [I
 
-    .line 407
+    .line 408
     invoke-virtual {p1, v1}, Landroid/view/View;->getLocationInWindow([I)V
 
     const/4 v2, 0x1
 
-    .line 409
+    .line 410
     aget v3, v1, v2
 
     const/4 v4, 0x4
@@ -697,7 +700,7 @@
 
     sub-int/2addr v3, v5
 
-    .line 411
+    .line 412
     iget v5, p0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
     const/4 v6, 0x6
@@ -710,7 +713,7 @@
 
     if-ne v5, v4, :cond_0
 
-    .line 412
+    .line 413
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -723,12 +726,12 @@
     :cond_0
     if-ne v5, v6, :cond_1
 
-    .line 413
+    .line 414
     iget-boolean v4, p0, Lorg/telegram/ui/Components/HintView;->isTopArrow:Z
 
     if-eqz v4, :cond_1
 
-    .line 414
+    .line 415
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v4
@@ -750,7 +753,7 @@
 
     if-ne v5, v9, :cond_2
 
-    .line 415
+    .line 416
     iget-boolean v4, p0, Lorg/telegram/ui/Components/HintView;->isTopArrow:Z
 
     if-eqz v4, :cond_2
@@ -760,7 +763,7 @@
     :cond_2
     if-ne v5, v9, :cond_4
 
-    .line 418
+    .line 419
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -769,7 +772,7 @@
 
     goto :goto_3
 
-    .line 416
+    .line 417
     :cond_3
     :goto_1
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
@@ -791,7 +794,7 @@
 
     goto :goto_0
 
-    .line 422
+    .line 423
     :cond_4
     :goto_3
     iget v4, p0, Lorg/telegram/ui/Components/HintView;->currentType:I
@@ -806,20 +809,20 @@
 
     if-eqz v11, :cond_8
 
-    .line 423
+    .line 424
     instance-of v4, p1, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz v4, :cond_6
 
-    .line 424
+    .line 425
     check-cast p1, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    .line 425
+    .line 426
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getRightDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
-    .line 426
+    .line 427
     aget v11, v1, v10
 
     if-eqz v4, :cond_5
@@ -852,16 +855,16 @@
 
     goto :goto_5
 
-    .line 427
+    .line 428
     :cond_6
     instance-of v4, p1, Landroid/widget/TextView;
 
     if-eqz v4, :cond_7
 
-    .line 428
+    .line 429
     check-cast p1, Landroid/widget/TextView;
 
-    .line 429
+    .line 430
     aget v4, v1, v10
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getMeasuredWidth()I
@@ -880,7 +883,7 @@
 
     goto :goto_5
 
-    .line 431
+    .line 432
     :cond_7
     aget v11, v1, v10
 
@@ -889,12 +892,12 @@
     :cond_8
     if-ne v4, v5, :cond_9
 
-    .line 434
+    .line 435
     aget v11, v1, v10
 
     goto :goto_5
 
-    .line 436
+    .line 437
     :cond_9
     aget v4, v1, v10
 
@@ -906,7 +909,7 @@
 
     add-int v11, v4, p1
 
-    .line 439
+    .line 440
     :goto_5
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -914,30 +917,30 @@
 
     check-cast p1, Landroid/view/View;
 
-    .line 440
+    .line 441
     invoke-virtual {p1, v1}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 441
+    .line 442
     aget v4, v1, v10
 
     sub-int/2addr v11, v4
 
-    .line 442
+    .line 443
     aget v1, v1, v2
 
     sub-int/2addr v3, v1
 
-    .line 444
+    .line 445
     iget v1, p0, Lorg/telegram/ui/Components/HintView;->bottomOffset:I
 
     sub-int/2addr v3, v1
 
-    .line 446
+    .line 447
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 447
+    .line 448
     iget-boolean v2, p0, Lorg/telegram/ui/Components/HintView;->isTopArrow:Z
 
     if-eqz v2, :cond_a
@@ -950,7 +953,7 @@
 
     if-eq v2, v9, :cond_a
 
-    .line 448
+    .line 449
     iget v2, p0, Lorg/telegram/ui/Components/HintView;->extraTranslationY:F
 
     const/16 v3, 0x2c
@@ -969,7 +972,7 @@
 
     goto :goto_6
 
-    .line 450
+    .line 451
     :cond_a
     iget v2, p0, Lorg/telegram/ui/Components/HintView;->extraTranslationY:F
 
@@ -987,7 +990,7 @@
 
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 456
+    .line 457
     :goto_6
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -997,7 +1000,7 @@
 
     if-eqz v2, :cond_b
 
-    .line 457
+    .line 458
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -1006,7 +1009,7 @@
 
     iget v2, v2, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 458
+    .line 459
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
@@ -1022,7 +1025,7 @@
 
     move v3, v2
 
-    .line 460
+    .line 461
     :goto_7
     iget v4, p0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
@@ -1036,7 +1039,7 @@
 
     sub-int/2addr v1, v3
 
-    .line 461
+    .line 462
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v3
@@ -1047,7 +1050,7 @@
 
     goto :goto_8
 
-    .line 462
+    .line 463
     :cond_c
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1057,14 +1060,14 @@
 
     if-le v11, v4, :cond_e
 
-    .line 463
+    .line 464
     iget v4, p0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
     if-ne v4, v5, :cond_d
 
     int-to-float v1, v1
 
-    .line 464
+    .line 465
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v3
@@ -1083,7 +1086,7 @@
 
     goto :goto_8
 
-    .line 469
+    .line 470
     :cond_d
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -1097,13 +1100,13 @@
 
     goto :goto_8
 
-    .line 472
+    .line 473
     :cond_e
     iget v1, p0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
     if-ne v1, v5, :cond_10
 
-    .line 473
+    .line 474
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -1131,7 +1134,7 @@
     :goto_8
     int-to-float v1, v10
 
-    .line 481
+    .line 482
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
     add-int/2addr v2, v10
@@ -1140,7 +1143,7 @@
 
     int-to-float v1, v1
 
-    .line 482
+    .line 483
     iget-object v2, p0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->getMeasuredWidth()I
@@ -1155,12 +1158,12 @@
 
     sub-float/2addr v1, v2
 
-    .line 483
+    .line 484
     iget v2, p0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
     if-ne v2, v7, :cond_11
 
-    .line 484
+    .line 485
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1169,13 +1172,13 @@
 
     add-float/2addr v1, v2
 
-    .line 486
+    .line 487
     :cond_11
     iget-object v2, p0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    .line 487
+    .line 488
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p1
@@ -1184,7 +1187,7 @@
 
     if-le v11, p1, :cond_12
 
-    .line 488
+    .line 489
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -1195,7 +1198,7 @@
 
     if-gez p1, :cond_14
 
-    .line 489
+    .line 490
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -1204,7 +1207,7 @@
 
     sub-float p1, v1, p1
 
-    .line 490
+    .line 491
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationX()F
 
     move-result v0
@@ -1213,7 +1216,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 491
+    .line 492
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     sub-float/2addr v1, p1
@@ -1222,7 +1225,7 @@
 
     goto :goto_9
 
-    .line 494
+    .line 495
     :cond_12
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -1242,7 +1245,7 @@
 
     if-lez p1, :cond_13
 
-    .line 495
+    .line 496
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1
@@ -1259,10 +1262,10 @@
 
     add-float/2addr p1, v0
 
-    .line 496
+    .line 497
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 497
+    .line 498
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     sub-float/2addr v1, p1
@@ -1271,7 +1274,7 @@
 
     goto :goto_9
 
-    .line 498
+    .line 499
     :cond_13
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1283,7 +1286,7 @@
 
     if-gez p1, :cond_14
 
-    .line 499
+    .line 500
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -1292,7 +1295,7 @@
 
     sub-float p1, v1, p1
 
-    .line 500
+    .line 501
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationX()F
 
     move-result v0
@@ -1301,7 +1304,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 501
+    .line 502
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     sub-float/2addr v1, p1
@@ -1318,7 +1321,7 @@
 .method public createCloseButton()V
     .locals 11
 
-    .line 145
+    .line 146
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     const/16 v1, 0xc
@@ -1349,10 +1352,10 @@
 
     const/4 v0, 0x1
 
-    .line 147
+    .line 148
     iput-boolean v0, p0, Lorg/telegram/ui/Components/HintView;->hasCloseButton:Z
 
-    .line 148
+    .line 149
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1363,19 +1366,19 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/HintView;->imageView:Landroid/widget/ImageView;
 
-    .line 149
+    .line 150
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_mini_close_tooltip:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 150
+    .line 151
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->imageView:Landroid/widget/ImageView;
 
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 151
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->imageView:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
@@ -1398,7 +1401,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 152
+    .line 153
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->imageView:Landroid/widget/ImageView;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/HintView;->isTopArrow:Z
@@ -1443,7 +1446,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 154
+    .line 155
     new-instance v0, Lorg/telegram/ui/Components/HintView$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/HintView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/HintView;)V
@@ -1456,7 +1459,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 604
+    .line 605
     iget-boolean v0, p0, Lorg/telegram/ui/Components/HintView;->drawPath:Z
 
     if-eqz v0, :cond_1
@@ -1465,12 +1468,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 605
+    .line 606
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->backgroundPaint:Landroid/graphics/Paint;
 
     if-nez v0, :cond_0
 
-    .line 606
+    .line 607
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -1479,7 +1482,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/HintView;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 607
+    .line 608
     new-instance v1, Landroid/graphics/CornerPathEffect;
 
     const/high16 v2, 0x40c00000    # 6.0f
@@ -1492,14 +1495,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 608
+    .line 609
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->backgroundPaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lorg/telegram/ui/Components/HintView;->backgroundColor:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 610
+    .line 611
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
@@ -1507,7 +1510,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 613
+    .line 614
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -1517,7 +1520,7 @@
 .method public getBaseTranslationY()F
     .locals 1
 
-    .line 179
+    .line 180
     iget v0, p0, Lorg/telegram/ui/Components/HintView;->translationY:F
 
     return v0
@@ -1526,7 +1529,7 @@
 .method public getMessageCell()Lorg/telegram/ui/Cells/ChatMessageCell;
     .locals 1
 
-    .line 573
+    .line 574
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->messageCell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     return-object v0
@@ -1537,7 +1540,7 @@
 
     const/4 v0, 0x1
 
-    .line 507
+    .line 508
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/HintView;->hide(Z)V
 
     return-void
@@ -1546,7 +1549,7 @@
 .method public hide(Z)V
     .locals 6
 
-    .line 511
+    .line 512
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -1558,30 +1561,30 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 514
+    .line 515
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 515
+    .line 516
     iget-object v1, p0, Lorg/telegram/ui/Components/HintView;->hideRunnable:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_1
 
-    .line 516
+    .line 517
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 517
+    .line 518
     iput-object v0, p0, Lorg/telegram/ui/Components/HintView;->hideRunnable:Ljava/lang/Runnable;
 
-    .line 519
+    .line 520
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_2
 
-    .line 520
+    .line 521
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 521
+    .line 522
     iput-object v0, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     :cond_2
@@ -1589,14 +1592,14 @@
 
     if-eqz p1, :cond_4
 
-    .line 524
+    .line 525
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
-    .line 525
+    .line 526
     iget-boolean v0, p0, Lorg/telegram/ui/Components/HintView;->useScale:Z
 
     const/4 v2, 0x1
@@ -1607,7 +1610,7 @@
 
     new-array v0, v0, [Landroid/animation/Animator;
 
-    .line 526
+    .line 527
     sget-object v3, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     const/4 v4, 0x2
@@ -1616,7 +1619,7 @@
 
     fill-array-data v5, :array_0
 
-    .line 527
+    .line 528
     invoke-static {p0, v3, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -1629,7 +1632,7 @@
 
     fill-array-data v3, :array_1
 
-    .line 528
+    .line 529
     invoke-static {p0, v1, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
@@ -1642,24 +1645,24 @@
 
     fill-array-data v2, :array_2
 
-    .line 529
+    .line 530
     invoke-static {p0, v1, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
 
     aput-object v1, v0, v4
 
-    .line 526
+    .line 527
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 531
+    .line 532
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0x96
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 532
+    .line 533
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -1671,7 +1674,7 @@
     :cond_3
     new-array v0, v2, [Landroid/animation/Animator;
 
-    .line 534
+    .line 535
     sget-object v3, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v2, v2, [F
@@ -1680,24 +1683,24 @@
 
     aput v4, v2, v1
 
-    .line 535
+    .line 536
     invoke-static {p0, v3, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
 
     aput-object v2, v0, v1
 
-    .line 534
+    .line 535
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 537
+    .line 538
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0x12c
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 539
+    .line 540
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
@@ -1707,7 +1710,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 552
+    .line 553
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
@@ -1717,25 +1720,25 @@
     :cond_4
     const/4 p1, 0x4
 
-    .line 554
+    .line 555
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 555
+    .line 556
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->visibleListener:Lorg/telegram/ui/Components/HintView$VisibilityListener;
 
     if-eqz p1, :cond_5
 
-    .line 556
+    .line 557
     invoke-interface {p1, v1}, Lorg/telegram/ui/Components/HintView$VisibilityListener;->onVisible(Z)V
 
-    .line 558
+    .line 559
     :cond_5
     iput-object v0, p0, Lorg/telegram/ui/Components/HintView;->currentView:Landroid/view/View;
 
-    .line 559
+    .line 560
     iput-object v0, p0, Lorg/telegram/ui/Components/HintView;->messageCell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 560
+    .line 561
     iput-object v0, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     :goto_1
@@ -1763,7 +1766,7 @@
 .method public isShowing()Z
     .locals 1
 
-    .line 565
+    .line 566
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -1784,25 +1787,25 @@
 .method protected onMeasure(II)V
     .locals 7
 
-    .line 618
+    .line 619
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 619
+    .line 620
     iget-boolean p1, p0, Lorg/telegram/ui/Components/HintView;->drawPath:Z
 
     if-eqz p1, :cond_2
 
-    .line 620
+    .line 621
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result p1
 
-    .line 621
+    .line 622
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p2
 
-    .line 622
+    .line 623
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getX()F
@@ -1823,12 +1826,12 @@
 
     add-float/2addr v0, v1
 
-    .line 623
+    .line 624
     iget-object v1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     if-nez v1, :cond_0
 
-    .line 624
+    .line 625
     new-instance v1, Landroid/graphics/Path;
 
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
@@ -1837,11 +1840,11 @@
 
     goto :goto_0
 
-    .line 626
+    .line 627
     :cond_0
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
-    .line 628
+    .line 629
     :goto_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/HintView;->isTopArrow:Z
 
@@ -1855,7 +1858,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 629
+    .line 630
     iget-object v1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1866,21 +1869,21 @@
 
     invoke-virtual {v1, v4, v6}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 630
+    .line 631
     iget-object v1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     int-to-float p1, p1
 
     invoke-virtual {v1, v4, p1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 631
+    .line 632
     iget-object v1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     int-to-float p2, p2
 
     invoke-virtual {v1, p2, p1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 632
+    .line 633
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1891,7 +1894,7 @@
 
     invoke-virtual {p1, p2, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 634
+    .line 635
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1910,7 +1913,7 @@
 
     invoke-virtual {p1, p2, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 635
+    .line 636
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1923,7 +1926,7 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 636
+    .line 637
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1942,14 +1945,14 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 637
+    .line 638
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1}, Landroid/graphics/Path;->close()V
 
     goto :goto_1
 
-    .line 639
+    .line 640
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
@@ -1963,19 +1966,19 @@
 
     invoke-virtual {v1, v4, v6}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 640
+    .line 641
     iget-object v1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1, v4, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 641
+    .line 642
     iget-object v1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     int-to-float p2, p2
 
     invoke-virtual {v1, p2, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 642
+    .line 643
     iget-object v1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1988,7 +1991,7 @@
 
     invoke-virtual {v1, p2, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 644
+    .line 645
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2009,7 +2012,7 @@
 
     invoke-virtual {p2, v1, v4}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 645
+    .line 646
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2022,7 +2025,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 646
+    .line 647
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2043,7 +2046,7 @@
 
     invoke-virtual {p2, v0, p1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 647
+    .line 648
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1}, Landroid/graphics/Path;->close()V
@@ -2056,12 +2059,12 @@
 .method public setBackgroundColor(II)V
     .locals 2
 
-    .line 158
+    .line 159
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 159
+    .line 160
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
@@ -2072,7 +2075,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 160
+    .line 161
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     iget v0, p0, Lorg/telegram/ui/Components/HintView;->currentType:I
@@ -2113,7 +2116,7 @@
 .method public setBottomOffset(I)V
     .locals 0
 
-    .line 581
+    .line 582
     iput p1, p0, Lorg/telegram/ui/Components/HintView;->bottomOffset:I
 
     return-void
@@ -2122,10 +2125,10 @@
 .method public setExtraTranslationY(F)V
     .locals 1
 
-    .line 174
+    .line 175
     iput p1, p0, Lorg/telegram/ui/Components/HintView;->extraTranslationY:F
 
-    .line 175
+    .line 176
     iget v0, p0, Lorg/telegram/ui/Components/HintView;->translationY:F
 
     add-float/2addr p1, v0
@@ -2138,7 +2141,7 @@
 .method public setHideRunnable(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 49
+    .line 50
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView;->hideRunnable:Ljava/lang/Runnable;
 
     return-void
@@ -2147,27 +2150,27 @@
 .method public setOverrideText(Ljava/lang/String;)V
     .locals 1
 
-    .line 164
+    .line 165
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView;->overrideText:Ljava/lang/String;
 
-    .line 165
+    .line 166
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 166
+    .line 167
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->messageCell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz p1, :cond_0
 
     const/4 v0, 0x0
 
-    .line 168
+    .line 169
     iput-object v0, p0, Lorg/telegram/ui/Components/HintView;->messageCell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/4 v0, 0x0
 
-    .line 169
+    .line 170
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/HintView;->showForMessageCell(Lorg/telegram/ui/Cells/ChatMessageCell;Z)Z
 
     :cond_0
@@ -2177,7 +2180,7 @@
 .method public setShowingDuration(J)V
     .locals 0
 
-    .line 577
+    .line 578
     iput-wide p1, p0, Lorg/telegram/ui/Components/HintView;->showingDuration:J
 
     return-void
@@ -2186,7 +2189,7 @@
 .method public setText(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 569
+    .line 570
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -2197,7 +2200,7 @@
 .method public setUseScale(Z)V
     .locals 0
 
-    .line 589
+    .line 590
     iput-boolean p1, p0, Lorg/telegram/ui/Components/HintView;->useScale:Z
 
     return-void
@@ -2206,7 +2209,7 @@
 .method public setVisibleListener(Lorg/telegram/ui/Components/HintView$VisibilityListener;)V
     .locals 0
 
-    .line 593
+    .line 594
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView;->visibleListener:Lorg/telegram/ui/Components/HintView$VisibilityListener;
 
     return-void
@@ -2221,7 +2224,7 @@
 
     move/from16 v2, p4
 
-    .line 187
+    .line 188
     iget v3, v0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
     const/4 v4, 0x5
@@ -2257,7 +2260,7 @@
     :cond_2
     return v5
 
-    .line 190
+    .line 191
     :cond_3
     iget-object v3, v0, Lorg/telegram/ui/Components/HintView;->hideRunnable:Ljava/lang/Runnable;
 
@@ -2265,10 +2268,10 @@
 
     if-eqz v3, :cond_4
 
-    .line 191
+    .line 192
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 192
+    .line 193
     iput-object v6, v0, Lorg/telegram/ui/Components/HintView;->hideRunnable:Ljava/lang/Runnable;
 
     :cond_4
@@ -2276,37 +2279,37 @@
 
     new-array v7, v3, [I
 
-    .line 195
+    .line 196
     invoke-virtual {v1, v7}, Landroid/view/ViewGroup;->getLocationInWindow([I)V
 
     const/4 v8, 0x1
 
-    .line 196
+    .line 197
     aget v9, v7, v8
 
-    .line 197
+    .line 198
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v10
 
     check-cast v10, Landroid/view/View;
 
-    .line 198
+    .line 199
     invoke-virtual {v10, v7}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 199
+    .line 200
     aget v7, v7, v8
 
     sub-int/2addr v9, v7
 
-    .line 201
+    .line 202
     invoke-virtual/range {p1 .. p1}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v7
 
     check-cast v7, Landroid/view/View;
 
-    .line 203
+    .line 204
     iget v10, v0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
     const/high16 v11, -0x80000000
@@ -2317,14 +2320,14 @@
 
     if-nez v10, :cond_7
 
-    .line 204
+    .line 205
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getPhotoImage()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v2
 
     int-to-float v9, v9
 
-    .line 205
+    .line 206
     invoke-virtual {v2}, Lorg/telegram/messenger/ImageReceiver;->getImageY()F
 
     move-result v10
@@ -2333,7 +2336,7 @@
 
     float-to-int v9, v9
 
-    .line 206
+    .line 207
     invoke-virtual {v2}, Lorg/telegram/messenger/ImageReceiver;->getImageHeight()F
 
     move-result v2
@@ -2342,12 +2345,12 @@
 
     add-int v10, v9, v2
 
-    .line 208
+    .line 209
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v14
 
-    .line 209
+    .line 210
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v15
@@ -2368,13 +2371,13 @@
 
     goto :goto_0
 
-    .line 212
+    .line 213
     :cond_5
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getNoSoundIconCenterX()I
 
     move-result v2
 
-    .line 213
+    .line 214
     invoke-static {v12, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v10
@@ -2394,17 +2397,17 @@
     :cond_7
     if-ne v10, v4, :cond_c
 
-    .line 215
+    .line 216
     move-object/from16 v10, p2
 
     check-cast v10, Ljava/lang/Integer;
 
     add-int/2addr v9, v2
 
-    .line 218
+    .line 219
     iput v2, v0, Lorg/telegram/ui/Components/HintView;->shownY:I
 
-    .line 219
+    .line 220
     invoke-virtual {v10}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -2413,7 +2416,7 @@
 
     if-ne v2, v14, :cond_8
 
-    .line 220
+    .line 221
     iget-object v2, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     sget v10, Lorg/telegram/messenger/R$string;->PollSelectOption:I
@@ -2428,7 +2431,7 @@
 
     goto :goto_1
 
-    .line 222
+    .line 223
     :cond_8
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
@@ -2440,14 +2443,14 @@
 
     if-eqz v2, :cond_a
 
-    .line 223
+    .line 224
     invoke-virtual {v10}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
 
     if-nez v2, :cond_9
 
-    .line 224
+    .line 225
     iget-object v2, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     sget v10, Lorg/telegram/messenger/R$string;->NoVotesQuiz:I
@@ -2462,7 +2465,7 @@
 
     goto :goto_1
 
-    .line 226
+    .line 227
     :cond_9
     iget-object v2, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
@@ -2482,7 +2485,7 @@
 
     goto :goto_1
 
-    .line 229
+    .line 230
     :cond_a
     invoke-virtual {v10}, Ljava/lang/Integer;->intValue()I
 
@@ -2490,7 +2493,7 @@
 
     if-nez v2, :cond_b
 
-    .line 230
+    .line 231
     iget-object v2, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     sget v10, Lorg/telegram/messenger/R$string;->NoVotes:I
@@ -2505,7 +2508,7 @@
 
     goto :goto_1
 
-    .line 232
+    .line 233
     :cond_b
     iget-object v2, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
@@ -2523,7 +2526,7 @@
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 236
+    .line 237
     :goto_1
     invoke-static {v12, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2539,18 +2542,18 @@
 
     goto/16 :goto_4
 
-    .line 238
+    .line 239
     :cond_c
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v2
 
-    .line 239
+    .line 240
     iget-object v10, v0, Lorg/telegram/ui/Components/HintView;->overrideText:Ljava/lang/String;
 
     if-nez v10, :cond_d
 
-    .line 240
+    .line 241
     iget-object v10, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     sget v14, Lorg/telegram/messenger/R$string;->HidAccount:I
@@ -2565,13 +2568,13 @@
 
     goto :goto_2
 
-    .line 242
+    .line 243
     :cond_d
     iget-object v14, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v14, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 244
+    .line 245
     :goto_2
     invoke-static {v12, v11}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -2583,14 +2586,14 @@
 
     invoke-virtual {v0, v10, v11}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 246
+    .line 247
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v10
 
     if-eqz v10, :cond_e
 
-    .line 247
+    .line 248
     iget-wide v10, v10, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     const-wide/16 v14, 0x0
@@ -2599,7 +2602,7 @@
 
     if-nez v10, :cond_e
 
-    .line 248
+    .line 249
     invoke-virtual/range {p1 .. p1}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v2
@@ -2635,14 +2638,14 @@
     :cond_e
     const/16 v10, 0x16
 
-    .line 250
+    .line 251
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
     add-int/2addr v9, v10
 
-    .line 251
+    .line 252
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
 
     move-result v10
@@ -2657,14 +2660,14 @@
 
     const/16 v10, 0x14
 
-    .line 252
+    .line 253
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
     add-int/2addr v9, v10
 
-    .line 254
+    .line 255
     :cond_f
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->shouldDrawWithoutBackground()Z
 
@@ -2680,7 +2683,7 @@
 
     int-to-float v2, v9
 
-    .line 255
+    .line 256
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -2699,7 +2702,7 @@
 
     move v9, v2
 
-    .line 258
+    .line 259
     :cond_10
     :goto_3
     iget-boolean v2, v0, Lorg/telegram/ui/Components/HintView;->isTopArrow:Z
@@ -2720,24 +2723,24 @@
 
     return v5
 
-    .line 261
+    .line 262
     :cond_11
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getForwardNameCenterX()I
 
     move-result v2
 
-    .line 264
+    .line 265
     :goto_4
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v10
 
-    .line 265
+    .line 266
     iget-boolean v11, v0, Lorg/telegram/ui/Components/HintView;->isTopArrow:Z
 
     if-eqz v11, :cond_12
 
-    .line 266
+    .line 267
     iget v9, v0, Lorg/telegram/ui/Components/HintView;->extraTranslationY:F
 
     const/16 v11, 0x2c
@@ -2756,7 +2759,7 @@
 
     goto :goto_5
 
-    .line 268
+    .line 269
     :cond_12
     iget v11, v0, Lorg/telegram/ui/Components/HintView;->extraTranslationY:F
 
@@ -2774,7 +2777,7 @@
 
     invoke-virtual {v0, v11}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 270
+    .line 271
     :goto_5
     invoke-virtual/range {p1 .. p1}, Landroid/view/ViewGroup;->getLeft()I
 
@@ -2784,17 +2787,17 @@
 
     const/16 v11, 0x13
 
-    .line 271
+    .line 272
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
 
-    .line 272
+    .line 273
     iget v12, v0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
     if-ne v12, v4, :cond_13
 
-    .line 273
+    .line 274
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
@@ -2817,14 +2820,14 @@
 
     int-to-float v10, v4
 
-    .line 274
+    .line 275
     invoke-virtual {v0, v10}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
     add-int/2addr v11, v4
 
     goto :goto_6
 
-    .line 276
+    .line 277
     :cond_13
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2834,7 +2837,7 @@
 
     if-le v9, v4, :cond_14
 
-    .line 277
+    .line 278
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
@@ -2851,7 +2854,7 @@
 
     int-to-float v4, v10
 
-    .line 278
+    .line 279
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
     add-int/2addr v11, v10
@@ -2861,10 +2864,10 @@
     :cond_14
     const/4 v4, 0x0
 
-    .line 281
+    .line 282
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 283
+    .line 284
     :goto_6
     invoke-virtual/range {p1 .. p1}, Landroid/view/ViewGroup;->getLeft()I
 
@@ -2886,12 +2889,12 @@
 
     int-to-float v2, v4
 
-    .line 284
+    .line 285
     iget-object v4, v0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    .line 285
+    .line 286
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
@@ -2900,7 +2903,7 @@
 
     if-le v9, v4, :cond_15
 
-    .line 286
+    .line 287
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -2911,7 +2914,7 @@
 
     if-gez v4, :cond_17
 
-    .line 287
+    .line 288
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -2920,7 +2923,7 @@
 
     sub-float v4, v2, v4
 
-    .line 288
+    .line 289
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getTranslationX()F
 
     move-result v7
@@ -2929,7 +2932,7 @@
 
     invoke-virtual {v0, v7}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 289
+    .line 290
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     sub-float/2addr v2, v4
@@ -2938,7 +2941,7 @@
 
     goto :goto_7
 
-    .line 292
+    .line 293
     :cond_15
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -2958,7 +2961,7 @@
 
     if-lez v4, :cond_16
 
-    .line 293
+    .line 294
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
@@ -2975,10 +2978,10 @@
 
     add-float/2addr v4, v7
 
-    .line 294
+    .line 295
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 295
+    .line 296
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     sub-float/2addr v2, v4
@@ -2987,7 +2990,7 @@
 
     goto :goto_7
 
-    .line 296
+    .line 297
     :cond_16
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -2999,7 +3002,7 @@
 
     if-gez v4, :cond_17
 
-    .line 297
+    .line 298
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -3008,7 +3011,7 @@
 
     sub-float v4, v2, v4
 
-    .line 298
+    .line 299
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getTranslationX()F
 
     move-result v7
@@ -3017,30 +3020,30 @@
 
     invoke-virtual {v0, v7}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 299
+    .line 300
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     sub-float/2addr v2, v4
 
     invoke-virtual {v7, v2}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    .line 303
+    .line 304
     :cond_17
     :goto_7
     iput-object v1, v0, Lorg/telegram/ui/Components/HintView;->messageCell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 304
+    .line 305
     iget-object v1, v0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_18
 
-    .line 305
+    .line 306
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 306
+    .line 307
     iput-object v6, v0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
-    .line 309
+    .line 310
     :cond_18
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -3048,21 +3051,21 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 310
+    .line 311
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 311
+    .line 312
     iget-object v1, v0, Lorg/telegram/ui/Components/HintView;->visibleListener:Lorg/telegram/ui/Components/HintView$VisibilityListener;
 
     if-eqz v1, :cond_19
 
-    .line 312
+    .line 313
     invoke-interface {v1, v8}, Lorg/telegram/ui/Components/HintView$VisibilityListener;->onVisible(Z)V
 
     :cond_19
     if-eqz p5, :cond_1a
 
-    .line 315
+    .line 316
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -3071,24 +3074,24 @@
 
     new-array v2, v8, [Landroid/animation/Animator;
 
-    .line 316
+    .line 317
     sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v3, v3, [F
 
     fill-array-data v3, :array_0
 
-    .line 317
+    .line 318
     invoke-static {v0, v4, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
 
     aput-object v3, v2, v5
 
-    .line 316
+    .line 317
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 319
+    .line 320
     iget-object v1, v0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     new-instance v2, Lorg/telegram/ui/Components/HintView$1;
@@ -3097,14 +3100,14 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 328
+    .line 329
     iget-object v1, v0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     const-wide/16 v2, 0x12c
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 329
+    .line 330
     iget-object v1, v0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
@@ -3114,7 +3117,7 @@
     :cond_1a
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 331
+    .line 332
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     :goto_8
@@ -3144,7 +3147,7 @@
 
     move v5, p2
 
-    .line 183
+    .line 184
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Components/HintView;->showForMessageCell(Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/Object;IIZ)Z
 
     move-result p1
@@ -3155,7 +3158,7 @@
 .method public showForView(Landroid/view/View;Z)Z
     .locals 5
 
-    .line 338
+    .line 339
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->currentView:Landroid/view/View;
 
     const/4 v1, 0x0
@@ -3170,7 +3173,7 @@
 
     goto/16 :goto_2
 
-    .line 344
+    .line 345
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->hideRunnable:Ljava/lang/Runnable;
 
@@ -3178,69 +3181,69 @@
 
     if-eqz v0, :cond_1
 
-    .line 345
+    .line 346
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 346
+    .line 347
     iput-object v2, p0, Lorg/telegram/ui/Components/HintView;->hideRunnable:Ljava/lang/Runnable;
 
-    .line 348
+    .line 349
     :cond_1
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/HintView;->updatePosition(Landroid/view/View;)V
 
-    .line 350
+    .line 351
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView;->currentView:Landroid/view/View;
 
-    .line 351
+    .line 352
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz p1, :cond_2
 
-    .line 352
+    .line 353
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 353
+    .line 354
     iput-object v2, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     :cond_2
     const/4 p1, 0x1
 
-    .line 356
+    .line 357
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 357
+    .line 358
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 358
+    .line 359
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->visibleListener:Lorg/telegram/ui/Components/HintView$VisibilityListener;
 
     if-eqz v0, :cond_3
 
-    .line 359
+    .line 360
     invoke-interface {v0, p1}, Lorg/telegram/ui/Components/HintView$VisibilityListener;->onVisible(Z)V
 
     :cond_3
     if-eqz p2, :cond_5
 
-    .line 362
+    .line 363
     new-instance p2, Landroid/animation/AnimatorSet;
 
     invoke-direct {p2}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
-    .line 363
+    .line 364
     iget-boolean v0, p0, Lorg/telegram/ui/Components/HintView;->useScale:Z
 
     const/4 v2, 0x2
 
     if-eqz v0, :cond_4
 
-    .line 364
+    .line 365
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->getX()F
@@ -3263,7 +3266,7 @@
 
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
-    .line 365
+    .line 366
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->getY()F
@@ -3284,7 +3287,7 @@
 
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
-    .line 366
+    .line 367
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     const/4 v0, 0x3
@@ -3297,7 +3300,7 @@
 
     fill-array-data v4, :array_0
 
-    .line 367
+    .line 368
     invoke-static {p0, v3, v4}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -3310,7 +3313,7 @@
 
     fill-array-data v3, :array_1
 
-    .line 368
+    .line 369
     invoke-static {p0, v1, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
@@ -3323,24 +3326,24 @@
 
     fill-array-data v3, :array_2
 
-    .line 369
+    .line 370
     invoke-static {p0, v1, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
 
     aput-object v1, v0, v2
 
-    .line 366
+    .line 367
     invoke-virtual {p2, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 371
+    .line 372
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0x15e
 
     invoke-virtual {p2, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 372
+    .line 373
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -3352,31 +3355,31 @@
     :cond_4
     new-array v0, p1, [Landroid/animation/Animator;
 
-    .line 374
+    .line 375
     sget-object v3, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v2, v2, [F
 
     fill-array-data v2, :array_3
 
-    .line 375
+    .line 376
     invoke-static {p0, v3, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
 
     aput-object v2, v0, v1
 
-    .line 374
+    .line 375
     invoke-virtual {p2, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 377
+    .line 378
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0x12c
 
     invoke-virtual {p2, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 379
+    .line 380
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
@@ -3386,7 +3389,7 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 389
+    .line 390
     iget-object p2, p0, Lorg/telegram/ui/Components/HintView;->animatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p2}, Landroid/animation/AnimatorSet;->start()V
@@ -3396,13 +3399,13 @@
     :cond_5
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 391
+    .line 392
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     :goto_1
     return p1
 
-    .line 339
+    .line 340
     :cond_6
     :goto_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -3411,7 +3414,7 @@
 
     if-eqz p2, :cond_7
 
-    .line 340
+    .line 341
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/HintView;->updatePosition(Landroid/view/View;)V
 
     :cond_7
@@ -3445,14 +3448,14 @@
 .method public updatePosition()V
     .locals 1
 
-    .line 398
+    .line 399
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->currentView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 401
+    .line 402
     :cond_0
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/HintView;->updatePosition(Landroid/view/View;)V
 

@@ -16,7 +16,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.Components.AnimatedFloat;
@@ -29,7 +29,7 @@ public class SliderView extends View {
     private final int currentType;
 
     /* renamed from: h */
-    private int f2014h;
+    private int f2015h;
     private float lastTouchX;
     private float maxVolume;
     private float minVolume;
@@ -37,7 +37,7 @@ public class SliderView extends View {
     private long pressTime;
 
     /* renamed from: r */
-    private float f2015r;
+    private float f2016r;
     private final Paint speaker1Paint;
     private final Path speaker1Path;
     private final Paint speaker2Paint;
@@ -54,7 +54,7 @@ public class SliderView extends View {
     private boolean valueIsAnimated;
 
     /* renamed from: w */
-    private int f2016w;
+    private int f2017w;
     private final AnimatedFloat wave1Alpha;
     private final AnimatedFloat wave2Alpha;
     private final Paint whitePaint;
@@ -115,9 +115,9 @@ public class SliderView extends View {
             animatedTextDrawable2.setCallback(this);
             animatedTextDrawable2.setTextColor(-1);
             if (i == 1) {
-                animatedTextDrawable2.setText(LocaleController.getString(C3634R.string.FlashWarmth));
+                animatedTextDrawable2.setText(LocaleController.getString(C3632R.string.FlashWarmth));
             } else if (i == 2) {
-                animatedTextDrawable2.setText(LocaleController.getString(C3634R.string.FlashIntensity));
+                animatedTextDrawable2.setText(LocaleController.getString(C3632R.string.FlashIntensity));
             }
         }
         animatedTextDrawable.setText("");
@@ -148,21 +148,21 @@ public class SliderView extends View {
         super.dispatchDraw(canvas);
         canvas.save();
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.f2016w, this.f2014h);
+        rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.f2017w, this.f2015h);
         this.clipPath.rewind();
         Path path = this.clipPath;
-        float f = this.f2015r;
+        float f = this.f2016r;
         path.addRoundRect(rectF, f, f, Path.Direction.CW);
         canvas.clipPath(this.clipPath);
         float f2 = this.valueIsAnimated ? this.valueAnimated.set(this.value) : this.value;
-        canvas.saveLayerAlpha(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.f2016w, this.f2014h, 255, 31);
+        canvas.saveLayerAlpha(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.f2017w, this.f2015h, 255, 31);
         if (this.currentType == 0) {
-            this.text.setBounds(AndroidUtilities.m104dp(42), -AndroidUtilities.m104dp(1), this.f2016w, this.f2014h - AndroidUtilities.m104dp(1));
+            this.text.setBounds(AndroidUtilities.m104dp(42), -AndroidUtilities.m104dp(1), this.f2017w, this.f2015h - AndroidUtilities.m104dp(1));
             this.text.draw(canvas);
         } else {
-            this.text2.setBounds(AndroidUtilities.m105dp(12.33f), -AndroidUtilities.m104dp(1), (this.f2016w - ((int) this.text.getCurrentWidth())) - AndroidUtilities.m104dp(6), this.f2014h - AndroidUtilities.m104dp(1));
+            this.text2.setBounds(AndroidUtilities.m105dp(12.33f), -AndroidUtilities.m104dp(1), (this.f2017w - ((int) this.text.getCurrentWidth())) - AndroidUtilities.m104dp(6), this.f2015h - AndroidUtilities.m104dp(1));
             this.text2.draw(canvas);
-            this.text.setBounds(this.f2016w - AndroidUtilities.m104dp(111), -AndroidUtilities.m104dp(1), this.f2016w - AndroidUtilities.m104dp(11), this.f2014h - AndroidUtilities.m104dp(1));
+            this.text.setBounds(this.f2017w - AndroidUtilities.m104dp(111), -AndroidUtilities.m104dp(1), this.f2017w - AndroidUtilities.m104dp(11), this.f2015h - AndroidUtilities.m104dp(1));
             this.text.draw(canvas);
         }
         if (this.currentType == 0) {
@@ -185,7 +185,7 @@ public class SliderView extends View {
             canvas.restore();
         }
         canvas.save();
-        canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.f2016w * f2, this.f2014h, this.whitePaint);
+        canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.f2017w * f2, this.f2015h, this.whitePaint);
         canvas.restore();
         canvas.restore();
         canvas.restore();
@@ -194,7 +194,7 @@ public class SliderView extends View {
     @Override // android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         boolean z = false;
-        if (this.f2016w <= 0) {
+        if (this.f2017w <= 0) {
             return false;
         }
         float x = motionEvent.getX();
@@ -208,10 +208,10 @@ public class SliderView extends View {
             float f4 = f - f2 != BitmapDescriptorFactory.HUE_RED ? f2 + (this.value * (f - f2)) : 0.0f;
             if (motionEvent.getAction() == 1 && System.currentTimeMillis() - this.pressTime < ViewConfiguration.getTapTimeout()) {
                 this.valueAnimated.set(this.value, true);
-                this.value = x / this.f2016w;
+                this.value = x / this.f2017w;
                 this.valueIsAnimated = true;
             } else {
-                this.value = Utilities.clamp(this.value + ((x - this.lastTouchX) / this.f2016w), 1.0f, (float) BitmapDescriptorFactory.HUE_RED);
+                this.value = Utilities.clamp(this.value + ((x - this.lastTouchX) / this.f2017w), 1.0f, (float) BitmapDescriptorFactory.HUE_RED);
                 this.valueIsAnimated = false;
                 z = true;
             }
@@ -255,20 +255,20 @@ public class SliderView extends View {
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        this.f2015r = AndroidUtilities.dpf2(6.33f);
+        this.f2016r = AndroidUtilities.dpf2(6.33f);
         this.textPaint.setTextSize(AndroidUtilities.m104dp(16));
         this.text.setTextSize(AndroidUtilities.m104dp(15));
         if (this.currentType == 0) {
-            this.f2016w = (int) Math.min(this.textPaint.measureText(LocaleController.getString(C3634R.string.StoryAudioRemove)) + AndroidUtilities.m104dp(88), View.MeasureSpec.getSize(i));
-            this.f2014h = AndroidUtilities.m104dp(48);
+            this.f2017w = (int) Math.min(this.textPaint.measureText(LocaleController.getString(C3632R.string.StoryAudioRemove)) + AndroidUtilities.m104dp(88), View.MeasureSpec.getSize(i));
+            this.f2015h = AndroidUtilities.m104dp(48);
         } else {
-            this.f2016w = AndroidUtilities.m104dp(190);
-            this.f2014h = AndroidUtilities.m104dp(44);
+            this.f2017w = AndroidUtilities.m104dp(190);
+            this.f2015h = AndroidUtilities.m104dp(44);
         }
-        setMeasuredDimension(this.f2016w, this.f2014h);
+        setMeasuredDimension(this.f2017w, this.f2015h);
         if (this.currentType == 0) {
             float m104dp = AndroidUtilities.m104dp(25);
-            float f = this.f2014h / 2.0f;
+            float f = this.f2015h / 2.0f;
             this.speaker1Paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(1.33f)));
             this.speaker1Path.rewind();
             this.speaker1Path.moveTo(m104dp - AndroidUtilities.dpf2(8.66f), f - AndroidUtilities.dpf2(2.9f));

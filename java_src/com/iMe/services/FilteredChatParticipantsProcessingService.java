@@ -26,7 +26,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -259,7 +259,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_FilteredChatParticipantsProcessingChannel", C3634R.C3636drawable.msg_groups, StopFilteredChatParticipantsProcessingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_FilteredChatParticipantsProcessingChannel", C3632R.C3634drawable.msg_groups, StopFilteredChatParticipantsProcessingReceiver.class);
         }
     }
 
@@ -313,7 +313,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
             this$0.onParticipantsPartLoaded(arrayList);
             return;
         }
-        this$0.stopServiceWithToast(C3634R.string.loading_participants_error);
+        this$0.stopServiceWithToast(C3632R.string.loading_participants_error);
     }
 
     private final void onParticipantsPartLoaded(List<? extends TLRPC$ChannelParticipant> list) {
@@ -372,7 +372,7 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
                 }
             });
         } else {
-            stopServiceWithToast(C3634R.string.processing_participants_success);
+            stopServiceWithToast(C3632R.string.processing_participants_success);
         }
     }
 
@@ -459,11 +459,11 @@ public final class FilteredChatParticipantsProcessingService extends Service imp
         }
         int i = WhenMappings.$EnumSwitchMapping$1[state.ordinal()];
         if (i == 1) {
-            formatStringInternal = LocaleController.formatStringInternal(C3634R.string.loading_participants, Integer.valueOf(this.participants.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3632R.string.loading_participants, Integer.valueOf(this.participants.size()));
         } else if (i == 2) {
-            formatStringInternal = LocaleController.formatStringInternal(C3634R.string.processing_participants, Integer.valueOf(this.processedParticipantsCount), Integer.valueOf(this.participants.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3632R.string.processing_participants, Integer.valueOf(this.processedParticipantsCount), Integer.valueOf(this.participants.size()));
         } else {
-            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3634R.string.WaitingForNetwork);
+            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3632R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
         if (builder != null) {

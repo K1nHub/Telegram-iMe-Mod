@@ -27,6 +27,8 @@
 
 .field public hasRtl:Z
 
+.field public hasSingleCode:Z
+
 .field public hasSingleQuote:Z
 
 .field public lastLineWidth:I
@@ -52,7 +54,7 @@
 
 # direct methods
 .method public constructor <init>(Lorg/telegram/messenger/MessageObject;Ljava/lang/CharSequence;Landroid/text/TextPaint;I)V
-    .locals 35
+    .locals 36
 
     move-object/from16 v1, p0
 
@@ -60,25 +62,25 @@
 
     move-object/from16 v11, p2
 
-    .line 6605
+    .line 6777
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6598
+    .line 6773
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textLayoutBlocks:Ljava/util/ArrayList;
 
-    .line 6606
+    .line 6778
     iput-object v11, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->text:Ljava/lang/CharSequence;
 
     const/4 v12, 0x0
 
-    .line 6607
+    .line 6779
     iput v12, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textWidth:I
 
-    .line 6609
+    .line 6781
     instance-of v0, v11, Landroid/text/Spanned;
 
     const/4 v13, 0x1
@@ -117,7 +119,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 6610
+    .line 6782
     move-object v3, v11
 
     check-cast v3, Landroid/text/Spanned;
@@ -148,17 +150,20 @@
     :goto_1
     iput-boolean v3, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasQuote:Z
 
-    .line 6611
+    .line 6783
     iput-boolean v12, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleQuote:Z
 
-    if-eqz v0, :cond_4
+    .line 6784
+    iput-boolean v12, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleCode:Z
 
-    .line 6614
+    if-eqz v0, :cond_5
+
+    .line 6787
     move-object v3, v11
 
     check-cast v3, Landroid/text/Spanned;
 
-    .line 6615
+    .line 6788
     invoke-interface {v3}, Landroid/text/Spanned;->length()I
 
     move-result v4
@@ -173,13 +178,13 @@
 
     move v5, v12
 
-    .line 6616
+    .line 6789
     :goto_2
     array-length v6, v4
 
     if-ge v5, v6, :cond_2
 
-    .line 6617
+    .line 6790
     aget-object v6, v4, v5
 
     iput-boolean v12, v6, Lorg/telegram/ui/Components/QuoteSpan;->adaptLineHeight:Z
@@ -188,7 +193,7 @@
 
     goto :goto_2
 
-    .line 6619
+    .line 6792
     :cond_2
     array-length v5, v4
 
@@ -210,104 +215,170 @@
 
     invoke-interface {v3}, Landroid/text/Spanned;->length()I
 
-    move-result v3
+    move-result v5
 
-    if-ne v4, v3, :cond_3
+    if-ne v4, v5, :cond_3
 
-    move v3, v13
+    move v4, v13
 
     goto :goto_3
 
     :cond_3
-    move v3, v12
+    move v4, v12
 
     :goto_3
-    iput-boolean v3, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleQuote:Z
+    iput-boolean v4, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleQuote:Z
 
-    .line 6624
+    .line 6794
+    invoke-interface {v3}, Landroid/text/Spanned;->length()I
+
+    move-result v4
+
+    const-class v5, Lorg/telegram/messenger/CodeHighlighting$Span;
+
+    invoke-interface {v3, v12, v4, v5}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, [Lorg/telegram/messenger/CodeHighlighting$Span;
+
+    .line 6795
+    array-length v5, v4
+
+    if-ne v5, v13, :cond_4
+
+    aget-object v5, v4, v12
+
+    invoke-interface {v3, v5}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
+
+    move-result v5
+
+    if-nez v5, :cond_4
+
+    aget-object v4, v4, v12
+
+    invoke-interface {v3, v4}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
+
+    move-result v4
+
+    invoke-interface {v3}, Landroid/text/Spanned;->length()I
+
+    move-result v3
+
+    if-ne v4, v3, :cond_4
+
+    move v3, v13
+
+    goto :goto_4
+
     :cond_4
+    move v3, v12
+
+    :goto_4
+    iput-boolean v3, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleCode:Z
+
+    .line 6800
+    :cond_5
     iget-boolean v3, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleQuote:Z
 
-    const/16 v14, 0x20
+    const/16 v14, 0xf
 
-    if-eqz v3, :cond_5
+    const/16 v15, 0x20
 
-    .line 6625
+    if-eqz v3, :cond_6
+
+    .line 6801
+    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    :goto_5
+    sub-int v3, p4, v3
+
+    move v10, v3
+
+    goto :goto_6
+
+    .line 6802
+    :cond_6
+    iget-boolean v3, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleCode:Z
+
+    if-eqz v3, :cond_7
+
+    .line 6803
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    sub-int v3, p4, v3
+    goto :goto_5
 
-    move v15, v3
+    :cond_7
+    move/from16 v10, p4
 
-    goto :goto_4
+    .line 6808
+    :goto_6
+    sget-object v9, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
-    :cond_5
-    move/from16 v15, p4
-
-    .line 6630
-    :goto_4
-    sget-object v10, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
-
-    .line 6632
+    .line 6810
     :try_start_0
-    sget v9, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v8, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    const/high16 v7, 0x3f800000    # 1.0f
 
-    const/16 v7, 0x18
+    const/16 v6, 0x18
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    if-lt v9, v7, :cond_6
+    if-lt v8, v6, :cond_8
 
-    .line 6634
+    .line 6812
     invoke-interface/range {p2 .. p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v3
 
-    move-object/from16 v5, p3
+    move-object/from16 v4, p3
 
-    invoke-static {v11, v12, v3, v5, v15}, Landroid/text/StaticLayout$Builder;->obtain(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v3
-
-    .line 6635
-    invoke-virtual {v3, v6, v8}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
+    invoke-static {v11, v12, v3, v4, v10}, Landroid/text/StaticLayout$Builder;->obtain(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v3
 
-    .line 6636
+    .line 6813
+    invoke-virtual {v3, v5, v7}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
+
+    move-result-object v3
+
+    .line 6814
     invoke-virtual {v3, v13}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v3
 
-    .line 6637
+    .line 6815
     invoke-virtual {v3, v12}, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v3
 
-    .line 6638
-    invoke-virtual {v3, v10}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
+    .line 6816
+    invoke-virtual {v3, v9}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
 
     move-result-object v3
 
-    .line 6639
+    .line 6817
     invoke-virtual {v3}, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
 
     move-result-object v3
 
-    move v13, v9
+    move v13, v8
 
-    move-object/from16 v27, v10
+    move-object/from16 v27, v9
 
-    goto :goto_5
+    move/from16 v17, v10
 
-    :cond_6
-    move-object/from16 v5, p3
+    goto :goto_7
 
-    .line 6641
+    :cond_8
+    move-object/from16 v4, p3
+
+    .line 6819
     new-instance v16, Landroid/text/StaticLayout;
 
     const/high16 v17, 0x3f800000    # 1.0f
@@ -322,46 +393,67 @@
 
     move-object/from16 v5, p3
 
-    move v6, v15
+    move v13, v6
 
-    move v13, v7
+    move v6, v10
 
-    move-object v7, v10
+    move-object v7, v9
+
+    move v13, v8
 
     move/from16 v8, v17
 
-    move v13, v9
+    move-object/from16 v27, v9
 
     move/from16 v9, v18
 
-    move-object/from16 v27, v10
+    move/from16 v17, v10
 
     move/from16 v10, v19
 
     invoke-direct/range {v3 .. v10}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_a
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_8
 
     move-object/from16 v3, v16
 
-    .line 6648
-    :goto_5
+    .line 6826
+    :goto_7
     iget-boolean v4, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleQuote:Z
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_9
 
-    .line 6649
+    .line 6827
+    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    :goto_8
+    add-int v10, v17, v4
+
+    goto :goto_9
+
+    .line 6828
+    :cond_9
+    iget-boolean v4, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleCode:Z
+
+    if-eqz v4, :cond_a
+
+    .line 6829
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    add-int/2addr v15, v4
+    goto :goto_8
 
-    .line 6652
-    :cond_7
+    :cond_a
+    move/from16 v10, v17
+
+    .line 6832
+    :goto_9
     iput v12, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textHeight:I
 
-    .line 6653
+    .line 6833
     invoke-virtual {v3}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v4
@@ -370,23 +462,23 @@
 
     const/16 v6, 0x18
 
-    if-lt v13, v6, :cond_8
+    if-lt v13, v6, :cond_b
 
     const/4 v6, 0x1
 
-    goto :goto_6
+    goto :goto_a
 
-    :cond_8
+    :cond_b
     move v6, v12
 
-    :goto_6
-    if-eqz v6, :cond_9
+    :goto_a
+    if-eqz v6, :cond_c
 
     const/4 v7, 0x1
 
-    goto :goto_7
+    goto :goto_b
 
-    :cond_9
+    :cond_c
     int-to-float v7, v4
 
     int-to-float v8, v5
@@ -395,96 +487,98 @@
 
     float-to-double v7, v7
 
-    .line 6661
+    .line 6841
     invoke-static {v7, v8}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v7
 
     double-to-int v7, v7
 
-    .line 6666
-    :goto_7
-    new-instance v13, Ljava/util/ArrayList;
+    .line 6846
+    :goto_b
+    new-instance v8, Ljava/util/ArrayList;
 
-    invoke-direct {v13}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_e
 
-    .line 6667
+    .line 6847
     iget-boolean v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasQuote:Z
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_d
 
     iget-boolean v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasCode:Z
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_e
 
-    .line 6669
-    :cond_a
-    invoke-static {v11, v13}, Lorg/telegram/messenger/MessageObject;->cutIntoRanges(Ljava/lang/CharSequence;Ljava/util/ArrayList;)V
+    .line 6849
+    :cond_d
+    invoke-static {v11, v8}, Lorg/telegram/messenger/MessageObject;->cutIntoRanges(Ljava/lang/CharSequence;Ljava/util/ArrayList;)V
 
-    goto :goto_b
+    goto :goto_f
 
-    :cond_b
-    if-nez v6, :cond_e
+    :cond_e
+    if-nez v6, :cond_11
 
     const/4 v6, 0x1
 
-    if-ne v7, v6, :cond_c
+    if-ne v7, v6, :cond_f
 
-    goto :goto_a
+    goto :goto_e
 
-    :cond_c
+    :cond_f
     move v0, v12
 
     move v6, v0
 
-    :goto_8
-    if-ge v0, v7, :cond_f
+    :goto_c
+    if-ge v0, v7, :cond_12
 
-    sub-int v8, v4, v6
+    sub-int v9, v4, v6
 
-    .line 6674
-    invoke-static {v5, v8}, Ljava/lang/Math;->min(II)I
-
-    move-result v8
-
-    .line 6676
-    invoke-virtual {v3, v6}, Landroid/text/StaticLayout;->getLineStart(I)I
+    .line 6854
+    invoke-static {v5, v9}, Ljava/lang/Math;->min(II)I
 
     move-result v9
 
-    add-int/2addr v8, v6
+    .line 6856
+    invoke-virtual {v3, v6}, Landroid/text/StaticLayout;->getLineStart(I)I
 
-    add-int/lit8 v10, v8, -0x1
+    move-result v13
 
-    .line 6677
-    invoke-virtual {v3, v10}, Landroid/text/StaticLayout;->getLineEnd(I)I
+    add-int/2addr v9, v6
 
-    move-result v10
+    add-int/lit8 v5, v9, -0x1
 
-    if-ge v10, v9, :cond_d
+    .line 6857
+    invoke-virtual {v3, v5}, Landroid/text/StaticLayout;->getLineEnd(I)I
 
-    goto :goto_9
+    move-result v5
 
-    .line 6682
-    :cond_d
+    if-ge v5, v13, :cond_10
+
+    goto :goto_d
+
+    .line 6862
+    :cond_10
     new-instance v6, Lorg/telegram/messenger/MessageObject$TextRange;
 
-    invoke-direct {v6, v9, v10}, Lorg/telegram/messenger/MessageObject$TextRange;-><init>(II)V
+    invoke-direct {v6, v13, v5}, Lorg/telegram/messenger/MessageObject$TextRange;-><init>(II)V
 
-    invoke-virtual {v13, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move v6, v8
+    move v6, v9
 
-    :goto_9
+    :goto_d
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_8
+    const/16 v5, 0xa
 
-    .line 6671
-    :cond_e
-    :goto_a
+    goto :goto_c
+
+    .line 6851
+    :cond_11
+    :goto_e
     new-instance v0, Lorg/telegram/messenger/MessageObject$TextRange;
 
     invoke-virtual {v3}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
@@ -497,302 +591,386 @@
 
     invoke-direct {v0, v12, v4}, Lorg/telegram/messenger/MessageObject$TextRange;-><init>(II)V
 
-    invoke-virtual {v13, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 6687
-    :cond_f
-    :goto_b
-    invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
+    .line 6867
+    :cond_12
+    :goto_f
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
-    move-result v10
+    move-result v4
 
-    .line 6689
+    .line 6869
     iput-boolean v12, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasCodeAtTop:Z
 
-    .line 6690
+    .line 6870
     iput-boolean v12, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasCodeAtBottom:Z
 
-    .line 6691
+    .line 6871
     iput-boolean v12, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasQuoteAtBottom:Z
 
-    .line 6692
+    .line 6872
     iput-boolean v12, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleQuote:Z
 
-    move v8, v12
+    move v7, v12
 
-    const/4 v9, 0x0
+    const/4 v5, 0x0
 
-    const/16 v28, 0x0
+    const/4 v6, 0x0
 
-    .line 6694
-    :goto_c
-    invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
+    .line 6874
+    :goto_10
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    if-ge v8, v0, :cond_39
+    if-ge v7, v0, :cond_42
 
-    .line 6695
-    new-instance v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;
+    .line 6875
+    new-instance v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;
 
-    invoke-direct {v7}, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;-><init>()V
+    invoke-direct {v9}, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;-><init>()V
 
-    .line 6697
-    invoke-virtual {v13, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 6877
+    invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/messenger/MessageObject$TextRange;
 
-    .line 6699
-    iget-boolean v4, v0, Lorg/telegram/messenger/MessageObject$TextRange;->code:Z
+    .line 6879
+    iget-boolean v13, v0, Lorg/telegram/messenger/MessageObject$TextRange;->code:Z
 
-    iput-boolean v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
+    iput-boolean v13, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
 
-    .line 6700
-    iget-boolean v4, v0, Lorg/telegram/messenger/MessageObject$TextRange;->quote:Z
+    .line 6880
+    iget-boolean v13, v0, Lorg/telegram/messenger/MessageObject$TextRange;->quote:Z
 
-    iput-boolean v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
+    iput-boolean v13, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
 
-    if-nez v8, :cond_10
+    if-nez v7, :cond_13
 
-    const/4 v4, 0x1
-
-    goto :goto_d
-
-    :cond_10
-    move v4, v12
-
-    .line 6702
-    :goto_d
-    iput-boolean v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->first:Z
-
-    .line 6703
-    invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
-
-    move-result v4
-
-    const/4 v5, 0x1
-
-    sub-int/2addr v4, v5
-
-    if-ne v8, v4, :cond_11
-
-    const/4 v4, 0x1
-
-    goto :goto_e
-
-    :cond_11
-    move v4, v12
-
-    :goto_e
-    iput-boolean v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->last:Z
-
-    .line 6705
-    iget-boolean v5, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->first:Z
-
-    if-eqz v5, :cond_12
-
-    .line 6706
-    iget-boolean v6, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
-
-    iput-boolean v6, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasCodeAtTop:Z
-
-    :cond_12
-    if-eqz v4, :cond_13
-
-    .line 6709
-    iget-boolean v6, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
-
-    iput-boolean v6, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasQuoteAtBottom:Z
-
-    .line 6710
-    iget-boolean v6, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
-
-    iput-boolean v6, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasCodeAtBottom:Z
-
-    :cond_13
-    if-eqz v5, :cond_14
-
-    if-eqz v4, :cond_14
-
-    .line 6712
-    iget-boolean v6, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
-
-    if-eqz v6, :cond_14
-
-    const/4 v6, 0x1
-
-    goto :goto_f
-
-    :cond_14
-    move v6, v12
-
-    :goto_f
-    iput-boolean v6, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleQuote:Z
-
-    .line 6714
-    iget-boolean v6, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
-
-    if-eqz v6, :cond_17
-
-    const/4 v6, 0x6
-
-    if-eqz v5, :cond_15
-
-    if-eqz v4, :cond_15
-
-    .line 6716
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    iput v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
-
-    iput v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
-
-    goto :goto_12
-
-    :cond_15
-    if-eqz v5, :cond_16
-
-    const/16 v6, 0x8
-
-    .line 6718
-    :cond_16
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    iput v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
-
-    const/4 v4, 0x7
-
-    .line 6719
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    iput v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
-
-    goto :goto_12
-
-    .line 6721
-    :cond_17
-    iget-boolean v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
-
-    if-eqz v4, :cond_1a
-
-    const/4 v4, 0x5
-
-    if-eqz v5, :cond_18
-
-    move v5, v12
-
-    goto :goto_10
-
-    .line 6722
-    :cond_18
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    :goto_10
-    iput v5, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
-
-    .line 6723
-    iget-boolean v5, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->last:Z
-
-    if-eqz v5, :cond_19
-
-    move v4, v12
+    const/4 v13, 0x1
 
     goto :goto_11
 
-    :cond_19
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    :cond_13
+    move v13, v12
 
-    move-result v4
-
+    .line 6882
     :goto_11
-    iput v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
+    iput-boolean v13, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->first:Z
 
-    .line 6727
-    :cond_1a
+    .line 6883
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
+
+    move-result v13
+
+    const/16 v16, 0x1
+
+    add-int/lit8 v13, v13, -0x1
+
+    if-ne v7, v13, :cond_14
+
+    const/4 v13, 0x1
+
+    goto :goto_12
+
+    :cond_14
+    move v13, v12
+
     :goto_12
-    iget-boolean v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
+    iput-boolean v13, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->last:Z
 
-    if-eqz v4, :cond_1d
+    .line 6885
+    iget-boolean v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->first:Z
 
-    .line 6728
-    iget v5, v0, Lorg/telegram/messenger/MessageObject$TextRange;->end:I
+    if-eqz v12, :cond_15
 
-    iget v6, v0, Lorg/telegram/messenger/MessageObject$TextRange;->start:I
+    .line 6886
+    iget-boolean v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
 
-    sub-int/2addr v5, v6
+    iput-boolean v14, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasCodeAtTop:Z
 
-    const/16 v6, 0xdc
+    :cond_15
+    if-eqz v13, :cond_16
 
-    if-le v5, v6, :cond_1b
+    .line 6889
+    iget-boolean v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
 
-    .line 6730
-    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextCode3Paint:Landroid/text/TextPaint;
+    iput-boolean v14, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasQuoteAtBottom:Z
+
+    .line 6890
+    iget-boolean v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
+
+    iput-boolean v14, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasCodeAtBottom:Z
+
+    :cond_16
+    if-eqz v12, :cond_17
+
+    if-eqz v13, :cond_17
+
+    .line 6892
+    iget-boolean v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
+
+    if-eqz v14, :cond_17
+
+    const/4 v14, 0x1
 
     goto :goto_13
 
-    :cond_1b
-    const/16 v6, 0x50
-
-    if-le v5, v6, :cond_1c
-
-    .line 6732
-    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextCode2Paint:Landroid/text/TextPaint;
-
-    goto :goto_13
-
-    .line 6734
-    :cond_1c
-    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextCodePaint:Landroid/text/TextPaint;
-
-    goto :goto_13
-
-    :cond_1d
-    move-object/from16 v5, p3
+    :cond_17
+    const/4 v14, 0x0
 
     :goto_13
-    const/4 v6, 0x1
+    iput-boolean v14, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasSingleQuote:Z
 
-    if-ne v10, v6, :cond_20
+    .line 6894
+    iget-boolean v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
 
-    if-eqz v4, :cond_1f
+    const/16 v16, 0x7
 
-    .line 6739
-    iget-boolean v4, v7, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
+    if-eqz v14, :cond_1a
 
-    if-nez v4, :cond_1f
+    const/4 v14, 0x6
+
+    if-eqz v12, :cond_18
+
+    if-eqz v13, :cond_18
+
+    .line 6896
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v12
+
+    iput v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
+
+    iput v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
+
+    goto :goto_17
+
+    :cond_18
+    if-eqz v12, :cond_19
+
+    const/16 v14, 0x8
+
+    .line 6898
+    :cond_19
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v12
+
+    iput v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
+
+    .line 6899
+    invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v12
+
+    iput v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
+
+    goto :goto_17
+
+    .line 6901
+    :cond_1a
+    iget-boolean v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
+
+    if-eqz v12, :cond_1e
+
+    .line 6902
+    iget-object v12, v0, Lorg/telegram/messenger/MessageObject$TextRange;->language:Ljava/lang/String;
+
+    iget v13, v0, Lorg/telegram/messenger/MessageObject$TextRange;->end:I
+
+    iget v14, v0, Lorg/telegram/messenger/MessageObject$TextRange;->start:I
+
+    sub-int/2addr v13, v14
+
+    invoke-virtual {v9, v12, v13}, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->layoutCode(Ljava/lang/String;I)V
+
+    const/4 v12, 0x4
+
+    .line 6903
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v13
+
+    iget v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->languageHeight:I
+
+    add-int/2addr v13, v14
+
+    iget-boolean v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->first:Z
+
+    if-eqz v14, :cond_1b
+
+    const/4 v14, 0x0
+
+    goto :goto_14
+
+    :cond_1b
+    const/4 v14, 0x5
+
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v14
+
+    :goto_14
+    add-int/2addr v13, v14
+
+    iput v13, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
+
+    .line 6904
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v12
+
+    iget-boolean v13, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->last:Z
+
+    if-eqz v13, :cond_1c
+
+    const/4 v13, 0x0
+
+    goto :goto_15
+
+    :cond_1c
+    invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v13
+
+    :goto_15
+    add-int/2addr v12, v13
+
+    iget-boolean v13, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->hasCodeCopyButton:Z
+
+    if-eqz v13, :cond_1d
+
+    const/16 v13, 0x26
+
+    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v13
+
+    goto :goto_16
+
+    :cond_1d
+    const/4 v13, 0x0
+
+    :goto_16
+    add-int/2addr v12, v13
+
+    iput v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
+
+    .line 6908
+    :cond_1e
+    :goto_17
+    iget-boolean v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
+
+    if-eqz v12, :cond_21
+
+    .line 6909
+    iget v13, v0, Lorg/telegram/messenger/MessageObject$TextRange;->end:I
+
+    iget v14, v0, Lorg/telegram/messenger/MessageObject$TextRange;->start:I
+
+    sub-int/2addr v13, v14
+
+    const/16 v14, 0xdc
+
+    if-le v13, v14, :cond_1f
+
+    .line 6911
+    sget-object v13, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextCode3Paint:Landroid/text/TextPaint;
+
+    goto :goto_18
+
+    :cond_1f
+    const/16 v14, 0x50
+
+    if-le v13, v14, :cond_20
+
+    .line 6913
+    sget-object v13, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextCode2Paint:Landroid/text/TextPaint;
+
+    goto :goto_18
+
+    .line 6915
+    :cond_20
+    sget-object v13, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextCodePaint:Landroid/text/TextPaint;
+
+    goto :goto_18
+
+    :cond_21
+    move-object/from16 v13, p3
+
+    .line 6920
+    :goto_18
+    iget-boolean v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
+
+    if-eqz v14, :cond_22
+
+    .line 6921
+    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v12
+
+    sub-int v12, v10, v12
+
+    goto :goto_19
+
+    :cond_22
+    if-eqz v12, :cond_23
+
+    const/16 v12, 0xf
+
+    .line 6923
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v14
+
+    sub-int v12, v10, v14
+
+    goto :goto_19
+
+    :cond_23
+    move v12, v10
+
+    :goto_19
+    const/4 v14, 0x1
+
+    if-ne v4, v14, :cond_27
+
+    .line 6926
+    iget-boolean v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
+
+    if-eqz v14, :cond_26
+
+    iget-boolean v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
+
+    if-nez v14, :cond_26
 
     invoke-virtual {v3}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v4
+    move-result-object v14
 
-    instance-of v4, v4, Landroid/text/Spannable;
+    instance-of v14, v14, Landroid/text/Spannable;
 
-    if-eqz v4, :cond_1f
+    if-eqz v14, :cond_26
 
-    iget-object v4, v0, Lorg/telegram/messenger/MessageObject$TextRange;->language:Ljava/lang/String;
+    .line 6928
+    iget-object v3, v0, Lorg/telegram/messenger/MessageObject$TextRange;->language:Ljava/lang/String;
 
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_1f
+    if-nez v3, :cond_24
 
-    .line 6740
+    .line 6929
     iget v3, v0, Lorg/telegram/messenger/MessageObject$TextRange;->start:I
 
-    iget v4, v0, Lorg/telegram/messenger/MessageObject$TextRange;->end:I
+    iget v14, v0, Lorg/telegram/messenger/MessageObject$TextRange;->end:I
 
-    invoke-interface {v11, v3, v4}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+    invoke-interface {v11, v3, v14}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object v3
 
@@ -800,273 +978,248 @@
 
     move-result-object v3
 
-    iget-object v4, v0, Lorg/telegram/messenger/MessageObject$TextRange;->language:Ljava/lang/String;
+    iget-object v14, v0, Lorg/telegram/messenger/MessageObject$TextRange;->language:Ljava/lang/String;
 
-    invoke-static {v3, v4}, Lorg/telegram/messenger/CodeHighlighting;->getHighlighted(Ljava/lang/String;Ljava/lang/String;)Landroid/text/SpannableString;
+    invoke-static {v3, v14}, Lorg/telegram/messenger/CodeHighlighting;->getHighlighted(Ljava/lang/String;Ljava/lang/String;)Landroid/text/SpannableString;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 6741
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+    goto :goto_1a
 
-    const/16 v6, 0x18
+    .line 6931
+    :cond_24
+    new-instance v3, Landroid/text/SpannableString;
 
-    if-lt v3, v6, :cond_1e
+    iget v14, v0, Lorg/telegram/messenger/MessageObject$TextRange;->start:I
 
-    .line 6743
+    iget v15, v0, Lorg/telegram/messenger/MessageObject$TextRange;->end:I
+
+    invoke-interface {v11, v14, v15}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+    move-result-object v14
+
+    invoke-direct {v3, v14}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+
+    .line 6933
+    :goto_1a
+    sget v14, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v15, 0x18
+
+    if-lt v14, v15, :cond_25
+
+    .line 6935
     invoke-interface/range {p2 .. p2}, Ljava/lang/CharSequence;->length()I
 
-    move-result v3
+    move-result v14
 
-    invoke-static {v4, v12, v3, v5, v15}, Landroid/text/StaticLayout$Builder;->obtain(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;
+    const/4 v15, 0x0
 
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    const/high16 v6, 0x3f800000    # 1.0f
-
-    .line 6744
-    invoke-virtual {v3, v4, v6}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
+    invoke-static {v3, v15, v14, v13, v12}, Landroid/text/StaticLayout$Builder;->obtain(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v3
 
-    const/4 v5, 0x1
+    const/4 v12, 0x0
 
-    .line 6745
-    invoke-virtual {v3, v5}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
+    const/high16 v14, 0x3f800000    # 1.0f
 
-    move-result-object v3
-
-    .line 6746
-    invoke-virtual {v3, v12}, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
+    .line 6936
+    invoke-virtual {v3, v12, v14}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
 
     move-result-object v3
 
-    move-object/from16 v5, v27
+    const/4 v13, 0x1
 
-    .line 6747
-    invoke-virtual {v3, v5}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
+    .line 6937
+    invoke-virtual {v3, v13}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v3
 
-    .line 6748
+    .line 6938
+    invoke-virtual {v3, v15}, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
+
+    move-result-object v3
+
+    move-object/from16 v15, v27
+
+    .line 6939
+    invoke-virtual {v3, v15}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
+
+    move-result-object v3
+
+    .line 6940
     invoke-virtual {v3}, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
 
     move-result-object v3
 
-    move v14, v4
+    move v14, v12
 
-    move-object/from16 v26, v5
+    goto :goto_1b
 
-    move/from16 v27, v6
-
-    move-object v12, v7
-
-    move/from16 v29, v8
-
-    move/from16 v30, v9
-
-    move/from16 v31, v10
-
-    goto :goto_14
-
-    :cond_1e
-    move-object/from16 v26, v27
-
-    const/4 v3, 0x0
-
-    const/high16 v6, 0x3f800000    # 1.0f
-
-    .line 6750
-    new-instance v16, Landroid/text/StaticLayout;
-
-    const/high16 v17, 0x3f800000    # 1.0f
-
-    const/16 v18, 0x0
-
-    const/16 v19, 0x0
-
-    move v14, v3
-
-    move-object/from16 v3, v16
-
-    move/from16 v27, v6
-
-    move v6, v15
-
-    move-object v12, v7
-
-    move-object/from16 v7, v26
-
-    move/from16 v29, v8
-
-    move/from16 v8, v17
-
-    move/from16 v30, v9
-
-    move/from16 v9, v18
-
-    move/from16 v31, v10
-
-    move/from16 v10, v19
-
-    invoke-direct/range {v3 .. v10}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
-
-    goto :goto_14
-
-    :cond_1f
-    move-object v12, v7
-
-    move/from16 v29, v8
-
-    move/from16 v30, v9
-
-    move/from16 v31, v10
-
-    move-object/from16 v26, v27
+    :cond_25
+    move-object/from16 v15, v27
 
     const/4 v14, 0x0
 
-    const/high16 v27, 0x3f800000    # 1.0f
+    .line 6942
+    new-instance v24, Landroid/text/StaticLayout;
 
-    .line 6754
-    :goto_14
-    iput-object v3, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    const/high16 v21, 0x3f800000    # 1.0f
 
-    .line 6755
-    iput v14, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textYOffset:F
+    const/16 v22, 0x0
 
-    const/4 v6, 0x0
+    const/16 v23, 0x0
 
-    .line 6756
-    iput v6, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersOffset:I
+    move-object/from16 v16, v24
 
-    .line 6757
+    move-object/from16 v17, v3
+
+    move-object/from16 v18, v13
+
+    move/from16 v19, v12
+
+    move-object/from16 v20, v15
+
+    invoke-direct/range {v16 .. v23}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
+
+    move-object/from16 v3, v24
+
+    goto :goto_1b
+
+    :cond_26
+    move-object/from16 v15, v27
+
+    const/4 v14, 0x0
+
+    .line 6946
+    :goto_1b
+    iput-object v3, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+
+    .line 6947
+    iput v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textYOffset:F
+
+    const/4 v12, 0x0
+
+    .line 6948
+    iput v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersOffset:I
+
+    .line 6949
     invoke-virtual {v3}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v4
+    move-result-object v13
 
-    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {v13}, Ljava/lang/CharSequence;->length()I
 
-    move-result v4
+    move-result v13
 
-    iput v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersEnd:I
+    iput v13, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersEnd:I
 
-    .line 6759
+    .line 6951
     invoke-virtual {v3}, Landroid/text/StaticLayout;->getHeight()I
 
-    move-result v4
+    move-result v13
 
-    iput v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->height:I
+    iput v13, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->height:I
 
-    .line 6760
-    iget v5, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
+    .line 6952
+    iget v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
 
-    add-int/2addr v5, v4
+    add-int/2addr v12, v13
 
-    iget v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
+    iget v13, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
 
-    add-int/2addr v5, v4
+    add-int/2addr v12, v13
 
-    iput v5, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textHeight:I
+    iput v12, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textHeight:I
 
-    move/from16 v8, v29
+    move-object/from16 v29, v8
 
-    move/from16 v5, v30
+    const/16 v26, 0x0
 
-    const/16 v7, 0x18
+    goto/16 :goto_1d
 
-    goto/16 :goto_17
+    :cond_27
+    move-object/from16 v15, v27
 
-    :cond_20
-    move/from16 v29, v8
+    const/16 v26, 0x0
 
-    move/from16 v30, v9
+    .line 6954
+    iget v14, v0, Lorg/telegram/messenger/MessageObject$TextRange;->start:I
 
-    move/from16 v31, v10
+    move-object/from16 v28, v3
 
-    move v6, v12
+    .line 6955
+    iget v3, v0, Lorg/telegram/messenger/MessageObject$TextRange;->end:I
 
-    move-object/from16 v26, v27
+    if-ge v3, v14, :cond_28
 
-    const/4 v14, 0x0
+    move-object v11, v2
 
-    const/high16 v27, 0x3f800000    # 1.0f
+    move-object/from16 v29, v8
 
-    move-object v12, v7
+    move-object/from16 v21, v15
 
-    .line 6762
-    iget v7, v0, Lorg/telegram/messenger/MessageObject$TextRange;->start:I
+    const/4 v2, 0x0
 
-    .line 6763
-    iget v8, v0, Lorg/telegram/messenger/MessageObject$TextRange;->end:I
+    const/4 v8, 0x1
 
-    if-ge v8, v7, :cond_21
+    const/16 v12, 0x20
 
-    move-object v7, v2
+    const/16 v13, 0xf
 
-    move-object/from16 v16, v13
+    goto/16 :goto_30
 
-    move v2, v14
+    .line 6959
+    :cond_28
+    iput v14, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersOffset:I
 
-    move/from16 v8, v29
+    .line 6960
+    iput v3, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersEnd:I
 
-    move/from16 v5, v30
+    move-object/from16 v29, v8
 
-    move/from16 v6, v31
-
-    const/4 v4, 0x1
-
-    goto/16 :goto_28
-
-    .line 6767
-    :cond_21
-    iput v7, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersOffset:I
-
-    .line 6768
-    iput v8, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersEnd:I
-
-    if-eqz v4, :cond_22
-
-    .line 6771
+    .line 6963
     :try_start_1
-    iget-boolean v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
+    iget-boolean v8, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
 
-    if-nez v4, :cond_22
+    if-eqz v8, :cond_29
 
-    .line 6772
-    invoke-interface {v11, v7, v8}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+    iget-boolean v8, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
 
-    move-result-object v4
+    if-nez v8, :cond_29
 
-    invoke-interface {v4}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    .line 6964
+    invoke-interface {v11, v14, v3}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
-    move-result-object v4
+    move-result-object v3
 
-    iget-object v7, v0, Lorg/telegram/messenger/MessageObject$TextRange;->language:Ljava/lang/String;
+    invoke-interface {v3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    invoke-static {v4, v7}, Lorg/telegram/messenger/CodeHighlighting;->getHighlighted(Ljava/lang/String;Ljava/lang/String;)Landroid/text/SpannableString;
+    move-result-object v3
 
-    move-result-object v4
+    iget-object v8, v0, Lorg/telegram/messenger/MessageObject$TextRange;->language:Ljava/lang/String;
 
-    goto :goto_15
+    invoke-static {v3, v8}, Lorg/telegram/messenger/CodeHighlighting;->getHighlighted(Ljava/lang/String;Ljava/lang/String;)Landroid/text/SpannableString;
 
-    .line 6774
-    :cond_22
-    invoke-interface {v11, v7, v8}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+    move-result-object v3
 
-    move-result-object v4
+    goto :goto_1c
 
-    invoke-static {v4}, Landroid/text/SpannableString;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableString;
+    .line 6966
+    :cond_29
+    invoke-interface {v11, v14, v3}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
-    move-result-object v4
+    move-result-object v3
 
-    :goto_15
-    move-object/from16 v17, v4
+    invoke-static {v3}, Landroid/text/SpannableString;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableString;
 
-    .line 6776
-    new-instance v4, Landroid/text/StaticLayout;
+    move-result-object v3
+
+    :goto_1c
+    move-object/from16 v17, v3
+
+    .line 6968
+    new-instance v3, Landroid/text/StaticLayout;
 
     const/16 v18, 0x0
 
@@ -1074,138 +1227,110 @@
 
     move-result v19
 
-    iget-boolean v7, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
-
-    if-eqz v7, :cond_23
-
-    const/16 v7, 0x18
-
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v8
-
-    goto :goto_16
-
-    :cond_23
-    const/16 v7, 0x18
-
-    move v8, v6
-
-    :goto_16
-    sub-int v21, v15, v8
-
     const/high16 v23, 0x3f800000    # 1.0f
 
     const/16 v24, 0x0
 
     const/16 v25, 0x0
 
-    move-object/from16 v16, v4
+    move-object/from16 v16, v3
 
-    move-object/from16 v20, v5
+    move-object/from16 v20, v13
 
-    move-object/from16 v22, v26
+    move/from16 v21, v12
+
+    move-object/from16 v22, v15
 
     invoke-direct/range {v16 .. v25}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
 
-    iput-object v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    iput-object v3, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+
+    .line 6970
+    iput v5, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textYOffset:F
+
+    if-eqz v7, :cond_2a
+
+    sub-float v8, v5, v6
+
+    float-to-int v8, v8
+
+    .line 6972
+    iput v8, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->height:I
+
+    .line 6974
+    :cond_2a
+    invoke-virtual {v3}, Landroid/text/StaticLayout;->getHeight()I
+
+    move-result v3
+
+    iput v3, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->height:I
+
+    .line 6975
+    iget v8, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textHeight:I
+
+    iget v12, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
+
+    add-int/2addr v12, v3
+
+    iget v3, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
+
+    add-int/2addr v12, v3
+
+    add-int/2addr v8, v12
+
+    iput v8, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textHeight:I
+
+    .line 6976
+    iget v6, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textYOffset:F
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_9
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_7
 
-    move/from16 v5, v30
+    move-object/from16 v3, v28
 
-    .line 6778
-    :try_start_2
-    iput v5, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textYOffset:F
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_8
+    .line 6983
+    :goto_1d
+    iget-boolean v8, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
 
-    move/from16 v8, v29
+    if-eqz v8, :cond_2b
 
-    if-eqz v8, :cond_24
+    iget-object v8, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
-    sub-float v9, v5, v28
+    invoke-virtual {v8}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
-    float-to-int v9, v9
+    move-result-object v8
 
-    .line 6780
-    :try_start_3
-    iput v9, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->height:I
+    instance-of v8, v8, Landroid/text/Spannable;
 
-    .line 6782
-    :cond_24
-    invoke-virtual {v4}, Landroid/text/StaticLayout;->getHeight()I
+    if-eqz v8, :cond_2b
 
-    move-result v4
+    iget-object v8, v0, Lorg/telegram/messenger/MessageObject$TextRange;->language:Ljava/lang/String;
 
-    iput v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->height:I
+    invoke-static {v8}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 6783
-    iget v9, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textHeight:I
+    move-result v8
 
-    iget v10, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
+    if-eqz v8, :cond_2b
 
-    add-int/2addr v10, v4
+    .line 6984
+    iget-object v8, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
-    iget v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
+    invoke-virtual {v8}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
-    add-int/2addr v10, v4
+    move-result-object v8
 
-    add-int/2addr v9, v10
-
-    iput v9, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textHeight:I
-
-    .line 6784
-    iget v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textYOffset:F
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_7
-
-    move/from16 v28, v4
-
-    .line 6791
-    :goto_17
-    iget-boolean v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
-
-    if-eqz v4, :cond_25
-
-    iget-object v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
-
-    invoke-virtual {v4}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v4
-
-    instance-of v4, v4, Landroid/text/Spannable;
-
-    if-eqz v4, :cond_25
-
-    iget-object v4, v0, Lorg/telegram/messenger/MessageObject$TextRange;->language:Ljava/lang/String;
-
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_25
-
-    .line 6792
-    iget-object v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
-
-    invoke-virtual {v4}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v4
-
-    move-object/from16 v16, v4
+    move-object/from16 v16, v8
 
     check-cast v16, Landroid/text/Spannable;
 
     const/16 v17, 0x0
 
-    iget-object v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    iget-object v8, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
-    invoke-virtual {v4}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {v8}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v4
+    move-result-object v8
 
-    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {v8}, Ljava/lang/CharSequence;->length()I
 
     move-result v18
 
@@ -1221,464 +1346,490 @@
 
     invoke-static/range {v16 .. v22}, Lorg/telegram/messenger/CodeHighlighting;->highlight(Landroid/text/Spannable;IILjava/lang/String;ILorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;Z)V
 
-    .line 6795
-    :cond_25
-    iget v0, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
+    .line 6987
+    :cond_2b
+    iget v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
 
-    iget v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->height:I
+    iget v8, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->height:I
 
-    add-int/2addr v0, v4
+    add-int/2addr v0, v8
 
-    iget v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
+    iget v8, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padBottom:I
 
-    add-int/2addr v0, v4
+    add-int/2addr v0, v8
 
     int-to-float v0, v0
 
-    add-float v9, v5, v0
+    add-float/2addr v5, v0
 
-    .line 6797
+    .line 6989
     iget-object v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textLayoutBlocks:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 6799
-    iget-object v0, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    .line 6991
+    iget-object v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
 
-    move-result v4
+    move-result v8
 
-    .line 6803
-    :try_start_4
-    iget-object v0, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    .line 6995
+    :try_start_2
+    iget-object v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
-    add-int/lit8 v5, v4, -0x1
+    add-int/lit8 v12, v8, -0x1
 
-    invoke-virtual {v0, v5}, Landroid/text/StaticLayout;->getLineLeft(I)F
+    invoke-virtual {v0, v12}, Landroid/text/StaticLayout;->getLineLeft(I)F
 
     move-result v0
 
-    if-nez v8, :cond_26
+    if-nez v7, :cond_2c
 
-    cmpl-float v5, v0, v14
+    const/4 v12, 0x0
 
-    if-ltz v5, :cond_26
+    cmpl-float v13, v0, v12
 
-    .line 6805
+    if-ltz v13, :cond_2c
+
+    .line 6997
     iput v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textXOffset:F
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    :cond_26
-    move v5, v0
+    :cond_2c
+    move v12, v0
 
-    goto :goto_18
+    goto :goto_1e
 
     :catch_0
     move-exception v0
 
-    if-nez v8, :cond_27
+    if-nez v7, :cond_2d
 
-    .line 6810
-    iput v14, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textXOffset:F
+    const/4 v12, 0x0
 
-    .line 6812
-    :cond_27
+    .line 7002
+    iput v12, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textXOffset:F
+
+    .line 7004
+    :cond_2d
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    move v5, v14
+    const/4 v12, 0x0
 
-    .line 6817
-    :goto_18
-    :try_start_5
-    iget-object v0, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    .line 7009
+    :goto_1e
+    :try_start_3
+    iget-object v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
-    add-int/lit8 v10, v4, -0x1
+    add-int/lit8 v13, v8, -0x1
 
-    invoke-virtual {v0, v10}, Landroid/text/StaticLayout;->getLineWidth(I)F
+    invoke-virtual {v0, v13}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v0
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
-    goto :goto_19
+    goto :goto_1f
 
     :catch_1
     move-exception v0
 
-    .line 6820
+    .line 7012
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    move v0, v14
+    const/4 v0, 0x0
 
-    :goto_19
-    float-to-double v6, v0
+    :goto_1f
+    float-to-double v13, v0
 
-    .line 6823
-    invoke-static {v6, v7}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v6
-
-    double-to-int v0, v6
-
-    add-int/lit8 v6, v15, 0x50
-
-    if-le v0, v6, :cond_28
-
-    move v0, v15
-
-    :cond_28
-    move/from16 v6, v31
-
-    add-int/lit8 v10, v6, -0x1
-
-    if-ne v8, v10, :cond_29
-
-    .line 6831
-    iput v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->lastLineWidth:I
-
-    :cond_29
-    int-to-float v7, v0
-
-    .line 6834
-    invoke-static {v14, v5}, Ljava/lang/Math;->max(FF)F
-
-    move-result v16
-
-    add-float v14, v7, v16
-
-    move-object/from16 v16, v13
-
-    float-to-double v13, v14
-
+    .line 7015
     invoke-static {v13, v14}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v13
 
-    double-to-int v13, v13
+    double-to-int v0, v13
 
-    .line 6836
-    iget-boolean v14, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
+    add-int/lit8 v13, v10, 0x50
 
-    if-eqz v14, :cond_2a
+    if-le v0, v13, :cond_2e
 
-    const/4 v14, 0x0
+    move v0, v10
 
-    .line 6837
-    iput v14, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->maxRight:F
+    :cond_2e
+    add-int/lit8 v13, v4, -0x1
 
-    const/4 v14, 0x0
+    if-ne v7, v13, :cond_2f
 
-    :goto_1a
-    if-ge v14, v4, :cond_2a
+    .line 7023
+    iput v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->lastLineWidth:I
 
-    move/from16 v18, v0
+    :cond_2f
+    int-to-float v14, v0
 
-    .line 6840
-    :try_start_6
-    iget v0, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->maxRight:F
-    :try_end_6
-    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_2
+    move-object/from16 v16, v3
 
-    move-object/from16 v19, v3
+    const/4 v3, 0x0
 
-    :try_start_7
-    iget-object v3, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    .line 7026
+    invoke-static {v3, v12}, Ljava/lang/Math;->max(FF)F
 
-    invoke-virtual {v3, v14}, Landroid/text/StaticLayout;->getLineRight(I)F
+    move-result v17
 
-    move-result v3
+    add-float v3, v14, v17
 
-    invoke-static {v0, v3}, Ljava/lang/Math;->max(FF)F
+    move/from16 v18, v5
+
+    move/from16 v17, v6
+
+    float-to-double v5, v3
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v5
+
+    double-to-int v3, v5
+
+    .line 7028
+    iget-boolean v5, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
+
+    if-eqz v5, :cond_30
+
+    const/4 v5, 0x0
+
+    .line 7029
+    iput v5, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->maxRight:F
+
+    move/from16 v5, v26
+
+    :goto_20
+    if-ge v5, v8, :cond_30
+
+    .line 7032
+    :try_start_4
+    iget v6, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->maxRight:F
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
+
+    move/from16 v19, v0
+
+    :try_start_5
+    iget-object v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+
+    invoke-virtual {v0, v5}, Landroid/text/StaticLayout;->getLineRight(I)F
 
     move-result v0
 
-    iput v0, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->maxRight:F
-    :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_3
+    invoke-static {v6, v0}, Ljava/lang/Math;->max(FF)F
 
-    goto :goto_1b
+    move-result v0
+
+    iput v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->maxRight:F
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
+
+    goto :goto_21
 
     :catch_2
-    move-object/from16 v19, v3
+    move/from16 v19, v0
 
-    .line 6842
+    .line 7034
     :catch_3
     iget v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textWidth:I
 
     int-to-float v0, v0
 
-    iput v0, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->maxRight:F
+    iput v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->maxRight:F
 
-    :goto_1b
-    add-int/lit8 v14, v14, 0x1
+    :goto_21
+    add-int/lit8 v5, v5, 0x1
 
-    move/from16 v0, v18
+    move/from16 v0, v19
 
-    move-object/from16 v3, v19
+    goto :goto_20
 
-    goto :goto_1a
+    :cond_30
+    move/from16 v19, v0
 
-    :cond_2a
-    move/from16 v18, v0
+    const/4 v5, 0x1
 
-    move-object/from16 v19, v3
+    if-le v8, v5, :cond_3b
 
-    const/4 v3, 0x1
+    move v11, v3
 
-    if-le v4, v3, :cond_34
+    move/from16 v0, v19
 
-    move/from16 v20, v9
+    move/from16 v12, v26
 
-    move v9, v13
-
-    move/from16 v0, v18
-
-    const/4 v3, 0x0
+    move v14, v12
 
     const/4 v5, 0x0
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    const/4 v14, 0x0
+    :goto_22
+    if-ge v12, v8, :cond_37
 
-    :goto_1c
-    if-ge v7, v4, :cond_30
+    move/from16 v20, v8
 
-    move/from16 v21, v4
+    .line 7044
+    :try_start_6
+    iget-object v8, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
-    .line 6852
-    :try_start_8
-    iget-object v4, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    invoke-virtual {v8, v12}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
-    invoke-virtual {v4, v7}, Landroid/text/StaticLayout;->getLineWidth(I)F
+    move-result v8
+    :try_end_6
+    .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_4
 
-    move-result v4
-    :try_end_8
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_4
+    move-object/from16 v21, v15
 
-    goto :goto_1d
+    goto :goto_23
 
     :catch_4
-    const/4 v4, 0x0
+    move-object/from16 v21, v15
 
-    .line 6857
-    :goto_1d
-    iget-boolean v11, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
+    const/4 v8, 0x0
 
-    if-eqz v11, :cond_2b
+    .line 7049
+    :goto_23
+    iget-boolean v15, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
 
-    const/16 v11, 0x20
+    if-eqz v15, :cond_31
 
-    .line 6858
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/16 v15, 0x20
+
+    .line 7050
+    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    add-float/2addr v4, v2
+    :goto_24
+    add-float/2addr v8, v2
 
-    goto :goto_1e
+    goto :goto_25
 
-    :cond_2b
-    const/16 v11, 0x20
+    .line 7051
+    :cond_31
+    iget-boolean v2, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
 
-    .line 6862
-    :goto_1e
-    :try_start_9
-    iget-object v2, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    if-eqz v2, :cond_32
 
-    invoke-virtual {v2, v7}, Landroid/text/StaticLayout;->getLineLeft(I)F
+    const/16 v2, 0xf
+
+    .line 7052
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v15
+
+    int-to-float v2, v15
+
+    goto :goto_24
+
+    .line 7056
+    :cond_32
+    :goto_25
+    :try_start_7
+    iget-object v2, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+
+    invoke-virtual {v2, v12}, Landroid/text/StaticLayout;->getLineLeft(I)F
 
     move-result v2
-    :try_end_9
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_5
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_5
 
-    goto :goto_1f
+    goto :goto_26
 
     :catch_5
     const/4 v2, 0x0
 
-    :goto_1f
-    add-int/lit8 v11, v15, 0x14
+    :goto_26
+    add-int/lit8 v15, v10, 0x14
 
-    int-to-float v11, v11
+    int-to-float v15, v15
 
-    cmpl-float v11, v4, v11
+    cmpl-float v15, v8, v15
 
-    if-lez v11, :cond_2c
+    if-lez v15, :cond_33
 
-    int-to-float v4, v15
+    int-to-float v8, v10
 
     const/4 v2, 0x0
 
-    :cond_2c
-    const/4 v11, 0x0
+    :cond_33
+    const/4 v15, 0x0
 
-    cmpl-float v18, v2, v11
+    cmpl-float v19, v2, v15
 
-    if-gtz v18, :cond_2e
+    if-gtz v19, :cond_35
 
-    .line 6872
-    iget-object v11, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    .line 7066
+    iget-object v15, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
-    invoke-virtual {v11, v7}, Landroid/text/StaticLayout;->getParagraphDirection(I)I
+    invoke-virtual {v15, v12}, Landroid/text/StaticLayout;->getParagraphDirection(I)I
 
-    move-result v11
+    move-result v15
 
-    move/from16 v22, v15
+    move/from16 v22, v10
 
-    const/4 v15, -0x1
+    const/4 v10, -0x1
 
-    if-ne v11, v15, :cond_2d
+    if-ne v15, v10, :cond_34
 
-    goto :goto_20
+    goto :goto_27
 
-    .line 6877
-    :cond_2d
-    iget-byte v11, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
+    .line 7071
+    :cond_34
+    iget-byte v10, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
 
-    or-int/lit8 v11, v11, 0x2
+    or-int/lit8 v10, v10, 0x2
 
-    int-to-byte v11, v11
+    int-to-byte v10, v10
 
-    iput-byte v11, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
-
-    const/4 v15, 0x1
-
-    goto :goto_21
-
-    :cond_2e
-    move/from16 v22, v15
-
-    .line 6873
-    :goto_20
-    iget v11, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textXOffset:F
-
-    invoke-static {v11, v2}, Ljava/lang/Math;->min(FF)F
-
-    move-result v11
-
-    iput v11, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textXOffset:F
-
-    .line 6874
-    iget-byte v11, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
+    iput-byte v10, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
 
     const/4 v15, 0x1
 
-    or-int/2addr v11, v15
+    goto :goto_28
 
-    int-to-byte v11, v11
+    :cond_35
+    move/from16 v22, v10
 
-    iput-byte v11, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
+    .line 7067
+    :goto_27
+    iget v10, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textXOffset:F
 
-    .line 6875
+    invoke-static {v10, v2}, Ljava/lang/Math;->min(FF)F
+
+    move-result v10
+
+    iput v10, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textXOffset:F
+
+    .line 7068
+    iget-byte v10, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
+
+    const/4 v15, 0x1
+
+    or-int/2addr v10, v15
+
+    int-to-byte v10, v10
+
+    iput-byte v10, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
+
+    .line 7069
     iput-boolean v15, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasRtl:Z
 
-    :goto_21
-    if-nez v14, :cond_2f
+    :goto_28
+    if-nez v14, :cond_36
 
-    if-nez v18, :cond_2f
+    if-nez v19, :cond_36
 
-    .line 6881
-    :try_start_a
-    iget-object v11, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    .line 7075
+    :try_start_8
+    iget-object v10, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
-    invoke-virtual {v11, v7}, Landroid/text/StaticLayout;->getParagraphDirection(I)I
+    invoke-virtual {v10, v12}, Landroid/text/StaticLayout;->getParagraphDirection(I)I
 
-    move-result v11
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_6
+    move-result v10
+    :try_end_8
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_6
 
-    if-ne v11, v15, :cond_2f
+    if-ne v10, v15, :cond_36
 
     :catch_6
     const/4 v14, 0x1
 
-    .line 6888
-    :cond_2f
-    invoke-static {v5, v4}, Ljava/lang/Math;->max(FF)F
+    .line 7082
+    :cond_36
+    invoke-static {v6, v8}, Ljava/lang/Math;->max(FF)F
+
+    move-result v6
+
+    add-float/2addr v2, v8
+
+    .line 7083
+    invoke-static {v5, v2}, Ljava/lang/Math;->max(FF)F
 
     move-result v5
 
-    add-float/2addr v2, v4
+    move v15, v5
 
-    .line 6889
-    invoke-static {v3, v2}, Ljava/lang/Math;->max(FF)F
+    move v10, v6
 
-    move-result v3
+    float-to-double v5, v8
 
-    move v11, v3
+    .line 7084
+    invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D
 
-    float-to-double v3, v4
+    move-result-wide v5
 
-    .line 6890
-    invoke-static {v3, v4}, Ljava/lang/Math;->ceil(D)D
+    double-to-int v5, v5
 
-    move-result-wide v3
-
-    double-to-int v3, v3
-
-    invoke-static {v0, v3}, Ljava/lang/Math;->max(II)I
+    invoke-static {v0, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    float-to-double v2, v2
+    float-to-double v5, v2
 
-    .line 6891
-    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
+    .line 7085
+    invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D
 
-    move-result-wide v2
+    move-result-wide v5
 
-    double-to-int v2, v2
+    double-to-int v2, v5
 
-    invoke-static {v9, v2}, Ljava/lang/Math;->max(II)I
+    invoke-static {v11, v2}, Ljava/lang/Math;->max(II)I
 
-    move-result v9
+    move-result v11
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v12, v12, 0x1
 
     move-object/from16 v2, p1
 
-    move v3, v11
+    move v6, v10
 
-    move/from16 v4, v21
+    move v5, v15
 
-    move/from16 v15, v22
+    move/from16 v8, v20
 
-    move-object/from16 v11, p2
+    move-object/from16 v15, v21
 
-    goto/16 :goto_1c
+    move/from16 v10, v22
 
-    :cond_30
-    move/from16 v22, v15
+    goto/16 :goto_22
 
-    if-eqz v14, :cond_31
+    :cond_37
+    move/from16 v22, v10
 
-    if-ne v8, v10, :cond_33
+    move-object/from16 v21, v15
 
-    .line 6896
-    iput v13, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->lastLineWidth:I
+    if-eqz v14, :cond_38
 
-    goto :goto_22
+    if-ne v7, v13, :cond_3a
 
-    :cond_31
-    if-ne v8, v10, :cond_32
+    .line 7090
+    iput v3, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->lastLineWidth:I
 
-    .line 6899
+    goto :goto_29
+
+    :cond_38
+    if-ne v7, v13, :cond_39
+
+    .line 7093
     iput v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->lastLineWidth:I
 
-    :cond_32
-    move v3, v5
+    :cond_39
+    move v5, v6
 
-    .line 6901
-    :cond_33
-    :goto_22
+    .line 7095
+    :cond_3a
+    :goto_29
     iget v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textWidth:I
 
-    float-to-double v2, v3
+    float-to-double v2, v5
 
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
@@ -1692,33 +1843,31 @@
 
     iput v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textWidth:I
 
-    move-object/from16 v7, p1
+    move v3, v11
 
-    move/from16 v32, v9
-
-    move/from16 v15, v22
+    move/from16 v10, v22
 
     const/4 v2, 0x0
 
-    const/4 v4, 0x1
+    const/4 v8, 0x1
 
-    goto :goto_26
+    goto :goto_2d
 
-    :cond_34
-    move/from16 v20, v9
+    :cond_3b
+    move/from16 v22, v10
 
-    move/from16 v22, v15
+    move-object/from16 v21, v15
 
     const/4 v2, 0x0
 
-    cmpl-float v0, v5, v2
+    cmpl-float v0, v12, v2
 
-    if-lez v0, :cond_37
+    if-lez v0, :cond_3e
 
-    .line 6904
+    .line 7098
     iget v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textXOffset:F
 
-    invoke-static {v0, v5}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v0, v12}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
@@ -1726,190 +1875,211 @@
 
     cmpl-float v0, v0, v2
 
-    if-nez v0, :cond_35
+    if-nez v0, :cond_3c
 
-    add-float/2addr v7, v5
+    add-float/2addr v14, v12
 
-    float-to-int v0, v7
+    float-to-int v0, v14
 
-    goto :goto_23
+    goto :goto_2a
 
-    :cond_35
-    move/from16 v0, v18
+    :cond_3c
+    move/from16 v0, v19
 
-    :goto_23
-    const/4 v4, 0x1
+    :goto_2a
+    const/4 v8, 0x1
 
-    if-eq v6, v4, :cond_36
+    if-eq v4, v8, :cond_3d
 
-    move v3, v4
+    move v6, v8
 
-    goto :goto_24
+    goto :goto_2b
 
-    :cond_36
-    const/4 v3, 0x0
+    :cond_3d
+    move/from16 v6, v26
 
-    .line 6908
-    :goto_24
-    iput-boolean v3, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasRtl:Z
+    .line 7102
+    :goto_2b
+    iput-boolean v6, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->hasRtl:Z
 
-    .line 6909
-    iget-byte v3, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
+    .line 7103
+    iget-byte v5, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
 
-    or-int/2addr v3, v4
+    or-int/2addr v5, v8
 
-    int-to-byte v3, v3
+    int-to-byte v5, v5
 
-    iput-byte v3, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
+    iput-byte v5, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
 
-    goto :goto_25
+    goto :goto_2c
 
-    :cond_37
-    const/4 v4, 0x1
+    :cond_3e
+    const/4 v8, 0x1
 
-    .line 6911
-    iget-byte v0, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
+    .line 7105
+    iget-byte v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
 
     or-int/lit8 v0, v0, 0x2
 
     int-to-byte v0, v0
 
-    iput-byte v0, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
+    iput-byte v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
 
-    move/from16 v0, v18
+    move/from16 v0, v19
 
-    .line 6914
-    :goto_25
-    iget v3, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textWidth:I
+    .line 7108
+    :goto_2c
+    iget v5, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textWidth:I
 
-    move/from16 v15, v22
+    move/from16 v10, v22
 
-    invoke-static {v15, v0}, Ljava/lang/Math;->min(II)I
+    invoke-static {v10, v0}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    invoke-static {v3, v0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v5, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
     iput v0, v1, Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;->textWidth:I
 
-    move-object/from16 v7, p1
+    :goto_2d
+    move-object/from16 v11, p1
 
-    move/from16 v32, v13
+    if-eqz v11, :cond_41
 
-    :goto_26
-    if-eqz v7, :cond_38
+    .line 7112
+    iget-boolean v0, v11, Lorg/telegram/messenger/MessageObject;->isSpoilersRevealed:Z
 
-    .line 6921
-    iget-boolean v0, v7, Lorg/telegram/messenger/MessageObject;->isSpoilersRevealed:Z
-
-    if-nez v0, :cond_38
+    if-nez v0, :cond_41
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->access$100(Lorg/telegram/messenger/MessageObject;)Z
 
     move-result v0
 
-    if-nez v0, :cond_38
+    if-nez v0, :cond_41
 
-    const/16 v29, 0x0
+    .line 7114
+    iget-boolean v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
 
-    .line 6922
-    iget-object v0, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+    if-eqz v0, :cond_3f
 
-    const/16 v31, -0x1
+    const/16 v12, 0x20
 
-    const/16 v33, 0x0
+    .line 7115
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    iget-object v3, v12, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->spoilers:Ljava/util/List;
+    move-result v0
 
-    move-object/from16 v30, v0
+    sub-int/2addr v3, v0
 
-    move-object/from16 v34, v3
+    move/from16 v33, v3
 
-    invoke-static/range {v29 .. v34}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilers(Landroid/view/View;Landroid/text/Layout;IILjava/util/Stack;Ljava/util/List;)V
+    const/16 v13, 0xf
 
-    :cond_38
-    move-object/from16 v3, v19
+    goto :goto_2e
 
-    move/from16 v9, v20
+    :cond_3f
+    const/16 v12, 0x20
 
-    goto :goto_29
+    .line 7116
+    iget-boolean v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
+
+    const/16 v13, 0xf
+
+    if-eqz v0, :cond_40
+
+    .line 7117
+    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    sub-int/2addr v3, v0
+
+    :cond_40
+    move/from16 v33, v3
+
+    :goto_2e
+    const/16 v30, 0x0
+
+    .line 7119
+    iget-object v0, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
+
+    const/16 v32, -0x1
+
+    const/16 v34, 0x0
+
+    iget-object v3, v9, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->spoilers:Ljava/util/List;
+
+    move-object/from16 v31, v0
+
+    move-object/from16 v35, v3
+
+    invoke-static/range {v30 .. v35}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilers(Landroid/view/View;Landroid/text/Layout;IILjava/util/Stack;Ljava/util/List;)V
+
+    goto :goto_2f
+
+    :cond_41
+    const/16 v12, 0x20
+
+    const/16 v13, 0xf
+
+    :goto_2f
+    move-object/from16 v3, v16
+
+    move/from16 v6, v17
+
+    move/from16 v5, v18
+
+    goto :goto_31
 
     :catch_7
     move-exception v0
 
-    move-object v7, v2
+    move-object v11, v2
 
-    move-object/from16 v16, v13
+    move-object/from16 v21, v15
 
-    move v2, v14
+    const/4 v2, 0x0
 
-    goto :goto_27
+    const/4 v8, 0x1
+
+    const/16 v12, 0x20
+
+    const/16 v13, 0xf
+
+    .line 6978
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :goto_30
+    move-object/from16 v3, v28
+
+    :goto_31
+    add-int/lit8 v7, v7, 0x1
+
+    move-object v2, v11
+
+    move v15, v12
+
+    move v14, v13
+
+    move-object/from16 v27, v21
+
+    move/from16 v12, v26
+
+    move-object/from16 v8, v29
+
+    move-object/from16 v11, p2
+
+    goto/16 :goto_10
+
+    :cond_42
+    return-void
 
     :catch_8
     move-exception v0
 
-    move-object v7, v2
-
-    move-object/from16 v16, v13
-
-    move v2, v14
-
-    move/from16 v8, v29
-
-    goto :goto_27
-
-    :catch_9
-    move-exception v0
-
-    move-object v7, v2
-
-    move-object/from16 v16, v13
-
-    move v2, v14
-
-    move/from16 v8, v29
-
-    move/from16 v5, v30
-
-    :goto_27
-    move/from16 v6, v31
-
-    const/4 v4, 0x1
-
-    .line 6786
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    :goto_28
-    move v9, v5
-
-    :goto_29
-    add-int/lit8 v8, v8, 0x1
-
-    move-object/from16 v11, p2
-
-    move v10, v6
-
-    move-object v2, v7
-
-    move-object/from16 v13, v16
-
-    move-object/from16 v27, v26
-
-    const/4 v12, 0x0
-
-    const/16 v14, 0x20
-
-    goto/16 :goto_c
-
-    :cond_39
-    return-void
-
-    :catch_a
-    move-exception v0
-
-    .line 6644
+    .line 6822
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-void

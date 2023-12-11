@@ -24,7 +24,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: WalletNotificationsPresenter.kt */
 @InjectViewState
@@ -74,12 +74,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1784invoke(result);
+                m1786invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1784invoke(Result<? extends Boolean> it) {
+            public final void m1786invoke(Result<? extends Boolean> it) {
                 int collectionSizeOrDefault;
                 List<NotificationItem> mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -97,7 +97,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
                         ((WalletNotificationsView) this.getViewState()).onEmptyState();
                         return;
                     }
-                    ((WalletNotificationsView) this.getViewState()).showToast(this.getResourceManager().getString(C3634R.string.wallet_notifications_success_mark_all_notification_as_read));
+                    ((WalletNotificationsView) this.getViewState()).showToast(this.getResourceManager().getString(C3632R.string.wallet_notifications_success_mark_all_notification_as_read));
                     ((WalletNotificationsView) this.getViewState()).onLoadedNotifications(mutableList);
                 } else if (result instanceof Result.Error) {
                     ((WalletNotificationsView) this.getViewState()).showErrorToast((Result.Error) result, this.getResourceManager());
@@ -144,12 +144,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Notification>> result) {
-                m1782invoke(result);
+                m1784invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1782invoke(Result<? extends List<? extends Notification>> it) {
+            public final void m1784invoke(Result<? extends List<? extends Notification>> it) {
                 int collectionSizeOrDefault;
                 List mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -228,12 +228,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Notification>> result) {
-                m1783invoke(result);
+                m1785invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1783invoke(Result<? extends List<? extends Notification>> it) {
+            public final void m1785invoke(Result<? extends List<? extends Notification>> it) {
                 int collectionSizeOrDefault;
                 List<NotificationItem> mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -319,12 +319,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1785invoke(result);
+                m1787invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1785invoke(Result<? extends Boolean> it) {
+            public final void m1787invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
                 if (result instanceof Result.Error) {

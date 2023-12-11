@@ -27,6 +27,6 @@ public class SubtitleWithCounterCell extends HeaderCell {
     }
 
     public void updateCounter(boolean z, int i) {
-        this.counterTextView.setText(LocaleController.formatPluralString("BoostingSubscriptionsCount", i, Integer.valueOf(i)), z);
+        this.counterTextView.setText(LocaleController.formatPluralString("BoostingBoostsCountTitle", i, Integer.valueOf(i)), z);
     }
 }

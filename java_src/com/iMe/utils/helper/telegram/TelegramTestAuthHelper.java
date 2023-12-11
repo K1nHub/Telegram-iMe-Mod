@@ -8,7 +8,7 @@ import kotlin.random.Random;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.CountrySelectActivity;
 /* compiled from: TelegramTestAuthHelper.kt */
@@ -30,7 +30,7 @@ public final class TelegramTestAuthHelper {
     public static final CountrySelectActivity.Country getCountry() {
         CountrySelectActivity.Country country = new CountrySelectActivity.Country();
         country.code = "999";
-        country.name = LocaleController.getInternalString(C3634R.string.debug_test_backend);
+        country.name = LocaleController.getInternalString(C3632R.string.debug_test_backend);
         country.shortname = "TB";
         return country;
     }

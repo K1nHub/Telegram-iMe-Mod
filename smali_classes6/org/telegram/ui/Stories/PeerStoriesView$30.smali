@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 5008
+    .line 5011
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$30;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,17 +35,17 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 5011
+    .line 5014
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 5012
+    .line 5015
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$30;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
-    .line 5013
+    .line 5016
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$30;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget v0, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->lastKeyboardHeight:I
@@ -54,17 +54,17 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$7302(Lorg/telegram/ui/Stories/PeerStoriesView;F)F
 
-    .line 5014
+    .line 5017
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$30;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     if-eqz p1, :cond_0
 
-    .line 5015
+    .line 5018
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->onOverrideAnimationEnd()V
 
-    .line 5017
+    .line 5020
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$30;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -76,14 +76,14 @@
 
     if-nez v0, :cond_1
 
-    .line 5018
+    .line 5021
     iget-object p1, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
 
     const/4 v0, 0x0
 
     invoke-interface {p1, v0}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->setKeyboardVisible(Z)V
 
-    .line 5020
+    .line 5023
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$30;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -97,7 +97,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 5021
+    .line 5024
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$30;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/MentionsContainerView;
@@ -108,7 +108,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 5023
+    .line 5026
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$30;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -116,7 +116,7 @@
 
     iput-boolean v0, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->forceUpdateOffsets:Z
 
-    .line 5024
+    .line 5027
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

@@ -41,7 +41,7 @@
 
     check-cast p1, Ljava/util/ArrayList;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$3x0uLxK5L3HocZjqvyMN36yciNk([Z[Ljava/util/ArrayList;Ljava/lang/Runnable;Ljava/util/ArrayList;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$9jWpTJ4LbT7t6QGByeWEjR-7cN4([Z[Ljava/util/ArrayList;Ljava/lang/Runnable;Ljava/util/ArrayList;)V
 
     return-void
 .end method

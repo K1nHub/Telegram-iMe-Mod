@@ -2,32 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnTouchListener;
 
 
-# instance fields
-.field public final synthetic f$0:Ljava/lang/CharSequence;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda16;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/CharSequence;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda16;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda16;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda16;->INSTANCE:Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda16;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda16;->f$0:Ljava/lang/CharSequence;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs$$ExternalSyntheticLambda16;->f$0:Ljava/lang/CharSequence;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$H0Qt-DUKINWyrtjhRlB90HPx82k(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$ta1Yk462hCqy2_RGt-9lMxoT-kY(Ljava/lang/CharSequence;)V
+    move-result p1
 
-    return-void
+    return p1
 .end method

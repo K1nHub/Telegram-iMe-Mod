@@ -22,7 +22,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -154,7 +154,7 @@ public class TopicView extends FrameLayout {
         this.isActive = z;
         if (topic.getTopicId() == -2) {
             TextView nameTextView = getNameTextView();
-            String internalString = LocaleController.getInternalString(C3634R.string.topics_title_notopic);
+            String internalString = LocaleController.getInternalString(C3632R.string.topics_title_notopic);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.topics_title_notopic)");
             String upperCase = internalString.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -214,9 +214,9 @@ public class TopicView extends FrameLayout {
         this.isActive = z2;
         TextView nameTextView = getNameTextView();
         if (z) {
-            i = C3634R.string.folder_fab_settings_fab_archive;
+            i = C3632R.string.folder_fab_settings_fab_archive;
         } else {
-            i = C3634R.string.main_list;
+            i = C3632R.string.main_list;
         }
         String internalString = LocaleController.getInternalString(i);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(\n     …tring.main_list\n        )");
@@ -225,9 +225,9 @@ public class TopicView extends FrameLayout {
         nameTextView.setText(upperCase);
         ImageView iconView = getIconView();
         if (z) {
-            i2 = C3634R.C3636drawable.fork_custom_forward_switch_archive;
+            i2 = C3632R.C3634drawable.fork_custom_forward_switch_archive;
         } else {
-            i2 = C3634R.C3636drawable.fork_custom_forward_switch_main;
+            i2 = C3632R.C3634drawable.fork_custom_forward_switch_main;
         }
         iconView.setImageResource(i2);
         updateColors();
@@ -236,7 +236,7 @@ public class TopicView extends FrameLayout {
     public final void setMessagesContextMenu(boolean z, boolean z2) {
         int i;
         this.isActive = z2;
-        String title = z ? LocaleController.getInternalString(C3634R.string.settings_interface_message_header) : LocaleController.getString(C3634R.string.MediaTab);
+        String title = z ? LocaleController.getInternalString(C3632R.string.settings_interface_message_header) : LocaleController.getString(C3632R.string.MediaTab);
         TextView nameTextView = getNameTextView();
         Intrinsics.checkNotNullExpressionValue(title, "title");
         String upperCase = title.toUpperCase(Locale.ROOT);
@@ -244,9 +244,9 @@ public class TopicView extends FrameLayout {
         nameTextView.setText(upperCase);
         ImageView iconView = getIconView();
         if (z) {
-            i = C3634R.C3636drawable.fork_settings_chat;
+            i = C3632R.C3634drawable.fork_settings_chat;
         } else {
-            i = C3634R.C3636drawable.fork_cloud_filter_image;
+            i = C3632R.C3634drawable.fork_cloud_filter_image;
         }
         iconView.setImageResource(i);
         updateColors();

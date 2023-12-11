@@ -33,7 +33,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import timber.log.Timber;
 /* compiled from: WalletConnectPresenter.kt */
@@ -100,7 +100,7 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
     }
 
     public final DialogModel getDisconnectAllConfirmationDialogModel() {
-        return new DialogModel(LocaleController.getString("AreYouSureSessionsTitle", C3634R.string.AreYouSureSessionsTitle), this.resourceManager.getString(C3634R.string.wallet_connect_terminate_all_description), LocaleController.getString("Cancel", C3634R.string.Cancel), LocaleController.getString("Terminate", C3634R.string.Terminate));
+        return new DialogModel(LocaleController.getString("AreYouSureSessionsTitle", C3632R.string.AreYouSureSessionsTitle), this.resourceManager.getString(C3632R.string.wallet_connect_terminate_all_description), LocaleController.getString("Cancel", C3632R.string.Cancel), LocaleController.getString("Terminate", C3632R.string.Terminate));
     }
 
     public final void showChangeNetworkHintIfNeeded() {
@@ -131,12 +131,12 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.NetworkUpdated networkUpdated) {
-                m1667invoke(networkUpdated);
+                m1668invoke(networkUpdated);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1667invoke(DomainRxEvents.NetworkUpdated it) {
+            public final void m1668invoke(DomainRxEvents.NetworkUpdated it) {
                 Network currentNetwork;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 currentNetwork = WalletConnectPresenter.this.getCurrentNetwork();
@@ -182,12 +182,12 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends WCSessionStoreItem>> result) {
-                m1668invoke(result);
+                m1669invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1668invoke(Result<? extends List<? extends WCSessionStoreItem>> it) {
+            public final void m1669invoke(Result<? extends List<? extends WCSessionStoreItem>> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends WCSessionStoreItem>> result = it;

@@ -16,7 +16,7 @@ public final /* synthetic */ class C$r8$wrapper$java$util$function$Consumer$WRP 
         if (consumer == null) {
             return null;
         }
-        return consumer instanceof C3242v ? ((C3242v) consumer).f1341a : new C$r8$wrapper$java$util$function$Consumer$WRP(consumer);
+        return consumer instanceof C3239v ? ((C3239v) consumer).f1341a : new C$r8$wrapper$java$util$function$Consumer$WRP(consumer);
     }
 
     @Override // java.util.function.Consumer
@@ -26,6 +26,6 @@ public final /* synthetic */ class C$r8$wrapper$java$util$function$Consumer$WRP 
 
     @Override // java.util.function.Consumer
     public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return convert(this.f1255a.andThen(C3242v.m165b(consumer)));
+        return convert(this.f1255a.andThen(C3239v.m165b(consumer)));
     }
 }

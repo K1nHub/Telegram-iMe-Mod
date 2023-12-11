@@ -20,7 +20,7 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -1197,8 +1197,8 @@ public class CropView extends FrameLayout implements CropAreaView.AreaViewListen
         this.hasAspectRatioDialog = true;
         String[] strArr = new String[8];
         final Integer[][] numArr = {new Integer[]{3, 2}, new Integer[]{5, 3}, new Integer[]{4, 3}, new Integer[]{5, 4}, new Integer[]{7, 5}, new Integer[]{16, 9}};
-        strArr[0] = LocaleController.getString("CropOriginal", C3634R.string.CropOriginal);
-        strArr[1] = LocaleController.getString("CropSquare", C3634R.string.CropSquare);
+        strArr[0] = LocaleController.getString("CropOriginal", C3632R.string.CropOriginal);
+        strArr[1] = LocaleController.getString("CropSquare", C3632R.string.CropSquare);
         int i = 2;
         for (int i2 = 0; i2 < 6; i2++) {
             Integer[] numArr2 = numArr[i2];

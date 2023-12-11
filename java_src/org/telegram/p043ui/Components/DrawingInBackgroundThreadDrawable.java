@@ -113,7 +113,7 @@ public class DrawingInBackgroundThreadDrawable implements NotificationCenter.Not
                 org.telegram.messenger.AndroidUtilities.runOnUIThread(r0)
                 return
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.DrawingInBackgroundThreadDrawable.RunnableC48931.run():void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Components.DrawingInBackgroundThreadDrawable.RunnableC48901.run():void");
         }
     };
     Runnable uiFrameRunnable = new Runnable() { // from class: org.telegram.ui.Components.DrawingInBackgroundThreadDrawable.2

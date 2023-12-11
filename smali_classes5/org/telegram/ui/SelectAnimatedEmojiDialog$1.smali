@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 463
+    .line 464
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$1;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iput-object p3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$1;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -39,7 +39,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 466
+    .line 467
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$1;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$100(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Z
@@ -48,12 +48,12 @@
 
     if-nez v0, :cond_0
 
-    .line 467
+    .line 468
     invoke-super {p0, p1}, Landroid/view/View;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void
 
-    .line 470
+    .line 471
     :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 

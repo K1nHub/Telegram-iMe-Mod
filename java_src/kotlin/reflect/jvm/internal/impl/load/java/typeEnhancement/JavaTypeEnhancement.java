@@ -239,12 +239,12 @@ public final class JavaTypeEnhancement {
         boolean z6 = (z2 && z) ? false : true;
         KotlinType kotlinType = null;
         if (shouldEnhance || !simpleType.getArguments().isEmpty()) {
-            ClassifierDescriptor mo2051getDeclarationDescriptor = simpleType.getConstructor().mo2051getDeclarationDescriptor();
-            if (mo2051getDeclarationDescriptor == null) {
+            ClassifierDescriptor mo2053getDeclarationDescriptor = simpleType.getConstructor().mo2053getDeclarationDescriptor();
+            if (mo2053getDeclarationDescriptor == null) {
                 return new SimpleResult(null, 1, false);
             }
             JavaTypeQualifiers invoke = function12.invoke(Integer.valueOf(i));
-            enhanceMutability = TypeEnhancementKt.enhanceMutability(mo2051getDeclarationDescriptor, invoke, typeComponentPosition);
+            enhanceMutability = TypeEnhancementKt.enhanceMutability(mo2053getDeclarationDescriptor, invoke, typeComponentPosition);
             enhancedNullability = TypeEnhancementKt.getEnhancedNullability(invoke, typeComponentPosition);
             if (enhanceMutability == null || (constructor = enhanceMutability.getTypeConstructor()) == null) {
                 constructor = simpleType.getConstructor();

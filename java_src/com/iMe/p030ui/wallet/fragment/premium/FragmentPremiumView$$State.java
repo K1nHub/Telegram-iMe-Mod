@@ -14,7 +14,7 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import org.telegram.tgnet.TLRPC$User;
 /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView> implements FragmentPremiumView {
     @Override // com.iMe.p030ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -171,7 +171,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$ShowConfirmationDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowConfirmationDialogCommand extends ViewCommand<FragmentPremiumView> {
         public final DialogModel dialogModel;
 
@@ -188,7 +188,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$ShowActionSuccessCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowActionSuccessCommand extends ViewCommand<FragmentPremiumView> {
         ShowActionSuccessCommand(FragmentPremiumView$$State fragmentPremiumView$$State) {
             super("showActionSuccess", OneExecutionStateStrategy.class);
@@ -202,7 +202,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$ShowActionErrorCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowActionErrorCommand extends ViewCommand<FragmentPremiumView> {
         public final String message;
 
@@ -219,7 +219,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$OpenChooseContactCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class OpenChooseContactCommand extends ViewCommand<FragmentPremiumView> {
         public final Bundle args;
 
@@ -236,7 +236,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$RenderItemsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class RenderItemsCommand extends ViewCommand<FragmentPremiumView> {
         public final List<BaseNode> items;
 
@@ -253,7 +253,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$RenderButtonCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class RenderButtonCommand extends ViewCommand<FragmentPremiumView> {
         public final String buttonText;
         public final boolean isEnabled;
@@ -272,7 +272,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$RenderRecipientCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class RenderRecipientCommand extends ViewCommand<FragmentPremiumView> {
         public final TLRPC$User user;
 
@@ -289,7 +289,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$RenderBalanceCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class RenderBalanceCommand extends ViewCommand<FragmentPremiumView> {
         public final String balanceText;
 
@@ -306,7 +306,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowToastCommand extends ViewCommand<FragmentPremiumView> {
         public final String text;
 
@@ -323,7 +323,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<FragmentPremiumView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -344,7 +344,7 @@ public class FragmentPremiumView$$State extends MvpViewState<FragmentPremiumView
 
     /* compiled from: FragmentPremiumView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<FragmentPremiumView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

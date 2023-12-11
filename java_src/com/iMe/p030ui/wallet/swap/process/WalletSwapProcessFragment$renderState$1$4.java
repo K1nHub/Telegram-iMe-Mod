@@ -6,7 +6,7 @@ import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.p030ui.custom.TransactionActionButtonsView;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentWalletSwapProcessBinding;
 /* compiled from: WalletSwapProcessFragment.kt */
 /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$renderState$1$4 */
@@ -30,7 +30,7 @@ public final class WalletSwapProcessFragment$renderState$1$4 extends CountDownTi
         Intrinsics.checkNotNullExpressionValue(viewActionButtons, "viewActionButtons");
         StringBuilder sb = new StringBuilder();
         resourceManager = this.this$0.getResourceManager();
-        sb.append(resourceManager.getString(C3634R.string.wallet_swap_process_button_exchange));
+        sb.append(resourceManager.getString(C3632R.string.wallet_swap_process_button_exchange));
         sb.append(" (");
         sb.append((j + 1000) / 1000);
         sb.append(')');

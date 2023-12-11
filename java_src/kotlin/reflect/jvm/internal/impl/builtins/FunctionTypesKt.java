@@ -39,20 +39,20 @@ import kotlin.reflect.jvm.internal.impl.types.typeUtil.TypeUtilsKt;
 public final class FunctionTypesKt {
     public static final boolean isFunctionType(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        return (mo2051getDeclarationDescriptor != null ? getFunctionalClassKind(mo2051getDeclarationDescriptor) : null) == FunctionClassKind.Function;
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        return (mo2053getDeclarationDescriptor != null ? getFunctionalClassKind(mo2053getDeclarationDescriptor) : null) == FunctionClassKind.Function;
     }
 
     public static final boolean isSuspendFunctionType(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        return (mo2051getDeclarationDescriptor != null ? getFunctionalClassKind(mo2051getDeclarationDescriptor) : null) == FunctionClassKind.SuspendFunction;
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        return (mo2053getDeclarationDescriptor != null ? getFunctionalClassKind(mo2053getDeclarationDescriptor) : null) == FunctionClassKind.SuspendFunction;
     }
 
     public static final boolean isBuiltinFunctionalType(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        return mo2051getDeclarationDescriptor != null && isBuiltinFunctionalClassDescriptor(mo2051getDeclarationDescriptor);
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        return mo2053getDeclarationDescriptor != null && isBuiltinFunctionalClassDescriptor(mo2053getDeclarationDescriptor);
     }
 
     public static final boolean isBuiltinFunctionalClassDescriptor(DeclarationDescriptor declarationDescriptor) {
@@ -67,7 +67,7 @@ public final class FunctionTypesKt {
     }
 
     private static final boolean isTypeAnnotatedWithExtensionFunctionType(KotlinType kotlinType) {
-        return kotlinType.getAnnotations().mo2046findAnnotation(StandardNames.FqNames.extensionFunctionType) != null;
+        return kotlinType.getAnnotations().mo2048findAnnotation(StandardNames.FqNames.extensionFunctionType) != null;
     }
 
     public static final FunctionClassKind getFunctionalClassKind(DeclarationDescriptor declarationDescriptor) {
@@ -92,11 +92,11 @@ public final class FunctionTypesKt {
 
     public static final int contextFunctionTypeParamsCount(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        AnnotationDescriptor mo2046findAnnotation = kotlinType.getAnnotations().mo2046findAnnotation(StandardNames.FqNames.contextFunctionTypeParams);
-        if (mo2046findAnnotation == null) {
+        AnnotationDescriptor mo2048findAnnotation = kotlinType.getAnnotations().mo2048findAnnotation(StandardNames.FqNames.contextFunctionTypeParams);
+        if (mo2048findAnnotation == null) {
             return 0;
         }
-        ConstantValue constantValue = (ConstantValue) MapsKt.getValue(mo2046findAnnotation.getAllValueArguments(), StandardNames.CONTEXT_FUNCTION_TYPE_PARAMETER_COUNT_NAME);
+        ConstantValue constantValue = (ConstantValue) MapsKt.getValue(mo2048findAnnotation.getAllValueArguments(), StandardNames.CONTEXT_FUNCTION_TYPE_PARAMETER_COUNT_NAME);
         Intrinsics.checkNotNull(constantValue, "null cannot be cast to non-null type org.jetbrains.kotlin.resolve.constants.IntValue");
         return ((IntValue) constantValue).getValue().intValue();
     }
@@ -149,11 +149,11 @@ public final class FunctionTypesKt {
     public static final Name extractParameterNameFromFunctionTypeArgument(KotlinType kotlinType) {
         String value;
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        AnnotationDescriptor mo2046findAnnotation = kotlinType.getAnnotations().mo2046findAnnotation(StandardNames.FqNames.parameterName);
-        if (mo2046findAnnotation == null) {
+        AnnotationDescriptor mo2048findAnnotation = kotlinType.getAnnotations().mo2048findAnnotation(StandardNames.FqNames.parameterName);
+        if (mo2048findAnnotation == null) {
             return null;
         }
-        Object singleOrNull = CollectionsKt.singleOrNull(mo2046findAnnotation.getAllValueArguments().values());
+        Object singleOrNull = CollectionsKt.singleOrNull(mo2048findAnnotation.getAllValueArguments().values());
         StringValue stringValue = singleOrNull instanceof StringValue ? (StringValue) singleOrNull : null;
         if (stringValue != null && (value = stringValue.getValue()) != null) {
             if (!Name.isValidIdentifier(value)) {

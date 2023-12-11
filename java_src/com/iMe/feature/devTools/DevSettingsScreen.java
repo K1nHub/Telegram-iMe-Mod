@@ -23,7 +23,7 @@ import org.koin.android.ext.android.AndroidKoinScopeExtKt;
 import org.koin.androidx.viewmodel.GetViewModelKt;
 import org.koin.core.qualifier.Qualifier;
 import org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkDevSettingsScreenBinding;
 import timber.log.Timber;
 /* compiled from: DevSettingsScreen.kt */
@@ -34,7 +34,7 @@ public final class DevSettingsScreen extends Fragment {
     private final Lazy viewModel$delegate;
 
     public DevSettingsScreen() {
-        super(C3634R.layout.fork_dev_settings_screen);
+        super(C3632R.layout.fork_dev_settings_screen);
         Lazy lazy;
         this.binding$delegate = new FragmentViewBindingDelegate(ForkDevSettingsScreenBinding.class, this);
         final Function0<Fragment> function0 = new Function0<Fragment>() { // from class: com.iMe.feature.devTools.DevSettingsScreen$special$$inlined$viewModel$default$1

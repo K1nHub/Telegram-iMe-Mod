@@ -30,7 +30,7 @@
 
     move-object v0, p1
 
-    .line 2827
+    .line 2830
     iput-object v0, v13, Lorg/telegram/ui/StatisticActivity$MemberData$1;->this$0:Lorg/telegram/ui/StatisticActivity$MemberData;
 
     move-object/from16 v0, p14
@@ -77,7 +77,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 2830
+    .line 2833
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$MemberData$1;->val$needShowBulletin:[Z
 
     const/4 p2, 0x0
@@ -94,7 +94,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2831
+    .line 2834
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$MemberData$1;->val$fragment:Lorg/telegram/ui/StatisticActivity;
 
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$MemberData$1;->this$0:Lorg/telegram/ui/StatisticActivity$MemberData;

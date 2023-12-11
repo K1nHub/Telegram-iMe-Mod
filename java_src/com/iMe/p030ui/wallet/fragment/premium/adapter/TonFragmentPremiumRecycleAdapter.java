@@ -12,7 +12,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TonFragmentPremiumRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.fragment.premium.adapter.TonFragmentPremiumRecycleAdapter */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class TonFragmentPremiumRecycleAdapter extends BaseNodeAdapter<BaseNode> {
     private final GlobalStateProvider globalStateProvider;
 

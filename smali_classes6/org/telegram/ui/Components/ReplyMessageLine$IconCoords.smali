@@ -30,19 +30,19 @@
 .method public constructor <init>(FFFF)V
     .locals 0
 
-    .line 398
+    .line 450
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 399
+    .line 451
     iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;->x:F
 
-    .line 400
+    .line 452
     iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;->y:F
 
-    .line 401
+    .line 453
     iput p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;->s:F
 
-    .line 402
+    .line 454
     iput p4, p0, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;->a:F
 
     return-void
@@ -51,10 +51,10 @@
 .method public constructor <init>(FFFFZ)V
     .locals 0
 
-    .line 395
+    .line 447
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
 
-    .line 396
+    .line 448
     iput-boolean p5, p0, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;->q:Z
 
     return-void

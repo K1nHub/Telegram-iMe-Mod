@@ -12,13 +12,9 @@
 
 .field public final synthetic f$2:J
 
-.field public final synthetic f$3:Landroidx/collection/LongSparseArray;
-
-.field public final synthetic f$4:Ljava/lang/Runnable;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;JLandroidx/collection/LongSparseArray;Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,17 +25,13 @@
 
     iput-wide p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda72;->f$2:J
 
-    iput-object p5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda72;->f$3:Landroidx/collection/LongSparseArray;
-
-    iput-object p6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda72;->f$4:Ljava/lang/Runnable;
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda72;->f$0:Lorg/telegram/messenger/MediaDataController;
 
@@ -47,11 +39,7 @@
 
     iget-wide v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda72;->f$2:J
 
-    iget-object v4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda72;->f$3:Landroidx/collection/LongSparseArray;
-
-    iget-object v5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda72;->f$4:Ljava/lang/Runnable;
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$f2eqh5--VFbKfno-2bdjtLJS3ME(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;JLandroidx/collection/LongSparseArray;Ljava/lang/Runnable;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$4FvtKAvUrJpj8x9hONCPY7121Ls(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;J)V
 
     return-void
 .end method

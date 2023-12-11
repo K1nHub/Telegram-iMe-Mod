@@ -190,6 +190,54 @@
     return-void
 .end method
 
+.method private setAvatarColorByMonths(I)V
+    .locals 2
+
+    const/16 v0, 0xc
+
+    if-ne p1, v0, :cond_0
+
+    .line 82
+    iget-object p1, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    const/16 v0, -0x7aa0
+
+    const v1, -0x2aadba
+
+    invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setColor(II)V
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x6
+
+    if-ne p1, v0, :cond_1
+
+    .line 84
+    iget-object p1, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    const v0, -0xa35106
+
+    const v1, -0xbe7430
+
+    invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setColor(II)V
+
+    goto :goto_0
+
+    .line 86
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    const v0, -0x652e9c
+
+    const v1, -0xb645bc
+
+    invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setColor(II)V
+
+    :goto_0
+    return-void
+.end method
+
 
 # virtual methods
 .method public getBoost()Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
@@ -279,12 +327,12 @@
 .end method
 
 .method public setStatus(Lorg/telegram/tgnet/tl/TL_stories$TL_boost;)V
-    .locals 10
+    .locals 11
 
-    .line 81
+    .line 91
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->boost:Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
 
-    .line 82
+    .line 92
     iget-boolean v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->gift:Z
 
     const/4 v1, 0x0
@@ -299,7 +347,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 136
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeLayout:Landroid/widget/FrameLayout;
 
@@ -309,199 +357,203 @@
 
     goto/16 :goto_2
 
-    .line 83
+    .line 93
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 84
-    iget-boolean v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->unclaimed:Z
+    .line 94
+    iget v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->expires:I
 
-    if-eqz v0, :cond_2
+    iget v3, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->date:I
 
-    .line 85
-    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    sub-int/2addr v0, v3
 
-    sget v3, Lorg/telegram/messenger/R$string;->BoostingUnclaimed:I
+    div-int/lit8 v0, v0, 0x1e
 
-    const-string v4, "BoostingUnclaimed"
+    const v3, 0x15180
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    div-int/2addr v0, v3
 
-    move-result-object v3
+    .line 95
+    iget-boolean v3, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->unclaimed:Z
 
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
+    if-eqz v3, :cond_2
 
-    .line 86
-    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+    .line 96
+    iget-object v3, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const/16 v3, 0x12
+    sget v4, Lorg/telegram/messenger/R$string;->BoostingUnclaimed:I
 
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
+    const-string v5, "BoostingUnclaimed"
 
-    .line 87
-    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    const v3, -0x652e9c
+    move-result-object v4
 
-    const v4, -0xb645bc
+    invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setColor(II)V
-
-    .line 88
-    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
-
+    .line 97
     iget-object v3, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
+    const/16 v4, 0x12
 
-    .line 89
-    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
+    .line 98
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->setAvatarColorByMonths(I)V
+
+    .line 99
+    iget-object v3, p0, Lorg/telegram/ui/Cells/UserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    iget-object v4, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-virtual {v3, v2, v4}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
+
+    .line 100
+    iget-object v3, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    invoke-virtual {v3, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_1
 
-    .line 90
+    .line 101
     :cond_2
     iget-wide v3, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->user_id:J
 
     const-wide/16 v5, -0x1
 
-    cmp-long v0, v3, v5
+    cmp-long v3, v3, v5
 
-    if-nez v0, :cond_3
+    if-nez v3, :cond_3
 
-    .line 91
-    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    .line 102
+    iget-object v3, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    sget v3, Lorg/telegram/messenger/R$string;->BoostingToBeDistributed:I
+    sget v4, Lorg/telegram/messenger/R$string;->BoostingToBeDistributed:I
 
-    const-string v4, "BoostingToBeDistributed"
+    const-string v5, "BoostingToBeDistributed"
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 92
-    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    const/16 v3, 0x13
-
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
-
-    .line 93
-    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    const v3, -0xa35106
-
-    const v4, -0xbe7430
-
-    invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setColor(II)V
-
-    .line 94
-    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
-
+    .line 103
     iget-object v3, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
+    const/16 v4, 0x13
 
-    .line 95
-    iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
+    .line 104
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->setAvatarColorByMonths(I)V
 
-    .line 97
+    .line 105
+    iget-object v3, p0, Lorg/telegram/ui/Cells/UserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    iget-object v4, p0, Lorg/telegram/ui/Cells/UserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-virtual {v3, v2, v4}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
+
+    .line 106
+    iget-object v3, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    invoke-virtual {v3, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 108
     :cond_3
     :goto_1
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    move-result-object v0
-
-    iget-object v0, v0, Lorg/telegram/messenger/LocaleController;->formatterScheduleDay:Lorg/telegram/messenger/time/FastDateFormat;
-
-    new-instance v3, Ljava/util/Date;
-
-    iget v4, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->date:I
-
-    int-to-long v4, v4
-
-    const-wide/16 v6, 0x3e8
-
-    mul-long/2addr v4, v6
-
-    invoke-direct {v3, v4, v5}, Ljava/util/Date;-><init>(J)V
-
-    invoke-virtual {v0, v3}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 98
-    invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
-
     move-result-object v3
 
-    iget-object v3, v3, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
+    iget-object v3, v3, Lorg/telegram/messenger/LocaleController;->formatterScheduleDay:Lorg/telegram/messenger/time/FastDateFormat;
 
     new-instance v4, Ljava/util/Date;
 
-    iget v5, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->date:I
+    iget v5, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->expires:I
 
-    int-to-long v8, v5
+    int-to-long v5, v5
 
-    mul-long/2addr v8, v6
+    const-wide/16 v7, 0x3e8
 
-    invoke-direct {v4, v8, v9}, Ljava/util/Date;-><init>(J)V
+    mul-long/2addr v5, v7
+
+    invoke-direct {v4, v5, v6}, Ljava/util/Date;-><init>(J)V
 
     invoke-virtual {v3, v4}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 99
-    iget v4, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->expires:I
+    .line 109
+    invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
-    iget v5, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->date:I
+    move-result-object v4
 
-    sub-int/2addr v4, v5
+    iget-object v4, v4, Lorg/telegram/messenger/LocaleController;->formatterDay:Lorg/telegram/messenger/time/FastDateFormat;
 
-    div-int/lit8 v4, v4, 0x1e
+    new-instance v5, Ljava/util/Date;
 
-    const v5, 0x15180
+    iget v6, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->expires:I
 
-    div-int/2addr v4, v5
+    int-to-long v9, v6
 
-    .line 100
+    mul-long/2addr v9, v7
+
+    invoke-direct {v5, v9, v10}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {v4, v5}, Lorg/telegram/messenger/time/FastDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 111
     iget-object v5, p0, Lorg/telegram/ui/Cells/UserCell;->statusTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    sget v7, Lorg/telegram/messenger/R$string;->BoostingShortMonths:I
 
-    const-string v4, "m \u2022 "
+    const/4 v8, 0x1
 
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-array v9, v8, [Ljava/lang/Object;
 
-    sget v4, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    aput-object v0, v9, v1
+
+    const-string v0, "BoostingShortMonths"
+
+    invoke-static {v0, v7, v9}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, " \u2022 "
+
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    sget v0, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
     const/4 v7, 0x2
 
     new-array v7, v7, [Ljava/lang/Object;
 
-    aput-object v0, v7, v1
+    aput-object v3, v7, v1
 
-    const/4 v0, 0x1
+    aput-object v4, v7, v8
 
-    aput-object v3, v7, v0
+    const-string v3, "formatDateAtTime"
 
-    const-string v0, "formatDateAtTime"
-
-    invoke-static {v0, v4, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v0, v7}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -513,7 +565,7 @@
 
     invoke-virtual {v5, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 101
+    .line 113
     iget-boolean v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->gift:Z
 
     const v3, 0x3e4ccccd    # 0.2f
@@ -524,14 +576,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 102
+    .line 114
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->giftDrawable:Landroid/graphics/drawable/Drawable;
 
     const v6, -0x3171e1
 
     if-nez v0, :cond_4
 
-    .line 103
+    .line 115
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -544,7 +596,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->giftDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 104
+    .line 116
     new-instance v7, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v8, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -553,20 +605,20 @@
 
     invoke-virtual {v0, v7}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 106
+    .line 118
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 107
+    .line 119
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeTextView:Landroid/widget/TextView;
 
     iget-object v7, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->giftDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v7, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 108
+    .line 120
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeTextView:Landroid/widget/TextView;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -575,7 +627,7 @@
 
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    .line 109
+    .line 121
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeTextView:Landroid/widget/TextView;
 
     sget v7, Lorg/telegram/messenger/R$string;->BoostingGift:I
@@ -588,7 +640,7 @@
 
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 110
+    .line 122
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeLayout:Landroid/widget/FrameLayout;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -609,20 +661,20 @@
 
     invoke-virtual {v0, v6}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 112
+    .line 124
     :cond_5
     iget-boolean v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->giveaway:Z
 
     if-eqz v0, :cond_7
 
-    .line 113
+    .line 125
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->giveawayDrawable:Landroid/graphics/drawable/Drawable;
 
     const v6, -0xcc6e2c
 
     if-nez v0, :cond_6
 
-    .line 114
+    .line 126
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -635,7 +687,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->giveawayDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 115
+    .line 127
     new-instance v7, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v8, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -644,20 +696,20 @@
 
     invoke-virtual {v0, v7}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 117
+    .line 129
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeTextView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 118
+    .line 130
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeTextView:Landroid/widget/TextView;
 
     iget-object v7, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->giveawayDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v7, v2, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 119
+    .line 131
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeTextView:Landroid/widget/TextView;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -666,7 +718,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    .line 120
+    .line 132
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeTextView:Landroid/widget/TextView;
 
     sget v4, Lorg/telegram/messenger/R$string;->BoostingGiveaway:I
@@ -679,7 +731,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 121
+    .line 133
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeLayout:Landroid/widget/FrameLayout;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -700,14 +752,14 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 127
+    .line 139
     :cond_7
     :goto_2
     iget p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_boost;->multiplier:I
 
     if-lez p1, :cond_8
 
-    .line 128
+    .line 140
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->counterDrawable:Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/CounterDrawable;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -716,7 +768,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/CounterDrawable;->setText(Ljava/lang/String;)V
 
-    .line 129
+    .line 141
     iget-object p1, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->counterDrawable:Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/CounterDrawable;
@@ -725,13 +777,13 @@
 
     goto :goto_3
 
-    .line 131
+    .line 143
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 134
+    .line 146
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeLayout:Landroid/widget/FrameLayout;
 
@@ -741,7 +793,7 @@
 
     if-nez p1, :cond_b
 
-    .line 135
+    .line 147
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/cells/statistics/GiftedUserCell;->badgeTextView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -772,7 +824,7 @@
 
     add-int/2addr p1, v0
 
-    .line 136
+    .line 148
     iget-object v0, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -811,7 +863,7 @@
 
     goto :goto_6
 
-    .line 138
+    .line 150
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 

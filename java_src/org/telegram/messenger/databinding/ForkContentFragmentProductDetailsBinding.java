@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p030ui.custom.DetailsIconCellView;
 import com.iMe.p030ui.custom.ImageHeaderView;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkContentFragmentProductDetailsBinding implements ViewBinding {
     public final FrameLayout frameButtonContainer;
@@ -35,7 +35,7 @@ public final class ForkContentFragmentProductDetailsBinding implements ViewBindi
     }
 
     public static ForkContentFragmentProductDetailsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_content_fragment_product_details, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_content_fragment_product_details, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -43,16 +43,16 @@ public final class ForkContentFragmentProductDetailsBinding implements ViewBindi
     }
 
     public static ForkContentFragmentProductDetailsBinding bind(View view) {
-        int i = C3634R.C3637id.frame_button_container;
+        int i = C3632R.C3635id.frame_button_container;
         FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
         if (frameLayout != null) {
-            i = C3634R.C3637id.view_header;
+            i = C3632R.C3635id.view_header;
             ImageHeaderView imageHeaderView = (ImageHeaderView) ViewBindings.findChildViewById(view, i);
             if (imageHeaderView != null) {
-                i = C3634R.C3637id.view_price_cell;
+                i = C3632R.C3635id.view_price_cell;
                 DetailsIconCellView detailsIconCellView = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                 if (detailsIconCellView != null) {
-                    i = C3634R.C3637id.view_time_left_cell;
+                    i = C3632R.C3635id.view_time_left_cell;
                     DetailsIconCellView detailsIconCellView2 = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                     if (detailsIconCellView2 != null) {
                         return new ForkContentFragmentProductDetailsBinding((NestedScrollView) view, frameLayout, imageHeaderView, detailsIconCellView, detailsIconCellView2);

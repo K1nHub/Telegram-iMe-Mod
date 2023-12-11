@@ -14,7 +14,7 @@ import com.iMe.p030ui.custom.FeeView;
 import com.iMe.p030ui.custom.NetworkTypeView;
 import com.iMe.p030ui.custom.TitledInputFieldView;
 import com.iMe.p030ui.custom.TransactionActionButtonsView;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.Components.RLottieImageView;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletSendBinding implements ViewBinding {
@@ -65,7 +65,7 @@ public final class ForkFragmentWalletSendBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletSendBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_fragment_wallet_send, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_fragment_wallet_send, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -73,52 +73,52 @@ public final class ForkFragmentWalletSendBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletSendBinding bind(View view) {
-        int i = C3634R.C3637id.button_send;
+        int i = C3632R.C3635id.button_send;
         TransactionActionButtonsView transactionActionButtonsView = (TransactionActionButtonsView) ViewBindings.findChildViewById(view, i);
         if (transactionActionButtonsView != null) {
-            i = C3634R.C3637id.choice_address_buttons;
+            i = C3632R.C3635id.choice_address_buttons;
             ChooseRecipientOptionsView chooseRecipientOptionsView = (ChooseRecipientOptionsView) ViewBindings.findChildViewById(view, i);
             if (chooseRecipientOptionsView != null) {
-                i = C3634R.C3637id.image_header;
+                i = C3632R.C3635id.image_header;
                 RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
                 if (rLottieImageView != null) {
-                    i = C3634R.C3637id.image_network;
+                    i = C3632R.C3635id.image_network;
                     AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                     if (appCompatImageView != null) {
-                        i = C3634R.C3637id.input_amount;
+                        i = C3632R.C3635id.input_amount;
                         TitledInputFieldView titledInputFieldView = (TitledInputFieldView) ViewBindings.findChildViewById(view, i);
                         if (titledInputFieldView != null) {
-                            i = C3634R.C3637id.input_comment;
+                            i = C3632R.C3635id.input_comment;
                             TitledInputFieldView titledInputFieldView2 = (TitledInputFieldView) ViewBindings.findChildViewById(view, i);
                             if (titledInputFieldView2 != null) {
-                                i = C3634R.C3637id.input_recipient;
+                                i = C3632R.C3635id.input_recipient;
                                 TitledInputFieldView titledInputFieldView3 = (TitledInputFieldView) ViewBindings.findChildViewById(view, i);
                                 if (titledInputFieldView3 != null) {
-                                    i = C3634R.C3637id.input_token;
+                                    i = C3632R.C3635id.input_token;
                                     TitledInputFieldView titledInputFieldView4 = (TitledInputFieldView) ViewBindings.findChildViewById(view, i);
                                     if (titledInputFieldView4 != null) {
-                                        i = C3634R.C3637id.linear_crypto_settings;
+                                        i = C3632R.C3635id.linear_crypto_settings;
                                         LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                         if (linearLayout != null) {
-                                            i = C3634R.C3637id.linear_select_network;
+                                            i = C3632R.C3635id.linear_select_network;
                                             LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                             if (linearLayout2 != null) {
-                                                i = C3634R.C3637id.network_type_view;
+                                                i = C3632R.C3635id.network_type_view;
                                                 NetworkTypeView networkTypeView = (NetworkTypeView) ViewBindings.findChildViewById(view, i);
                                                 if (networkTypeView != null) {
-                                                    i = C3634R.C3637id.text_header;
+                                                    i = C3632R.C3635id.text_header;
                                                     TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                                                     if (textView != null) {
-                                                        i = C3634R.C3637id.text_network;
+                                                        i = C3632R.C3635id.text_network;
                                                         TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                                         if (textView2 != null) {
-                                                            i = C3634R.C3637id.text_token_balance;
+                                                            i = C3632R.C3635id.text_token_balance;
                                                             TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                                                             if (textView3 != null) {
-                                                                i = C3634R.C3637id.text_token_balance_in_dollars;
+                                                                i = C3632R.C3635id.text_token_balance_in_dollars;
                                                                 TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                 if (textView4 != null) {
-                                                                    i = C3634R.C3637id.view_fee;
+                                                                    i = C3632R.C3635id.view_fee;
                                                                     FeeView feeView = (FeeView) ViewBindings.findChildViewById(view, i);
                                                                     if (feeView != null) {
                                                                         return new ForkFragmentWalletSendBinding((NestedScrollView) view, transactionActionButtonsView, chooseRecipientOptionsView, rLottieImageView, appCompatImageView, titledInputFieldView, titledInputFieldView2, titledInputFieldView3, titledInputFieldView4, linearLayout, linearLayout2, networkTypeView, textView, textView2, textView3, textView4, feeView);

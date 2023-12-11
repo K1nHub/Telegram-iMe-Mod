@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 26121
+    .line 26129
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$111;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -35,7 +35,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 2
 
-    .line 26124
+    .line 26132
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$111;->this$0:Lorg/telegram/ui/ChatActivity;
 
     new-instance v0, Lorg/telegram/ui/PremiumPreviewFragment;
@@ -52,12 +52,12 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 26129
+    .line 26137
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     const/4 v0, 0x0
 
-    .line 26130
+    .line 26138
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

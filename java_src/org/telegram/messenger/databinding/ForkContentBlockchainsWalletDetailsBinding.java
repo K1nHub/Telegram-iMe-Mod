@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBindings;
 import com.iMe.p030ui.custom.BigActionButton;
 import com.iMe.p030ui.custom.DetailsIconCellView;
 import com.iMe.p030ui.custom.ImageHeaderView;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 /* loaded from: classes4.dex */
 public final class ForkContentBlockchainsWalletDetailsBinding implements ViewBinding {
@@ -40,7 +40,7 @@ public final class ForkContentBlockchainsWalletDetailsBinding implements ViewBin
     }
 
     public static ForkContentBlockchainsWalletDetailsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_content_blockchains_wallet_details, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_content_blockchains_wallet_details, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -48,23 +48,23 @@ public final class ForkContentBlockchainsWalletDetailsBinding implements ViewBin
     }
 
     public static ForkContentBlockchainsWalletDetailsBinding bind(View view) {
-        int i = C3634R.C3637id.button_backup;
+        int i = C3632R.C3635id.button_backup;
         BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
         if (bigActionButton != null) {
-            i = C3634R.C3637id.button_reset;
+            i = C3632R.C3635id.button_reset;
             BigActionButton bigActionButton2 = (BigActionButton) ViewBindings.findChildViewById(view, i);
             if (bigActionButton2 != null) {
                 FrameLayout frameLayout = (FrameLayout) view;
-                i = C3634R.C3637id.item_more_options;
+                i = C3632R.C3635id.item_more_options;
                 ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
                 if (actionBarMenuItem != null) {
-                    i = C3634R.C3637id.view_address_cell;
+                    i = C3632R.C3635id.view_address_cell;
                     DetailsIconCellView detailsIconCellView = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                     if (detailsIconCellView != null) {
-                        i = C3634R.C3637id.view_connected_cell;
+                        i = C3632R.C3635id.view_connected_cell;
                         DetailsIconCellView detailsIconCellView2 = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                         if (detailsIconCellView2 != null) {
-                            i = C3634R.C3637id.view_header;
+                            i = C3632R.C3635id.view_header;
                             ImageHeaderView imageHeaderView = (ImageHeaderView) ViewBindings.findChildViewById(view, i);
                             if (imageHeaderView != null) {
                                 return new ForkContentBlockchainsWalletDetailsBinding(frameLayout, bigActionButton, bigActionButton2, frameLayout, actionBarMenuItem, detailsIconCellView, detailsIconCellView2, imageHeaderView);

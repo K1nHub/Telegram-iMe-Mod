@@ -67,7 +67,7 @@ public final class CompositeAnnotations implements Annotations {
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.annotations.Annotations
     /* renamed from: findAnnotation */
-    public AnnotationDescriptor mo2046findAnnotation(final FqName fqName) {
+    public AnnotationDescriptor mo2048findAnnotation(final FqName fqName) {
         Sequence asSequence;
         Sequence mapNotNull;
         Intrinsics.checkNotNullParameter(fqName, "fqName");
@@ -81,7 +81,7 @@ public final class CompositeAnnotations implements Annotations {
             @Override // kotlin.jvm.functions.Function1
             public final AnnotationDescriptor invoke(Annotations it) {
                 Intrinsics.checkNotNullParameter(it, "it");
-                return it.mo2046findAnnotation(FqName.this);
+                return it.mo2048findAnnotation(FqName.this);
             }
         });
         return (AnnotationDescriptor) SequencesKt.firstOrNull(mapNotNull);

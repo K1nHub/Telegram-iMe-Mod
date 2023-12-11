@@ -34,7 +34,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.tgnet.TLRPC$ChatParticipant;
 import timber.log.Timber;
 /* compiled from: ProfilePresenter.kt */
@@ -424,21 +424,21 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     }
 
     private final void showResetConfirmationDialog(SocialNetwork socialNetwork) {
-        ((ProfileView) getViewState()).showResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3634R.string.social_reset_account_title, socialNetwork.getSocialName()), this.resourceManager.getString(C3634R.string.social_reset_account_message, socialNetwork.getSocialName()), this.resourceManager.getString(C3634R.string.social_reset_account_negative_button), this.resourceManager.getString(C3634R.string.social_reset_account_positive_button)), socialNetwork);
+        ((ProfileView) getViewState()).showResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3632R.string.social_reset_account_title, socialNetwork.getSocialName()), this.resourceManager.getString(C3632R.string.social_reset_account_message, socialNetwork.getSocialName()), this.resourceManager.getString(C3632R.string.social_reset_account_negative_button), this.resourceManager.getString(C3632R.string.social_reset_account_positive_button)), socialNetwork);
     }
 
     private final void showNeedAuthorizeDialog() {
-        ((ProfileView) getViewState()).showNeedAuthorizeDialog(new DialogModel(this.resourceManager.getString(C3634R.string.wallet_crypto_wallet_not_created_dialog_title), this.resourceManager.getString(C3634R.string.wallet_crypto_wallet_not_created_dialog_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.common_ok)));
+        ((ProfileView) getViewState()).showNeedAuthorizeDialog(new DialogModel(this.resourceManager.getString(C3632R.string.wallet_crypto_wallet_not_created_dialog_title), this.resourceManager.getString(C3632R.string.wallet_crypto_wallet_not_created_dialog_description), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.common_ok)));
     }
 
     private final void showBeforeDialog(SocialNetwork socialNetwork) {
         String socialName = socialNetwork.getSocialName();
         String beforeConnectMessage = socialNetwork.getBeforeConnectMessage();
-        String string = this.resourceManager.getString(C3634R.string.common_ok);
+        String string = this.resourceManager.getString(C3632R.string.common_ok);
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
-        String upperCase2 = this.resourceManager.getString(C3634R.string.common_cancel).toUpperCase(locale);
+        String upperCase2 = this.resourceManager.getString(C3632R.string.common_cancel).toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         ((ProfileView) getViewState()).showBeforeConnectMessage(socialNetwork, new DialogModel(socialName, beforeConnectMessage, upperCase2, upperCase));
     }

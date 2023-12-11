@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
@@ -104,7 +104,7 @@ public class StealthModeAlert extends BottomSheet {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         imageView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m104dp(80), Theme.getColor(Theme.key_featuredStickers_addButton)));
-        imageView.setImageResource(C3634R.C3636drawable.large_stealth);
+        imageView.setImageResource(C3632R.C3634drawable.large_stealth);
         frameLayout.addView(imageView, LayoutHelper.createFrame(80, 80, 1, 0, 18, 0, 0));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
@@ -113,7 +113,7 @@ public class StealthModeAlert extends BottomSheet {
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
-        textView.setText(LocaleController.getString("StealthModeTitle", C3634R.string.StealthModeTitle));
+        textView.setText(LocaleController.getString("StealthModeTitle", C3632R.string.StealthModeTitle));
         linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 1));
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
         simpleTextView.setTextSize(14);
@@ -121,32 +121,32 @@ public class StealthModeAlert extends BottomSheet {
         simpleTextView.setMaxLines(100);
         simpleTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText, resourcesProvider));
         if (UserConfig.getInstance(this.currentAccount).isPremium()) {
-            simpleTextView.setText(LocaleController.getString("StealthModeHint", C3634R.string.StealthModeHint));
+            simpleTextView.setText(LocaleController.getString("StealthModeHint", C3632R.string.StealthModeHint));
         } else {
-            simpleTextView.setText(LocaleController.getString("StealthModePremiumHint", C3634R.string.StealthModePremiumHint));
+            simpleTextView.setText(LocaleController.getString("StealthModePremiumHint", C3632R.string.StealthModePremiumHint));
         }
         linearLayout.addView(simpleTextView, LayoutHelper.createLinear(-2, -2, 1, 36, 10, 36, 0));
         ItemCell itemCell = new ItemCell(this, getContext());
-        itemCell.imageView.setImageResource(C3634R.C3636drawable.msg_stealth_5min);
-        itemCell.textView.setText(LocaleController.getString("HideRecentViews", C3634R.string.HideRecentViews));
-        itemCell.description.setText(LocaleController.getString("HideRecentViewsDescription", C3634R.string.HideRecentViewsDescription));
+        itemCell.imageView.setImageResource(C3632R.C3634drawable.msg_stealth_5min);
+        itemCell.textView.setText(LocaleController.getString("HideRecentViews", C3632R.string.HideRecentViews));
+        itemCell.description.setText(LocaleController.getString("HideRecentViewsDescription", C3632R.string.HideRecentViewsDescription));
         linearLayout.addView(itemCell, LayoutHelper.createLinear(-1, -2, 0, 0, 20, 0, 0));
         ItemCell itemCell2 = new ItemCell(this, getContext());
-        itemCell2.imageView.setImageResource(C3634R.C3636drawable.msg_stealth_25min);
-        itemCell2.textView.setText(LocaleController.getString("HideNextViews", C3634R.string.HideNextViews));
-        itemCell2.description.setText(LocaleController.getString("HideNextViewsDescription", C3634R.string.HideNextViewsDescription));
+        itemCell2.imageView.setImageResource(C3632R.C3634drawable.msg_stealth_25min);
+        itemCell2.textView.setText(LocaleController.getString("HideNextViews", C3632R.string.HideNextViews));
+        itemCell2.description.setText(LocaleController.getString("HideNextViewsDescription", C3632R.string.HideNextViewsDescription));
         linearLayout.addView(itemCell2, LayoutHelper.createLinear(-1, -2, 0, 0, 10, 0, 0));
         PremiumButtonView premiumButtonView = new PremiumButtonView(context, AndroidUtilities.m104dp(8), true, resourcesProvider);
         this.button = premiumButtonView;
         premiumButtonView.drawGradient = false;
         premiumButtonView.overlayTextView.getDrawable().setSplitByWords(false);
-        int i = C3634R.raw.unlock_icon;
+        int i = C3632R.raw.unlock_icon;
         premiumButtonView.setIcon(i);
         ScaleStateListAnimator.apply(premiumButtonView);
         final TLRPC$User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
         if (!currentUser.premium) {
             premiumButtonView.setIcon(i);
-            premiumButtonView.setButton(LocaleController.getString("UnlockStealthMode", C3634R.string.UnlockStealthMode), new View.OnClickListener() { // from class: org.telegram.ui.Stories.StealthModeAlert$$ExternalSyntheticLambda0
+            premiumButtonView.setButton(LocaleController.getString("UnlockStealthMode", C3632R.string.UnlockStealthMode), new View.OnClickListener() { // from class: org.telegram.ui.Stories.StealthModeAlert$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     StealthModeAlert.this.lambda$new$0(view);
@@ -210,7 +210,7 @@ public class StealthModeAlert extends BottomSheet {
             } else {
                 BulletinFactory m63of = BulletinFactory.m63of(this.container, resourcesProvider);
                 if (m63of != null) {
-                    m63of.createErrorBulletin(AndroidUtilities.replaceTags(LocaleController.getString("StealthModeCooldownHint", C3634R.string.StealthModeCooldownHint))).show(true);
+                    m63of.createErrorBulletin(AndroidUtilities.replaceTags(LocaleController.getString("StealthModeCooldownHint", C3632R.string.StealthModeCooldownHint))).show(true);
                 }
             }
         }
@@ -235,7 +235,7 @@ public class StealthModeAlert extends BottomSheet {
             global = BulletinFactory.global();
         }
         if (global != null) {
-            global.createSimpleLargeBulletin(C3634R.C3636drawable.msg_stories_stealth2, LocaleController.getString("StealthModeOn", C3634R.string.StealthModeOn), LocaleController.getString("StealthModeOnHint", C3634R.string.StealthModeOnHint)).show();
+            global.createSimpleLargeBulletin(C3632R.C3634drawable.msg_stories_stealth2, LocaleController.getString("StealthModeOn", C3632R.string.StealthModeOn), LocaleController.getString("StealthModeOnHint", C3632R.string.StealthModeOnHint)).show();
         }
     }
 
@@ -250,7 +250,7 @@ public class StealthModeAlert extends BottomSheet {
         TL_stories$TL_storiesStealthMode stealthMode = MessagesController.getInstance(this.currentAccount).getStoriesController().getStealthMode();
         if (stealthMode != null && ConnectionsManager.getInstance(this.currentAccount).getCurrentTime() < stealthMode.active_until_date) {
             this.stealthModeIsActive = true;
-            this.button.setOverlayText(LocaleController.getString("StealthModeIsActive", C3634R.string.StealthModeIsActive), true, z);
+            this.button.setOverlayText(LocaleController.getString("StealthModeIsActive", C3632R.string.StealthModeIsActive), true, z);
             this.button.overlayTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
             return;
         }
@@ -266,14 +266,14 @@ public class StealthModeAlert extends BottomSheet {
                 sb.append(String.format(locale, "%02d", Integer.valueOf((int) (j / 60))));
                 sb.append(String.format(locale, ":%02d", Integer.valueOf((int) (j % 60))));
                 sb.append(String.format(locale, ":%02d", Integer.valueOf(i2)));
-                this.button.setOverlayText(LocaleController.formatString("AvailableIn", C3634R.string.AvailableIn, sb.toString()), true, z);
+                this.button.setOverlayText(LocaleController.formatString("AvailableIn", C3632R.string.AvailableIn, sb.toString()), true, z);
                 this.button.overlayTextView.setTextColor(ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_featuredStickers_buttonText), 125));
                 AndroidUtilities.cancelRunOnUIThread(this.updateButtonRunnuble);
                 AndroidUtilities.runOnUIThread(this.updateButtonRunnuble, 1000L);
                 return;
             }
         }
-        this.button.setOverlayText(LocaleController.getString("EnableStealthMode", C3634R.string.EnableStealthMode), true, z);
+        this.button.setOverlayText(LocaleController.getString("EnableStealthMode", C3632R.string.EnableStealthMode), true, z);
         this.button.overlayTextView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
     }
 

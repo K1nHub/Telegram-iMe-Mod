@@ -253,7 +253,7 @@
 
     goto :goto_2
 
-    .line 126
+    .line 125
     :cond_8
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -261,14 +261,24 @@
 
     if-ne p1, v2, :cond_9
 
-    .line 127
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;
 
-    .line 128
+    iget p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;->cooldown_until_date:I
+
+    if-nez p1, :cond_9
+
+    .line 126
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;
+
+    .line 127
     iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v1}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
@@ -277,42 +287,42 @@
 
     iput-wide v3, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->replaceDialogId:J
 
-    .line 129
+    .line 128
     iget p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;->slot:I
 
     iput p1, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->slot:I
 
-    .line 130
+    .line 129
     iput-boolean v2, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->canApply:Z
 
     goto :goto_3
 
-    .line 131
+    .line 130
     :cond_9
     invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result p1
 
-    if-le p1, v2, :cond_b
+    if-lt p1, v2, :cond_b
 
-    .line 132
+    .line 131
     iput-boolean v2, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->needSelector:Z
 
-    .line 133
+    .line 132
     invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->isMultiBoostsAvailable()Z
 
     move-result p1
 
     if-nez p1, :cond_a
 
-    .line 134
+    .line 133
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;
 
-    .line 135
+    .line 134
     iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v1}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
@@ -321,34 +331,34 @@
 
     iput-wide v3, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->replaceDialogId:J
 
-    .line 136
+    .line 135
     iget p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_myBoost;->slot:I
 
     iput p1, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->slot:I
 
-    .line 138
+    .line 137
     :cond_a
     iput-boolean v2, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->canApply:Z
 
     goto :goto_3
 
-    .line 140
+    .line 139
     :cond_b
     iput-boolean v0, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->canApply:Z
 
     goto :goto_3
 
-    .line 143
+    .line 142
     :cond_c
     iput-boolean v2, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->canApply:Z
 
-    .line 145
+    .line 144
     :goto_3
     iget-boolean p1, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->isMaxLvl:Z
 
     if-eqz p1, :cond_d
 
-    .line 146
+    .line 145
     iput-boolean v0, p0, Lorg/telegram/messenger/ChannelBoostsController$CanApplyBoost;->canApply:Z
 
     :cond_d

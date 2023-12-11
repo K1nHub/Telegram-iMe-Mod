@@ -29,7 +29,7 @@ public class Buffer {
     }
 
     /* renamed from: getMemory-SK3TCg8  reason: not valid java name */
-    public final ByteBuffer m1917getMemorySK3TCg8() {
+    public final ByteBuffer m1919getMemorySK3TCg8() {
         return this.memory;
     }
 

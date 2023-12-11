@@ -36,7 +36,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$LongRef;
 import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
@@ -255,7 +255,7 @@ public final class CryptoRecipientManager {
                     com.iMe.storage.data.network.model.error.ErrorModel r10 = new com.iMe.storage.data.network.model.error.ErrorModel
                     com.iMe.manager.crypto.recipient.CryptoRecipientManager r0 = r3
                     com.iMe.storage.domain.utils.system.ResourceManager r0 = com.iMe.manager.crypto.recipient.CryptoRecipientManager.access$getResourceManager$p(r0)
-                    int r3 = org.telegram.messenger.C3634R.string.wallet_recipient_validation_chat_with_user_first_error
+                    int r3 = org.telegram.messenger.C3632R.string.wallet_recipient_validation_chat_with_user_first_error
                     java.lang.String r4 = r0.getString(r3)
                     com.iMe.storage.data.network.handlers.impl.ApiErrorHandler$ErrorStatus r5 = com.iMe.storage.data.network.handlers.impl.ApiErrorHandler.ErrorStatus.BAD_RESPONSE
                     r6 = 0
@@ -332,9 +332,9 @@ public final class CryptoRecipientManager {
                     SendMessagesHelper.prepareSendingBotContextResult(null, accountInstance, tLRPC$BotInlineResult, formatBotRequestParams, ref$LongRef.element, null, null, null, null, true, 0, null);
                     viewState3 = CryptoRecipientManager.this.getViewState();
                     resourceManager2 = CryptoRecipientManager.this.resourceManager;
-                    String string = resourceManager2.getString(C3634R.string.wallet_recipient_request_permission_success_dialog_title);
+                    String string = resourceManager2.getString(C3632R.string.wallet_recipient_request_permission_success_dialog_title);
                     resourceManager3 = CryptoRecipientManager.this.resourceManager;
-                    String string2 = resourceManager3.getString(C3634R.string.wallet_recipient_request_permission_success_dialog_description, recipient);
+                    String string2 = resourceManager3.getString(C3632R.string.wallet_recipient_request_permission_success_dialog_description, recipient);
                     final CryptoRecipientManager cryptoRecipientManager2 = CryptoRecipientManager.this;
                     final Ref$LongRef ref$LongRef2 = ref$LongRef;
                     viewState3.showRequestPermissionSuccessDialog(string, string2, new Callbacks$Callback() { // from class: com.iMe.manager.crypto.recipient.CryptoRecipientManager$requestAddressPermission$2$1
@@ -460,13 +460,13 @@ public final class CryptoRecipientManager {
                         });
                     } else if (addressAccessState instanceof AddressAccessState.NotAvailable) {
                         viewState4 = CryptoRecipientManager.this.getViewState();
-                        int i = C3634R.raw.fork_common_info;
+                        int i = C3632R.raw.fork_common_info;
                         resourceManager5 = CryptoRecipientManager.this.resourceManager;
-                        String string = resourceManager5.getString(C3634R.string.wallet_amount_error_invalid_user_title);
+                        String string = resourceManager5.getString(C3632R.string.wallet_amount_error_invalid_user_title);
                         resourceManager6 = CryptoRecipientManager.this.resourceManager;
-                        String string2 = resourceManager6.getString(C3634R.string.wallet_recipient_error_dialog_no_eth_address_description);
+                        String string2 = resourceManager6.getString(C3632R.string.wallet_recipient_error_dialog_no_eth_address_description);
                         resourceManager7 = CryptoRecipientManager.this.resourceManager;
-                        viewState4.showErrorDialog(i, string, string2, resourceManager7.getString(C3634R.string.wallet_amount_error_invalid_user_btn_txt), null);
+                        viewState4.showErrorDialog(i, string, string2, resourceManager7.getString(C3632R.string.wallet_amount_error_invalid_user_btn_txt), null);
                     }
                 } else if (result instanceof Result.Error) {
                     Result.Error error = (Result.Error) result;
@@ -478,13 +478,13 @@ public final class CryptoRecipientManager {
                     }
                     TLRPC$User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(Long.parseLong(recipient)));
                     viewState3 = CryptoRecipientManager.this.getViewState();
-                    int i2 = C3634R.raw.fork_invite_user;
+                    int i2 = C3632R.raw.fork_invite_user;
                     resourceManager2 = CryptoRecipientManager.this.resourceManager;
-                    String string3 = resourceManager2.getString(C3634R.string.wallet_recipient_error_invalid_user_title);
+                    String string3 = resourceManager2.getString(C3632R.string.wallet_recipient_error_invalid_user_title);
                     resourceManager3 = CryptoRecipientManager.this.resourceManager;
-                    String string4 = resourceManager3.getString(C3634R.string.wallet_recipient_error_invalid_user_description);
+                    String string4 = resourceManager3.getString(C3632R.string.wallet_recipient_error_invalid_user_description);
                     resourceManager4 = CryptoRecipientManager.this.resourceManager;
-                    int i3 = C3634R.string.wallet_recipient_error_invalid_user_btn_txt;
+                    int i3 = C3632R.string.wallet_recipient_error_invalid_user_btn_txt;
                     Object[] objArr = new Object[2];
                     String str3 = user.first_name;
                     if (str3 == null) {
@@ -543,7 +543,7 @@ public final class CryptoRecipientManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogModel getRequestPermissionDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_recipient_request_permission_dialog_title), this.resourceManager.getString(C3634R.string.wallet_recipient_request_permission_dialog_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_recipient_request_permission_dialog_action_btn_text));
+        return new DialogModel(this.resourceManager.getString(C3632R.string.wallet_recipient_request_permission_dialog_title), this.resourceManager.getString(C3632R.string.wallet_recipient_request_permission_dialog_description), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.wallet_recipient_request_permission_dialog_action_btn_text));
     }
 
     private final void autoDispose(Disposable disposable) {

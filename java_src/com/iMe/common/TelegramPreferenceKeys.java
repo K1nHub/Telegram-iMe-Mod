@@ -324,6 +324,10 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isForwardingPreviewEditorHintShown");
         }
 
+        public static final String isReplyColorsEnabled() {
+            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isReplyColorsEnabled");
+        }
+
         /* compiled from: TelegramPreferenceKeys.kt */
         /* loaded from: classes3.dex */
         public static final class Default {
@@ -477,6 +481,10 @@ public final class TelegramPreferenceKeys {
 
             public static final boolean isRememberLastFilterTabEnabled() {
                 return false;
+            }
+
+            public static final boolean isReplyColorsEnabled() {
+                return true;
             }
 
             public static final boolean isSendingGifConfirmationEnabled() {

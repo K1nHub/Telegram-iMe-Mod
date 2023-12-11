@@ -32,7 +32,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DownloadController;
@@ -1788,17 +1788,17 @@ public class StoriesController {
         TL_stories$TL_stories_getStoriesByID tL_stories$TL_stories_getStoriesByID = new TL_stories$TL_stories_getStoriesByID();
         tL_stories$TL_stories_getStoriesByID.f1772id.add(Integer.valueOf(i));
         tL_stories$TL_stories_getStoriesByID.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories$TL_stories_getStoriesByID, new C71261(j2, consumer));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_stories$TL_stories_getStoriesByID, new C71241(j2, consumer));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.StoriesController$1 */
     /* loaded from: classes6.dex */
-    public class C71261 implements RequestDelegate {
+    public class C71241 implements RequestDelegate {
         final /* synthetic */ Consumer val$consumer;
         final /* synthetic */ long val$hash;
 
-        C71261(long j, Consumer consumer) {
+        C71241(long j, Consumer consumer) {
             this.val$hash = j;
             this.val$consumer = consumer;
         }
@@ -1810,7 +1810,7 @@ public class StoriesController {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.StoriesController$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StoriesController.C71261.this.lambda$run$0(tLObject, j, consumer);
+                    StoriesController.C71241.this.lambda$run$0(tLObject, j, consumer);
                 }
             });
         }
@@ -2289,7 +2289,7 @@ public class StoriesController {
                 if (str5 == null || !str4.equals(str5)) {
                     return;
                 }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString("StoryUploadError", C3634R.string.StoryUploadError));
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString("StoryUploadError", C3632R.string.StoryUploadError));
                 cleanup();
             } else if (i == NotificationCenter.fileUploadProgressChanged && ((String) objArr[0]).equals(this.path)) {
                 float min = Math.min(1.0f, ((float) ((Long) objArr[1]).longValue()) / ((float) ((Long) objArr[2]).longValue()));
@@ -2792,7 +2792,7 @@ public class StoriesController {
         private int totalCount;
         public final int type;
 
-        /* synthetic */ StoriesList(int i, long j, int i2, Utilities.Callback callback, C71261 c71261) {
+        /* synthetic */ StoriesList(int i, long j, int i2, Utilities.Callback callback, C71241 c71241) {
             this(i, j, i2, callback);
         }
 

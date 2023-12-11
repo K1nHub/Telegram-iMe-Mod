@@ -29,7 +29,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -138,7 +138,7 @@ public class SelectorSearchCell extends ScrollView {
         this.editText.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         this.spansContainer.addView(this.editText);
         EditTextBoldCursor editTextBoldCursor3 = this.editText;
-        int i2 = C3634R.string.Search;
+        int i2 = C3632R.string.Search;
         editTextBoldCursor3.setHintText(LocaleController.getString("Search", i2));
         this.hintTextWidth = (int) this.editText.getPaint().measureText(LocaleController.getString("Search", i2));
         this.editText.addTextChangedListener(new TextWatcher() { // from class: org.telegram.ui.Components.Premium.boosts.cells.selector.SelectorSearchCell.2

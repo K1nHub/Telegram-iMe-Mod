@@ -13,7 +13,7 @@ public final class AhmnForkImpl<X, Y> implements HashmapAugNode.AhmnFork<X, Y> {
     private final CellRef<HashmapAug<X, Y>> left;
 
     /* renamed from: n */
-    private final int f2077n;
+    private final int f2078n;
     private final CellRef<HashmapAug<X, Y>> right;
 
     public boolean equals(Object obj) {
@@ -22,13 +22,13 @@ public final class AhmnForkImpl<X, Y> implements HashmapAugNode.AhmnFork<X, Y> {
         }
         if (obj instanceof AhmnForkImpl) {
             AhmnForkImpl ahmnForkImpl = (AhmnForkImpl) obj;
-            return this.f2077n == ahmnForkImpl.f2077n && Intrinsics.areEqual(this.left, ahmnForkImpl.left) && Intrinsics.areEqual(this.right, ahmnForkImpl.right) && Intrinsics.areEqual(this.extra, ahmnForkImpl.extra);
+            return this.f2078n == ahmnForkImpl.f2078n && Intrinsics.areEqual(this.left, ahmnForkImpl.left) && Intrinsics.areEqual(this.right, ahmnForkImpl.right) && Intrinsics.areEqual(this.extra, ahmnForkImpl.extra);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = ((((this.f2077n * 31) + this.left.hashCode()) * 31) + this.right.hashCode()) * 31;
+        int hashCode = ((((this.f2078n * 31) + this.left.hashCode()) * 31) + this.right.hashCode()) * 31;
         Y y = this.extra;
         return hashCode + (y == null ? 0 : y.hashCode());
     }
@@ -37,7 +37,7 @@ public final class AhmnForkImpl<X, Y> implements HashmapAugNode.AhmnFork<X, Y> {
     public AhmnForkImpl(int i, CellRef<? extends HashmapAug<X, Y>> left, CellRef<? extends HashmapAug<X, Y>> right, Y y) {
         Intrinsics.checkNotNullParameter(left, "left");
         Intrinsics.checkNotNullParameter(right, "right");
-        this.f2077n = i;
+        this.f2078n = i;
         this.left = left;
         this.right = right;
         this.extra = y;
@@ -60,7 +60,7 @@ public final class AhmnForkImpl<X, Y> implements HashmapAugNode.AhmnFork<X, Y> {
 
     @Override // org.ton.hashmap.HashmapAugNode.AhmnFork
     public int getN() {
-        return this.f2077n;
+        return this.f2078n;
     }
 
     @Override // org.ton.hashmap.HashmapAugNode.AhmnFork

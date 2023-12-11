@@ -137,8 +137,8 @@ public abstract class TlConstructor<T> implements TlCodec<T> {
         Intrinsics.checkNotNullParameter(reader, "reader");
         int readInt = reader.readInt();
         if (!(readInt == getId())) {
-            padStart = StringsKt__StringsKt.padStart(UStringsKt.m2058toStringV7xB4Y4(UInt.m1972constructorimpl(Integer.reverseBytes(getId())), 16), 8, '0');
-            padStart2 = StringsKt__StringsKt.padStart(UStringsKt.m2058toStringV7xB4Y4(UInt.m1972constructorimpl(Integer.reverseBytes(readInt)), 16), 8, '0');
+            padStart = StringsKt__StringsKt.padStart(UStringsKt.m2060toStringV7xB4Y4(UInt.m1974constructorimpl(Integer.reverseBytes(getId())), 16), 8, '0');
+            padStart2 = StringsKt__StringsKt.padStart(UStringsKt.m2060toStringV7xB4Y4(UInt.m1974constructorimpl(Integer.reverseBytes(readInt)), 16), 8, '0');
             throw new IllegalArgumentException(("Invalid ID. expected: " + padStart + " (" + getId() + ") actual: " + padStart2 + " (" + readInt + ')').toString());
         }
         return decode(reader);

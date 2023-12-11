@@ -87,10 +87,10 @@ public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoWalletsManager
-    public Observable<Result<String>> generateAddressByMnemonic(String mnemonic, BlockchainType blockchainType) {
+    public Observable<Result<Boolean>> isValidMnemonic(String mnemonic, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        return getWalletManager(blockchainType).generateAddressByMnemonic(mnemonic);
+        return getWalletManager(blockchainType).isValidMnemonic(mnemonic);
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoWalletsManager

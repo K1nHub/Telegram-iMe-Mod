@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 2796
+    .line 2799
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$23;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-direct {p0}, Lorg/json/JSONObject;-><init>()V
@@ -36,11 +36,11 @@
 
     const-string v1, "PAYMENT_GATEWAY"
 
-    .line 2797
+    .line 2800
     invoke-virtual {p0, v0, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2798
-    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$5100(Lorg/telegram/ui/PaymentFormActivity;)Lorg/json/JSONObject;
+    .line 2801
+    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$5000(Lorg/telegram/ui/PaymentFormActivity;)Lorg/json/JSONObject;
 
     move-result-object v0
 
@@ -48,8 +48,8 @@
 
     if-eqz v0, :cond_0
 
-    .line 2799
-    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$5100(Lorg/telegram/ui/PaymentFormActivity;)Lorg/json/JSONObject;
+    .line 2802
+    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$5000(Lorg/telegram/ui/PaymentFormActivity;)Lorg/json/JSONObject;
 
     move-result-object p1
 
@@ -57,7 +57,7 @@
 
     goto :goto_0
 
-    .line 2801
+    .line 2804
     :cond_0
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$23$1;
 

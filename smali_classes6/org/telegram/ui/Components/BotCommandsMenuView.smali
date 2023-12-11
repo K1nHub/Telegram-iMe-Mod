@@ -783,10 +783,10 @@
 .method protected drawableStateChanged()V
     .locals 2
 
-    .line 532
+    .line 527
     invoke-super {p0}, Landroid/view/View;->drawableStateChanged()V
 
-    .line 533
+    .line 528
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/view/View;->getDrawableState()[I
@@ -819,10 +819,10 @@
 .method public jumpDrawablesToCurrentState()V
     .locals 1
 
-    .line 538
+    .line 533
     invoke-super {p0}, Landroid/view/View;->jumpDrawablesToCurrentState()V
 
-    .line 539
+    .line 534
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView;->backgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
@@ -1278,7 +1278,7 @@
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    .line 527
+    .line 522
     invoke-super {p0, p1}, Landroid/view/View;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0

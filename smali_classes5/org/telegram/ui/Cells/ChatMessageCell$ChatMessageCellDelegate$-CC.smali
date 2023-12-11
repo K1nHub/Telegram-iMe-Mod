@@ -80,6 +80,12 @@
     return-void
 .end method
 
+.method public static $default$didPressCodeCopy(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/messenger/MessageObject$TextLayoutBlock;)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public static $default$didPressCommentButton(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
@@ -182,6 +188,12 @@
     return-void
 .end method
 
+.method public static $default$didPressUserStatus(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Document;)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public static $default$didPressViaBot(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/String;)V
     .locals 0
 
@@ -213,7 +225,7 @@
     .locals 0
     .param p0, "_this"    # Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
 
-    .line 596
+    .line 595
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1

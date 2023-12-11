@@ -7,25 +7,25 @@ import java.util.Objects;
 public final class zzgw {
 
     /* loaded from: classes.dex */
-    public static final class zza extends zzcg<zza, C7790zza> implements zzdq {
+    public static final class zza extends zzcg<zza, C7788zza> implements zzdq {
         private static volatile zzdz<zza> zzbg;
         private static final zza zzbir;
         private zzcn<zzb> zzbiq = zzcg.zzbb();
 
         /* renamed from: com.google.android.gms.internal.clearcut.zzgw$zza$zza  reason: collision with other inner class name */
         /* loaded from: classes.dex */
-        public static final class C7790zza extends zzcg.zza<zza, C7790zza> implements zzdq {
-            private C7790zza() {
+        public static final class C7788zza extends zzcg.zza<zza, C7788zza> implements zzdq {
+            private C7788zza() {
                 super(zza.zzbir);
             }
 
-            /* synthetic */ C7790zza(zzgx zzgxVar) {
+            /* synthetic */ C7788zza(zzgx zzgxVar) {
                 this();
             }
         }
 
         /* loaded from: classes.dex */
-        public static final class zzb extends zzcg<zzb, C7791zza> implements zzdq {
+        public static final class zzb extends zzcg<zzb, C7789zza> implements zzdq {
             private static volatile zzdz<zzb> zzbg;
             private static final zzb zzbiv;
             private int zzbb;
@@ -36,28 +36,28 @@ public final class zzgw {
 
             /* renamed from: com.google.android.gms.internal.clearcut.zzgw$zza$zzb$zza  reason: collision with other inner class name */
             /* loaded from: classes.dex */
-            public static final class C7791zza extends zzcg.zza<zzb, C7791zza> implements zzdq {
-                private C7791zza() {
+            public static final class C7789zza extends zzcg.zza<zzb, C7789zza> implements zzdq {
+                private C7789zza() {
                     super(zzb.zzbiv);
                 }
 
-                /* synthetic */ C7791zza(zzgx zzgxVar) {
+                /* synthetic */ C7789zza(zzgx zzgxVar) {
                     this();
                 }
 
-                public final C7791zza zzn(String str) {
+                public final C7789zza zzn(String str) {
                     zzbf();
                     ((zzb) this.zzjt).zzm(str);
                     return this;
                 }
 
-                public final C7791zza zzr(long j) {
+                public final C7789zza zzr(long j) {
                     zzbf();
                     ((zzb) this.zzjt).zzp(j);
                     return this;
                 }
 
-                public final C7791zza zzs(long j) {
+                public final C7789zza zzs(long j) {
                     zzbf();
                     ((zzb) this.zzjt).zzq(j);
                     return this;
@@ -73,8 +73,8 @@ public final class zzgw {
             private zzb() {
             }
 
-            public static C7791zza zzfz() {
-                return (C7791zza) ((zzcg.zza) zzbiv.zza(zzcg.zzg.zzkh, (Object) null, (Object) null));
+            public static C7789zza zzfz() {
+                return (C7789zza) ((zzcg.zza) zzbiv.zza(zzcg.zzg.zzkh, (Object) null, (Object) null));
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -109,7 +109,7 @@ public final class zzgw {
                     case 1:
                         return new zzb();
                     case 2:
-                        return new C7791zza(null);
+                        return new C7789zza(null);
                     case 3:
                         return zzcg.zza(zzbiv, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0005\u0000\u0000\u0000\u0001\u0004\u0000\u0002\b\u0001\u0003\u0002\u0002\u0004\u0002\u0003", new Object[]{"zzbb", "zzya", "zzbis", "zzbit", "zzbiu"});
                     case 4:
@@ -182,7 +182,7 @@ public final class zzgw {
                 case 1:
                     return new zza();
                 case 2:
-                    return new C7790zza(null);
+                    return new C7788zza(null);
                 case 3:
                     return zzcg.zza(zzbir, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0002\u0000\u0001\u0000\u0001\u001b", new Object[]{"zzbiq", zzb.class});
                 case 4:

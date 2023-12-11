@@ -9,7 +9,7 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -51,10 +51,10 @@ public class ExpiredStoryView {
             parentWidth = chatMessageCell.getParentWidth();
         }
         int i = (int) (parentWidth * 0.4f);
-        String string = LocaleController.getString("From", C3634R.string.From);
+        String string = LocaleController.getString("From", C3632R.string.From);
         TextPaint textPaint = Theme.chat_forwardNamePaint;
         String str3 = (String) TextUtils.ellipsize((str != null ? str : "").replace('\n', ' '), Theme.chat_replyNamePaint, i - ((int) Math.ceil(textPaint.measureText(string + " "))), TextUtils.TruncateAt.END);
-        String string2 = LocaleController.getString("FromFormatted", C3634R.string.FromFormatted);
+        String string2 = LocaleController.getString("FromFormatted", C3632R.string.FromFormatted);
         int indexOf = string2.indexOf("%1$s");
         String format = String.format(string2, str3);
         if (indexOf >= 0) {

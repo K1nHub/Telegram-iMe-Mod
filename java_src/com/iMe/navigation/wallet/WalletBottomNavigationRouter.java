@@ -6,8 +6,8 @@ import com.iMe.navigation.common.configuration.NavigationConfiguration;
 import com.iMe.navigation.common.router.CommonBottomNavigationRouter;
 import com.iMe.p030ui.wallet.common.WalletTabFragment;
 import java.util.Iterator;
-import org.telegram.messenger.C3634R;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.messenger.C3632R;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 /* compiled from: WalletBottomNavigationRouter.kt */
 /* loaded from: classes3.dex */
 public final class WalletBottomNavigationRouter extends CommonBottomNavigationRouter<WalletTabFragment> {
@@ -19,7 +19,7 @@ public final class WalletBottomNavigationRouter extends CommonBottomNavigationRo
 
     private final void showTitle(int i) {
         Object obj;
-        C3706ActionBar actionBar;
+        C3704ActionBar actionBar;
         boolean z;
         NavigationConfiguration<? extends NavigationTab<T>> configuration = getConfiguration();
         if (configuration == 0) {
@@ -48,6 +48,6 @@ public final class WalletBottomNavigationRouter extends CommonBottomNavigationRo
             return;
         }
         actionBar.setTitle(walletBottomNavigationTab.getTitle());
-        actionBar.setCastShadows(i != C3634R.C3637id.wallet_root_bottom_navigation_home);
+        actionBar.setCastShadows(i != C3632R.C3635id.wallet_root_bottom_navigation_home);
     }
 }

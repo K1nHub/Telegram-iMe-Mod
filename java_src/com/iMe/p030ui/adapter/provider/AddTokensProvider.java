@@ -12,7 +12,7 @@ import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: AddTokensProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.AddTokensProvider */
@@ -26,7 +26,7 @@ public final class AddTokensProvider extends BaseNodeProvider<CryptoAddTokensIte
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.ADD_TOKENS;
-        this.layoutId = C3634R.layout.fork_recycle_item_wallet_crypto_add_tokens;
+        this.layoutId = C3632R.layout.fork_recycle_item_wallet_crypto_add_tokens;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -43,9 +43,9 @@ public final class AddTokensProvider extends BaseNodeProvider<CryptoAddTokensIte
     public void convert(BaseViewHolder helper, CryptoAddTokensItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder rippleBackground = BaseQuickAdapterExtKt.setRippleBackground(helper, C3634R.C3637id.frame_container, false);
-        int i = C3634R.C3637id.text_add_tokens;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedTextColor(rippleBackground, i, Theme.key_chats_actionBackground).setText(i, this.resourceManager.getString(C3634R.string.wallet_home_crypto_add_tokens)), i, new Function1<AppCompatTextView, Unit>() { // from class: com.iMe.ui.adapter.provider.AddTokensProvider$convert$1
+        BaseViewHolder rippleBackground = BaseQuickAdapterExtKt.setRippleBackground(helper, C3632R.C3635id.frame_container, false);
+        int i = C3632R.C3635id.text_add_tokens;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedTextColor(rippleBackground, i, Theme.key_chats_actionBackground).setText(i, this.resourceManager.getString(C3632R.string.wallet_home_crypto_add_tokens)), i, new Function1<AppCompatTextView, Unit>() { // from class: com.iMe.ui.adapter.provider.AddTokensProvider$convert$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(AppCompatTextView appCompatTextView) {
                 invoke2(appCompatTextView);

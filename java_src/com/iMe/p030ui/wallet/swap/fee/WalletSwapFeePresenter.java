@@ -33,7 +33,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: WalletSwapFeePresenter.kt */
 @InjectViewState
@@ -271,12 +271,12 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoSwapMetadata> result) {
-                m1833invoke(result);
+                m1835invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1833invoke(Result<? extends CryptoSwapMetadata> it) {
+            public final void m1835invoke(Result<? extends CryptoSwapMetadata> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoSwapMetadata> result = it;
@@ -341,7 +341,7 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         SwapDeadline[] deadlineOptions = getDeadlineOptions();
         ArrayList arrayList = new ArrayList(deadlineOptions.length);
         for (SwapDeadline swapDeadline : deadlineOptions) {
-            arrayList.add(this.resourceManager.getString(C3634R.string.wallet_swap_transaction_options_deadline, String.valueOf(swapDeadline.getMinutes())));
+            arrayList.add(this.resourceManager.getString(C3632R.string.wallet_swap_transaction_options_deadline, String.valueOf(swapDeadline.getMinutes())));
         }
         return (String[]) arrayList.toArray(new String[0]);
     }
@@ -351,7 +351,7 @@ public final class WalletSwapFeePresenter extends BasePresenter<WalletSwapFeeVie
         SwapSlippage[] slipOptions = getSlipOptions();
         ArrayList arrayList = new ArrayList(slipOptions.length);
         for (SwapSlippage swapSlippage : slipOptions) {
-            arrayList.add(this.resourceManager.getString(C3634R.string.wallet_swap_transaction_options_slip, StringExtKt.stripZeros$default(String.valueOf(swapSlippage.getPercent()), (char) 0, 1, null)));
+            arrayList.add(this.resourceManager.getString(C3632R.string.wallet_swap_transaction_options_slip, StringExtKt.stripZeros$default(String.valueOf(swapSlippage.getPercent()), (char) 0, 1, null)));
         }
         return (String[]) arrayList.toArray(new String[0]);
     }

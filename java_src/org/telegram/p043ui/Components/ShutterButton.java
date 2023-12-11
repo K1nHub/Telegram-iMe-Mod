@@ -14,7 +14,7 @@ import android.view.animation.DecelerateInterpolator;
 import androidx.annotation.Keep;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 /* renamed from: org.telegram.ui.Components.ShutterButton */
 /* loaded from: classes6.dex */
@@ -63,7 +63,7 @@ public class ShutterButton extends View {
                 ShutterButton.this.processRelease = false;
             }
         };
-        this.shadowDrawable = getResources().getDrawable(C3634R.C3636drawable.camera_btn);
+        this.shadowDrawable = getResources().getDrawable(C3632R.C3634drawable.camera_btn);
         Paint paint = new Paint(1);
         this.whitePaint = paint;
         paint.setStyle(Paint.Style.FILL);
@@ -211,8 +211,8 @@ public class ShutterButton extends View {
         accessibilityNodeInfo.setClickable(true);
         accessibilityNodeInfo.setLongClickable(true);
         if (Build.VERSION.SDK_INT >= 21) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), LocaleController.getString("AccActionTakePicture", C3634R.string.AccActionTakePicture)));
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), LocaleController.getString("AccActionRecordVideo", C3634R.string.AccActionRecordVideo)));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_CLICK.getId(), LocaleController.getString("AccActionTakePicture", C3632R.string.AccActionTakePicture)));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_LONG_CLICK.getId(), LocaleController.getString("AccActionRecordVideo", C3632R.string.AccActionRecordVideo)));
         }
     }
 }

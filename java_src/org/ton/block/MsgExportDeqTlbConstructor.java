@@ -22,13 +22,13 @@ public final class MsgExportDeqTlbConstructor extends org.ton.tlb.TlbConstructor
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeRef(value.getOutMsg().toCell(MsgEnvelope.Companion));
-        cellBuilder.storeUInt(value.m5128getImportBlockLtsVKNKU(), 63);
+        cellBuilder.storeUInt(value.m5110getImportBlockLtsVKNKU(), 63);
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public MsgExportDeq loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
         MsgEnvelope.Companion companion = MsgEnvelope.Companion;
-        return new MsgExportDeq(CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) companion), ULong.m1994constructorimpl(cellSlice.loadUInt(63).longValue()), null);
+        return new MsgExportDeq(CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) companion), ULong.m1996constructorimpl(cellSlice.loadUInt(63).longValue()), null);
     }
 }

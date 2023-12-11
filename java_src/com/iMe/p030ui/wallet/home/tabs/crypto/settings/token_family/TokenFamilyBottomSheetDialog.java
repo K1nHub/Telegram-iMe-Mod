@@ -27,7 +27,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkContentTokenFamilyBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -176,8 +176,8 @@ public final class TokenFamilyBottomSheetDialog extends MvpBottomSheet implement
 
     private final void setupViews() {
         ForkContentTokenFamilyBinding binding = getBinding();
-        binding.textDescription.setText(getResourceManager().getString(C3634R.string.wallet_token_family_description));
-        binding.buttonDone.setText(getResourceManager().getString(C3634R.string.wallet_backup_done));
+        binding.textDescription.setText(getResourceManager().getString(C3632R.string.wallet_token_family_description));
+        binding.buttonDone.setText(getResourceManager().getString(C3632R.string.wallet_backup_done));
     }
 
     private final void setupRecyclerView() {

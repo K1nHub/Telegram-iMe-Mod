@@ -30,19 +30,19 @@
 .method public constructor <init>(IILjava/lang/CharSequence;Ljava/lang/String;)V
     .locals 0
 
-    .line 1334
+    .line 1335
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1335
+    .line 1336
     iput p1, p0, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->type:I
 
-    .line 1336
+    .line 1337
     iput p2, p0, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->icon:I
 
-    .line 1337
+    .line 1338
     iput-object p3, p0, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->title:Ljava/lang/CharSequence;
 
-    .line 1338
+    .line 1339
     iput-object p4, p0, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->description:Ljava/lang/String;
 
     return-void

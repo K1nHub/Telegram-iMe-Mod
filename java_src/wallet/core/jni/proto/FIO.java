@@ -287,7 +287,7 @@ public final class FIO {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<PublicAddress, Builder> implements PublicAddressOrBuilder {
-            /* synthetic */ Builder(C77441 c77441) {
+            /* synthetic */ Builder(C77421 c77421) {
                 this();
             }
 
@@ -354,7 +354,7 @@ public final class FIO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+            switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new PublicAddress();
                 case 2:
@@ -401,40 +401,40 @@ public final class FIO {
 
     /* renamed from: wallet.core.jni.proto.FIO$1 */
     /* loaded from: classes7.dex */
-    static /* synthetic */ class C77441 {
+    static /* synthetic */ class C77421 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f2134xa1df5c61;
+        static final /* synthetic */ int[] f2135xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f2134xa1df5c61 = iArr;
+            f2135xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f2134xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f2135xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f2134xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f2135xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f2134xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f2135xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f2134xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f2135xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f2134xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f2135xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f2134xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f2135xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -680,7 +680,7 @@ public final class FIO {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<NewFundsContent, Builder> implements NewFundsContentOrBuilder {
-            /* synthetic */ Builder(C77441 c77441) {
+            /* synthetic */ Builder(C77421 c77421) {
                 this();
             }
 
@@ -859,7 +859,7 @@ public final class FIO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+            switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new NewFundsContent();
                 case 2:
@@ -1163,7 +1163,7 @@ public final class FIO {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<RegisterFioAddress, Builder> implements RegisterFioAddressOrBuilder {
-                /* synthetic */ Builder(C77441 c77441) {
+                /* synthetic */ Builder(C77421 c77421) {
                     this();
                 }
 
@@ -1247,7 +1247,7 @@ public final class FIO {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+                switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new RegisterFioAddress();
                     case 2:
@@ -1475,7 +1475,7 @@ public final class FIO {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<AddPubAddress, Builder> implements AddPubAddressOrBuilder {
-                /* synthetic */ Builder(C77441 c77441) {
+                /* synthetic */ Builder(C77421 c77421) {
                     this();
                 }
 
@@ -1600,7 +1600,7 @@ public final class FIO {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+                switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new AddPubAddress();
                     case 2:
@@ -1774,7 +1774,7 @@ public final class FIO {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-                /* synthetic */ Builder(C77441 c77441) {
+                /* synthetic */ Builder(C77421 c77421) {
                     this();
                 }
 
@@ -1847,7 +1847,7 @@ public final class FIO {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+                switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new Transfer();
                     case 2:
@@ -2033,7 +2033,7 @@ public final class FIO {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<RenewFioAddress, Builder> implements RenewFioAddressOrBuilder {
-                /* synthetic */ Builder(C77441 c77441) {
+                /* synthetic */ Builder(C77421 c77421) {
                     this();
                 }
 
@@ -2117,7 +2117,7 @@ public final class FIO {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+                switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new RenewFioAddress();
                     case 2:
@@ -2367,7 +2367,7 @@ public final class FIO {
 
             /* loaded from: classes7.dex */
             public static final class Builder extends GeneratedMessageLite.Builder<NewFundsRequest, Builder> implements NewFundsRequestOrBuilder {
-                /* synthetic */ Builder(C77441 c77441) {
+                /* synthetic */ Builder(C77421 c77421) {
                     this();
                 }
 
@@ -2513,7 +2513,7 @@ public final class FIO {
 
             @Override // com.google.protobuf.GeneratedMessageLite
             protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-                switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+                switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                     case 1:
                         return new NewFundsRequest();
                     case 2:
@@ -2869,7 +2869,7 @@ public final class FIO {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Action, Builder> implements ActionOrBuilder {
-            /* synthetic */ Builder(C77441 c77441) {
+            /* synthetic */ Builder(C77421 c77421) {
                 this();
             }
 
@@ -3061,7 +3061,7 @@ public final class FIO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+            switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Action();
                 case 2:
@@ -3224,7 +3224,7 @@ public final class FIO {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<ChainParams, Builder> implements ChainParamsOrBuilder {
-            /* synthetic */ Builder(C77441 c77441) {
+            /* synthetic */ Builder(C77421 c77421) {
                 this();
             }
 
@@ -3286,7 +3286,7 @@ public final class FIO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+            switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new ChainParams();
                 case 2:
@@ -3531,7 +3531,7 @@ public final class FIO {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C77441 c77441) {
+            /* synthetic */ Builder(C77421 c77421) {
                 this();
             }
 
@@ -3672,7 +3672,7 @@ public final class FIO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+            switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -3840,7 +3840,7 @@ public final class FIO {
 
         /* loaded from: classes7.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C77441 c77441) {
+            /* synthetic */ Builder(C77421 c77421) {
                 this();
             }
 
@@ -3907,7 +3907,7 @@ public final class FIO {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C77441.f2134xa1df5c61[method.ordinal()]) {
+            switch (C77421.f2135xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

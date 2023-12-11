@@ -1,11 +1,11 @@
 package com.iMe.fork.enums;
 
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* compiled from: LockedSection.kt */
 /* loaded from: classes3.dex */
 public enum LockedSection {
-    ARCHIVE(C3634R.string.settings_section_passcode_archive, C3634R.C3636drawable.msg_archive),
-    CLOUD(C3634R.string.settings_section_passcode_cloud, C3634R.C3636drawable.fork_filter_icon_cloud);
+    ARCHIVE(C3632R.string.settings_section_passcode_archive, C3632R.C3634drawable.msg_archive),
+    CLOUD(C3632R.string.settings_section_passcode_cloud, C3632R.C3634drawable.fork_filter_icon_cloud);
     
     private final int iconResId;
     private final int nameResId;

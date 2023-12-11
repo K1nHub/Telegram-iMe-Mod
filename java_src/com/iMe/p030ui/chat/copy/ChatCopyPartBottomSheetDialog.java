@@ -16,7 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkChatCopyContentLayoutBinding;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -106,7 +106,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
 
     private final void setupTexts() {
         ForkChatCopyContentLayoutBinding binding = getBinding();
-        binding.buttonClose.setText(getResourceManager().getString(C3634R.string.common_close));
+        binding.buttonClose.setText(getResourceManager().getString(C3632R.string.common_close));
         binding.textMessage.setText(this.message);
     }
 

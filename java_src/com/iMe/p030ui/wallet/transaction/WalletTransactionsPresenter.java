@@ -475,12 +475,12 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1860invoke(rxEvent);
+                m1862invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1860invoke(RxEvent it) {
+            public final void m1862invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (Intrinsics.areEqual(rxEvent, AppRxEvents.UpdateWalletScreen.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletCreated.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletRestored.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.RefreshTransactions.INSTANCE)) {

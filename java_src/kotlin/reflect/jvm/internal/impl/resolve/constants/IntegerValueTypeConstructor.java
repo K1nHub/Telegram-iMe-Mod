@@ -36,13 +36,13 @@ public final class IntegerValueTypeConstructor implements TypeConstructor {
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getDeclarationDescriptor */
-    public /* bridge */ /* synthetic */ ClassifierDescriptor mo2051getDeclarationDescriptor() {
+    public /* bridge */ /* synthetic */ ClassifierDescriptor mo2053getDeclarationDescriptor() {
         return (ClassifierDescriptor) getDeclarationDescriptor();
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getSupertypes */
-    public Collection<KotlinType> mo2052getSupertypes() {
+    public Collection<KotlinType> mo2054getSupertypes() {
         return this.supertypes;
     }
 

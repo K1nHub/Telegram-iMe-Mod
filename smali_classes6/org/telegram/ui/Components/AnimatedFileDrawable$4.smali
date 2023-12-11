@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AnimatedFileDrawable;)V
     .locals 0
 
-    .line 356
+    .line 359
     iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,16 +38,16 @@
 .method public run()V
     .locals 15
 
-    .line 359
+    .line 362
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Z
 
     move-result v0
 
-    if-nez v0, :cond_13
+    if-nez v0, :cond_15
 
-    .line 360
+    .line 363
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3100(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Z
@@ -56,11 +56,11 @@
 
     const-wide/16 v1, 0x0
 
-    const/4 v3, 0x0
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_4
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
@@ -68,9 +68,9 @@
 
     cmp-long v0, v5, v1
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_4
 
-    .line 361
+    .line 364
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3200(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/io/File;
@@ -113,7 +113,7 @@
 
     iput-wide v5, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
 
-    .line 362
+    .line 365
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-wide v5, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
@@ -128,7 +128,7 @@
 
     move-result-object v0
 
-    aget v0, v0, v3
+    aget v0, v0, v4
 
     const/16 v5, 0xf00
 
@@ -140,11 +140,11 @@
 
     move-result-object v0
 
-    aget v0, v0, v4
+    aget v0, v0, v3
 
     if-le v0, v5, :cond_1
 
-    .line 363
+    .line 366
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
@@ -152,24 +152,56 @@
 
     invoke-static {v5, v6}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3500(J)V
 
-    .line 364
+    .line 367
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iput-wide v1, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
 
-    .line 366
+    .line 369
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3600(Lorg/telegram/ui/Components/AnimatedFileDrawable;)V
 
-    .line 367
+    .line 370
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v0, v4}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3102(Lorg/telegram/ui/Components/AnimatedFileDrawable;Z)Z
+    iget-boolean v5, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->isWebmSticker:Z
 
-    .line 370
+    if-eqz v5, :cond_3
+
+    iget-wide v5, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
+
+    cmp-long v5, v5, v1
+
+    if-nez v5, :cond_3
+
+    iget-object v5, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+
+    invoke-static {v5}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3708(Lorg/telegram/ui/Components/AnimatedFileDrawable;)I
+
+    move-result v5
+
+    const/16 v6, 0xf
+
+    if-le v5, v6, :cond_2
+
+    goto :goto_0
+
     :cond_2
+    move v5, v4
+
+    goto :goto_1
+
+    :cond_3
+    :goto_0
+    move v5, v3
+
+    :goto_1
+    invoke-static {v0, v5}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3102(Lorg/telegram/ui/Components/AnimatedFileDrawable;Z)Z
+
+    .line 373
+    :cond_4
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
@@ -177,16 +209,16 @@
 
     const/4 v6, 0x3
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_b
 
-    .line 371
+    .line 374
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1500(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_6
 
-    .line 372
+    .line 375
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->unusedBitmaps:Ljava/util/ArrayList;
@@ -195,14 +227,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_5
 
-    .line 373
+    .line 376
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->unusedBitmaps:Ljava/util/ArrayList;
 
-    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -210,111 +242,111 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1502(Lorg/telegram/ui/Components/AnimatedFileDrawable;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    goto :goto_0
+    goto :goto_2
 
-    .line 375
-    :cond_3
+    .line 378
+    :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3700(Lorg/telegram/ui/Components/AnimatedFileDrawable;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3800(Lorg/telegram/ui/Components/AnimatedFileDrawable;)I
 
     move-result v1
 
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3800(Lorg/telegram/ui/Components/AnimatedFileDrawable;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3900(Lorg/telegram/ui/Components/AnimatedFileDrawable;)I
 
     move-result v2
 
-    sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v1, v2, v3}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v1, v2, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1502(Lorg/telegram/ui/Components/AnimatedFileDrawable;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 378
-    :cond_4
-    :goto_0
+    .line 381
+    :cond_6
+    :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheMetadata:Lorg/telegram/messenger/utils/BitmapsCache$Metadata;
 
-    if-nez v1, :cond_5
+    if-nez v1, :cond_7
 
-    .line 379
+    .line 382
     new-instance v1, Lorg/telegram/messenger/utils/BitmapsCache$Metadata;
 
     invoke-direct {v1}, Lorg/telegram/messenger/utils/BitmapsCache$Metadata;-><init>()V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheMetadata:Lorg/telegram/messenger/utils/BitmapsCache$Metadata;
 
-    .line 381
-    :cond_5
+    .line 384
+    :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3902(Lorg/telegram/ui/Components/AnimatedFileDrawable;J)J
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4002(Lorg/telegram/ui/Components/AnimatedFileDrawable;J)J
 
-    .line 382
+    .line 385
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheMetadata:Lorg/telegram/messenger/utils/BitmapsCache$Metadata;
 
     iget v1, v1, Lorg/telegram/messenger/utils/BitmapsCache$Metadata;->frame:I
 
-    .line 383
+    .line 386
     iget-object v2, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->bitmapsCache:Lorg/telegram/messenger/utils/BitmapsCache;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1500(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+    iget-object v4, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    iget-object v3, v3, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheMetadata:Lorg/telegram/messenger/utils/BitmapsCache$Metadata;
+    iget-object v4, v4, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheMetadata:Lorg/telegram/messenger/utils/BitmapsCache$Metadata;
 
-    invoke-virtual {v2, v0, v3}, Lorg/telegram/messenger/utils/BitmapsCache;->getFrame(Landroid/graphics/Bitmap;Lorg/telegram/messenger/utils/BitmapsCache$Metadata;)I
+    invoke-virtual {v2, v0, v4}, Lorg/telegram/messenger/utils/BitmapsCache;->getFrame(Landroid/graphics/Bitmap;Lorg/telegram/messenger/utils/BitmapsCache$Metadata;)I
 
     move-result v0
 
     const/4 v2, -0x1
 
-    if-eq v0, v2, :cond_6
+    if-eq v0, v2, :cond_8
 
-    .line 384
-    iget-object v3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+    .line 387
+    iget-object v4, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    iget-object v5, v3, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheMetadata:Lorg/telegram/messenger/utils/BitmapsCache$Metadata;
+    iget-object v5, v4, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheMetadata:Lorg/telegram/messenger/utils/BitmapsCache$Metadata;
 
     iget v5, v5, Lorg/telegram/messenger/utils/BitmapsCache$Metadata;->frame:I
 
-    if-ge v5, v1, :cond_6
+    if-ge v5, v1, :cond_8
 
-    .line 385
-    invoke-static {v3, v4}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2302(Lorg/telegram/ui/Components/AnimatedFileDrawable;Z)Z
+    .line 388
+    invoke-static {v4, v3}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2302(Lorg/telegram/ui/Components/AnimatedFileDrawable;Z)Z
 
-    .line 387
-    :cond_6
+    .line 390
+    :cond_8
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
 
     move-result-object v1
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+    iget-object v4, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    iget-object v5, v3, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheMetadata:Lorg/telegram/messenger/utils/BitmapsCache$Metadata;
+    iget-object v5, v4, Lorg/telegram/ui/Components/AnimatedFileDrawable;->cacheMetadata:Lorg/telegram/messenger/utils/BitmapsCache$Metadata;
 
     iget v5, v5, Lorg/telegram/messenger/utils/BitmapsCache$Metadata;->frame:I
 
     const/16 v7, 0x10
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
+    invoke-static {v4}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
 
     move-result-object v8
 
@@ -330,25 +362,25 @@
 
     move-result v9
 
-    invoke-static {v4, v9}, Ljava/lang/Math;->max(II)I
+    invoke-static {v3, v9}, Ljava/lang/Math;->max(II)I
 
-    move-result v4
+    move-result v3
 
-    div-int/2addr v8, v4
+    div-int/2addr v8, v3
 
     invoke-static {v7, v8}, Ljava/lang/Math;->max(II)I
 
-    move-result v4
+    move-result v3
 
-    mul-int/2addr v5, v4
+    mul-int/2addr v5, v3
 
-    invoke-static {v3, v5}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1702(Lorg/telegram/ui/Components/AnimatedFileDrawable;I)I
+    invoke-static {v4, v5}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1702(Lorg/telegram/ui/Components/AnimatedFileDrawable;I)I
 
     move-result v3
 
     aput v3, v1, v6
 
-    .line 389
+    .line 392
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/AnimatedFileDrawable;->bitmapsCache:Lorg/telegram/messenger/utils/BitmapsCache;
@@ -357,33 +389,21 @@
 
     move-result v1
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_9
 
-    .line 390
+    .line 393
     iget-object v1, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4000(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4100(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
 
     move-result-object v1
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    :cond_7
-    if-ne v0, v2, :cond_8
+    :cond_9
+    if-ne v0, v2, :cond_a
 
-    .line 393
-    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4100(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
-
-    goto :goto_1
-
-    .line 395
-    :cond_8
+    .line 396
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4200(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
@@ -392,59 +412,26 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    :goto_1
-    return-void
+    goto :goto_3
 
-    .line 400
-    :cond_9
-    iget-wide v7, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
-
-    cmp-long v0, v7, v1
-
-    if-nez v0, :cond_b
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
-
-    move-result-object v0
-
-    aget v0, v0, v3
-
-    if-eqz v0, :cond_b
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
-
-    move-result-object v0
-
-    aget v0, v0, v4
-
-    if-nez v0, :cond_a
-
-    goto :goto_2
-
-    .line 445
+    .line 398
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4100(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4300(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
 
     move-result-object v0
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
+    :goto_3
     return-void
 
-    .line 401
+    .line 403
     :cond_b
-    :goto_2
-    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+    iget-wide v7, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1500(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
+    cmp-long v0, v7, v1
 
     if-nez v0, :cond_d
 
@@ -454,9 +441,44 @@
 
     move-result-object v0
 
+    aget v0, v0, v4
+
+    if-eqz v0, :cond_d
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
+
+    move-result-object v0
+
     aget v0, v0, v3
 
-    if-lez v0, :cond_d
+    if-nez v0, :cond_c
+
+    goto :goto_4
+
+    .line 448
+    :cond_c
+    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4200(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+
+    return-void
+
+    .line 404
+    :cond_d
+    :goto_4
+    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1500(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    if-nez v0, :cond_f
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
@@ -465,12 +487,22 @@
     move-result-object v0
 
     aget v0, v0, v4
+
+    if-lez v0, :cond_f
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
+
+    move-result-object v0
+
+    aget v0, v0, v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    if-lez v0, :cond_d
+    if-lez v0, :cond_f
 
-    .line 403
+    .line 406
     :try_start_1
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
@@ -480,14 +512,14 @@
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_e
 
-    .line 404
+    .line 407
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->unusedBitmaps:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -495,23 +527,23 @@
 
     invoke-static {v0, v5}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1502(Lorg/telegram/ui/Components/AnimatedFileDrawable;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    goto :goto_3
+    goto :goto_5
 
-    .line 406
-    :cond_c
+    .line 409
+    :cond_e
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
 
     move-result-object v5
 
-    aget v5, v5, v3
+    aget v5, v5, v4
 
     int-to-float v5, v5
 
     iget-object v7, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v7}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4300(Lorg/telegram/ui/Components/AnimatedFileDrawable;)F
+    invoke-static {v7}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)F
 
     move-result v7
 
@@ -525,13 +557,13 @@
 
     move-result-object v7
 
-    aget v7, v7, v4
+    aget v7, v7, v3
 
     int-to-float v7, v7
 
     iget-object v8, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4300(Lorg/telegram/ui/Components/AnimatedFileDrawable;)F
+    invoke-static {v8}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)F
 
     move-result v8
 
@@ -549,24 +581,24 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_3
+    goto :goto_5
 
     :catchall_0
     move-exception v0
 
-    .line 409
+    .line 412
     :try_start_2
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 411
-    :goto_3
+    .line 414
+    :goto_5
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4500(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_f
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
@@ -574,9 +606,9 @@
 
     move-result-object v0
 
-    aget-object v0, v0, v3
+    aget-object v0, v0, v4
 
-    if-nez v0, :cond_d
+    if-nez v0, :cond_f
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
@@ -584,17 +616,17 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_f
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4500(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4600(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_f
 
-    .line 412
+    .line 415
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1800(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[Landroid/graphics/BitmapShader;
@@ -613,10 +645,10 @@
 
     invoke-direct {v5, v7, v8, v8}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
 
-    aput-object v5, v0, v3
+    aput-object v5, v0, v4
 
-    .line 416
-    :cond_d
+    .line 419
+    :cond_f
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2900(Lorg/telegram/ui/Components/AnimatedFileDrawable;)J
@@ -625,9 +657,9 @@
 
     cmp-long v0, v7, v1
 
-    if-ltz v0, :cond_f
+    if-ltz v0, :cond_11
 
-    .line 417
+    .line 420
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
@@ -644,17 +676,17 @@
 
     aput v1, v0, v6
 
-    .line 418
+    .line 421
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2900(Lorg/telegram/ui/Components/AnimatedFileDrawable;)J
 
     move-result-wide v0
 
-    .line 419
+    .line 422
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4600(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Object;
+    invoke-static {v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4700(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -662,20 +694,20 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    .line 420
+    .line 423
     :try_start_3
-    iget-object v3, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+    iget-object v4, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     const-wide/16 v7, -0x1
 
-    invoke-static {v3, v7, v8}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2902(Lorg/telegram/ui/Components/AnimatedFileDrawable;J)J
+    invoke-static {v4, v7, v8}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2902(Lorg/telegram/ui/Components/AnimatedFileDrawable;J)J
 
-    .line 421
+    .line 424
     monitor-exit v2
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 423
+    .line 426
     :try_start_4
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
@@ -683,9 +715,9 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_e
+    if-eqz v2, :cond_10
 
-    .line 424
+    .line 427
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$700(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Lorg/telegram/messenger/AnimatedFileDrawableStream;
@@ -694,24 +726,24 @@
 
     invoke-virtual {v2}, Lorg/telegram/messenger/AnimatedFileDrawableStream;->reset()V
 
-    .line 426
-    :cond_e
+    .line 429
+    :cond_10
     iget-object v2, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    iget-wide v2, v2, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
+    iget-wide v4, v2, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
 
-    invoke-static {v2, v3, v0, v1, v4}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4700(JJZ)V
+    invoke-static {v4, v5, v0, v1, v3}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4800(JJZ)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    move v3, v4
+    move v4, v3
 
-    goto :goto_4
+    goto :goto_6
 
     :catchall_1
     move-exception v0
 
-    .line 421
+    .line 424
     :try_start_5
     monitor-exit v2
     :try_end_5
@@ -720,27 +752,27 @@
     :try_start_6
     throw v0
 
-    .line 428
-    :cond_f
-    :goto_4
+    .line 431
+    :cond_11
+    :goto_6
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$1500(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_15
 
-    .line 429
+    .line 432
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$3902(Lorg/telegram/ui/Components/AnimatedFileDrawable;J)J
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4002(Lorg/telegram/ui/Components/AnimatedFileDrawable;J)J
 
-    .line 431
+    .line 434
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-wide v7, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;->nativePtr:J
@@ -777,20 +809,20 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4800(Lorg/telegram/ui/Components/AnimatedFileDrawable;)F
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4900(Lorg/telegram/ui/Components/AnimatedFileDrawable;)F
 
     move-result v14
 
-    invoke-static/range {v7 .. v14}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4900(JLandroid/graphics/Bitmap;[IIZFF)I
+    invoke-static/range {v7 .. v14}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$5000(JLandroid/graphics/Bitmap;[IIZFF)I
 
     move-result v0
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_12
 
-    .line 432
+    .line 435
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4100(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4200(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
 
     move-result-object v0
 
@@ -798,8 +830,8 @@
 
     return-void
 
-    .line 435
-    :cond_10
+    .line 438
+    :cond_12
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
@@ -814,17 +846,17 @@
 
     move-result v1
 
-    if-ge v0, v1, :cond_11
-
-    .line 436
-    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
-
-    invoke-static {v0, v4}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2302(Lorg/telegram/ui/Components/AnimatedFileDrawable;Z)Z
-
-    :cond_11
-    if-eqz v3, :cond_12
+    if-ge v0, v1, :cond_13
 
     .line 439
+    iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
+
+    invoke-static {v0, v3}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2302(Lorg/telegram/ui/Components/AnimatedFileDrawable;Z)Z
+
+    :cond_13
+    if-eqz v4, :cond_14
+
+    .line 442
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
@@ -835,8 +867,8 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2502(Lorg/telegram/ui/Components/AnimatedFileDrawable;I)I
 
-    .line 442
-    :cond_12
+    .line 445
+    :cond_14
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$2400(Lorg/telegram/ui/Components/AnimatedFileDrawable;)[I
@@ -849,20 +881,20 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    goto :goto_5
+    goto :goto_7
 
     :catchall_2
     move-exception v0
 
-    .line 449
+    .line 452
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 452
-    :cond_13
-    :goto_5
+    .line 455
+    :cond_15
+    :goto_7
     iget-object v0, p0, Lorg/telegram/ui/Components/AnimatedFileDrawable$4;->this$0:Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4200(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->access$4300(Lorg/telegram/ui/Components/AnimatedFileDrawable;)Ljava/lang/Runnable;
 
     move-result-object v0
 

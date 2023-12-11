@@ -57,7 +57,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -1342,7 +1342,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
 
     public void showPremiumBulletin(String str, int i) {
         this.container.performHapticFeedback(3);
-        BulletinFactory.m63of(this.container, this.resourcesProvider).createSimpleBulletin(ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.msg_premium_normal), LocaleController.getString("IncreaseLimit", C3634R.string.IncreaseLimit), premiumText(LocaleController.getString(str, i))).show(true);
+        BulletinFactory.m63of(this.container, this.resourcesProvider).createSimpleBulletin(ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.msg_premium_normal), LocaleController.getString("IncreaseLimit", C3632R.string.IncreaseLimit), premiumText(LocaleController.getString(str, i))).show(true);
     }
 
     private CharSequence premiumText(String str) {
@@ -2367,7 +2367,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             editTextBoldCursor.setLines(1);
             editTextBoldCursor.setSingleLine(true);
             editTextBoldCursor.setImeOptions(268435459);
-            editTextBoldCursor.setHint(LocaleController.getString("Search", C3634R.string.Search));
+            editTextBoldCursor.setHint(LocaleController.getString("Search", C3632R.string.Search));
             int i2 = Theme.key_featuredStickers_addedIcon;
             editTextBoldCursor.setCursorColor(Theme.getColor(i2, resourcesProvider));
             editTextBoldCursor.setHandlesColor(Theme.getColor(i2, resourcesProvider));
@@ -2375,7 +2375,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             editTextBoldCursor.setCursorWidth(1.5f);
             editTextBoldCursor.setTranslationY(AndroidUtilities.m104dp(-2));
             frameLayout2.addView(editTextBoldCursor, LayoutHelper.createFrame(-1, 40, 51, 0, 0, 28, 0));
-            editTextBoldCursor.addTextChangedListener(new C71903());
+            editTextBoldCursor.addTextChangedListener(new C71883());
             StickerCategoriesListView stickerCategoriesListView = new StickerCategoriesListView(context, null, 0, resourcesProvider) { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet.SearchField.4
                 @Override // org.telegram.p043ui.Components.StickerCategoriesListView
                 public void selectCategory(int i3) {
@@ -2440,7 +2440,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Stories.recorder.EmojiBottomSheet$SearchField$3 */
         /* loaded from: classes6.dex */
-        public class C71903 implements TextWatcher {
+        public class C71883 implements TextWatcher {
             @Override // android.text.TextWatcher
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             }
@@ -2449,7 +2449,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             }
 
-            C71903() {
+            C71883() {
             }
 
             @Override // android.text.TextWatcher
@@ -2488,7 +2488,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                     scaleY.alpha(f).withEndAction(new Runnable() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$SearchField$3$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            EmojiBottomSheet.SearchField.C71903.this.lambda$afterTextChanged$0();
+                            EmojiBottomSheet.SearchField.C71883.this.lambda$afterTextChanged$0();
                         }
                     }).setInterpolator(cubicBezierInterpolator).setDuration(320L).setStartDelay(SearchField.this.clearVisible ? 240L : 0L).start();
                 }
@@ -2648,7 +2648,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             this.stickersLayout = staticLayout2;
             this.stickersLayoutWidth = staticLayout2.getLineCount() >= 1 ? this.stickersLayout.getLineWidth(0) : 0.0f;
             this.stickersLayoutLeft = this.stickersLayout.getLineCount() >= 1 ? this.stickersLayout.getLineLeft(0) : 0.0f;
-            StaticLayout staticLayout3 = new StaticLayout(LocaleController.getString("AccDescrGIFs", C3634R.string.AccDescrGIFs), this.textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+            StaticLayout staticLayout3 = new StaticLayout(LocaleController.getString("AccDescrGIFs", C3632R.string.AccDescrGIFs), this.textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             this.gifsLayout = staticLayout3;
             this.gifsLayoutWidth = staticLayout3.getLineCount() >= 1 ? this.gifsLayout.getLineWidth(0) : 0.0f;
             if (this.gifsLayout.getLineCount() >= 1) {
@@ -2755,10 +2755,10 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             this.textView.setTextColor(-8553090);
             TextView textView2 = this.textView;
             if (z) {
-                i = C3634R.string.NoEmojiFound;
+                i = C3632R.string.NoEmojiFound;
                 str = "NoEmojiFound";
             } else {
-                i = C3634R.string.NoStickersFound;
+                i = C3632R.string.NoStickersFound;
                 str = "NoStickersFound";
             }
             textView2.setText(LocaleController.getString(str, i));
@@ -2806,13 +2806,13 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             this.widgets = arrayList;
             setPadding(0, 0, 0, 0);
             if (EmojiBottomSheet.this.canShowWidget(0)) {
-                arrayList.add(new Button(0, C3634R.C3636drawable.map_pin3, LocaleController.getString(C3634R.string.StoryWidgetLocation)));
+                arrayList.add(new Button(0, C3632R.C3634drawable.map_pin3, LocaleController.getString(C3632R.string.StoryWidgetLocation)));
             }
             if (EmojiBottomSheet.this.canShowWidget(1)) {
-                arrayList.add(new Button(1, C3634R.C3636drawable.filled_widget_music, LocaleController.getString(C3634R.string.StoryWidgetAudio)));
+                arrayList.add(new Button(1, C3632R.C3634drawable.filled_widget_music, LocaleController.getString(C3632R.string.StoryWidgetAudio)));
             }
             if (EmojiBottomSheet.this.canShowWidget(2)) {
-                arrayList.add(new Button(2, C3634R.C3636drawable.files_gallery, LocaleController.getString(C3634R.string.StoryWidgetPhoto)));
+                arrayList.add(new Button(2, C3632R.C3634drawable.files_gallery, LocaleController.getString(C3632R.string.StoryWidgetPhoto)));
             }
             if (EmojiBottomSheet.this.canShowWidget(3)) {
                 arrayList.add(new ReactionWidget());
@@ -2827,7 +2827,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
             float height;
 
             /* renamed from: id */
-            int f1991id;
+            int f1992id;
             int layoutLine;
             float layoutX;
             float width;
@@ -2855,7 +2855,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
 
             public Button(int i, int i2, String str) {
                 super();
-                this.f1991id = i;
+                this.f1992id = i;
                 Drawable mutate = StoryWidgetsCell.this.getContext().getResources().getDrawable(i2).mutate();
                 this.drawable = mutate;
                 mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
@@ -2903,7 +2903,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 this.progressToNext = new AnimatedFloat(StoryWidgetsCell.this);
                 this.background = new StoryReactionWidgetBackground(StoryWidgetsCell.this);
                 this.visibleReactions = new ArrayList<>();
-                this.f1991id = 3;
+                this.f1992id = 3;
                 this.width = AndroidUtilities.m104dp(44);
                 this.height = AndroidUtilities.m104dp(36);
                 List<TLRPC$TL_availableReaction> reactionsList = MediaDataController.getInstance(((BottomSheet) EmojiBottomSheet.this).currentAccount).getReactionsList();
@@ -2985,15 +2985,15 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 if (z) {
                     Timer timer2 = new Timer();
                     this.timeTimer = timer2;
-                    timer2.schedule(new C71931(), ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
+                    timer2.schedule(new C71911(), ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
                 }
             }
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: org.telegram.ui.Stories.recorder.EmojiBottomSheet$StoryWidgetsCell$ReactionWidget$1 */
             /* loaded from: classes6.dex */
-            public class C71931 extends TimerTask {
-                C71931() {
+            public class C71911 extends TimerTask {
+                C71911() {
                 }
 
                 @Override // java.util.TimerTask, java.lang.Runnable
@@ -3001,7 +3001,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.recorder.EmojiBottomSheet$StoryWidgetsCell$ReactionWidget$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            EmojiBottomSheet.StoryWidgetsCell.ReactionWidget.C71931.this.lambda$run$0();
+                            EmojiBottomSheet.StoryWidgetsCell.ReactionWidget.C71911.this.lambda$run$0();
                         }
                     });
                 }
@@ -3094,7 +3094,7 @@ public class EmojiBottomSheet extends BottomSheet implements NotificationCenter.
                 baseWidget.bounce.setPressed((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) ? false : true);
             }
             if (motionEvent.getAction() == 1 && baseWidget != null && (callback = this.onClickListener) != null) {
-                callback.run(Integer.valueOf(baseWidget.f1991id));
+                callback.run(Integer.valueOf(baseWidget.f1992id));
             }
             return baseWidget != null;
         }

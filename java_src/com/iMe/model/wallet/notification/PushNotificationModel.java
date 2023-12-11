@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: PushNotificationModel.kt */
 /* loaded from: classes3.dex */
@@ -124,7 +124,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_unsupported, new Object[0]);
+            return getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_unsupported, new Object[0]);
         }
     }
 
@@ -263,7 +263,7 @@ public abstract class PushNotificationModel {
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
             FiatCode fiatCode = new FiatCode(this.spentCurrency, 0, 2, null);
-            return getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_simplex_payment, BalanceFormatter.format(new BigDecimal(this.amountToSpent), Integer.valueOf(fiatCode.getDecimals())), fiatCode.getShortName(), BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, getString$TMessagesProj_HA_public(Status.Companion.map(this.status).getTitle(), new Object[0]));
+            return getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_simplex_payment, BalanceFormatter.format(new BigDecimal(this.amountToSpent), Integer.valueOf(fiatCode.getDecimals())), fiatCode.getShortName(), BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, getString$TMessagesProj_HA_public(Status.Companion.map(this.status).getTitle(), new Object[0]));
         }
     }
 
@@ -403,7 +403,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_binance_pay_request_created_description, BalanceFormatter.format(Double.valueOf(Double.parseDouble(this.amount)), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())), this.assetCode, mo1538getUserId());
+            return getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_binance_pay_request_created_description, BalanceFormatter.format(Double.valueOf(Double.parseDouble(this.amount)), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())), this.assetCode, mo1538getUserId());
         }
     }
 
@@ -559,7 +559,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_binance_pay_request_status_updated_description, BalanceFormatter.format(Double.valueOf(Double.parseDouble(this.amount)), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())), this.assetCode, this.payerUserId);
+            return getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_binance_pay_request_status_updated_description, BalanceFormatter.format(Double.valueOf(Double.parseDouble(this.amount)), Integer.valueOf(TokenDetailed.Companion.getBNB().getDecimals())), this.assetCode, this.payerUserId);
         }
     }
 
@@ -697,7 +697,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_HA_public(C3634R.string.push_notification_staking_safe_withdrawal_started, StringExtKt.formatISODate$default(this.shouldFinishAt, null, 1, null));
+            return getString$TMessagesProj_HA_public(C3632R.string.push_notification_staking_safe_withdrawal_started, StringExtKt.formatISODate$default(this.shouldFinishAt, null, 1, null));
         }
     }
 
@@ -853,7 +853,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_HA_public(C3634R.string.push_notification_staking_safe_withdrawal_finished, this.stakingToken, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.stakingToken);
+            return getString$TMessagesProj_HA_public(C3632R.string.push_notification_staking_safe_withdrawal_finished, this.stakingToken, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.stakingToken);
         }
     }
 
@@ -1027,7 +1027,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_HA_public(C3634R.string.push_notification_staking_started, this.stakingName);
+            return getString$TMessagesProj_HA_public(C3632R.string.push_notification_staking_started, this.stakingName);
         }
     }
 
@@ -1189,7 +1189,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_HA_public(C3634R.string.push_notification_staking_finished, this.stakingName, this.stakingToken);
+            return getString$TMessagesProj_HA_public(C3632R.string.push_notification_staking_finished, this.stakingName, this.stakingToken);
         }
     }
 
@@ -1316,9 +1316,9 @@ public abstract class PushNotificationModel {
         public String getMessage() {
             int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
             if (i != 1) {
-                return i != 2 ? "" : getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_cancelled_failed_description, this.txHash);
+                return i != 2 ? "" : getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_cancelled_failed_description, this.txHash);
             }
-            return getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_cancelled_success_description, this.txHash);
+            return getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_cancelled_success_description, this.txHash);
         }
     }
 
@@ -1463,9 +1463,9 @@ public abstract class PushNotificationModel {
         public String getMessage() {
             int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
             if (i != 1) {
-                return i != 2 ? "" : getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_approve_failed_description, this.cryptoCode);
+                return i != 2 ? "" : getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_approve_failed_description, this.cryptoCode);
             }
-            return getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_approve_success_description, this.cryptoCode);
+            return getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_approve_success_description, this.cryptoCode);
         }
     }
 
@@ -1633,7 +1633,7 @@ public abstract class PushNotificationModel {
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel
             public String getMessage() {
-                return getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_crypto_transfer_in_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.fromWalletAddress);
+                return getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_crypto_transfer_in_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.fromWalletAddress);
             }
         }
 
@@ -1810,9 +1810,9 @@ public abstract class PushNotificationModel {
             public String getMessage() {
                 int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
                 if (i != 1) {
-                    return i != 2 ? "" : getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_crypto_transfer_out_failed_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
+                    return i != 2 ? "" : getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_crypto_transfer_out_failed_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
                 }
-                return getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_crypto_transfer_out_success_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
+                return getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_crypto_transfer_out_success_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
             }
         }
     }
@@ -1981,7 +1981,7 @@ public abstract class PushNotificationModel {
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel
             public String getMessage() {
-                return getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_crypto_transfer_in_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.fromWalletAddress);
+                return getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_crypto_transfer_in_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.fromWalletAddress);
             }
         }
 
@@ -2158,9 +2158,9 @@ public abstract class PushNotificationModel {
             public String getMessage() {
                 int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
                 if (i != 1) {
-                    return i != 2 ? "" : getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_crypto_transfer_out_failed_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
+                    return i != 2 ? "" : getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_crypto_transfer_out_failed_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
                 }
-                return getString$TMessagesProj_HA_public(C3634R.string.push_notification_wallet_crypto_transfer_out_success_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
+                return getString$TMessagesProj_HA_public(C3632R.string.push_notification_wallet_crypto_transfer_out_success_description, BalanceFormatter.format(new BigDecimal(this.amount), 8), this.cryptoCode, this.toWalletAddress);
             }
         }
     }

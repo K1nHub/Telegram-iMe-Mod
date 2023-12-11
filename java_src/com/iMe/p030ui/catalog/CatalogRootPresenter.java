@@ -28,7 +28,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -76,7 +76,7 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
             }
         });
         this.notificationCenter$delegate = lazy;
-        this.selectedTabId = C3634R.C3637id.catalog_root_bottom_navigation_channels;
+        this.selectedTabId = C3632R.C3635id.catalog_root_bottom_navigation_channels;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
         this.languages = emptyList;
     }
@@ -117,7 +117,7 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
     public void onFirstViewAttach() {
         AnalyticsManagerKt.getAnalytics();
         AnalyticsManager.trackEvent(AnalyticsEvent.CatalogEvent.OpenCatalogScreen.INSTANCE);
-        selectTab(C3634R.C3637id.catalog_root_bottom_navigation_channels);
+        selectTab(C3632R.C3635id.catalog_root_bottom_navigation_channels);
         getNotificationCenter().addObserver(this, NotificationCenter.needDeleteDialog);
     }
 
@@ -159,12 +159,12 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends CatalogLanguage>> result) {
-                m1578invoke(result);
+                m1579invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1578invoke(Result<? extends List<? extends CatalogLanguage>> it) {
+            public final void m1579invoke(Result<? extends List<? extends CatalogLanguage>> it) {
                 ResourceManager resourceManager;
                 LocaleController.LocaleInfo allLanguagesLocaleInfo;
                 List listOf;
@@ -219,8 +219,8 @@ public final class CatalogRootPresenter extends BasePresenter<CatalogRootView> i
     /* JADX INFO: Access modifiers changed from: private */
     public final LocaleController.LocaleInfo getAllLanguagesLocaleInfo() {
         LocaleController.LocaleInfo localeInfo = new LocaleController.LocaleInfo();
-        localeInfo.name = this.resourceManager.getString(C3634R.string.catalog_all);
-        localeInfo.nameEnglish = this.resourceManager.getString(C3634R.string.catalog_all_languages);
+        localeInfo.name = this.resourceManager.getString(C3632R.string.catalog_all);
+        localeInfo.nameEnglish = this.resourceManager.getString(C3632R.string.catalog_all_languages);
         localeInfo.serverIndex = -1;
         return localeInfo;
     }

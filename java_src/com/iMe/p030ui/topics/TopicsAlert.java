@@ -36,7 +36,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -313,7 +313,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3634R.string.topics_select));
+        textView.setText(LocaleController.getInternalString(C3632R.string.topics_select));
         textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(getThemedColor(Theme.key_dialogTextLink));
@@ -329,7 +329,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         if (z) {
-            textView.setText(LocaleController.getString("Create", C3634R.string.Create));
+            textView.setText(LocaleController.getString("Create", C3632R.string.Create));
             textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -338,7 +338,7 @@ public final class TopicsAlert extends BottomSheet {
                 }
             });
         } else if (this.selectedTopic == null) {
-            textView.setText(LocaleController.getString("Close", C3634R.string.Close));
+            textView.setText(LocaleController.getString("Close", C3632R.string.Close));
             textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -347,7 +347,7 @@ public final class TopicsAlert extends BottomSheet {
                 }
             });
         } else {
-            textView.setText(LocaleController.getInternalString(C3634R.string.topics_remove));
+            textView.setText(LocaleController.getInternalString(C3632R.string.topics_remove));
             textView.setTextColor(getThemedColor(Theme.key_text_RedRegular));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener

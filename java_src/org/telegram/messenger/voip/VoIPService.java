@@ -83,7 +83,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DispatchQueue;
@@ -327,7 +327,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     public final SharedUIParams sharedUIParams = new SharedUIParams();
     private ArrayList<TLRPC$PhoneCall> pendingUpdates = new ArrayList<>();
     private HashMap<String, Integer> currentStreamRequestTimestamp = new HashMap<>();
-    private Runnable afterSoundRunnable = new RunnableC36911();
+    private Runnable afterSoundRunnable = new RunnableC36891();
     private BluetoothProfile.ServiceListener serviceListener = new BluetoothProfile.ServiceListener() { // from class: org.telegram.messenger.voip.VoIPService.2
         @Override // android.bluetooth.BluetoothProfile.ServiceListener
         public void onServiceDisconnected(int i) {
@@ -528,8 +528,8 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.voip.VoIPService$1 */
     /* loaded from: classes4.dex */
-    public class RunnableC36911 implements Runnable {
-        RunnableC36911() {
+    public class RunnableC36891 implements Runnable {
+        RunnableC36891() {
         }
 
         @Override // java.lang.Runnable
@@ -553,13 +553,13 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$1$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VoIPService.RunnableC36911.this.lambda$run$0();
+                    VoIPService.RunnableC36891.this.lambda$run$0();
                 }
             });
             Utilities.globalQueue.postRunnable(VoIPService.setModeRunnable = new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VoIPService.RunnableC36911.lambda$run$1(audioManager);
+                    VoIPService.RunnableC36891.lambda$run$1(audioManager);
                 }
             });
         }
@@ -688,7 +688,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
                         tLRPC$TL_groupCallParticipant.hasCameraFrame = 1;
                     }
                     this.waitingFrameParticipant.put(str, tLRPC$TL_groupCallParticipant);
-                    addRemoteSink(tLRPC$TL_groupCallParticipant, z, new C36955(str, z), null);
+                    addRemoteSink(tLRPC$TL_groupCallParticipant, z, new C36935(str, z), null);
                 }
             }
         }
@@ -697,7 +697,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.voip.VoIPService$5 */
     /* loaded from: classes4.dex */
-    public class C36955 implements VideoSink {
+    public class C36935 implements VideoSink {
         final /* synthetic */ String val$endpointId;
         final /* synthetic */ boolean val$screencast;
 
@@ -706,7 +706,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             VideoSink.CC.$default$setParentSink(this, videoSink);
         }
 
-        C36955(String str, boolean z) {
+        C36935(String str, boolean z) {
             this.val$endpointId = str;
             this.val$screencast = z;
         }
@@ -721,7 +721,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$5$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VoIPService.C36955.this.lambda$onFrame$0(str, this, z);
+                    VoIPService.C36935.this.lambda$onFrame$0(str, this, z);
                 }
             });
         }
@@ -3092,17 +3092,17 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         int play = this.soundPool.play(this.spConnectingId, 1.0f, 1.0f, 0, -1, 1.0f);
         this.spPlayId = play;
         if (play == 0) {
-            RunnableC36977 runnableC36977 = new RunnableC36977();
-            this.connectingSoundRunnable = runnableC36977;
-            AndroidUtilities.runOnUIThread(runnableC36977, 100L);
+            RunnableC36957 runnableC36957 = new RunnableC36957();
+            this.connectingSoundRunnable = runnableC36957;
+            AndroidUtilities.runOnUIThread(runnableC36957, 100L);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.voip.VoIPService$7 */
     /* loaded from: classes4.dex */
-    public class RunnableC36977 implements Runnable {
-        RunnableC36977() {
+    public class RunnableC36957 implements Runnable {
+        RunnableC36957() {
         }
 
         @Override // java.lang.Runnable
@@ -3113,7 +3113,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             Utilities.globalQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.voip.VoIPService$7$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VoIPService.RunnableC36977.this.lambda$run$0();
+                    VoIPService.RunnableC36957.this.lambda$run$0();
                 }
             });
         }
@@ -3345,26 +3345,26 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         int i;
         String str;
         if (isBluetoothHeadsetConnected() && hasEarpiece()) {
-            BottomSheet.Builder title = new BottomSheet.Builder(context).setTitle(LocaleController.getString("VoipOutputDevices", C3634R.string.VoipOutputDevices), true);
+            BottomSheet.Builder title = new BottomSheet.Builder(context).setTitle(LocaleController.getString("VoipOutputDevices", C3632R.string.VoipOutputDevices), true);
             CharSequence[] charSequenceArr = new CharSequence[3];
-            charSequenceArr[0] = LocaleController.getString("VoipAudioRoutingSpeaker", C3634R.string.VoipAudioRoutingSpeaker);
+            charSequenceArr[0] = LocaleController.getString("VoipAudioRoutingSpeaker", C3632R.string.VoipAudioRoutingSpeaker);
             if (this.isHeadsetPlugged) {
-                i = C3634R.string.VoipAudioRoutingHeadset;
+                i = C3632R.string.VoipAudioRoutingHeadset;
                 str = "VoipAudioRoutingHeadset";
             } else {
-                i = C3634R.string.VoipAudioRoutingEarpiece;
+                i = C3632R.string.VoipAudioRoutingEarpiece;
                 str = "VoipAudioRoutingEarpiece";
             }
             charSequenceArr[1] = LocaleController.getString(str, i);
             String str2 = this.currentBluetoothDeviceName;
             if (str2 == null) {
-                str2 = LocaleController.getString("VoipAudioRoutingBluetooth", C3634R.string.VoipAudioRoutingBluetooth);
+                str2 = LocaleController.getString("VoipAudioRoutingBluetooth", C3632R.string.VoipAudioRoutingBluetooth);
             }
             charSequenceArr[2] = str2;
             int[] iArr = new int[3];
-            iArr[0] = C3634R.C3636drawable.calls_menu_speaker;
-            iArr[1] = this.isHeadsetPlugged ? C3634R.C3636drawable.calls_menu_headset : C3634R.C3636drawable.calls_menu_phone;
-            iArr[2] = C3634R.C3636drawable.calls_menu_bluetooth;
+            iArr[0] = C3632R.C3634drawable.calls_menu_speaker;
+            iArr[1] = this.isHeadsetPlugged ? C3632R.C3634drawable.calls_menu_headset : C3632R.C3634drawable.calls_menu_phone;
+            iArr[2] = C3632R.C3634drawable.calls_menu_bluetooth;
             BottomSheet.Builder items = title.setItems(charSequenceArr, iArr, new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.voip.VoIPService$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i2) {
@@ -3574,17 +3574,17 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         Notification.Builder contentIntent = new Notification.Builder(this).setContentText(str).setContentIntent(PendingIntent.getActivity(this, 50, action, ConnectionsManager.FileTypeVideo));
         if (this.groupCall != null) {
             if (ChatObject.isChannelOrGiga(this.chat)) {
-                i2 = C3634R.string.VoipLiveStream;
+                i2 = C3632R.string.VoipLiveStream;
                 str3 = "VoipLiveStream";
             } else {
-                i2 = C3634R.string.VoipVoiceChat;
+                i2 = C3632R.string.VoipVoiceChat;
                 str3 = "VoipVoiceChat";
             }
             contentIntent.setContentTitle(LocaleController.getString(str3, i2));
-            contentIntent.setSmallIcon(isMicMute() ? C3634R.C3636drawable.voicechat_muted : C3634R.C3636drawable.voicechat_active);
+            contentIntent.setSmallIcon(isMicMute() ? C3632R.C3634drawable.voicechat_muted : C3632R.C3634drawable.voicechat_active);
         } else {
-            contentIntent.setContentTitle(LocaleController.getString("VoipOutgoingCall", C3634R.string.VoipOutgoingCall));
-            contentIntent.setSmallIcon(C3634R.C3636drawable.ic_call);
+            contentIntent.setContentTitle(LocaleController.getString("VoipOutgoingCall", C3632R.string.VoipOutgoingCall));
+            contentIntent.setSmallIcon(C3632R.C3634drawable.ic_call);
             contentIntent.setOngoing(true);
         }
         int i3 = Build.VERSION.SDK_INT;
@@ -3592,17 +3592,17 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             Intent intent = new Intent(this, VoIPActionsReceiver.class);
             intent.setAction(getPackageName() + ".END_CALL");
             if (this.groupCall != null) {
-                int i4 = C3634R.C3636drawable.ic_call_end_white_24dp;
+                int i4 = C3632R.C3634drawable.ic_call_end_white_24dp;
                 if (ChatObject.isChannelOrGiga(this.chat)) {
-                    i = C3634R.string.VoipChannelLeaveAlertTitle;
+                    i = C3632R.string.VoipChannelLeaveAlertTitle;
                     str2 = "VoipChannelLeaveAlertTitle";
                 } else {
-                    i = C3634R.string.VoipGroupLeaveAlertTitle;
+                    i = C3632R.string.VoipGroupLeaveAlertTitle;
                     str2 = "VoipGroupLeaveAlertTitle";
                 }
                 contentIntent.addAction(i4, LocaleController.getString(str2, i), PendingIntent.getBroadcast(this, 0, intent, 167772160));
             } else {
-                contentIntent.addAction(C3634R.C3636drawable.ic_call_end_white_24dp, LocaleController.getString("VoipEndCall", C3634R.string.VoipEndCall), PendingIntent.getBroadcast(this, 0, intent, 167772160));
+                contentIntent.addAction(C3632R.C3634drawable.ic_call_end_white_24dp, LocaleController.getString("VoipEndCall", C3632R.string.VoipEndCall), PendingIntent.getBroadcast(this, 0, intent, 167772160));
             }
             contentIntent.setPriority(2);
         }
@@ -4333,11 +4333,11 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
             return;
         }
         NotificationsController.checkOtherNotificationsChannel();
-        Notification.Builder showWhen = new Notification.Builder(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(LocaleController.getString("VoipOutgoingCall", C3634R.string.VoipOutgoingCall)).setShowWhen(false);
+        Notification.Builder showWhen = new Notification.Builder(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(LocaleController.getString("VoipOutgoingCall", C3632R.string.VoipOutgoingCall)).setShowWhen(false);
         if (this.groupCall != null) {
-            showWhen.setSmallIcon(isMicMute() ? C3634R.C3636drawable.voicechat_muted : C3634R.C3636drawable.voicechat_active);
+            showWhen.setSmallIcon(isMicMute() ? C3632R.C3634drawable.voicechat_muted : C3632R.C3634drawable.voicechat_active);
         } else {
-            showWhen.setSmallIcon(C3634R.C3636drawable.ic_call);
+            showWhen.setSmallIcon(C3632R.C3634drawable.ic_call);
         }
         startForeground(ID_ONGOING_CALL_NOTIFICATION, showWhen.build());
     }
@@ -4387,16 +4387,16 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
     public /* synthetic */ void lambda$loadResources$76() {
         SoundPool soundPool = new SoundPool(1, 0, 0);
         this.soundPool = soundPool;
-        this.spConnectingId = soundPool.load(this, C3634R.raw.voip_connecting, 1);
-        this.spRingbackID = this.soundPool.load(this, C3634R.raw.voip_ringback, 1);
-        this.spFailedID = this.soundPool.load(this, C3634R.raw.voip_failed, 1);
-        this.spEndId = this.soundPool.load(this, C3634R.raw.voip_end, 1);
-        this.spBusyId = this.soundPool.load(this, C3634R.raw.voip_busy, 1);
-        this.spVoiceChatEndId = this.soundPool.load(this, C3634R.raw.voicechat_leave, 1);
-        this.spVoiceChatStartId = this.soundPool.load(this, C3634R.raw.voicechat_join, 1);
-        this.spVoiceChatConnecting = this.soundPool.load(this, C3634R.raw.voicechat_connecting, 1);
-        this.spAllowTalkId = this.soundPool.load(this, C3634R.raw.voip_onallowtalk, 1);
-        this.spStartRecordId = this.soundPool.load(this, C3634R.raw.voip_recordstart, 1);
+        this.spConnectingId = soundPool.load(this, C3632R.raw.voip_connecting, 1);
+        this.spRingbackID = this.soundPool.load(this, C3632R.raw.voip_ringback, 1);
+        this.spFailedID = this.soundPool.load(this, C3632R.raw.voip_failed, 1);
+        this.spEndId = this.soundPool.load(this, C3632R.raw.voip_end, 1);
+        this.spBusyId = this.soundPool.load(this, C3632R.raw.voip_busy, 1);
+        this.spVoiceChatEndId = this.soundPool.load(this, C3632R.raw.voicechat_leave, 1);
+        this.spVoiceChatStartId = this.soundPool.load(this, C3632R.raw.voicechat_join, 1);
+        this.spVoiceChatConnecting = this.soundPool.load(this, C3632R.raw.voicechat_connecting, 1);
+        this.spAllowTalkId = this.soundPool.load(this, C3632R.raw.voip_onallowtalk, 1);
+        this.spStartRecordId = this.soundPool.load(this, C3632R.raw.voip_recordstart, 1);
     }
 
     private void dispatchStateChanged(int i) {
@@ -5269,7 +5269,7 @@ public class VoIPService extends Service implements SensorEventListener, AudioMa
         TLRPC$User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
         ComponentName componentName = new ComponentName(this, TelegramConnectionService.class);
         PhoneAccountHandle phoneAccountHandle = new PhoneAccountHandle(componentName, "" + currentUser.f1749id);
-        ((TelecomManager) getSystemService("telecom")).registerPhoneAccount(new PhoneAccount.Builder(phoneAccountHandle, ContactsController.formatName(currentUser.first_name, currentUser.last_name)).setCapabilities(2048).setIcon(Icon.createWithResource(this, C3634R.C3636drawable.ic_launcher_dr)).setHighlightColor(-13851168).addSupportedUriScheme("sip").build());
+        ((TelecomManager) getSystemService("telecom")).registerPhoneAccount(new PhoneAccount.Builder(phoneAccountHandle, ContactsController.formatName(currentUser.first_name, currentUser.last_name)).setCapabilities(2048).setIcon(Icon.createWithResource(this, C3632R.C3634drawable.ic_launcher_dr)).setHighlightColor(-13851168).addSupportedUriScheme("sip").build());
         return phoneAccountHandle;
     }
 

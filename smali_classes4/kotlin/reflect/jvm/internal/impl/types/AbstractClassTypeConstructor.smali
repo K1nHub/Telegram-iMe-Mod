@@ -112,7 +112,7 @@
     goto :goto_4
 
     :cond_6
-    const-string v6, "isSameClassifier"
+    const-string/jumbo v6, "isSameClassifier"
 
     aput-object v6, v5, v4
 

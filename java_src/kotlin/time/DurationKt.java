@@ -150,17 +150,17 @@ public final class DurationKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long durationOfNanos(long j) {
-        return Duration.m2063constructorimpl(j << 1);
+        return Duration.m2065constructorimpl(j << 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long durationOfMillis(long j) {
-        return Duration.m2063constructorimpl((j << 1) + 1);
+        return Duration.m2065constructorimpl((j << 1) + 1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final long durationOf(long j, int i) {
-        return Duration.m2063constructorimpl((j << 1) + i);
+        return Duration.m2065constructorimpl((j << 1) + i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

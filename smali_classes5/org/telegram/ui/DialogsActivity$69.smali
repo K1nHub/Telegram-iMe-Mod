@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Z)V
     .locals 0
 
-    .line 13463
+    .line 13468
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$69;->val$show:Z
@@ -39,31 +39,31 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 13466
+    .line 13471
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$40702(Lorg/telegram/ui/DialogsActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 13467
+    .line 13472
     iget-boolean p1, p0, Lorg/telegram/ui/DialogsActivity$69;->val$show:Z
 
     if-eqz p1, :cond_3
 
-    .line 13469
+    .line 13474
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$23100(Lorg/telegram/ui/DialogsActivity;Z)V
 
-    .line 13470
+    .line 13475
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$23000(Lorg/telegram/ui/DialogsActivity;Z)V
 
-    .line 13472
+    .line 13477
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$22800(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -74,7 +74,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 13473
+    .line 13478
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$22800(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -83,7 +83,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 13475
+    .line 13480
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -101,7 +101,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 13476
+    .line 13481
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23300(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -110,7 +110,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 13478
+    .line 13483
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -128,7 +128,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 13479
+    .line 13484
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$35800(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -137,7 +137,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 13481
+    .line 13486
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -155,7 +155,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 13482
+    .line 13487
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$23500(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -166,7 +166,7 @@
 
     goto :goto_0
 
-    .line 13485
+    .line 13490
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -176,7 +176,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 13486
+    .line 13491
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$69;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$10900(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;

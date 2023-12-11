@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView$Page;Lorg/telegram/ui/Components/MessagePreviewView;)V
     .locals 0
 
-    .line 793
+    .line 814
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$11;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
@@ -37,7 +37,7 @@
 
     if-ltz p1, :cond_0
 
-    .line 797
+    .line 818
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$11;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView$Page;->messages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
@@ -50,7 +50,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 798
+    .line 819
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$11;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView$Page;->messages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
@@ -63,7 +63,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 799
+    .line 820
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$Page$11;->this$1:Lorg/telegram/ui/Components/MessagePreviewView$Page;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/MessagePreviewView$Page;->access$1500(Lorg/telegram/ui/Components/MessagePreviewView$Page;Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject$GroupedMessages;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 801
+    .line 822
     iget-object v0, v0, Lorg/telegram/messenger/MessageObject$GroupedMessages;->positions:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;

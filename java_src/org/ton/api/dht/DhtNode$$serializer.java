@@ -30,7 +30,7 @@ public final class DhtNode$$serializer implements GeneratedSerializer<DhtNode> {
         pluginGeneratedSerialDescriptor.addElement("addr_list", false);
         pluginGeneratedSerialDescriptor.addElement("version", true);
         pluginGeneratedSerialDescriptor.addElement("signature", true);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7505x6c935aed("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7503x6c935aed("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

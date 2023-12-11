@@ -29,8 +29,8 @@ public final class MerkleUpdateTlbConstructor<X> extends org.ton.tlb.TlbConstruc
         cellBuilder.setExotic(true);
         cellBuilder.storeBits(value.getOldHash());
         cellBuilder.storeBits(value.getNewHash());
-        cellBuilder.mo5209storeUInt16xj2QHRw(value.m5125getOldDepthMh2AYeg());
-        cellBuilder.mo5209storeUInt16xj2QHRw(value.m5124getNewDepthMh2AYeg());
+        cellBuilder.mo5191storeUInt16xj2QHRw(value.m5107getOldDepthMh2AYeg());
+        cellBuilder.mo5191storeUInt16xj2QHRw(value.m5106getNewDepthMh2AYeg());
         this.xCellRef.storeTlb(cellBuilder, value.getOld());
         this.xCellRef.storeTlb(cellBuilder, value.getNew());
     }
@@ -38,6 +38,6 @@ public final class MerkleUpdateTlbConstructor<X> extends org.ton.tlb.TlbConstruc
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public MerkleUpdate<X> loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new MerkleUpdate<>(cellSlice.loadBits(256), cellSlice.loadBits(256), cellSlice.mo5219loadUInt16Mh2AYeg(), cellSlice.mo5219loadUInt16Mh2AYeg(), this.xCellRef.loadTlb(cellSlice), this.xCellRef.loadTlb(cellSlice), null);
+        return new MerkleUpdate<>(cellSlice.loadBits(256), cellSlice.loadBits(256), cellSlice.mo5201loadUInt16Mh2AYeg(), cellSlice.mo5201loadUInt16Mh2AYeg(), this.xCellRef.loadTlb(cellSlice), this.xCellRef.loadTlb(cellSlice), null);
     }
 }

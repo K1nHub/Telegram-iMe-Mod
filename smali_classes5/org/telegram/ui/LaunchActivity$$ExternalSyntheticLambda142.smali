@@ -2,70 +2,78 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$PhonebookShareAlertDelegate;
+.implements Lorg/telegram/tgnet/RequestDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ChatActivity;
+.field public final synthetic f$1:[I
 
-.field public final synthetic f$2:Ljava/util/ArrayList;
+.field public final synthetic f$2:I
 
-.field public final synthetic f$3:I
+.field public final synthetic f$3:Ljava/lang/Runnable;
 
-.field public final synthetic f$4:Ljava/lang/CharSequence;
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$TL_account_getAuthorizationForm;
 
-.field public final synthetic f$5:Z
+.field public final synthetic f$5:Ljava/lang/String;
+
+.field public final synthetic f$6:Ljava/lang/String;
+
+.field public final synthetic f$7:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;ILjava/lang/CharSequence;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;[IILjava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_account_getAuthorizationForm;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$1:Lorg/telegram/ui/ChatActivity;
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$1:[I
 
-    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$2:Ljava/util/ArrayList;
+    iput p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$2:I
 
-    iput p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$3:I
+    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$3:Ljava/lang/Runnable;
 
-    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$4:Ljava/lang/CharSequence;
+    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$4:Lorg/telegram/tgnet/TLRPC$TL_account_getAuthorizationForm;
 
-    iput-boolean p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$5:Z
+    iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$5:Ljava/lang/String;
+
+    iput-object p7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$6:Ljava/lang/String;
+
+    iput-object p8, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$7:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectContact(Lorg/telegram/tgnet/TLRPC$User;ZILjava/lang/String;)V
+.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 10
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$1:Lorg/telegram/ui/ChatActivity;
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$1:[I
 
-    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$2:Ljava/util/ArrayList;
+    iget v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$2:I
 
-    iget v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$3:I
+    iget-object v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$3:Ljava/lang/Runnable;
 
-    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$4:Ljava/lang/CharSequence;
+    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$4:Lorg/telegram/tgnet/TLRPC$TL_account_getAuthorizationForm;
 
-    iget-boolean v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$5:Z
+    iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$5:Ljava/lang/String;
 
-    move-object v6, p1
+    iget-object v6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$6:Ljava/lang/String;
 
-    move v7, p2
+    iget-object v7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda142;->f$7:Ljava/lang/String;
 
-    move v8, p3
+    move-object v8, p1
 
-    move-object v9, p4
+    move-object v9, p2
 
-    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$KWNKC5gMOG1lPDKqXPWGFkp5FNs(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;ILjava/lang/CharSequence;ZLorg/telegram/tgnet/TLRPC$User;ZILjava/lang/String;)V
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Y1yT6Tf0Yy9eaL1qWN-0Euf9ato(Lorg/telegram/ui/LaunchActivity;[IILjava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_account_getAuthorizationForm;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

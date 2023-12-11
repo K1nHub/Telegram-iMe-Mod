@@ -99,12 +99,12 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CategoriesPreviewsCursored> result) {
-                m1581invoke(result);
+                m1582invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1581invoke(Result<? extends CategoriesPreviewsCursored> it) {
+            public final void m1582invoke(Result<? extends CategoriesPreviewsCursored> it) {
                 List<BaseNode> mapNewDataToUiItems;
                 String str2;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -191,12 +191,12 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(TLRPC$Chat tLRPC$Chat) {
-                m1583invoke(tLRPC$Chat);
+                m1584invoke(tLRPC$Chat);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1583invoke(TLRPC$Chat it) {
+            public final void m1584invoke(TLRPC$Chat it) {
                 ChatType chatType;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 CatalogAllView catalogAllView = (CatalogAllView) CatalogAllPresenter.this.getViewState();
@@ -337,12 +337,12 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CampaignsCursored> result) {
-                m1582invoke(result);
+                m1583invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1582invoke(Result<? extends CampaignsCursored> it) {
+            public final void m1583invoke(Result<? extends CampaignsCursored> it) {
                 ResourceManager resourceManager;
                 List list;
                 Object obj;

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity$48;Landroid/content/Context;Lorg/telegram/ui/DialogsActivity$ViewPage;)V
     .locals 0
 
-    .line 7970
+    .line 7973
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$48$2;->this$1:Lorg/telegram/ui/DialogsActivity$48;
 
     iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$48$2;->val$page:Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -39,7 +39,7 @@
 .method protected firstPosition()I
     .locals 2
 
-    .line 7973
+    .line 7976
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$48$2;->val$page:Lorg/telegram/ui/DialogsActivity$ViewPage;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$7500(Lorg/telegram/ui/DialogsActivity$ViewPage;)I

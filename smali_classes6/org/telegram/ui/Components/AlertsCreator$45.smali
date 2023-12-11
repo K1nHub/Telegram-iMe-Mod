@@ -22,7 +22,7 @@
 .method constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/GroupCallPipButton;)V
     .locals 0
 
-    .line 5566
+    .line 5569
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$45;->val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
 
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 5569
+    .line 5572
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 5570
+    .line 5573
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$45;->val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -67,7 +67,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 5571
+    .line 5574
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$45;->val$button:Lorg/telegram/ui/Components/GroupCallPipButton;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I

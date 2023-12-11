@@ -25,7 +25,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 978
+    .line 981
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -34,7 +34,7 @@
 
     goto :goto_1
 
-    .line 981
+    .line 984
     :cond_0
     instance-of v0, p0, Landroid/text/SpannableStringBuilder;
 
@@ -49,7 +49,7 @@
 
     move-result-object p0
 
-    .line 982
+    .line 985
     :goto_0
     invoke-virtual {p0}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
 
@@ -59,7 +59,7 @@
 
     const/4 v2, 0x1
 
-    .line 983
+    .line 986
     invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
@@ -84,7 +84,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 971
+    .line 974
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 974
+    .line 977
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -135,7 +135,7 @@
 .method public static getToLanguage()Ljava/lang/String;
     .locals 3
 
-    .line 1151
+    .line 1154
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -176,7 +176,7 @@
         }
     .end annotation
 
-    .line 403
+    .line 406
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -185,7 +185,7 @@
 
     return-object v0
 
-    .line 407
+    .line 410
     :cond_0
     invoke-static {p0}, Lorg/telegram/messenger/Emoji;->parseEmojis(Ljava/lang/CharSequence;)Ljava/util/ArrayList;
 
@@ -195,7 +195,7 @@
 
     return-object v0
 
-    .line 411
+    .line 414
     :cond_1
     invoke-interface {p0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -203,7 +203,7 @@
 
     const/4 v2, 0x0
 
-    .line 412
+    .line 415
     :goto_0
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -211,7 +211,7 @@
 
     if-ge v2, v3, :cond_5
 
-    .line 413
+    .line 416
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -220,14 +220,14 @@
 
     if-eqz v3, :cond_4
 
-    .line 414
+    .line 417
     iget-object v4, v3, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->code:Ljava/lang/CharSequence;
 
     if-nez v4, :cond_2
 
     goto :goto_1
 
-    .line 417
+    .line 420
     :cond_2
     iget v4, v3, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->start:I
 
@@ -237,7 +237,7 @@
 
     move-result-object v4
 
-    .line 418
+    .line 421
     invoke-virtual {v0, v4}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
@@ -246,14 +246,14 @@
 
     if-nez v5, :cond_3
 
-    .line 420
+    .line 423
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     invoke-virtual {v0, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 422
+    .line 425
     :cond_3
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -272,7 +272,7 @@
 
     const/4 v0, 0x0
 
-    .line 988
+    .line 991
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/TranslateAlert2;->languageName(Ljava/lang/String;[Z)Ljava/lang/String;
 
     move-result-object p0
@@ -289,7 +289,7 @@
 
     const-string v1, "und"
 
-    .line 992
+    .line 995
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -309,7 +309,7 @@
     :cond_0
     const-string v1, "_"
 
-    .line 996
+    .line 999
     invoke-virtual {p0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
@@ -320,7 +320,7 @@
 
     const-string v3, "nb"
 
-    .line 997
+    .line 1000
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v4
@@ -336,7 +336,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 1003
+    .line 1006
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -363,7 +363,7 @@
 
     const-string v7, "LOC_ERR"
 
-    .line 1004
+    .line 1007
     invoke-virtual {v6, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v7
@@ -384,7 +384,7 @@
 
     return-object v6
 
-    .line 1010
+    .line 1013
     :cond_3
     invoke-static {p0}, Lorg/telegram/ui/Components/TranslateAlert2;->systemLanguageName(Ljava/lang/String;)Ljava/lang/String;
 
@@ -392,7 +392,7 @@
 
     if-nez p1, :cond_4
 
-    .line 1012
+    .line 1015
     invoke-static {v1}, Lorg/telegram/ui/Components/TranslateAlert2;->systemLanguageName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -402,7 +402,7 @@
 
     return-object p1
 
-    .line 1019
+    .line 1022
     :cond_5
     invoke-virtual {v5, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -412,7 +412,7 @@
 
     move-object p0, v3
 
-    .line 1022
+    .line 1025
     :cond_6
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -422,7 +422,7 @@
 
     move-result-object p1
 
-    .line 1023
+    .line 1026
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v1
@@ -438,7 +438,7 @@
     :cond_7
     if-eqz p1, :cond_8
 
-    .line 1027
+    .line 1030
     iget-object p1, p1, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
 
     const-string v0, "en"
@@ -454,12 +454,12 @@
     :cond_8
     if-eqz v2, :cond_9
 
-    .line 1029
+    .line 1032
     iget-object p0, p0, Lorg/telegram/messenger/LocaleController$LocaleInfo;->nameEnglish:Ljava/lang/String;
 
     return-object p0
 
-    .line 1031
+    .line 1034
     :cond_9
     iget-object p0, p0, Lorg/telegram/messenger/LocaleController$LocaleInfo;->name:Ljava/lang/String;
 
@@ -473,7 +473,7 @@
 .method public static preprocess(Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;)Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;
     .locals 13
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_11
 
     .line 315
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->text:Ljava/lang/String;
@@ -497,7 +497,7 @@
 
     const/4 v3, 0x1
 
-    if-ge v1, v2, :cond_4
+    if-ge v1, v2, :cond_5
 
     .line 319
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
@@ -518,7 +518,7 @@
 
     if-nez v4, :cond_1
 
-    goto :goto_1
+    goto/16 :goto_1
 
     .line 324
     :cond_1
@@ -576,7 +576,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_4
 
     const-string v5, "@"
 
@@ -585,7 +585,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_4
 
     .line 333
     invoke-virtual {v4, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -604,7 +604,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_4
 
     .line 335
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_messageEntityMention;
@@ -626,19 +626,63 @@
 
     invoke-virtual {v2, v1, v3}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
+    goto :goto_1
+
+    .line 340
     :cond_3
+    instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$TL_messageEntityPre;
+
+    if-eqz v3, :cond_4
+
+    if-eqz p0, :cond_4
+
+    .line 341
+    iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
+
+    if-eqz v3, :cond_4
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    if-ge v1, v3, :cond_4
+
+    iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    instance-of v3, v3, Lorg/telegram/tgnet/TLRPC$TL_messageEntityPre;
+
+    if-eqz v3, :cond_4
+
+    .line 342
+    iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lorg/telegram/tgnet/TLRPC$MessageEntity;
+
+    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$MessageEntity;->language:Ljava/lang/String;
+
+    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$MessageEntity;->language:Ljava/lang/String;
+
+    :cond_4
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    :cond_4
-    if-eqz p0, :cond_f
+    :cond_5
+    if-eqz p0, :cond_10
 
-    .line 342
+    .line 346
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->text:Ljava/lang/String;
 
-    if-eqz v1, :cond_f
+    if-eqz v1, :cond_10
 
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
 
@@ -646,16 +690,16 @@
 
     move-result v1
 
-    if-nez v1, :cond_f
+    if-nez v1, :cond_10
 
-    .line 344
+    .line 347
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->text:Ljava/lang/String;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/TranslateAlert2;->groupEmojiRanges(Ljava/lang/CharSequence;)Ljava/util/HashMap;
 
     move-result-object v1
 
-    .line 345
+    .line 348
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->text:Ljava/lang/String;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/TranslateAlert2;->groupEmojiRanges(Ljava/lang/CharSequence;)Ljava/util/HashMap;
@@ -664,7 +708,7 @@
 
     move v4, v0
 
-    .line 347
+    .line 350
     :goto_2
     iget-object v5, p0, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
 
@@ -672,9 +716,9 @@
 
     move-result v5
 
-    if-ge v4, v5, :cond_f
+    if-ge v4, v5, :cond_10
 
-    .line 348
+    .line 351
     iget-object v5, p0, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -683,12 +727,12 @@
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$MessageEntity;
 
-    .line 349
+    .line 352
     instance-of v6, v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
 
-    if-eqz v6, :cond_e
+    if-eqz v6, :cond_f
 
-    .line 350
+    .line 353
     iget-object v6, p0, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->text:Ljava/lang/String;
 
     iget v7, v5, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
@@ -701,62 +745,62 @@
 
     move-result-object v6
 
-    .line 351
+    .line 354
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_5
+    if-eqz v7, :cond_6
 
     goto/16 :goto_7
 
-    .line 354
-    :cond_5
+    .line 357
+    :cond_6
     invoke-virtual {v1, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Ljava/util/ArrayList;
 
-    .line 355
+    .line 358
     invoke-virtual {v2, v6}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Ljava/util/ArrayList;
 
-    if-eqz v7, :cond_e
+    if-eqz v7, :cond_f
 
-    if-nez v6, :cond_6
+    if-nez v6, :cond_7
 
     goto/16 :goto_7
 
-    :cond_6
+    :cond_7
     const/4 v8, -0x1
 
     move v9, v0
 
-    .line 360
+    .line 363
     :goto_3
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
     move-result v10
 
-    if-ge v9, v10, :cond_8
+    if-ge v9, v10, :cond_9
 
-    .line 361
+    .line 364
     invoke-virtual {v7, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v10
 
     check-cast v10, Lorg/telegram/messenger/Emoji$EmojiSpanRange;
 
-    .line 362
+    .line 365
     iget v11, v10, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->start:I
 
     iget v12, v5, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
 
-    if-ne v11, v12, :cond_7
+    if-ne v11, v12, :cond_8
 
     iget v10, v10, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->end:I
 
@@ -764,46 +808,46 @@
 
     add-int/2addr v12, v11
 
-    if-ne v10, v12, :cond_7
+    if-ne v10, v12, :cond_8
 
     move v8, v9
 
     goto :goto_4
 
-    :cond_7
+    :cond_8
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_3
 
-    :cond_8
+    :cond_9
     :goto_4
-    if-ltz v8, :cond_e
+    if-ltz v8, :cond_f
 
-    .line 367
+    .line 370
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v7
 
-    if-lt v8, v7, :cond_9
+    if-lt v8, v7, :cond_a
 
     goto :goto_7
 
-    .line 370
-    :cond_9
+    .line 373
+    :cond_a
     invoke-virtual {v6, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Lorg/telegram/messenger/Emoji$EmojiSpanRange;
 
-    if-nez v6, :cond_a
+    if-nez v6, :cond_b
 
     goto :goto_7
 
-    :cond_a
+    :cond_b
     move v7, v0
 
-    .line 376
+    .line 379
     :goto_5
     iget-object v8, p1, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
 
@@ -811,9 +855,9 @@
 
     move-result v8
 
-    if-ge v7, v8, :cond_c
+    if-ge v7, v8, :cond_d
 
-    .line 377
+    .line 380
     iget-object v8, p1, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -822,10 +866,10 @@
 
     check-cast v8, Lorg/telegram/tgnet/TLRPC$MessageEntity;
 
-    .line 378
+    .line 381
     instance-of v9, v8, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
 
-    if-eqz v9, :cond_b
+    if-eqz v9, :cond_c
 
     iget v9, v6, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->start:I
 
@@ -837,75 +881,75 @@
 
     add-int/2addr v8, v11
 
-    .line 380
+    .line 383
     invoke-static {v9, v10, v11, v8}, Lorg/telegram/messenger/AndroidUtilities;->intersect1d(IIII)Z
 
     move-result v8
 
-    if-eqz v8, :cond_b
+    if-eqz v8, :cond_c
 
     move v7, v3
 
     goto :goto_6
 
-    :cond_b
+    :cond_c
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_5
 
-    :cond_c
+    :cond_d
     move v7, v0
 
     :goto_6
-    if-eqz v7, :cond_d
+    if-eqz v7, :cond_e
 
     goto :goto_7
 
-    .line 390
-    :cond_d
+    .line 393
+    :cond_e
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;-><init>()V
 
-    .line 391
+    .line 394
     check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
 
     iget-wide v8, v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document_id:J
 
     iput-wide v8, v7, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document_id:J
 
-    .line 392
+    .line 395
     iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     iput-object v5, v7, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 393
+    .line 396
     iget v5, v6, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->start:I
 
     iput v5, v7, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
 
-    .line 394
+    .line 397
     iget v6, v6, Lorg/telegram/messenger/Emoji$EmojiSpanRange;->end:I
 
     sub-int/2addr v6, v5
 
     iput v6, v7, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
 
-    .line 395
+    .line 398
     iget-object v5, p1, Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_e
+    :cond_f
     :goto_7
     add-int/lit8 v4, v4, 0x1
 
     goto/16 :goto_2
 
-    :cond_f
+    :cond_10
     return-object p1
 
-    :cond_10
+    :cond_11
     :goto_8
     const/4 p0, 0x0
 
@@ -915,7 +959,7 @@
 .method public static setToLanguage(Ljava/lang/String;)V
     .locals 2
 
-    .line 1155
+    .line 1158
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -940,7 +984,7 @@
 
     const/4 v0, 0x0
 
-    .line 1036
+    .line 1039
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/TranslateAlert2;->systemLanguageName(Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object p0
@@ -957,7 +1001,7 @@
 
     return-object v0
 
-    .line 1044
+    .line 1047
     :cond_0
     sget-object v1, Lorg/telegram/ui/Components/TranslateAlert2;->localesByCode:Ljava/util/HashMap;
 
@@ -965,14 +1009,14 @@
 
     if-nez v1, :cond_2
 
-    .line 1045
+    .line 1048
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     sput-object v1, Lorg/telegram/ui/Components/TranslateAlert2;->localesByCode:Ljava/util/HashMap;
 
-    .line 1047
+    .line 1050
     :try_start_0
     invoke-static {}, Ljava/util/Locale;->getAvailableLocales()[Ljava/util/Locale;
 
@@ -980,13 +1024,13 @@
 
     const/4 v3, 0x0
 
-    .line 1048
+    .line 1051
     :goto_0
     array-length v4, v1
 
     if-ge v3, v4, :cond_2
 
-    .line 1049
+    .line 1052
     sget-object v4, Lorg/telegram/ui/Components/TranslateAlert2;->localesByCode:Ljava/util/HashMap;
 
     aget-object v5, v1, v3
@@ -999,7 +1043,7 @@
 
     invoke-virtual {v4, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1050
+    .line 1053
     aget-object v4, v1, v3
 
     invoke-virtual {v4}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
@@ -1008,14 +1052,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 1051
+    .line 1054
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v5
 
     if-lez v5, :cond_1
 
-    .line 1052
+    .line 1055
     sget-object v5, Lorg/telegram/ui/Components/TranslateAlert2;->localesByCode:Ljava/util/HashMap;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1057,7 +1101,7 @@
     :cond_2
     const-string v1, "_"
 
-    .line 1057
+    .line 1060
     invoke-virtual {p0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p0
@@ -1066,7 +1110,7 @@
 
     move-result-object p0
 
-    .line 1059
+    .line 1062
     :try_start_1
     sget-object v1, Lorg/telegram/ui/Components/TranslateAlert2;->localesByCode:Ljava/util/HashMap;
 
@@ -1084,7 +1128,7 @@
 
     goto :goto_1
 
-    .line 1061
+    .line 1064
     :cond_3
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
@@ -1095,7 +1139,7 @@
 
     move-result-object v3
 
-    .line 1062
+    .line 1065
     invoke-virtual {p0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result p0
@@ -1108,7 +1152,7 @@
 
     goto :goto_2
 
-    .line 1063
+    .line 1066
     :cond_4
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
@@ -1119,14 +1163,14 @@
 
     move-result-object p0
 
-    .line 1064
+    .line 1067
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result p1
 
     if-nez p1, :cond_5
 
-    .line 1065
+    .line 1068
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V

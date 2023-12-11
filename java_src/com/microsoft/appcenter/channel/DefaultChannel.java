@@ -264,7 +264,7 @@ public class DefaultChannel implements Channel {
                 DefaultChannel.this.mAppCenterHandler.post(new Runnable() { // from class: com.microsoft.appcenter.channel.DefaultChannel.1.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        C25781 c25781 = C25781.this;
+                        C25751 c25751 = C25751.this;
                         DefaultChannel.this.handleSendingSuccess(groupState, batchId);
                     }
                 });
@@ -275,7 +275,7 @@ public class DefaultChannel implements Channel {
                 DefaultChannel.this.mAppCenterHandler.post(new Runnable() { // from class: com.microsoft.appcenter.channel.DefaultChannel.1.2
                     @Override // java.lang.Runnable
                     public void run() {
-                        C25781 c25781 = C25781.this;
+                        C25751 c25751 = C25751.this;
                         DefaultChannel.this.handleSendingFailure(groupState, batchId, e);
                     }
                 });

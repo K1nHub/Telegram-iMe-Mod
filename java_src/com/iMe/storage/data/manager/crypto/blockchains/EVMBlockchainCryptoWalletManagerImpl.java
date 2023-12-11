@@ -12,6 +12,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.CoinType;
 import wallet.core.jni.HDWallet;
+import wallet.core.jni.Mnemonic;
 /* compiled from: EVMBlockchainCryptoWalletManagerImpl.kt */
 /* loaded from: classes3.dex */
 public final class EVMBlockchainCryptoWalletManagerImpl extends BlockchainCryptoWalletManager {
@@ -55,44 +56,44 @@ public final class EVMBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
         return just;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Result isValidMnemonic$lambda$0(String mnemonic) {
+        Intrinsics.checkNotNullParameter(mnemonic, "$mnemonic");
+        return Result.Companion.success(Boolean.valueOf(Mnemonic.isValid(mnemonic)));
+    }
+
     @Override // com.iMe.storage.domain.manager.crypto.BlockchainCryptoWalletManager
-    public Observable<Result<String>> generateAddressByMnemonic(final String mnemonic) {
+    public Observable<Result<Boolean>> isValidMnemonic(final String mnemonic) {
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
         Observable fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.data.manager.crypto.blockchains.EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda1
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                Result generateAddressByMnemonic$lambda$0;
-                generateAddressByMnemonic$lambda$0 = EVMBlockchainCryptoWalletManagerImpl.generateAddressByMnemonic$lambda$0(mnemonic);
-                return generateAddressByMnemonic$lambda$0;
+                Result isValidMnemonic$lambda$0;
+                isValidMnemonic$lambda$0 = EVMBlockchainCryptoWalletManagerImpl.isValidMnemonic$lambda$0(mnemonic);
+                return isValidMnemonic$lambda$0;
             }
         });
-        final EVMBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2 eVMBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2 = new Function1<Throwable, Result<? extends String>>() { // from class: com.iMe.storage.data.manager.crypto.blockchains.EVMBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2
+        final EVMBlockchainCryptoWalletManagerImpl$isValidMnemonic$2 eVMBlockchainCryptoWalletManagerImpl$isValidMnemonic$2 = new Function1<Throwable, Result<? extends Boolean>>() { // from class: com.iMe.storage.data.manager.crypto.blockchains.EVMBlockchainCryptoWalletManagerImpl$isValidMnemonic$2
             @Override // kotlin.jvm.functions.Function1
-            public final Result<String> invoke(Throwable it) {
+            public final Result<Boolean> invoke(Throwable it) {
                 Intrinsics.checkNotNullParameter(it, "it");
-                return Result.Companion.success("");
+                return Result.Companion.success(Boolean.FALSE);
             }
         };
-        Observable<Result<String>> onErrorReturn = fromCallable.onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.crypto.blockchains.EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda0
+        Observable<Result<Boolean>> onErrorReturn = fromCallable.onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.crypto.blockchains.EVMBlockchainCryptoWalletManagerImpl$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
-                Result generateAddressByMnemonic$lambda$1;
-                generateAddressByMnemonic$lambda$1 = EVMBlockchainCryptoWalletManagerImpl.generateAddressByMnemonic$lambda$1(Function1.this, obj);
-                return generateAddressByMnemonic$lambda$1;
+                Result isValidMnemonic$lambda$1;
+                isValidMnemonic$lambda$1 = EVMBlockchainCryptoWalletManagerImpl.isValidMnemonic$lambda$1(Function1.this, obj);
+                return isValidMnemonic$lambda$1;
             }
         });
-        Intrinsics.checkNotNullExpressionValue(onErrorReturn, "fromCallable {\n         …MPTY_STRING.toSuccess() }");
+        Intrinsics.checkNotNullExpressionValue(onErrorReturn, "fromCallable { Mnemonic.…urn { false.toSuccess() }");
         return onErrorReturn;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Result generateAddressByMnemonic$lambda$0(String mnemonic) {
-        Intrinsics.checkNotNullParameter(mnemonic, "$mnemonic");
-        return Result.Companion.success(new HDWallet(mnemonic, "").getAddressForCoin(CoinType.ETHEREUM));
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Result generateAddressByMnemonic$lambda$1(Function1 tmp0, Object obj) {
+    public static final Result isValidMnemonic$lambda$1(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return (Result) tmp0.invoke(obj);
     }

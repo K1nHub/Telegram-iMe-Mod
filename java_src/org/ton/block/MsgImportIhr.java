@@ -27,7 +27,7 @@ public final class MsgImportIhr implements InMsg {
     private final Cell proofCreated;
     private final CellRef<Transaction> transaction;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Cell.class), new Annotation[]{new C7586xae4e1e52("@type")})};
+    private static final KSerializer<Object>[] $childSerializers = {new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Cell.class), new Annotation[]{new C7584xae4e1e52("@type")})};
 
     public boolean equals(Object obj) {
         if (this == obj) {

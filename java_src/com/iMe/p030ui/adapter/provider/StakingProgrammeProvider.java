@@ -22,7 +22,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: StakingProgrammeProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingProgrammeProvider */
@@ -43,7 +43,7 @@ public final class StakingProgrammeProvider extends BaseNodeProvider<StakingProg
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.STAKING_PROGRAMME;
-        this.layoutId = C3634R.layout.fork_recycle_item_wallet_dashboard_account_balance;
+        this.layoutId = C3632R.layout.fork_recycle_item_wallet_dashboard_account_balance;
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.adapter.provider.StakingProgrammeProvider$networkIconCornerSize$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -55,7 +55,7 @@ public final class StakingProgrammeProvider extends BaseNodeProvider<StakingProg
             public final Float invoke() {
                 ResourceManager resourceManager2;
                 resourceManager2 = StakingProgrammeProvider.this.resourceManager;
-                return Float.valueOf(resourceManager2.getDimens(C3634R.dimen.icon_size_default) / 2);
+                return Float.valueOf(resourceManager2.getDimens(C3632R.dimen.icon_size_default) / 2);
             }
         });
         this.networkIconCornerSize$delegate = lazy;
@@ -80,30 +80,30 @@ public final class StakingProgrammeProvider extends BaseNodeProvider<StakingProg
     public void convert(BaseViewHolder helper, final StakingProgrammeItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3634R.C3637id.card_account_balance;
+        int i = C3632R.C3635id.card_account_balance;
         BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3634R.C3637id.staking_info;
+        int i2 = C3632R.C3635id.staking_info;
         BaseViewHolder themedRoundedBackground = BaseQuickAdapterExtKt.setThemedRoundedBackground(themedCardBackground, i2, Theme.key_chats_pinnedOverlay, 4.0f);
-        int i3 = C3634R.C3637id.text_title;
+        int i3 = C3632R.C3635id.text_title;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedRoundedBackground, i3, Theme.key_chats_actionBackground);
         int i4 = Theme.key_windowBackgroundWhiteBlackText;
-        int i5 = C3634R.C3637id.text_subtitle;
-        int i6 = C3634R.C3637id.text_staking_end_value;
+        int i5 = C3632R.C3635id.text_subtitle;
+        int i6 = C3632R.C3635id.text_staking_end_value;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i4, i5, i6);
-        int i7 = C3634R.C3637id.text_apr_value;
+        int i7 = C3632R.C3635id.text_apr_value;
         BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i7, item.getPercentageTextColor(StakingAnnualPercentageMode.APR));
-        int i8 = C3634R.C3637id.text_apy_value;
+        int i8 = C3632R.C3635id.text_apy_value;
         BaseViewHolder themedTextColor4 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i8, item.getPercentageTextColor(StakingAnnualPercentageMode.APY));
-        int i9 = C3634R.C3637id.text_account_balance_in_dollars;
+        int i9 = C3632R.C3635id.text_account_balance_in_dollars;
         BaseViewHolder themedTextColor5 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor4, i9, Theme.key_windowBackgroundWhiteGrayText2);
         int i10 = Theme.key_windowBackgroundWhiteGrayText;
-        int i11 = C3634R.C3637id.text_apy_title;
-        int i12 = C3634R.C3637id.text_apr_title;
-        int i13 = C3634R.C3637id.text_staking_end_title;
-        BaseViewHolder text = BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor5, i10, i11, i12, i13), i5, i9, i11, i12, i13, i8, i7, i6), C3634R.C3637id.image_logo, item.getTokenBalance().getToken().getAvatarUrl(), null, false, 12, null).setText(i11, this.resourceManager.getString(C3634R.string.staking_programme_apy));
-        BaseViewHolder text2 = text.setText(i8, item.getApy() + '%').setText(i12, this.resourceManager.getString(C3634R.string.staking_programme_apr));
-        BaseViewHolder text3 = text2.setText(i7, item.getApr() + '%').setText(i13, this.resourceManager.getString(C3634R.string.staking_programme_expires)).setText(i6, item.getEndsAt()).setText(i3, item.getName()).setText(i5, TokenBalanceExtKt.getTotalBalance(item.getTokenBalance())).setText(i9, TokenBalanceExtKt.getDollarsBalanceText(item.getTokenBalance())).setText(C3634R.C3637id.text_coin_ticker, item.getTokenBalance().getToken().getTicker());
-        int i14 = C3634R.C3637id.image_network_icon;
+        int i11 = C3632R.C3635id.text_apy_title;
+        int i12 = C3632R.C3635id.text_apr_title;
+        int i13 = C3632R.C3635id.text_staking_end_title;
+        BaseViewHolder text = BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor5, i10, i11, i12, i13), i5, i9, i11, i12, i13, i8, i7, i6), C3632R.C3635id.image_logo, item.getTokenBalance().getToken().getAvatarUrl(), null, false, 12, null).setText(i11, this.resourceManager.getString(C3632R.string.staking_programme_apy));
+        BaseViewHolder text2 = text.setText(i8, item.getApy() + '%').setText(i12, this.resourceManager.getString(C3632R.string.staking_programme_apr));
+        BaseViewHolder text3 = text2.setText(i7, item.getApr() + '%').setText(i13, this.resourceManager.getString(C3632R.string.staking_programme_expires)).setText(i6, item.getEndsAt()).setText(i3, item.getName()).setText(i5, TokenBalanceExtKt.getTotalBalance(item.getTokenBalance())).setText(i9, TokenBalanceExtKt.getDollarsBalanceText(item.getTokenBalance())).setText(C3632R.C3635id.text_coin_ticker, item.getTokenBalance().getToken().getTicker());
+        int i14 = C3632R.C3635id.image_network_icon;
         BaseViewHolder gone = BaseQuickAdapterExtKt.setGone(text3.setVisible(i14, true).setVisible(i2, true), item.isParticipated() ^ true, i5, i9);
         BalanceFormatter balanceFormatter = BalanceFormatter.INSTANCE;
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setGone(BaseQuickAdapterExtKt.setGone(gone, NumberExtKt.isZero(balanceFormatter.parseFormattedString(item.getApy())), i11, i8), NumberExtKt.isZero(balanceFormatter.parseFormattedString(item.getApr())), i12, i7), i14, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.StakingProgrammeProvider$convert$1$1
@@ -138,6 +138,6 @@ public final class StakingProgrammeProvider extends BaseNodeProvider<StakingProg
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setThemedTextColor(BaseQuickAdapterExtKt.setThemedTextColor(BaseQuickAdapterExtKt.loadImage$default(helper.setText(C3634R.C3637id.text_subtitle, TokenBalanceExtKt.getTotalBalance(item.getTokenBalance())).setText(C3634R.C3637id.text_account_balance_in_dollars, TokenBalanceExtKt.getDollarsBalanceText(item.getTokenBalance())), C3634R.C3637id.image_logo, item.getTokenBalance().getToken().getAvatarUrl(), null, false, 12, null), C3634R.C3637id.text_apr_value, item.getPercentageTextColor(StakingAnnualPercentageMode.APR)), C3634R.C3637id.text_apy_value, item.getPercentageTextColor(StakingAnnualPercentageMode.APY)), C3634R.C3637id.image_network_icon, NetworksHelper.getNetworkById(item.getTokenBalance().getToken().getNetworkId()).getLogoUrl(), null, false, 12, null);
+        BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setThemedTextColor(BaseQuickAdapterExtKt.setThemedTextColor(BaseQuickAdapterExtKt.loadImage$default(helper.setText(C3632R.C3635id.text_subtitle, TokenBalanceExtKt.getTotalBalance(item.getTokenBalance())).setText(C3632R.C3635id.text_account_balance_in_dollars, TokenBalanceExtKt.getDollarsBalanceText(item.getTokenBalance())), C3632R.C3635id.image_logo, item.getTokenBalance().getToken().getAvatarUrl(), null, false, 12, null), C3632R.C3635id.text_apr_value, item.getPercentageTextColor(StakingAnnualPercentageMode.APR)), C3632R.C3635id.text_apy_value, item.getPercentageTextColor(StakingAnnualPercentageMode.APY)), C3632R.C3635id.image_network_icon, NetworksHelper.getNetworkById(item.getTokenBalance().getToken().getNetworkId()).getLogoUrl(), null, false, 12, null);
     }
 }

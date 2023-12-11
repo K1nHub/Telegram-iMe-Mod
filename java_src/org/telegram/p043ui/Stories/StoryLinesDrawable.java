@@ -10,7 +10,7 @@ import android.view.View;
 import com.google.android.exoplayer2.C0485C;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -39,7 +39,7 @@ public class StoryLinesDrawable {
         textPaint.setColor(-1);
         float f = BitmapDescriptorFactory.HUE_RED;
         textPaint.setShadowLayer(AndroidUtilities.m104dp(3), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m104dp(1), C0485C.ENCODING_PCM_32BIT);
-        StaticLayout staticLayout = new StaticLayout(LocaleController.getString(C3634R.string.StorySeekHelp), textPaint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+        StaticLayout staticLayout = new StaticLayout(LocaleController.getString(C3632R.string.StorySeekHelp), textPaint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
         this.zoomHintLayout = staticLayout;
         this.zoomHintLayoutLeft = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
         this.zoomHintLayoutWidth = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : f;

@@ -1,11 +1,11 @@
 .class Lorg/telegram/messenger/AndroidUtilities$7;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Lorg/telegram/ui/Cells/TextDetailSettingsCell;
 .source "AndroidUtilities.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/messenger/AndroidUtilities;->setNavigationBarColor(Landroid/view/Window;IZLorg/telegram/messenger/AndroidUtilities$IntColorCallback;)V
+    value = Lorg/telegram/messenger/AndroidUtilities;->showProxyAlert(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,41 +15,78 @@
 
 
 # instance fields
-.field final synthetic val$window:Landroid/view/Window;
+.field final synthetic val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
 
 
 # direct methods
-.method constructor <init>(Landroid/view/Window;)V
+.method constructor <init>(Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicReference;)V
     .locals 0
 
-    .line 4899
-    iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$7;->val$window:Landroid/view/Window;
+    .line 4279
+    iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$7;->val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/TextDetailSettingsCell;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method protected onAttachedToWindow()V
     .locals 1
 
-    .line 4902
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->access$200()Ljava/util/HashMap;
+    .line 4282
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    move-result-object p1
+    .line 4283
+    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$7;->val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
 
-    if-eqz p1, :cond_0
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    .line 4903
-    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->access$200()Ljava/util/HashMap;
+    move-result-object v0
 
-    move-result-object p1
+    if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$7;->val$window:Landroid/view/Window;
+    .line 4284
+    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$7;->val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-virtual {p1, v0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;->onAttachedToWindow()V
+
+    :cond_0
+    return-void
+.end method
+
+.method protected onDetachedFromWindow()V
+    .locals 1
+
+    .line 4290
+    invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
+
+    .line 4291
+    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$7;->val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 4292
+    iget-object v0, p0, Lorg/telegram/messenger/AndroidUtilities$7;->val$ellRef:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/EllipsizeSpanAnimator;->onDetachedFromWindow()V
 
     :cond_0
     return-void

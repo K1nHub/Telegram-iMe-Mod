@@ -40,7 +40,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
@@ -241,7 +241,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         reactionHolderView2.pressedBackupImageView.setVisibility(8);
         addView(this.nextRecentReaction);
         this.animationEnabled = (!SharedConfig.animationsEnabled() || SharedConfig.getDevicePerformanceClass() == 0) ? false : z;
-        this.shadow = ContextCompat.getDrawable(context, C3634R.C3636drawable.reactions_bubble_shadow).mutate();
+        this.shadow = ContextCompat.getDrawable(context, C3632R.C3634drawable.reactions_bubble_shadow).mutate();
         Rect rect = this.shadowPad;
         int m104dp2 = AndroidUtilities.m104dp(7);
         rect.bottom = m104dp2;
@@ -364,9 +364,9 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         });
         recyclerListView.setLayoutManager(this.linearLayoutManager);
         recyclerListView.setOverScrollMode(2);
-        C54965 c54965 = new C54965(context, i);
-        this.listAdapter = c54965;
-        recyclerListView.setAdapter(c54965);
+        C54925 c54925 = new C54925(context, i);
+        this.listAdapter = c54925;
+        recyclerListView.setAdapter(c54925);
         recyclerListView.addOnScrollListener(new LeftRightShadowsListener());
         recyclerListView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ReactionsContainerLayout.6
             {
@@ -446,7 +446,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
 
     /* renamed from: org.telegram.ui.Components.ReactionsContainerLayout$5 */
     /* loaded from: classes6.dex */
-    public class C54965 extends AdapterWithDiffUtils {
+    public class C54925 extends AdapterWithDiffUtils {
         ArrayList<InnerItem> items = new ArrayList<>();
         ArrayList<InnerItem> oldItems = new ArrayList<>();
         final /* synthetic */ Context val$context;
@@ -457,7 +457,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
             return false;
         }
 
-        C54965(Context context, int i) {
+        C54925(Context context, int i) {
             ReactionsContainerLayout.this = r1;
             this.val$context = context;
             this.val$type = i;
@@ -482,7 +482,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                 ReactionsContainerLayout.this.premiumLockIconView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$5$$ExternalSyntheticLambda1
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        ReactionsContainerLayout.C54965.this.lambda$onCreateViewHolder$0(view2);
+                        ReactionsContainerLayout.C54925.this.lambda$onCreateViewHolder$0(view2);
                     }
                 });
                 view = ReactionsContainerLayout.this.premiumLockContainer;
@@ -491,7 +491,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
             } else {
                 ReactionsContainerLayout.this.customReactionsContainer = new CustomReactionsContainer(this.val$context);
                 ReactionsContainerLayout.this.customEmojiReactionsIconView = new InternalImageView(this.val$context);
-                ReactionsContainerLayout.this.customEmojiReactionsIconView.setImageResource(C3634R.C3636drawable.msg_reactions_expand);
+                ReactionsContainerLayout.this.customEmojiReactionsIconView.setImageResource(C3632R.C3634drawable.msg_reactions_expand);
                 ReactionsContainerLayout.this.customEmojiReactionsIconView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                 int i3 = this.val$type;
                 if (i3 == 1 || i3 == 2) {
@@ -501,13 +501,13 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                 }
                 ReactionsContainerLayout.this.customEmojiReactionsIconView.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m104dp(28), 0, ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_listSelector), 40)));
                 ReactionsContainerLayout.this.customEmojiReactionsIconView.setPadding(AndroidUtilities.m104dp(2), AndroidUtilities.m104dp(2), AndroidUtilities.m104dp(2), AndroidUtilities.m104dp(2));
-                ReactionsContainerLayout.this.customEmojiReactionsIconView.setContentDescription(LocaleController.getString(C3634R.string.AccDescrExpandPanel));
+                ReactionsContainerLayout.this.customEmojiReactionsIconView.setContentDescription(LocaleController.getString(C3632R.string.AccDescrExpandPanel));
                 ReactionsContainerLayout reactionsContainerLayout2 = ReactionsContainerLayout.this;
                 reactionsContainerLayout2.customReactionsContainer.addView(reactionsContainerLayout2.customEmojiReactionsIconView, LayoutHelper.createFrame(30, 30, 17));
                 ReactionsContainerLayout.this.customEmojiReactionsIconView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$5$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
-                        ReactionsContainerLayout.C54965.this.lambda$onCreateViewHolder$1(view2);
+                        ReactionsContainerLayout.C54925.this.lambda$onCreateViewHolder$1(view2);
                     }
                 });
                 view = ReactionsContainerLayout.this.customReactionsContainer;
@@ -570,7 +570,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
         public class InnerItem extends AdapterWithDiffUtils.Item {
             ReactionsLayoutInBubble.VisibleReaction reaction;
 
-            public InnerItem(C54965 c54965, int i, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
+            public InnerItem(C54925 c54925, int i, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
                 super(i, false);
                 this.reaction = visibleReaction;
             }
@@ -1176,12 +1176,12 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
     }
 
     public void clearRecentReactions() {
-        AlertDialog create = new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(C3634R.string.ClearRecentReactionsAlertTitle)).setMessage(LocaleController.getString(C3634R.string.ClearRecentReactionsAlertMessage)).setPositiveButton(LocaleController.getString(C3634R.string.ClearButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$$ExternalSyntheticLambda1
+        AlertDialog create = new AlertDialog.Builder(getContext()).setTitle(LocaleController.getString(C3632R.string.ClearRecentReactionsAlertTitle)).setMessage(LocaleController.getString(C3632R.string.ClearRecentReactionsAlertMessage)).setPositiveButton(LocaleController.getString(C3632R.string.ClearButton), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 ReactionsContainerLayout.this.lambda$clearRecentReactions$4(dialogInterface, i);
             }
-        }).setNegativeButton(LocaleController.getString(C3634R.string.Cancel), null).create();
+        }).setNegativeButton(LocaleController.getString(C3632R.string.Cancel), null).create();
         create.show();
         TextView textView = (TextView) create.getButton(-1);
         if (textView != null) {
@@ -1406,7 +1406,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                     accessibilityNodeInfo.setEnabled(true);
                     return;
                 }
-                accessibilityNodeInfo.setText(LocaleController.getString(C3634R.string.AccDescrCustomEmoji));
+                accessibilityNodeInfo.setText(LocaleController.getString(C3632R.string.AccDescrCustomEmoji));
                 accessibilityNodeInfo.setEnabled(true);
             }
         }
@@ -1447,7 +1447,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                 }
             };
             this.touchable = true;
-            this.enterImageView = new C55032(context, r3);
+            this.enterImageView = new C54992(context, r3);
             this.loopImageView = new BackupImageView(context, r3) { // from class: org.telegram.ui.Components.ReactionsContainerLayout.ReactionHolderView.3
                 {
                     ReactionHolderView.this = this;
@@ -1527,9 +1527,9 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
 
         /* renamed from: org.telegram.ui.Components.ReactionsContainerLayout$ReactionHolderView$2 */
         /* loaded from: classes6.dex */
-        public class C55032 extends BackupImageView {
+        public class C54992 extends BackupImageView {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C55032(Context context, ReactionsContainerLayout reactionsContainerLayout) {
+            C54992(Context context, ReactionsContainerLayout reactionsContainerLayout) {
                 super(context);
                 ReactionHolderView.this = r1;
             }
@@ -1565,7 +1565,7 @@ public class ReactionsContainerLayout extends FrameLayout implements Notificatio
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ReactionsContainerLayout$ReactionHolderView$2$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            ReactionsContainerLayout.ReactionHolderView.C55032.this.lambda$dispatchDraw$0();
+                            ReactionsContainerLayout.ReactionHolderView.C54992.this.lambda$dispatchDraw$0();
                         }
                     });
                 }

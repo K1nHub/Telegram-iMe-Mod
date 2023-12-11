@@ -56,7 +56,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
@@ -1291,8 +1291,8 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                         } else {
                             this.eglContext.getGL();
                             android.opengl.Matrix.setIdentityM(CameraView.this.mSTMatrix[0], 0);
-                            int loadShader = CameraView.this.loadShader(35633, RLottieDrawable.readRes(null, C3634R.raw.camera_vert));
-                            int loadShader2 = CameraView.this.loadShader(35632, RLottieDrawable.readRes(null, C3634R.raw.camera_frag));
+                            int loadShader = CameraView.this.loadShader(35633, RLottieDrawable.readRes(null, C3632R.raw.camera_vert));
+                            int loadShader2 = CameraView.this.loadShader(35632, RLottieDrawable.readRes(null, C3632R.raw.camera_frag));
                             if (loadShader != 0 && loadShader2 != 0) {
                                 int glCreateProgram = GLES20.glCreateProgram();
                                 this.drawProgram = glCreateProgram;
@@ -1992,7 +1992,7 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                         Method dump skipped, instructions count: 262
                         To view this dump add '--comments-level debug' option
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.RunnableC36651.run():void");
+                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.camera.CameraView.VideoRecorder.RunnableC36631.run():void");
                 }
             };
         }
@@ -2435,8 +2435,8 @@ public class CameraView extends FrameLayout implements TextureView.SurfaceTextur
                 FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(32).order(ByteOrder.nativeOrder()).asFloatBuffer();
                 this.textureBuffer = asFloatBuffer;
                 asFloatBuffer.put(fArr).position(0);
-                int loadShader = CameraView.this.loadShader(35633, RLottieDrawable.readRes(null, C3634R.raw.camera_vert));
-                int loadShader2 = CameraView.this.loadShader(35632, RLottieDrawable.readRes(null, C3634R.raw.camera_frag));
+                int loadShader = CameraView.this.loadShader(35633, RLottieDrawable.readRes(null, C3632R.raw.camera_vert));
+                int loadShader2 = CameraView.this.loadShader(35632, RLottieDrawable.readRes(null, C3632R.raw.camera_frag));
                 if (loadShader == 0 || loadShader2 == 0) {
                     return;
                 }

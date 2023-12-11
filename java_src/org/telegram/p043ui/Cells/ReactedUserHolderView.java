@@ -18,7 +18,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.ImageLocation;
@@ -74,10 +74,10 @@ public class ReactedUserHolderView extends FrameLayout {
     }
 
     static {
-        int i = C3634R.C3636drawable.msg_mini_checks;
+        int i = C3632R.C3634drawable.msg_mini_checks;
         int i2 = Theme.key_windowBackgroundWhiteGrayText;
         seenDrawable = new MessageSeenCheckDrawable(i, i2);
-        reactDrawable = new MessageSeenCheckDrawable(C3634R.C3636drawable.msg_reactions, i2, 16, 16, 5.66f);
+        reactDrawable = new MessageSeenCheckDrawable(C3632R.C3634drawable.msg_reactions, i2, 16, 16, 5.66f);
     }
 
     public ReactedUserHolderView(int i, int i2, Context context, Theme.ResourcesProvider resourcesProvider) {
@@ -194,10 +194,10 @@ public class ReactedUserHolderView extends FrameLayout {
         this.avatarView.setImage(ImageLocation.getForUserOrChat(tLRPC$User2, 1), "50_50", drawable2, tLRPC$User2);
         if (z) {
             this.reactView.setAnimatedEmojiDrawable(null);
-            Drawable mutate = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.media_like_active).mutate();
+            Drawable mutate = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.media_like_active).mutate();
             this.reactView.setColorFilter(new PorterDuffColorFilter(-53704, PorterDuff.Mode.MULTIPLY));
             this.reactView.setImageDrawable(mutate);
-            formatString = LocaleController.formatString("AccDescrLike", C3634R.string.AccDescrLike, new Object[0]);
+            formatString = LocaleController.formatString("AccDescrLike", C3632R.string.AccDescrLike, new Object[0]);
             z4 = true;
         } else if (tLRPC$Reaction != null) {
             ReactionsLayoutInBubble.VisibleReaction fromTLReaction = ReactionsLayoutInBubble.VisibleReaction.fromTLReaction(tLRPC$Reaction);
@@ -218,7 +218,7 @@ public class ReactedUserHolderView extends FrameLayout {
                 this.reactView.setAnimatedEmojiDrawable(animatedEmojiDrawable);
                 z4 = true;
             }
-            int i = C3634R.string.AccDescrReactedWith;
+            int i = C3632R.string.AccDescrReactedWith;
             Object[] objArr = new Object[2];
             objArr[0] = this.titleView.getText();
             Object obj = fromTLReaction.emojicon;
@@ -230,7 +230,7 @@ public class ReactedUserHolderView extends FrameLayout {
         } else {
             this.reactView.setAnimatedEmojiDrawable(null);
             this.reactView.setImageDrawable(null);
-            formatString = LocaleController.formatString("AccDescrPersonHasSeen", C3634R.string.AccDescrPersonHasSeen, this.titleView.getText());
+            formatString = LocaleController.formatString("AccDescrPersonHasSeen", C3632R.string.AccDescrPersonHasSeen, this.titleView.getText());
             z4 = false;
         }
         int i2 = (j > 0L ? 1 : (j == 0L ? 0 : -1));

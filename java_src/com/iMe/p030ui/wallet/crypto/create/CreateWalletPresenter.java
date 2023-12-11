@@ -43,7 +43,7 @@ import kotlin.ranges.IntProgression;
 import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: CreateWalletPresenter.kt */
 @InjectViewState
@@ -146,12 +146,12 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
 
                     @Override // kotlin.jvm.functions.Function1
                     public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Wallet> result) {
-                        m1631invoke(result);
+                        m1632invoke(result);
                         return Unit.INSTANCE;
                     }
 
                     /* renamed from: invoke  reason: collision with other method in class */
-                    public final void m1631invoke(Result<? extends Wallet> it) {
+                    public final void m1632invoke(Result<? extends Wallet> it) {
                         ResourceManager resourceManager;
                         Intrinsics.checkNotNullExpressionValue(it, "it");
                         Result<? extends Wallet> result = it;
@@ -209,12 +209,12 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Wallet> result) {
-                m1630invoke(result);
+                m1631invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1630invoke(Result<? extends Wallet> it) {
+            public final void m1631invoke(Result<? extends Wallet> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Wallet> result = it;
@@ -279,7 +279,7 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
         Intrinsics.checkNotNullParameter(seed, "seed");
         if (this.screenType instanceof CreateWalletScreenType.Import) {
             final boolean z = this.cryptoAccessManager.getWalletPassword().length() > 0;
-            Observable<R> flatMap = this.walletInteractor.isValidSeed(seed, getBlockchainType()).flatMap(new C2081x9ee4cc57(new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletPresenter$validateSeed$$inlined$flatMapSuccess$1
+            Observable<R> flatMap = this.walletInteractor.isValidSeed(seed, getBlockchainType()).flatMap(new C2078x9ee4cc57(new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletPresenter$validateSeed$$inlined$flatMapSuccess$1
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
                     super(1);
@@ -304,7 +304,7 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
                         createWalletScreenType = this.screenType;
                         String password = ((CreateWalletScreenType.Import) createWalletScreenType).getPassword();
                         blockchainType = this.getBlockchainType();
-                        ObservableSource map = cryptoWalletInteractor.importWallet(str, password, "", blockchainType).map(new C2081x9ee4cc57(new Function1<Result<? extends Wallet>, Result<? extends Boolean>>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletPresenter$validateSeed$lambda$3$$inlined$mapSuccess$1
+                        ObservableSource map = cryptoWalletInteractor.importWallet(str, password, "", blockchainType).map(new C2078x9ee4cc57(new Function1<Result<? extends Wallet>, Result<? extends Boolean>>() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletPresenter$validateSeed$lambda$3$$inlined$mapSuccess$1
                             /* JADX WARN: Multi-variable type inference failed */
                             @Override // kotlin.jvm.functions.Function1
                             public final Result<? extends Boolean> invoke(Result<? extends Wallet> result2) {
@@ -345,12 +345,12 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                    m1633invoke(result);
+                    m1634invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1633invoke(Result<? extends Boolean> it) {
+                public final void m1634invoke(Result<? extends Boolean> it) {
                     ResourceManager resourceManager;
                     ResourceManager resourceManager2;
                     Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -359,7 +359,7 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
                     if (result instanceof Result.Success) {
                         if (!((Boolean) ((Result.Success) result).getData()).booleanValue()) {
                             resourceManager2 = CreateWalletPresenter.this.resourceManager;
-                            createWalletView.showActionError(resourceManager2.getString(C3634R.string.wallet_restore_eth_error_info));
+                            createWalletView.showActionError(resourceManager2.getString(C3632R.string.wallet_restore_eth_error_info));
                         } else if (z) {
                             createWalletView.onSuccessConfirmBackUp();
                         } else {
@@ -440,13 +440,13 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<? extends String> list) {
-                m1632invoke(list);
+                m1633invoke(list);
                 return Unit.INSTANCE;
             }
 
             /* JADX WARN: Multi-variable type inference failed */
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1632invoke(List<? extends String> it) {
+            public final void m1633invoke(List<? extends String> it) {
                 String str;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 List<? extends String> list = it;
@@ -517,20 +517,20 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
 
     private final RadioCellsListDialogModel getSelectWordsCountDialogModel() {
         int collectionSizeOrDefault;
-        String string = this.resourceManager.getString(C3634R.string.wallet_import_change_words_count_dialog_title);
+        String string = this.resourceManager.getString(C3632R.string.wallet_import_change_words_count_dialog_title);
         List<Integer> wordsCountItems = getWordsCountItems();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(wordsCountItems, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (Number number : wordsCountItems) {
             int intValue = number.intValue();
             boolean z = true;
-            String string2 = this.resourceManager.getString(C3634R.string.wallet_import_words_count, Integer.valueOf(intValue));
+            String string2 = this.resourceManager.getString(C3632R.string.wallet_import_words_count, Integer.valueOf(intValue));
             if (this.selectedWordsCount != intValue) {
                 z = false;
             }
             arrayList.add(TuplesKt.m146to(string2, Boolean.valueOf(z)));
         }
-        return new RadioCellsListDialogModel(string, null, arrayList, this.resourceManager.getString(C3634R.string.common_cancel), 2, null);
+        return new RadioCellsListDialogModel(string, null, arrayList, this.resourceManager.getString(C3632R.string.common_cancel), 2, null);
     }
 
     /* compiled from: CreateWalletPresenter.kt */

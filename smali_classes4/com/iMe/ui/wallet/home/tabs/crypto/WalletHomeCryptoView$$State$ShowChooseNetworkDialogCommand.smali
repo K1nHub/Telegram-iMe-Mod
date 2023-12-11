@@ -55,20 +55,20 @@
         }
     .end annotation
 
-    .line 587
+    .line 650
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
     const-string/jumbo v0, "showChooseNetworkDialog"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 589
+    .line 652
     iput-object p2, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->network:Lcom/iMe/model/wallet/crypto/NetworkItem;
 
-    .line 590
+    .line 653
     iput-object p3, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->availableNetworksItems:Ljava/util/List;
 
-    .line 591
+    .line 654
     iput-object p4, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->purpose:Lcom/iMe/model/wallet/home/NetworkChoosePurpose;
 
     return-void
@@ -79,7 +79,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V
     .locals 3
 
-    .line 596
+    .line 659
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->network:Lcom/iMe/model/wallet/crypto/NetworkItem;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->availableNetworksItems:Ljava/util/List;
@@ -94,7 +94,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 578
+    .line 641
     check-cast p1, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView$$State$ShowChooseNetworkDialogCommand;->apply(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoView;)V

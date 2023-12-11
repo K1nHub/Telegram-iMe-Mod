@@ -42,49 +42,26 @@
 .end method
 
 .method public constructor <init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;)V
-    .locals 1
-
-    .line 4498
-    iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->this$0:Lorg/telegram/ui/PaymentFormActivity;
-
-    .line 4499
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    .line 4494
-    new-instance p2, Landroid/graphics/Paint;
-
-    const/4 v0, 0x1
-
-    invoke-direct {p2, v0}, Landroid/graphics/Paint;-><init>(I)V
-
-    iput-object p2, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->paint:Landroid/graphics/Paint;
+    .locals 0
 
     .line 4501
-    iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_payments_paymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$TL_invoice;
-
-    iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$TL_invoice;->recurring:Z
-
-    if-eqz p2, :cond_0
-
-    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$4900(Lorg/telegram/ui/PaymentFormActivity;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    const/high16 p1, 0x3f800000    # 1.0f
-
-    :goto_0
-    iput p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->progress:F
-
-    const/4 p1, 0x0
+    iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     .line 4502
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    .line 4497
+    new-instance p1, Landroid/graphics/Paint;
+
+    const/4 p2, 0x1
+
+    invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
+
+    iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->paint:Landroid/graphics/Paint;
+
+    const/4 p1, 0x0
+
+    .line 4503
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -97,10 +74,10 @@
 
     div-float/2addr p2, p1
 
-    .line 4527
+    .line 4529
     iput p2, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->progress:F
 
-    .line 4528
+    .line 4530
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$4800(Lorg/telegram/ui/PaymentFormActivity;)Landroid/widget/TextView;
@@ -109,7 +86,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 4529
+    .line 4531
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$4800(Lorg/telegram/ui/PaymentFormActivity;)Landroid/widget/TextView;
@@ -128,7 +105,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 4531
+    .line 4533
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -138,14 +115,14 @@
 .method private synthetic lambda$setChecked$1(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    .line 4534
+    .line 4536
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-ne p1, p2, :cond_0
 
     const/4 p1, 0x0
 
-    .line 4535
+    .line 4537
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     :cond_0
@@ -157,10 +134,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 4507
+    .line 4508
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 4509
+    .line 4510
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlue:I
@@ -171,7 +148,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 4510
+    .line 4511
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->paint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->this$0:Lorg/telegram/ui/PaymentFormActivity;
@@ -184,7 +161,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 4511
+    .line 4512
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v1, 0x1c
@@ -244,15 +221,15 @@
     return-void
 .end method
 
-.method public setChecked(Z)V
-    .locals 6
+.method public setChecked(ZZ)V
+    .locals 5
 
-    .line 4515
+    .line 4516
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_0
 
-    .line 4516
+    .line 4517
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
     :cond_0
@@ -267,37 +244,39 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 4519
     :goto_0
-    iget v2, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->progress:F
+    if-eqz p2, :cond_4
 
-    cmpl-float v2, v2, v1
+    .line 4521
+    iget p2, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->progress:F
 
-    if-nez v2, :cond_2
+    cmpl-float p2, p2, v1
+
+    if-nez p2, :cond_2
 
     return-void
 
-    .line 4522
+    .line 4524
     :cond_2
-    new-instance v2, Landroidx/dynamicanimation/animation/SpringAnimation;
+    new-instance p2, Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    new-instance v3, Landroidx/dynamicanimation/animation/FloatValueHolder;
+    new-instance v2, Landroidx/dynamicanimation/animation/FloatValueHolder;
 
-    iget v4, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->progress:F
+    iget v3, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->progress:F
 
-    const/high16 v5, 0x42c80000    # 100.0f
+    const/high16 v4, 0x42c80000    # 100.0f
 
-    mul-float/2addr v4, v5
+    mul-float/2addr v3, v4
 
-    invoke-direct {v3, v4}, Landroidx/dynamicanimation/animation/FloatValueHolder;-><init>(F)V
+    invoke-direct {v2, v3}, Landroidx/dynamicanimation/animation/FloatValueHolder;-><init>(F)V
 
-    invoke-direct {v2, v3}, Landroidx/dynamicanimation/animation/SpringAnimation;-><init>(Landroidx/dynamicanimation/animation/FloatValueHolder;)V
+    invoke-direct {p2, v2}, Landroidx/dynamicanimation/animation/SpringAnimation;-><init>(Landroidx/dynamicanimation/animation/FloatValueHolder;)V
 
-    new-instance v3, Landroidx/dynamicanimation/animation/SpringForce;
+    new-instance v2, Landroidx/dynamicanimation/animation/SpringForce;
 
-    mul-float/2addr v1, v5
+    mul-float/2addr v1, v4
 
-    invoke-direct {v3, v1}, Landroidx/dynamicanimation/animation/SpringForce;-><init>(F)V
+    invoke-direct {v2, v1}, Landroidx/dynamicanimation/animation/SpringForce;-><init>(F)V
 
     if-eqz p1, :cond_3
 
@@ -308,44 +287,83 @@
     :cond_3
     const p1, 0x44228000    # 650.0f
 
-    .line 4524
+    .line 4526
     :goto_1
-    invoke-virtual {v3, p1}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
+    invoke-virtual {v2, p1}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p1
 
-    .line 4525
+    .line 4527
     invoke-virtual {p1, v0}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p1
 
-    .line 4523
-    invoke-virtual {v2, p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
+    .line 4525
+    invoke-virtual {p2, p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 4526
-    new-instance v0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout$$ExternalSyntheticLambda1;
+    .line 4528
+    new-instance p2, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout$$ExternalSyntheticLambda1;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;)V
+    invoke-direct {p2, p0}, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;)V
 
-    invoke-virtual {p1, v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
+    invoke-virtual {p1, p2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 4533
+    .line 4535
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    new-instance v0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout$$ExternalSyntheticLambda0;
+    new-instance p2, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;)V
+    invoke-direct {p2, p0}, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;)V
 
-    invoke-virtual {p1, v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
+    invoke-virtual {p1, p2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 4538
+    .line 4540
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
+    goto :goto_2
+
+    .line 4542
+    :cond_4
+    iput v1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->progress:F
+
+    .line 4543
+    iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$4800(Lorg/telegram/ui/PaymentFormActivity;)Landroid/widget/TextView;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_5
+
+    .line 4544
+    iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$4800(Lorg/telegram/ui/PaymentFormActivity;)Landroid/widget/TextView;
+
+    move-result-object p1
+
+    const p2, 0x3f4ccccd    # 0.8f
+
+    const v0, 0x3e4ccccd    # 0.2f
+
+    iget v1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->progress:F
+
+    mul-float/2addr v1, v0
+
+    add-float/2addr v1, p2
+
+    invoke-virtual {p1, v1}, Landroid/widget/TextView;->setAlpha(F)V
+
+    .line 4546
+    :cond_5
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    :goto_2
     return-void
 .end method

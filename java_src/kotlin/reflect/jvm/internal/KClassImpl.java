@@ -320,12 +320,12 @@ public final class KClassImpl<T> extends KDeclarationContainerImpl implements KC
                 @Override // kotlin.jvm.functions.Function0
                 public final List<? extends KTypeImpl> invoke() {
                     boolean z;
-                    Collection<KotlinType> mo2052getSupertypes = this.this$0.getDescriptor().getTypeConstructor().mo2052getSupertypes();
-                    Intrinsics.checkNotNullExpressionValue(mo2052getSupertypes, "descriptor.typeConstructor.supertypes");
-                    ArrayList<KTypeImpl> arrayList = new ArrayList(mo2052getSupertypes.size());
+                    Collection<KotlinType> mo2054getSupertypes = this.this$0.getDescriptor().getTypeConstructor().mo2054getSupertypes();
+                    Intrinsics.checkNotNullExpressionValue(mo2054getSupertypes, "descriptor.typeConstructor.supertypes");
+                    ArrayList<KTypeImpl> arrayList = new ArrayList(mo2054getSupertypes.size());
                     final KClassImpl<T>.Data data = this.this$0;
                     final KClassImpl<T> kClassImpl = r2;
-                    for (final KotlinType kotlinType : mo2052getSupertypes) {
+                    for (final KotlinType kotlinType : mo2054getSupertypes) {
                         Intrinsics.checkNotNullExpressionValue(kotlinType, "kotlinType");
                         arrayList.add(new KTypeImpl(kotlinType, new Function0<Type>() { // from class: kotlin.reflect.jvm.internal.KClassImpl$Data$supertypes$2$1$1
                             /* JADX INFO: Access modifiers changed from: package-private */
@@ -337,13 +337,13 @@ public final class KClassImpl<T> extends KDeclarationContainerImpl implements KC
                             @Override // kotlin.jvm.functions.Function0
                             public final Type invoke() {
                                 int indexOf;
-                                ClassifierDescriptor mo2051getDeclarationDescriptor = KotlinType.this.getConstructor().mo2051getDeclarationDescriptor();
-                                if (!(mo2051getDeclarationDescriptor instanceof ClassDescriptor)) {
-                                    throw new KotlinReflectionInternalError("Supertype not a class: " + mo2051getDeclarationDescriptor);
+                                ClassifierDescriptor mo2053getDeclarationDescriptor = KotlinType.this.getConstructor().mo2053getDeclarationDescriptor();
+                                if (!(mo2053getDeclarationDescriptor instanceof ClassDescriptor)) {
+                                    throw new KotlinReflectionInternalError("Supertype not a class: " + mo2053getDeclarationDescriptor);
                                 }
-                                Class<?> javaClass = UtilKt.toJavaClass((ClassDescriptor) mo2051getDeclarationDescriptor);
+                                Class<?> javaClass = UtilKt.toJavaClass((ClassDescriptor) mo2053getDeclarationDescriptor);
                                 if (javaClass == null) {
-                                    throw new KotlinReflectionInternalError("Unsupported superclass of " + data + ": " + mo2051getDeclarationDescriptor);
+                                    throw new KotlinReflectionInternalError("Unsupported superclass of " + data + ": " + mo2053getDeclarationDescriptor);
                                 } else if (Intrinsics.areEqual(kClassImpl.getJClass().getSuperclass(), javaClass)) {
                                     Type genericSuperclass = kClassImpl.getJClass().getGenericSuperclass();
                                     Intrinsics.checkNotNullExpressionValue(genericSuperclass, "{\n                      …ass\n                    }");
@@ -353,7 +353,7 @@ public final class KClassImpl<T> extends KDeclarationContainerImpl implements KC
                                     Intrinsics.checkNotNullExpressionValue(interfaces, "jClass.interfaces");
                                     indexOf = ArraysKt___ArraysKt.indexOf(interfaces, javaClass);
                                     if (indexOf < 0) {
-                                        throw new KotlinReflectionInternalError("No superclass of " + data + " in Java reflection for " + mo2051getDeclarationDescriptor);
+                                        throw new KotlinReflectionInternalError("No superclass of " + data + " in Java reflection for " + mo2053getDeclarationDescriptor);
                                     }
                                     Type type = kClassImpl.getJClass().getGenericInterfaces()[indexOf];
                                     Intrinsics.checkNotNullExpressionValue(type, "{\n                      …ex]\n                    }");

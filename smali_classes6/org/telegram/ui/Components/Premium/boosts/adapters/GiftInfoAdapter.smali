@@ -89,7 +89,7 @@
 
     const/4 v2, 0x0
 
-    .line 186
+    .line 190
     invoke-interface {v0, v2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     return v1
@@ -99,7 +99,7 @@
 
     const/4 v0, 0x0
 
-    .line 191
+    .line 195
     :goto_0
     invoke-virtual/range {p3 .. p3}, Ljava/util/ArrayList;->size()I
 
@@ -109,7 +109,7 @@
 
     move-object/from16 v4, p3
 
-    .line 192
+    .line 196
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -120,7 +120,7 @@
 
     move-object/from16 v15, p0
 
-    .line 193
+    .line 197
     iget-object v5, v15, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
@@ -181,11 +181,11 @@
 
     goto :goto_0
 
-    .line 195
+    .line 199
     :cond_1
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/DialogsActivity;->finishFragment()V
 
-    .line 196
+    .line 200
     invoke-static {v2, v3}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->showGiftLinkForwardedBulletin(J)V
 
     const/4 v0, 0x1
@@ -196,7 +196,7 @@
 .method private synthetic lambda$onBindViewHolder$1()V
     .locals 4
 
-    .line 178
+    .line 182
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -213,7 +213,7 @@
 
     move-result-object v0
 
-    .line 179
+    .line 183
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
@@ -222,34 +222,34 @@
 
     const/4 v3, 0x1
 
-    .line 180
+    .line 184
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string v2, "dialogsType"
 
     const/4 v3, 0x3
 
-    .line 181
+    .line 185
     invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 182
+    .line 186
     new-instance v2, Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 183
+    .line 187
     new-instance v1, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda7;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;Ljava/lang/String;)V
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/DialogsActivity;->setDelegate(Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;)V
 
-    .line 199
+    .line 203
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 200
+    .line 204
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->dismiss()V
 
     return-void
@@ -260,13 +260,13 @@
 
     const/4 p2, 0x0
 
-    .line 224
+    .line 228
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/ActionBtnCell;->updateLoading(Z)V
 
-    .line 225
+    .line 229
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->afterCodeApplied()V
 
-    .line 226
+    .line 230
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->dismiss()V
 
     return-void
@@ -277,10 +277,10 @@
 
     const/4 v0, 0x0
 
-    .line 228
+    .line 232
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Premium/boosts/cells/ActionBtnCell;->updateLoading(Z)V
 
-    .line 229
+    .line 233
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -295,12 +295,12 @@
 .method private synthetic lambda$onBindViewHolder$4(Lorg/telegram/ui/Components/Premium/boosts/cells/ActionBtnCell;Landroid/view/View;)V
     .locals 2
 
-    .line 218
+    .line 222
     iget-boolean p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->isUnused:Z
 
     if-eqz p2, :cond_1
 
-    .line 219
+    .line 223
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/boosts/cells/ActionBtnCell;->isLoading()Z
 
     move-result p2
@@ -312,10 +312,10 @@
     :cond_0
     const/4 p2, 0x1
 
-    .line 222
+    .line 226
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/ActionBtnCell;->updateLoading(Z)V
 
-    .line 223
+    .line 227
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->slug:Ljava/lang/String;
 
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda5;
@@ -330,7 +330,7 @@
 
     goto :goto_0
 
-    .line 232
+    .line 236
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->dismiss()V
 
@@ -341,7 +341,7 @@
 .method private synthetic lambda$onBindViewHolder$5(Landroid/view/View;)V
     .locals 0
 
-    .line 237
+    .line 241
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->dismiss()V
 
     return-void
@@ -445,7 +445,7 @@
 
     const-wide/16 v0, -0x1
 
-    if-eqz p2, :cond_a
+    if-eqz p2, :cond_c
 
     const/4 v2, 0x1
 
@@ -459,48 +459,48 @@
 
     if-eq p2, v4, :cond_2
 
-    const/4 v2, 0x4
+    const/4 v0, 0x4
 
-    if-eq p2, v2, :cond_0
+    if-eq p2, v0, :cond_0
 
     goto/16 :goto_4
 
-    .line 215
+    .line 219
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/ActionBtnCell;
 
-    .line 216
+    .line 220
     iget-boolean p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->isUnused:Z
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/ActionBtnCell;->setOkStyle(Z)V
 
-    .line 217
+    .line 221
     new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;Lorg/telegram/ui/Components/Premium/boosts/cells/ActionBtnCell;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/ActionBtnCell;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 235
+    .line 239
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->giftCode:Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
 
-    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->boost:Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
+    iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->boost:Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
-    iget-wide v2, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->to_id:J
+    iget p2, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->flags:I
 
-    cmp-long p2, v2, v0
+    const/4 v0, -0x1
 
-    if-nez p2, :cond_d
+    if-ne p2, v0, :cond_f
 
-    .line 236
+    .line 240
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/boosts/cells/ActionBtnCell;->setCloseStyle()V
 
-    .line 237
+    .line 241
     new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;)V
@@ -509,7 +509,7 @@
 
     goto/16 :goto_4
 
-    .line 154
+    .line 158
     :cond_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -517,10 +517,10 @@
 
     const/16 p2, 0x11
 
-    .line 155
+    .line 159
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setTextGravity(I)V
 
-    .line 156
+    .line 160
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -531,22 +531,22 @@
 
     const/16 p2, 0xe
 
-    .line 157
+    .line 161
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setTopPadding(I)V
 
     const/16 p2, 0xf
 
-    .line 158
+    .line 162
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setBottomPadding(I)V
 
-    .line 160
+    .line 164
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->giftCode:Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
 
     iget-object v4, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->boost:Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
 
     if-eqz v4, :cond_5
 
-    .line 161
+    .line 165
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->slug:Ljava/lang/String;
 
     if-eqz p2, :cond_4
@@ -562,12 +562,12 @@
     :cond_3
     const-string p2, ""
 
-    .line 166
+    .line 170
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
-    .line 163
+    .line 167
     :cond_4
     :goto_0
     sget p2, Lorg/telegram/messenger/R$string;->BoostingLinkNotActivated:I
@@ -583,7 +583,7 @@
     :goto_1
     return-void
 
-    .line 171
+    .line 175
     :cond_5
     iget-boolean v4, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->isUnused:Z
 
@@ -591,14 +591,14 @@
 
     if-eqz v4, :cond_7
 
-    .line 173
+    .line 177
     iget-wide v2, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->to_id:J
 
     cmp-long p2, v2, v0
 
     if-nez p2, :cond_6
 
-    .line 174
+    .line 178
     sget p2, Lorg/telegram/messenger/R$string;->BoostingSendLinkToAnyone:I
 
     const-string v0, "BoostingSendLinkToAnyone"
@@ -609,7 +609,7 @@
 
     goto :goto_2
 
-    .line 175
+    .line 179
     :cond_6
     sget p2, Lorg/telegram/messenger/R$string;->BoostingSendLinkToFriends:I
 
@@ -628,17 +628,17 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 172
+    .line 176
     invoke-static {p2, v0, v5, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->replaceSingleTag(Ljava/lang/String;IILjava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/text/SpannableStringBuilder;
 
     move-result-object p2
 
-    .line 204
+    .line 208
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_4
 
-    .line 206
+    .line 210
     :cond_7
     new-instance p2, Ljava/util/Date;
 
@@ -654,7 +654,7 @@
 
     invoke-direct {p2, v0, v1}, Ljava/util/Date;-><init>(J)V
 
-    .line 207
+    .line 211
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
@@ -665,7 +665,7 @@
 
     move-result-object v0
 
-    .line 208
+    .line 212
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v1
@@ -676,7 +676,7 @@
 
     move-result-object p2
 
-    .line 209
+    .line 213
     sget v1, Lorg/telegram/messenger/R$string;->formatDateAtTime:I
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -691,7 +691,7 @@
 
     move-result-object p2
 
-    .line 210
+    .line 214
     sget v0, Lorg/telegram/messenger/R$string;->BoostingUsedLinkDate:I
 
     new-array v1, v2, [Ljava/lang/Object;
@@ -706,15 +706,15 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    goto :goto_4
+    goto/16 :goto_4
 
-    .line 149
+    .line 153
     :cond_8
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/TableCell;
 
-    .line 150
+    .line 154
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->giftCode:Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
 
     new-instance v0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda4;
@@ -741,9 +741,41 @@
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->boost:Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
 
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_a
+
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->slug:Ljava/lang/String;
+
+    if-nez p2, :cond_a
 
     .line 144
+    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda2;
+
+    invoke-direct {p2, p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;)V
+
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/LinkCell;->hideSlug(Ljava/lang/Runnable;)V
+
+    .line 147
+    :cond_a
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->slug:Ljava/lang/String;
+
+    if-eqz p2, :cond_b
+
+    invoke-virtual {p2}, Ljava/lang/String;->isEmpty()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_f
+
+    :cond_b
+    iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->giftCode:Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
+
+    iget-wide v2, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->to_id:J
+
+    cmp-long p2, v2, v0
+
+    if-nez p2, :cond_f
+
+    .line 148
     new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda2;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;)V
@@ -753,7 +785,7 @@
     goto :goto_4
 
     .line 126
-    :cond_a
+    :cond_c
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;
@@ -761,7 +793,7 @@
     .line 127
     iget-boolean p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->isUnused:Z
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_d
 
     .line 128
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;->setGiftLinkText()V
@@ -769,7 +801,7 @@
     goto :goto_3
 
     .line 130
-    :cond_b
+    :cond_d
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;->setUsedGiftLinkText()V
 
     .line 132
@@ -778,7 +810,7 @@
 
     iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->boost:Lorg/telegram/tgnet/tl/TL_stories$TL_boost;
 
-    if-eqz v2, :cond_c
+    if-eqz v2, :cond_e
 
     .line 133
     iget-wide v2, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->to_id:J
@@ -790,19 +822,19 @@
     invoke-virtual {p1, v2, v3, p2}, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;->setGiftLinkToUserText(JLorg/telegram/messenger/Utilities$Callback;)V
 
     .line 135
-    :cond_c
+    :cond_e
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/boosts/adapters/GiftInfoAdapter;->giftCode:Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;
 
     iget-wide v2, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_checkedGiftCode;->to_id:J
 
     cmp-long p2, v2, v0
 
-    if-nez p2, :cond_d
+    if-nez p2, :cond_f
 
     .line 136
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/boosts/cells/HeaderCell;->setUnclaimedText()V
 
-    :cond_d
+    :cond_f
     :goto_4
     return-void
 .end method

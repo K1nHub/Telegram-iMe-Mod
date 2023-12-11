@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda2;->f$1:Lorg/telegram/messenger/Utilities$Callback;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->$r8$lambda$Wh6w8pEYU7KLF3gM5f-_GNU2gHo(Ljava/util/List;Lorg/telegram/messenger/Utilities$Callback;Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
+    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->$r8$lambda$73GNWMRnjFMCyTAwenoOTQXo_aA(Ljava/util/List;Lorg/telegram/messenger/Utilities$Callback;Lcom/android/billingclient/api/BillingResult;Ljava/util/List;)V
 
     return-void
 .end method

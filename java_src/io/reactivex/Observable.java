@@ -2645,7 +2645,7 @@ public abstract class Observable<T> implements ObservableSource<T> {
 
     public final Flowable<T> toFlowable(BackpressureStrategy backpressureStrategy) {
         FlowableFromObservable flowableFromObservable = new FlowableFromObservable(this);
-        int i = C26671.$SwitchMap$io$reactivex$BackpressureStrategy[backpressureStrategy.ordinal()];
+        int i = C26641.$SwitchMap$io$reactivex$BackpressureStrategy[backpressureStrategy.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {
@@ -2663,7 +2663,7 @@ public abstract class Observable<T> implements ObservableSource<T> {
 
     /* renamed from: io.reactivex.Observable$1 */
     /* loaded from: classes4.dex */
-    static /* synthetic */ class C26671 {
+    static /* synthetic */ class C26641 {
         static final /* synthetic */ int[] $SwitchMap$io$reactivex$BackpressureStrategy;
 
         static {

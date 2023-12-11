@@ -21,9 +21,9 @@ public final class StarProjectionImplKt {
             public TypeProjection get(TypeConstructor key) {
                 Intrinsics.checkNotNullParameter(key, "key");
                 if (list.contains(key)) {
-                    ClassifierDescriptor mo2051getDeclarationDescriptor = key.mo2051getDeclarationDescriptor();
-                    Intrinsics.checkNotNull(mo2051getDeclarationDescriptor, "null cannot be cast to non-null type org.jetbrains.kotlin.descriptors.TypeParameterDescriptor");
-                    return TypeUtils.makeStarProjection((TypeParameterDescriptor) mo2051getDeclarationDescriptor);
+                    ClassifierDescriptor mo2053getDeclarationDescriptor = key.mo2053getDeclarationDescriptor();
+                    Intrinsics.checkNotNull(mo2053getDeclarationDescriptor, "null cannot be cast to non-null type org.jetbrains.kotlin.descriptors.TypeParameterDescriptor");
+                    return TypeUtils.makeStarProjection((TypeParameterDescriptor) mo2053getDeclarationDescriptor);
                 }
                 return null;
             }

@@ -2,40 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;
+.implements Lorg/telegram/ui/ContactAddActivity$ContactAddActivityDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$User;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda73;->f$0:Lorg/telegram/ui/ProfileActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda73;->f$1:Lorg/telegram/tgnet/TLRPC$User;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectUsers(Ljava/util/ArrayList;I)V
-    .locals 1
+.method public final didAddToContacts()V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda73;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$zKO1xL6QoxCJjbD3BEPtwY9cOfI(Lorg/telegram/ui/ProfileActivity;Ljava/util/ArrayList;I)V
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda73;->f$1:Lorg/telegram/tgnet/TLRPC$User;
 
-    return-void
-.end method
-
-.method public synthetic needAddBot(Lorg/telegram/tgnet/TLRPC$User;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate$-CC;->$default$needAddBot(Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;Lorg/telegram/tgnet/TLRPC$User;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$qF3jrZhqeopJlsZHmYYhRUOrqgA(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$User;)V
 
     return-void
 .end method

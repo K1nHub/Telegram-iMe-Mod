@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -24,7 +24,7 @@ public class SponsoredMessageInfoView extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
         TextView textView = new TextView(activity);
-        textView.setText(LocaleController.getString("SponsoredMessageInfo", C3634R.string.SponsoredMessageInfo));
+        textView.setText(LocaleController.getString("SponsoredMessageInfo", C3632R.string.SponsoredMessageInfo));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         int i = Theme.key_windowBackgroundWhiteBlackText;
         textView.setTextColor(Theme.getColor(i, resourcesProvider));
@@ -62,11 +62,11 @@ public class SponsoredMessageInfoView extends FrameLayout {
         textView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.SponsoredMessageInfoView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                Browser.openUrl(activity, LocaleController.getString("SponsoredMessageAlertLearnMoreUrl", C3634R.string.SponsoredMessageAlertLearnMoreUrl));
+                Browser.openUrl(activity, LocaleController.getString("SponsoredMessageAlertLearnMoreUrl", C3632R.string.SponsoredMessageAlertLearnMoreUrl));
             }
         });
         textView2.setPadding(AndroidUtilities.m104dp(12), 0, AndroidUtilities.m104dp(12), 0);
-        textView2.setText(LocaleController.getString("SponsoredMessageAlertLearnMoreUrl", C3634R.string.SponsoredMessageAlertLearnMoreUrl));
+        textView2.setText(LocaleController.getString("SponsoredMessageAlertLearnMoreUrl", C3632R.string.SponsoredMessageAlertLearnMoreUrl));
         textView2.setTextColor(Theme.getColor(i2, resourcesProvider));
         textView2.setBackground(Theme.AdaptiveRipple.filledRect(Theme.getColor(Theme.key_dialogBackground, resourcesProvider), 4.0f));
         textView2.setTextSize(1, 14.0f);

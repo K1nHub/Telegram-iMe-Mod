@@ -27,7 +27,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentBlockchainsWalletDetailsBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
@@ -151,8 +151,8 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         ImageHeaderView viewHeader = binding.viewHeader;
         Intrinsics.checkNotNullExpressionValue(viewHeader, "viewHeader");
         ImageHeaderView.setupViewData$default(viewHeader, new ImageHeaderView.IconData.ResourceDrawable(i), null, title, subtitle, 2, null);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3634R.string.wallet_details_created), createdDate, C3634R.C3636drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3634R.string.wallet_connect_session_details_address), address, C3634R.C3636drawable.fork_ic_nav_wallet_24, true);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3632R.string.wallet_details_created), createdDate, C3632R.C3634drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3632R.string.wallet_connect_session_details_address), address, C3632R.C3634drawable.fork_ic_nav_wallet_24, true);
     }
 
     @Override // com.iMe.p030ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView
@@ -174,11 +174,11 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         final ActionBarMenuItem setupActionItem$lambda$4 = getBinding().itemMoreOptions;
         setupActionItem$lambda$4.setLongClickEnabled(false);
         setupActionItem$lambda$4.setSubMenuOpenSide(2);
-        setupActionItem$lambda$4.setIcon(C3634R.C3636drawable.ic_ab_other);
+        setupActionItem$lambda$4.setIcon(C3632R.C3634drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionItem$lambda$4, "setupActionItem$lambda$4");
         ViewExtKt.setCircleRippleBackground(setupActionItem$lambda$4);
-        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.INFO, C3634R.C3636drawable.msg_info, getResourceManager().getString(C3634R.string.wallet_crypto_buy_information_dialog_title));
-        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.COPY, C3634R.C3636drawable.msg_copy, getResourceManager().getString(C3634R.string.wallet_transaction_details_action_copy_address));
+        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.INFO, C3632R.C3634drawable.msg_info, getResourceManager().getString(C3632R.string.wallet_crypto_buy_information_dialog_title));
+        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.COPY, C3632R.C3634drawable.msg_copy, getResourceManager().getString(C3632R.string.wallet_transaction_details_action_copy_address));
         setupActionItem$lambda$4.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -191,7 +191,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
                 BlockchainWalletDetailsBottomSheetDialog.setupActionItem$lambda$4$lambda$3(BlockchainWalletDetailsBottomSheetDialog.this, setupActionItem$lambda$4, i);
             }
         });
-        setupActionItem$lambda$4.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+        setupActionItem$lambda$4.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -228,8 +228,8 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
 
     private final void setupTexts() {
         ForkContentBlockchainsWalletDetailsBinding binding = getBinding();
-        binding.buttonBackup.setText(getResourceManager().getString(C3634R.string.wallet_eth_account_settings_backup_title));
-        binding.buttonReset.setText(LocaleController.getString("Reset", C3634R.string.Reset));
+        binding.buttonBackup.setText(getResourceManager().getString(C3632R.string.wallet_eth_account_settings_backup_title));
+        binding.buttonReset.setText(LocaleController.getString("Reset", C3632R.string.Reset));
     }
 
     private final void setupListeners() {

@@ -954,12 +954,12 @@ public class FileRefController extends BaseController {
         getSendMessagesHelper().performSendMessageRequest((TLObject) objArr[0], (MessageObject) objArr[1], (String) objArr[2], (SendMessagesHelper.DelayedMessage) objArr[3], ((Boolean) objArr[4]).booleanValue(), (SendMessagesHelper.DelayedMessage) objArr[5], null, null, ((Boolean) objArr[6]).booleanValue());
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:313:0x070d  */
-    /* JADX WARN: Removed duplicated region for block: B:320:0x0722  */
-    /* JADX WARN: Removed duplicated region for block: B:335:0x01aa A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00a0 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x00a1  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x01bc A[LOOP:2: B:66:0x0139->B:94:0x01bc, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:328:0x0756  */
+    /* JADX WARN: Removed duplicated region for block: B:336:0x076e  */
+    /* JADX WARN: Removed duplicated region for block: B:358:0x01ac A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00a1 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x01be A[LOOP:2: B:65:0x013b->B:93:0x01be, LOOP_END] */
     /* JADX WARN: Type inference failed for: r15v0 */
     /* JADX WARN: Type inference failed for: r15v13 */
     /*
@@ -968,7 +968,7 @@ public class FileRefController extends BaseController {
     */
     private boolean onRequestComplete(java.lang.String r29, java.lang.String r30, org.telegram.tgnet.TLObject r31, org.telegram.tgnet.TLRPC$TL_error r32, boolean r33, boolean r34) {
         /*
-            Method dump skipped, instructions count: 1861
+            Method dump skipped, instructions count: 1938
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.FileRefController.onRequestComplete(java.lang.String, java.lang.String, org.telegram.tgnet.TLObject, org.telegram.tgnet.TLRPC$TL_error, boolean, boolean):boolean");

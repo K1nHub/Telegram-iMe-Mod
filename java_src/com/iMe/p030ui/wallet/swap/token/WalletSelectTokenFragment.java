@@ -47,11 +47,11 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentWalletSelectTokenBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Components.EditTextBoldCursor;
@@ -285,12 +285,12 @@ public final class WalletSelectTokenFragment extends WalletAuthBaseFragment impl
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_swap_process_select_token_header));
-        c3706ActionBar.setAllowOverlayTitle(true);
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.wallet_swap_process_select_token_header));
+        c3704ActionBar.setAllowOverlayTitle(true);
         if (this.screenType instanceof SelectTokenScreenType.Swap) {
-            ActionBarMenuItem actionBarMenuItemSearchListener = c3706ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3634R.C3636drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenFragment$setupActionBar$1$1
+            ActionBarMenuItem actionBarMenuItemSearchListener = c3704ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3632R.C3634drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenFragment$setupActionBar$1$1
                 @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
                 public void onSearchCollapse() {
                     WalletSelectTokenPresenter presenter;
@@ -309,11 +309,11 @@ public final class WalletSelectTokenFragment extends WalletAuthBaseFragment impl
             EditTextBoldCursor searchField = actionBarMenuItemSearchListener.getSearchField();
             searchField.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(128)});
             searchField.setImeOptions(Integer.MIN_VALUE);
-            actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3634R.string.token_search_hint));
-            actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3634R.string.Search));
+            actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3632R.string.token_search_hint));
+            actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3632R.string.Search));
         }
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenFragment$setupActionBar$1$3
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenFragment$setupActionBar$1$3
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSelectTokenFragment.this.finishFragment();

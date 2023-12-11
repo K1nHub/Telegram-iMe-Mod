@@ -25,14 +25,14 @@ public final class TrComputePhaseAuxTlbConstructor extends org.ton.tlb.TlbConstr
         VarUInteger7 = companion.tlbCodec(7);
         Maybe.Companion companion2 = Maybe.Companion;
         MaybeVarUInteger3 = companion2.tlbCodec(companion.tlbCodec(3));
-        MaybeInt32 = companion2.tlbCodec(IntTlbConstructor.Companion.m5254int(32));
+        MaybeInt32 = companion2.tlbCodec(IntTlbConstructor.Companion.m5236int(32));
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public TrComputePhaseAux loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
         TlbCodec<VarUInteger> tlbCodec = VarUInteger7;
-        return new TrComputePhaseAux(tlbCodec.loadTlb(cellSlice), tlbCodec.loadTlb(cellSlice), MaybeVarUInteger3.loadTlb(cellSlice), cellSlice.loadInt(8).intValue(), cellSlice.loadInt(32).intValue(), MaybeInt32.loadTlb(cellSlice), cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.loadBits(256), cellSlice.loadBits(256), null);
+        return new TrComputePhaseAux(tlbCodec.loadTlb(cellSlice), tlbCodec.loadTlb(cellSlice), MaybeVarUInteger3.loadTlb(cellSlice), cellSlice.loadInt(8).intValue(), cellSlice.loadInt(32).intValue(), MaybeInt32.loadTlb(cellSlice), cellSlice.mo5202loadUInt32pVg5ArA(), cellSlice.loadBits(256), cellSlice.loadBits(256), null);
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
@@ -46,7 +46,7 @@ public final class TrComputePhaseAuxTlbConstructor extends org.ton.tlb.TlbConstr
         cellBuilder.storeInt(value.getMode(), 8);
         cellBuilder.storeInt(value.getExitCode(), 32);
         MaybeInt32.storeTlb(cellBuilder, value.getExitArg());
-        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5203getVmStepspVg5ArA());
+        cellBuilder.mo5192storeUInt32WZ4Q5Ns(value.m5185getVmStepspVg5ArA());
         cellBuilder.storeBits(value.getVmInitStateHash());
         cellBuilder.storeBits(value.getVmFinalStateHash());
     }

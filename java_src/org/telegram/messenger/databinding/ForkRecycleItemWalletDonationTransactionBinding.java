@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p030ui.custom.DividerView;
 import com.iMe.p030ui.custom.TickerView;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.Components.BackupImageView;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletDonationTransactionBinding implements ViewBinding {
@@ -42,7 +42,7 @@ public final class ForkRecycleItemWalletDonationTransactionBinding implements Vi
     }
 
     public static ForkRecycleItemWalletDonationTransactionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_wallet_donation_transaction, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_recycle_item_wallet_donation_transaction, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -50,29 +50,29 @@ public final class ForkRecycleItemWalletDonationTransactionBinding implements Vi
     }
 
     public static ForkRecycleItemWalletDonationTransactionBinding bind(View view) {
-        int i = C3634R.C3637id.barrier_amount_end;
+        int i = C3632R.C3635id.barrier_amount_end;
         Barrier barrier = (Barrier) ViewBindings.findChildViewById(view, i);
         if (barrier != null) {
-            i = C3634R.C3637id.constraint_layout_transaction_root;
+            i = C3632R.C3635id.constraint_layout_transaction_root;
             ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
             if (constraintLayout != null) {
-                i = C3634R.C3637id.image_user_avatar;
+                i = C3632R.C3635id.image_user_avatar;
                 BackupImageView backupImageView = (BackupImageView) ViewBindings.findChildViewById(view, i);
                 if (backupImageView != null) {
                     LinearLayout linearLayout = (LinearLayout) view;
-                    i = C3634R.C3637id.text_amount;
+                    i = C3632R.C3635id.text_amount;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
-                        i = C3634R.C3637id.text_coin_ticker;
+                        i = C3632R.C3635id.text_coin_ticker;
                         TickerView tickerView = (TickerView) ViewBindings.findChildViewById(view, i);
                         if (tickerView != null) {
-                            i = C3634R.C3637id.text_date;
+                            i = C3632R.C3635id.text_date;
                             AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                             if (appCompatTextView2 != null) {
-                                i = C3634R.C3637id.text_user_full_name;
+                                i = C3632R.C3635id.text_user_full_name;
                                 AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView3 != null) {
-                                    i = C3634R.C3637id.view_divider;
+                                    i = C3632R.C3635id.view_divider;
                                     DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
                                     if (dividerView != null) {
                                         return new ForkRecycleItemWalletDonationTransactionBinding(linearLayout, barrier, constraintLayout, backupImageView, linearLayout, appCompatTextView, tickerView, appCompatTextView2, appCompatTextView3, dividerView);

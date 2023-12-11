@@ -28,35 +28,35 @@ public final class ShardHashes implements TlbObject {
     private final HashMapE<CellRef<BinTree<ShardDescr>>> value;
 
     /* renamed from: box-impl */
-    public static final /* synthetic */ ShardHashes m5180boximpl(HashMapE hashMapE) {
+    public static final /* synthetic */ ShardHashes m5162boximpl(HashMapE hashMapE) {
         return new ShardHashes(hashMapE);
     }
 
     /* renamed from: equals-impl */
-    public static boolean m5182equalsimpl(HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE, Object obj) {
-        return (obj instanceof ShardHashes) && Intrinsics.areEqual(hashMapE, ((ShardHashes) obj).m5187unboximpl());
+    public static boolean m5164equalsimpl(HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE, Object obj) {
+        return (obj instanceof ShardHashes) && Intrinsics.areEqual(hashMapE, ((ShardHashes) obj).m5169unboximpl());
     }
 
     /* renamed from: equals-impl0 */
-    public static final boolean m5183equalsimpl0(HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE, HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE2) {
+    public static final boolean m5165equalsimpl0(HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE, HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE2) {
         return Intrinsics.areEqual(hashMapE, hashMapE2);
     }
 
     /* renamed from: hashCode-impl */
-    public static int m5184hashCodeimpl(HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE) {
+    public static int m5166hashCodeimpl(HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE) {
         return hashMapE.hashCode();
     }
 
     public boolean equals(Object obj) {
-        return m5182equalsimpl(this.value, obj);
+        return m5164equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m5184hashCodeimpl(this.value);
+        return m5166hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl */
-    public final /* synthetic */ HashMapE m5187unboximpl() {
+    public final /* synthetic */ HashMapE m5169unboximpl() {
         return this.value;
     }
 
@@ -67,22 +67,22 @@ public final class ShardHashes implements TlbObject {
     @Override // org.ton.tlb.TlbObject
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
-        return m5185printimpl(this.value, printer);
+        return m5167printimpl(this.value, printer);
     }
 
     /* renamed from: print-impl */
-    public static TlbPrettyPrinter m5185printimpl(HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE, TlbPrettyPrinter printer) {
+    public static TlbPrettyPrinter m5167printimpl(HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE, TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         return hashMapE.print(printer);
     }
 
     /* renamed from: toString-impl */
-    public static String m5186toStringimpl(HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE) {
-        return TlbObject.DefaultImpls.print$default(m5180boximpl(hashMapE), null, 1, null).toString();
+    public static String m5168toStringimpl(HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE) {
+        return TlbObject.DefaultImpls.print$default(m5162boximpl(hashMapE), null, 1, null).toString();
     }
 
     public String toString() {
-        return m5186toStringimpl(this.value);
+        return m5168toStringimpl(this.value);
     }
 
     /* compiled from: ShardHashes.kt */
@@ -95,22 +95,22 @@ public final class ShardHashes implements TlbObject {
         }
 
         /* renamed from: loadTlb-nCYawEE */
-        public HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5190loadTlbnCYawEE(Cell cell) {
+        public HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5172loadTlbnCYawEE(Cell cell) {
             Intrinsics.checkNotNullParameter(cell, "cell");
-            return ((ShardHashes) this.$$delegate_0.loadTlb(cell)).m5187unboximpl();
+            return ((ShardHashes) this.$$delegate_0.loadTlb(cell)).m5169unboximpl();
         }
 
         /* renamed from: loadTlb-nCYawEE */
-        public HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5191loadTlbnCYawEE(CellSlice cellSlice) {
+        public HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5173loadTlbnCYawEE(CellSlice cellSlice) {
             Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-            return this.$$delegate_0.m5194loadTlbnCYawEE(cellSlice);
+            return this.$$delegate_0.m5176loadTlbnCYawEE(cellSlice);
         }
 
         /* renamed from: storeTlb-ZFAh1YI */
-        public void m5192storeTlbZFAh1YI(CellBuilder cellBuilder, HashMapE<CellRef<? extends BinTree<ShardDescr>>> value) {
+        public void m5174storeTlbZFAh1YI(CellBuilder cellBuilder, HashMapE<CellRef<? extends BinTree<ShardDescr>>> value) {
             Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
             Intrinsics.checkNotNullParameter(value, "value");
-            this.$$delegate_0.m5195storeTlbZFAh1YI(cellBuilder, value);
+            this.$$delegate_0.m5177storeTlbZFAh1YI(cellBuilder, value);
         }
 
         private Companion() {
@@ -119,12 +119,12 @@ public final class ShardHashes implements TlbObject {
 
         @Override // org.ton.tlb.TlbLoader
         public /* bridge */ /* synthetic */ Object loadTlb(Cell cell) {
-            return ShardHashes.m5180boximpl(m5190loadTlbnCYawEE(cell));
+            return ShardHashes.m5162boximpl(m5172loadTlbnCYawEE(cell));
         }
 
         @Override // org.ton.tlb.TlbLoader
         public /* bridge */ /* synthetic */ Object loadTlb(CellSlice cellSlice) {
-            return ShardHashes.m5180boximpl(m5191loadTlbnCYawEE(cellSlice));
+            return ShardHashes.m5162boximpl(m5173loadTlbnCYawEE(cellSlice));
         }
 
         public final KSerializer<ShardHashes> serializer() {
@@ -133,14 +133,14 @@ public final class ShardHashes implements TlbObject {
 
         @Override // org.ton.tlb.TlbStorer
         public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
-            m5192storeTlbZFAh1YI(cellBuilder, ((ShardHashes) obj).m5187unboximpl());
+            m5174storeTlbZFAh1YI(cellBuilder, ((ShardHashes) obj).m5169unboximpl());
         }
     }
 
     /* renamed from: constructor-impl */
-    public static HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5181constructorimpl(HashMapE<CellRef<BinTree<ShardDescr>>> value) {
+    public static HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5163constructorimpl(HashMapE<CellRef<BinTree<ShardDescr>>> value) {
         Intrinsics.checkNotNullParameter(value, "value");
-        $childSerializers = new KSerializer[]{new SealedClassSerializer("org.ton.hashmap.HashMapE", Reflection.getOrCreateKotlinClass(HashMapE.class), new KClass[]{Reflection.getOrCreateKotlinClass(HmeEmpty.class), Reflection.getOrCreateKotlinClass(HmeRoot.class)}, new KSerializer[]{HmeEmpty.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), HmeRoot.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7596xdec07ac5("@type")})};
+        $childSerializers = new KSerializer[]{new SealedClassSerializer("org.ton.hashmap.HashMapE", Reflection.getOrCreateKotlinClass(HashMapE.class), new KClass[]{Reflection.getOrCreateKotlinClass(HmeEmpty.class), Reflection.getOrCreateKotlinClass(HmeRoot.class)}, new KSerializer[]{HmeEmpty.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), HmeRoot.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7594xdec07ac5("@type")})};
         return value;
     }
 }

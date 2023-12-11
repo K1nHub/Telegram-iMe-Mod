@@ -168,7 +168,7 @@
 
     move-result v8
 
-    if-ge v6, v8, :cond_8
+    if-ge v6, v8, :cond_9
 
     .line 71
     invoke-virtual {v1, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -179,13 +179,13 @@
 
     if-nez v8, :cond_1
 
-    goto :goto_4
+    goto/16 :goto_4
 
     .line 73
     :cond_1
     iget v9, v8, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersEnd:I
 
-    if-gt v2, v9, :cond_7
+    if-gt v2, v9, :cond_8
 
     iget v9, v8, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersOffset:I
 
@@ -222,6 +222,29 @@
     iput v12, v0, Lorg/telegram/ui/Components/QuoteHighlight;->currentOffsetX:F
 
     .line 79
+    iget-boolean v13, v8, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->code:Z
+
+    const/16 v14, 0xa
+
+    if-eqz v13, :cond_3
+
+    iget-boolean v13, v8, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
+
+    if-nez v13, :cond_3
+
+    .line 80
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v13
+
+    int-to-float v13, v13
+
+    add-float/2addr v12, v13
+
+    iput v12, v0, Lorg/telegram/ui/Components/QuoteHighlight;->currentOffsetX:F
+
+    .line 82
+    :cond_3
     iget v12, v8, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textYOffset:F
 
     iget v13, v8, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->padTop:I
@@ -232,14 +255,12 @@
 
     iput v12, v0, Lorg/telegram/ui/Components/QuoteHighlight;->currentOffsetY:F
 
-    .line 80
+    .line 83
     iget-boolean v12, v8, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->quote:Z
 
-    if-eqz v12, :cond_3
+    if-eqz v12, :cond_4
 
-    const/16 v12, 0xa
-
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
@@ -247,15 +268,15 @@
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     const/4 v12, 0x0
 
     :goto_1
     iput v12, v0, Lorg/telegram/ui/Components/QuoteHighlight;->minX:F
 
-    if-nez v7, :cond_5
+    if-nez v7, :cond_6
 
-    .line 82
+    .line 85
     iget-object v7, v8, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v7}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
@@ -266,38 +287,38 @@
 
     move-result v7
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_5
 
     goto :goto_2
 
-    :cond_4
+    :cond_5
     move v7, v4
 
     goto :goto_3
 
-    :cond_5
+    :cond_6
     :goto_2
     move v7, v5
 
     :goto_3
-    if-eqz v7, :cond_6
+    if-eqz v7, :cond_7
 
-    .line 84
+    .line 87
     iget-object v8, v8, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v8, v9, v10, p0}, Landroid/text/StaticLayout;->getSelectionPath(IILandroid/graphics/Path;)V
 
     goto :goto_5
 
-    .line 86
-    :cond_6
+    .line 89
+    :cond_7
     iget-object v8, v8, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
     invoke-direct {p0, v8, v9, v10}, Lorg/telegram/ui/Components/QuoteHighlight;->getSelectionPath(Landroid/text/Layout;II)V
 
     goto :goto_5
 
-    :cond_7
+    :cond_8
     :goto_4
     move/from16 v11, p7
 
@@ -306,17 +327,17 @@
 
     goto :goto_0
 
-    .line 90
-    :cond_8
+    .line 93
+    :cond_9
     iget-object v1, v0, Lorg/telegram/ui/Components/QuoteHighlight;->rectangles:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-lez v1, :cond_9
+    if-lez v1, :cond_a
 
-    .line 91
+    .line 94
     iget-object v1, v0, Lorg/telegram/ui/Components/QuoteHighlight;->rectangles:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -325,7 +346,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/QuoteHighlight$Rect;
 
-    .line 92
+    .line 95
     iget-object v2, v0, Lorg/telegram/ui/Components/QuoteHighlight;->rectangles:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -340,10 +361,10 @@
 
     check-cast v2, Lorg/telegram/ui/Components/QuoteHighlight$Rect;
 
-    .line 94
+    .line 97
     iput-boolean v5, v1, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->first:Z
 
-    .line 95
+    .line 98
     iget v3, v1, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->top:F
 
     const v4, 0x3f28f5c3    # 0.66f
@@ -358,10 +379,10 @@
 
     iput v3, v1, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->top:F
 
-    .line 97
+    .line 100
     iput-boolean v5, v2, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->last:Z
 
-    .line 98
+    .line 101
     iget v1, v2, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->bottom:F
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -374,7 +395,7 @@
 
     iput v1, v2, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->bottom:F
 
-    :cond_9
+    :cond_a
     return-void
 .end method
 
@@ -394,13 +415,13 @@
 
     move p2, v7
 
-    .line 113
+    .line 116
     :cond_1
     invoke-virtual {p1, p2}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result v0
 
-    .line 114
+    .line 117
     invoke-virtual {p1, p3}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result v1
@@ -410,12 +431,12 @@
     :goto_0
     if-gt v2, v1, :cond_6
 
-    .line 117
+    .line 120
     invoke-virtual {p1, v2}, Landroid/text/Layout;->getLineStart(I)I
 
     move-result v3
 
-    .line 118
+    .line 121
     invoke-virtual {p1, v2}, Landroid/text/Layout;->getLineEnd(I)I
 
     move-result v4
@@ -429,7 +450,7 @@
 
     if-ne v5, v4, :cond_3
 
-    .line 122
+    .line 125
     invoke-virtual {p1}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v5
@@ -451,14 +472,14 @@
 
     if-le p2, v3, :cond_4
 
-    .line 127
+    .line 130
     invoke-virtual {p1, p2}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
 
     move-result v3
 
     goto :goto_1
 
-    .line 129
+    .line 132
     :cond_4
     invoke-virtual {p1, v2}, Landroid/text/Layout;->getLineLeft(I)F
 
@@ -469,45 +490,45 @@
 
     if-ge p3, v4, :cond_5
 
-    .line 132
+    .line 135
     invoke-virtual {p1, p3}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
 
     move-result v4
 
     goto :goto_2
 
-    .line 134
+    .line 137
     :cond_5
     invoke-virtual {p1, v2}, Landroid/text/Layout;->getLineRight(I)F
 
     move-result v4
 
-    .line 138
+    .line 141
     :goto_2
     invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
 
     move-result v5
 
-    .line 139
+    .line 142
     invoke-virtual {p1, v2}, Landroid/text/Layout;->getLineTop(I)I
 
     move-result v6
 
     int-to-float v6, v6
 
-    .line 140
+    .line 143
     invoke-static {v3, v4}, Ljava/lang/Math;->max(FF)F
 
     move-result v3
 
-    .line 141
+    .line 144
     invoke-virtual {p1, v2}, Landroid/text/Layout;->getLineBottom(I)I
 
     move-result v4
 
     int-to-float v4, v4
 
-    .line 137
+    .line 140
     invoke-virtual {p0, v5, v6, v3, v4}, Lorg/telegram/ui/Components/QuoteHighlight;->addRect(FFFF)V
 
     :goto_3
@@ -552,7 +573,7 @@
 
     return-void
 
-    .line 189
+    .line 192
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/QuoteHighlight;->minX:F
 
@@ -560,19 +581,19 @@
 
     move-result p1
 
-    .line 190
+    .line 193
     iget v0, p0, Lorg/telegram/ui/Components/QuoteHighlight;->minX:F
 
     invoke-static {v0, p3}, Ljava/lang/Math;->max(FF)F
 
     move-result p3
 
-    .line 192
+    .line 195
     iget v0, p0, Lorg/telegram/ui/Components/QuoteHighlight;->currentOffsetX:F
 
     add-float/2addr p1, v0
 
-    .line 193
+    .line 196
     iget v1, p0, Lorg/telegram/ui/Components/QuoteHighlight;->currentOffsetY:F
 
     add-float/2addr p2, v1
@@ -581,7 +602,7 @@
 
     add-float/2addr p4, v1
 
-    .line 197
+    .line 200
     new-instance v0, Lorg/telegram/ui/Components/QuoteHighlight$Rect;
 
     const/4 v1, 0x0
@@ -590,7 +611,7 @@
 
     const/4 v1, 0x3
 
-    .line 198
+    .line 201
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -601,7 +622,7 @@
 
     iput p1, v0, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->left:F
 
-    .line 199
+    .line 202
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -612,18 +633,18 @@
 
     iput p3, v0, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->right:F
 
-    .line 200
+    .line 203
     iput p2, v0, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->top:F
 
-    .line 201
+    .line 204
     iput p4, v0, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->bottom:F
 
-    .line 202
+    .line 205
     iget-object p1, p0, Lorg/telegram/ui/Components/QuoteHighlight;->lastRect:Lorg/telegram/ui/Components/QuoteHighlight$Rect;
 
     if-eqz p1, :cond_1
 
-    .line 203
+    .line 206
     iget p3, p1, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->bottom:F
 
     add-float p4, p3, p2
@@ -638,16 +659,16 @@
 
     div-float/2addr p3, v1
 
-    .line 204
+    .line 207
     iput p3, v0, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->prevTop:F
 
-    .line 206
+    .line 209
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/QuoteHighlight;->rectangles:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 207
+    .line 210
     iput-object v0, p0, Lorg/telegram/ui/Components/QuoteHighlight;->lastRect:Lorg/telegram/ui/Components/QuoteHighlight$Rect;
 
     return-void
@@ -656,7 +677,7 @@
 .method public addRect(FFFFLandroid/graphics/Path$Direction;)V
     .locals 0
 
-    .line 176
+    .line 179
     invoke-virtual {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/QuoteHighlight;->addRect(FFFF)V
 
     return-void
@@ -665,7 +686,7 @@
 .method public draw(Landroid/graphics/Canvas;FFLandroid/graphics/Rect;F)V
     .locals 9
 
-    .line 151
+    .line 154
     iget-object v0, p0, Lorg/telegram/ui/Components/QuoteHighlight;->t:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -674,20 +695,20 @@
 
     move-result v0
 
-    .line 153
+    .line 156
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 154
+    .line 157
     invoke-virtual {p1, p2, p3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 155
+    .line 158
     iget-object v1, p0, Lorg/telegram/ui/Components/QuoteHighlight;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
     const/4 v1, 0x0
 
-    .line 156
+    .line 159
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/QuoteHighlight;->rectangles:Ljava/util/ArrayList;
 
@@ -697,7 +718,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 157
+    .line 160
     iget-object v2, p0, Lorg/telegram/ui/Components/QuoteHighlight;->rectangles:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -706,7 +727,7 @@
 
     check-cast v2, Lorg/telegram/ui/Components/QuoteHighlight$Rect;
 
-    .line 158
+    .line 161
     iget-object v3, p0, Lorg/telegram/ui/Components/QuoteHighlight;->path:Landroid/graphics/Path;
 
     iget v4, p4, Landroid/graphics/Rect;->left:I
@@ -717,12 +738,12 @@
 
     iget v5, v2, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->left:F
 
-    .line 159
+    .line 162
     invoke-static {v4, v5, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v4
 
-    .line 160
+    .line 163
     iget-boolean v5, v2, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->first:Z
 
     if-eqz v5, :cond_0
@@ -753,12 +774,12 @@
 
     iget v7, v2, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->right:F
 
-    .line 161
+    .line 164
     invoke-static {v6, v7, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v6
 
-    .line 162
+    .line 165
     iget-boolean v7, v2, Lorg/telegram/ui/Components/QuoteHighlight$Rect;->last:Z
 
     if-eqz v7, :cond_1
@@ -783,14 +804,14 @@
 
     sget-object v8, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
 
-    .line 158
+    .line 161
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 167
+    .line 170
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/QuoteHighlight;->paint:Landroid/graphics/Paint;
 
@@ -798,7 +819,7 @@
 
     move-result p2
 
-    .line 168
+    .line 171
     iget-object p3, p0, Lorg/telegram/ui/Components/QuoteHighlight;->paint:Landroid/graphics/Paint;
 
     int-to-float p4, p2
@@ -809,19 +830,19 @@
 
     invoke-virtual {p3, p4}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 169
+    .line 172
     iget-object p3, p0, Lorg/telegram/ui/Components/QuoteHighlight;->path:Landroid/graphics/Path;
 
     iget-object p4, p0, Lorg/telegram/ui/Components/QuoteHighlight;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, p3, p4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 170
+    .line 173
     iget-object p3, p0, Lorg/telegram/ui/Components/QuoteHighlight;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {p3, p2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 171
+    .line 174
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -830,7 +851,7 @@
 .method public getT()F
     .locals 2
 
-    .line 147
+    .line 150
     iget-object v0, p0, Lorg/telegram/ui/Components/QuoteHighlight;->t:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/high16 v1, 0x3f800000    # 1.0f

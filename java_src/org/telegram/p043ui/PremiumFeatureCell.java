@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.SimpleTextView;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -72,7 +72,7 @@ public class PremiumFeatureCell extends FrameLayout {
         addView(this.imageView, LayoutHelper.createFrame(28, 28, 0, 18, 12, 0, 0));
         ImageView imageView2 = new ImageView(context);
         imageView2.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        imageView2.setImageResource(C3634R.C3636drawable.msg_arrowright);
+        imageView2.setImageResource(C3632R.C3634drawable.msg_arrowright);
         int i = Theme.key_switchTrack;
         imageView2.setColorFilter(Theme.getColor(i, resourcesProvider));
         addView(imageView2, LayoutHelper.createFrame(24, 24, 21, 0, 0, 18, 0));

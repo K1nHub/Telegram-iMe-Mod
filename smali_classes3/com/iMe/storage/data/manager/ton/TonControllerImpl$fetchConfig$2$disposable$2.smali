@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 189
+    .line 195
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$2;->invoke(Lcom/iMe/storage/domain/model/Result;)Ljava/lang/String;
@@ -78,7 +78,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 191
+    .line 197
     instance-of v0, p1, Lcom/iMe/storage/domain/model/Result$Success;
 
     if-eqz v0, :cond_0
@@ -89,11 +89,20 @@
 
     move-result-object p1
 
+    iget-object v0, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$2;->this$0:Lcom/iMe/storage/data/manager/ton/TonControllerImpl;
+
     check-cast p1, Ljava/lang/String;
+
+    .line 198
+    invoke-static {v0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->access$getCryptoPreferenceHelper$p(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setTonConfigJsonString(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 192
+    .line 201
     :cond_0
     instance-of p1, p1, Lcom/iMe/storage/domain/model/Result$Error;
 
@@ -114,7 +123,7 @@
     :cond_1
     const-string p1, ""
 
-    .line 194
+    .line 204
     :goto_0
     invoke-static {p1}, Lkotlin/text/StringsKt;->isBlank(Ljava/lang/CharSequence;)Z
 
@@ -124,7 +133,7 @@
 
     return-object p1
 
-    .line 195
+    .line 205
     :cond_2
     new-instance p1, Ljava/lang/Throwable;
 

@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 2956
+    .line 2957
     invoke-direct {p0}, Lorg/telegram/ui/Components/CloseProgressDrawable2;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected getCurrentColor()I
     .locals 1
 
-    .line 2959
+    .line 2960
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelCancelInlineBot:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I

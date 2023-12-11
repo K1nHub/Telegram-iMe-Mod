@@ -36,10 +36,10 @@
 .method public constructor <init>(ZLandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 2
 
-    .line 1009
+    .line 1062
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1003
+    .line 1056
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -50,16 +50,16 @@
 
     const/4 v0, -0x1
 
-    .line 1005
+    .line 1058
     iput v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userTextColorKey:I
 
-    .line 1010
+    .line 1063
     iput-boolean p1, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->isChannel:Z
 
-    .line 1011
+    .line 1064
     iput-object p3, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 1013
+    .line 1066
     invoke-virtual {p2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -76,7 +76,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 1014
+    .line 1067
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
@@ -91,7 +91,7 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1015
+    .line 1068
     new-instance p2, Lorg/telegram/ui/Components/Text;
 
     if-eqz p1, :cond_0
@@ -114,7 +114,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->buttonText:Lorg/telegram/ui/Components/Text;
 
-    .line 1016
+    .line 1069
     invoke-virtual {p0}, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->updateColors()V
 
     return-void
@@ -123,7 +123,7 @@
 .method private rtl(I)I
     .locals 1
 
-    .line 1092
+    .line 1145
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_0
@@ -143,12 +143,12 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 1100
+    .line 1153
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->drawable:Landroid/graphics/drawable/Drawable;
 
     const/16 v1, 0x40
 
-    .line 1101
+    .line 1154
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -169,7 +169,7 @@
 
     sub-int/2addr v2, v3
 
-    .line 1102
+    .line 1155
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v3
@@ -186,7 +186,7 @@
 
     sub-int/2addr v3, v4
 
-    .line 1103
+    .line 1156
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -207,7 +207,7 @@
 
     add-int/2addr v4, v5
 
-    .line 1104
+    .line 1157
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v5
@@ -224,18 +224,18 @@
 
     add-int/2addr v5, v6
 
-    .line 1100
+    .line 1153
     invoke-virtual {v0, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1106
+    .line 1159
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->drawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1107
+    .line 1160
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->buttonText:Lorg/telegram/ui/Components/Text;
 
-    .line 1108
+    .line 1161
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -252,7 +252,7 @@
 
     move-result-object v0
 
-    .line 1109
+    .line 1162
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v3, 0x47
@@ -303,12 +303,12 @@
 
     invoke-virtual {v0, p1, v2, v3}, Lorg/telegram/ui/Components/Text;->draw(Landroid/graphics/Canvas;FF)V
 
-    .line 1111
+    .line 1164
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userText:Lorg/telegram/ui/Components/Text;
 
     if-eqz v0, :cond_4
 
-    .line 1112
+    .line 1165
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -351,7 +351,7 @@
 
     float-to-int v0, v0
 
-    .line 1113
+    .line 1166
     iget-object v2, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userText:Lorg/telegram/ui/Components/Text;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Text;->getWidth()F
@@ -366,10 +366,10 @@
 
     float-to-int v2, v2
 
-    .line 1115
+    .line 1168
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 1116
+    .line 1169
     sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v6, 0xf
@@ -400,7 +400,7 @@
     :goto_1
     int-to-float v5, v5
 
-    .line 1117
+    .line 1170
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v8
@@ -417,7 +417,7 @@
 
     div-float/2addr v8, v4
 
-    .line 1118
+    .line 1171
     sget-boolean v10, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v10, :cond_2
@@ -445,7 +445,7 @@
 
     int-to-float v6, v7
 
-    .line 1119
+    .line 1172
     :goto_2
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -461,12 +461,12 @@
 
     div-float/2addr v7, v4
 
-    .line 1115
+    .line 1168
     invoke-virtual {v3, v5, v8, v6, v7}, Landroid/graphics/RectF;->set(FFFF)V
 
     const/16 v5, 0xc
 
-    .line 1121
+    .line 1174
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -483,15 +483,15 @@
 
     invoke-virtual {p1, v3, v6, v5, v7}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1123
+    .line 1176
     iget-object v3, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userText:Lorg/telegram/ui/Components/Text;
 
-    .line 1124
+    .line 1177
     invoke-virtual {v3, v0}, Lorg/telegram/ui/Components/Text;->ellipsize(I)Lorg/telegram/ui/Components/Text;
 
     move-result-object v0
 
-    .line 1125
+    .line 1178
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v5, 0x18
@@ -532,13 +532,13 @@
 
     invoke-virtual {v0, p1, v2, v3}, Lorg/telegram/ui/Components/Text;->draw(Landroid/graphics/Canvas;FF)V
 
-    .line 1128
+    .line 1181
     :cond_4
     iget-boolean v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->needDivider:Z
 
     if-eqz v0, :cond_9
 
-    .line 1129
+    .line 1182
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_5
@@ -557,13 +557,13 @@
     :goto_4
     if-nez v0, :cond_6
 
-    .line 1131
+    .line 1184
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
     :cond_6
     move-object v7, v0
 
-    .line 1133
+    .line 1186
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_7
@@ -633,7 +633,7 @@
 
     const/16 p2, 0x32
 
-    .line 1088
+    .line 1141
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -660,14 +660,14 @@
 
     return-void
 
-    .line 1034
+    .line 1087
     :cond_0
     iput-boolean p2, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->needDivider:Z
 
-    .line 1035
+    .line 1088
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 1036
+    .line 1089
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
@@ -680,7 +680,7 @@
 
     move-result-object p2
 
-    .line 1037
+    .line 1090
     new-instance v0, Lorg/telegram/ui/Components/Text;
 
     const/16 v2, 0xd
@@ -695,7 +695,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userText:Lorg/telegram/ui/Components/Text;
 
-    .line 1039
+    .line 1092
     iget p2, p1, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
 
     and-int/lit8 p2, p2, 0x40
@@ -720,7 +720,7 @@
 
     if-ge p1, p2, :cond_2
 
-    .line 1041
+    .line 1094
     sget-object p2, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[I
 
     aget p1, p2, p1
@@ -735,7 +735,7 @@
 
     goto :goto_2
 
-    .line 1043
+    .line 1096
     :cond_2
     sget p2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -751,7 +751,7 @@
 
     goto :goto_1
 
-    .line 1044
+    .line 1097
     :cond_3
     invoke-virtual {p2, p1}, Lorg/telegram/messenger/MessagesController$PeerColors;->getColor(I)Lorg/telegram/messenger/MessagesController$PeerColor;
 
@@ -762,17 +762,17 @@
 
     const/4 p2, -0x1
 
-    .line 1046
+    .line 1099
     iput p2, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userTextColorKey:I
 
-    .line 1047
+    .line 1100
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController$PeerColor;->getColor1()I
 
     move-result p1
 
     goto :goto_2
 
-    .line 1049
+    .line 1102
     :cond_4
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[I
 
@@ -786,13 +786,13 @@
 
     move-result p1
 
-    .line 1052
+    .line 1105
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userText:Lorg/telegram/ui/Components/Text;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/Text;->setColor(I)V
 
-    .line 1053
+    .line 1106
     iget-object p2, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userTextBackgroundPaint:Landroid/graphics/Paint;
 
     const v0, 0x3dcccccd    # 0.1f
@@ -813,7 +813,7 @@
 
     return-void
 
-    .line 1060
+    .line 1113
     :cond_0
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
@@ -831,7 +831,7 @@
     :goto_0
     const-string v1, " "
 
-    .line 1061
+    .line 1114
     invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
@@ -840,12 +840,12 @@
 
     if-lez v1, :cond_2
 
-    .line 1063
+    .line 1116
     invoke-virtual {v0, v2, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1066
+    .line 1119
     :cond_2
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
@@ -857,7 +857,7 @@
 
     move-result-object v0
 
-    .line 1067
+    .line 1120
     new-instance v1, Lorg/telegram/ui/Components/Text;
 
     const/16 v3, 0xd
@@ -872,7 +872,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userText:Lorg/telegram/ui/Components/Text;
 
-    .line 1069
+    .line 1122
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
 
     and-int/lit16 v0, v0, 0x80
@@ -897,7 +897,7 @@
 
     if-ge p1, v0, :cond_4
 
-    .line 1071
+    .line 1124
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[I
 
     aget p1, v0, p1
@@ -912,7 +912,7 @@
 
     goto :goto_3
 
-    .line 1073
+    .line 1126
     :cond_4
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -928,7 +928,7 @@
 
     goto :goto_2
 
-    .line 1074
+    .line 1127
     :cond_5
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/MessagesController$PeerColors;->getColor(I)Lorg/telegram/messenger/MessagesController$PeerColor;
 
@@ -939,17 +939,17 @@
 
     const/4 v0, -0x1
 
-    .line 1076
+    .line 1129
     iput v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userTextColorKey:I
 
-    .line 1077
+    .line 1130
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController$PeerColor;->getColor1()I
 
     move-result p1
 
     goto :goto_3
 
-    .line 1079
+    .line 1132
     :cond_6
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[I
 
@@ -963,13 +963,13 @@
 
     move-result p1
 
-    .line 1082
+    .line 1135
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userText:Lorg/telegram/ui/Components/Text;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Text;->setColor(I)V
 
-    .line 1083
+    .line 1136
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userTextBackgroundPaint:Landroid/graphics/Paint;
 
     const v1, 0x3dcccccd    # 0.1f
@@ -986,7 +986,7 @@
 .method public updateColors()V
     .locals 4
 
-    .line 1020
+    .line 1073
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->drawable:Landroid/graphics/drawable/Drawable;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
@@ -1015,7 +1015,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1021
+    .line 1074
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->buttonText:Lorg/telegram/ui/Components/Text;
 
     iget-boolean v1, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->isChannel:Z
@@ -1038,7 +1038,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Text;->setColor(I)V
 
-    .line 1023
+    .line 1076
     iget-object v0, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userText:Lorg/telegram/ui/Components/Text;
 
     if-eqz v0, :cond_2
@@ -1053,19 +1053,19 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 1024
+    .line 1077
     iget-object v1, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 
-    .line 1025
+    .line 1078
     iget-object v1, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userText:Lorg/telegram/ui/Components/Text;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/Text;->setColor(I)V
 
-    .line 1026
+    .line 1079
     iget-object v1, p0, Lorg/telegram/ui/PeerColorActivity$ChangeNameColorCell;->userTextBackgroundPaint:Landroid/graphics/Paint;
 
     const v2, 0x3dcccccd    # 0.1f

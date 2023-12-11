@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment$11;)V
     .locals 0
 
-    .line 1016
+    .line 1021
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$11$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$11;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1019
+    .line 1024
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$11$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$11;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment$11;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
@@ -44,7 +44,7 @@
 
     iput-boolean v0, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerInAnimatoin:Z
 
-    .line 1020
+    .line 1025
     iget-object p1, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->colorPickerPreviewView:Landroid/view/View;
 
     const/16 v0, 0x8

@@ -32,7 +32,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -93,7 +93,7 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
         setWidth(-2);
         setHeight(-2);
         setBackgroundDrawable(null);
-        Drawable mutate = ContextCompat.getDrawable(context, C3634R.C3636drawable.popup_fixed_alert).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, C3632R.C3634drawable.popup_fixed_alert).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground), PorterDuff.Mode.MULTIPLY));
         this.scrimPopupContainerLayout.setBackground(mutate);
         Rect rect = new Rect();
@@ -121,7 +121,7 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
         this.headerText = textView;
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue));
         this.headerText.setTextSize(1, 16.0f);
-        this.headerText.setText(LocaleController.getString("SendMessageAsTitle", C3634R.string.SendMessageAsTitle));
+        this.headerText.setText(LocaleController.getString("SendMessageAsTitle", C3632R.string.SendMessageAsTitle));
         this.headerText.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM), 1);
         int m104dp2 = AndroidUtilities.m104dp(18);
         this.headerText.setPadding(m104dp2, AndroidUtilities.m104dp(12), m104dp2, AndroidUtilities.m104dp(12));
@@ -162,7 +162,7 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
                     if (chat != null) {
                         if (tLRPC$TL_sendAsPeer.premium_required) {
                             SpannableString spannableString = new SpannableString(((Object) TextUtils.ellipsize(chat.title, senderView.title.getPaint(), width - AndroidUtilities.m104dp(100), TextUtils.TruncateAt.END)) + " d");
-                            ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3634R.C3636drawable.msg_mini_premiumlock);
+                            ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3632R.C3634drawable.msg_mini_premiumlock);
                             coloredImageSpan.setTopOffset(1);
                             coloredImageSpan.setSize(AndroidUtilities.m104dp(14));
                             coloredImageSpan.setColorKey(Theme.key_windowBackgroundWhiteGrayText5);
@@ -187,7 +187,7 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
                 TLRPC$User user = messagesController.getUser(Long.valueOf(j2));
                 if (user != null) {
                     senderView.title.setText(UserObject.getUserName(user));
-                    senderView.subtitle.setText(LocaleController.getString("VoipGroupPersonalAccount", C3634R.string.VoipGroupPersonalAccount));
+                    senderView.subtitle.setText(LocaleController.getString("VoipGroupPersonalAccount", C3632R.string.VoipGroupPersonalAccount));
                     senderView.avatar.setAvatar(user);
                 }
                 SimpleAvatarView simpleAvatarView2 = senderView.avatar;
@@ -223,7 +223,7 @@ public class SenderSelectPopup extends ActionBarPopupWindow {
         this.recyclerView.setOverScrollMode(2);
         frameLayout.addView(this.recyclerView);
         this.headerShadow = new View(context);
-        Drawable drawable = ContextCompat.getDrawable(context, C3634R.C3636drawable.header_shadow);
+        Drawable drawable = ContextCompat.getDrawable(context, C3632R.C3634drawable.header_shadow);
         drawable.setAlpha(153);
         this.headerShadow.setBackground(drawable);
         this.headerShadow.setAlpha(BitmapDescriptorFactory.HUE_RED);

@@ -1138,13 +1138,13 @@ public class MessagesController extends BaseController implements NotificationCe
 
     /* renamed from: org.telegram.messenger.MessagesController$1 */
     /* loaded from: classes4.dex */
-    public class C36211 extends CacheFetcher<Integer, TLRPC$TL_help_appConfig> {
+    public class C36191 extends CacheFetcher<Integer, TLRPC$TL_help_appConfig> {
         @Override // org.telegram.messenger.CacheFetcher
         public boolean useCache(Integer num) {
             return false;
         }
 
-        C36211() {
+        C36191() {
             MessagesController.this = r1;
         }
 
@@ -1155,7 +1155,7 @@ public class MessagesController extends BaseController implements NotificationCe
             MessagesController.this.getConnectionsManager().sendRequest(tLRPC$TL_help_getAppConfig, new RequestDelegate() { // from class: org.telegram.messenger.MessagesController$1$$ExternalSyntheticLambda2
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                    MessagesController.C36211.lambda$getRemote$0(Utilities.Callback4.this, tLObject, tLRPC$TL_error);
+                    MessagesController.C36191.lambda$getRemote$0(Utilities.Callback4.this, tLObject, tLRPC$TL_error);
                 }
             });
         }
@@ -1188,7 +1188,7 @@ public class MessagesController extends BaseController implements NotificationCe
             MessagesController.this.getMessagesStorage().getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MessagesController.C36211.lambda$getLocal$1(i, callback2);
+                    MessagesController.C36191.lambda$getLocal$1(i, callback2);
                 }
             });
         }
@@ -1266,7 +1266,7 @@ public class MessagesController extends BaseController implements NotificationCe
             L6d:
                 throw r8
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MessagesController.C36211.lambda$getLocal$1(int, org.telegram.messenger.Utilities$Callback2):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MessagesController.C36191.lambda$getLocal$1(int, org.telegram.messenger.Utilities$Callback2):void");
         }
 
         @Override // org.telegram.messenger.CacheFetcher
@@ -1274,7 +1274,7 @@ public class MessagesController extends BaseController implements NotificationCe
             MessagesStorage.getInstance(i).getStorageQueue().postRunnable(new Runnable() { // from class: org.telegram.messenger.MessagesController$1$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MessagesController.C36211.lambda$setLocal$2(i, tLRPC$TL_help_appConfig);
+                    MessagesController.C36191.lambda$setLocal$2(i, tLRPC$TL_help_appConfig);
                 }
             });
         }
@@ -1719,7 +1719,7 @@ public class MessagesController extends BaseController implements NotificationCe
             MessagesController.this = r1;
         }
 
-        /* synthetic */ SendAsPeersInfo(MessagesController messagesController, C36211 c36211) {
+        /* synthetic */ SendAsPeersInfo(MessagesController messagesController, C36191 c36191) {
             this();
         }
     }
@@ -1825,7 +1825,7 @@ public class MessagesController extends BaseController implements NotificationCe
         private UserActionUpdatesSeq() {
         }
 
-        /* synthetic */ UserActionUpdatesSeq(C36211 c36211) {
+        /* synthetic */ UserActionUpdatesSeq(C36191 c36191) {
             this();
         }
     }
@@ -1835,7 +1835,7 @@ public class MessagesController extends BaseController implements NotificationCe
         private UserActionUpdatesPts() {
         }
 
-        /* synthetic */ UserActionUpdatesPts(C36211 c36211) {
+        /* synthetic */ UserActionUpdatesPts(C36191 c36191) {
             this();
         }
     }
@@ -1857,7 +1857,7 @@ public class MessagesController extends BaseController implements NotificationCe
         private ReadTask() {
         }
 
-        /* synthetic */ ReadTask(C36211 c36211) {
+        /* synthetic */ ReadTask(C36191 c36191) {
             this();
         }
     }
@@ -2275,7 +2275,7 @@ public class MessagesController extends BaseController implements NotificationCe
             }
         };
         this.uploadingThemes = new HashMap<>();
-        this.appConfigFetcher = new C36211();
+        this.appConfigFetcher = new C36191();
         this.maxBroadcastCount = 100;
         this.minGroupConvertSize = 200;
         this.gifSearchEmojies = new ArrayList<>();
@@ -2589,7 +2589,7 @@ public class MessagesController extends BaseController implements NotificationCe
             this.gifSearchEmojies.add("🙄");
             this.gifSearchEmojies.add("😥");
             this.gifSearchEmojies.add("😡");
-            this.gifSearchEmojies.add("🥳");
+            this.gifSearchEmojies.add("\u1f973");
             this.gifSearchEmojies.add("😎");
         } else {
             try {
@@ -12033,9 +12033,9 @@ public class MessagesController extends BaseController implements NotificationCe
                         TLRPC$SendMessageAction tLRPC$SendMessageAction = printingUser.action;
                         if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageRecordAudioAction) {
                             if (z) {
-                                string3 = LocaleController.formatString("IsRecordingAudio", C3634R.string.IsRecordingAudio, getUserNameForTyping(user));
+                                string3 = LocaleController.formatString("IsRecordingAudio", C3632R.string.IsRecordingAudio, getUserNameForTyping(user));
                             } else {
-                                string3 = LocaleController.getString("RecordingAudio", C3634R.string.RecordingAudio);
+                                string3 = LocaleController.getString("RecordingAudio", C3632R.string.RecordingAudio);
                             }
                             it = it2;
                             string = string3;
@@ -12043,9 +12043,9 @@ public class MessagesController extends BaseController implements NotificationCe
                         } else {
                             if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageRecordRoundAction) {
                                 if (z) {
-                                    string2 = LocaleController.formatString("IsRecordingRound", C3634R.string.IsRecordingRound, getUserNameForTyping(user));
+                                    string2 = LocaleController.formatString("IsRecordingRound", C3632R.string.IsRecordingRound, getUserNameForTyping(user));
                                 } else {
-                                    string2 = LocaleController.getString("RecordingRound", C3634R.string.RecordingRound);
+                                    string2 = LocaleController.getString("RecordingRound", C3632R.string.RecordingRound);
                                 }
                                 it = it2;
                                 string = string2;
@@ -12054,80 +12054,80 @@ public class MessagesController extends BaseController implements NotificationCe
                                 if (!(tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageUploadRoundAction)) {
                                     if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageUploadAudioAction) {
                                         if (z) {
-                                            string = LocaleController.formatString("IsSendingAudio", C3634R.string.IsSendingAudio, getUserNameForTyping(user));
+                                            string = LocaleController.formatString("IsSendingAudio", C3632R.string.IsSendingAudio, getUserNameForTyping(user));
                                         } else {
-                                            string = LocaleController.getString("SendingAudio", C3634R.string.SendingAudio);
+                                            string = LocaleController.getString("SendingAudio", C3632R.string.SendingAudio);
                                         }
                                     } else if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageUploadVideoAction) {
                                         if (z) {
-                                            string = LocaleController.formatString("IsSendingVideo", C3634R.string.IsSendingVideo, getUserNameForTyping(user));
+                                            string = LocaleController.formatString("IsSendingVideo", C3632R.string.IsSendingVideo, getUserNameForTyping(user));
                                         } else {
-                                            string = LocaleController.getString("SendingVideoStatus", C3634R.string.SendingVideoStatus);
+                                            string = LocaleController.getString("SendingVideoStatus", C3632R.string.SendingVideoStatus);
                                         }
                                     } else if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageRecordVideoAction) {
                                         if (z) {
-                                            string = LocaleController.formatString("IsRecordingVideo", C3634R.string.IsRecordingVideo, getUserNameForTyping(user));
+                                            string = LocaleController.formatString("IsRecordingVideo", C3632R.string.IsRecordingVideo, getUserNameForTyping(user));
                                         } else {
-                                            string = LocaleController.getString("RecordingVideoStatus", C3634R.string.RecordingVideoStatus);
+                                            string = LocaleController.getString("RecordingVideoStatus", C3632R.string.RecordingVideoStatus);
                                         }
                                     } else if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageUploadDocumentAction) {
                                         if (z) {
-                                            string = LocaleController.formatString("IsSendingFile", C3634R.string.IsSendingFile, getUserNameForTyping(user));
+                                            string = LocaleController.formatString("IsSendingFile", C3632R.string.IsSendingFile, getUserNameForTyping(user));
                                         } else {
-                                            string = LocaleController.getString("SendingFile", C3634R.string.SendingFile);
+                                            string = LocaleController.getString("SendingFile", C3632R.string.SendingFile);
                                         }
                                     } else if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageUploadPhotoAction) {
                                         if (z) {
-                                            string = LocaleController.formatString("IsSendingPhoto", C3634R.string.IsSendingPhoto, getUserNameForTyping(user));
+                                            string = LocaleController.formatString("IsSendingPhoto", C3632R.string.IsSendingPhoto, getUserNameForTyping(user));
                                         } else {
-                                            string = LocaleController.getString("SendingPhoto", C3634R.string.SendingPhoto);
+                                            string = LocaleController.getString("SendingPhoto", C3632R.string.SendingPhoto);
                                         }
                                     } else if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageGamePlayAction) {
                                         if (z) {
-                                            string = LocaleController.formatString("IsSendingGame", C3634R.string.IsSendingGame, getUserNameForTyping(user));
+                                            string = LocaleController.formatString("IsSendingGame", C3632R.string.IsSendingGame, getUserNameForTyping(user));
                                         } else {
-                                            string = LocaleController.getString("SendingGame", C3634R.string.SendingGame);
+                                            string = LocaleController.getString("SendingGame", C3632R.string.SendingGame);
                                         }
                                         i = 3;
                                     } else {
                                         if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageGeoLocationAction) {
                                             if (z) {
-                                                string = LocaleController.formatString("IsSelectingLocation", C3634R.string.IsSelectingLocation, getUserNameForTyping(user));
+                                                string = LocaleController.formatString("IsSelectingLocation", C3632R.string.IsSelectingLocation, getUserNameForTyping(user));
                                             } else {
-                                                string = LocaleController.getString("SelectingLocation", C3634R.string.SelectingLocation);
+                                                string = LocaleController.getString("SelectingLocation", C3632R.string.SelectingLocation);
                                             }
                                         } else if (!(tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageChooseContactAction)) {
                                             if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageEmojiInteractionSeen) {
                                                 String str3 = ((TLRPC$TL_sendMessageEmojiInteractionSeen) tLRPC$SendMessageAction).emoticon;
                                                 if (z) {
-                                                    string = LocaleController.formatString("IsEnjoyngAnimations", C3634R.string.IsEnjoyngAnimations, getUserNameForTyping(user), str3);
+                                                    string = LocaleController.formatString("IsEnjoyngAnimations", C3632R.string.IsEnjoyngAnimations, getUserNameForTyping(user), str3);
                                                 } else {
-                                                    string = LocaleController.formatString("EnjoyngAnimations", C3634R.string.EnjoyngAnimations, str3);
+                                                    string = LocaleController.formatString("EnjoyngAnimations", C3632R.string.EnjoyngAnimations, str3);
                                                 }
                                             } else if (tLRPC$SendMessageAction instanceof TLRPC$TL_sendMessageChooseStickerAction) {
                                                 if (z) {
-                                                    string = LocaleController.formatString("IsChoosingSticker", C3634R.string.IsChoosingSticker, getUserNameForTyping(user));
+                                                    string = LocaleController.formatString("IsChoosingSticker", C3632R.string.IsChoosingSticker, getUserNameForTyping(user));
                                                 } else {
-                                                    string = LocaleController.getString("ChoosingSticker", C3634R.string.ChoosingSticker);
+                                                    string = LocaleController.getString("ChoosingSticker", C3632R.string.ChoosingSticker);
                                                 }
                                             } else if (z) {
-                                                string = LocaleController.formatString("IsTypingGroup", C3634R.string.IsTypingGroup, getUserNameForTyping(user));
+                                                string = LocaleController.formatString("IsTypingGroup", C3632R.string.IsTypingGroup, getUserNameForTyping(user));
                                             } else {
-                                                string = LocaleController.getString("Typing", C3634R.string.Typing);
+                                                string = LocaleController.getString("Typing", C3632R.string.Typing);
                                             }
                                             i = 5;
                                         } else if (z) {
-                                            string = LocaleController.formatString("IsSelectingContact", C3634R.string.IsSelectingContact, getUserNameForTyping(user));
+                                            string = LocaleController.formatString("IsSelectingContact", C3632R.string.IsSelectingContact, getUserNameForTyping(user));
                                         } else {
-                                            string = LocaleController.getString("SelectingContact", C3634R.string.SelectingContact);
+                                            string = LocaleController.getString("SelectingContact", C3632R.string.SelectingContact);
                                         }
                                         i = 0;
                                     }
                                     i = 2;
                                 } else if (z) {
-                                    string = LocaleController.formatString("IsSendingVideo", C3634R.string.IsSendingVideo, getUserNameForTyping(user));
+                                    string = LocaleController.formatString("IsSendingVideo", C3632R.string.IsSendingVideo, getUserNameForTyping(user));
                                 } else {
-                                    string = LocaleController.getString("SendingVideoStatus", C3634R.string.SendingVideoStatus);
+                                    string = LocaleController.getString("SendingVideoStatus", C3632R.string.SendingVideoStatus);
                                 }
                             }
                             i = 4;
@@ -12160,7 +12160,7 @@ public class MessagesController extends BaseController implements NotificationCe
                     }
                     if (sb.length() != 0) {
                         if (i3 == 1) {
-                            str2 = LocaleController.formatString("IsTypingGroup", C3634R.string.IsTypingGroup, sb.toString());
+                            str2 = LocaleController.formatString("IsTypingGroup", C3632R.string.IsTypingGroup, sb.toString());
                         } else if (value.size() > 2) {
                             try {
                                 str2 = String.format(LocaleController.getPluralString("AndMoreTypingGroup", value.size() - 2), sb.toString(), Integer.valueOf(value.size() - 2));
@@ -12169,7 +12169,7 @@ public class MessagesController extends BaseController implements NotificationCe
                             }
                         } else {
                             i2 = 0;
-                            str = LocaleController.formatString("AreTypingGroup", C3634R.string.AreTypingGroup, sb.toString());
+                            str = LocaleController.formatString("AreTypingGroup", C3632R.string.AreTypingGroup, sb.toString());
                             it = it2;
                         }
                         str = str2;
@@ -12925,7 +12925,7 @@ public class MessagesController extends BaseController implements NotificationCe
         TLRPC$TL_folder tLRPC$TL_folder = new TLRPC$TL_folder();
         tLRPC$TL_dialogFolder.folder = tLRPC$TL_folder;
         tLRPC$TL_folder.f1657id = i;
-        tLRPC$TL_folder.title = LocaleController.getString("ArchivedChats", C3634R.string.ArchivedChats);
+        tLRPC$TL_folder.title = LocaleController.getString("ArchivedChats", C3632R.string.ArchivedChats);
         tLRPC$TL_dialogFolder.pinned = true;
         int i2 = 0;
         for (int i3 = 0; i3 < this.allDialogs.size(); i3++) {
@@ -18394,25 +18394,25 @@ public class MessagesController extends BaseController implements NotificationCe
         r3 = r10.pts;
      */
     /* JADX WARN: Code restructure failed: missing block: B:657:0x0405, code lost:
-        if (r2 != r3) goto L224;
+        if (r2 != r3) goto L264;
      */
     /* JADX WARN: Code restructure failed: missing block: B:659:0x0419, code lost:
-        if (processUpdateArray(r10.updates, r27.users, r27.chats, false, r27.date) != false) goto L223;
+        if (processUpdateArray(r10.updates, r27.users, r27.chats, false, r27.date) != false) goto L263;
      */
     /* JADX WARN: Code restructure failed: missing block: B:661:0x041d, code lost:
-        if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L216;
+        if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L256;
      */
     /* JADX WARN: Code restructure failed: missing block: B:662:0x041f, code lost:
         org.telegram.messenger.FileLog.m102d("need get channel diff inner TL_updates, channel_id = " + r4);
      */
     /* JADX WARN: Code restructure failed: missing block: B:663:0x0434, code lost:
-        if (r9 != null) goto L219;
+        if (r9 != null) goto L259;
      */
     /* JADX WARN: Code restructure failed: missing block: B:664:0x0436, code lost:
         r5 = new java.util.ArrayList();
      */
     /* JADX WARN: Code restructure failed: missing block: B:666:0x0446, code lost:
-        if (r9.contains(java.lang.Long.valueOf(r4)) != false) goto L222;
+        if (r9.contains(java.lang.Long.valueOf(r4)) != false) goto L262;
      */
     /* JADX WARN: Code restructure failed: missing block: B:667:0x0448, code lost:
         r9.add(java.lang.Long.valueOf(r4));
@@ -18422,10 +18422,10 @@ public class MessagesController extends BaseController implements NotificationCe
         getMessagesStorage().saveChannelPts(r4, r10.pts);
      */
     /* JADX WARN: Code restructure failed: missing block: B:670:0x0464, code lost:
-        if (r1 == r3) goto L222;
+        if (r1 == r3) goto L262;
      */
     /* JADX WARN: Code restructure failed: missing block: B:672:0x0468, code lost:
-        if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L229;
+        if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L269;
      */
     /* JADX WARN: Code restructure failed: missing block: B:673:0x046a, code lost:
         org.telegram.messenger.FileLog.m102d(r0 + " need get channel diff, pts: " + r1 + " " + r10.pts + " count = " + r10.pts_count + " channelId = " + r4);
@@ -18434,34 +18434,34 @@ public class MessagesController extends BaseController implements NotificationCe
         r0 = r26.updatesStartWaitTimeChannels.get(r4);
      */
     /* JADX WARN: Code restructure failed: missing block: B:675:0x04ad, code lost:
-        if (r26.gettingDifferenceChannels.get(r4, java.lang.Boolean.FALSE).booleanValue() != false) goto L240;
+        if (r26.gettingDifferenceChannels.get(r4, java.lang.Boolean.FALSE).booleanValue() != false) goto L280;
      */
     /* JADX WARN: Code restructure failed: missing block: B:677:0x04b3, code lost:
-        if (r0 == 0) goto L240;
+        if (r0 == 0) goto L280;
      */
     /* JADX WARN: Code restructure failed: missing block: B:679:0x04c2, code lost:
-        if (java.lang.Math.abs(java.lang.System.currentTimeMillis() - r0) > 1500) goto L235;
+        if (java.lang.Math.abs(java.lang.System.currentTimeMillis() - r0) > 1500) goto L275;
      */
     /* JADX WARN: Code restructure failed: missing block: B:681:0x04c5, code lost:
-        if (r9 != null) goto L237;
+        if (r9 != null) goto L277;
      */
     /* JADX WARN: Code restructure failed: missing block: B:682:0x04c7, code lost:
         r5 = new java.util.ArrayList();
      */
     /* JADX WARN: Code restructure failed: missing block: B:684:0x04d5, code lost:
-        if (r9.contains(java.lang.Long.valueOf(r4)) != false) goto L222;
+        if (r9.contains(java.lang.Long.valueOf(r4)) != false) goto L262;
      */
     /* JADX WARN: Code restructure failed: missing block: B:685:0x04d7, code lost:
         r9.add(java.lang.Long.valueOf(r4));
      */
     /* JADX WARN: Code restructure failed: missing block: B:687:0x04e3, code lost:
-        if (r0 != 0) goto L243;
+        if (r0 != 0) goto L283;
      */
     /* JADX WARN: Code restructure failed: missing block: B:688:0x04e5, code lost:
         r26.updatesStartWaitTimeChannels.put(r4, java.lang.System.currentTimeMillis());
      */
     /* JADX WARN: Code restructure failed: missing block: B:690:0x04f0, code lost:
-        if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L246;
+        if (org.telegram.messenger.BuildVars.LOGS_ENABLED == false) goto L286;
      */
     /* JADX WARN: Code restructure failed: missing block: B:691:0x04f2, code lost:
         org.telegram.messenger.FileLog.m102d(r23);
@@ -18470,7 +18470,7 @@ public class MessagesController extends BaseController implements NotificationCe
         r0 = r26.updatesQueueChannels.get(r4);
      */
     /* JADX WARN: Code restructure failed: missing block: B:693:0x04fd, code lost:
-        if (r0 != null) goto L249;
+        if (r0 != null) goto L289;
      */
     /* JADX WARN: Code restructure failed: missing block: B:694:0x04ff, code lost:
         r0 = new java.util.ArrayList<>();
@@ -18479,47 +18479,47 @@ public class MessagesController extends BaseController implements NotificationCe
     /* JADX WARN: Code restructure failed: missing block: B:695:0x0509, code lost:
         r0.add(r10);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:711:0x055d, code lost:
-        if (getMessagesStorage().getLastSeqValue() != r27.seq_start) goto L267;
+    /* JADX WARN: Code restructure failed: missing block: B:712:0x0561, code lost:
+        if (getMessagesStorage().getLastSeqValue() != r27.seq_start) goto L131;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:713:0x0560, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:714:0x0564, code lost:
         r1 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:719:0x057c, code lost:
-        if (r2 != getMessagesStorage().getLastSeqValue()) goto L267;
+    /* JADX WARN: Code restructure failed: missing block: B:720:0x0580, code lost:
+        if (r2 != getMessagesStorage().getLastSeqValue()) goto L131;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:798:0x072a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:799:0x072d, code lost:
         if (r2 != null) goto L338;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:800:0x072e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:801:0x0731, code lost:
         if (r9 != null) goto L340;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:813:0x075d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:814:0x0760, code lost:
         if (r2 != null) goto L455;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:815:0x0761, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:816:0x0764, code lost:
         if (r16 != null) goto L340;
      */
     /* JADX WARN: Removed duplicated region for block: B:554:0x0117  */
-    /* JADX WARN: Removed duplicated region for block: B:749:0x063d  */
-    /* JADX WARN: Removed duplicated region for block: B:788:0x0704  */
-    /* JADX WARN: Removed duplicated region for block: B:792:0x071e  */
-    /* JADX WARN: Removed duplicated region for block: B:795:0x0724  */
-    /* JADX WARN: Removed duplicated region for block: B:805:0x0736  */
-    /* JADX WARN: Removed duplicated region for block: B:823:0x0777  */
-    /* JADX WARN: Removed duplicated region for block: B:850:0x07e6  */
+    /* JADX WARN: Removed duplicated region for block: B:750:0x0640  */
+    /* JADX WARN: Removed duplicated region for block: B:789:0x0707  */
+    /* JADX WARN: Removed duplicated region for block: B:793:0x0721  */
+    /* JADX WARN: Removed duplicated region for block: B:796:0x0727  */
+    /* JADX WARN: Removed duplicated region for block: B:806:0x0739  */
+    /* JADX WARN: Removed duplicated region for block: B:824:0x077a  */
     /* JADX WARN: Removed duplicated region for block: B:851:0x07e9  */
-    /* JADX WARN: Removed duplicated region for block: B:919:0x09da  */
-    /* JADX WARN: Removed duplicated region for block: B:937:0x0a14  */
-    /* JADX WARN: Removed duplicated region for block: B:939:0x0a2e  */
-    /* JADX WARN: Removed duplicated region for block: B:972:0x07af A[EDGE_INSN: B:972:0x07af->B:838:0x07af ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:852:0x07ec  */
+    /* JADX WARN: Removed duplicated region for block: B:920:0x09dd  */
+    /* JADX WARN: Removed duplicated region for block: B:938:0x0a17  */
+    /* JADX WARN: Removed duplicated region for block: B:940:0x0a31  */
+    /* JADX WARN: Removed duplicated region for block: B:972:0x07b2 A[EDGE_INSN: B:972:0x07b2->B:839:0x07b2 ?: BREAK  , SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void processUpdates(final org.telegram.tgnet.TLRPC$Updates r27, boolean r28) {
         /*
-            Method dump skipped, instructions count: 2654
+            Method dump skipped, instructions count: 2657
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.MessagesController.processUpdates(org.telegram.tgnet.TLRPC$Updates, boolean):void");
@@ -19576,14 +19576,14 @@ public class MessagesController extends BaseController implements NotificationCe
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity(), baseFragment.getResourceProvider());
-        builder.setTitle(LocaleController.getString(C3634R.string.DialogNotAvailable));
+        builder.setTitle(LocaleController.getString(C3632R.string.DialogNotAvailable));
         HashMap hashMap = new HashMap();
         int i = Theme.key_dialogTopBackground;
         hashMap.put("info1.**", Integer.valueOf(baseFragment.getThemedColor(i)));
         hashMap.put("info2.**", Integer.valueOf(baseFragment.getThemedColor(i)));
-        builder.setTopAnimation(C3634R.raw.not_available, 52, false, baseFragment.getThemedColor(i), hashMap);
+        builder.setTopAnimation(C3632R.raw.not_available, 52, false, baseFragment.getThemedColor(i), hashMap);
         builder.setTopAnimationIsNew(true);
-        builder.setPositiveButton(LocaleController.getString(C3634R.string.Close), null);
+        builder.setPositiveButton(LocaleController.getString(C3632R.string.Close), null);
         builder.setMessage(str);
         baseFragment.showDialog(builder.create());
     }
@@ -19826,7 +19826,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 if (baseFragment instanceof ChatActivity) {
                     ((ChatActivity) baseFragment).shakeContent();
                 }
-                BulletinFactory.m62of(baseFragment).createErrorBulletin(LocaleController.getString("NoUsernameFound", C3634R.string.NoUsernameFound)).show();
+                BulletinFactory.m62of(baseFragment).createErrorBulletin(LocaleController.getString("NoUsernameFound", C3632R.string.NoUsernameFound)).show();
             } catch (Exception e) {
                 FileLog.m99e(e);
             }
@@ -20256,9 +20256,9 @@ public class MessagesController extends BaseController implements NotificationCe
         if (getMessagesController().isDialogMuted(j, i)) {
             SharedPreferences sharedPreferences = this.notificationsPreferences;
             int i2 = sharedPreferences.getInt(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL + NotificationsController.getSharedPrefKey(j, i), 0);
-            return i2 >= getConnectionsManager().getCurrentTime() ? LocaleController.formatString("NotificationsMutedForHint", C3634R.string.NotificationsMutedForHint, LocaleController.formatTTLString(i2)) : LocaleController.getString(C3634R.string.NotificationsMuted);
+            return i2 >= getConnectionsManager().getCurrentTime() ? LocaleController.formatString("NotificationsMutedForHint", C3632R.string.NotificationsMutedForHint, LocaleController.formatTTLString(i2)) : LocaleController.getString(C3632R.string.NotificationsMuted);
         }
-        return LocaleController.getString(C3634R.string.NotificationsUnmuted);
+        return LocaleController.getString(C3632R.string.NotificationsUnmuted);
     }
 
     public int getDialogUnreadCount(TLRPC$Dialog tLRPC$Dialog) {

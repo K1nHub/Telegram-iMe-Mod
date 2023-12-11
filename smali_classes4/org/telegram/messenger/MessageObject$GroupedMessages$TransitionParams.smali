@@ -52,12 +52,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 1420
+    .line 1568
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1438
+    .line 1586
     iput v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->captionEnterProgress:F
 
     return-void
@@ -70,26 +70,26 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1443
+    .line 1591
     iput v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->captionEnterProgress:F
 
     const/4 v0, 0x0
 
-    .line 1444
+    .line 1592
     iput v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->offsetBottom:F
 
-    .line 1445
+    .line 1593
     iput v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->offsetTop:F
 
-    .line 1446
+    .line 1594
     iput v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->offsetRight:F
 
-    .line 1447
+    .line 1595
     iput v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->offsetLeft:F
 
     const/4 v0, 0x0
 
-    .line 1448
+    .line 1596
     iput-boolean v0, p0, Lorg/telegram/messenger/MessageObject$GroupedMessages$TransitionParams;->backgroundChangeBounds:Z
 
     return-void

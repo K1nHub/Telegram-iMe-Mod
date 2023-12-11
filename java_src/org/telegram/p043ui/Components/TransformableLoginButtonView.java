@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.common.IdFabric$CustomType;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.TransformableLoginButtonView */
 /* loaded from: classes6.dex */
@@ -89,7 +89,7 @@ public class TransformableLoginButtonView extends View {
         }
         int i = this.transformType;
         if (i == IdFabric$CustomType.TRANSFORMABLE_LOGIN_BUTTON_SEARCH) {
-            Drawable drawable = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.fork_ic_search_contact_30);
+            Drawable drawable = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.fork_ic_search_contact_30);
             int intrinsicWidth = drawable.getIntrinsicWidth();
             int width = (getWidth() - intrinsicWidth) / 2;
             int height = (getHeight() - intrinsicWidth) / 2;

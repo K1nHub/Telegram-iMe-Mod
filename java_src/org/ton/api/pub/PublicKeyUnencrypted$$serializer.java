@@ -22,7 +22,7 @@ public final class PublicKeyUnencrypted$$serializer implements GeneratedSerializ
         INSTANCE = publicKeyUnencrypted$$serializer;
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("pub.unenc", publicKeyUnencrypted$$serializer, 1);
         pluginGeneratedSerialDescriptor.addElement("data", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7514x79401cc9("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7512x79401cc9("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

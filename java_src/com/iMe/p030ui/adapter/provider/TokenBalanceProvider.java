@@ -23,7 +23,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TokenBalanceProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TokenBalanceProvider */
@@ -44,7 +44,7 @@ public final class TokenBalanceProvider extends BaseNodeProvider<AccountItem.Tok
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.TOKEN_BALANCE;
-        this.layoutId = C3634R.layout.fork_recycle_item_wallet_dashboard_account_balance;
+        this.layoutId = C3632R.layout.fork_recycle_item_wallet_dashboard_account_balance;
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.adapter.provider.TokenBalanceProvider$networkIconCornerSize$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -56,7 +56,7 @@ public final class TokenBalanceProvider extends BaseNodeProvider<AccountItem.Tok
             public final Float invoke() {
                 ResourceManager resourceManager2;
                 resourceManager2 = TokenBalanceProvider.this.resourceManager;
-                return Float.valueOf(resourceManager2.getDimens(C3634R.dimen.icon_size_default) / 2);
+                return Float.valueOf(resourceManager2.getDimens(C3632R.dimen.icon_size_default) / 2);
             }
         });
         this.networkIconCornerSize$delegate = lazy;
@@ -82,26 +82,26 @@ public final class TokenBalanceProvider extends BaseNodeProvider<AccountItem.Tok
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         final TokenBalance balance = item.getBalance();
-        int i = C3634R.C3637id.card_account_balance;
+        int i = C3632R.C3635id.card_account_balance;
         BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3634R.C3637id.constraint_trade_info;
+        int i2 = C3632R.C3635id.constraint_trade_info;
         BaseViewHolder themedRoundedBackground = BaseQuickAdapterExtKt.setThemedRoundedBackground(themedCardBackground, i2, Theme.key_chats_pinnedOverlay, 4.0f);
-        int i3 = C3634R.C3637id.text_title;
+        int i3 = C3632R.C3635id.text_title;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedRoundedBackground, i3, Theme.key_chats_actionBackground);
         int i4 = Theme.key_windowBackgroundWhiteGrayText2;
-        int i5 = C3634R.C3637id.text_trade_pair;
-        int i6 = C3634R.C3637id.text_trade_price;
-        int i7 = C3634R.C3637id.text_account_balance_in_dollars;
+        int i5 = C3632R.C3635id.text_trade_pair;
+        int i6 = C3632R.C3635id.text_trade_price;
+        int i7 = C3632R.C3635id.text_account_balance_in_dollars;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i4, i5, i6, i7);
-        int i8 = C3634R.C3637id.text_trade_percent;
+        int i8 = C3632R.C3635id.text_trade_percent;
         BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i8, TokenBalanceExtKt.getPriceDirection(balance).getColorKey());
-        int i9 = C3634R.C3637id.text_subtitle;
-        BaseViewHolder loadImage$default = BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i9, Theme.key_chat_messagePanelText), i9, i5, i8, i6, i7), C3634R.C3637id.image_logo, balance.getToken().getAvatarUrl(), null, false, 12, null);
-        int i10 = C3634R.C3637id.image_price_direction;
-        BaseViewHolder themedImageColor = BaseQuickAdapterExtKt.setThemedImageColor(BaseQuickAdapterExtKt.setThemedImageColor(loadImage$default.setImageResource(i10, TokenBalanceExtKt.getPriceDirection(balance).getIcon()), i10, TokenBalanceExtKt.getPriceDirection(balance).getColorKey()), C3634R.C3637id.image_trade, i4);
+        int i9 = C3632R.C3635id.text_subtitle;
+        BaseViewHolder loadImage$default = BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i9, Theme.key_chat_messagePanelText), i9, i5, i8, i6, i7), C3632R.C3635id.image_logo, balance.getToken().getAvatarUrl(), null, false, 12, null);
+        int i10 = C3632R.C3635id.image_price_direction;
+        BaseViewHolder themedImageColor = BaseQuickAdapterExtKt.setThemedImageColor(BaseQuickAdapterExtKt.setThemedImageColor(loadImage$default.setImageResource(i10, TokenBalanceExtKt.getPriceDirection(balance).getIcon()), i10, TokenBalanceExtKt.getPriceDirection(balance).getColorKey()), C3632R.C3635id.image_trade, i4);
         MaskFormatter maskFormatter = MaskFormatter.INSTANCE;
         BaseViewHolder text = themedImageColor.setText(i9, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getTotalBalance(balance))).setText(i3, balance.getToken().getName());
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(text.setText(i5, balance.getToken().getTicker() + " / " + TokenDetailed.Companion.getUSD().getName()).setText(i6, TokenBalanceExtKt.getDollarsRateText(balance)).setText(i8, this.resourceManager.getString(C3634R.string.wallet_dashboard_balance_24h_rate, Double.valueOf(balance.getRatePercentageChange24h()))).setText(i7, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getDollarsBalanceText(balance))).setText(C3634R.C3637id.text_coin_ticker, balance.getToken().getTicker()), i2, item.isQuotationVisible()), C3634R.C3637id.image_network_icon, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.TokenBalanceProvider$convert$1$1
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(text.setText(i5, balance.getToken().getTicker() + " / " + TokenDetailed.Companion.getUSD().getName()).setText(i6, TokenBalanceExtKt.getDollarsRateText(balance)).setText(i8, this.resourceManager.getString(C3632R.string.wallet_dashboard_balance_24h_rate, Double.valueOf(balance.getRatePercentageChange24h()))).setText(i7, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getDollarsBalanceText(balance))).setText(C3632R.C3635id.text_coin_ticker, balance.getToken().getTicker()), i2, item.isQuotationVisible()), C3632R.C3635id.image_network_icon, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.TokenBalanceProvider$convert$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -139,13 +139,13 @@ public final class TokenBalanceProvider extends BaseNodeProvider<AccountItem.Tok
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
         final TokenBalance balance = item.getBalance();
-        int i = C3634R.C3637id.text_subtitle;
+        int i = C3632R.C3635id.text_subtitle;
         MaskFormatter maskFormatter = MaskFormatter.INSTANCE;
-        BaseViewHolder text = helper.setText(i, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getTotalBalance(balance))).setText(C3634R.C3637id.text_account_balance_in_dollars, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getDollarsBalanceText(balance)));
-        int i2 = C3634R.C3637id.image_price_direction;
-        BaseViewHolder loadImage$default = BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setThemedImageColor(text.setImageResource(i2, TokenBalanceExtKt.getPriceDirection(balance).getIcon()), i2, TokenBalanceExtKt.getPriceDirection(balance).getColorKey()), C3634R.C3637id.image_logo, balance.getToken().getAvatarUrl(), null, false, 12, null);
-        int i3 = C3634R.C3637id.text_trade_percent;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedTextColor(loadImage$default, i3, TokenBalanceExtKt.getPriceDirection(balance).getColorKey()).setText(C3634R.C3637id.text_trade_price, TokenBalanceExtKt.getDollarsRateText(balance)).setText(i3, this.resourceManager.getString(C3634R.string.wallet_dashboard_balance_24h_rate, Double.valueOf(balance.getRatePercentageChange24h()))), C3634R.C3637id.image_network_icon, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.TokenBalanceProvider$convert$2$1
+        BaseViewHolder text = helper.setText(i, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getTotalBalance(balance))).setText(C3632R.C3635id.text_account_balance_in_dollars, maskFormatter.textOrMask(item.isBalanceHidden(), TokenBalanceExtKt.getDollarsBalanceText(balance)));
+        int i2 = C3632R.C3635id.image_price_direction;
+        BaseViewHolder loadImage$default = BaseQuickAdapterExtKt.loadImage$default(BaseQuickAdapterExtKt.setThemedImageColor(text.setImageResource(i2, TokenBalanceExtKt.getPriceDirection(balance).getIcon()), i2, TokenBalanceExtKt.getPriceDirection(balance).getColorKey()), C3632R.C3635id.image_logo, balance.getToken().getAvatarUrl(), null, false, 12, null);
+        int i3 = C3632R.C3635id.text_trade_percent;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedTextColor(loadImage$default, i3, TokenBalanceExtKt.getPriceDirection(balance).getColorKey()).setText(C3632R.C3635id.text_trade_price, TokenBalanceExtKt.getDollarsRateText(balance)).setText(i3, this.resourceManager.getString(C3632R.string.wallet_dashboard_balance_24h_rate, Double.valueOf(balance.getRatePercentageChange24h()))), C3632R.C3635id.image_network_icon, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.TokenBalanceProvider$convert$2$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {

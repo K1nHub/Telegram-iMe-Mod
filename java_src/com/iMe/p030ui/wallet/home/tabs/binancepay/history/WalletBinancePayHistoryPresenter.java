@@ -102,12 +102,12 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTransaction>> result) {
-                m1752invoke(result);
+                m1753invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1752invoke(Result<? extends List<? extends BinanceTransaction>> it) {
+            public final void m1753invoke(Result<? extends List<? extends BinanceTransaction>> it) {
                 ResourceManager resourceManager;
                 List filterTransactionsByTypeIfNeeded;
                 List<BaseNode> mapTransactionsToGroups;
@@ -186,12 +186,12 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTransaction>> result) {
-                m1751invoke(result);
+                m1752invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1751invoke(Result<? extends List<? extends BinanceTransaction>> it) {
+            public final void m1752invoke(Result<? extends List<? extends BinanceTransaction>> it) {
                 ResourceManager resourceManager;
                 List filterTransactionsByTypeIfNeeded;
                 List mapTransactionsToGroups;
@@ -283,12 +283,12 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1750invoke(rxEvent);
+                m1751invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1750invoke(RxEvent it) {
+            public final void m1751invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (Intrinsics.areEqual(rxEvent, AppRxEvents.UpdateWalletScreen.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletCreated.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletRestored.INSTANCE)) {

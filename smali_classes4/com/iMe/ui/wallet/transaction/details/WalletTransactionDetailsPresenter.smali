@@ -3328,21 +3328,11 @@
 
     .line 102
     :cond_9
-    iget-object v2, v0, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
     invoke-virtual {v1}, Lcom/iMe/model/wallet/transaction/TransactionItem;->getTransaction()Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getProcessingType()Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;->getTitle()I
-
-    move-result v3
-
-    invoke-interface {v2, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/wallet/transaction/Transaction;->getProcessingName()Ljava/lang/String;
 
     move-result-object v15
 

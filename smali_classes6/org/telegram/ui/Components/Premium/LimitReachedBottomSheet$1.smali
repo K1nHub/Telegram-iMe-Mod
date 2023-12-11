@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 234
+    .line 235
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method public invalidate()V
     .locals 1
 
-    .line 237
+    .line 238
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Z
@@ -46,7 +46,7 @@
 
     return-void
 
-    .line 240
+    .line 241
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 

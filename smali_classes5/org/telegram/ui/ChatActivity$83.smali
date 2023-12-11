@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 13070
+    .line 13080
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$83;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onAnimationEnd$0()V
     .locals 7
 
-    .line 13074
+    .line 13084
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$83;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$34600(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/HintView;
@@ -52,7 +52,7 @@
 
     return-void
 
-    .line 13077
+    .line 13087
     :cond_0
     new-instance v0, Landroid/animation/AnimatorSet;
 
@@ -62,10 +62,10 @@
 
     new-array v2, v1, [Landroid/animation/Animator;
 
-    .line 13078
+    .line 13088
     iget-object v3, p0, Lorg/telegram/ui/ChatActivity$83;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    .line 13079
+    .line 13089
     invoke-static {v3}, Lorg/telegram/ui/ChatActivity;->access$34600(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/HintView;
 
     move-result-object v3
@@ -86,10 +86,10 @@
 
     aput-object v1, v2, v6
 
-    .line 13078
+    .line 13088
     invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 13081
+    .line 13091
     new-instance v1, Lorg/telegram/ui/ChatActivity$83$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ChatActivity$83$1;-><init>(Lorg/telegram/ui/ChatActivity$83;)V
@@ -98,10 +98,10 @@
 
     const-wide/16 v1, 0x12c
 
-    .line 13089
+    .line 13099
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 13090
+    .line 13100
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -112,7 +112,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 13073
+    .line 13083
     new-instance p1, Lorg/telegram/ui/ChatActivity$83$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChatActivity$83$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$83;)V

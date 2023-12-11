@@ -2,40 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda6;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda6;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda6;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda6;->INSTANCE:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda6;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 1
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->$r8$lambda$tzLlfKbDOuL9Pl73BnPWQlBSCWM(Landroid/content/DialogInterface;I)V
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->$r8$lambda$h4_an0Nf_HLCItvuauucWCtdW4g(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

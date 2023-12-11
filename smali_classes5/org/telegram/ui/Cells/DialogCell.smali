@@ -14486,30 +14486,109 @@
     .line 2376
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2381
+    .line 2382
     :cond_14b
     :goto_9d
     :try_start_6
+    instance-of v0, v2, Landroid/text/Spannable;
+
+    if-eqz v0, :cond_14e
+
+    .line 2383
+    move-object v0, v2
+
+    check-cast v0, Landroid/text/Spannable;
+
+    .line 2384
+    invoke-interface {v0}, Landroid/text/Spannable;->length()I
+
+    move-result v3
+
+    const-class v5, Ljava/lang/Object;
+
+    const/4 v6, 0x0
+
+    invoke-interface {v0, v6, v3, v5}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object v3
+
+    array-length v5, v3
+
+    const/4 v6, 0x0
+
+    :goto_9e
+    if-ge v6, v5, :cond_14e
+
+    aget-object v8, v3, v6
+
+    .line 2385
+    instance-of v9, v8, Landroid/text/style/ClickableSpan;
+
+    if-nez v9, :cond_14c
+
+    instance-of v9, v8, Lorg/telegram/messenger/CodeHighlighting$Span;
+
+    if-nez v9, :cond_14c
+
+    instance-of v9, v8, Lorg/telegram/messenger/CodeHighlighting$ColorSpan;
+
+    if-nez v9, :cond_14c
+
+    instance-of v9, v8, Lorg/telegram/ui/Components/QuoteSpan;
+
+    if-nez v9, :cond_14c
+
+    instance-of v9, v8, Lorg/telegram/ui/Components/QuoteSpan$QuoteStyleSpan;
+
+    if-nez v9, :cond_14c
+
+    instance-of v9, v8, Landroid/text/style/StyleSpan;
+
+    if-eqz v9, :cond_14d
+
+    move-object v9, v8
+
+    check-cast v9, Landroid/text/style/StyleSpan;
+
+    invoke-virtual {v9}, Landroid/text/style/StyleSpan;->getStyle()I
+
+    move-result v9
+
+    const/4 v10, 0x1
+
+    if-ne v9, v10, :cond_14d
+
+    .line 2386
+    :cond_14c
+    invoke-interface {v0, v8}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
+
+    :cond_14d
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_9e
+
+    .line 2390
+    :cond_14e
     iget-boolean v0, v7, Lorg/telegram/ui/Cells/DialogCell;->useForceThreeLines:Z
 
-    if-nez v0, :cond_14c
+    if-nez v0, :cond_14f
 
     sget-boolean v3, Lorg/telegram/messenger/SharedConfig;->useThreeLinesLayout:Z
 
-    if-eqz v3, :cond_14d
+    if-eqz v3, :cond_150
 
-    :cond_14c
+    :cond_14f
     iget v3, v7, Lorg/telegram/ui/Cells/DialogCell;->currentDialogFolderId:I
 
-    if-eqz v3, :cond_14d
+    if-eqz v3, :cond_150
 
     iget v3, v7, Lorg/telegram/ui/Cells/DialogCell;->currentDialogFolderDialogsCount:I
 
     const/4 v5, 0x1
 
-    if-le v3, v5, :cond_14d
+    if-le v3, v5, :cond_150
 
-    .line 2384
+    .line 2393
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_messagePaint:[Landroid/text/TextPaint;
 
     iget v2, v7, Lorg/telegram/ui/Cells/DialogCell;->paintIndex:I
@@ -14522,30 +14601,30 @@
 
     const/4 v9, 0x0
 
-    goto :goto_9f
+    goto :goto_a0
 
-    :cond_14d
-    if-nez v0, :cond_14e
+    :cond_150
+    if-nez v0, :cond_151
 
-    .line 2385
+    .line 2394
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->useThreeLinesLayout:Z
 
-    if-eqz v0, :cond_14f
+    if-eqz v0, :cond_152
 
-    :cond_14e
-    if-eqz v1, :cond_151
+    :cond_151
+    if-eqz v1, :cond_154
 
-    .line 2386
-    :cond_14f
+    .line 2395
+    :cond_152
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/DialogCell;->isForumCell()Z
 
     move-result v0
 
-    if-nez v0, :cond_150
+    if-nez v0, :cond_153
 
     instance-of v0, v2, Landroid/text/Spanned;
 
-    if-eqz v0, :cond_150
+    if-eqz v0, :cond_153
 
     move-object v0, v2
 
@@ -14567,9 +14646,9 @@
 
     array-length v0, v0
 
-    if-gtz v0, :cond_150
+    if-gtz v0, :cond_153
 
-    .line 2387
+    .line 2396
     iget-object v0, v7, Lorg/telegram/ui/Cells/DialogCell;->currentMessagePaint:Landroid/text/TextPaint;
 
     iget v3, v7, Lorg/telegram/ui/Cells/DialogCell;->thumbsCount:I
@@ -14606,10 +14685,10 @@
 
     move-result-object v2
 
-    goto :goto_9e
+    goto :goto_9f
 
-    .line 2389
-    :cond_150
+    .line 2398
+    :cond_153
     iget-object v0, v7, Lorg/telegram/ui/Cells/DialogCell;->currentMessagePaint:Landroid/text/TextPaint;
 
     const/16 v3, 0xc
@@ -14628,91 +14707,12 @@
 
     move-result-object v2
 
-    :cond_151
-    :goto_9e
+    :cond_154
+    :goto_9f
     move-object v9, v1
 
-    .line 2395
-    :goto_9f
-    instance-of v0, v2, Landroid/text/Spannable;
-
-    if-eqz v0, :cond_154
-
-    .line 2396
-    move-object v0, v2
-
-    check-cast v0, Landroid/text/Spannable;
-
-    .line 2397
-    invoke-interface {v0}, Landroid/text/Spannable;->length()I
-
-    move-result v1
-
-    const-class v3, Ljava/lang/Object;
-
-    const/4 v5, 0x0
-
-    invoke-interface {v0, v5, v1, v3}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-
-    move-result-object v1
-
-    array-length v3, v1
-
-    const/4 v5, 0x0
-
-    :goto_a0
-    if-ge v5, v3, :cond_154
-
-    aget-object v6, v1, v5
-
-    .line 2398
-    instance-of v8, v6, Landroid/text/style/ClickableSpan;
-
-    if-nez v8, :cond_152
-
-    instance-of v8, v6, Lorg/telegram/messenger/CodeHighlighting$Span;
-
-    if-nez v8, :cond_152
-
-    instance-of v8, v6, Lorg/telegram/messenger/CodeHighlighting$ColorSpan;
-
-    if-nez v8, :cond_152
-
-    instance-of v8, v6, Lorg/telegram/ui/Components/QuoteSpan;
-
-    if-nez v8, :cond_152
-
-    instance-of v8, v6, Lorg/telegram/ui/Components/QuoteSpan$QuoteStyleSpan;
-
-    if-nez v8, :cond_152
-
-    instance-of v8, v6, Landroid/text/style/StyleSpan;
-
-    if-eqz v8, :cond_153
-
-    move-object v8, v6
-
-    check-cast v8, Landroid/text/style/StyleSpan;
-
-    invoke-virtual {v8}, Landroid/text/style/StyleSpan;->getStyle()I
-
-    move-result v8
-
-    const/4 v10, 0x1
-
-    if-ne v8, v10, :cond_153
-
-    .line 2399
-    :cond_152
-    invoke-interface {v0, v6}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
-
-    :cond_153
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_a0
-
     .line 2404
-    :cond_154
+    :goto_a0
     iget-boolean v0, v7, Lorg/telegram/ui/Cells/DialogCell;->isForum:Z
 
     if-eqz v0, :cond_155

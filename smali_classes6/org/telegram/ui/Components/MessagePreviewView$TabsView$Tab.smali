@@ -28,27 +28,27 @@
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 2
 
-    .line 2154
+    .line 2212
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2151
+    .line 2209
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$TabsView$Tab;->bounds:Landroid/graphics/RectF;
 
-    .line 2152
+    .line 2210
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$TabsView$Tab;->clickBounds:Landroid/graphics/RectF;
 
-    .line 2155
+    .line 2213
     iput p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$TabsView$Tab;->id:I
 
-    .line 2156
+    .line 2214
     new-instance p1, Lorg/telegram/ui/Components/Text;
 
     const-string v0, "fonts/rmedium.ttf"

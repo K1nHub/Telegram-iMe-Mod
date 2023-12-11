@@ -54,7 +54,7 @@ import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.IMapsProvider;
@@ -69,7 +69,7 @@ import org.telegram.p043ui.ActionBar.ActionBarMenu;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Adapters.BaseLocationAdapter;
@@ -265,7 +265,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             FrameLayout frameLayout = new FrameLayout(context);
             addView(frameLayout, LayoutHelper.createFrame(-2, 114));
             ChatAttachAlertLocationLayout.this.lastPressedMarkerView = new FrameLayout(context);
-            ChatAttachAlertLocationLayout.this.lastPressedMarkerView.setBackgroundResource(C3634R.C3636drawable.venue_tooltip);
+            ChatAttachAlertLocationLayout.this.lastPressedMarkerView.setBackgroundResource(C3632R.C3634drawable.venue_tooltip);
             ChatAttachAlertLocationLayout.this.lastPressedMarkerView.getBackground().setColorFilter(new PorterDuffColorFilter(ChatAttachAlertLocationLayout.this.getThemedColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
             frameLayout.addView(ChatAttachAlertLocationLayout.this.lastPressedMarkerView, LayoutHelper.createFrame(-2, 71));
             ChatAttachAlertLocationLayout.this.lastPressedMarkerView.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -293,7 +293,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             textView2.setGravity(LocaleController.isRTL ? 5 : 3);
             ChatAttachAlertLocationLayout.this.lastPressedMarkerView.addView(textView2, LayoutHelper.createFrame(-2, -2, (LocaleController.isRTL ? 5 : 3) | 48, 18, 32, 18, 0));
             textView.setText(venueLocation.venue.title);
-            textView2.setText(LocaleController.getString("TapToSendLocation", C3634R.string.TapToSendLocation));
+            textView2.setText(LocaleController.getString("TapToSendLocation", C3632R.string.TapToSendLocation));
             final FrameLayout frameLayout2 = new FrameLayout(context);
             frameLayout2.setBackground(Theme.createCircleDrawable(AndroidUtilities.m104dp(36), LocationCell.getColorForIndex(venueLocation.num)));
             frameLayout.addView(frameLayout2, LayoutHelper.createFrame(36, 36, 81, 0, 0, 0, 4));
@@ -394,7 +394,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.placeMarkers = new ArrayList<>();
         this.checkPermission = true;
         this.checkBackgroundPermission = true;
-        int currentActionBarHeight = (AndroidUtilities.displaySize.x - C3706ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m104dp(66);
+        int currentActionBarHeight = (AndroidUtilities.displaySize.x - C3704ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m104dp(66);
         this.overScrollHeight = currentActionBarHeight;
         this.mapHeight = currentActionBarHeight;
         this.first = true;
@@ -426,7 +426,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.locationDenied = (i2 < 23 || getParentActivity() == null || getParentActivity().checkSelfPermission("android.permission.ACCESS_COARSE_LOCATION") == 0) ? false : true;
         ActionBarMenu createMenu = this.parentAlert.actionBar.createMenu();
         this.overlayView = new MapOverlayView(context);
-        ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, C3634R.C3636drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.1
+        ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, C3632R.C3634drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout.1
             @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 ChatAttachAlertLocationLayout.this.searching = true;
@@ -486,7 +486,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.searchItem = actionBarMenuItemSearchListener;
         actionBarMenuItemSearchListener.setVisibility((!this.locationDenied || this.parentAlert.isStoryLocationPicker) ? 0 : 8);
         ActionBarMenuItem actionBarMenuItem = this.searchItem;
-        int i3 = C3634R.string.Search;
+        int i3 = C3632R.string.Search;
         actionBarMenuItem.setSearchFieldHint(LocaleController.getString("Search", i3));
         this.searchItem.setContentDescription(LocaleController.getString("Search", i3));
         EditTextBoldCursor searchField = this.searchItem.getSearchField();
@@ -550,7 +550,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         int i6 = Theme.key_location_actionPressedBackground;
         Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(m104dp, themedColor, getThemedColor(i6));
         if (i2 < 21) {
-            Drawable mutate = context.getResources().getDrawable(C3634R.C3636drawable.places_btn).mutate();
+            Drawable mutate = context.getResources().getDrawable(C3632R.C3634drawable.places_btn).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, createSimpleSelectorRoundRectDrawable, AndroidUtilities.m104dp(2), AndroidUtilities.m104dp(2));
             combinedDrawable.setFullsize(true);
@@ -575,7 +575,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         searchButton3.setTextColor(getThemedColor(i7));
         this.searchAreaButton.setTextSize(1, 14.0f);
         this.searchAreaButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.searchAreaButton.setText(LocaleController.getString("PlacesInThisArea", C3634R.string.PlacesInThisArea));
+        this.searchAreaButton.setText(LocaleController.getString("PlacesInThisArea", C3632R.string.PlacesInThisArea));
         this.searchAreaButton.setGravity(17);
         this.searchAreaButton.setPadding(AndroidUtilities.m104dp(20), 0, AndroidUtilities.m104dp(20), 0);
         this.mapViewClip.addView(this.searchAreaButton, LayoutHelper.createFrame(-2, i2 >= 21 ? 40 : 44, 49, 80, 12, 80, 0));
@@ -591,13 +591,13 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.mapTypeButton.setSubMenuOpenSide(2);
         this.mapTypeButton.setAdditionalXOffset(AndroidUtilities.m104dp(10));
         this.mapTypeButton.setAdditionalYOffset(-AndroidUtilities.m104dp(10));
-        this.mapTypeButton.addSubItem(2, C3634R.C3636drawable.msg_map, LocaleController.getString("Map", C3634R.string.Map), resourcesProvider);
-        this.mapTypeButton.addSubItem(3, C3634R.C3636drawable.msg_satellite, LocaleController.getString("Satellite", C3634R.string.Satellite), resourcesProvider);
-        this.mapTypeButton.addSubItem(4, C3634R.C3636drawable.msg_hybrid, LocaleController.getString("Hybrid", C3634R.string.Hybrid), resourcesProvider);
-        this.mapTypeButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+        this.mapTypeButton.addSubItem(2, C3632R.C3634drawable.msg_map, LocaleController.getString("Map", C3632R.string.Map), resourcesProvider);
+        this.mapTypeButton.addSubItem(3, C3632R.C3634drawable.msg_satellite, LocaleController.getString("Satellite", C3632R.string.Satellite), resourcesProvider);
+        this.mapTypeButton.addSubItem(4, C3632R.C3634drawable.msg_hybrid, LocaleController.getString("Hybrid", C3632R.string.Hybrid), resourcesProvider);
+        this.mapTypeButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
         Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m104dp(40), getThemedColor(i5), getThemedColor(i6));
         if (i2 < 21) {
-            Drawable mutate2 = context.getResources().getDrawable(C3634R.C3636drawable.floating_shadow_profile).mutate();
+            Drawable mutate2 = context.getResources().getDrawable(C3632R.C3634drawable.floating_shadow_profile).mutate();
             mutate2.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable2 = new CombinedDrawable(mutate2, createSimpleSelectorCircleDrawable, 0, 0);
             combinedDrawable2.setIconSize(AndroidUtilities.m104dp(40), AndroidUtilities.m104dp(40));
@@ -620,7 +620,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             });
         }
         this.mapTypeButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable);
-        this.mapTypeButton.setIcon(C3634R.C3636drawable.msg_map_type);
+        this.mapTypeButton.setIcon(C3632R.C3634drawable.msg_map_type);
         this.mapViewClip.addView(this.mapTypeButton, LayoutHelper.createFrame(i2 >= 21 ? 40 : 44, i2 >= 21 ? 40 : 44, 53, 0, 12, 12, 0));
         this.mapTypeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
@@ -637,7 +637,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.locationButton = new ImageView(context);
         Drawable createSimpleSelectorCircleDrawable2 = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m104dp(40), getThemedColor(i), getThemedColor(i6));
         if (i2 < 21) {
-            Drawable mutate3 = context.getResources().getDrawable(C3634R.C3636drawable.floating_shadow_profile).mutate();
+            Drawable mutate3 = context.getResources().getDrawable(C3632R.C3634drawable.floating_shadow_profile).mutate();
             mutate3.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable3 = new CombinedDrawable(mutate3, createSimpleSelectorCircleDrawable2, 0, 0);
             combinedDrawable3.setIconSize(AndroidUtilities.m104dp(40), AndroidUtilities.m104dp(40));
@@ -657,11 +657,11 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             });
         }
         this.locationButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable2);
-        this.locationButton.setImageResource(C3634R.C3636drawable.msg_current_location);
+        this.locationButton.setImageResource(C3632R.C3634drawable.msg_current_location);
         this.locationButton.setScaleType(ImageView.ScaleType.CENTER);
         this.locationButton.setColorFilter(new PorterDuffColorFilter(getThemedColor(i7), PorterDuff.Mode.MULTIPLY));
         this.locationButton.setTag(Integer.valueOf(i7));
-        this.locationButton.setContentDescription(LocaleController.getString("AccDescrMyLocation", C3634R.string.AccDescrMyLocation));
+        this.locationButton.setContentDescription(LocaleController.getString("AccDescrMyLocation", C3632R.string.AccDescrMyLocation));
         this.mapViewClip.addView(this.locationButton, LayoutHelper.createFrame(i2 >= 21 ? 40 : 44, i2 >= 21 ? 40 : 44, 85, 0, 0, 12, 12));
         this.locationButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
@@ -686,7 +686,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         });
         ImageView imageView2 = new ImageView(context);
         this.emptyImageView = imageView2;
-        imageView2.setImageResource(C3634R.C3636drawable.location_empty);
+        imageView2.setImageResource(C3632R.C3634drawable.location_empty);
         this.emptyImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogEmptyImage), PorterDuff.Mode.MULTIPLY));
         this.emptyView.addView(this.emptyImageView, LayoutHelper.createLinear(-2, -2));
         TextView textView = new TextView(context);
@@ -696,7 +696,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         this.emptyTitleTextView.setGravity(17);
         this.emptyTitleTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.emptyTitleTextView.setTextSize(1, 17.0f);
-        this.emptyTitleTextView.setText(LocaleController.getString("NoPlacesFound", C3634R.string.NoPlacesFound));
+        this.emptyTitleTextView.setText(LocaleController.getString("NoPlacesFound", C3632R.string.NoPlacesFound));
         this.emptyView.addView(this.emptyTitleTextView, LayoutHelper.createLinear(-2, -2, 17, 0, 11, 0, 0));
         TextView textView2 = new TextView(context);
         this.emptySubtitleTextView = textView2;
@@ -767,7 +767,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                 if (i9 == 0) {
                     int m104dp2 = AndroidUtilities.m104dp(13);
                     int backgroundPaddingTop = ChatAttachAlertLocationLayout.this.parentAlert.getBackgroundPaddingTop();
-                    if (((ChatAttachAlertLocationLayout.this.parentAlert.scrollOffsetY[0] - backgroundPaddingTop) - m104dp2) + backgroundPaddingTop >= C3706ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) ChatAttachAlertLocationLayout.this.listView.findViewHolderForAdapterPosition(0)) == null || holder.itemView.getTop() <= ChatAttachAlertLocationLayout.this.mapHeight - ChatAttachAlertLocationLayout.this.overScrollHeight) {
+                    if (((ChatAttachAlertLocationLayout.this.parentAlert.scrollOffsetY[0] - backgroundPaddingTop) - m104dp2) + backgroundPaddingTop >= C3704ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) ChatAttachAlertLocationLayout.this.listView.findViewHolderForAdapterPosition(0)) == null || holder.itemView.getTop() <= ChatAttachAlertLocationLayout.this.mapHeight - ChatAttachAlertLocationLayout.this.overScrollHeight) {
                         return;
                     }
                     ChatAttachAlertLocationLayout.this.listView.smoothScrollBy(0, holder.itemView.getTop() - (ChatAttachAlertLocationLayout.this.mapHeight - ChatAttachAlertLocationLayout.this.overScrollHeight));
@@ -825,7 +825,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         }).start();
         ImageView imageView3 = new ImageView(context);
         this.markerImageView = imageView3;
-        imageView3.setImageResource(C3634R.C3636drawable.map_pin2);
+        imageView3.setImageResource(C3632R.C3634drawable.map_pin2);
         this.mapViewClip.addView(this.markerImageView, LayoutHelper.createFrame(28, 48, 49));
         RecyclerListView recyclerListView4 = new RecyclerListView(context, resourcesProvider);
         this.searchListView = recyclerListView4;
@@ -838,7 +838,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                     ChatAttachAlertLocationLayout.this.searchItem.setShowSearchProgress(ChatAttachAlertLocationLayout.this.searchAdapter.isSearching());
                 }
                 if (ChatAttachAlertLocationLayout.this.emptySubtitleTextView != null) {
-                    ChatAttachAlertLocationLayout.this.emptySubtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", C3634R.string.NoPlacesFoundInfo, ChatAttachAlertLocationLayout.this.searchAdapter.getLastSearchString())));
+                    ChatAttachAlertLocationLayout.this.emptySubtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", C3632R.string.NoPlacesFoundInfo, ChatAttachAlertLocationLayout.this.searchAdapter.getLastSearchString())));
                 }
                 super.notifyDataSetChanged();
             }
@@ -1133,7 +1133,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         });
         if (isActiveThemeDark()) {
             this.currentMapStyleDark = true;
-            this.map.setMapStyle(ApplicationLoader.getMapsProvider().loadRawResourceStyle(ApplicationLoader.applicationContext, C3634R.raw.mapstyle_night));
+            this.map.setMapStyle(ApplicationLoader.getMapsProvider().loadRawResourceStyle(ApplicationLoader.applicationContext, C3632R.raw.mapstyle_night));
         }
         onMapInit();
     }
@@ -1622,15 +1622,15 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
             try {
                 if (!((LocationManager) ApplicationLoader.applicationContext.getSystemService("location")).isProviderEnabled("gps")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity(), this.resourcesProvider);
-                    builder.setTopAnimation(C3634R.raw.permission_request_location, 72, false, Theme.getColor(Theme.key_dialogTopBackground, this.resourcesProvider));
-                    builder.setMessage(LocaleController.getString("GpsDisabledAlertText", C3634R.string.GpsDisabledAlertText));
-                    builder.setPositiveButton(LocaleController.getString("ConnectingToProxyEnable", C3634R.string.ConnectingToProxyEnable), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda0
+                    builder.setTopAnimation(C3632R.raw.permission_request_location, 72, false, Theme.getColor(Theme.key_dialogTopBackground, this.resourcesProvider));
+                    builder.setMessage(LocaleController.getString("GpsDisabledAlertText", C3632R.string.GpsDisabledAlertText));
+                    builder.setPositiveButton(LocaleController.getString("ConnectingToProxyEnable", C3632R.string.ConnectingToProxyEnable), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.ChatAttachAlertLocationLayout$$ExternalSyntheticLambda0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
                             ChatAttachAlertLocationLayout.this.lambda$onMapInit$25(dialogInterface, i);
                         }
                     });
-                    builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+                    builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
                     builder.show();
                 }
             } catch (Exception e2) {
@@ -1911,7 +1911,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
         if (getMeasuredHeight() == 0 || this.mapView == null) {
             return;
         }
-        int currentActionBarHeight = C3706ActionBar.getCurrentActionBarHeight();
+        int currentActionBarHeight = C3704ActionBar.getCurrentActionBarHeight();
         int buttonsHeight = ((AndroidUtilities.displaySize.y - currentActionBarHeight) - buttonsHeight()) - AndroidUtilities.m104dp(90);
         int m104dp = AndroidUtilities.m104dp((int) PsExtractor.PRIVATE_STREAM_1);
         this.overScrollHeight = m104dp;
@@ -2138,7 +2138,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
 
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
     public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
-        this.parentAlert.actionBar.setTitle(LocaleController.getString("ShareLocation", C3634R.string.ShareLocation));
+        this.parentAlert.actionBar.setTitle(LocaleController.getString("ShareLocation", C3632R.string.ShareLocation));
         if (this.mapView.getView().getParent() == null) {
             this.mapViewClip.addView(this.mapView.getView(), 0, LayoutHelper.createFrame(-1, this.overScrollHeight + AndroidUtilities.m104dp(10), 51));
             this.mapViewClip.addView(this.overlayView, 1, LayoutHelper.createFrame(-1, this.overScrollHeight + AndroidUtilities.m104dp(10), 51));
@@ -2313,7 +2313,7 @@ public class ChatAttachAlertLocationLayout extends ChatAttachAlert.AttachAlertLa
                     return;
                 }
                 this.currentMapStyleDark = true;
-                this.map.setMapStyle(ApplicationLoader.getMapsProvider().loadRawResourceStyle(ApplicationLoader.applicationContext, C3634R.raw.mapstyle_night));
+                this.map.setMapStyle(ApplicationLoader.getMapsProvider().loadRawResourceStyle(ApplicationLoader.applicationContext, C3632R.raw.mapstyle_night));
             } else if (this.currentMapStyleDark) {
                 this.currentMapStyleDark = false;
                 this.map.setMapStyle(null);

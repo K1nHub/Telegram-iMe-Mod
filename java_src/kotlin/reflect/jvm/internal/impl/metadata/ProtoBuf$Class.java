@@ -21,6 +21,7 @@ import kotlin.reflect.jvm.internal.impl.protobuf.Internal;
 import kotlin.reflect.jvm.internal.impl.protobuf.InvalidProtocolBufferException;
 import kotlin.reflect.jvm.internal.impl.protobuf.Parser;
 import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes4.dex */
 public final class ProtoBuf$Class extends GeneratedMessageLite.ExtendableMessage<ProtoBuf$Class> {
     public static Parser<ProtoBuf$Class> PARSER = new AbstractParser<ProtoBuf$Class>() { // from class: kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf$Class.1
@@ -310,7 +311,7 @@ public final class ProtoBuf$Class extends GeneratedMessageLite.ExtendableMessage
                                 z3 = z29;
                                 z = true;
                                 break;
-                            case 136:
+                            case MessagesStorage.LAST_DB_VERSION /* 136 */:
                                 this.bitField0_ |= 8;
                                 this.inlineClassUnderlyingPropertyName_ = codedInputStream.readInt32();
                                 z3 = z3;
@@ -1303,7 +1304,7 @@ public final class ProtoBuf$Class extends GeneratedMessageLite.ExtendableMessage
 
         @Override // kotlin.reflect.jvm.internal.impl.protobuf.GeneratedMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo2049clone() {
+        public Builder mo2051clone() {
             return create().mergeFrom(buildPartial());
         }
 

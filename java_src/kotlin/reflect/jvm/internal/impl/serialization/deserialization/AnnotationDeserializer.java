@@ -283,8 +283,8 @@ public final class AnnotationDeserializer {
         ProtoBuf$Annotation.Argument.Value.Type type = value.getType();
         int i = type == null ? -1 : WhenMappings.$EnumSwitchMapping$0[type.ordinal()];
         if (i == 10) {
-            ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-            ClassDescriptor classDescriptor = mo2051getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2051getDeclarationDescriptor : null;
+            ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+            ClassDescriptor classDescriptor = mo2053getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2053getDeclarationDescriptor : null;
             if (classDescriptor != null && !KotlinBuiltIns.isKClass(classDescriptor)) {
                 return false;
             }

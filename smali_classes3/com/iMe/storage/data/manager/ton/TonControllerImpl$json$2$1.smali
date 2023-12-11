@@ -59,7 +59,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 47
+    .line 48
     check-cast p1, Lkotlinx/serialization/json/JsonBuilder;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$json$2$1;->invoke(Lkotlinx/serialization/json/JsonBuilder;)V
@@ -78,7 +78,7 @@
 
     const/4 v0, 0x1
 
-    .line 47
+    .line 48
     invoke-virtual {p1, v0}, Lkotlinx/serialization/json/JsonBuilder;->setIgnoreUnknownKeys(Z)V
 
     return-void

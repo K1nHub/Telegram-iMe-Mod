@@ -56,19 +56,19 @@ public final class CharsetJVMKt {
         Intrinsics.checkNotNullParameter(dst, "dst");
         CharBuffer wrap = CharBuffer.wrap(input, i, i2);
         int remaining = wrap.remaining();
-        ByteBuffer m1917getMemorySK3TCg8 = dst.m1917getMemorySK3TCg8();
+        ByteBuffer m1919getMemorySK3TCg8 = dst.m1919getMemorySK3TCg8();
         int writePosition = dst.getWritePosition();
         int limit = dst.getLimit() - writePosition;
-        ByteBuffer m1912slice87lwejk = Memory.m1912slice87lwejk(m1917getMemorySK3TCg8, writePosition, limit);
-        CoderResult result = charsetEncoder.encode(wrap, m1912slice87lwejk, false);
+        ByteBuffer m1914slice87lwejk = Memory.m1914slice87lwejk(m1919getMemorySK3TCg8, writePosition, limit);
+        CoderResult result = charsetEncoder.encode(wrap, m1914slice87lwejk, false);
         if (result.isMalformed() || result.isUnmappable()) {
             Intrinsics.checkNotNullExpressionValue(result, "result");
             throwExceptionWrapped(result);
         }
-        if (!(m1912slice87lwejk.limit() == limit)) {
+        if (!(m1914slice87lwejk.limit() == limit)) {
             throw new IllegalStateException("Buffer's limit change is not allowed".toString());
         }
-        dst.commitWritten(m1912slice87lwejk.position());
+        dst.commitWritten(m1914slice87lwejk.position());
         return remaining - wrap.remaining();
     }
 
@@ -91,20 +91,20 @@ public final class CharsetJVMKt {
     public static final boolean encodeComplete(CharsetEncoder charsetEncoder, Buffer dst) {
         Intrinsics.checkNotNullParameter(charsetEncoder, "<this>");
         Intrinsics.checkNotNullParameter(dst, "dst");
-        ByteBuffer m1917getMemorySK3TCg8 = dst.m1917getMemorySK3TCg8();
+        ByteBuffer m1919getMemorySK3TCg8 = dst.m1919getMemorySK3TCg8();
         int writePosition = dst.getWritePosition();
         int limit = dst.getLimit() - writePosition;
-        ByteBuffer m1912slice87lwejk = Memory.m1912slice87lwejk(m1917getMemorySK3TCg8, writePosition, limit);
-        CoderResult result = charsetEncoder.encode(EmptyCharBuffer, m1912slice87lwejk, true);
+        ByteBuffer m1914slice87lwejk = Memory.m1914slice87lwejk(m1919getMemorySK3TCg8, writePosition, limit);
+        CoderResult result = charsetEncoder.encode(EmptyCharBuffer, m1914slice87lwejk, true);
         if (result.isMalformed() || result.isUnmappable()) {
             Intrinsics.checkNotNullExpressionValue(result, "result");
             throwExceptionWrapped(result);
         }
         boolean isUnderflow = result.isUnderflow();
-        if (!(m1912slice87lwejk.limit() == limit)) {
+        if (!(m1914slice87lwejk.limit() == limit)) {
             throw new IllegalStateException("Buffer's limit change is not allowed".toString());
         }
-        dst.commitWritten(m1912slice87lwejk.position());
+        dst.commitWritten(m1914slice87lwejk.position());
         return isUnderflow;
     }
 }

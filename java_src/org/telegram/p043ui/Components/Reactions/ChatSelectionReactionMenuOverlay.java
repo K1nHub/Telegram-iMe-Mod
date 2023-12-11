@@ -117,7 +117,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             };
             this.reactionsContainerLayout = reactionsContainerLayout;
             reactionsContainerLayout.setPadding(AndroidUtilities.m104dp(4) + (LocaleController.isRTL ? 0 : this.mSidePadding), AndroidUtilities.m104dp(4), AndroidUtilities.m104dp(4) + (LocaleController.isRTL ? this.mSidePadding : 0), AndroidUtilities.m104dp(this.mPadding));
-            this.reactionsContainerLayout.setDelegate(new C54763());
+            this.reactionsContainerLayout.setDelegate(new C54723());
             this.reactionsContainerLayout.setClipChildren(false);
             this.reactionsContainerLayout.setClipToPadding(false);
             addView(this.reactionsContainerLayout, LayoutHelper.createFrame(-2, this.mPadding + 70, 5));
@@ -127,7 +127,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay$3 */
     /* loaded from: classes6.dex */
-    public class C54763 implements ReactionsContainerLayout.ReactionsContainerDelegate {
+    public class C54723 implements ReactionsContainerLayout.ReactionsContainerDelegate {
         @Override // org.telegram.p043ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
         public /* synthetic */ boolean drawBackground() {
             return ReactionsContainerLayout.ReactionsContainerDelegate.CC.$default$drawBackground(this);
@@ -148,7 +148,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             ReactionsContainerLayout.ReactionsContainerDelegate.CC.$default$onEmojiWindowDismissed(this);
         }
 
-        C54763() {
+        C54723() {
         }
 
         @Override // org.telegram.p043ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
@@ -157,7 +157,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatSelectionReactionMenuOverlay.C54763.this.lambda$onReactionClicked$0();
+                    ChatSelectionReactionMenuOverlay.C54723.this.lambda$onReactionClicked$0();
                 }
             });
         }

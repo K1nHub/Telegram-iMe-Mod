@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.Theme;
@@ -237,13 +237,13 @@ public class PremiumTierCell extends ViewGroup {
         this.hasDivider = z;
         int months = subscriptionTier.getMonths();
         if (months == 1) {
-            this.titleView.setText(LocaleController.getString(C3634R.string.PremiumTierMonthly));
+            this.titleView.setText(LocaleController.getString(C3632R.string.PremiumTierMonthly));
         } else if (months == 6) {
-            this.titleView.setText(LocaleController.getString(C3634R.string.PremiumTierSemiannual));
+            this.titleView.setText(LocaleController.getString(C3632R.string.PremiumTierSemiannual));
         } else if (months != 12) {
             this.titleView.setText(LocaleController.formatPluralString("Months", subscriptionTier.getMonths(), new Object[0]));
         } else {
-            this.titleView.setText(LocaleController.getString(C3634R.string.PremiumTierAnnual));
+            this.titleView.setText(LocaleController.getString(C3632R.string.PremiumTierAnnual));
         }
         boolean z2 = !BuildVars.useInvoiceBilling() && (!BillingController.getInstance().isReady() || subscriptionTier.getOfferDetails() == null);
         this.isDrawingGradient = z2;
@@ -253,26 +253,26 @@ public class PremiumTierCell extends ViewGroup {
                 this.pricePerYearStrikeView.setVisibility(8);
                 this.pricePerYearView.setVisibility(8);
             } else {
-                this.discountView.setText(LocaleController.formatString(C3634R.string.GiftPremiumOptionDiscount, Integer.valueOf(subscriptionTier.getDiscount())));
+                this.discountView.setText(LocaleController.formatString(C3632R.string.GiftPremiumOptionDiscount, Integer.valueOf(subscriptionTier.getDiscount())));
                 this.discountView.setVisibility(0);
                 this.pricePerYearStrikeView.setVisibility(0);
                 this.pricePerYearView.setVisibility(0);
             }
             this.pricePerYearStrikeView.setText(subscriptionTier.getFormattedPricePerYearRegular());
-            this.pricePerYearView.setText(LocaleController.formatString(C3634R.string.PricePerYear, subscriptionTier.getFormattedPricePerYear()));
-            this.pricePerMonthView.setText(LocaleController.formatString(C3634R.string.PricePerMonthMe, subscriptionTier.getFormattedPricePerMonth()));
+            this.pricePerYearView.setText(LocaleController.formatString(C3632R.string.PricePerYear, subscriptionTier.getFormattedPricePerYear()));
+            this.pricePerMonthView.setText(LocaleController.formatString(C3632R.string.PricePerMonthMe, subscriptionTier.getFormattedPricePerMonth()));
             if (subscriptionTier.subscriptionOption.current) {
                 this.pricePerYearView.setVisibility(0);
-                this.pricePerYearView.setText(LocaleController.getString(C3634R.string.YourCurrentPlan));
+                this.pricePerYearView.setText(LocaleController.getString(C3632R.string.YourCurrentPlan));
             }
         } else {
-            this.discountView.setText(LocaleController.formatString(C3634R.string.GiftPremiumOptionDiscount, 10));
+            this.discountView.setText(LocaleController.formatString(C3632R.string.GiftPremiumOptionDiscount, 10));
             this.discountView.setVisibility(0);
             this.pricePerYearStrikeView.setVisibility(0);
             this.pricePerYearView.setVisibility(0);
             this.pricePerYearStrikeView.setText("USD00.00");
-            this.pricePerYearView.setText(LocaleController.formatString(C3634R.string.PricePerYear, 1000));
-            this.pricePerMonthView.setText(LocaleController.formatString(C3634R.string.PricePerMonthMe, 100));
+            this.pricePerYearView.setText(LocaleController.formatString(C3632R.string.PricePerYear, 1000));
+            this.pricePerMonthView.setText(LocaleController.formatString(C3632R.string.PricePerMonthMe, 100));
         }
         requestLayout();
     }

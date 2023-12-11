@@ -28,7 +28,7 @@ import com.google.android.exoplayer2.PlaybackException;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -274,7 +274,7 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
         this.yOffset = ((int) ((f * 1.05f) - f)) / 2;
         float f2 = i * 0.4f;
         this.xOffset = ((int) ((1.05f * f2) - f2)) / 2;
-        final Drawable drawable = ContextCompat.getDrawable(context, C3634R.C3636drawable.calls_pip_outershadow);
+        final Drawable drawable = ContextCompat.getDrawable(context, C3632R.C3634drawable.calls_pip_outershadow);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.voip.VoIPPiPView.4
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
@@ -312,15 +312,15 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
             this.floatingView.addView(this.topShadow, -1, AndroidUtilities.m104dp(60));
             ImageView imageView = new ImageView(context);
             this.closeIcon = imageView;
-            imageView.setImageResource(C3634R.C3636drawable.pip_close);
+            imageView.setImageResource(C3632R.C3634drawable.pip_close);
             this.closeIcon.setPadding(AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8));
-            this.closeIcon.setContentDescription(LocaleController.getString("Close", C3634R.string.Close));
+            this.closeIcon.setContentDescription(LocaleController.getString("Close", C3632R.string.Close));
             this.floatingView.addView(this.closeIcon, LayoutHelper.createFrame(40, 40, 53, 4, 4, 4, 0));
             ImageView imageView2 = new ImageView(context);
             this.enlargeIcon = imageView2;
-            imageView2.setImageResource(C3634R.C3636drawable.pip_enlarge);
+            imageView2.setImageResource(C3632R.C3634drawable.pip_enlarge);
             this.enlargeIcon.setPadding(AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8));
-            this.enlargeIcon.setContentDescription(LocaleController.getString("Open", C3634R.string.Open));
+            this.enlargeIcon.setContentDescription(LocaleController.getString("Open", C3632R.string.Open));
             this.floatingView.addView(this.enlargeIcon, LayoutHelper.createFrame(40, 40, 51, 4, 4, 4, 0));
             this.closeIcon.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
@@ -642,7 +642,7 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
                     }
                 });
                 ofFloat.setDuration(300L).setInterpolator(CubicBezierInterpolator.DEFAULT);
-                ofFloat.addListener(new C58853(z));
+                ofFloat.addListener(new C58813(z));
                 ofFloat.start();
                 VoIPPiPView.this.expandAnimator = ofFloat;
             }
@@ -711,10 +711,10 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.Components.voip.VoIPPiPView$FloatingView$3 */
         /* loaded from: classes6.dex */
-        public class C58853 extends AnimatorListenerAdapter {
+        public class C58813 extends AnimatorListenerAdapter {
             final /* synthetic */ boolean val$expanded;
 
-            C58853(boolean z) {
+            C58813(boolean z) {
                 this.val$expanded = z;
             }
 
@@ -730,7 +730,7 @@ public class VoIPPiPView implements VoIPService.StateListener, NotificationCente
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPPiPView$FloatingView$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        VoIPPiPView.FloatingView.C58853.this.lambda$onAnimationEnd$0(z);
+                        VoIPPiPView.FloatingView.C58813.this.lambda$onAnimationEnd$0(z);
                     }
                 }, 64L);
             }

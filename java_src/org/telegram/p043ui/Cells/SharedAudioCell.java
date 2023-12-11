@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.Emoji;
@@ -243,15 +243,15 @@ public class SharedAudioCell extends FrameLayout implements DownloadController.F
         boolean z = LocaleController.isRTL;
         addView(checkBox22, LayoutHelper.createFrame(24, 24.0f, (z ? 5 : 3) | 48, z ? 0.0f : 38.1f, 32.1f, z ? 6.0f : f, (float) BitmapDescriptorFactory.HUE_RED));
         if (i == IdFabric$CustomType.SHARED_AUDIO_CELL_MUSIC) {
-            this.isInPlaylistMarkDrawable = AppCompatResources.getDrawable(getContext(), C3634R.C3636drawable.msg_tone_on);
+            this.isInPlaylistMarkDrawable = AppCompatResources.getDrawable(getContext(), C3632R.C3634drawable.msg_tone_on);
             ImageView imageView = new ImageView(context);
             this.optionsButton = imageView;
             imageView.setFocusable(false);
             this.optionsButton.setScaleType(ImageView.ScaleType.CENTER);
             this.optionsButton.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
             this.optionsButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_stickers_menu), PorterDuff.Mode.MULTIPLY));
-            this.optionsButton.setImageResource(C3634R.C3636drawable.msg_actions);
-            this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+            this.optionsButton.setImageResource(C3632R.C3634drawable.msg_actions);
+            this.optionsButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
             this.optionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -284,32 +284,32 @@ public class SharedAudioCell extends FrameLayout implements DownloadController.F
     public /* synthetic */ void lambda$new$9(View view) {
         ItemOptions scrimViewBackground = ItemOptions.makeOptions(((LaunchActivity) getContext()).getActionBarLayout().getLastFragment(), this).setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundWhite)));
         boolean z = this.isInPlaylist;
-        scrimViewBackground.add(z ? C3634R.C3636drawable.msg_tone_off : C3634R.C3636drawable.msg_tone_add, LocaleController.getInternalString(z ? C3634R.string.music_player_remove_from_playlist : C3634R.string.music_player_add_to_playlist), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda6
+        scrimViewBackground.add(z ? C3632R.C3634drawable.msg_tone_off : C3632R.C3634drawable.msg_tone_add, LocaleController.getInternalString(z ? C3632R.string.music_player_remove_from_playlist : C3632R.string.music_player_add_to_playlist), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 SharedAudioCell.this.lambda$new$3();
             }
-        }).addIf(!this.isChatNoForwards, C3634R.C3636drawable.msg_forward, LocaleController.getString("Forward", C3634R.string.Forward), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda5
+        }).addIf(!this.isChatNoForwards, C3632R.C3634drawable.msg_forward, LocaleController.getString("Forward", C3632R.string.Forward), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 SharedAudioCell.this.lambda$new$4();
             }
-        }).addIf(!this.isChatNoForwards, C3634R.C3636drawable.fork_forward_cloud, LocaleController.getInternalString(C3634R.string.chat_message_popup_option_forward_cloud), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda4
+        }).addIf(!this.isChatNoForwards, C3632R.C3634drawable.fork_forward_cloud, LocaleController.getInternalString(C3632R.string.chat_message_popup_option_forward_cloud), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
                 SharedAudioCell.this.lambda$new$5();
             }
-        }).addIf(!this.isChatNoForwards, C3634R.C3636drawable.msg_shareout, LocaleController.getString("ShareFile", C3634R.string.ShareFile), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda2
+        }).addIf(!this.isChatNoForwards, C3632R.C3634drawable.msg_shareout, LocaleController.getString("ShareFile", C3632R.string.ShareFile), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 SharedAudioCell.this.lambda$new$6();
             }
-        }).addIf(!this.isChatNoForwards, C3634R.C3636drawable.msg_download, LocaleController.getString("SaveToMusic", C3634R.string.SaveToMusic), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda3
+        }).addIf(!this.isChatNoForwards, C3632R.C3634drawable.msg_download, LocaleController.getString("SaveToMusic", C3632R.string.SaveToMusic), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
                 SharedAudioCell.this.lambda$new$7();
             }
-        }).add(C3634R.C3636drawable.msg_message, LocaleController.getString("ShowInChat", C3634R.string.ShowInChat), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda7
+        }).add(C3632R.C3634drawable.msg_message, LocaleController.getString("ShowInChat", C3632R.string.ShowInChat), new Runnable() { // from class: org.telegram.ui.Cells.SharedAudioCell$$ExternalSyntheticLambda7
             @Override // java.lang.Runnable
             public final void run() {
                 SharedAudioCell.this.lambda$new$8();
@@ -846,7 +846,7 @@ public class SharedAudioCell extends FrameLayout implements DownloadController.F
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
         if (this.currentMessageObject.isMusic()) {
-            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3634R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
+            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3632R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
         } else if (this.titleLayout != null && this.descriptionLayout != null) {
             accessibilityNodeInfo.setText(((Object) this.titleLayout.getText()) + ", " + ((Object) this.descriptionLayout.getText()));
         }

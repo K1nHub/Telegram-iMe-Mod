@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;->$r8$lambda$g7EvZpig6PfS69C644r6zIMKqTY(Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;->$r8$lambda$VzfRXxafNYW_Usiq48wgxdeF-XU(Lorg/telegram/ui/Components/Premium/boosts/BoostViaGiftsBottomSheet;)V
 
     return-void
 .end method

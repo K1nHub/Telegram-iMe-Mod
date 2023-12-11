@@ -14,7 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.Set;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -141,7 +141,7 @@ public class DrawerActionCell extends FrameLayout {
         this.currentId = (int) j;
         try {
             if (j == 1985737506) {
-                this.textView.setText(LocaleController.getInternalString(C3634R.string.drawer_wallet_bot));
+                this.textView.setText(LocaleController.getInternalString(C3632R.string.drawer_wallet_bot));
             } else if (tLRPC$TL_attachMenuBot.side_menu_disclaimer_needed) {
                 this.textView.setText(applyNewSpan(tLRPC$TL_attachMenuBot.short_name));
             } else {
@@ -151,7 +151,7 @@ public class DrawerActionCell extends FrameLayout {
             if (sideAttachMenuBotIcon != null) {
                 this.imageView.setImage(ImageLocation.getForDocument(sideAttachMenuBotIcon.icon), "24_24", (Drawable) null, tLRPC$TL_attachMenuBot);
             } else {
-                this.imageView.setImageResource(C3634R.C3636drawable.msg_bot, Theme.getColor(Theme.key_chats_menuItemIcon));
+                this.imageView.setImageResource(C3632R.C3634drawable.msg_bot, Theme.getColor(Theme.key_chats_menuItemIcon));
             }
             this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.SRC_IN));
         } catch (Throwable th) {

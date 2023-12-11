@@ -69,6 +69,7 @@ public final class WalletTransactionsResponse {
         private final TokenDetailedResponse outputToken;
         private final String payloadMessage;
         private final String processing;
+        private final String processingName;
         private final String receiverAccountId;
         private final String senderAccountId;
         private final String simplexOrderId;
@@ -96,35 +97,35 @@ public final class WalletTransactionsResponse {
         }
 
         public final String component12() {
+            return this.processingName;
+        }
+
+        public final String component13() {
             return this.userAccountId;
         }
 
-        public final Boolean component13() {
+        public final Boolean component14() {
             return this.isDonation;
         }
 
-        public final String component14() {
+        public final String component15() {
             return this.senderAccountId;
         }
 
-        public final String component15() {
+        public final String component16() {
             return this.receiverAccountId;
         }
 
-        public final String component16() {
+        public final String component17() {
             return this.txFromCryptoAddress;
         }
 
-        public final String component17() {
+        public final String component18() {
             return this.txHash;
         }
 
-        public final String component18() {
-            return this.networkType;
-        }
-
         public final String component19() {
-            return this.txToCryptoAddress;
+            return this.networkType;
         }
 
         public final String component2() {
@@ -132,47 +133,51 @@ public final class WalletTransactionsResponse {
         }
 
         public final String component20() {
-            return this.simplexOrderId;
+            return this.txToCryptoAddress;
         }
 
         public final String component21() {
-            return this.spentCurrency;
+            return this.simplexOrderId;
         }
 
         public final String component22() {
-            return this.amountToSpent;
+            return this.spentCurrency;
         }
 
         public final String component23() {
+            return this.amountToSpent;
+        }
+
+        public final String component24() {
             return this.tradeType;
         }
 
-        public final TokenDetailedResponse component24() {
+        public final TokenDetailedResponse component25() {
             return this.inputToken;
         }
 
-        public final TokenDetailedResponse component25() {
+        public final TokenDetailedResponse component26() {
             return this.outputToken;
         }
 
-        public final String component26() {
+        public final String component27() {
             return this.outputAmount;
         }
 
-        public final String component27() {
+        public final String component28() {
             return this.inputAmount;
         }
 
-        public final String component28() {
-            return this.logicalTime;
-        }
-
         public final String component29() {
-            return this.payloadMessage;
+            return this.logicalTime;
         }
 
         public final String component3() {
             return this.type;
+        }
+
+        public final String component30() {
+            return this.payloadMessage;
         }
 
         public final String component4() {
@@ -199,7 +204,7 @@ public final class WalletTransactionsResponse {
             return this.feeAmount;
         }
 
-        public final WalletTransactionResponse copy(String id, String amount, String type, String direction, String updatedAt, String createdAt, TokenDetailedResponse token, String status, String feeAmount, TokenDetailedResponse feeToken, String processing, String str, Boolean bool, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, TokenDetailedResponse tokenDetailedResponse, TokenDetailedResponse tokenDetailedResponse2, String str12, String str13, String str14, String str15) {
+        public final WalletTransactionResponse copy(String id, String amount, String type, String direction, String updatedAt, String createdAt, TokenDetailedResponse token, String status, String feeAmount, TokenDetailedResponse feeToken, String processing, String processingName, String str, Boolean bool, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, TokenDetailedResponse tokenDetailedResponse, TokenDetailedResponse tokenDetailedResponse2, String str12, String str13, String str14, String str15) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
@@ -211,7 +216,8 @@ public final class WalletTransactionsResponse {
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(processing, "processing");
-            return new WalletTransactionResponse(id, amount, type, direction, updatedAt, createdAt, token, status, feeAmount, feeToken, processing, str, bool, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, tokenDetailedResponse, tokenDetailedResponse2, str12, str13, str14, str15);
+            Intrinsics.checkNotNullParameter(processingName, "processingName");
+            return new WalletTransactionResponse(id, amount, type, direction, updatedAt, createdAt, token, status, feeAmount, feeToken, processing, processingName, str, bool, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, tokenDetailedResponse, tokenDetailedResponse2, str12, str13, str14, str15);
         }
 
         public boolean equals(Object obj) {
@@ -220,13 +226,13 @@ public final class WalletTransactionsResponse {
             }
             if (obj instanceof WalletTransactionResponse) {
                 WalletTransactionResponse walletTransactionResponse = (WalletTransactionResponse) obj;
-                return Intrinsics.areEqual(this.f334id, walletTransactionResponse.f334id) && Intrinsics.areEqual(this.amount, walletTransactionResponse.amount) && Intrinsics.areEqual(this.type, walletTransactionResponse.type) && Intrinsics.areEqual(this.direction, walletTransactionResponse.direction) && Intrinsics.areEqual(this.updatedAt, walletTransactionResponse.updatedAt) && Intrinsics.areEqual(this.createdAt, walletTransactionResponse.createdAt) && Intrinsics.areEqual(this.token, walletTransactionResponse.token) && Intrinsics.areEqual(this.status, walletTransactionResponse.status) && Intrinsics.areEqual(this.feeAmount, walletTransactionResponse.feeAmount) && Intrinsics.areEqual(this.feeToken, walletTransactionResponse.feeToken) && Intrinsics.areEqual(this.processing, walletTransactionResponse.processing) && Intrinsics.areEqual(this.userAccountId, walletTransactionResponse.userAccountId) && Intrinsics.areEqual(this.isDonation, walletTransactionResponse.isDonation) && Intrinsics.areEqual(this.senderAccountId, walletTransactionResponse.senderAccountId) && Intrinsics.areEqual(this.receiverAccountId, walletTransactionResponse.receiverAccountId) && Intrinsics.areEqual(this.txFromCryptoAddress, walletTransactionResponse.txFromCryptoAddress) && Intrinsics.areEqual(this.txHash, walletTransactionResponse.txHash) && Intrinsics.areEqual(this.networkType, walletTransactionResponse.networkType) && Intrinsics.areEqual(this.txToCryptoAddress, walletTransactionResponse.txToCryptoAddress) && Intrinsics.areEqual(this.simplexOrderId, walletTransactionResponse.simplexOrderId) && Intrinsics.areEqual(this.spentCurrency, walletTransactionResponse.spentCurrency) && Intrinsics.areEqual(this.amountToSpent, walletTransactionResponse.amountToSpent) && Intrinsics.areEqual(this.tradeType, walletTransactionResponse.tradeType) && Intrinsics.areEqual(this.inputToken, walletTransactionResponse.inputToken) && Intrinsics.areEqual(this.outputToken, walletTransactionResponse.outputToken) && Intrinsics.areEqual(this.outputAmount, walletTransactionResponse.outputAmount) && Intrinsics.areEqual(this.inputAmount, walletTransactionResponse.inputAmount) && Intrinsics.areEqual(this.logicalTime, walletTransactionResponse.logicalTime) && Intrinsics.areEqual(this.payloadMessage, walletTransactionResponse.payloadMessage);
+                return Intrinsics.areEqual(this.f334id, walletTransactionResponse.f334id) && Intrinsics.areEqual(this.amount, walletTransactionResponse.amount) && Intrinsics.areEqual(this.type, walletTransactionResponse.type) && Intrinsics.areEqual(this.direction, walletTransactionResponse.direction) && Intrinsics.areEqual(this.updatedAt, walletTransactionResponse.updatedAt) && Intrinsics.areEqual(this.createdAt, walletTransactionResponse.createdAt) && Intrinsics.areEqual(this.token, walletTransactionResponse.token) && Intrinsics.areEqual(this.status, walletTransactionResponse.status) && Intrinsics.areEqual(this.feeAmount, walletTransactionResponse.feeAmount) && Intrinsics.areEqual(this.feeToken, walletTransactionResponse.feeToken) && Intrinsics.areEqual(this.processing, walletTransactionResponse.processing) && Intrinsics.areEqual(this.processingName, walletTransactionResponse.processingName) && Intrinsics.areEqual(this.userAccountId, walletTransactionResponse.userAccountId) && Intrinsics.areEqual(this.isDonation, walletTransactionResponse.isDonation) && Intrinsics.areEqual(this.senderAccountId, walletTransactionResponse.senderAccountId) && Intrinsics.areEqual(this.receiverAccountId, walletTransactionResponse.receiverAccountId) && Intrinsics.areEqual(this.txFromCryptoAddress, walletTransactionResponse.txFromCryptoAddress) && Intrinsics.areEqual(this.txHash, walletTransactionResponse.txHash) && Intrinsics.areEqual(this.networkType, walletTransactionResponse.networkType) && Intrinsics.areEqual(this.txToCryptoAddress, walletTransactionResponse.txToCryptoAddress) && Intrinsics.areEqual(this.simplexOrderId, walletTransactionResponse.simplexOrderId) && Intrinsics.areEqual(this.spentCurrency, walletTransactionResponse.spentCurrency) && Intrinsics.areEqual(this.amountToSpent, walletTransactionResponse.amountToSpent) && Intrinsics.areEqual(this.tradeType, walletTransactionResponse.tradeType) && Intrinsics.areEqual(this.inputToken, walletTransactionResponse.inputToken) && Intrinsics.areEqual(this.outputToken, walletTransactionResponse.outputToken) && Intrinsics.areEqual(this.outputAmount, walletTransactionResponse.outputAmount) && Intrinsics.areEqual(this.inputAmount, walletTransactionResponse.inputAmount) && Intrinsics.areEqual(this.logicalTime, walletTransactionResponse.logicalTime) && Intrinsics.areEqual(this.payloadMessage, walletTransactionResponse.payloadMessage);
             }
             return false;
         }
 
         public int hashCode() {
-            int hashCode = ((((((((((((((((((((this.f334id.hashCode() * 31) + this.amount.hashCode()) * 31) + this.type.hashCode()) * 31) + this.direction.hashCode()) * 31) + this.updatedAt.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + this.token.hashCode()) * 31) + this.status.hashCode()) * 31) + this.feeAmount.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + this.processing.hashCode()) * 31;
+            int hashCode = ((((((((((((((((((((((this.f334id.hashCode() * 31) + this.amount.hashCode()) * 31) + this.type.hashCode()) * 31) + this.direction.hashCode()) * 31) + this.updatedAt.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + this.token.hashCode()) * 31) + this.status.hashCode()) * 31) + this.feeAmount.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + this.processing.hashCode()) * 31) + this.processingName.hashCode()) * 31;
             String str = this.userAccountId;
             int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
             Boolean bool = this.isDonation;
@@ -266,10 +272,10 @@ public final class WalletTransactionsResponse {
         }
 
         public String toString() {
-            return "WalletTransactionResponse(id=" + this.f334id + ", amount=" + this.amount + ", type=" + this.type + ", direction=" + this.direction + ", updatedAt=" + this.updatedAt + ", createdAt=" + this.createdAt + ", token=" + this.token + ", status=" + this.status + ", feeAmount=" + this.feeAmount + ", feeToken=" + this.feeToken + ", processing=" + this.processing + ", userAccountId=" + this.userAccountId + ", isDonation=" + this.isDonation + ", senderAccountId=" + this.senderAccountId + ", receiverAccountId=" + this.receiverAccountId + ", txFromCryptoAddress=" + this.txFromCryptoAddress + ", txHash=" + this.txHash + ", networkType=" + this.networkType + ", txToCryptoAddress=" + this.txToCryptoAddress + ", simplexOrderId=" + this.simplexOrderId + ", spentCurrency=" + this.spentCurrency + ", amountToSpent=" + this.amountToSpent + ", tradeType=" + this.tradeType + ", inputToken=" + this.inputToken + ", outputToken=" + this.outputToken + ", outputAmount=" + this.outputAmount + ", inputAmount=" + this.inputAmount + ", logicalTime=" + this.logicalTime + ", payloadMessage=" + this.payloadMessage + ')';
+            return "WalletTransactionResponse(id=" + this.f334id + ", amount=" + this.amount + ", type=" + this.type + ", direction=" + this.direction + ", updatedAt=" + this.updatedAt + ", createdAt=" + this.createdAt + ", token=" + this.token + ", status=" + this.status + ", feeAmount=" + this.feeAmount + ", feeToken=" + this.feeToken + ", processing=" + this.processing + ", processingName=" + this.processingName + ", userAccountId=" + this.userAccountId + ", isDonation=" + this.isDonation + ", senderAccountId=" + this.senderAccountId + ", receiverAccountId=" + this.receiverAccountId + ", txFromCryptoAddress=" + this.txFromCryptoAddress + ", txHash=" + this.txHash + ", networkType=" + this.networkType + ", txToCryptoAddress=" + this.txToCryptoAddress + ", simplexOrderId=" + this.simplexOrderId + ", spentCurrency=" + this.spentCurrency + ", amountToSpent=" + this.amountToSpent + ", tradeType=" + this.tradeType + ", inputToken=" + this.inputToken + ", outputToken=" + this.outputToken + ", outputAmount=" + this.outputAmount + ", inputAmount=" + this.inputAmount + ", logicalTime=" + this.logicalTime + ", payloadMessage=" + this.payloadMessage + ')';
         }
 
-        public WalletTransactionResponse(String id, String amount, String type, String direction, String updatedAt, String createdAt, TokenDetailedResponse token, String status, String feeAmount, TokenDetailedResponse feeToken, String processing, String str, Boolean bool, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, TokenDetailedResponse tokenDetailedResponse, TokenDetailedResponse tokenDetailedResponse2, String str12, String str13, String str14, String str15) {
+        public WalletTransactionResponse(String id, String amount, String type, String direction, String updatedAt, String createdAt, TokenDetailedResponse token, String status, String feeAmount, TokenDetailedResponse feeToken, String processing, String processingName, String str, Boolean bool, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, TokenDetailedResponse tokenDetailedResponse, TokenDetailedResponse tokenDetailedResponse2, String str12, String str13, String str14, String str15) {
             Intrinsics.checkNotNullParameter(id, "id");
             Intrinsics.checkNotNullParameter(amount, "amount");
             Intrinsics.checkNotNullParameter(type, "type");
@@ -281,6 +287,7 @@ public final class WalletTransactionsResponse {
             Intrinsics.checkNotNullParameter(feeAmount, "feeAmount");
             Intrinsics.checkNotNullParameter(feeToken, "feeToken");
             Intrinsics.checkNotNullParameter(processing, "processing");
+            Intrinsics.checkNotNullParameter(processingName, "processingName");
             this.f334id = id;
             this.amount = amount;
             this.type = type;
@@ -292,6 +299,7 @@ public final class WalletTransactionsResponse {
             this.feeAmount = feeAmount;
             this.feeToken = feeToken;
             this.processing = processing;
+            this.processingName = processingName;
             this.userAccountId = str;
             this.isDonation = bool;
             this.senderAccountId = str2;
@@ -354,6 +362,10 @@ public final class WalletTransactionsResponse {
 
         public final String getProcessing() {
             return this.processing;
+        }
+
+        public final String getProcessingName() {
+            return this.processingName;
         }
 
         public final String getUserAccountId() {

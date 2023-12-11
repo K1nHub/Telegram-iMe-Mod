@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
@@ -34,8 +34,12 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
     private GiftInfoAdapter adapter;
     private final TLRPC$TL_payments_checkedGiftCode giftCode;
     private final boolean isUnused;
+    private String slug;
 
     public static void show(final BaseFragment baseFragment, final String str, final Browser.Progress progress) {
+        if (baseFragment == null) {
+            return;
+        }
         final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
         if (progress != null) {
             progress.init();
@@ -61,15 +65,10 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$show$1(AtomicBoolean atomicBoolean, BaseFragment baseFragment, String str, Browser.Progress progress, TLRPC$TL_payments_checkedGiftCode tLRPC$TL_payments_checkedGiftCode) {
-        if (atomicBoolean.get()) {
+        if (atomicBoolean.get() || baseFragment.getParentActivity() == null) {
             return;
         }
-        GiftInfoBottomSheet giftInfoBottomSheet = new GiftInfoBottomSheet(baseFragment, false, true, tLRPC$TL_payments_checkedGiftCode, str);
-        if (baseFragment != null && baseFragment.getParentActivity() != null) {
-            baseFragment.showDialog(giftInfoBottomSheet);
-        } else {
-            giftInfoBottomSheet.show();
-        }
+        baseFragment.showDialog(new GiftInfoBottomSheet(baseFragment, false, true, tLRPC$TL_payments_checkedGiftCode, str));
         if (progress != null) {
             progress.end();
         }
@@ -81,6 +80,10 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
             return;
         }
         progress.end();
+    }
+
+    public static void show(BaseFragment baseFragment, String str) {
+        show(baseFragment, str, null);
     }
 
     public static boolean handleIntent(Intent intent, Browser.Progress progress) {
@@ -118,6 +121,7 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
         super(baseFragment, z, z2);
         this.isUnused = tLRPC$TL_payments_checkedGiftCode.used_date == 0;
         this.giftCode = tLRPC$TL_payments_checkedGiftCode;
+        this.slug = str;
         setApplyTopPadding(false);
         setApplyBottomPadding(true);
         fixNavigationBar();
@@ -168,14 +172,14 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.p043ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
-        return this.isUnused ? LocaleController.getString("BoostingGiftLink", C3634R.string.BoostingGiftLink) : LocaleController.getString("BoostingUsedGiftLink", C3634R.string.BoostingUsedGiftLink);
+        return this.isUnused ? LocaleController.getString("BoostingGiftLink", C3632R.string.BoostingGiftLink) : LocaleController.getString("BoostingUsedGiftLink", C3632R.string.BoostingUsedGiftLink);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.boosts.GiftInfoBottomSheet$2 */
     /* loaded from: classes6.dex */
-    public class C54222 extends GiftInfoAdapter {
-        C54222(Theme.ResourcesProvider resourcesProvider) {
+    public class C54182 extends GiftInfoAdapter {
+        C54182(Theme.ResourcesProvider resourcesProvider) {
             super(resourcesProvider);
         }
 
@@ -189,7 +193,7 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.GiftInfoBottomSheet$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    GiftInfoBottomSheet.C54222.this.lambda$afterCodeApplied$0();
+                    GiftInfoBottomSheet.C54182.this.lambda$afterCodeApplied$0();
                 }
             }, 200L);
         }
@@ -216,14 +220,20 @@ public class GiftInfoBottomSheet extends BottomSheetWithRecyclerListView {
 
         @Override // org.telegram.p043ui.Components.Premium.boosts.adapters.GiftInfoAdapter
         protected void onHiddenLinkClicked() {
-            BulletinFactory.m63of(((BottomSheet) GiftInfoBottomSheet.this).container, ((BottomSheet) GiftInfoBottomSheet.this).resourcesProvider).createSimpleBulletin(C3634R.raw.chats_infotip, LocaleController.getString("BoostingOnlyRecipientCode", C3634R.string.BoostingOnlyRecipientCode)).show(true);
+            String string;
+            if ((GiftInfoBottomSheet.this.slug == null || GiftInfoBottomSheet.this.slug.isEmpty()) && GiftInfoBottomSheet.this.giftCode.to_id == -1) {
+                string = LocaleController.getString("BoostingOnlyGiveawayCreatorSeeLink", C3632R.string.BoostingOnlyGiveawayCreatorSeeLink);
+            } else {
+                string = LocaleController.getString("BoostingOnlyRecipientCode", C3632R.string.BoostingOnlyRecipientCode);
+            }
+            BulletinFactory.m63of(((BottomSheet) GiftInfoBottomSheet.this).container, ((BottomSheet) GiftInfoBottomSheet.this).resourcesProvider).createSimpleBulletin(C3632R.raw.chats_infotip, string).show(true);
         }
     }
 
     @Override // org.telegram.p043ui.Components.BottomSheetWithRecyclerListView
     protected RecyclerListView.SelectionAdapter createAdapter() {
-        C54222 c54222 = new C54222(this.resourcesProvider);
-        this.adapter = c54222;
-        return c54222;
+        C54182 c54182 = new C54182(this.resourcesProvider);
+        this.adapter = c54182;
+        return c54182;
     }
 }

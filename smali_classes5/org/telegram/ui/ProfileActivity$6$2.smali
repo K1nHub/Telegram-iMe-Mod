@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity$6;)V
     .locals 0
 
-    .line 2629
+    .line 2627
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 2632
+    .line 2630
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void

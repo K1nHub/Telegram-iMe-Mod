@@ -31,7 +31,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: WalletCreateManager.kt */
 /* loaded from: classes3.dex */
@@ -139,7 +139,7 @@ public final class WalletCreateManager implements WalletCreateManagerDelegate {
             return;
         }
         WalletCreateManagerView viewState = getViewState();
-        String string = this.resourceManager.getString(C3634R.string.wallet_dashboard_create_start_dialog_title);
+        String string = this.resourceManager.getString(C3632R.string.wallet_dashboard_create_start_dialog_title);
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(availableWalletCreationTypes, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (WalletCreationType walletCreationType : availableWalletCreationTypes) {
@@ -309,6 +309,6 @@ public final class WalletCreateManager implements WalletCreateManagerDelegate {
     }
 
     private final DialogModel getActivationConfirmationDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_activation_confirmation_title), this.resourceManager.getString(C3634R.string.wallet_activation_confirmation_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.common_ok));
+        return new DialogModel(this.resourceManager.getString(C3632R.string.wallet_activation_confirmation_title), this.resourceManager.getString(C3632R.string.wallet_activation_confirmation_description), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.common_ok));
     }
 }

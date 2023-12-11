@@ -49,6 +49,7 @@ import kotlin.reflect.jvm.internal.impl.types.TypeProjectionImpl;
 import kotlin.reflect.jvm.internal.impl.types.TypeUtils;
 import kotlin.reflect.jvm.internal.impl.types.Variance;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesStorage;
 /* loaded from: classes4.dex */
 public abstract class KotlinBuiltIns {
     public static final Name BUILTINS_MODULE_NAME = Name.special("<built-ins module>");
@@ -345,7 +346,7 @@ public abstract class KotlinBuiltIns {
             case 102:
             case 104:
             case 106:
-            case 135:
+            case TsExtractor.TS_STREAM_TYPE_E_AC3 /* 135 */:
                 objArr[0] = "fqName";
                 break;
             case 14:
@@ -389,7 +390,7 @@ public abstract class KotlinBuiltIns {
             case 132:
             case 133:
             case TsExtractor.TS_STREAM_TYPE_SPLICE_INFO /* 134 */:
-            case 136:
+            case MessagesStorage.LAST_DB_VERSION /* 136 */:
             case 137:
             case TsExtractor.TS_STREAM_TYPE_DTS /* 138 */:
             case 139:
@@ -905,10 +906,10 @@ public abstract class KotlinBuiltIns {
                 objArr[2] = "isDoubleOrNullableDouble";
                 break;
             case TsExtractor.TS_STREAM_TYPE_SPLICE_INFO /* 134 */:
-            case 135:
+            case TsExtractor.TS_STREAM_TYPE_E_AC3 /* 135 */:
                 objArr[2] = "isConstructedFromGivenClassAndNotNullable";
                 break;
-            case 136:
+            case MessagesStorage.LAST_DB_VERSION /* 136 */:
                 objArr[2] = "isNothing";
                 break;
             case 137:
@@ -1114,13 +1115,13 @@ public abstract class KotlinBuiltIns {
         this.builtInClassesByName = storageManager.createMemoizedFunction(new Function1<Name, ClassDescriptor>() { // from class: kotlin.reflect.jvm.internal.impl.builtins.KotlinBuiltIns.3
             @Override // kotlin.jvm.functions.Function1
             public ClassDescriptor invoke(Name name) {
-                ClassifierDescriptor mo2053getContributedClassifier = KotlinBuiltIns.this.getBuiltInsPackageScope().mo2053getContributedClassifier(name, NoLookupLocation.FROM_BUILTINS);
-                if (mo2053getContributedClassifier == null) {
+                ClassifierDescriptor mo2055getContributedClassifier = KotlinBuiltIns.this.getBuiltInsPackageScope().mo2055getContributedClassifier(name, NoLookupLocation.FROM_BUILTINS);
+                if (mo2055getContributedClassifier == null) {
                     throw new AssertionError("Built-in class " + StandardNames.BUILT_INS_PACKAGE_FQ_NAME.child(name) + " is not found");
-                } else if (!(mo2053getContributedClassifier instanceof ClassDescriptor)) {
-                    throw new AssertionError("Must be a class descriptor " + name + ", but was " + mo2053getContributedClassifier);
+                } else if (!(mo2055getContributedClassifier instanceof ClassDescriptor)) {
+                    throw new AssertionError("Must be a class descriptor " + name + ", but was " + mo2055getContributedClassifier);
                 } else {
-                    return (ClassDescriptor) mo2053getContributedClassifier;
+                    return (ClassDescriptor) mo2055getContributedClassifier;
                 }
             }
         });
@@ -1534,12 +1535,12 @@ public abstract class KotlinBuiltIns {
         if (moduleDescriptor == null) {
             $$$reportNull$$$0(72);
         }
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        if (mo2051getDeclarationDescriptor == null) {
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        if (mo2053getDeclarationDescriptor == null) {
             return null;
         }
         UnsignedTypes unsignedTypes = UnsignedTypes.INSTANCE;
-        if (!unsignedTypes.isShortNameOfUnsignedArray(mo2051getDeclarationDescriptor.getName()) || (classId = DescriptorUtilsKt.getClassId(mo2051getDeclarationDescriptor)) == null || (unsignedClassIdByArrayClassId = unsignedTypes.getUnsignedClassIdByArrayClassId(classId)) == null || (findClassAcrossModuleDependencies = FindClassInModuleKt.findClassAcrossModuleDependencies(moduleDescriptor, unsignedClassIdByArrayClassId)) == null) {
+        if (!unsignedTypes.isShortNameOfUnsignedArray(mo2053getDeclarationDescriptor.getName()) || (classId = DescriptorUtilsKt.getClassId(mo2053getDeclarationDescriptor)) == null || (unsignedClassIdByArrayClassId = unsignedTypes.getUnsignedClassIdByArrayClassId(classId)) == null || (findClassAcrossModuleDependencies = FindClassInModuleKt.findClassAcrossModuleDependencies(moduleDescriptor, unsignedClassIdByArrayClassId)) == null) {
             return null;
         }
         return findClassAcrossModuleDependencies.getDefaultType();
@@ -1632,19 +1633,19 @@ public abstract class KotlinBuiltIns {
         if (kotlinType == null) {
             $$$reportNull$$$0(91);
         }
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        return (mo2051getDeclarationDescriptor == null || getPrimitiveArrayType(mo2051getDeclarationDescriptor) == null) ? false : true;
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        return (mo2053getDeclarationDescriptor == null || getPrimitiveArrayType(mo2053getDeclarationDescriptor) == null) ? false : true;
     }
 
     public static PrimitiveType getPrimitiveArrayElementType(KotlinType kotlinType) {
         if (kotlinType == null) {
             $$$reportNull$$$0(92);
         }
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        if (mo2051getDeclarationDescriptor == null) {
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        if (mo2053getDeclarationDescriptor == null) {
             return null;
         }
-        return getPrimitiveArrayType(mo2051getDeclarationDescriptor);
+        return getPrimitiveArrayType(mo2053getDeclarationDescriptor);
     }
 
     public static boolean isPrimitiveType(KotlinType kotlinType) {
@@ -1658,8 +1659,8 @@ public abstract class KotlinBuiltIns {
         if (kotlinType == null) {
             $$$reportNull$$$0(95);
         }
-        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
-        return (mo2051getDeclarationDescriptor instanceof ClassDescriptor) && isPrimitiveClass((ClassDescriptor) mo2051getDeclarationDescriptor);
+        ClassifierDescriptor mo2053getDeclarationDescriptor = kotlinType.getConstructor().mo2053getDeclarationDescriptor();
+        return (mo2053getDeclarationDescriptor instanceof ClassDescriptor) && isPrimitiveClass((ClassDescriptor) mo2053getDeclarationDescriptor);
     }
 
     public static boolean isPrimitiveClass(ClassDescriptor classDescriptor) {
@@ -1686,8 +1687,8 @@ public abstract class KotlinBuiltIns {
         if (fqNameUnsafe == null) {
             $$$reportNull$$$0(102);
         }
-        ClassifierDescriptor mo2051getDeclarationDescriptor = typeConstructor.mo2051getDeclarationDescriptor();
-        return (mo2051getDeclarationDescriptor instanceof ClassDescriptor) && classFqNameEquals(mo2051getDeclarationDescriptor, fqNameUnsafe);
+        ClassifierDescriptor mo2053getDeclarationDescriptor = typeConstructor.mo2053getDeclarationDescriptor();
+        return (mo2053getDeclarationDescriptor instanceof ClassDescriptor) && classFqNameEquals(mo2053getDeclarationDescriptor, fqNameUnsafe);
     }
 
     private static boolean classFqNameEquals(ClassifierDescriptor classifierDescriptor, FqNameUnsafe fqNameUnsafe) {
@@ -1771,14 +1772,14 @@ public abstract class KotlinBuiltIns {
             $$$reportNull$$$0(TsExtractor.TS_STREAM_TYPE_SPLICE_INFO);
         }
         if (fqNameUnsafe == null) {
-            $$$reportNull$$$0(135);
+            $$$reportNull$$$0(TsExtractor.TS_STREAM_TYPE_E_AC3);
         }
         return isConstructedFromGivenClass(kotlinType, fqNameUnsafe) && !kotlinType.isMarkedNullable();
     }
 
     public static boolean isNothing(KotlinType kotlinType) {
         if (kotlinType == null) {
-            $$$reportNull$$$0(136);
+            $$$reportNull$$$0(MessagesStorage.LAST_DB_VERSION);
         }
         return isNothingOrNullableNothing(kotlinType) && !TypeUtils.isNullableType(kotlinType);
     }

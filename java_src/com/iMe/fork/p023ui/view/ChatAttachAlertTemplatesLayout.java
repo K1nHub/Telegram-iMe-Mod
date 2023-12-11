@@ -33,12 +33,12 @@ import moxy.MvpDelegate;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -399,9 +399,9 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
     @Override // org.telegram.p043ui.Components.ChatAttachAlert.AttachAlertLayout
     public void onShow(ChatAttachAlert.AttachAlertLayout attachAlertLayout) {
         ChatAttachAlert chatAttachAlert = this.parentAlert;
-        C3706ActionBar c3706ActionBar = chatAttachAlert.actionBar;
-        c3706ActionBar.setTitle(LocaleController.getInternalString(C3634R.string.chat_templates));
-        c3706ActionBar.createMenu().setPadding(0, 0, chatAttachAlert.doneItem.getMeasuredWidth() + AndroidUtilities.m104dp(24), 0);
+        C3704ActionBar c3704ActionBar = chatAttachAlert.actionBar;
+        c3704ActionBar.setTitle(LocaleController.getInternalString(C3632R.string.chat_templates));
+        c3704ActionBar.createMenu().setPadding(0, 0, chatAttachAlert.doneItem.getMeasuredWidth() + AndroidUtilities.m104dp(24), 0);
         ActionBarMenuItem doneItem = chatAttachAlert.doneItem;
         Intrinsics.checkNotNullExpressionValue(doneItem, "doneItem");
         ViewExtKt.visible$default(doneItem, false, 1, null);
@@ -463,11 +463,11 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
         linearLayout.setGravity(17);
         ImageView imageView = new ImageView(linearLayout.getContext());
         imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogEmptyImage), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3634R.C3636drawable.stickers_empty);
+        imageView.setImageResource(C3632R.C3634drawable.stickers_empty);
         linearLayout.addView(imageView, LayoutHelper.createLinear(-2, -2));
         TextView textView = new TextView(linearLayout.getContext());
         ViewExtKt.withMediumTypeface(textView);
-        textView.setText(LocaleController.getInternalString(C3634R.string.chat_templates_list_header));
+        textView.setText(LocaleController.getInternalString(C3632R.string.chat_templates_list_header));
         textView.setGravity(17);
         textView.setTextColor(getThemedColor(Theme.key_dialogEmptyText));
         textView.setTextSize(1, 17.0f);
@@ -596,7 +596,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
                     chatAttachAlert = ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertTemplatesLayout.this).parentAlert;
                     int backgroundPaddingTop = chatAttachAlert.getBackgroundPaddingTop();
                     chatAttachAlert2 = ((ChatAttachAlert.AttachAlertLayout) ChatAttachAlertTemplatesLayout.this).parentAlert;
-                    if (((chatAttachAlert2.scrollOffsetY[0] - backgroundPaddingTop) - m104dp) + backgroundPaddingTop >= C3706ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.m104dp(53)) {
+                    if (((chatAttachAlert2.scrollOffsetY[0] - backgroundPaddingTop) - m104dp) + backgroundPaddingTop >= C3704ActionBar.getCurrentActionBarHeight() || (holder = (RecyclerListView.Holder) findViewHolderForAdapterPosition(1)) == null || holder.itemView.getTop() <= AndroidUtilities.m104dp(53)) {
                         return;
                     }
                     smoothScrollBy(0, holder.itemView.getTop() - AndroidUtilities.m104dp(53));
@@ -738,7 +738,7 @@ public final class ChatAttachAlertTemplatesLayout extends ChatAttachAlert.Attach
             Intrinsics.checkNotNullParameter(holder, "holder");
             View view = holder.itemView;
             if (view instanceof HeaderCell) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(ChatAttachAlertTemplatesLayout.this.templates.isEmpty() ? C3634R.string.chat_templates_list_header : C3634R.string.chat_templates));
+                ((HeaderCell) view).setText(LocaleController.getInternalString(ChatAttachAlertTemplatesLayout.this.templates.isEmpty() ? C3632R.string.chat_templates_list_header : C3632R.string.chat_templates));
             } else if (view instanceof TemplateCell) {
                 ((TemplateCell) view).bind((TemplateModel) ChatAttachAlertTemplatesLayout.this.templates.get(i - ChatAttachAlertTemplatesLayout.this.templatesStartRow), ChatAttachAlertTemplatesLayout.this.getDelegate());
             }

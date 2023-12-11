@@ -5,6 +5,7 @@ import com.iMe.manager.wallet.create.WalletCreateManagerView;
 import com.iMe.model.wallet.ItemOptionsModel;
 import com.iMe.model.wallet.crypto.NetworkItem;
 import com.iMe.model.wallet.details.TokenDetailsArgs;
+import com.iMe.model.wallet.home.BannerSlide;
 import com.iMe.model.wallet.home.NetworkChoosePurpose;
 import com.iMe.model.wallet.home.TokenSortingData;
 import com.iMe.model.wallet.transfer.TransferScreenArgs;
@@ -21,6 +22,10 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoView */
 /* loaded from: classes4.dex */
 public interface WalletHomeCryptoView extends BaseView, SwipeRefreshView, WalletCreateManagerView, MvpView {
+    void openActionIntroScreen(BannerSlide bannerSlide);
+
+    void openBrowserUrl(String str);
+
     void openHistoryScreen();
 
     void openSendScreen(TransferScreenArgs transferScreenArgs);

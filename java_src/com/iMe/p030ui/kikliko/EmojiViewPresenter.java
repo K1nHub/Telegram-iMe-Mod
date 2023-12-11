@@ -49,12 +49,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TagResponse>> result) {
-                m1598invoke(result);
+                m1599invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1598invoke(Result<? extends List<? extends TagResponse>> it) {
+            public final void m1599invoke(Result<? extends List<? extends TagResponse>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends TagResponse>> result = it;
                 if (result instanceof Result.Success) {
@@ -109,12 +109,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SearchResponse> result) {
-                m1602invoke(result);
+                m1603invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1602invoke(Result<? extends SearchResponse> it) {
+            public final void m1603invoke(Result<? extends SearchResponse> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SearchResponse> result = it;
                 if (result instanceof Result.Success) {
@@ -170,12 +170,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SearchResponse> result) {
-                m1603invoke(result);
+                m1604invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1603invoke(Result<? extends SearchResponse> it) {
+            public final void m1604invoke(Result<? extends SearchResponse> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SearchResponse> result = it;
                 if (result instanceof Result.Success) {
@@ -226,12 +226,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SearchResponse> result) {
-                m1597invoke(result);
+                m1598invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1597invoke(Result<? extends SearchResponse> it) {
+            public final void m1598invoke(Result<? extends SearchResponse> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SearchResponse> result = it;
                 if (result instanceof Result.Success) {
@@ -275,12 +275,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifWasSent$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1600invoke(result);
+                m1601invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1600invoke(Result<? extends Boolean> it) {
+            public final void m1601invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifWasSent$$inlined$subscribeWithErrorHandle$default$2
@@ -321,12 +321,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifPreviewAsOpened$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1599invoke(result);
+                m1600invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1599invoke(Result<? extends Boolean> it) {
+            public final void m1600invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifPreviewAsOpened$$inlined$subscribeWithErrorHandle$default$2
@@ -366,12 +366,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$report$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1601invoke(result);
+                m1602invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1601invoke(Result<? extends Boolean> it) {
+            public final void m1602invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$report$$inlined$subscribeWithErrorHandle$default$2

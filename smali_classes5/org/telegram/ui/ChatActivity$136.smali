@@ -34,7 +34,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/String;)V
     .locals 0
 
-    .line 31872
+    .line 31879
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$136;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$136;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -49,7 +49,7 @@
 .method private synthetic lambda$end$0(Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 1
 
-    .line 31886
+    .line 31893
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$136;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48200(Lorg/telegram/ui/ChatActivity;)I
@@ -66,7 +66,7 @@
 
     if-ne v0, p1, :cond_0
 
-    .line 31887
+    .line 31894
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$136;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$48500(Lorg/telegram/ui/ChatActivity;)V
@@ -82,7 +82,7 @@
 
     if-nez p1, :cond_0
 
-    .line 31885
+    .line 31892
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$136;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     new-instance v0, Lorg/telegram/ui/ChatActivity$136$$ExternalSyntheticLambda0;
@@ -100,7 +100,7 @@
 .method public init()V
     .locals 2
 
-    .line 31875
+    .line 31882
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$136;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$136;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -115,21 +115,21 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48202(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 31876
+    .line 31883
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$136;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x3
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48302(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 31877
+    .line 31884
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$136;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$136;->val$url:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$48602(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 31879
+    .line 31886
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$136;->val$cell:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V

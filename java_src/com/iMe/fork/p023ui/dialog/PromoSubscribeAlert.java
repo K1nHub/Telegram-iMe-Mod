@@ -21,7 +21,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$IntRef;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p043ui.ActionBar.AlertDialog;
@@ -175,7 +175,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         });
         this.skipButton$delegate = lazy7;
         setTopHeight(166);
-        setTopImage(C3634R.C3636drawable.fork_promo_subscribe_dialog_icon, Theme.getColor(Theme.key_windowBackgroundGray));
+        setTopImage(C3632R.C3634drawable.fork_promo_subscribe_dialog_icon, Theme.getColor(Theme.key_windowBackgroundGray));
         int m105dp = AndroidUtilities.m105dp(30.0f);
         setTopImagePaddings(0, m105dp, AndroidUtilities.m105dp(16.0f), m105dp);
         LinearLayout linearLayout = new LinearLayout(getContext());
@@ -235,7 +235,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initTitleTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3634R.string.dialog_promo_subscribe_title));
+        textView.setText(LocaleController.getInternalString(C3632R.string.dialog_promo_subscribe_title));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
@@ -246,7 +246,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initSubtitleTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3634R.string.dialog_promo_subscribe_subtitle));
+        textView.setText(LocaleController.getInternalString(C3632R.string.dialog_promo_subscribe_subtitle));
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
         textView.setTextSize(1, 14.0f);
         return textView;
@@ -296,7 +296,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         LaunchActivity launchActivity = this$0.activity;
         Object tag = view.getTag();
         Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type com.iMe.fork.enums.PromoSubscribeChat");
-        launchActivity.lambda$runLinkRequest$90(new ChatActivity(BundleKt.bundleOf(TuplesKt.m146to("chat_id", Long.valueOf(-((PromoSubscribeChat) tag).getId())))));
+        launchActivity.lambda$runLinkRequest$94(new ChatActivity(BundleKt.bundleOf(TuplesKt.m146to("chat_id", Long.valueOf(-((PromoSubscribeChat) tag).getId())))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -305,7 +305,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         linearLayout.setGravity(17);
         linearLayout.addView(getNotShowAgainCheckBox(), LayoutHelper.createLinear(18, 18));
         TextView textView = new TextView(linearLayout.getContext());
-        textView.setText(LocaleController.getInternalString(C3634R.string.common_not_show_again));
+        textView.setText(LocaleController.getInternalString(C3632R.string.common_not_show_again));
         textView.setGravity(19);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 16.0f);
@@ -333,7 +333,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initSkipButton() {
         TextView textView = new TextView(getContext());
-        String string = LocaleController.getString("Close", C3634R.string.Close);
+        String string = LocaleController.getString("Close", C3632R.string.Close);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Close\", R.string.Close)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");

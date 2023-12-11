@@ -10,6 +10,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -99,7 +100,7 @@ public class DraftSavedHint extends View {
         float measuredWidth = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
         float m104dp = AndroidUtilities.m104dp(22) + this.layoutWidth;
-        float min = (measuredWidth / 2.0f) - Math.min(AndroidUtilities.m104dp(135), 0.35f * measuredWidth);
+        float min = (measuredWidth / 2.0f) - Math.min(AndroidUtilities.m104dp((int) TsExtractor.TS_STREAM_TYPE_E_AC3), 0.35f * measuredWidth);
         float max = Math.max(AndroidUtilities.m104dp(8), min - (m104dp / 2.0f));
         this.path.rewind();
         this.path.moveTo(max, BitmapDescriptorFactory.HUE_RED);

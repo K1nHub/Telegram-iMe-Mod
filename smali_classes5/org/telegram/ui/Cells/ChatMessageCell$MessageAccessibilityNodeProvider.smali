@@ -34,26 +34,26 @@
 .method private constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
-    .line 19759
+    .line 20051
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-direct {p0}, Landroid/view/accessibility/AccessibilityNodeProvider;-><init>()V
 
-    .line 19780
+    .line 20072
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->linkPath:Landroid/graphics/Path;
 
-    .line 19781
+    .line 20073
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rectF:Landroid/graphics/RectF;
 
-    .line 19782
+    .line 20074
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -66,7 +66,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/ui/Cells/ChatMessageCell$1;)V
     .locals 0
 
-    .line 19759
+    .line 20051
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;-><init>(Lorg/telegram/ui/Cells/ChatMessageCell;)V
 
     return-void
@@ -90,7 +90,7 @@
 
     add-int/lit16 p1, p1, -0xbb8
 
-    .line 20536
+    .line 20828
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 20539
+    .line 20831
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -119,7 +119,7 @@
 
     check-cast p2, Landroid/text/Spannable;
 
-    .line 20540
+    .line 20832
     invoke-interface {p2}, Landroid/text/Spannable;->length()I
 
     move-result v2
@@ -132,14 +132,14 @@
 
     check-cast p2, [Landroid/text/style/ClickableSpan;
 
-    .line 20541
+    .line 20833
     array-length v1, p2
 
     if-gt v1, p1, :cond_2
 
     return-object v0
 
-    .line 20544
+    .line 20836
     :cond_2
     aget-object p1, p2, p1
 
@@ -152,7 +152,7 @@
     :cond_4
     add-int/lit16 p1, p1, -0x7d0
 
-    .line 20547
+    .line 20839
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -169,7 +169,7 @@
 
     goto :goto_1
 
-    .line 20550
+    .line 20842
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -181,7 +181,7 @@
 
     check-cast p2, Landroid/text/Spannable;
 
-    .line 20551
+    .line 20843
     invoke-interface {p2}, Landroid/text/Spannable;->length()I
 
     move-result v2
@@ -194,14 +194,14 @@
 
     check-cast p2, [Landroid/text/style/ClickableSpan;
 
-    .line 20552
+    .line 20844
     array-length v1, p2
 
     if-gt v1, p1, :cond_6
 
     return-object v0
 
-    .line 20555
+    .line 20847
     :cond_6
     aget-object p1, p2, p1
 
@@ -225,10 +225,10 @@
 
     new-array v3, v2, [I
 
-    .line 19801
+    .line 20093
     fill-array-data v3, :array_0
 
-    .line 19802
+    .line 20094
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v4, v3}, Landroid/view/ViewGroup;->getLocationOnScreen([I)V
@@ -249,19 +249,19 @@
 
     if-ne v1, v6, :cond_4d
 
-    .line 19804
+    .line 20096
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->obtain(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeInfo;
 
     move-result-object v1
 
-    .line 19805
+    .line 20097
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 19806
+    .line 20098
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -311,7 +311,7 @@
     :cond_0
     move v3, v14
 
-    .line 19807
+    .line 20099
     :goto_0
     iget-object v10, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -340,7 +340,7 @@
     :cond_1
     move v10, v14
 
-    .line 19808
+    .line 20100
     :goto_1
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -367,7 +367,7 @@
 
     const-wide/16 v7, 0x0
 
-    .line 19809
+    .line 20101
     :goto_2
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -399,13 +399,13 @@
 
     if-eqz v4, :cond_2f
 
-    .line 19810
+    .line 20102
     :cond_3
     new-instance v4, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v4}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 19811
+    .line 20103
     iget-object v9, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-boolean v13, v9, Lorg/telegram/ui/Cells/ChatMessageCell;->isChat:Z
@@ -430,7 +430,7 @@
 
     if-nez v9, :cond_4
 
-    .line 19812
+    .line 20104
     iget-object v9, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v9}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9000(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/tgnet/TLRPC$User;
@@ -443,7 +443,7 @@
 
     invoke-virtual {v4, v9}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19813
+    .line 20105
     new-instance v9, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider$ProfileSpan;
 
     iget-object v13, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -462,10 +462,10 @@
 
     invoke-virtual {v4, v9, v14, v13, v6}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 19814
+    .line 20106
     invoke-virtual {v4, v5}, Landroid/text/SpannableStringBuilder;->append(C)Landroid/text/SpannableStringBuilder;
 
-    .line 19816
+    .line 20108
     :cond_4
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -480,7 +480,7 @@
     :goto_3
     if-ge v5, v2, :cond_7
 
-    .line 19818
+    .line 20110
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9200(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
@@ -505,7 +505,7 @@
 
     if-eqz v6, :cond_6
 
-    .line 19819
+    .line 20111
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9200(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
@@ -529,7 +529,7 @@
     :cond_5
     move-object v6, v12
 
-    .line 19820
+    .line 20112
     :goto_4
     invoke-virtual {v4, v6}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
@@ -538,7 +538,7 @@
 
     goto :goto_3
 
-    .line 19824
+    .line 20116
     :cond_7
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -556,7 +556,7 @@
 
     if-ne v5, v15, :cond_8
 
-    .line 19825
+    .line 20117
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v5}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9300(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/tgnet/TLRPC$Document;
@@ -569,7 +569,7 @@
 
     const/16 v6, 0x2e
 
-    .line 19826
+    .line 20118
     invoke-virtual {v5, v6}, Ljava/lang/String;->indexOf(I)I
 
     move-result v6
@@ -578,7 +578,7 @@
 
     if-eq v6, v9, :cond_8
 
-    .line 19827
+    .line 20119
     sget v6, Lorg/telegram/messenger/R$string;->AccDescrDocumentType:I
 
     new-array v9, v15, [Ljava/lang/Object;
@@ -609,7 +609,7 @@
 
     invoke-virtual {v4, v5}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19830
+    .line 20122
     :cond_8
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -625,7 +625,7 @@
 
     if-nez v5, :cond_9
 
-    .line 19831
+    .line 20123
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v5}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -636,7 +636,7 @@
 
     invoke-virtual {v4, v5}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19833
+    .line 20125
     :cond_9
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -672,7 +672,7 @@
 
     if-ne v5, v6, :cond_d
 
-    .line 19834
+    .line 20126
     :cond_a
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -690,10 +690,10 @@
 
     if-eqz v5, :cond_d
 
-    .line 19835
+    .line 20127
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19836
+    .line 20128
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v5}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -716,7 +716,7 @@
     :goto_5
     if-eqz v5, :cond_c
 
-    .line 19838
+    .line 20130
     sget v5, Lorg/telegram/messenger/R$string;->AccDescrUploadProgress:I
 
     goto :goto_6
@@ -727,7 +727,7 @@
     :goto_6
     new-array v9, v2, [Ljava/lang/Object;
 
-    .line 19839
+    .line 20131
     iget-object v13, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v13}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -767,7 +767,7 @@
     :cond_d
     move/from16 p1, v3
 
-    .line 19842
+    .line 20134
     :goto_7
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -781,10 +781,10 @@
 
     if-eqz v2, :cond_e
 
-    .line 19843
+    .line 20135
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19844
+    .line 20136
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrMusicInfo:I
 
     const/4 v3, 0x2
@@ -823,10 +823,10 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19845
+    .line 20137
     invoke-virtual {v4, v11}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19846
+    .line 20138
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -847,7 +847,7 @@
 
     goto :goto_8
 
-    .line 19847
+    .line 20139
     :cond_e
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -869,11 +869,11 @@
 
     if-eqz v2, :cond_11
 
-    .line 19848
+    .line 20140
     :cond_f
     invoke-virtual {v4, v11}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19849
+    .line 20141
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -892,10 +892,10 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19850
+    .line 20142
     invoke-virtual {v4, v11}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19851
+    .line 20143
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -908,7 +908,7 @@
 
     if-eqz v2, :cond_10
 
-    .line 19852
+    .line 20144
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrMsgNotPlayed:I
 
     const-string v3, "AccDescrMsgNotPlayed"
@@ -921,7 +921,7 @@
 
     goto :goto_8
 
-    .line 19854
+    .line 20146
     :cond_10
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrMsgPlayed:I
 
@@ -933,7 +933,7 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19857
+    .line 20149
     :cond_11
     :goto_8
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -944,10 +944,10 @@
 
     if-eqz v2, :cond_16
 
-    .line 19858
+    .line 20150
     invoke-virtual {v4, v11}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19859
+    .line 20151
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/tgnet/TLRPC$Poll;
@@ -958,10 +958,10 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19860
+    .line 20152
     invoke-virtual {v4, v11}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19862
+    .line 20154
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10000(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
@@ -970,7 +970,7 @@
 
     if-eqz v2, :cond_12
 
-    .line 19863
+    .line 20155
     sget v2, Lorg/telegram/messenger/R$string;->FinalResults:I
 
     const-string v3, "FinalResults"
@@ -981,7 +981,7 @@
 
     goto :goto_9
 
-    .line 19865
+    .line 20157
     :cond_12
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -993,7 +993,7 @@
 
     if-eqz v2, :cond_14
 
-    .line 19866
+    .line 20158
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/tgnet/TLRPC$Poll;
@@ -1004,7 +1004,7 @@
 
     if-eqz v2, :cond_13
 
-    .line 19867
+    .line 20159
     sget v2, Lorg/telegram/messenger/R$string;->QuizPoll:I
 
     const-string v3, "QuizPoll"
@@ -1015,7 +1015,7 @@
 
     goto :goto_9
 
-    .line 19869
+    .line 20161
     :cond_13
     sget v2, Lorg/telegram/messenger/R$string;->AnonymousQuizPoll:I
 
@@ -1027,7 +1027,7 @@
 
     goto :goto_9
 
-    .line 19871
+    .line 20163
     :cond_14
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -1039,7 +1039,7 @@
 
     if-eqz v2, :cond_15
 
-    .line 19872
+    .line 20164
     sget v2, Lorg/telegram/messenger/R$string;->PublicPoll:I
 
     const-string v3, "PublicPoll"
@@ -1050,7 +1050,7 @@
 
     goto :goto_9
 
-    .line 19874
+    .line 20166
     :cond_15
     sget v2, Lorg/telegram/messenger/R$string;->AnonymousPoll:I
 
@@ -1060,11 +1060,11 @@
 
     move-result-object v2
 
-    .line 19877
+    .line 20169
     :goto_9
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19879
+    .line 20171
     :cond_16
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -1074,7 +1074,7 @@
 
     if-eqz v2, :cond_19
 
-    .line 19880
+    .line 20172
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9400(Lorg/telegram/ui/Cells/ChatMessageCell;)I
@@ -1085,10 +1085,10 @@
 
     if-ne v2, v3, :cond_17
 
-    .line 19881
+    .line 20173
     invoke-virtual {v4, v11}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19882
+    .line 20174
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1107,7 +1107,7 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19884
+    .line 20176
     :cond_17
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -1125,11 +1125,11 @@
 
     if-ne v2, v15, :cond_19
 
-    .line 19885
+    .line 20177
     :cond_18
     invoke-virtual {v4, v11}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19886
+    .line 20178
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9300(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/tgnet/TLRPC$Document;
@@ -1144,7 +1144,7 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19889
+    .line 20181
     :cond_19
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -1158,10 +1158,10 @@
 
     if-eqz v2, :cond_1a
 
-    .line 19890
+    .line 20182
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19891
+    .line 20183
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1176,7 +1176,7 @@
 
     goto :goto_a
 
-    .line 19893
+    .line 20185
     :cond_1a
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -1206,10 +1206,10 @@
 
     if-nez v2, :cond_1b
 
-    .line 19894
+    .line 20186
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19895
+    .line 20187
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1220,7 +1220,7 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19898
+    .line 20190
     :cond_1b
     :goto_a
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -1235,7 +1235,7 @@
 
     if-eqz v2, :cond_20
 
-    .line 19899
+    .line 20191
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1248,10 +1248,10 @@
 
     if-eqz v2, :cond_1e
 
-    .line 19900
+    .line 20192
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19901
+    .line 20193
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1262,7 +1262,7 @@
 
     if-eqz v2, :cond_1c
 
-    .line 19902
+    .line 20194
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrScheduledDate:I
 
     new-array v3, v15, [Ljava/lang/Object;
@@ -1287,7 +1287,7 @@
 
     goto/16 :goto_c
 
-    .line 19904
+    .line 20196
     :cond_1c
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrSentDate:I
 
@@ -1333,10 +1333,10 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19905
+    .line 20197
     invoke-virtual {v4, v11}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19906
+    .line 20198
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1372,7 +1372,7 @@
     :cond_1e
     move-object/from16 v6, v16
 
-    .line 19908
+    .line 20200
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1385,10 +1385,10 @@
 
     if-eqz v2, :cond_1f
 
-    .line 19909
+    .line 20201
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19910
+    .line 20202
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrMsgSending:I
 
     const-string v3, "AccDescrMsgSending"
@@ -1399,7 +1399,7 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19911
+    .line 20203
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10200(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/RadialProgress2;
@@ -1420,7 +1420,7 @@
 
     mul-float/2addr v2, v3
 
-    .line 19913
+    .line 20205
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
     move-result v2
@@ -1439,7 +1439,7 @@
 
     goto :goto_c
 
-    .line 19915
+    .line 20207
     :cond_1f
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -1453,10 +1453,10 @@
 
     if-eqz v2, :cond_21
 
-    .line 19916
+    .line 20208
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19917
+    .line 20209
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrMsgSendingError:I
 
     const-string v3, "AccDescrMsgSendingError"
@@ -1472,10 +1472,10 @@
     :cond_20
     move-object/from16 v6, v16
 
-    .line 19920
+    .line 20212
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19921
+    .line 20213
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrReceivedDate:I
 
     new-array v3, v15, [Ljava/lang/Object;
@@ -1518,7 +1518,7 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19923
+    .line 20215
     :cond_21
     :goto_c
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -1537,10 +1537,10 @@
 
     if-nez v2, :cond_22
 
-    .line 19924
+    .line 20216
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19925
+    .line 20217
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10300(Lorg/telegram/ui/Cells/ChatMessageCell;)I
@@ -1557,7 +1557,7 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19927
+    .line 20219
     :cond_22
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -1585,7 +1585,7 @@
 
     if-eqz v2, :cond_2c
 
-    .line 19928
+    .line 20220
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1606,7 +1606,7 @@
 
     if-ne v2, v15, :cond_28
 
-    .line 19929
+    .line 20221
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1625,7 +1625,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$ReactionCount;
 
-    .line 19930
+    .line 20222
     iget-object v5, v2, Lorg/telegram/tgnet/TLRPC$ReactionCount;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     instance-of v6, v5, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
@@ -1641,16 +1641,16 @@
     :cond_23
     move-object v5, v3
 
-    .line 19931
+    .line 20223
     :goto_d
     iget v6, v2, Lorg/telegram/tgnet/TLRPC$ReactionCount;->count:I
 
     if-ne v6, v15, :cond_27
 
-    .line 19932
+    .line 20224
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19935
+    .line 20227
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1683,7 +1683,7 @@
 
     if-ne v2, v15, :cond_24
 
-    .line 19936
+    .line 20228
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1704,7 +1704,7 @@
 
     if-eqz v2, :cond_24
 
-    .line 19938
+    .line 20230
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget v6, v6, Lorg/telegram/ui/Cells/ChatMessageCell;->currentAccount:I
@@ -1727,14 +1727,14 @@
 
     move-result-object v2
 
-    .line 19939
+    .line 20231
     invoke-static {v2}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v6
 
     if-eqz v2, :cond_25
 
-    .line 19941
+    .line 20233
     invoke-static {v2}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v3
@@ -1748,7 +1748,7 @@
     :goto_e
     if-eqz v6, :cond_26
 
-    .line 19946
+    .line 20238
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrYouReactedWith:I
 
     new-array v3, v15, [Ljava/lang/Object;
@@ -1765,7 +1765,7 @@
 
     goto/16 :goto_11
 
-    .line 19948
+    .line 20240
     :cond_26
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrReactedWith:I
 
@@ -1790,10 +1790,10 @@
     :cond_27
     if-le v6, v15, :cond_2c
 
-    .line 19951
+    .line 20243
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19952
+    .line 20244
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$ReactionCount;->count:I
 
     new-array v3, v15, [Ljava/lang/Object;
@@ -1810,7 +1810,7 @@
 
     goto :goto_11
 
-    .line 19955
+    .line 20247
     :cond_28
     sget v2, Lorg/telegram/messenger/R$string;->Reactions:I
 
@@ -1828,7 +1828,7 @@
 
     invoke-virtual {v2, v5}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19956
+    .line 20248
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1850,7 +1850,7 @@
     :goto_f
     if-ge v5, v2, :cond_2b
 
-    .line 19958
+    .line 20250
     iget-object v9, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v9}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1869,7 +1869,7 @@
 
     check-cast v9, Lorg/telegram/tgnet/TLRPC$ReactionCount;
 
-    .line 19959
+    .line 20251
     iget-object v13, v9, Lorg/telegram/tgnet/TLRPC$ReactionCount;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     instance-of v15, v13, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
@@ -1885,7 +1885,7 @@
     :cond_29
     move-object v13, v3
 
-    .line 19961
+    .line 20253
     :goto_10
     invoke-virtual {v4, v13}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
@@ -1915,7 +1915,7 @@
 
     if-ge v9, v2, :cond_2a
 
-    .line 19963
+    .line 20255
     invoke-virtual {v4, v11}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     :cond_2a
@@ -1925,11 +1925,11 @@
 
     goto :goto_f
 
-    .line 19967
+    .line 20259
     :cond_2b
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19971
+    .line 20263
     :cond_2c
     :goto_11
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -1938,7 +1938,7 @@
 
     if-nez v3, :cond_2d
 
-    .line 19972
+    .line 20264
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v2
@@ -1951,10 +1951,10 @@
 
     if-eqz v2, :cond_2d
 
-    .line 19973
+    .line 20265
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19974
+    .line 20266
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -1975,11 +1975,11 @@
 
     invoke-virtual {v4, v2}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19976
+    .line 20268
     :cond_2d
     invoke-virtual {v4, v12}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19978
+    .line 20270
     invoke-virtual {v4}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v2
@@ -1992,7 +1992,7 @@
 
     check-cast v2, [Landroid/text/style/CharacterStyle;
 
-    .line 19980
+    .line 20272
     array-length v3, v2
 
     move v5, v14
@@ -2002,34 +2002,34 @@
 
     aget-object v6, v2, v5
 
-    .line 19981
+    .line 20273
     invoke-virtual {v4, v6}, Landroid/text/SpannableStringBuilder;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v9
 
-    .line 19982
+    .line 20274
     invoke-virtual {v4, v6}, Landroid/text/SpannableStringBuilder;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v11
 
-    .line 19983
+    .line 20275
     invoke-virtual {v4, v6}, Landroid/text/SpannableStringBuilder;->removeSpan(Ljava/lang/Object;)V
 
-    .line 19985
+    .line 20277
     new-instance v12, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider$1;
 
     invoke-direct {v12, v0, v6}, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider$1;-><init>(Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;Landroid/text/style/CharacterStyle;)V
 
     const/16 v6, 0x21
 
-    .line 19995
+    .line 20287
     invoke-virtual {v4, v12, v9, v11, v6}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_12
 
-    .line 19997
+    .line 20289
     :cond_2e
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2037,20 +2037,20 @@
 
     move/from16 v15, p1
 
-    .line 19998
+    .line 20290
     invoke-static {v2, v15}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8702(Lorg/telegram/ui/Cells/ChatMessageCell;Z)Z
 
-    .line 19999
+    .line 20291
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2, v10}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8802(Lorg/telegram/ui/Cells/ChatMessageCell;Z)Z
 
-    .line 20000
+    .line 20292
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2, v7, v8}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8902(Lorg/telegram/ui/Cells/ChatMessageCell;J)J
 
-    .line 20003
+    .line 20295
     :cond_2f
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2058,7 +2058,7 @@
 
     if-ge v2, v3, :cond_30
 
-    .line 20004
+    .line 20296
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v3, v3, Lorg/telegram/ui/Cells/ChatMessageCell;->accessibilityText:Ljava/lang/CharSequence;
@@ -2071,7 +2071,7 @@
 
     goto :goto_13
 
-    .line 20006
+    .line 20298
     :cond_30
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2082,21 +2082,21 @@
     :goto_13
     const/4 v3, 0x1
 
-    .line 20009
+    .line 20301
     invoke-virtual {v1, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
     const/16 v4, 0x13
 
     if-lt v2, v4, :cond_31
 
-    .line 20011
+    .line 20303
     invoke-virtual {v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->getCollectionItemInfo()Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
 
     move-result-object v4
 
     if-eqz v4, :cond_31
 
-    .line 20013
+    .line 20305
     invoke-virtual {v4}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->getRowIndex()I
 
     move-result v4
@@ -2112,7 +2112,7 @@
 
     if-lt v2, v3, :cond_38
 
-    .line 20017
+    .line 20309
     new-instance v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     sget v4, Lorg/telegram/messenger/R$id;->acc_action_msg_options:I
@@ -2129,7 +2129,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 20018
+    .line 20310
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10400(Lorg/telegram/ui/Cells/ChatMessageCell;)I
@@ -2158,7 +2158,7 @@
 
     if-eq v3, v4, :cond_33
 
-    .line 20038
+    .line 20330
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -2171,7 +2171,7 @@
 
     if-ne v3, v4, :cond_32
 
-    .line 20039
+    .line 20331
     sget v3, Lorg/telegram/messenger/R$string;->CallAgain:I
 
     const-string v4, "CallAgain"
@@ -2187,7 +2187,7 @@
 
     goto :goto_14
 
-    .line 20029
+    .line 20321
     :cond_33
     sget v3, Lorg/telegram/messenger/R$string;->AccActionOpenFile:I
 
@@ -2199,7 +2199,7 @@
 
     goto :goto_14
 
-    .line 20035
+    .line 20327
     :cond_34
     sget v3, Lorg/telegram/messenger/R$string;->AccActionCancelDownload:I
 
@@ -2211,7 +2211,7 @@
 
     goto :goto_14
 
-    .line 20032
+    .line 20324
     :cond_35
     sget v3, Lorg/telegram/messenger/R$string;->AccActionDownload:I
 
@@ -2223,7 +2223,7 @@
 
     goto :goto_14
 
-    .line 20025
+    .line 20317
     :cond_36
     sget v3, Lorg/telegram/messenger/R$string;->AccActionPause:I
 
@@ -2235,7 +2235,7 @@
 
     goto :goto_14
 
-    .line 20022
+    .line 20314
     :cond_37
     sget v3, Lorg/telegram/messenger/R$string;->AccActionPlay:I
 
@@ -2245,7 +2245,7 @@
 
     move-result-object v10
 
-    .line 20042
+    .line 20334
     :goto_14
     new-instance v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
@@ -2255,7 +2255,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 20043
+    .line 20335
     new-instance v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     sget v4, Lorg/telegram/messenger/R$string;->AccActionEnterSelectionMode:I
@@ -2272,7 +2272,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 20044
+    .line 20336
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10500(Lorg/telegram/ui/Cells/ChatMessageCell;)I
@@ -2283,7 +2283,7 @@
 
     if-ne v3, v4, :cond_39
 
-    .line 20046
+    .line 20338
     new-instance v3, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     sget v4, Lorg/telegram/messenger/R$id;->acc_action_small_button:I
@@ -2305,15 +2305,15 @@
     :cond_38
     const/16 v3, 0x10
 
-    .line 20049
+    .line 20341
     invoke-virtual {v1, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     const/16 v3, 0x20
 
-    .line 20050
+    .line 20342
     invoke-virtual {v1, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20053
+    .line 20345
     :cond_39
     :goto_15
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -2369,7 +2369,7 @@
 
     if-eqz v3, :cond_3b
 
-    .line 20054
+    .line 20346
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;
@@ -2378,7 +2378,7 @@
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;->onInitializeAccessibilityNodeInfoInternal(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 20057
+    .line 20349
     :cond_3b
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2396,7 +2396,7 @@
 
     if-eqz v3, :cond_3c
 
-    .line 20058
+    .line 20350
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/16 v4, 0x1ed
@@ -2408,7 +2408,7 @@
 
     if-ge v2, v3, :cond_3f
 
-    .line 20063
+    .line 20355
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-boolean v3, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->isChat:Z
@@ -2433,14 +2433,14 @@
 
     if-nez v2, :cond_3d
 
-    .line 20064
+    .line 20356
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/16 v3, 0x1388
 
     invoke-virtual {v1, v2, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addChild(Landroid/view/View;I)V
 
-    .line 20066
+    .line 20358
     :cond_3d
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2454,7 +2454,7 @@
 
     if-eqz v2, :cond_3e
 
-    .line 20067
+    .line 20359
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -2465,7 +2465,7 @@
 
     check-cast v2, Landroid/text/Spannable;
 
-    .line 20068
+    .line 20360
     invoke-interface {v2}, Landroid/text/Spannable;->length()I
 
     move-result v3
@@ -2478,7 +2478,7 @@
 
     check-cast v2, [Landroid/text/style/CharacterStyle;
 
-    .line 20070
+    .line 20362
     array-length v3, v2
 
     move v4, v14
@@ -2490,7 +2490,7 @@
 
     aget-object v6, v2, v4
 
-    .line 20071
+    .line 20363
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     add-int/lit16 v7, v5, 0x7d0
@@ -2505,7 +2505,7 @@
 
     goto :goto_16
 
-    .line 20075
+    .line 20367
     :cond_3e
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2525,7 +2525,7 @@
 
     if-eqz v3, :cond_3f
 
-    .line 20076
+    .line 20368
     invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v2
@@ -2534,7 +2534,7 @@
 
     check-cast v2, Landroid/text/Spannable;
 
-    .line 20077
+    .line 20369
     invoke-interface {v2}, Landroid/text/Spannable;->length()I
 
     move-result v3
@@ -2547,7 +2547,7 @@
 
     check-cast v2, [Landroid/text/style/CharacterStyle;
 
-    .line 20079
+    .line 20371
     array-length v3, v2
 
     move v4, v14
@@ -2559,7 +2559,7 @@
 
     aget-object v6, v2, v4
 
-    .line 20080
+    .line 20372
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     add-int/lit16 v7, v5, 0xbb8
@@ -2574,7 +2574,7 @@
 
     goto :goto_17
 
-    .line 20086
+    .line 20378
     :cond_3f
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2601,7 +2601,7 @@
 
     check-cast v4, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;
 
-    .line 20087
+    .line 20379
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     add-int/lit16 v5, v3, 0x3e8
@@ -2614,7 +2614,7 @@
 
     goto :goto_18
 
-    .line 20090
+    .line 20382
     :cond_40
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2646,14 +2646,14 @@
 
     if-eqz v2, :cond_41
 
-    .line 20091
+    .line 20383
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/16 v3, 0x1ef
 
     invoke-virtual {v1, v2, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addChild(Landroid/view/View;I)V
 
-    .line 20094
+    .line 20386
     :cond_41
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2680,7 +2680,7 @@
 
     check-cast v4, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;
 
-    .line 20095
+    .line 20387
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     add-int/lit16 v5, v3, 0x1f4
@@ -2693,7 +2693,7 @@
 
     goto :goto_19
 
-    .line 20099
+    .line 20391
     :cond_42
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2703,14 +2703,14 @@
 
     if-eqz v2, :cond_43
 
-    .line 20100
+    .line 20392
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/16 v3, 0x1ed
 
     invoke-virtual {v1, v2, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addChild(Landroid/view/View;I)V
 
-    .line 20103
+    .line 20395
     :cond_43
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2732,14 +2732,14 @@
 
     if-nez v2, :cond_44
 
-    .line 20104
+    .line 20396
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/16 v3, 0x1f3
 
     invoke-virtual {v1, v2, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addChild(Landroid/view/View;I)V
 
-    .line 20106
+    .line 20398
     :cond_44
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2749,14 +2749,14 @@
 
     if-eqz v2, :cond_45
 
-    .line 20107
+    .line 20399
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/16 v3, 0x1f0
 
     invoke-virtual {v1, v2, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addChild(Landroid/view/View;I)V
 
-    .line 20109
+    .line 20401
     :cond_45
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2778,7 +2778,7 @@
 
     if-ne v2, v3, :cond_47
 
-    .line 20110
+    .line 20402
     :cond_46
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2786,7 +2786,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addChild(Landroid/view/View;I)V
 
-    .line 20112
+    .line 20404
     :cond_47
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2796,10 +2796,10 @@
 
     const/16 v3, 0x1f1
 
-    .line 20113
+    .line 20405
     invoke-virtual {v1, v2, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addChild(Landroid/view/View;I)V
 
-    .line 20115
+    .line 20407
     :cond_48
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2823,14 +2823,14 @@
 
     if-eqz v2, :cond_4a
 
-    .line 20116
+    .line 20408
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x15
 
     if-lt v2, v3, :cond_49
 
-    .line 20117
+    .line 20409
     new-instance v2, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     sget v3, Lorg/telegram/messenger/R$id;->acc_action_open_forwarded_origin:I
@@ -2849,7 +2849,7 @@
 
     goto :goto_1a
 
-    .line 20119
+    .line 20411
     :cond_49
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2857,7 +2857,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/accessibility/AccessibilityNodeInfo;->addChild(Landroid/view/View;I)V
 
-    .line 20122
+    .line 20414
     :cond_4a
     :goto_1a
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -2879,7 +2879,7 @@
     :cond_4b
     const/4 v2, 0x1
 
-    .line 20123
+    .line 20415
     invoke-virtual {v1, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSelected(Z)V
 
     :cond_4c
@@ -2888,22 +2888,22 @@
     :cond_4d
     move-object v6, v8
 
-    .line 20127
+    .line 20419
     invoke-static {}, Landroid/view/accessibility/AccessibilityNodeInfo;->obtain()Landroid/view/accessibility/AccessibilityNodeInfo;
 
     move-result-object v2
 
-    .line 20128
+    .line 20420
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v2, v4, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSource(Landroid/view/View;I)V
 
-    .line 20129
+    .line 20421
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setParent(Landroid/view/View;)V
 
-    .line 20130
+    .line 20422
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -2924,15 +2924,15 @@
 
     if-ne v1, v8, :cond_50
 
-    .line 20133
+    .line 20425
     invoke-virtual {v2, v7}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     const/4 v5, 0x1
 
-    .line 20134
+    .line 20426
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20135
+    .line 20427
     sget v5, Lorg/telegram/messenger/R$string;->chat_long_action_translate:I
 
     invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -2943,10 +2943,10 @@
 
     const/16 v5, 0x10
 
-    .line 20136
+    .line 20428
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20137
+    .line 20429
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -2997,12 +2997,12 @@
 
     invoke-virtual {v5, v6, v7, v8, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20138
+    .line 20430
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20139
+    .line 20431
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -3035,7 +3035,7 @@
 
     if-nez v4, :cond_4f
 
-    .line 20140
+    .line 20432
     :cond_4e
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -3051,7 +3051,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20142
+    .line 20434
     :cond_4f
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -3063,12 +3063,12 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20143
+    .line 20435
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 20144
+    .line 20436
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     goto/16 :goto_2b
@@ -3080,7 +3080,7 @@
 
     if-ne v1, v9, :cond_54
 
-    .line 20147
+    .line 20439
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9000(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/tgnet/TLRPC$User;
@@ -3093,7 +3093,7 @@
 
     return-object v4
 
-    .line 20150
+    .line 20442
     :cond_51
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -3105,10 +3105,10 @@
 
     move-result-object v4
 
-    .line 20151
+    .line 20443
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 20152
+    .line 20444
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -3178,12 +3178,12 @@
 
     invoke-virtual {v4, v6, v7, v9, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20153
+    .line 20445
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20154
+    .line 20446
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -3196,7 +3196,7 @@
 
     if-nez v4, :cond_53
 
-    .line 20155
+    .line 20447
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -3211,7 +3211,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20157
+    .line 20449
     :cond_53
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -3223,31 +3223,31 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20158
+    .line 20450
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 20159
+    .line 20451
     invoke-virtual {v2, v8}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 20160
+    .line 20452
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20161
+    .line 20453
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
-    .line 20162
+    .line 20454
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setLongClickable(Z)V
 
     const/16 v1, 0x10
 
-    .line 20163
+    .line 20455
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     const/16 v1, 0x20
 
-    .line 20164
+    .line 20456
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     :goto_1b
@@ -3260,7 +3260,7 @@
 
     if-lt v1, v9, :cond_5c
 
-    .line 20166
+    .line 20458
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -3281,7 +3281,7 @@
 
     goto/16 :goto_1e
 
-    .line 20169
+    .line 20461
     :cond_55
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
 
@@ -3291,7 +3291,7 @@
 
     check-cast v4, Landroid/text/Spannable;
 
-    .line 20170
+    .line 20462
     invoke-direct {v0, v1, v14}, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->getLinkById(IZ)Landroid/text/style/ClickableSpan;
 
     move-result-object v5
@@ -3302,7 +3302,7 @@
 
     return-object v6
 
-    .line 20174
+    .line 20466
     :cond_56
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -3310,7 +3310,7 @@
 
     move-result-object v5
 
-    .line 20175
+    .line 20467
     aget v6, v5, v14
 
     const/4 v7, 0x1
@@ -3325,10 +3325,10 @@
 
     move-result-object v4
 
-    .line 20176
+    .line 20468
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 20177
+    .line 20469
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v4, v4, Lorg/telegram/ui/Cells/ChatMessageCell;->captionLayout:Lorg/telegram/messenger/MessageObject$TextLayoutBlocks;
@@ -3352,7 +3352,7 @@
 
     check-cast v6, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;
 
-    .line 20178
+    .line 20470
     iget-object v7, v6, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v7}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
@@ -3363,7 +3363,7 @@
 
     move-result v7
 
-    .line 20179
+    .line 20471
     iget v9, v6, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersOffset:I
 
     aget v10, v5, v14
@@ -3378,7 +3378,7 @@
 
     if-lt v7, v11, :cond_58
 
-    .line 20180
+    .line 20472
     iget-object v4, v6, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
     aget v7, v5, v14
@@ -3393,14 +3393,14 @@
 
     invoke-virtual {v4, v7, v5, v9}, Landroid/text/StaticLayout;->getSelectionPath(IILandroid/graphics/Path;)V
 
-    .line 20181
+    .line 20473
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->linkPath:Landroid/graphics/Path;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v4, v5, v10}, Landroid/graphics/Path;->computeBounds(Landroid/graphics/RectF;Z)V
 
-    .line 20182
+    .line 20474
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rectF:Landroid/graphics/RectF;
@@ -3423,7 +3423,7 @@
 
     invoke-virtual {v4, v7, v9, v10, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20183
+    .line 20475
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget v5, v6, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textYOffset:F
@@ -3432,7 +3432,7 @@
 
     invoke-virtual {v4, v14, v5}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20184
+    .line 20476
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -3443,12 +3443,12 @@
 
     invoke-virtual {v4, v6, v5}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20185
+    .line 20477
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20186
+    .line 20478
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -3461,7 +3461,7 @@
 
     if-nez v4, :cond_57
 
-    .line 20187
+    .line 20479
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -3476,7 +3476,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20189
+    .line 20481
     :cond_57
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -3488,7 +3488,7 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20190
+    .line 20482
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
@@ -3508,27 +3508,27 @@
     :cond_5a
     const/4 v6, 0x1
 
-    .line 20195
+    .line 20487
     :goto_1d
     invoke-virtual {v2, v8}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 20196
+    .line 20488
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20197
+    .line 20489
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
-    .line 20198
+    .line 20490
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->setLongClickable(Z)V
 
     const/16 v1, 0x10
 
-    .line 20199
+    .line 20491
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     const/16 v1, 0x20
 
-    .line 20200
+    .line 20492
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     goto/16 :goto_1b
@@ -3546,7 +3546,7 @@
 
     if-lt v1, v10, :cond_63
 
-    .line 20202
+    .line 20494
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -3561,7 +3561,7 @@
 
     return-object v9
 
-    .line 20205
+    .line 20497
     :cond_5d
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -3573,7 +3573,7 @@
 
     check-cast v4, Landroid/text/Spannable;
 
-    .line 20206
+    .line 20498
     invoke-direct {v0, v1, v14}, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->getLinkById(IZ)Landroid/text/style/ClickableSpan;
 
     move-result-object v5
@@ -3582,7 +3582,7 @@
 
     return-object v9
 
-    .line 20210
+    .line 20502
     :cond_5e
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -3590,7 +3590,7 @@
 
     move-result-object v5
 
-    .line 20211
+    .line 20503
     aget v6, v5, v14
 
     const/4 v7, 0x1
@@ -3605,10 +3605,10 @@
 
     move-result-object v4
 
-    .line 20212
+    .line 20504
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 20213
+    .line 20505
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -3634,7 +3634,7 @@
 
     check-cast v6, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;
 
-    .line 20214
+    .line 20506
     iget-object v7, v6, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v7}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
@@ -3645,7 +3645,7 @@
 
     move-result v7
 
-    .line 20215
+    .line 20507
     iget v9, v6, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->charactersOffset:I
 
     aget v10, v5, v14
@@ -3660,7 +3660,7 @@
 
     if-lt v7, v11, :cond_60
 
-    .line 20216
+    .line 20508
     iget-object v4, v6, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textLayout:Landroid/text/StaticLayout;
 
     aget v7, v5, v14
@@ -3675,14 +3675,14 @@
 
     invoke-virtual {v4, v7, v5, v9}, Landroid/text/StaticLayout;->getSelectionPath(IILandroid/graphics/Path;)V
 
-    .line 20217
+    .line 20509
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->linkPath:Landroid/graphics/Path;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rectF:Landroid/graphics/RectF;
 
     invoke-virtual {v4, v5, v10}, Landroid/graphics/Path;->computeBounds(Landroid/graphics/RectF;Z)V
 
-    .line 20218
+    .line 20510
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rectF:Landroid/graphics/RectF;
@@ -3705,7 +3705,7 @@
 
     invoke-virtual {v4, v7, v9, v10, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20219
+    .line 20511
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget v5, v6, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->textYOffset:F
@@ -3714,7 +3714,7 @@
 
     invoke-virtual {v4, v14, v5}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20220
+    .line 20512
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -3725,12 +3725,12 @@
 
     invoke-virtual {v4, v6, v5}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20221
+    .line 20513
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20222
+    .line 20514
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -3743,7 +3743,7 @@
 
     if-nez v4, :cond_5f
 
-    .line 20223
+    .line 20515
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -3758,7 +3758,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20225
+    .line 20517
     :cond_5f
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -3770,7 +3770,7 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20226
+    .line 20518
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
@@ -3790,27 +3790,27 @@
     :cond_62
     const/4 v6, 0x1
 
-    .line 20231
+    .line 20523
     :goto_20
     invoke-virtual {v2, v8}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 20232
+    .line 20524
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20233
+    .line 20525
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
-    .line 20234
+    .line 20526
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->setLongClickable(Z)V
 
     const/16 v1, 0x10
 
-    .line 20235
+    .line 20527
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     const/16 v1, 0x20
 
-    .line 20236
+    .line 20528
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
     goto/16 :goto_1b
@@ -3824,7 +3824,7 @@
 
     add-int/lit16 v4, v1, -0x3e8
 
-    .line 20239
+    .line 20531
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10900(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
@@ -3841,7 +3841,7 @@
 
     return-object v6
 
-    .line 20242
+    .line 20534
     :cond_64
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -3855,7 +3855,7 @@
 
     check-cast v4, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;
 
-    .line 20243
+    .line 20535
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->access$3400(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Landroid/text/StaticLayout;
 
     move-result-object v6
@@ -3866,23 +3866,23 @@
 
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 20244
+    .line 20536
     invoke-virtual {v2, v9}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     const/4 v6, 0x1
 
-    .line 20245
+    .line 20537
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20246
+    .line 20538
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     const/16 v6, 0x10
 
-    .line 20247
+    .line 20539
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20249
+    .line 20541
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->access$1500(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
@@ -3915,7 +3915,7 @@
 
     invoke-virtual {v6, v7, v8, v9, v10}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20251
+    .line 20543
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -3928,7 +3928,7 @@
 
     if-eqz v4, :cond_65
 
-    .line 20252
+    .line 20544
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getMeasuredWidth()I
@@ -3951,7 +3951,7 @@
 
     goto :goto_22
 
-    .line 20254
+    .line 20546
     :cond_65
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -3981,7 +3981,7 @@
 
     add-int/2addr v4, v5
 
-    .line 20256
+    .line 20548
     :goto_22
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -3993,12 +3993,12 @@
 
     invoke-virtual {v5, v4, v6}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20257
+    .line 20549
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20258
+    .line 20550
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -4011,7 +4011,7 @@
 
     if-nez v4, :cond_67
 
-    .line 20259
+    .line 20551
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -4026,7 +4026,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20261
+    .line 20553
     :cond_67
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -4038,7 +4038,7 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20262
+    .line 20554
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
@@ -4052,7 +4052,7 @@
 
     add-int/lit16 v4, v1, -0x1f4
 
-    .line 20265
+    .line 20557
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v5}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11200(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
@@ -4069,7 +4069,7 @@
 
     return-object v5
 
-    .line 20268
+    .line 20560
     :cond_69
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -4083,7 +4083,7 @@
 
     check-cast v4, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;
 
-    .line 20269
+    .line 20561
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->access$2400(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Landroid/text/StaticLayout;
@@ -4096,7 +4096,7 @@
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 20270
+    .line 20562
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13000(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
@@ -4105,12 +4105,12 @@
 
     if-nez v6, :cond_6a
 
-    .line 20271
+    .line 20563
     invoke-virtual {v2, v9}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     goto :goto_24
 
-    .line 20273
+    .line 20565
     :cond_6a
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->access$2500(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Z
 
@@ -4118,7 +4118,7 @@
 
     invoke-virtual {v2, v6}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSelected(Z)V
 
-    .line 20274
+    .line 20566
     invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->access$2000(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)I
@@ -4131,7 +4131,7 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 20275
+    .line 20567
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/tgnet/TLRPC$Poll;
@@ -4162,7 +4162,7 @@
 
     if-eqz v6, :cond_6d
 
-    .line 20276
+    .line 20568
     :cond_6b
     invoke-virtual {v5, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4190,22 +4190,22 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 20279
+    .line 20571
     :cond_6d
     :goto_24
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
     const/4 v5, 0x1
 
-    .line 20280
+    .line 20572
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
     const/16 v5, 0x10
 
-    .line 20281
+    .line 20573
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20283
+    .line 20575
     iget v5, v4, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->y:I
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -4216,7 +4216,7 @@
 
     add-int/2addr v5, v6
 
-    .line 20284
+    .line 20576
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13200(Lorg/telegram/ui/Cells/ChatMessageCell;)I
@@ -4231,7 +4231,7 @@
 
     sub-int/2addr v6, v7
 
-    .line 20285
+    .line 20577
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget v8, v4, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->x:I
@@ -4244,12 +4244,12 @@
 
     invoke-virtual {v7, v8, v5, v6, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20286
+    .line 20578
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20287
+    .line 20579
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -4262,7 +4262,7 @@
 
     if-nez v4, :cond_6e
 
-    .line 20288
+    .line 20580
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -4277,7 +4277,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20290
+    .line 20582
     :cond_6e
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -4289,12 +4289,12 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20291
+    .line 20583
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 20293
+    .line 20585
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     goto/16 :goto_2b
@@ -4306,13 +4306,13 @@
 
     if-ne v1, v8, :cond_72
 
-    .line 20295
+    .line 20587
     invoke-virtual {v2, v9}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 20296
+    .line 20588
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20297
+    .line 20589
     sget v4, Lorg/telegram/messenger/R$string;->AccDescrQuizExplanation:I
 
     const-string v5, "AccDescrQuizExplanation"
@@ -4325,10 +4325,10 @@
 
     const/16 v4, 0x10
 
-    .line 20298
+    .line 20590
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20299
+    .line 20591
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -4387,12 +4387,12 @@
 
     invoke-virtual {v4, v5, v6, v7, v9}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20300
+    .line 20592
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20301
+    .line 20593
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -4425,7 +4425,7 @@
 
     if-nez v4, :cond_71
 
-    .line 20302
+    .line 20594
     :cond_70
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -4441,7 +4441,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20304
+    .line 20596
     :cond_71
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -4453,12 +4453,12 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20305
+    .line 20597
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 20306
+    .line 20598
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     goto/16 :goto_2b
@@ -4468,13 +4468,13 @@
 
     if-ne v1, v8, :cond_76
 
-    .line 20308
+    .line 20600
     invoke-virtual {v2, v9}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 20309
+    .line 20601
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20310
+    .line 20602
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13400(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
@@ -4483,7 +4483,7 @@
 
     if-eqz v4, :cond_73
 
-    .line 20311
+    .line 20603
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13400(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
@@ -4499,10 +4499,10 @@
     :cond_73
     const/16 v4, 0x10
 
-    .line 20313
+    .line 20605
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20314
+    .line 20606
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/graphics/RectF;
@@ -4513,12 +4513,12 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/RectF;->round(Landroid/graphics/Rect;)V
 
-    .line 20315
+    .line 20607
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20316
+    .line 20608
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -4551,7 +4551,7 @@
 
     if-nez v4, :cond_75
 
-    .line 20317
+    .line 20609
     :cond_74
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -4567,7 +4567,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20319
+    .line 20611
     :cond_75
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -4579,12 +4579,12 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20320
+    .line 20612
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 20321
+    .line 20613
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     goto/16 :goto_2b
@@ -4594,13 +4594,13 @@
 
     if-ne v1, v8, :cond_7a
 
-    .line 20323
+    .line 20615
     invoke-virtual {v2, v7}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 20324
+    .line 20616
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20325
+    .line 20617
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v5}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -4613,7 +4613,7 @@
 
     if-eqz v5, :cond_77
 
-    .line 20326
+    .line 20618
     sget v5, Lorg/telegram/messenger/R$string;->AccDescrOpenChat:I
 
     const-string v6, "AccDescrOpenChat"
@@ -4626,7 +4626,7 @@
 
     goto :goto_25
 
-    .line 20328
+    .line 20620
     :cond_77
     sget v5, Lorg/telegram/messenger/R$string;->ShareFile:I
 
@@ -4641,10 +4641,10 @@
     :goto_25
     const/16 v5, 0x10
 
-    .line 20330
+    .line 20622
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20331
+    .line 20623
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -4695,12 +4695,12 @@
 
     invoke-virtual {v5, v6, v7, v8, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20332
+    .line 20624
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20333
+    .line 20625
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -4733,7 +4733,7 @@
 
     if-nez v4, :cond_79
 
-    .line 20334
+    .line 20626
     :cond_78
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -4749,7 +4749,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20336
+    .line 20628
     :cond_79
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -4761,12 +4761,12 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20337
+    .line 20629
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 20338
+    .line 20630
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     goto/16 :goto_2b
@@ -4776,15 +4776,15 @@
 
     if-ne v1, v4, :cond_7f
 
-    .line 20340
+    .line 20632
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20341
+    .line 20633
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 20342
+    .line 20634
     sget v5, Lorg/telegram/messenger/R$string;->Reply:I
 
     const-string v6, "Reply"
@@ -4795,27 +4795,27 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 20343
+    .line 20635
     invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 20344
+    .line 20636
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v5, v5, Lorg/telegram/ui/Cells/ChatMessageCell;->replyNameLayout:Landroid/text/StaticLayout;
 
     if-eqz v5, :cond_7b
 
-    .line 20345
+    .line 20637
     invoke-virtual {v5}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v5
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 20346
+    .line 20638
     invoke-virtual {v4, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 20348
+    .line 20640
     :cond_7b
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -4823,14 +4823,14 @@
 
     if-eqz v5, :cond_7c
 
-    .line 20349
+    .line 20641
     invoke-virtual {v5}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v5
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 20351
+    .line 20643
     :cond_7c
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -4840,10 +4840,10 @@
 
     const/16 v4, 0x10
 
-    .line 20352
+    .line 20644
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20354
+    .line 20646
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -4880,12 +4880,12 @@
 
     invoke-virtual {v4, v6, v7, v5, v9}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20355
+    .line 20647
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20356
+    .line 20648
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -4918,7 +4918,7 @@
 
     if-nez v4, :cond_7e
 
-    .line 20357
+    .line 20649
     :cond_7d
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -4934,7 +4934,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20359
+    .line 20651
     :cond_7e
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -4946,12 +4946,12 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20360
+    .line 20652
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 20361
+    .line 20653
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     goto/16 :goto_2b
@@ -4961,15 +4961,15 @@
 
     if-ne v1, v4, :cond_84
 
-    .line 20363
+    .line 20655
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20364
+    .line 20656
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 20365
+    .line 20657
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9200(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
@@ -4997,7 +4997,7 @@
     :goto_26
     if-ge v5, v7, :cond_81
 
-    .line 20367
+    .line 20659
     iget-object v8, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v8}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9200(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
@@ -5021,7 +5021,7 @@
     :cond_80
     move-object v8, v12
 
-    .line 20368
+    .line 20660
     :goto_27
     invoke-virtual {v4, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -5029,7 +5029,7 @@
 
     goto :goto_26
 
-    .line 20371
+    .line 20663
     :cond_81
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -5039,10 +5039,10 @@
 
     const/16 v4, 0x10
 
-    .line 20372
+    .line 20664
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20374
+    .line 20666
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$14000(Lorg/telegram/ui/Cells/ChatMessageCell;)F
@@ -5083,7 +5083,7 @@
 
     float-to-int v4, v4
 
-    .line 20375
+    .line 20667
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -5116,12 +5116,12 @@
 
     invoke-virtual {v5, v4, v6, v7, v8}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20376
+    .line 20668
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20377
+    .line 20669
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -5154,7 +5154,7 @@
 
     if-nez v4, :cond_83
 
-    .line 20378
+    .line 20670
     :cond_82
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -5170,7 +5170,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20380
+    .line 20672
     :cond_83
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -5182,12 +5182,12 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20381
+    .line 20673
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 20382
+    .line 20674
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     goto/16 :goto_2b
@@ -5197,20 +5197,20 @@
 
     if-ne v1, v4, :cond_8c
 
-    .line 20384
+    .line 20676
     invoke-virtual {v2, v9}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 20385
+    .line 20677
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20386
+    .line 20678
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10300(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v4
 
-    .line 20388
+    .line 20680
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v5}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -5243,14 +5243,14 @@
 
     if-nez v5, :cond_87
 
-    .line 20389
+    .line 20681
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-boolean v5, v5, Lorg/telegram/ui/Cells/ChatMessageCell;->isRepliesChat:Z
 
     if-eqz v5, :cond_85
 
-    .line 20390
+    .line 20682
     sget v4, Lorg/telegram/messenger/R$string;->ViewInChat:I
 
     const-string v5, "ViewInChat"
@@ -5264,7 +5264,7 @@
     :cond_85
     if-nez v4, :cond_86
 
-    .line 20392
+    .line 20684
     sget v4, Lorg/telegram/messenger/R$string;->LeaveAComment:I
 
     const-string v5, "LeaveAComment"
@@ -5289,7 +5289,7 @@
 
     goto :goto_29
 
-    .line 20394
+    .line 20686
     :cond_87
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -5301,7 +5301,7 @@
 
     const/4 v5, 0x0
 
-    .line 20395
+    .line 20687
     invoke-static {v4, v5}, Lorg/telegram/messenger/LocaleController;->formatShortNumber(I[I)Ljava/lang/String;
 
     move-result-object v10
@@ -5316,16 +5316,16 @@
     :goto_29
     if-eqz v10, :cond_89
 
-    .line 20398
+    .line 20690
     invoke-virtual {v2, v10}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
     :cond_89
     const/16 v4, 0x10
 
-    .line 20400
+    .line 20692
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20401
+    .line 20693
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -5336,12 +5336,12 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 20402
+    .line 20694
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v4}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20403
+    .line 20695
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12100(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/util/SparseArray;
@@ -5374,7 +5374,7 @@
 
     if-nez v4, :cond_8b
 
-    .line 20404
+    .line 20696
     :cond_8a
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -5390,7 +5390,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 20406
+    .line 20698
     :cond_8b
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
@@ -5402,12 +5402,12 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20407
+    .line 20699
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 20408
+    .line 20700
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     goto/16 :goto_2b
@@ -5417,13 +5417,13 @@
 
     if-ne v1, v4, :cond_8f
 
-    .line 20410
+    .line 20702
     invoke-virtual {v2, v9}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 20411
+    .line 20703
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 20412
+    .line 20704
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -5456,10 +5456,10 @@
 
     const/16 v1, 0x10
 
-    .line 20413
+    .line 20705
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(I)V
 
-    .line 20414
+    .line 20706
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/TranscribeButton;
@@ -5468,7 +5468,7 @@
 
     if-eqz v1, :cond_8e
 
-    .line 20415
+    .line 20707
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -5533,13 +5533,13 @@
 
     invoke-virtual {v1, v4, v5, v6, v7}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 20417
+    .line 20709
     :cond_8e
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInParent(Landroid/graphics/Rect;)V
 
-    .line 20418
+    .line 20710
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     aget v4, v3, v14
@@ -5550,20 +5550,20 @@
 
     invoke-virtual {v1, v4, v3}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 20419
+    .line 20711
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setBoundsInScreen(Landroid/graphics/Rect;)V
 
-    .line 20420
+    .line 20712
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
-    .line 20422
+    .line 20714
     :cond_8f
     :goto_2b
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setFocusable(Z)V
 
-    .line 20423
+    .line 20715
     invoke-virtual {v2, v5}, Landroid/view/accessibility/AccessibilityNodeInfo;->setVisibleToUser(Z)V
 
     return-object v2
@@ -5584,7 +5584,7 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 20431
+    .line 20723
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->performAccessibilityAction(ILandroid/os/Bundle;)Z
@@ -5596,7 +5596,7 @@
 
     if-ne p2, p3, :cond_1
 
-    .line 20434
+    .line 20726
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const p3, 0x8000
@@ -5618,7 +5618,7 @@
 
     if-ne p1, p2, :cond_2
 
-    .line 20438
+    .line 20730
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5627,7 +5627,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 20439
+    .line 20731
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5645,7 +5645,7 @@
 
     if-ne p1, p3, :cond_3
 
-    .line 20443
+    .line 20735
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5654,7 +5654,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 20444
+    .line 20736
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5676,14 +5676,14 @@
     :cond_3
     if-lt p1, v1, :cond_4
 
-    .line 20447
+    .line 20739
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->getLinkById(IZ)Landroid/text/style/ClickableSpan;
 
     move-result-object p2
 
     if-eqz p2, :cond_19
 
-    .line 20449
+    .line 20741
     iget-object p3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5694,7 +5694,7 @@
 
     invoke-interface {p3, v1, p2, v2}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;->didPressUrl(Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/text/style/CharacterStyle;Z)V
 
-    .line 20450
+    .line 20742
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p2, p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$14800(Lorg/telegram/ui/Cells/ChatMessageCell;II)V
@@ -5706,14 +5706,14 @@
 
     if-lt p1, p3, :cond_5
 
-    .line 20453
+    .line 20745
     invoke-direct {p0, p1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->getLinkById(IZ)Landroid/text/style/ClickableSpan;
 
     move-result-object p2
 
     if-eqz p2, :cond_19
 
-    .line 20455
+    .line 20747
     iget-object p3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5724,7 +5724,7 @@
 
     invoke-interface {p3, v1, p2, v2}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;->didPressUrl(Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/text/style/CharacterStyle;Z)V
 
-    .line 20456
+    .line 20748
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p2, p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$14800(Lorg/telegram/ui/Cells/ChatMessageCell;II)V
@@ -5738,7 +5738,7 @@
 
     add-int/lit16 p2, p1, -0x3e8
 
-    .line 20460
+    .line 20752
     iget-object p3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10900(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
@@ -5753,7 +5753,7 @@
 
     return v2
 
-    .line 20463
+    .line 20755
     :cond_6
     iget-object p3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -5767,7 +5767,7 @@
 
     check-cast p2, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;
 
-    .line 20464
+    .line 20756
     iget-object p3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5776,14 +5776,14 @@
 
     if-eqz p3, :cond_7
 
-    .line 20465
+    .line 20757
     invoke-static {p2}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->access$1100(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Lorg/telegram/tgnet/TLRPC$KeyboardButton;
 
     move-result-object p3
 
     if-eqz p3, :cond_7
 
-    .line 20466
+    .line 20758
     iget-object p3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5798,7 +5798,7 @@
 
     invoke-interface {p3, v1, p2}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;->didPressBotButton(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)V
 
-    .line 20469
+    .line 20761
     :cond_7
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -5813,7 +5813,7 @@
 
     add-int/lit16 p2, p1, -0x1f4
 
-    .line 20472
+    .line 20764
     iget-object p3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11200(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
@@ -5828,7 +5828,7 @@
 
     return v2
 
-    .line 20475
+    .line 20767
     :cond_9
     iget-object p3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -5842,7 +5842,7 @@
 
     check-cast p2, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;
 
-    .line 20476
+    .line 20768
     iget-object p3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5851,19 +5851,19 @@
 
     if-eqz p3, :cond_a
 
-    .line 20477
+    .line 20769
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 20478
+    .line 20770
     invoke-static {p2}, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->access$1200(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;
 
     move-result-object p2
 
     invoke-virtual {v3, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 20479
+    .line 20771
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5880,7 +5880,7 @@
 
     invoke-interface/range {v1 .. v6}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;->didPressVoteButtons(Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/util/ArrayList;III)V
 
-    .line 20481
+    .line 20773
     :cond_a
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -5893,7 +5893,7 @@
 
     if-ne p1, p3, :cond_c
 
-    .line 20483
+    .line 20775
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5902,7 +5902,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 20484
+    .line 20776
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5920,7 +5920,7 @@
 
     if-ne p1, p3, :cond_d
 
-    .line 20487
+    .line 20779
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5929,7 +5929,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 20488
+    .line 20780
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5949,7 +5949,7 @@
 
     if-ne p1, p3, :cond_e
 
-    .line 20491
+    .line 20783
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5958,7 +5958,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 20492
+    .line 20784
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -5976,7 +5976,7 @@
 
     if-ne p1, p3, :cond_11
 
-    .line 20495
+    .line 20787
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -6016,7 +6016,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    iget-boolean p2, p1, Lorg/telegram/ui/Cells/ChatMessageCell;->isReplyQuote:Z
+    iget-boolean p2, p1, Lorg/telegram/ui/Cells/ChatMessageCell;->hasReplyQuote:Z
 
     if-nez p2, :cond_10
 
@@ -6054,7 +6054,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 20496
+    .line 20788
     :cond_10
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -6081,7 +6081,7 @@
 
     if-ne p1, p3, :cond_14
 
-    .line 20499
+    .line 20791
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -6090,7 +6090,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 20500
+    .line 20792
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$14900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/tgnet/TLRPC$Chat;
@@ -6099,7 +6099,7 @@
 
     if-eqz p1, :cond_12
 
-    .line 20501
+    .line 20793
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -6140,7 +6140,7 @@
 
     goto/16 :goto_0
 
-    .line 20502
+    .line 20794
     :cond_12
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -6150,7 +6150,7 @@
 
     if-eqz p1, :cond_13
 
-    .line 20503
+    .line 20795
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -6179,7 +6179,7 @@
 
     goto/16 :goto_0
 
-    .line 20504
+    .line 20796
     :cond_13
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -6189,7 +6189,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 20505
+    .line 20797
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -6207,7 +6207,7 @@
 
     if-ne p1, p3, :cond_16
 
-    .line 20509
+    .line 20801
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -6216,14 +6216,14 @@
 
     if-eqz p1, :cond_19
 
-    .line 20510
+    .line 20802
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-boolean p2, p1, Lorg/telegram/ui/Cells/ChatMessageCell;->isRepliesChat:Z
 
     if-eqz p2, :cond_15
 
-    .line 20511
+    .line 20803
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
 
     move-result-object p1
@@ -6234,7 +6234,7 @@
 
     goto :goto_0
 
-    .line 20513
+    .line 20805
     :cond_15
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
 
@@ -6249,7 +6249,7 @@
     :cond_16
     if-ne p1, p2, :cond_19
 
-    .line 20516
+    .line 20808
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/TranscribeButton;
@@ -6258,7 +6258,7 @@
 
     if-eqz p1, :cond_19
 
-    .line 20517
+    .line 20809
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Components/TranscribeButton;
@@ -6278,7 +6278,7 @@
 
     move v2, v0
 
-    .line 20520
+    .line 20812
     :cond_18
     invoke-direct {p0, p1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->getLinkById(IZ)Landroid/text/style/ClickableSpan;
 
@@ -6286,7 +6286,7 @@
 
     if-eqz p2, :cond_19
 
-    .line 20522
+    .line 20814
     iget-object p3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {p3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
@@ -6297,7 +6297,7 @@
 
     invoke-interface {p3, v1, p2, v0}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;->didPressUrl(Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/text/style/CharacterStyle;Z)V
 
-    .line 20523
+    .line 20815
     iget-object p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$MessageAccessibilityNodeProvider;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/4 p3, 0x2

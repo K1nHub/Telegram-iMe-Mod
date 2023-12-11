@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/PeerColorActivity;)V
     .locals 0
 
-    .line 125
+    .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,7 +52,7 @@
 
     const/16 p1, 0x3e
 
-    .line 128
+    .line 134
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1

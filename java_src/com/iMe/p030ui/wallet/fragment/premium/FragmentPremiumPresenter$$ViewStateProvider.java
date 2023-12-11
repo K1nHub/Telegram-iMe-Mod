@@ -4,7 +4,7 @@ import moxy.MvpView;
 import moxy.ViewStateProvider;
 import moxy.viewstate.MvpViewState;
 /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumPresenter$$ViewStateProvider */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FragmentPremiumPresenter$$ViewStateProvider extends ViewStateProvider {
     @Override // moxy.ViewStateProvider
     public MvpViewState<? extends MvpView> getViewState() {

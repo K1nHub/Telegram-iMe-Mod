@@ -2,48 +2,70 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/MessagesStorage$LongCallback;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
+.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
-.field public final synthetic f$1:J
+.field public final synthetic f$1:I
 
-.field public final synthetic f$2:Ljava/lang/Runnable;
+.field public final synthetic f$2:Lorg/telegram/ui/DialogsActivity;
+
+.field public final synthetic f$3:Z
+
+.field public final synthetic f$4:Ljava/util/ArrayList;
+
+.field public final synthetic f$5:Landroid/net/Uri;
+
+.field public final synthetic f$6:Lorg/telegram/ui/ActionBar/AlertDialog;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JLjava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;ILorg/telegram/ui/DialogsActivity;ZLjava/util/ArrayList;Landroid/net/Uri;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/messenger/MessagesController;
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-wide p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$1:J
+    iput p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$1:I
 
-    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$2:Ljava/lang/Runnable;
+    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$2:Lorg/telegram/ui/DialogsActivity;
+
+    iput-boolean p4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$3:Z
+
+    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$4:Ljava/util/ArrayList;
+
+    iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$5:Landroid/net/Uri;
+
+    iput-object p7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$6:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 6
+.method public final run(J)V
+    .locals 9
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/messenger/MessagesController;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-wide v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$1:J
+    iget v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$1:I
 
-    iget-object v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$2:Ljava/lang/Runnable;
+    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$2:Lorg/telegram/ui/DialogsActivity;
 
-    move-object v4, p1
+    iget-boolean v3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$3:Z
 
-    move-object v5, p2
+    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$4:Ljava/util/ArrayList;
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$VPSF8G-P9VU143acZmdhWoSseh4(Lorg/telegram/messenger/MessagesController;JLjava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$5:Landroid/net/Uri;
+
+    iget-object v6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda111;->f$6:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    move-wide v7, p1
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Adgs5Fc-oEbSANBHK4ur7lQ-Uho(Lorg/telegram/ui/LaunchActivity;ILorg/telegram/ui/DialogsActivity;ZLjava/util/ArrayList;Landroid/net/Uri;Lorg/telegram/ui/ActionBar/AlertDialog;J)V
 
     return-void
 .end method

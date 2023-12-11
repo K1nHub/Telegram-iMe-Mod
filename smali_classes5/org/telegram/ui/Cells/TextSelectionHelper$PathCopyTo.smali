@@ -22,10 +22,10 @@
 .method public constructor <init>(Landroid/graphics/Path;)V
     .locals 0
 
-    .line 3191
+    .line 3254
     invoke-direct {p0}, Landroid/graphics/Path;-><init>()V
 
-    .line 3192
+    .line 3255
     iput-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$PathCopyTo;->destination:Landroid/graphics/Path;
 
     return-void
@@ -36,7 +36,7 @@
 .method public addRect(FFFFLandroid/graphics/Path$Direction;)V
     .locals 6
 
-    .line 3201
+    .line 3264
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$PathCopyTo;->destination:Landroid/graphics/Path;
 
     move v1, p1
@@ -57,7 +57,7 @@
 .method public reset()V
     .locals 0
 
-    .line 3196
+    .line 3259
     invoke-super {p0}, Landroid/graphics/Path;->reset()V
 
     return-void

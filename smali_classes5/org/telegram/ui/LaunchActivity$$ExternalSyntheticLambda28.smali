@@ -55,7 +55,7 @@
 
     check-cast v5, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$9kabxPW9gbXqdZLrFND7lVKdEPg(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/messenger/browser/Browser$Progress;Ljava/lang/Runnable;Lorg/telegram/messenger/ChannelBoostsController;Ljava/lang/Long;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$6DGzInGnxcNOtISRaH4hAc-shs4(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/messenger/browser/Browser$Progress;Ljava/lang/Runnable;Lorg/telegram/messenger/ChannelBoostsController;Ljava/lang/Long;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
 
     return-void
 .end method

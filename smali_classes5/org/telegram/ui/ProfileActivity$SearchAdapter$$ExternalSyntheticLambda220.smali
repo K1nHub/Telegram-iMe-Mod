@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity$SearchAdapter;
 
-.field public final synthetic f$1:Ljava/lang/String;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda220;->f$0:Lorg/telegram/ui/ProfileActivity$SearchAdapter;
-
-    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda220;->f$1:Ljava/lang/String;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda220;->f$0:Lorg/telegram/ui/ProfileActivity$SearchAdapter;
 
-    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$SearchAdapter$$ExternalSyntheticLambda220;->f$1:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->$r8$lambda$D1p1QtuhiTC-QaogvGv9z2d-Dko(Lorg/telegram/ui/ProfileActivity$SearchAdapter;Ljava/lang/String;)V
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$SearchAdapter;->$r8$lambda$zs1BO5C6gR0EXeq0rJWqzEWA-qg(Lorg/telegram/ui/ProfileActivity$SearchAdapter;)V
 
     return-void
 .end method

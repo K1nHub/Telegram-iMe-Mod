@@ -21,7 +21,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: HorizontalActionButtonsView.kt */
@@ -147,8 +147,8 @@ public final class HorizontalActionButtonsView extends LinearLayout {
 
         private final void initView() {
             setOrientation(1);
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(this, getResources().getDimensionPixelOffset(C3634R.dimen.margin_half_small));
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingVertical(this, getResources().getDimensionPixelOffset(C3634R.dimen.margin_normal_2));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(this, getResources().getDimensionPixelOffset(C3632R.dimen.margin_half_small));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingVertical(this, getResources().getDimensionPixelOffset(C3632R.dimen.margin_normal_2));
             setGravity(1);
             addView(getImageView(), LayoutHelper.createLinear(24, 24));
             addView(getTextView(), LayoutHelper.createLinear(-1, -2, 0, 4, 0, 0));
@@ -160,7 +160,7 @@ public final class HorizontalActionButtonsView extends LinearLayout {
             textView.setGravity(17);
             ViewExtKt.singleLine(textView);
             textView.setEllipsize(TextUtils.TruncateAt.END);
-            textView.setTextSize(0, textView.getResources().getDimension(C3634R.dimen.text_size_normal));
+            textView.setTextSize(0, textView.getResources().getDimension(C3632R.dimen.text_size_normal));
             return textView;
         }
 

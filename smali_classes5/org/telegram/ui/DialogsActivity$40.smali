@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 7325
+    .line 7328
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -214,7 +214,7 @@
 .method public onMessageSend(Ljava/lang/CharSequence;ZILjava/lang/String;)V
     .locals 7
 
-    .line 7328
+    .line 7331
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$31700(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
@@ -237,7 +237,7 @@
 
     goto :goto_1
 
-    .line 7331
+    .line 7334
     :cond_0
     new-instance v2, Ljava/util/ArrayList;
 
@@ -247,7 +247,7 @@
 
     move p3, p2
 
-    .line 7332
+    .line 7335
     :goto_0
     iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -261,7 +261,7 @@
 
     if-ge p3, p4, :cond_1
 
-    .line 7333
+    .line 7336
     iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p4}, Lorg/telegram/ui/DialogsActivity;->access$2600(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
@@ -288,7 +288,7 @@
 
     goto :goto_0
 
-    .line 7335
+    .line 7338
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$40;->this$0:Lorg/telegram/ui/DialogsActivity;
 

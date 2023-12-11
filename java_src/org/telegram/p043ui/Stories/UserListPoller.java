@@ -34,7 +34,7 @@ public class UserListPoller {
 
     private UserListPoller(int i) {
         new ArrayList();
-        this.requestCollectedRunnables = new RunnableC71631();
+        this.requestCollectedRunnables = new RunnableC71611();
         this.currentAccount = i;
     }
 
@@ -49,8 +49,8 @@ public class UserListPoller {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Stories.UserListPoller$1 */
     /* loaded from: classes6.dex */
-    public class RunnableC71631 implements Runnable {
-        RunnableC71631() {
+    public class RunnableC71611 implements Runnable {
+        RunnableC71611() {
         }
 
         @Override // java.lang.Runnable
@@ -67,7 +67,7 @@ public class UserListPoller {
             ConnectionsManager.getInstance(UserListPoller.this.currentAccount).sendRequest(tL_stories$TL_stories_getPeerMaxIDs, new RequestDelegate() { // from class: org.telegram.ui.Stories.UserListPoller$1$$ExternalSyntheticLambda1
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                    UserListPoller.RunnableC71631.this.lambda$run$1(arrayList, tLObject, tLRPC$TL_error);
+                    UserListPoller.RunnableC71611.this.lambda$run$1(arrayList, tLObject, tLRPC$TL_error);
                 }
             });
         }
@@ -77,7 +77,7 @@ public class UserListPoller {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Stories.UserListPoller$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    UserListPoller.RunnableC71631.this.lambda$run$0(tLObject, arrayList);
+                    UserListPoller.RunnableC71611.this.lambda$run$0(tLObject, arrayList);
                 }
             });
         }

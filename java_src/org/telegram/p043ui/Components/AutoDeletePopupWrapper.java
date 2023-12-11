@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.ActionBarMenuSubItem;
@@ -47,12 +47,12 @@ public class AutoDeletePopupWrapper {
     }
 
     public AutoDeletePopupWrapper(final Context context, final PopupSwipeBackLayout popupSwipeBackLayout, final Callback callback, boolean z, final int i, final Theme.ResourcesProvider resourcesProvider) {
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(context, z ? C3634R.C3636drawable.popup_fixed_alert : 0, resourcesProvider);
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(context, z ? C3632R.C3634drawable.popup_fixed_alert : 0, resourcesProvider);
         this.windowLayout = actionBarPopupWindowLayout;
         actionBarPopupWindowLayout.setFitItems(true);
         this.callback = callback;
         if (popupSwipeBackLayout != null) {
-            ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(this.windowLayout, C3634R.C3636drawable.msg_arrow_back, LocaleController.getString("Back", C3634R.string.Back), false, resourcesProvider);
+            ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(this.windowLayout, C3632R.C3634drawable.msg_arrow_back, LocaleController.getString("Back", C3632R.string.Back), false, resourcesProvider);
             this.backItem = addItem;
             addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
@@ -61,31 +61,31 @@ public class AutoDeletePopupWrapper {
                 }
             });
         }
-        ActionBarMenuItem.addItem(this.windowLayout, C3634R.C3636drawable.msg_autodelete_1d, LocaleController.getString("AutoDelete1Day", C3634R.string.AutoDelete1Day), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda4
+        ActionBarMenuItem.addItem(this.windowLayout, C3632R.C3634drawable.msg_autodelete_1d, LocaleController.getString("AutoDelete1Day", C3632R.string.AutoDelete1Day), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AutoDeletePopupWrapper.this.lambda$new$1(callback, view);
             }
         });
-        ActionBarMenuItem.addItem(this.windowLayout, C3634R.C3636drawable.msg_autodelete_1w, LocaleController.getString("AutoDelete7Days", C3634R.string.AutoDelete7Days), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda2
+        ActionBarMenuItem.addItem(this.windowLayout, C3632R.C3634drawable.msg_autodelete_1w, LocaleController.getString("AutoDelete7Days", C3632R.string.AutoDelete7Days), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AutoDeletePopupWrapper.this.lambda$new$2(callback, view);
             }
         });
-        ActionBarMenuItem.addItem(this.windowLayout, C3634R.C3636drawable.msg_autodelete_1m, LocaleController.getString("AutoDelete1Month", C3634R.string.AutoDelete1Month), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda1
+        ActionBarMenuItem.addItem(this.windowLayout, C3632R.C3634drawable.msg_autodelete_1m, LocaleController.getString("AutoDelete1Month", C3632R.string.AutoDelete1Month), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AutoDeletePopupWrapper.this.lambda$new$3(callback, view);
             }
         });
-        ActionBarMenuItem.addItem(this.windowLayout, C3634R.C3636drawable.msg_customize, i == 1 ? LocaleController.getString("AutoDeleteCustom2", C3634R.string.AutoDeleteCustom2) : LocaleController.getString("AutoDeleteCustom", C3634R.string.AutoDeleteCustom), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda0
+        ActionBarMenuItem.addItem(this.windowLayout, C3632R.C3634drawable.msg_customize, i == 1 ? LocaleController.getString("AutoDeleteCustom2", C3632R.string.AutoDeleteCustom2) : LocaleController.getString("AutoDeleteCustom", C3632R.string.AutoDeleteCustom), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AutoDeletePopupWrapper.this.lambda$new$5(context, i, resourcesProvider, callback, view);
             }
         });
-        ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(this.windowLayout, C3634R.C3636drawable.msg_disable, LocaleController.getString("AutoDeleteDisable", C3634R.string.AutoDeleteDisable), false, resourcesProvider);
+        ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(this.windowLayout, C3632R.C3634drawable.msg_disable, LocaleController.getString("AutoDeleteDisable", C3632R.string.AutoDeleteDisable), false, resourcesProvider);
         this.disableItem = addItem2;
         addItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
@@ -101,9 +101,9 @@ public class AutoDeletePopupWrapper {
             FrameLayout frameLayout = new FrameLayout(context);
             frameLayout.setBackgroundColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuSeparator, resourcesProvider));
             View view = new View(context);
-            view.setBackground(Theme.getThemedDrawableByKey(context, C3634R.C3636drawable.greydivider, Theme.key_windowBackgroundGrayShadow, resourcesProvider));
+            view.setBackground(Theme.getThemedDrawableByKey(context, C3632R.C3634drawable.greydivider, Theme.key_windowBackgroundGrayShadow, resourcesProvider));
             frameLayout.addView(view, LayoutHelper.createFrame(-1, -1));
-            int i3 = C3634R.C3637id.fit_width_tag;
+            int i3 = C3632R.C3635id.fit_width_tag;
             frameLayout.setTag(i3, 1);
             this.windowLayout.addView((View) frameLayout, LayoutHelper.createLinear(-1, 8));
             LinkSpanDrawable.LinksTextView linksTextView = new LinkSpanDrawable.LinksTextView(context);
@@ -114,7 +114,7 @@ public class AutoDeletePopupWrapper {
             this.textView.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem));
             this.textView.setMovementMethod(LinkMovementMethod.getInstance());
             this.textView.setLinkTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText));
-            this.textView.setText(LocaleController.getString("AutoDeletePopupDescription", C3634R.string.AutoDeletePopupDescription));
+            this.textView.setText(LocaleController.getString("AutoDeletePopupDescription", C3632R.string.AutoDeletePopupDescription));
             this.windowLayout.addView((View) this.textView, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 0, 0, 8, 0, 0));
         }
     }
@@ -184,9 +184,9 @@ public class AutoDeletePopupWrapper {
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) LocaleController.getString("AutoDeletePopupDescription", C3634R.string.AutoDeletePopupDescription));
+        spannableStringBuilder.append((CharSequence) LocaleController.getString("AutoDeletePopupDescription", C3632R.string.AutoDeletePopupDescription));
         spannableStringBuilder.append((CharSequence) "\n\n");
-        spannableStringBuilder.append(AndroidUtilities.replaceSingleTag(LocaleController.getString("AutoDeletePopupDescription2", C3634R.string.AutoDeletePopupDescription2), new Runnable() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda6
+        spannableStringBuilder.append(AndroidUtilities.replaceSingleTag(LocaleController.getString("AutoDeletePopupDescription2", C3632R.string.AutoDeletePopupDescription2), new Runnable() { // from class: org.telegram.ui.Components.AutoDeletePopupWrapper$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 AutoDeletePopupWrapper.this.lambda$allowExtenededHint$8();

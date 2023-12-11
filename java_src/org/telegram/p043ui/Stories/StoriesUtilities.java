@@ -21,7 +21,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -107,122 +107,18 @@ public class StoriesUtilities {
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Stories.StoriesUtilities.drawAvatarWithStory(long, android.graphics.Canvas, org.telegram.messenger.ImageReceiver, boolean, org.telegram.ui.Stories.StoriesUtilities$AvatarStoryParams):void");
     }
 
-    private static void drawSegmentsInternal(Canvas canvas, StoriesController storiesController, ImageReceiver imageReceiver, AvatarStoryParams avatarStoryParams, Paint paint, Paint paint2, Paint paint3) {
-        int unreadState;
-        int size;
-        Paint paint4;
-        Paint paint5;
-        float f;
-        float f2;
-        RectF rectF;
-        checkGrayPaint(avatarStoryParams.resourcesProvider);
-        checkStoryCellGrayPaint(avatarStoryParams.isArchive, avatarStoryParams.resourcesProvider);
-        long j = avatarStoryParams.crossfadeToDialog;
-        if (j != 0) {
-            unreadState = storiesController.getUnreadState(j);
-        } else {
-            unreadState = storiesController.getUnreadState(avatarStoryParams.dialogId);
-        }
-        int i = 2;
-        avatarStoryParams.globalState = unreadState == 0 ? 2 : 1;
-        TL_stories$PeerStories stories = storiesController.getStories(avatarStoryParams.dialogId);
-        if (stories == null) {
-            stories = storiesController.getStoriesFromFullPeer(avatarStoryParams.dialogId);
-        }
-        TL_stories$PeerStories tL_stories$PeerStories = stories;
-        if (avatarStoryParams.drawHiddenStoriesAsSegments) {
-            size = storiesController.getHiddenList().size();
-        } else {
-            size = (tL_stories$PeerStories == null || tL_stories$PeerStories.stories.size() == 1) ? 1 : tL_stories$PeerStories.stories.size();
-        }
-        int i2 = size;
-        if (unreadState == 2) {
-            getCloseFriendsPaint(imageReceiver);
-            paint4 = closeFriendsGradientTools.paint;
-        } else if (unreadState == 1) {
-            getUnreadCirclePaint(imageReceiver, avatarStoryParams.isStoryCell);
-            paint4 = storiesGradientTools[avatarStoryParams.isStoryCell ? 1 : 0].paint;
-        } else {
-            paint4 = avatarStoryParams.isStoryCell ? storyCellGreyPaint[avatarStoryParams.isArchive ? 1 : 0] : grayPaint;
-        }
-        Paint paint6 = paint4;
-        if (i2 > 1) {
-            float f3 = 360.0f / i2;
-            float f4 = (i2 > 20 ? 3 : 5) * avatarStoryParams.progressToSegments;
-            if (f4 > f3) {
-                f4 = BitmapDescriptorFactory.HUE_RED;
-            }
-            float f5 = f4;
-            int max = avatarStoryParams.drawHiddenStoriesAsSegments ? 0 : Math.max(tL_stories$PeerStories.max_read_id, storiesController.dialogIdToMaxReadId.get(avatarStoryParams.dialogId, 0));
-            int i3 = 0;
-            while (i3 < i2) {
-                Paint paint7 = avatarStoryParams.isStoryCell ? storyCellGreyPaint[avatarStoryParams.isArchive ? 1 : 0] : grayPaint;
-                if (avatarStoryParams.drawHiddenStoriesAsSegments) {
-                    int unreadState2 = storiesController.getUnreadState(DialogObject.getPeerDialogId(storiesController.getHiddenList().get((i2 - 1) - i3).peer));
-                    if (unreadState2 == i) {
-                        paint7 = paint3;
-                    } else if (unreadState2 == 1) {
-                        paint7 = paint2;
-                    }
-                } else {
-                    if (i3 >= tL_stories$PeerStories.stories.size()) {
-                        paint7 = paint2;
-                    }
-                    if (tL_stories$PeerStories.stories.get(i3).justUploaded || tL_stories$PeerStories.stories.get(i3).f1761id > max) {
-                        paint5 = tL_stories$PeerStories.stories.get(i3).close_friends ? paint3 : paint2;
-                        float f6 = (i3 * f3) - 90.0f;
-                        f = f6 + f5;
-                        f2 = (f6 + f3) - f5;
-                        rectF = rectTmp;
-                        Paint paint8 = paint5;
-                        int i4 = i3;
-                        int i5 = max;
-                        drawSegment(canvas, rectF, paint5, f, f2, avatarStoryParams);
-                        if (avatarStoryParams.progressToSegments != 1.0f && paint8 != paint6) {
-                            paint6.getStrokeWidth();
-                            paint6.setAlpha((int) ((1.0f - avatarStoryParams.progressToSegments) * 255.0f));
-                            drawSegment(canvas, rectF, paint6, f, f2, avatarStoryParams);
-                            paint6.setAlpha(255);
-                        }
-                        i3 = i4 + 1;
-                        max = i5;
-                        i = 2;
-                    }
-                }
-                paint5 = paint7;
-                float f62 = (i3 * f3) - 90.0f;
-                f = f62 + f5;
-                f2 = (f62 + f3) - f5;
-                rectF = rectTmp;
-                Paint paint82 = paint5;
-                int i42 = i3;
-                int i52 = max;
-                drawSegment(canvas, rectF, paint5, f, f2, avatarStoryParams);
-                if (avatarStoryParams.progressToSegments != 1.0f) {
-                    paint6.getStrokeWidth();
-                    paint6.setAlpha((int) ((1.0f - avatarStoryParams.progressToSegments) * 255.0f));
-                    drawSegment(canvas, rectF, paint6, f, f2, avatarStoryParams);
-                    paint6.setAlpha(255);
-                }
-                i3 = i42 + 1;
-                max = i52;
-                i = 2;
-            }
-            return;
-        }
-        Paint paint9 = storiesController.hasUnreadStories(avatarStoryParams.dialogId) ? paint2 : paint;
-        RectF rectF2 = rectTmp;
-        Paint paint10 = paint9;
-        drawSegment(canvas, rectF2, paint10, -90.0f, 90.0f, avatarStoryParams);
-        drawSegment(canvas, rectF2, paint10, 90.0f, 270.0f, avatarStoryParams);
-        float f7 = avatarStoryParams.progressToSegments;
-        if (f7 == 1.0f || paint9 == paint6) {
-            return;
-        }
-        paint6.setAlpha((int) ((1.0f - f7) * 255.0f));
-        drawSegment(canvas, rectF2, paint6, -90.0f, 90.0f, avatarStoryParams);
-        drawSegment(canvas, rectF2, paint6, 90.0f, 270.0f, avatarStoryParams);
-        paint6.setAlpha(255);
+    /* JADX WARN: Removed duplicated region for block: B:81:0x01aa A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x01c9 A[ADDED_TO_REGION, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    private static void drawSegmentsInternal(android.graphics.Canvas r23, org.telegram.p043ui.Stories.StoriesController r24, org.telegram.messenger.ImageReceiver r25, org.telegram.p043ui.Stories.StoriesUtilities.AvatarStoryParams r26, android.graphics.Paint r27, android.graphics.Paint r28, android.graphics.Paint r29) {
+        /*
+            Method dump skipped, instructions count: 465
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.p043ui.Stories.StoriesUtilities.drawSegmentsInternal(android.graphics.Canvas, org.telegram.ui.Stories.StoriesController, org.telegram.messenger.ImageReceiver, org.telegram.ui.Stories.StoriesUtilities$AvatarStoryParams, android.graphics.Paint, android.graphics.Paint, android.graphics.Paint):void");
     }
 
     public static int getPredictiveUnreadState(StoriesController storiesController, long j) {
@@ -542,9 +438,9 @@ public class StoriesUtilities {
     public static CharSequence getUploadingStr(TextView textView, boolean z, boolean z2) {
         String string;
         if (z2) {
-            string = LocaleController.getString("StoryEditing", C3634R.string.StoryEditing);
+            string = LocaleController.getString("StoryEditing", C3632R.string.StoryEditing);
         } else {
-            string = LocaleController.getString("UploadingStory", C3634R.string.UploadingStory);
+            string = LocaleController.getString("UploadingStory", C3632R.string.UploadingStory);
         }
         if (string.indexOf("…") > 0) {
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
@@ -559,9 +455,9 @@ public class StoriesUtilities {
     public static void applyUploadingStr(SimpleTextView simpleTextView, boolean z, boolean z2) {
         String string;
         if (z2) {
-            string = LocaleController.getString("StoryEditing", C3634R.string.StoryEditing);
+            string = LocaleController.getString("StoryEditing", C3632R.string.StoryEditing);
         } else {
-            string = LocaleController.getString("UploadingStory", C3634R.string.UploadingStory);
+            string = LocaleController.getString("UploadingStory", C3632R.string.UploadingStory);
         }
         if (string.indexOf("…") > 0) {
             SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(string);
@@ -575,13 +471,13 @@ public class StoriesUtilities {
     }
 
     public static CharSequence createExpiredStoryString() {
-        return createExpiredStoryString(false, "ExpiredStory", C3634R.string.ExpiredStory, new Object[0]);
+        return createExpiredStoryString(false, "ExpiredStory", C3632R.string.ExpiredStory, new Object[0]);
     }
 
     public static CharSequence createExpiredStoryString(boolean z, String str, int i, Object... objArr) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) LocaleController.formatString(str, i, objArr));
-        ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3634R.C3636drawable.msg_mini_bomb);
+        ColoredImageSpan coloredImageSpan = new ColoredImageSpan(C3632R.C3634drawable.msg_mini_bomb);
         if (z) {
             coloredImageSpan.setScale(0.8f, 0.8f);
         } else {
@@ -593,8 +489,8 @@ public class StoriesUtilities {
 
     public static CharSequence createReplyStoryString() {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) LocaleController.getString("Story", C3634R.string.Story));
-        spannableStringBuilder.setSpan(new ColoredImageSpan(C3634R.C3636drawable.msg_mini_replystory2), 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) "d ").append((CharSequence) LocaleController.getString("Story", C3632R.string.Story));
+        spannableStringBuilder.setSpan(new ColoredImageSpan(C3632R.C3634drawable.msg_mini_replystory2), 0, 1, 0);
         return spannableStringBuilder;
     }
 

@@ -19,7 +19,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -27,6 +27,7 @@ import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Cells.ChatMessageCell;
 import org.telegram.p043ui.Components.HintView;
 import org.telegram.tgnet.TLRPC$User;
+@Deprecated
 /* renamed from: org.telegram.ui.Components.HintView */
 /* loaded from: classes6.dex */
 public class HintView extends FrameLayout {
@@ -107,17 +108,17 @@ public class HintView extends FrameLayout {
             addView(this.textView, LayoutHelper.createFrame(-2, -2, 51, 0, z ? 6 : 0, 0, z ? 0 : 6));
         }
         if (i == 0) {
-            this.textView.setText(LocaleController.getString("AutoplayVideoInfo", C3634R.string.AutoplayVideoInfo));
+            this.textView.setText(LocaleController.getString("AutoplayVideoInfo", C3632R.string.AutoplayVideoInfo));
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
-            imageView.setImageResource(C3634R.C3636drawable.tooltip_sound);
+            imageView.setImageResource(C3632R.C3634drawable.tooltip_sound);
             this.imageView.setScaleType(ImageView.ScaleType.CENTER);
             this.imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), PorterDuff.Mode.MULTIPLY));
             addView(this.imageView, LayoutHelper.createFrame(38, 34, 51, 7, 7, 0, 0));
         }
         ImageView imageView2 = new ImageView(context);
         this.arrowImageView = imageView2;
-        imageView2.setImageResource(z ? C3634R.C3636drawable.tooltip_arrow_up : C3634R.C3636drawable.tooltip_arrow);
+        imageView2.setImageResource(z ? C3632R.C3634drawable.tooltip_arrow_up : C3632R.C3634drawable.tooltip_arrow);
         this.arrowImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_gifSaveHintBackground), PorterDuff.Mode.MULTIPLY));
         addView(this.arrowImageView, LayoutHelper.createFrame(14, 6, (z ? 48 : 80) | 3, 0, 0, 0, 0));
     }
@@ -127,7 +128,7 @@ public class HintView extends FrameLayout {
         this.hasCloseButton = true;
         ImageView imageView = new ImageView(getContext());
         this.imageView = imageView;
-        imageView.setImageResource(C3634R.C3636drawable.msg_mini_close_tooltip);
+        imageView.setImageResource(C3632R.C3634drawable.msg_mini_close_tooltip);
         this.imageView.setScaleType(ImageView.ScaleType.CENTER);
         this.imageView.setColorFilter(new PorterDuffColorFilter(ColorUtils.setAlphaComponent(getThemedColor(Theme.key_chat_gifSaveHintText), 125), PorterDuff.Mode.MULTIPLY));
         ImageView imageView2 = this.imageView;
@@ -210,15 +211,15 @@ public class HintView extends FrameLayout {
                 m104dp = i5 + i2;
                 this.shownY = i2;
                 if (num.intValue() == -1) {
-                    this.textView.setText(LocaleController.getString("PollSelectOption", C3634R.string.PollSelectOption));
+                    this.textView.setText(LocaleController.getString("PollSelectOption", C3632R.string.PollSelectOption));
                 } else if (chatMessageCell.getMessageObject().isQuiz()) {
                     if (num.intValue() == 0) {
-                        this.textView.setText(LocaleController.getString("NoVotesQuiz", C3634R.string.NoVotesQuiz));
+                        this.textView.setText(LocaleController.getString("NoVotesQuiz", C3632R.string.NoVotesQuiz));
                     } else {
                         this.textView.setText(LocaleController.formatPluralString("Answer", num.intValue(), new Object[0]));
                     }
                 } else if (num.intValue() == 0) {
-                    this.textView.setText(LocaleController.getString("NoVotes", C3634R.string.NoVotes));
+                    this.textView.setText(LocaleController.getString("NoVotes", C3632R.string.NoVotes));
                 } else {
                     this.textView.setText(LocaleController.formatPluralString("Vote", num.intValue(), new Object[0]));
                 }
@@ -228,7 +229,7 @@ public class HintView extends FrameLayout {
                 MessageObject messageObject = chatMessageCell.getMessageObject();
                 String str = this.overrideText;
                 if (str == null) {
-                    this.textView.setText(LocaleController.getString("HidAccount", C3634R.string.HidAccount));
+                    this.textView.setText(LocaleController.getString("HidAccount", C3632R.string.HidAccount));
                 } else {
                     this.textView.setText(str);
                 }
@@ -308,7 +309,7 @@ public class HintView extends FrameLayout {
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 this.animatorSet = animatorSet2;
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(this, View.ALPHA, BitmapDescriptorFactory.HUE_RED, 1.0f));
-                this.animatorSet.addListener(new C50891());
+                this.animatorSet.addListener(new C50861());
                 this.animatorSet.setDuration(300L);
                 this.animatorSet.start();
             } else {
@@ -322,8 +323,8 @@ public class HintView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.HintView$1 */
     /* loaded from: classes6.dex */
-    public class C50891 extends AnimatorListenerAdapter {
-        C50891() {
+    public class C50861 extends AnimatorListenerAdapter {
+        C50861() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -335,7 +336,7 @@ public class HintView extends FrameLayout {
             AndroidUtilities.runOnUIThread(HintView.this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.HintView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    HintView.C50891.this.lambda$onAnimationEnd$0();
+                    HintView.C50861.this.lambda$onAnimationEnd$0();
                 }
             }, HintView.this.currentType == 0 ? 10000L : ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
         }
@@ -384,7 +385,7 @@ public class HintView extends FrameLayout {
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(this, View.ALPHA, BitmapDescriptorFactory.HUE_RED, 1.0f));
                 this.animatorSet.setDuration(300L);
             }
-            this.animatorSet.addListener(new C50902());
+            this.animatorSet.addListener(new C50872());
             this.animatorSet.start();
         } else {
             setAlpha(1.0f);
@@ -395,8 +396,8 @@ public class HintView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.HintView$2 */
     /* loaded from: classes6.dex */
-    public class C50902 extends AnimatorListenerAdapter {
-        C50902() {
+    public class C50872 extends AnimatorListenerAdapter {
+        C50872() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -408,7 +409,7 @@ public class HintView extends FrameLayout {
             AndroidUtilities.runOnUIThread(HintView.this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.HintView$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    HintView.C50902.this.lambda$onAnimationEnd$0();
+                    HintView.C50872.this.lambda$onAnimationEnd$0();
                 }
             }, HintView.this.showingDuration);
         }

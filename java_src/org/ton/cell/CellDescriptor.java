@@ -17,7 +17,7 @@ public interface CellDescriptor {
     int getHashCount();
 
     /* renamed from: getLevelMask-Kat384U  reason: not valid java name */
-    int mo5217getLevelMaskKat384U();
+    int mo5199getLevelMaskKat384U();
 
     int getReferenceCount();
 
@@ -31,7 +31,7 @@ public interface CellDescriptor {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
 
         /* renamed from: computeD1-dYmMkqQ  reason: not valid java name */
-        public final byte m5218computeD1dYmMkqQ(int i, boolean z, int i2) {
+        public final byte m5200computeD1dYmMkqQ(int i, boolean z, int i2) {
             return (byte) ((i << 5) | ((z ? 1 : 0) << 3) | (i2 & 7));
         }
 

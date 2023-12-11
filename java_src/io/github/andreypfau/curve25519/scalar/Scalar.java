@@ -114,7 +114,7 @@ public final class Scalar {
         Intrinsics.checkNotNullParameter(b, "b");
         UnpackedScalar unpack = a.unpack();
         unpack.add(unpack, b.unpack());
-        Scalar64Kt.m1897scalarMontgomeryReduceGR1PJdc(Scalar64Kt.m1900scalarMulInternalNHtdf0s$default(unpack.m1903getDataY2RjT0g(), ConstantsKt.getR().m1903getDataY2RjT0g(), null, 4, null), unpack.m1903getDataY2RjT0g());
+        Scalar64Kt.m1899scalarMontgomeryReduceGR1PJdc(Scalar64Kt.m1902scalarMulInternalNHtdf0s$default(unpack.m1905getDataY2RjT0g(), ConstantsKt.getR().m1905getDataY2RjT0g(), null, 4, null), unpack.m1905getDataY2RjT0g());
         pack(unpack);
     }
 

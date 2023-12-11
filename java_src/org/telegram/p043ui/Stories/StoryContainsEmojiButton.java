@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileRefController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
@@ -389,11 +389,11 @@ public class StoryContainsEmojiButton extends View {
         }
         boolean z = this.emoji;
         if (z && this.stickers) {
-            string = LocaleController.getString(C3634R.string.StoryContainsStickersEmojiFrom);
+            string = LocaleController.getString(C3632R.string.StoryContainsStickersEmojiFrom);
         } else if (z) {
-            string = LocaleController.getString(C3634R.string.StoryContainsEmojiFrom);
+            string = LocaleController.getString(C3632R.string.StoryContainsEmojiFrom);
         } else {
-            string = LocaleController.getString(C3634R.string.StoryContainsStickersFrom);
+            string = LocaleController.getString(C3632R.string.StoryContainsStickersFrom);
         }
         setText(AndroidUtilities.replaceCharSequence("%s", string, charSequence));
     }
@@ -424,11 +424,11 @@ public class StoryContainsEmojiButton extends View {
         }
         boolean z = this.emoji;
         if (z && this.stickers) {
-            string = LocaleController.getString(C3634R.string.StoryContainsStickersEmojiFrom);
+            string = LocaleController.getString(C3632R.string.StoryContainsStickersEmojiFrom);
         } else if (z) {
-            string = LocaleController.getString(C3634R.string.StoryContainsEmojiFrom);
+            string = LocaleController.getString(C3632R.string.StoryContainsEmojiFrom);
         } else {
-            string = LocaleController.getString(C3634R.string.StoryContainsStickersFrom);
+            string = LocaleController.getString(C3632R.string.StoryContainsStickersFrom);
         }
         setText(AndroidUtilities.replaceCharSequence("%s", string, charSequence));
     }

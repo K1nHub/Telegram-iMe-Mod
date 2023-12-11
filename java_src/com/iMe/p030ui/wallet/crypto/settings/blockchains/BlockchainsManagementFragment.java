@@ -58,10 +58,10 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.databinding.ForkFragmentBlockchainsManagementBinding;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.INavigationLayout;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
@@ -273,13 +273,13 @@ public final class BlockchainsManagementFragment extends WalletAuthBaseFragment 
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_crypto_blockchains_title));
-        c3706ActionBar.setAllowOverlayTitle(true);
-        c3706ActionBar.createMenu();
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(C3632R.string.wallet_crypto_blockchains_title));
+        c3704ActionBar.setAllowOverlayTitle(true);
+        c3704ActionBar.createMenu();
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     BlockchainsManagementFragment.this.finishFragment();
@@ -358,7 +358,7 @@ public final class BlockchainsManagementFragment extends WalletAuthBaseFragment 
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
-        if (view.getId() == C3634R.C3637id.image_info) {
+        if (view.getId() == C3632R.C3635id.image_info) {
             BaseNode baseNode = (BaseNode) this_with.getItem(i);
             if (baseNode instanceof BlockchainManagementItem.Wallet) {
                 this$0.getPresenter().showInfoDialog((BlockchainManagementItem.Wallet) baseNode);
@@ -388,11 +388,11 @@ public final class BlockchainsManagementFragment extends WalletAuthBaseFragment 
         ForkFragmentBlockchainsManagementBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageHeader;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3634R.raw.fork_multi_networking, 300, 170);
+        rLottieImageView.setAnimation(C3632R.raw.fork_multi_networking, 300, 170);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textWalletsTitle.setText(getResourceManager().getString(C3634R.string.wallet_crypto_blockchains_active_wallets));
-        binding.textDescription.setText(getResourceManager().getString(C3634R.string.wallet_crypto_blockchains_description));
+        binding.textWalletsTitle.setText(getResourceManager().getString(C3632R.string.wallet_crypto_blockchains_active_wallets));
+        binding.textDescription.setText(getResourceManager().getString(C3632R.string.wallet_crypto_blockchains_description));
     }
 
     /* compiled from: BlockchainsManagementFragment.kt */

@@ -8,7 +8,7 @@ import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.utils.extentions.common.StringExtKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: WalletConnectSessionDetailsPresenter.kt */
 @InjectViewState
@@ -26,7 +26,7 @@ public final class WalletConnectSessionDetailsPresenter extends BasePresenter<Wa
     }
 
     public final DialogModel getDisconnectConfirmationDialogModel() {
-        return new DialogModel(LocaleController.getString("AreYouSureSessionTitle", C3634R.string.AreYouSureSessionTitle), LocaleController.getString("TerminateSessionText", C3634R.string.TerminateSessionText), LocaleController.getString("Cancel", C3634R.string.Cancel), LocaleController.getString("Terminate", C3634R.string.Terminate));
+        return new DialogModel(LocaleController.getString("AreYouSureSessionTitle", C3632R.string.AreYouSureSessionTitle), LocaleController.getString("TerminateSessionText", C3632R.string.TerminateSessionText), LocaleController.getString("Cancel", C3632R.string.Cancel), LocaleController.getString("Terminate", C3632R.string.Terminate));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

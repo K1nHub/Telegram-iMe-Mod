@@ -28,34 +28,75 @@
 .method public constructor <init>(Landroid/text/Layout;Landroid/text/Spanned;Lorg/telegram/ui/Components/QuoteSpan;)V
     .locals 6
 
-    .line 260
+    .line 265
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 261
+    .line 266
     iput-object p3, p0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
-    .line 262
+    .line 267
     invoke-interface {p2, p3}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v0
 
     iput v0, p3, Lorg/telegram/ui/Components/QuoteSpan;->start:I
 
-    .line 263
+    .line 268
     invoke-interface {p2, p3}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
+
+    move-result v0
+
+    iput v0, p3, Lorg/telegram/ui/Components/QuoteSpan;->end:I
+
+    add-int/lit8 v1, v0, -0x1
+
+    const/4 v2, 0x1
+
+    if-ltz v1, :cond_0
+
+    .line 269
+    invoke-interface {p2}, Landroid/text/Spanned;->length()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    iget v0, p3, Lorg/telegram/ui/Components/QuoteSpan;->end:I
+
+    invoke-interface {p2, v0}, Landroid/text/Spanned;->charAt(I)C
+
+    move-result v0
+
+    const/16 v1, 0xa
+
+    if-eq v0, v1, :cond_0
+
+    iget v0, p3, Lorg/telegram/ui/Components/QuoteSpan;->end:I
+
+    sub-int/2addr v0, v2
+
+    invoke-interface {p2, v0}, Landroid/text/Spanned;->charAt(I)C
 
     move-result p2
 
+    if-ne p2, v1, :cond_0
+
+    .line 270
+    iget p2, p3, Lorg/telegram/ui/Components/QuoteSpan;->end:I
+
+    sub-int/2addr p2, v2
+
     iput p2, p3, Lorg/telegram/ui/Components/QuoteSpan;->end:I
 
-    .line 264
+    .line 272
+    :cond_0
     iget p2, p3, Lorg/telegram/ui/Components/QuoteSpan;->start:I
 
     invoke-virtual {p1, p2}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result p2
 
-    .line 265
+    .line 273
     iget v0, p3, Lorg/telegram/ui/Components/QuoteSpan;->end:I
 
     invoke-virtual {p1, v0}, Landroid/text/Layout;->getLineForOffset(I)I
@@ -64,86 +105,84 @@
 
     sub-int v1, v0, p2
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    const/4 v3, 0x1
+    if-ge v1, v2, :cond_1
 
-    if-ge v1, v3, :cond_0
-
-    move v1, v3
+    move v1, v2
 
     goto :goto_0
 
-    :cond_0
-    move v1, v2
+    :cond_1
+    move v1, v3
 
-    .line 266
+    .line 274
     :goto_0
     iput-boolean v1, p3, Lorg/telegram/ui/Components/QuoteSpan;->singleLine:Z
 
-    if-gtz p2, :cond_1
+    if-gtz p2, :cond_2
 
-    move v1, v3
+    move v1, v2
 
     goto :goto_1
 
-    :cond_1
-    move v1, v2
+    :cond_2
+    move v1, v3
 
-    .line 267
+    .line 275
     :goto_1
     iput-boolean v1, p3, Lorg/telegram/ui/Components/QuoteSpan;->first:Z
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 268
+    .line 276
     invoke-virtual {p1}, Landroid/text/Layout;->getLineCount()I
 
     move-result v4
 
-    if-lt v1, v4, :cond_2
+    if-lt v1, v4, :cond_3
 
-    move v1, v3
+    move v1, v2
 
     goto :goto_2
 
-    :cond_2
-    move v1, v2
+    :cond_3
+    move v1, v3
 
     :goto_2
     iput-boolean v1, p3, Lorg/telegram/ui/Components/QuoteSpan;->last:Z
 
-    .line 270
+    .line 278
     iget-boolean v1, p3, Lorg/telegram/ui/Components/QuoteSpan;->edit:Z
 
     const/4 v4, 0x2
 
-    if-eqz v1, :cond_7
+    if-eqz v1, :cond_8
 
-    .line 271
+    .line 279
     invoke-virtual {p1, p2}, Landroid/text/Layout;->getLineTop(I)I
 
     move-result v1
 
     iget-boolean v5, p3, Lorg/telegram/ui/Components/QuoteSpan;->singleLine:Z
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_4
 
-    move v5, v2
+    move v5, v3
 
     goto :goto_4
 
-    :cond_3
+    :cond_4
     iget-boolean v5, p3, Lorg/telegram/ui/Components/QuoteSpan;->first:Z
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_5
 
     move v5, v4
 
     goto :goto_3
 
-    :cond_4
-    move v5, v2
+    :cond_5
+    move v5, v3
 
     :goto_3
     add-int/lit8 v5, v5, 0x3
@@ -159,30 +198,30 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/QuoteSpan$Block;->top:I
 
-    .line 272
+    .line 280
     invoke-virtual {p1, v0}, Landroid/text/Layout;->getLineBottom(I)I
 
     move-result v1
 
     iget-boolean v5, p3, Lorg/telegram/ui/Components/QuoteSpan;->singleLine:Z
 
-    if-eqz v5, :cond_5
+    if-eqz v5, :cond_6
 
-    move v5, v2
+    move v5, v3
 
     goto :goto_6
 
-    :cond_5
+    :cond_6
     iget-boolean v5, p3, Lorg/telegram/ui/Components/QuoteSpan;->last:Z
 
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_7
 
     move v5, v4
 
     goto :goto_5
 
-    :cond_6
-    move v5, v2
+    :cond_7
+    move v5, v3
 
     :goto_5
     add-int/lit8 v5, v5, 0x3
@@ -200,21 +239,21 @@
 
     goto :goto_9
 
-    .line 274
-    :cond_7
+    .line 282
+    :cond_8
     invoke-virtual {p1, p2}, Landroid/text/Layout;->getLineTop(I)I
 
     move-result v1
 
     iget-boolean v5, p3, Lorg/telegram/ui/Components/QuoteSpan;->singleLine:Z
 
-    if-eqz v5, :cond_8
+    if-eqz v5, :cond_9
 
-    move v5, v3
+    move v5, v2
 
     goto :goto_7
 
-    :cond_8
+    :cond_9
     move v5, v4
 
     :goto_7
@@ -228,20 +267,20 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/QuoteSpan$Block;->top:I
 
-    .line 275
+    .line 283
     invoke-virtual {p1, v0}, Landroid/text/Layout;->getLineBottom(I)I
 
     move-result v1
 
     iget-boolean v5, p3, Lorg/telegram/ui/Components/QuoteSpan;->singleLine:Z
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_a
 
-    move v5, v3
+    move v5, v2
 
     goto :goto_8
 
-    :cond_9
+    :cond_a
     move v5, v4
 
     :goto_8
@@ -255,47 +294,47 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/QuoteSpan$Block;->bottom:I
 
-    .line 279
+    .line 287
     :goto_9
-    iput-boolean v2, p3, Lorg/telegram/ui/Components/QuoteSpan;->rtl:Z
+    iput-boolean v3, p3, Lorg/telegram/ui/Components/QuoteSpan;->rtl:Z
 
     const/4 v1, 0x0
 
-    move v2, v1
+    move v3, v1
 
     :goto_a
-    if-gt p2, v0, :cond_b
+    if-gt p2, v0, :cond_c
 
-    .line 281
+    .line 289
     invoke-virtual {p1, p2}, Landroid/text/Layout;->getLineRight(I)F
 
     move-result v4
 
-    invoke-static {v2, v4}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v3, v4}, Ljava/lang/Math;->max(FF)F
 
-    move-result v2
+    move-result v3
 
-    .line 282
+    .line 290
     invoke-virtual {p1, p2}, Landroid/text/Layout;->getLineLeft(I)F
 
     move-result v4
 
     cmpl-float v4, v4, v1
 
-    if-lez v4, :cond_a
+    if-lez v4, :cond_b
 
-    .line 283
-    iput-boolean v3, p3, Lorg/telegram/ui/Components/QuoteSpan;->rtl:Z
+    .line 291
+    iput-boolean v2, p3, Lorg/telegram/ui/Components/QuoteSpan;->rtl:Z
 
-    :cond_a
+    :cond_b
     add-int/lit8 p2, p2, 0x1
 
     goto :goto_a
 
-    :cond_b
-    float-to-double p1, v2
+    :cond_c
+    float-to-double p1, v3
 
-    .line 285
+    .line 293
     invoke-static {p1, p2}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide p1
@@ -316,14 +355,14 @@
 
     move-object/from16 v1, p1
 
-    .line 289
+    .line 297
     iget-object v2, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     move/from16 v3, p4
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/QuoteSpan;->setColor(I)V
 
-    .line 291
+    .line 299
     iget-object v2, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     iget-boolean v2, v2, Lorg/telegram/ui/Components/QuoteSpan;->edit:Z
@@ -362,7 +401,7 @@
 
     move v2, v5
 
-    .line 296
+    .line 304
     :cond_1
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
@@ -370,10 +409,10 @@
 
     move/from16 v4, p2
 
-    .line 297
+    .line 305
     invoke-virtual {v1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 299
+    .line 307
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget v5, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->top:I
@@ -388,7 +427,7 @@
 
     invoke-virtual {v4, v3, v5, v6, v7}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 300
+    .line 308
     iget-object v5, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/QuoteSpan;->access$000(Lorg/telegram/ui/Components/QuoteSpan;)[F
@@ -429,7 +468,7 @@
 
     aput v3, v5, v6
 
-    .line 301
+    .line 309
     iget-object v5, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/QuoteSpan;->access$000(Lorg/telegram/ui/Components/QuoteSpan;)[F
@@ -476,7 +515,7 @@
 
     aput v14, v5, v10
 
-    .line 302
+    .line 310
     iget-object v5, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/QuoteSpan;->access$100(Lorg/telegram/ui/Components/QuoteSpan;)Landroid/graphics/Path;
@@ -485,7 +524,7 @@
 
     invoke-virtual {v5}, Landroid/graphics/Path;->rewind()V
 
-    .line 303
+    .line 311
     iget-object v5, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/QuoteSpan;->access$100(Lorg/telegram/ui/Components/QuoteSpan;)Landroid/graphics/Path;
@@ -502,7 +541,7 @@
 
     invoke-virtual {v5, v4, v12, v14}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 304
+    .line 312
     iget-object v5, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/QuoteSpan;->access$100(Lorg/telegram/ui/Components/QuoteSpan;)Landroid/graphics/Path;
@@ -517,7 +556,7 @@
 
     invoke-virtual {v1, v5, v12}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 306
+    .line 314
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -536,7 +575,7 @@
 
     invoke-virtual {v4, v5, v12, v3, v14}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 307
+    .line 315
     iget-object v5, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/QuoteSpan;->access$300(Lorg/telegram/ui/Components/QuoteSpan;)[F
@@ -575,7 +614,7 @@
 
     aput v11, v5, v6
 
-    .line 308
+    .line 316
     iget-object v5, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/QuoteSpan;->access$300(Lorg/telegram/ui/Components/QuoteSpan;)[F
@@ -612,7 +651,7 @@
 
     aput v3, v5, v6
 
-    .line 309
+    .line 317
     iget-object v3, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/QuoteSpan;->access$400(Lorg/telegram/ui/Components/QuoteSpan;)Landroid/graphics/Path;
@@ -621,7 +660,7 @@
 
     invoke-virtual {v3}, Landroid/graphics/Path;->rewind()V
 
-    .line 310
+    .line 318
     iget-object v3, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/QuoteSpan;->access$400(Lorg/telegram/ui/Components/QuoteSpan;)Landroid/graphics/Path;
@@ -638,7 +677,7 @@
 
     invoke-virtual {v3, v4, v5, v6}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 311
+    .line 319
     iget-object v3, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/QuoteSpan;->access$400(Lorg/telegram/ui/Components/QuoteSpan;)Landroid/graphics/Path;
@@ -653,14 +692,14 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 313
+    .line 321
     iget-object v3, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     iget-boolean v4, v3, Lorg/telegram/ui/Components/QuoteSpan;->rtl:Z
 
     if-nez v4, :cond_3
 
-    .line 314
+    .line 322
     iget v4, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->top:I
 
     iget v5, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->bottom:I
@@ -685,7 +724,7 @@
 
     float-to-int v3, v3
 
-    .line 315
+    .line 323
     iget v4, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->top:I
 
     const/16 v5, 0x8
@@ -698,7 +737,7 @@
 
     if-le v3, v4, :cond_2
 
-    .line 316
+    .line 324
     iget v3, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->top:I
 
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -707,7 +746,7 @@
 
     add-int/2addr v3, v4
 
-    .line 318
+    .line 326
     :cond_2
     iget-object v4, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
@@ -717,7 +756,7 @@
 
     iget-object v5, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
-    .line 319
+    .line 327
     invoke-static {v5}, Lorg/telegram/ui/Components/QuoteSpan;->access$600(Lorg/telegram/ui/Components/QuoteSpan;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
@@ -734,7 +773,7 @@
 
     sub-int/2addr v5, v6
 
-    .line 321
+    .line 329
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -743,7 +782,7 @@
 
     iget-object v6, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
-    .line 322
+    .line 330
     invoke-static {v6}, Lorg/telegram/ui/Components/QuoteSpan;->access$600(Lorg/telegram/ui/Components/QuoteSpan;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
@@ -754,10 +793,10 @@
 
     add-int/2addr v6, v3
 
-    .line 318
+    .line 326
     invoke-virtual {v4, v5, v3, v2, v6}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 324
+    .line 332
     iget-object v2, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/QuoteSpan;->access$600(Lorg/telegram/ui/Components/QuoteSpan;)Landroid/graphics/drawable/Drawable;
@@ -772,7 +811,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 325
+    .line 333
     iget-object v2, v0, Lorg/telegram/ui/Components/QuoteSpan$Block;->span:Lorg/telegram/ui/Components/QuoteSpan;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/QuoteSpan;->access$600(Lorg/telegram/ui/Components/QuoteSpan;)Landroid/graphics/drawable/Drawable;
@@ -781,7 +820,7 @@
 
     invoke-virtual {v2, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 328
+    .line 336
     :cond_3
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 

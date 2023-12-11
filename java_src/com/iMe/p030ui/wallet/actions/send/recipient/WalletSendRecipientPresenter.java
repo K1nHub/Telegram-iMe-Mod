@@ -23,7 +23,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC$MessageEntity;
 import org.telegram.tgnet.TLRPC$TL_messageEntityTextUrl;
@@ -77,10 +77,10 @@ public final class WalletSendRecipientPresenter extends BasePresenter<WalletSend
         ArrayList<TLRPC$MessageEntity> arrayListOf;
         ArrayList<SendMessagesHelper.SendingMediaInfo> arrayListOf2;
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3634R.string.wallet_recipient_error_send_message_invitation;
-        int i2 = C3634R.string.wallet_backup_secret_words_pdf_title;
+        int i = C3632R.string.wallet_recipient_error_send_message_invitation;
+        int i2 = C3632R.string.wallet_backup_secret_words_pdf_title;
         ResourceManager resourceManager2 = this.resourceManager;
-        int i3 = C3634R.string.neurobots_store_bot_action_download;
+        int i3 = C3632R.string.neurobots_store_bot_action_download;
         String string = resourceManager.getString(i, resourceManager.getString(i2), resourceManager2.getString(i3));
         TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl = new TLRPC$TL_messageEntityTextUrl();
         String string2 = this.resourceManager.getString(i3);
@@ -105,7 +105,7 @@ public final class WalletSendRecipientPresenter extends BasePresenter<WalletSend
         sendingMediaInfo.isVideo = false;
         sendingMediaInfo.ttl = 0;
         sendingMediaInfo.updateStickersOrder = false;
-        sendingMediaInfo.uri = this.resourceManager.getUriDrawable(C3634R.C3636drawable.fork_banner_ime);
+        sendingMediaInfo.uri = this.resourceManager.getUriDrawable(C3632R.C3634drawable.fork_banner_ime);
         arrayListOf2 = CollectionsKt__CollectionsKt.arrayListOf(sendingMediaInfo);
         return arrayListOf2;
     }
@@ -139,12 +139,12 @@ public final class WalletSendRecipientPresenter extends BasePresenter<WalletSend
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SendCryptoQRData> result) {
-                m1618invoke(result);
+                m1619invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1618invoke(Result<? extends SendCryptoQRData> it) {
+            public final void m1619invoke(Result<? extends SendCryptoQRData> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SendCryptoQRData> result = it;
@@ -152,7 +152,7 @@ public final class WalletSendRecipientPresenter extends BasePresenter<WalletSend
                     Result.Success success = (Result.Success) result;
                     if (!(((SendCryptoQRData) success.getData()).getAddress().length() > 0)) {
                         resourceManager = WalletSendRecipientPresenter.this.resourceManager;
-                        ((WalletSendRecipientView) WalletSendRecipientPresenter.this.getViewState()).showToast(resourceManager.getString(C3634R.string.wallet_recipient_validation_address_error));
+                        ((WalletSendRecipientView) WalletSendRecipientPresenter.this.getViewState()).showToast(resourceManager.getString(C3632R.string.wallet_recipient_validation_address_error));
                         return;
                     }
                     ((WalletSendRecipientView) WalletSendRecipientPresenter.this.getViewState()).onRecipientSelected("", ((SendCryptoQRData) success.getData()).getAddress(), false);

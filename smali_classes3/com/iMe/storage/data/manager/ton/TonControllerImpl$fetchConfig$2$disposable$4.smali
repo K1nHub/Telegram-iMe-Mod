@@ -55,7 +55,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 201
+    .line 211
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$4;->invoke(Ljava/lang/Throwable;)V
@@ -72,7 +72,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 201
+    .line 211
     iget-object v0, p0, Lkotlin/jvm/internal/CallableReference;->receiver:Ljava/lang/Object;
 
     check-cast v0, Lkotlin/coroutines/Continuation;

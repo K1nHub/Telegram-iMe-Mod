@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/HintView;)V
     .locals 0
 
-    .line 539
+    .line 540
     iput-object p1, p0, Lorg/telegram/ui/Components/HintView$3;->this$0:Lorg/telegram/ui/Components/HintView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 542
+    .line 543
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView$3;->this$0:Lorg/telegram/ui/Components/HintView;
 
     const/4 v0, 0x4
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 543
+    .line 544
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView$3;->this$0:Lorg/telegram/ui/Components/HintView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/HintView;->visibleListener:Lorg/telegram/ui/Components/HintView$VisibilityListener;
@@ -51,10 +51,10 @@
 
     const/4 v0, 0x0
 
-    .line 544
+    .line 545
     invoke-interface {p1, v0}, Lorg/telegram/ui/Components/HintView$VisibilityListener;->onVisible(Z)V
 
-    .line 546
+    .line 547
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView$3;->this$0:Lorg/telegram/ui/Components/HintView;
 
@@ -62,12 +62,12 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/HintView;->access$502(Lorg/telegram/ui/Components/HintView;Landroid/view/View;)Landroid/view/View;
 
-    .line 547
+    .line 548
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView$3;->this$0:Lorg/telegram/ui/Components/HintView;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/HintView;->access$602(Lorg/telegram/ui/Components/HintView;Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 548
+    .line 549
     iget-object p1, p0, Lorg/telegram/ui/Components/HintView$3;->this$0:Lorg/telegram/ui/Components/HintView;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/HintView;->access$002(Lorg/telegram/ui/Components/HintView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;

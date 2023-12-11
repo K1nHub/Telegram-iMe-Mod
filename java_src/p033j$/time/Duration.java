@@ -4,7 +4,7 @@ import com.google.android.exoplayer2.C0485C;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.regex.Pattern;
-import p033j$.lang.AbstractC2673d;
+import p033j$.lang.AbstractC2670d;
 /* renamed from: j$.time.Duration */
 /* loaded from: classes2.dex */
 public final class Duration implements Comparable<Duration>, Serializable {
@@ -51,7 +51,7 @@ public final class Duration implements Comparable<Duration>, Serializable {
 
     /* renamed from: e */
     public static Duration m980e(long j, long j2) {
-        return m984a(AbstractC2673d.m990c(j, AbstractC2673d.m988e(j2, C0485C.NANOS_PER_SECOND)), (int) AbstractC2673d.m989d(j2, C0485C.NANOS_PER_SECOND));
+        return m984a(AbstractC2670d.m990c(j, AbstractC2670d.m988e(j2, C0485C.NANOS_PER_SECOND)), (int) AbstractC2670d.m989d(j2, C0485C.NANOS_PER_SECOND));
     }
 
     /* renamed from: b */
@@ -83,7 +83,7 @@ public final class Duration implements Comparable<Duration>, Serializable {
     }
 
     public long toMillis() {
-        return AbstractC2673d.m990c(AbstractC2673d.m987f(this.f482a, 1000L), this.f483b / 1000000);
+        return AbstractC2670d.m990c(AbstractC2670d.m987f(this.f482a, 1000L), this.f483b / 1000000);
     }
 
     public String toString() {

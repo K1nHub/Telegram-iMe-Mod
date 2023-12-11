@@ -3,17 +3,17 @@ package com.iMe.model.contacts;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: ContactsFilter.kt */
 /* loaded from: classes3.dex */
 public enum ContactsFilter {
-    ALL(C3634R.C3636drawable.msg_contacts, false),
-    ONLINE(C3634R.C3636drawable.fork_ic_online_26, false),
-    PREMIUM(C3634R.C3636drawable.photo_star, false),
-    MUTUAL(C3634R.C3636drawable.msg_groups, false),
-    NOT_MUTUAL(C3634R.C3636drawable.fork_ic_unmutal_users_28, true),
-    BLOCKED(C3634R.C3636drawable.msg_block, true);
+    ALL(C3632R.C3634drawable.msg_contacts, false),
+    ONLINE(C3632R.C3634drawable.fork_ic_online_26, false),
+    PREMIUM(C3632R.C3634drawable.photo_star, false),
+    MUTUAL(C3632R.C3634drawable.msg_groups, false),
+    NOT_MUTUAL(C3632R.C3634drawable.fork_ic_unmutal_users_28, true),
+    BLOCKED(C3632R.C3634drawable.msg_block, true);
     
     public static final Companion Companion = new Companion(null);
     private final int icon;
@@ -70,27 +70,27 @@ public enum ContactsFilter {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3634R.string.contacts_filter_all);
+                String internalString = LocaleController.getInternalString(C3632R.string.contacts_filter_all);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.contacts_filter_all)");
                 return internalString;
             case 2:
-                String internalString2 = LocaleController.getInternalString(C3634R.string.contacts_filter_online);
+                String internalString2 = LocaleController.getInternalString(C3632R.string.contacts_filter_online);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.string.contacts_filter_online)");
                 return internalString2;
             case 3:
-                String string = LocaleController.getString("LimitPremium", C3634R.string.LimitPremium);
+                String string = LocaleController.getString("LimitPremium", C3632R.string.LimitPremium);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"LimitPremium\", R.string.LimitPremium)");
                 return string;
             case 4:
-                String internalString3 = LocaleController.getInternalString(C3634R.string.contacts_filter_mutual);
+                String internalString3 = LocaleController.getInternalString(C3632R.string.contacts_filter_mutual);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.string.contacts_filter_mutual)");
                 return internalString3;
             case 5:
-                String internalString4 = LocaleController.getInternalString(C3634R.string.contacts_filter_not_mutual);
+                String internalString4 = LocaleController.getInternalString(C3632R.string.contacts_filter_not_mutual);
                 Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…ntacts_filter_not_mutual)");
                 return internalString4;
             case 6:
-                String internalString5 = LocaleController.getInternalString(C3634R.string.contacts_filter_blocked);
+                String internalString5 = LocaleController.getInternalString(C3632R.string.contacts_filter_blocked);
                 Intrinsics.checkNotNullExpressionValue(internalString5, "getInternalString(R.stri….contacts_filter_blocked)");
                 return internalString5;
             default:

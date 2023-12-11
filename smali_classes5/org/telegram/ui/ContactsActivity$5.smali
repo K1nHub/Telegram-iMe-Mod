@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 765
+    .line 766
     iput-object v0, v8, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     move-object v0, p0
@@ -55,7 +55,7 @@
 .method public notifyDataSetChanged()V
     .locals 5
 
-    .line 769
+    .line 770
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
@@ -68,13 +68,13 @@
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setFilterModel(Lcom/iMe/model/contacts/ContactsFilter;)V
 
-    .line 770
+    .line 771
     invoke-virtual {p0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->recreateDelegates()V
 
-    .line 772
+    .line 773
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->notifyDataSetChanged()V
 
-    .line 773
+    .line 774
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -95,12 +95,12 @@
 
     if-ne v0, p0, :cond_3
 
-    .line 774
+    .line 775
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getItemCount()I
 
     move-result v0
 
-    .line 775
+    .line 776
     iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ContactsActivity;->access$1700(Lorg/telegram/ui/ContactsActivity;)Z
@@ -113,7 +113,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 778
+    .line 779
     iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v1}, Lorg/telegram/ui/ContactsActivity;->access$1200(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -134,7 +134,7 @@
 
     goto :goto_2
 
-    .line 781
+    .line 782
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/ContactsActivity$5;->this$0:Lorg/telegram/ui/ContactsActivity;
 

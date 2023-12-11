@@ -41,7 +41,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.EmuDetector;
 import org.telegram.messenger.FileLog;
@@ -108,8 +108,8 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
         MessagesController.getGlobalMainSettings().edit().putLong("intro_crashed_time", System.currentTimeMillis()).apply();
-        this.titles = new String[]{LocaleController.getString("Page1Title", C3634R.string.Page1Title), LocaleController.getString("Page2Title", C3634R.string.Page2Title), LocaleController.getString("Page3Title", C3634R.string.Page3Title), LocaleController.getString("Page5Title", C3634R.string.Page5Title), LocaleController.getString("Page4Title", C3634R.string.Page4Title), LocaleController.getString("Page6Title", C3634R.string.Page6Title)};
-        this.messages = new String[]{LocaleController.getString("Page1Message", C3634R.string.Page1Message), LocaleController.getString("Page2Message", C3634R.string.Page2Message), LocaleController.getString("Page3Message", C3634R.string.Page3Message), LocaleController.getString("Page5Message", C3634R.string.Page5Message), LocaleController.getString("Page4Message", C3634R.string.Page4Message), LocaleController.getString("Page6Message", C3634R.string.Page6Message)};
+        this.titles = new String[]{LocaleController.getString("Page1Title", C3632R.string.Page1Title), LocaleController.getString("Page2Title", C3632R.string.Page2Title), LocaleController.getString("Page3Title", C3632R.string.Page3Title), LocaleController.getString("Page5Title", C3632R.string.Page5Title), LocaleController.getString("Page4Title", C3632R.string.Page4Title), LocaleController.getString("Page6Title", C3632R.string.Page6Title)};
+        this.messages = new String[]{LocaleController.getString("Page1Message", C3632R.string.Page1Message), LocaleController.getString("Page2Message", C3632R.string.Page2Message), LocaleController.getString("Page3Message", C3632R.string.Page3Message), LocaleController.getString("Page5Message", C3632R.string.Page5Message), LocaleController.getString("Page4Message", C3632R.string.Page4Message), LocaleController.getString("Page6Message", C3632R.string.Page6Message)};
         return true;
     }
 
@@ -149,7 +149,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         };
         this.frameContainerView = frameLayout2;
         scrollView.addView(frameLayout2, LayoutHelper.createScroll(-1, -2, 51));
-        int i = C3634R.raw.sun;
+        int i = C3632R.raw.sun;
         RLottieDrawable rLottieDrawable = new RLottieDrawable(i, String.valueOf(i), AndroidUtilities.m104dp(28), AndroidUtilities.m104dp(28), true, null);
         this.darkThemeDrawable = rLottieDrawable;
         rLottieDrawable.setPlayInDirectionOfCustomEndFrame(true);
@@ -158,7 +158,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         this.darkThemeDrawable.setCustomEndFrame(Theme.getCurrentTheme().isDark() ? this.darkThemeDrawable.getFramesCount() - 1 : 0);
         this.darkThemeDrawable.setCurrentFrame(Theme.getCurrentTheme().isDark() ? this.darkThemeDrawable.getFramesCount() - 1 : 0, false);
         Theme.getCurrentTheme().isDark();
-        rLottieImageView.setContentDescription(LocaleController.getString(C3634R.string.AccDescrSwitchToDayTheme));
+        rLottieImageView.setContentDescription(LocaleController.getString(C3632R.string.AccDescrSwitchToDayTheme));
         rLottieImageView.setAnimation(this.darkThemeDrawable);
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.IntroActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
@@ -171,7 +171,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         this.frameContainerView.addView(frameLayout3, LayoutHelper.createFrame(-1, -2, 51, 0, 78, 0, 0));
         TextureView textureView = new TextureView(context);
         this.frameLayout2.addView(textureView, LayoutHelper.createFrame(200, (int) ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17));
-        textureView.setSurfaceTextureListener(new TextureView$SurfaceTextureListenerC62552());
+        textureView.setSurfaceTextureListener(new TextureView$SurfaceTextureListenerC62512());
         ViewPager viewPager = new ViewPager(context);
         this.viewPager = viewPager;
         viewPager.setAdapter(new IntroAdapter());
@@ -241,7 +241,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             }
         };
         this.startMessagingButton = textView;
-        textView.setText(LocaleController.getString("StartMessaging", C3634R.string.StartMessaging));
+        textView.setText(LocaleController.getString("StartMessaging", C3632R.string.StartMessaging));
         this.startMessagingButton.setGravity(17);
         this.startMessagingButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.startMessagingButton.setTextSize(1, 15.0f);
@@ -301,18 +301,18 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         rLottieImageView.getLocationInWindow(r4);
         int[] iArr = {iArr[0] + (rLottieImageView.getMeasuredWidth() / 2), iArr[1] + (rLottieImageView.getMeasuredHeight() / 2)};
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, theme, Boolean.FALSE, iArr, -1, Boolean.valueOf(z), rLottieImageView);
-        rLottieImageView.setContentDescription(LocaleController.getString(C3634R.string.AccDescrSwitchToDayTheme));
+        rLottieImageView.setContentDescription(LocaleController.getString(C3632R.string.AccDescrSwitchToDayTheme));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.IntroActivity$2 */
     /* loaded from: classes5.dex */
-    public class TextureView$SurfaceTextureListenerC62552 implements TextureView.SurfaceTextureListener {
+    public class TextureView$SurfaceTextureListenerC62512 implements TextureView.SurfaceTextureListener {
         @Override // android.view.TextureView.SurfaceTextureListener
         public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         }
 
-        TextureView$SurfaceTextureListenerC62552() {
+        TextureView$SurfaceTextureListenerC62512() {
         }
 
         @Override // android.view.TextureView.SurfaceTextureListener
@@ -325,7 +325,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
             IntroActivity.this.eglThread.postRunnable(new Runnable() { // from class: org.telegram.ui.IntroActivity$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    IntroActivity.TextureView$SurfaceTextureListenerC62552.this.lambda$onSurfaceTextureAvailable$0();
+                    IntroActivity.TextureView$SurfaceTextureListenerC62512.this.lambda$onSurfaceTextureAvailable$0();
                 }
             });
             IntroActivity.this.eglThread.postRunnable(IntroActivity.this.eglThread.drawRunnable);
@@ -382,17 +382,17 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         AlertDialog alertDialog = new AlertDialog(view.getContext(), 3);
         alertDialog.setCanCancel(false);
         alertDialog.showDelayed(1000L);
-        NotificationCenter.getGlobalInstance().addObserver(new C62585(alertDialog), NotificationCenter.reloadInterface);
+        NotificationCenter.getGlobalInstance().addObserver(new C62545(alertDialog), NotificationCenter.reloadInterface);
         LocaleController.getInstance().applyLanguage(this.localeInfo, true, false, this.currentAccount);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.IntroActivity$5 */
     /* loaded from: classes5.dex */
-    public class C62585 implements NotificationCenter.NotificationCenterDelegate {
+    public class C62545 implements NotificationCenter.NotificationCenterDelegate {
         final /* synthetic */ AlertDialog val$loaderDialog;
 
-        C62585(AlertDialog alertDialog) {
+        C62545(AlertDialog alertDialog) {
             this.val$loaderDialog = alertDialog;
         }
 
@@ -404,7 +404,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.IntroActivity$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        IntroActivity.C62585.this.lambda$didReceivedNotification$0();
+                        IntroActivity.C62545.this.lambda$didReceivedNotification$0();
                     }
                 }, 100L);
             }
@@ -760,28 +760,28 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
                         return false;
                     } else {
                         GLES20.glGenTextures(23, this.textures, 0);
-                        loadTexture(C3634R.C3636drawable.intro_fast_arrow_shadow, 0);
-                        loadTexture(C3634R.C3636drawable.intro_fast_arrow, 1);
-                        loadTexture(C3634R.C3636drawable.intro_fast_body, 2);
-                        loadTexture(C3634R.C3636drawable.intro_fast_spiral, 3);
-                        loadTexture(C3634R.C3636drawable.intro_ic_bubble_dot, 4);
-                        loadTexture(C3634R.C3636drawable.intro_ic_bubble, 5);
-                        loadTexture(C3634R.C3636drawable.intro_ic_cam_lens, 6);
-                        loadTexture(C3634R.C3636drawable.intro_ic_cam, 7);
-                        loadTexture(C3634R.C3636drawable.intro_ic_pencil, 8);
-                        loadTexture(C3634R.C3636drawable.intro_ic_pin, 9);
-                        loadTexture(C3634R.C3636drawable.intro_ic_smile_eye, 10);
-                        loadTexture(C3634R.C3636drawable.intro_ic_smile, 11);
-                        loadTexture(C3634R.C3636drawable.intro_ic_videocam, 12);
-                        loadTexture(C3634R.C3636drawable.intro_knot_down, 13);
-                        loadTexture(C3634R.C3636drawable.intro_knot_up, 14);
-                        loadTexture(C3634R.C3636drawable.intro_powerful_infinity_white, 15);
-                        loadTexture(C3634R.C3636drawable.intro_powerful_infinity, 16);
-                        loadTexture(C3634R.C3636drawable.intro_powerful_mask, 17, Theme.getColor(Theme.key_windowBackgroundWhite), false);
-                        loadTexture(C3634R.C3636drawable.intro_powerful_star, 18);
-                        loadTexture(C3634R.C3636drawable.intro_private_door, 19);
-                        loadTexture(C3634R.C3636drawable.intro_private_screw, 20);
-                        loadTexture(C3634R.C3636drawable.fork_intro_plane, 21);
+                        loadTexture(C3632R.C3634drawable.intro_fast_arrow_shadow, 0);
+                        loadTexture(C3632R.C3634drawable.intro_fast_arrow, 1);
+                        loadTexture(C3632R.C3634drawable.intro_fast_body, 2);
+                        loadTexture(C3632R.C3634drawable.intro_fast_spiral, 3);
+                        loadTexture(C3632R.C3634drawable.intro_ic_bubble_dot, 4);
+                        loadTexture(C3632R.C3634drawable.intro_ic_bubble, 5);
+                        loadTexture(C3632R.C3634drawable.intro_ic_cam_lens, 6);
+                        loadTexture(C3632R.C3634drawable.intro_ic_cam, 7);
+                        loadTexture(C3632R.C3634drawable.intro_ic_pencil, 8);
+                        loadTexture(C3632R.C3634drawable.intro_ic_pin, 9);
+                        loadTexture(C3632R.C3634drawable.intro_ic_smile_eye, 10);
+                        loadTexture(C3632R.C3634drawable.intro_ic_smile, 11);
+                        loadTexture(C3632R.C3634drawable.intro_ic_videocam, 12);
+                        loadTexture(C3632R.C3634drawable.intro_knot_down, 13);
+                        loadTexture(C3632R.C3634drawable.intro_knot_up, 14);
+                        loadTexture(C3632R.C3634drawable.intro_powerful_infinity_white, 15);
+                        loadTexture(C3632R.C3634drawable.intro_powerful_infinity, 16);
+                        loadTexture(C3632R.C3634drawable.intro_powerful_mask, 17, Theme.getColor(Theme.key_windowBackgroundWhite), false);
+                        loadTexture(C3632R.C3634drawable.intro_powerful_star, 18);
+                        loadTexture(C3632R.C3634drawable.intro_private_door, 19);
+                        loadTexture(C3632R.C3634drawable.intro_private_screw, 20);
+                        loadTexture(C3632R.C3634drawable.fork_intro_plane, 21);
                         loadTexture(new GenericProvider() { // from class: org.telegram.ui.IntroActivity$EGLThread$$ExternalSyntheticLambda1
                             @Override // org.telegram.messenger.GenericProvider
                             public final Object provide(Object obj) {
@@ -821,7 +821,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
         public static /* synthetic */ Bitmap lambda$initGL$1(Void r4) {
             Paint paint = new Paint(1);
             paint.setColor(-13851168);
-            paint.setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3634R.C3635color.fork_color));
+            paint.setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3632R.C3633color.fork_color));
             int m104dp = AndroidUtilities.m104dp((int) ImageReceiver.DEFAULT_CROSSFADE_DURATION);
             Bitmap createBitmap = Bitmap.createBitmap(m104dp, m104dp, Bitmap.Config.ARGB_8888);
             float f = m104dp / 2.0f;
@@ -996,7 +996,7 @@ public class IntroActivity extends BaseFragment implements NotificationCenter.No
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$updateColors$6() {
         EGLThread eGLThread = this.eglThread;
-        int i = C3634R.C3636drawable.intro_powerful_mask;
+        int i = C3632R.C3634drawable.intro_powerful_mask;
         int i2 = Theme.key_windowBackgroundWhite;
         eGLThread.loadTexture(i, 17, Theme.getColor(i2), true);
         this.eglThread.updatePowerfulTextures();

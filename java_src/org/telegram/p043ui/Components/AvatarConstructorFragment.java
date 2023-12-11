@@ -6,6 +6,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PorterDuff;
@@ -31,7 +32,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
@@ -46,7 +47,7 @@ import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BackDrawable;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.BottomSheet;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.AvatarConstructorFragment;
 import org.telegram.p043ui.Components.ColorPicker;
@@ -87,7 +88,7 @@ public class AvatarConstructorFragment extends BaseFragment {
     float keyboardVisibleProgress;
     ValueAnimator lightProgressAnimator;
     LinearLayout linearLayout;
-    protected C3706ActionBar overlayActionBar;
+    protected C3704ActionBar overlayActionBar;
     PreviewView previewView;
     float progressToExpand;
     private SelectAnimatedEmojiDialog selectAnimatedEmojiDialog;
@@ -122,16 +123,16 @@ public class AvatarConstructorFragment extends BaseFragment {
         this.actionBar.setCastShadows(false);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setOccupyStatusBar(true);
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3706ActionBar.setTitleColor(Theme.getColor(i));
+        c3704ActionBar.setTitleColor(Theme.getColor(i));
         this.actionBar.setItemsColor(Theme.getColor(i), false);
         this.actionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_listSelector), false);
         this.actionBar.setBackButtonDrawable(new BackDrawable(false));
         this.actionBar.setAllowOverlayTitle(false);
-        this.actionBar.setTitle(LocaleController.getString("PhotoEditor", C3634R.string.PhotoEditor));
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.AvatarConstructorFragment.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("PhotoEditor", C3632R.string.PhotoEditor));
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.AvatarConstructorFragment.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     AvatarConstructorFragment.this.discardEditor();
@@ -139,9 +140,9 @@ public class AvatarConstructorFragment extends BaseFragment {
             }
         });
         this.actionBar.getTitleTextView().setAlpha(BitmapDescriptorFactory.HUE_RED);
-        C3706ActionBar c3706ActionBar2 = new C3706ActionBar(getContext());
-        this.overlayActionBar = c3706ActionBar2;
-        c3706ActionBar2.setCastShadows(false);
+        C3704ActionBar c3704ActionBar2 = new C3704ActionBar(getContext());
+        this.overlayActionBar = c3704ActionBar2;
+        c3704ActionBar2.setCastShadows(false);
         this.overlayActionBar.setAddToContainer(false);
         this.overlayActionBar.setOccupyStatusBar(true);
         this.overlayActionBar.setClipChildren(false);
@@ -154,15 +155,15 @@ public class AvatarConstructorFragment extends BaseFragment {
         createMenu.setClipChildren(false);
         ImageUpdater.AvatarFor avatarFor = this.avatarFor;
         if (avatarFor != null && avatarFor.type == 2) {
-            string = LocaleController.getString("SuggestPhoto", C3634R.string.SuggestPhoto);
+            string = LocaleController.getString("SuggestPhoto", C3632R.string.SuggestPhoto);
         } else {
-            string = LocaleController.getString("SetPhoto", C3634R.string.SetPhoto);
+            string = LocaleController.getString("SetPhoto", C3632R.string.SetPhoto);
         }
         ActionBarMenuItem addItem = createMenu.addItem(1, string);
         this.setPhotoItem = addItem;
         addItem.setBackground(Theme.createSelectorDrawable(alphaComponent, 3));
-        this.overlayActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.AvatarConstructorFragment.2
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.overlayActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.AvatarConstructorFragment.2
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     AvatarConstructorFragment.this.discardEditor();
@@ -276,7 +277,7 @@ public class AvatarConstructorFragment extends BaseFragment {
                         AvatarConstructorFragment avatarConstructorFragment2 = AvatarConstructorFragment.this;
                         int i2 = avatarConstructorFragment2.expandedHeight - avatarConstructorFragment2.collapsedHeight;
                         int i3 = AndroidUtilities.statusBarHeight;
-                        int currentActionBarHeight = C3706ActionBar.getCurrentActionBarHeight();
+                        int currentActionBarHeight = C3704ActionBar.getCurrentActionBarHeight();
                         AvatarConstructorFragment avatarConstructorFragment3 = AvatarConstructorFragment.this;
                         float lerp = AndroidUtilities.lerp(y, i3 + ((currentActionBarHeight - avatarConstructorFragment3.collapsedHeight) >> 1), avatarConstructorFragment3.keyboardVisibleProgress);
                         canvas.translate(x, lerp);
@@ -376,7 +377,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         linearLayout.addView(previewView);
         TextView textView = new TextView(getContext());
         this.chooseBackgroundHint = textView;
-        textView.setText(LocaleController.getString("ChooseBackground", C3634R.string.ChooseBackground));
+        textView.setText(LocaleController.getString("ChooseBackground", C3632R.string.ChooseBackground));
         TextView textView2 = this.chooseBackgroundHint;
         int i2 = Theme.key_windowBackgroundWhiteGrayText;
         textView2.setTextColor(Theme.getColor(i2));
@@ -406,12 +407,12 @@ public class AvatarConstructorFragment extends BaseFragment {
         this.linearLayout.addView(frameLayout, LayoutHelper.createLinear(-1, 48, 0, 12, 0, 12, 0));
         TextView textView3 = new TextView(getContext());
         this.chooseEmojiHint = textView3;
-        textView3.setText(LocaleController.getString("ChooseEmojiOrSticker", C3634R.string.ChooseEmojiOrSticker));
+        textView3.setText(LocaleController.getString("ChooseEmojiOrSticker", C3632R.string.ChooseEmojiOrSticker));
         this.chooseEmojiHint.setTextColor(Theme.getColor(i2));
         this.chooseEmojiHint.setTextSize(1, 14.0f);
         this.chooseEmojiHint.setGravity(17);
         this.linearLayout.addView(this.chooseEmojiHint, LayoutHelper.createLinear(-1, -2, 0, 21, 18, 21, 10));
-        SelectAnimatedEmojiDialog selectAnimatedEmojiDialog = new SelectAnimatedEmojiDialog(this, getContext(), false, null, 4, null) { // from class: org.telegram.ui.Components.AvatarConstructorFragment.7
+        SelectAnimatedEmojiDialog selectAnimatedEmojiDialog = new SelectAnimatedEmojiDialog(this, getContext(), false, null, 4, true, null, 16, Theme.isCurrentThemeDark() ? -1 : getThemedColor(Theme.key_windowBackgroundWhiteBlueIcon)) { // from class: org.telegram.ui.Components.AvatarConstructorFragment.7
             private boolean firstLayout = true;
 
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -445,15 +446,15 @@ public class AvatarConstructorFragment extends BaseFragment {
         textView4.setTextSize(1, 14.0f);
         int i3 = this.imageUpdater.setForType;
         if (i3 == 1) {
-            textView4.setText(LocaleController.getString("SetChannelPhoto", C3634R.string.SetChannelPhoto));
+            textView4.setText(LocaleController.getString("SetChannelPhoto", C3632R.string.SetChannelPhoto));
         } else if (i3 == 2) {
-            textView4.setText(LocaleController.getString("SetGroupPhoto", C3634R.string.SetGroupPhoto));
+            textView4.setText(LocaleController.getString("SetGroupPhoto", C3632R.string.SetGroupPhoto));
         } else {
             ImageUpdater.AvatarFor avatarFor2 = this.avatarFor;
             if (avatarFor2 != null && avatarFor2.type == 2) {
-                textView4.setText(LocaleController.getString("SuggestPhoto", C3634R.string.SuggestPhoto));
+                textView4.setText(LocaleController.getString("SuggestPhoto", C3632R.string.SuggestPhoto));
             } else {
-                textView4.setText(LocaleController.getString("SetProfilePhotoAvatarConstructor", C3634R.string.SetProfilePhotoAvatarConstructor));
+                textView4.setText(LocaleController.getString("SetProfilePhotoAvatarConstructor", C3632R.string.SetProfilePhotoAvatarConstructor));
             }
         }
         textView4.setGravity(17);
@@ -515,15 +516,15 @@ public class AvatarConstructorFragment extends BaseFragment {
         }
         if (this.wasChanged) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-            builder.setMessage(LocaleController.getString("PhotoEditorDiscardAlert", C3634R.string.PhotoEditorDiscardAlert));
-            builder.setTitle(LocaleController.getString("DiscardChanges", C3634R.string.DiscardChanges));
-            builder.setPositiveButton(LocaleController.getString("PassportDiscard", C3634R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda2
+            builder.setMessage(LocaleController.getString("PhotoEditorDiscardAlert", C3632R.string.PhotoEditorDiscardAlert));
+            builder.setTitle(LocaleController.getString("DiscardChanges", C3632R.string.DiscardChanges));
+            builder.setPositiveButton(LocaleController.getString("PassportDiscard", C3632R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.AvatarConstructorFragment$$ExternalSyntheticLambda2
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     AvatarConstructorFragment.this.lambda$discardEditor$2(dialogInterface, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
             AlertDialog create = builder.create();
             showDialog(create);
             create.redPositive();
@@ -733,6 +734,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         BackgroundGradient backgroundGradient;
         BackupImageView backupImageView;
         float changeBackgroundProgress;
+        private ColorFilter colorFilter;
 
         /* renamed from: cx */
         private float f1810cx;
@@ -753,6 +755,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             this.gradientTools = new GradientTools();
             this.outGradientTools = new GradientTools();
             this.changeBackgroundProgress = 1.0f;
+            this.colorFilter = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
             this.expandProgress = new AnimatedFloat(this, 200L, CubicBezierInterpolator.EASE_OUT);
             this.overrideExpandProgress = -1.0f;
             BackupImageView backupImageView = new BackupImageView(context, AvatarConstructorFragment.this) { // from class: org.telegram.ui.Components.AvatarConstructorFragment.PreviewView.1
@@ -867,6 +870,7 @@ public class AvatarConstructorFragment extends BaseFragment {
                 float f10 = this.f1810cx;
                 float f11 = this.f1811cy;
                 animatedEmojiDrawable2.setBounds((int) (f10 - lerp2), (int) (f11 - lerp2), (int) (f10 + lerp2), (int) (f11 + lerp2));
+                this.backupImageView.animatedEmojiDrawable.setColorFilter(this.colorFilter);
                 this.backupImageView.animatedEmojiDrawable.draw(canvas);
                 return;
             }
@@ -920,7 +924,10 @@ public class AvatarConstructorFragment extends BaseFragment {
         public ImageReceiver getImageReceiver() {
             ImageReceiver imageReceiver = this.backupImageView.getImageReceiver();
             AnimatedEmojiDrawable animatedEmojiDrawable = this.backupImageView.animatedEmojiDrawable;
-            return animatedEmojiDrawable != null ? animatedEmojiDrawable.getImageReceiver() : imageReceiver;
+            if (animatedEmojiDrawable != null && (imageReceiver = animatedEmojiDrawable.getImageReceiver()) != null) {
+                imageReceiver.setColorFilter(this.colorFilter);
+            }
+            return imageReceiver;
         }
 
         public boolean hasAnimation() {
@@ -1196,7 +1203,7 @@ public class AvatarConstructorFragment extends BaseFragment {
         frameLayout.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 8.0f));
         TextView textView = new TextView(getContext());
         textView.setTextSize(1, 14.0f);
-        textView.setText(LocaleController.getString("SetColor", C3634R.string.SetColor));
+        textView.setText(LocaleController.getString("SetColor", C3632R.string.SetColor));
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
@@ -1383,7 +1390,7 @@ public class AvatarConstructorFragment extends BaseFragment {
             if (this.isCustom) {
                 if (this.backgroundGradient == null) {
                     if (this.addIcon == null) {
-                        Drawable drawable = ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.msg_filled_plus);
+                        Drawable drawable = ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.msg_filled_plus);
                         this.addIcon = drawable;
                         drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_emojiSearchIcon), PorterDuff.Mode.MULTIPLY));
                     }

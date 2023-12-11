@@ -36,10 +36,10 @@ public interface Either<X, Y> extends TlbObject {
         private final X value;
 
         /* renamed from: x */
-        private final X f2037x;
+        private final X f2038x;
 
         /* renamed from: y */
-        private final Y f2038y;
+        private final Y f2039y;
 
         /* compiled from: Either.kt */
         /* loaded from: classes6.dex */
@@ -73,20 +73,20 @@ public interface Either<X, Y> extends TlbObject {
             }
             this.value = obj;
             if ((i & 2) == 0) {
-                this.f2037x = obj;
+                this.f2038x = obj;
             } else {
-                this.f2037x = obj2;
+                this.f2038x = obj2;
             }
             if ((i & 4) == 0) {
-                this.f2038y = null;
+                this.f2039y = null;
             } else {
-                this.f2038y = obj3;
+                this.f2039y = obj3;
             }
         }
 
         public Left(X x) {
             this.value = x;
-            this.f2037x = x;
+            this.f2038x = x;
         }
 
         public static final /* synthetic */ void write$Self(Left left, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor, KSerializer kSerializer, KSerializer kSerializer2) {
@@ -104,11 +104,11 @@ public interface Either<X, Y> extends TlbObject {
         }
 
         public X getX() {
-            return this.f2037x;
+            return this.f2038x;
         }
 
         public Y getY() {
-            return this.f2038y;
+            return this.f2039y;
         }
 
         public boolean equals(Object obj) {
@@ -149,10 +149,10 @@ public interface Either<X, Y> extends TlbObject {
         private final Y value;
 
         /* renamed from: x */
-        private final X f2039x;
+        private final X f2040x;
 
         /* renamed from: y */
-        private final Y f2040y;
+        private final Y f2041y;
 
         /* compiled from: Either.kt */
         /* loaded from: classes6.dex */
@@ -185,17 +185,17 @@ public interface Either<X, Y> extends TlbObject {
                 PluginExceptionsKt.throwMissingFieldException(i, 1, $cachedDescriptor);
             }
             this.value = obj;
-            this.f2039x = (X) ((i & 2) == 0 ? (X) null : obj2);
+            this.f2040x = (X) ((i & 2) == 0 ? (X) null : obj2);
             if ((i & 4) == 0) {
-                this.f2040y = obj;
+                this.f2041y = obj;
             } else {
-                this.f2040y = obj3;
+                this.f2041y = obj3;
             }
         }
 
         public Right(Y y) {
             this.value = y;
-            this.f2040y = y;
+            this.f2041y = y;
         }
 
         public static final /* synthetic */ void write$Self(Right right, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor, KSerializer kSerializer, KSerializer kSerializer2) {
@@ -213,11 +213,11 @@ public interface Either<X, Y> extends TlbObject {
         }
 
         public X getX() {
-            return this.f2039x;
+            return this.f2040x;
         }
 
         public Y getY() {
-            return this.f2040y;
+            return this.f2041y;
         }
 
         public boolean equals(Object obj) {
@@ -260,7 +260,7 @@ public interface Either<X, Y> extends TlbObject {
         public final <T0, T1> KSerializer<Either<T0, T1>> serializer(KSerializer<T0> typeSerial0, KSerializer<T1> typeSerial1) {
             Intrinsics.checkNotNullParameter(typeSerial0, "typeSerial0");
             Intrinsics.checkNotNullParameter(typeSerial1, "typeSerial1");
-            return new SealedClassSerializer("org.ton.block.Either", Reflection.getOrCreateKotlinClass(Either.class), new KClass[]{Reflection.getOrCreateKotlinClass(Left.class), Reflection.getOrCreateKotlinClass(Right.class)}, new KSerializer[]{new Either$Left$$serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), new Either$Right$$serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7551x9f9cbbcf("@type")});
+            return new SealedClassSerializer("org.ton.block.Either", Reflection.getOrCreateKotlinClass(Either.class), new KClass[]{Reflection.getOrCreateKotlinClass(Left.class), Reflection.getOrCreateKotlinClass(Right.class)}, new KSerializer[]{new Either$Left$$serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), new Either$Right$$serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7549x9f9cbbcf("@type")});
         }
 
         /* renamed from: of */

@@ -34,7 +34,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/Integer;)V
     .locals 0
 
-    .line 476
+    .line 477
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iput-boolean p3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->val$needBackgroundShadow:Z
@@ -45,14 +45,14 @@
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 477
+    .line 478
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->pathApi20:Landroid/graphics/Path;
 
-    .line 478
+    .line 479
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -61,7 +61,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->paintApi20:Landroid/graphics/Paint;
 
-    .line 479
+    .line 480
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 p3, 0x15
@@ -84,7 +84,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 483
+    .line 484
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$100(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)Z
@@ -93,31 +93,31 @@
 
     if-nez v0, :cond_0
 
-    .line 484
+    .line 485
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void
 
-    .line 487
+    .line 488
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->beforeLollipop:Z
 
     if-eqz v0, :cond_4
 
-    .line 488
+    .line 489
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 489
+    .line 490
     iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->val$needBackgroundShadow:Z
 
     if-eqz v0, :cond_1
 
-    .line 490
+    .line 491
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->paintApi20:Landroid/graphics/Paint;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->applyDefaultShadow(Landroid/graphics/Paint;)V
 
-    .line 492
+    .line 493
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->paintApi20:Landroid/graphics/Paint;
 
@@ -131,7 +131,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 493
+    .line 494
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->paintApi20:Landroid/graphics/Paint;
 
     const/high16 v1, 0x437f0000    # 255.0f
@@ -146,7 +146,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 494
+    .line 495
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->val$bubbleX:Ljava/lang/Integer;
 
     if-nez v0, :cond_2
@@ -181,7 +181,7 @@
 
     add-float/2addr v0, v1
 
-    .line 495
+    .line 496
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v1
@@ -200,7 +200,7 @@
 
     int-to-float v1, v1
 
-    .line 496
+    .line 497
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v2
@@ -219,7 +219,7 @@
 
     int-to-float v2, v2
 
-    .line 497
+    .line 498
     iget-object v3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-virtual {v3}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->isBottom()Z
@@ -228,10 +228,10 @@
 
     if-eqz v3, :cond_3
 
-    .line 498
+    .line 499
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 499
+    .line 500
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v4
@@ -250,7 +250,7 @@
 
     add-float/2addr v4, v5
 
-    .line 500
+    .line 501
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v5
@@ -271,7 +271,7 @@
 
     add-float/2addr v5, v6
 
-    .line 501
+    .line 502
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v6
@@ -292,7 +292,7 @@
 
     add-float/2addr v6, v1
 
-    .line 502
+    .line 503
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v0
@@ -301,16 +301,16 @@
 
     add-float/2addr v0, v2
 
-    .line 498
+    .line 499
     invoke-virtual {v3, v4, v5, v6, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
     goto :goto_1
 
-    .line 505
+    .line 506
     :cond_3
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 506
+    .line 507
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v4
@@ -329,14 +329,14 @@
 
     add-float/2addr v4, v5
 
-    .line 507
+    .line 508
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v5
 
     int-to-float v5, v5
 
-    .line 508
+    .line 509
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v6
@@ -357,7 +357,7 @@
 
     add-float/2addr v6, v1
 
-    .line 509
+    .line 510
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v0
@@ -374,16 +374,16 @@
 
     add-float/2addr v0, v2
 
-    .line 505
+    .line 506
     invoke-virtual {v3, v4, v5, v6, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 512
+    .line 513
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->pathApi20:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 513
+    .line 514
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->pathApi20:Landroid/graphics/Path;
 
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
@@ -406,27 +406,27 @@
 
     invoke-virtual {v0, v1, v3, v2, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 514
+    .line 515
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->pathApi20:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->paintApi20:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 515
+    .line 516
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$2;->pathApi20:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 516
+    .line 517
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 517
+    .line 518
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_2
 
-    .line 519
+    .line 520
     :cond_4
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 

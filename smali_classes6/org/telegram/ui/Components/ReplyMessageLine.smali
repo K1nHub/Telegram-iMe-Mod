@@ -92,29 +92,37 @@
 
 .field private reversedOut:Z
 
+.field public final switchStateT:Lorg/telegram/ui/Components/AnimatedFloat;
+
+.field private switchedCount:I
+
+.field private wasColorId:I
+
+.field private wasMessageId:I
+
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .locals 9
 
-    .line 61
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
+    .line 31
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->rectF:Landroid/graphics/RectF;
 
-    .line 31
+    .line 32
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->clipPath:Landroid/graphics/Path;
 
-    .line 32
+    .line 33
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -123,14 +131,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1Paint:Landroid/graphics/Paint;
 
-    .line 33
+    .line 34
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Paint:Landroid/graphics/Paint;
 
-    .line 34
+    .line 35
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
@@ -141,55 +149,60 @@
 
     new-array v0, v0, [F
 
-    .line 36
-    iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
-
     .line 37
-    new-instance v0, Landroid/graphics/Path;
-
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lineClipPath:Landroid/graphics/Path;
+    iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
 
     .line 38
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundPath:Landroid/graphics/Path;
+    iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lineClipPath:Landroid/graphics/Path;
 
     .line 39
+    new-instance v0, Landroid/graphics/Path;
+
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundPath:Landroid/graphics/Path;
+
+    .line 40
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 45
+    .line 46
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Path:Landroid/graphics/Path;
 
-    .line 46
+    .line 47
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Path:Landroid/graphics/Path;
 
-    .line 62
+    const/4 v0, 0x0
+
+    .line 48
+    iput v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->switchedCount:I
+
+    .line 65
     iput-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->parentView:Landroid/view/View;
 
-    .line 63
+    .line 66
     new-instance v0, Lorg/telegram/ui/Components/ReplyMessageLine$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ReplyMessageLine$1;-><init>(Lorg/telegram/ui/Components/ReplyMessageLine;)V
 
     invoke-virtual {p1, v0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
-    .line 78
+    .line 81
     new-instance v0, Lorg/telegram/ui/Components/AnimatedColor;
 
     sget-object v8, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -208,7 +221,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColorAnimated:Lorg/telegram/ui/Components/AnimatedColor;
 
-    .line 79
+    .line 82
     new-instance v0, Lorg/telegram/ui/Components/AnimatedColor;
 
     move-object v1, v0
@@ -217,7 +230,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1Animated:Lorg/telegram/ui/Components/AnimatedColor;
 
-    .line 80
+    .line 83
     new-instance v0, Lorg/telegram/ui/Components/AnimatedColor;
 
     move-object v1, v0
@@ -226,7 +239,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Animated:Lorg/telegram/ui/Components/AnimatedColor;
 
-    .line 81
+    .line 84
     new-instance v0, Lorg/telegram/ui/Components/AnimatedColor;
 
     move-object v1, v0
@@ -235,7 +248,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Animated:Lorg/telegram/ui/Components/AnimatedColor;
 
-    .line 82
+    .line 85
     new-instance v0, Lorg/telegram/ui/Components/AnimatedColor;
 
     move-object v1, v0
@@ -244,7 +257,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColorAnimated:Lorg/telegram/ui/Components/AnimatedColor;
 
-    .line 83
+    .line 86
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     move-object v1, v0
@@ -253,7 +266,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Alpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 84
+    .line 87
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     move-object v1, v0
@@ -262,7 +275,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Alpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 85
+    .line 88
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v5, 0x1b8
@@ -273,7 +286,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiLoadedT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 86
+    .line 89
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v5, 0x140
@@ -284,13 +297,22 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loadingStateT:Lorg/telegram/ui/Components/AnimatedFloat;
 
+    .line 90
+    new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v7}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;JJLandroid/animation/TimeInterpolator;)V
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->switchStateT:Lorg/telegram/ui/Components/AnimatedFloat;
+
     return-void
 .end method
 
 .method static synthetic access$000(Lorg/telegram/ui/Components/ReplyMessageLine;)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
     .locals 0
 
-    .line 28
+    .line 29
     iget-object p0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     return-object p0
@@ -299,7 +321,7 @@
 .method private checkColorPathes(F)V
     .locals 10
 
-    .line 520
+    .line 572
     iget v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lastHeight:F
 
     sub-float/2addr v0, p1
@@ -320,7 +342,7 @@
 
     if-eq v0, v2, :cond_4
 
-    .line 521
+    .line 573
     :cond_0
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
@@ -328,26 +350,26 @@
 
     const v2, 0x40ca8f5c    # 6.33f
 
-    .line 522
+    .line 574
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v2
 
-    .line 523
+    .line 575
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
 
     const v3, 0x40551eb8    # 3.33f
 
-    .line 524
+    .line 576
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v3
 
     add-float v4, v3, v1
 
-    .line 527
+    .line 579
     iget-object v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Path:Landroid/graphics/Path;
 
     invoke-virtual {v5}, Landroid/graphics/Path;->rewind()V
@@ -364,7 +386,7 @@
 
     if-gez v6, :cond_2
 
-    .line 529
+    .line 581
     iget-object v6, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Path:Landroid/graphics/Path;
 
     add-float v9, v0, v8
@@ -373,28 +395,28 @@
 
     invoke-virtual {v6, v9, v8}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 530
+    .line 582
     iget-object v6, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Path:Landroid/graphics/Path;
 
     add-float v8, v5, v2
 
     invoke-virtual {v6, v9, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 531
+    .line 583
     iget-object v6, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Path:Landroid/graphics/Path;
 
     add-float/2addr v8, v1
 
     invoke-virtual {v6, v7, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 532
+    .line 584
     iget-object v6, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Path:Landroid/graphics/Path;
 
     add-float v8, v5, v1
 
     invoke-virtual {v6, v7, v8}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 533
+    .line 585
     iget-object v6, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Path:Landroid/graphics/Path;
 
     invoke-virtual {v6}, Landroid/graphics/Path;->close()V
@@ -405,7 +427,7 @@
 
     add-float/2addr v5, v6
 
-    .line 536
+    .line 588
     iget-boolean v6, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
 
     if-eqz v6, :cond_1
@@ -414,7 +436,7 @@
 
     goto :goto_0
 
-    .line 541
+    .line 593
     :cond_2
     iget-boolean v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
 
@@ -422,7 +444,7 @@
 
     add-float/2addr v4, v2
 
-    .line 543
+    .line 595
     iget-object v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Path:Landroid/graphics/Path;
 
     invoke-virtual {v5}, Landroid/graphics/Path;->rewind()V
@@ -432,7 +454,7 @@
 
     if-gez v5, :cond_3
 
-    .line 545
+    .line 597
     iget-object v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Path:Landroid/graphics/Path;
 
     add-float v6, v0, v8
@@ -441,28 +463,28 @@
 
     invoke-virtual {v5, v6, v9}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 546
+    .line 598
     iget-object v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Path:Landroid/graphics/Path;
 
     add-float v9, v4, v2
 
     invoke-virtual {v5, v6, v9}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 547
+    .line 599
     iget-object v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Path:Landroid/graphics/Path;
 
     add-float/2addr v9, v1
 
     invoke-virtual {v5, v7, v9}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 548
+    .line 600
     iget-object v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Path:Landroid/graphics/Path;
 
     add-float v6, v4, v1
 
     invoke-virtual {v5, v7, v6}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 549
+    .line 601
     iget-object v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Path:Landroid/graphics/Path;
 
     invoke-virtual {v5}, Landroid/graphics/Path;->close()V
@@ -477,11 +499,11 @@
 
     goto :goto_1
 
-    .line 555
+    .line 607
     :cond_3
     iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lastHeight:F
 
-    .line 556
+    .line 608
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
 
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lastHasColor3:Z
@@ -493,12 +515,12 @@
 .method private incrementLoadingT()V
     .locals 8
 
-    .line 284
+    .line 338
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 285
+    .line 339
     iget-object v2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loadingStateT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loading:Z
@@ -507,7 +529,7 @@
 
     move-result v2
 
-    .line 286
+    .line 340
     iget v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loadingT:F
 
     iget-wide v4, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lastLoadingTTime:J
@@ -528,7 +550,7 @@
 
     iput v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loadingT:F
 
-    .line 287
+    .line 341
     iget v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loadingTranslationT:F
 
     iget-wide v4, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lastLoadingTTime:J
@@ -547,7 +569,7 @@
 
     iput v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loadingTranslationT:F
 
-    .line 288
+    .line 342
     iput-wide v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lastLoadingTTime:J
 
     return-void
@@ -556,7 +578,7 @@
 .method private isEmojiLoaded()Z
     .locals 3
 
-    .line 473
+    .line 525
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiLoaded:Z
 
     const/4 v1, 0x1
@@ -565,7 +587,7 @@
 
     return v1
 
-    .line 476
+    .line 528
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
@@ -579,7 +601,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 477
+    .line 529
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -588,7 +610,7 @@
 
     check-cast v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
-    .line 478
+    .line 530
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v2
@@ -605,7 +627,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 479
+    .line 531
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiLoaded:Z
 
     return v1
@@ -617,15 +639,57 @@
 .end method
 
 .method private resolveColor(Lorg/telegram/messenger/MessageObject;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 3
+    .locals 4
 
-    const/4 v0, 0x0
+    .line 108
+    iget v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->wasColorId:I
 
-    const/4 v1, 0x7
+    const/4 v1, 0x1
 
-    if-ge p2, v1, :cond_0
+    const/4 v2, 0x0
 
-    .line 99
+    if-eq v0, p2, :cond_2
+
+    if-eqz p1, :cond_0
+
+    .line 109
+    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v2
+
+    .line 110
+    :goto_0
+    iget v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->wasMessageId:I
+
+    if-ne v0, v3, :cond_1
+
+    .line 111
+    iget v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->switchedCount:I
+
+    add-int/2addr v3, v1
+
+    iput v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->switchedCount:I
+
+    .line 113
+    :cond_1
+    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->wasColorId:I
+
+    .line 114
+    iput v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->wasMessageId:I
+
+    :cond_2
+    if-ltz p2, :cond_3
+
+    const/4 v0, 0x7
+
+    if-ge p2, v0, :cond_3
+
+    .line 117
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[I
 
     aget p1, p1, p2
@@ -640,64 +704,67 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
 
-    .line 100
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
+    .line 118
+    iput-boolean v2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
 
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
+    iput-boolean v2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
 
     return-void
 
-    :cond_0
-    if-eqz p1, :cond_1
+    :cond_3
+    if-eqz p1, :cond_4
 
-    .line 103
-    iget v1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
-
-    goto :goto_0
-
-    :cond_1
-    sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
-
-    .line 104
-    :goto_0
-    invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lorg/telegram/messenger/MessagesController;->peerColors:Lorg/telegram/messenger/MessagesController$PeerColors;
-
-    if-eqz v1, :cond_2
-
-    .line 105
-    invoke-virtual {v1, p2}, Lorg/telegram/messenger/MessagesController$PeerColors;->getColor(I)Lorg/telegram/messenger/MessagesController$PeerColor;
-
-    move-result-object p2
+    .line 121
+    iget v0, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     goto :goto_1
 
-    :cond_2
-    const/4 p2, 0x0
+    :cond_4
+    sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
+    .line 122
     :goto_1
-    if-nez p2, :cond_4
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    if-eqz p1, :cond_3
+    move-result-object v0
 
-    .line 107
+    iget-object v0, v0, Lorg/telegram/messenger/MessagesController;->peerColors:Lorg/telegram/messenger/MessagesController$PeerColors;
+
+    const/4 v3, 0x0
+
+    if-eqz v0, :cond_6
+
+    if-gez p2, :cond_5
+
+    goto :goto_2
+
+    .line 123
+    :cond_5
+    invoke-virtual {v0, p2}, Lorg/telegram/messenger/MessagesController$PeerColors;->getColor(I)Lorg/telegram/messenger/MessagesController$PeerColor;
+
+    move-result-object v3
+
+    :cond_6
+    :goto_2
+    if-nez v3, :cond_8
+
+    if-eqz p1, :cond_7
+
+    .line 125
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
 
     move-result p1
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_7
 
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyLine:I
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_3
+    :cond_7
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReplyLine:I
 
-    :goto_2
+    :goto_3
     invoke-static {p1, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
@@ -708,886 +775,1190 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
 
-    .line 108
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
+    .line 126
+    iput-boolean v2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
 
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
+    iput-boolean v2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
 
     return-void
 
-    .line 111
-    :cond_4
-    invoke-virtual {p2}, Lorg/telegram/messenger/MessagesController$PeerColor;->getColor1()I
+    .line 129
+    :cond_8
+    invoke-virtual {v3}, Lorg/telegram/messenger/MessagesController$PeerColor;->getColor1()I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
 
-    .line 112
-    invoke-virtual {p2}, Lorg/telegram/messenger/MessagesController$PeerColor;->getColor2()I
+    .line 130
+    invoke-virtual {v3}, Lorg/telegram/messenger/MessagesController$PeerColor;->getColor2()I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
 
-    .line 113
-    invoke-virtual {p2}, Lorg/telegram/messenger/MessagesController$PeerColor;->getColor3()I
+    .line 131
+    invoke-virtual {v3}, Lorg/telegram/messenger/MessagesController$PeerColor;->getColor3()I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
 
-    .line 114
+    .line 132
     iget p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
 
     iget p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
 
-    const/4 v1, 0x1
-
-    if-eq p2, p3, :cond_5
-
-    move v2, v1
-
-    goto :goto_3
-
-    :cond_5
-    move v2, v0
-
-    :goto_3
-    iput-boolean v2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
-
-    if-eq p1, p3, :cond_6
+    if-eq p2, p3, :cond_9
 
     move v0, v1
 
-    .line 115
-    :cond_6
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
+    goto :goto_4
 
-    if-eqz v0, :cond_7
+    :cond_9
+    move v0, v2
 
-    .line 118
+    :goto_4
+    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
+
+    if-eq p1, p3, :cond_a
+
+    goto :goto_5
+
+    :cond_a
+    move v1, v2
+
+    .line 133
+    :goto_5
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
+
+    if-eqz v1, :cond_b
+
+    .line 136
     iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
 
-    .line 119
+    .line 137
     iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
 
-    :cond_7
+    :cond_b
     return-void
 .end method
 
 
 # virtual methods
 .method public check(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)I
-    .locals 9
+    .locals 16
 
-    const/4 v0, 0x0
+    move-object/from16 v0, p0
 
-    .line 124
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->reversedOut:Z
+    move-object/from16 v1, p1
 
-    const-wide/16 v1, 0x0
+    move-object/from16 v2, p2
 
-    .line 125
-    iput-wide v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
+    move-object/from16 v3, p3
 
-    const v3, 0x3df5c28f    # 0.12f
+    move-object/from16 v4, p4
 
-    const v4, 0x3dcccccd    # 0.1f
+    const/4 v5, 0x0
 
-    if-nez p1, :cond_1
+    .line 142
+    iput-boolean v5, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->reversedOut:Z
 
-    .line 127
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
+    const-wide/16 v6, 0x0
 
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
+    .line 143
+    iput-wide v6, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
 
-    .line 128
-    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReplyLine:I
+    const v8, 0x3df5c28f    # 0.12f
 
-    invoke-static {p1, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    const v9, 0x3dcccccd    # 0.1f
 
-    move-result p1
+    if-nez v1, :cond_1
 
-    iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
+    .line 145
+    iput-boolean v5, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
 
-    iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
+    iput-boolean v5, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
 
-    iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+    .line 146
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReplyLine:I
 
-    .line 129
+    invoke-static {v1, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v1
+
+    iput v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
+
+    iput v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
+
+    iput v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+
+    .line 147
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
 
-    move-result p2
+    move-result v2
 
-    if-eqz p2, :cond_0
+    if-eqz v2, :cond_0
 
     goto :goto_0
 
     :cond_0
-    move v3, v4
+    move v8, v9
 
     :goto_0
-    invoke-static {p1, v3}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+    invoke-static {v1, v8}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
-    move-result p1
+    move-result v1
 
-    iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
+    iput v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
 
-    .line 130
-    iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColorAnimated:Lorg/telegram/ui/Components/AnimatedColor;
+    .line 148
+    iget-object v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColorAnimated:Lorg/telegram/ui/Components/AnimatedColor;
 
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReplyNameText:I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReplyNameText:I
 
-    invoke-static {p2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result p2
+    move-result v2
 
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
 
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AnimatedColor;->set(I)I
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedColor;->set(I)I
 
-    move-result p1
+    move-result v1
 
-    return p1
+    return v1
 
     :cond_1
-    const-wide/16 v5, 0x7
+    const/4 v10, -0x1
 
-    if-nez p5, :cond_e
+    const-wide/16 v11, 0x7
 
-    .line 131
-    iget v7, p1, Lorg/telegram/messenger/MessageObject;->overrideLinkColor:I
-
-    if-gez v7, :cond_5
-
-    iget-object v7, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    if-eqz v7, :cond_e
-
-    .line 134
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isFromUser()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2
-
-    if-nez p2, :cond_5
-
-    .line 135
-    :cond_2
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isFromChannel()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_3
-
-    if-nez p3, :cond_5
-
-    .line 136
-    :cond_3
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isSponsored()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_4
-
-    iget-object v7, p1, Lorg/telegram/messenger/MessageObject;->sponsoredChatInvite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
-
-    instance-of v7, v7, Lorg/telegram/tgnet/TLRPC$TL_chatInvite;
-
-    if-nez v7, :cond_5
-
-    .line 137
-    :cond_4
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isSponsored()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_e
-
-    iget-object v7, p1, Lorg/telegram/messenger/MessageObject;->sponsoredChatInvite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
-
-    if-eqz v7, :cond_e
-
-    iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$ChatInvite;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    if-eqz v7, :cond_e
-
-    .line 141
-    :cond_5
-    iget v7, p1, Lorg/telegram/messenger/MessageObject;->overrideLinkColor:I
-
-    if-ltz v7, :cond_6
-
-    goto :goto_2
-
-    .line 143
-    :cond_6
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isSponsored()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_7
-
-    iget-object v7, p1, Lorg/telegram/messenger/MessageObject;->sponsoredChatInvite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
-
-    instance-of v8, v7, Lorg/telegram/tgnet/TLRPC$TL_chatInvite;
-
-    if-eqz v8, :cond_7
-
-    .line 144
-    iget v7, v7, Lorg/telegram/tgnet/TLRPC$ChatInvite;->color:I
-
-    goto :goto_2
-
-    .line 145
-    :cond_7
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isSponsored()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_9
-
-    iget-object v7, p1, Lorg/telegram/messenger/MessageObject;->sponsoredChatInvite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
-
-    if-eqz v7, :cond_9
-
-    iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$ChatInvite;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    if-eqz v7, :cond_9
-
-    .line 146
-    iget p2, v7, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
-
-    and-int/lit8 p2, p2, 0x40
-
-    if-eqz p2, :cond_8
-
-    .line 147
-    iget v7, v7, Lorg/telegram/tgnet/TLRPC$Chat;->color:I
-
-    goto :goto_2
+    if-nez p5, :cond_19
 
     .line 149
-    :cond_8
-    iget-wide p2, v7, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    iget v13, v1, Lorg/telegram/messenger/MessageObject;->overrideLinkColor:I
 
-    rem-long/2addr p2, v5
+    if-gez v13, :cond_7
 
-    goto :goto_1
+    iget-object v13, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 151
-    :cond_9
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isFromUser()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_b
-
-    if-eqz p2, :cond_b
+    if-eqz v13, :cond_19
 
     .line 152
-    iget p3, p2, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isFromUser()Z
 
-    and-int/lit16 p3, p3, 0x80
+    move-result v13
 
-    if-eqz p3, :cond_a
+    if-nez v13, :cond_2
+
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
+
+    move-result-wide v13
+
+    invoke-static {v13, v14}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
+
+    move-result v13
+
+    if-eqz v13, :cond_3
+
+    :cond_2
+    if-nez v2, :cond_7
 
     .line 153
-    iget v7, p2, Lorg/telegram/tgnet/TLRPC$User;->color:I
+    :cond_3
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isFromChannel()Z
 
-    goto :goto_2
+    move-result v13
+
+    if-eqz v13, :cond_4
+
+    if-nez v3, :cond_7
+
+    .line 154
+    :cond_4
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isSponsored()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_5
+
+    iget-object v13, v1, Lorg/telegram/messenger/MessageObject;->sponsoredChatInvite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
+
+    instance-of v13, v13, Lorg/telegram/tgnet/TLRPC$TL_chatInvite;
+
+    if-nez v13, :cond_7
 
     .line 155
-    :cond_a
-    iget-wide p2, p2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    :cond_5
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isSponsored()Z
 
-    rem-long/2addr p2, v5
+    move-result v13
 
-    :goto_1
-    long-to-int v7, p2
+    if-eqz v13, :cond_6
 
-    goto :goto_2
+    iget-object v13, v1, Lorg/telegram/messenger/MessageObject;->sponsoredChatInvite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
 
-    .line 157
-    :cond_b
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isFromChannel()Z
+    if-eqz v13, :cond_6
 
-    move-result p2
+    iget-object v13, v13, Lorg/telegram/tgnet/TLRPC$ChatInvite;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    if-eqz p2, :cond_d
+    if-nez v13, :cond_7
 
-    if-eqz p3, :cond_d
+    :cond_6
+    iget-object v13, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 158
-    iget p2, p3, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
+    if-eqz v13, :cond_19
 
-    and-int/lit8 p2, p2, 0x40
+    iget-object v13, v13, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
 
-    if-eqz p2, :cond_c
+    if-eqz v13, :cond_19
 
-    .line 159
-    iget v7, p3, Lorg/telegram/tgnet/TLRPC$Chat;->color:I
+    iget-object v13, v13, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    goto :goto_2
+    if-eqz v13, :cond_19
 
-    .line 161
-    :cond_c
-    iget-wide p2, p3, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+    :cond_7
+    const/4 v13, 0x5
 
-    rem-long/2addr p2, v5
+    .line 160
+    iget v14, v1, Lorg/telegram/messenger/MessageObject;->overrideLinkColor:I
 
-    goto :goto_1
+    if-ltz v14, :cond_8
 
-    :cond_d
-    move v7, v0
+    goto/16 :goto_8
+
+    .line 162
+    :cond_8
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isSponsored()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_9
+
+    iget-object v14, v1, Lorg/telegram/messenger/MessageObject;->sponsoredChatInvite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
+
+    instance-of v15, v14, Lorg/telegram/tgnet/TLRPC$TL_chatInvite;
+
+    if-eqz v15, :cond_9
+
+    .line 163
+    iget v14, v14, Lorg/telegram/tgnet/TLRPC$ChatInvite;->color:I
+
+    goto/16 :goto_8
+
+    .line 164
+    :cond_9
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isSponsored()Z
+
+    move-result v14
+
+    if-eqz v14, :cond_b
+
+    iget-object v14, v1, Lorg/telegram/messenger/MessageObject;->sponsoredChatInvite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
+
+    if-eqz v14, :cond_b
+
+    iget-object v14, v14, Lorg/telegram/tgnet/TLRPC$ChatInvite;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
+
+    if-eqz v14, :cond_b
+
+    .line 165
+    iget v2, v14, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
+
+    and-int/lit8 v2, v2, 0x40
+
+    if-eqz v2, :cond_a
 
     .line 166
-    :goto_2
-    invoke-direct {p0, p1, v7, p4}, Lorg/telegram/ui/Components/ReplyMessageLine;->resolveColor(Lorg/telegram/messenger/MessageObject;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    iget v14, v14, Lorg/telegram/tgnet/TLRPC$Chat;->color:I
 
-    .line 167
-    iget p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
-
-    invoke-static {p2, v4}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
-
-    move-result p2
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
+    goto/16 :goto_8
 
     .line 168
-    iget p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+    :cond_a
+    iget-wide v2, v14, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
+    rem-long/2addr v2, v11
 
-    goto/16 :goto_7
+    :goto_1
+    long-to-int v14, v2
 
-    :cond_e
-    if-eqz p5, :cond_17
+    goto/16 :goto_8
 
-    .line 169
-    iget p2, p1, Lorg/telegram/messenger/MessageObject;->overrideLinkColor:I
+    .line 170
+    :cond_b
+    iget-object v14, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    if-gez p2, :cond_10
+    if-eqz v14, :cond_10
 
-    iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+    iget-object v14, v14, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
 
-    if-eqz p2, :cond_17
+    if-eqz v14, :cond_10
 
-    iget-object p3, p1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+    iget-object v14, v14, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    if-eqz p3, :cond_17
+    if-eqz v14, :cond_10
 
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
+    .line 171
+    invoke-static {v14}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
-    if-eqz p2, :cond_17
+    move-result-wide v2
 
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->reply_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
+    cmp-long v14, v2, v6
 
-    if-eqz p2, :cond_f
-
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_name:Ljava/lang/String;
+    if-gez v14, :cond_d
 
     .line 173
-    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    iget v14, v1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
-    move-result p2
+    invoke-static {v14}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    if-eqz p2, :cond_17
+    move-result-object v14
 
-    :cond_f
-    iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+    neg-long v2, v2
 
-    iget-object p3, p2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    if-eqz p3, :cond_17
+    move-result-object v2
 
-    iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
+    invoke-virtual {v14, v2}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
-    if-eqz p3, :cond_17
+    move-result-object v2
 
-    .line 176
-    invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->isFromUser()Z
+    if-eqz v2, :cond_f
 
-    move-result p2
+    .line 175
+    iget v3, v2, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
 
-    if-nez p2, :cond_10
+    and-int/lit8 v3, v3, 0x40
 
-    iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+    if-eqz v3, :cond_c
 
-    .line 177
-    invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->isFromChannel()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_17
-
-    .line 180
-    :cond_10
-    iget p2, p1, Lorg/telegram/messenger/MessageObject;->overrideLinkColor:I
-
-    if-ltz p2, :cond_11
-
-    goto/16 :goto_6
-
-    .line 182
-    :cond_11
-    iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->isFromUser()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_14
-
-    .line 183
-    iget p2, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
-
-    invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object p2
-
-    iget-object p3, p1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    iget-object p3, p3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    iget-wide v7, p3, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
-
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p3
-
-    invoke-virtual {p2, p3}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_16
-
-    .line 185
-    iget p3, p2, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
-
-    and-int/lit16 v7, p3, 0x80
-
-    if-eqz v7, :cond_12
-
-    iget v5, p2, Lorg/telegram/tgnet/TLRPC$User;->color:I
+    iget v2, v2, Lorg/telegram/tgnet/TLRPC$Chat;->color:I
 
     goto :goto_3
 
-    :cond_12
-    iget-wide v7, p2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    :cond_c
+    iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
-    rem-long/2addr v7, v5
+    rem-long/2addr v2, v11
 
-    long-to-int v5, v7
+    :goto_2
+    long-to-int v2, v2
 
     :goto_3
-    and-int/lit8 p3, p3, 0x40
-
-    if-eqz p3, :cond_13
-
-    .line 187
-    iget-wide p2, p2, Lorg/telegram/tgnet/TLRPC$User;->background_emoji_id:J
-
-    iput-wide p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
-
-    :cond_13
-    :goto_4
-    move p2, v5
-
-    goto :goto_6
-
-    .line 192
-    :cond_14
-    iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->isFromChannel()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_16
-
-    .line 193
-    iget p2, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
-
-    invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
-
-    move-result-object p2
-
-    iget-object p3, p1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
-
-    iget-object p3, p3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    iget-wide v7, p3, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
-
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object p3
-
-    invoke-virtual {p2, p3}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_16
-
-    .line 195
-    iget p3, p2, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
-
-    and-int/lit8 v7, p3, 0x40
-
-    if-eqz v7, :cond_15
-
-    iget v5, p2, Lorg/telegram/tgnet/TLRPC$Chat;->color:I
-
-    goto :goto_5
-
-    :cond_15
-    iget-wide v7, p2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
-
-    rem-long/2addr v7, v5
-
-    long-to-int v5, v7
-
-    :goto_5
-    and-int/lit8 p3, p3, 0x20
-
-    if-eqz p3, :cond_13
-
-    .line 197
-    iget-wide p2, p2, Lorg/telegram/tgnet/TLRPC$Chat;->background_emoji_id:J
-
-    iput-wide p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
+    move v13, v2
 
     goto :goto_4
 
-    :cond_16
-    move p2, v0
+    .line 178
+    :cond_d
+    iget v14, v1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
-    .line 205
+    invoke-static {v14}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v14
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    invoke-virtual {v14, v2}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_f
+
+    .line 180
+    iget v3, v2, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
+
+    and-int/lit16 v3, v3, 0x80
+
+    if-eqz v3, :cond_e
+
+    iget v2, v2, Lorg/telegram/tgnet/TLRPC$User;->color:I
+
+    goto :goto_3
+
+    :cond_e
+    iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    rem-long/2addr v2, v11
+
+    goto :goto_2
+
+    :cond_f
+    :goto_4
+    move v14, v13
+
+    goto/16 :goto_8
+
+    .line 183
+    :cond_10
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
+
+    move-result-wide v13
+
+    invoke-static {v13, v14}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
+
+    move-result v13
+
+    if-eqz v13, :cond_14
+
+    if-eqz v2, :cond_14
+
+    .line 184
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_11
+
+    iget v3, v1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
+
+    invoke-static {v3}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lorg/telegram/messenger/UserConfig;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object v3
+
+    goto :goto_5
+
+    :cond_11
+    move-object v3, v2
+
+    :goto_5
+    if-nez v3, :cond_12
+
+    goto :goto_6
+
+    :cond_12
+    move-object v2, v3
+
+    .line 186
     :goto_6
-    iget-object p3, p1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+    iget v3, v2, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
 
-    invoke-direct {p0, p3, p2, p4}, Lorg/telegram/ui/Components/ReplyMessageLine;->resolveColor(Lorg/telegram/messenger/MessageObject;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    and-int/lit16 v3, v3, 0x80
 
-    .line 206
-    iget p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+    if-eqz v3, :cond_13
 
-    invoke-static {p2, v4}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
-
-    move-result p2
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
-
-    .line 207
-    iget p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
+    .line 187
+    iget v2, v2, Lorg/telegram/tgnet/TLRPC$User;->color:I
 
     goto :goto_7
 
-    .line 209
-    :cond_17
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
+    .line 189
+    :cond_13
+    iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    .line 210
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
+    rem-long/2addr v2, v11
 
-    .line 211
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReplyLine:I
+    long-to-int v2, v2
 
-    invoke-static {p2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result p2
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
-
-    .line 212
-    invoke-static {p2, v4}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
-
-    move-result p2
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
-
-    .line 213
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReplyNameText:I
-
-    invoke-static {p2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result p2
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
-
-    .line 215
     :goto_7
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->shouldDrawWithoutBackground()Z
-
-    move-result p2
-
-    const/4 p3, 0x1
-
-    if-eqz p2, :cond_18
-
-    .line 216
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
-
-    .line 217
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
-
-    const/4 p2, -0x1
-
-    .line 218
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
-
-    .line 219
-    iput v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
-
-    .line 220
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_stickerReplyNameText:I
-
-    invoke-static {p2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result p2
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
-
-    goto :goto_c
-
-    .line 221
-    :cond_18
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
-
-    move-result p2
-
-    if-eqz p2, :cond_1e
-
-    .line 222
-    iget-boolean p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
-
-    if-nez p2, :cond_1a
-
-    iget-boolean p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
-
-    if-eqz p2, :cond_19
+    move v14, v2
 
     goto :goto_8
 
+    .line 191
+    :cond_14
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isFromUser()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_16
+
+    if-eqz v2, :cond_16
+
+    .line 192
+    iget v3, v2, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
+
+    and-int/lit16 v3, v3, 0x80
+
+    if-eqz v3, :cond_15
+
+    .line 193
+    iget v14, v2, Lorg/telegram/tgnet/TLRPC$User;->color:I
+
+    goto :goto_8
+
+    .line 195
+    :cond_15
+    iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    rem-long/2addr v2, v11
+
+    goto/16 :goto_1
+
+    .line 197
+    :cond_16
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isFromChannel()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_18
+
+    if-eqz v3, :cond_18
+
+    .line 198
+    iget v2, v3, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
+
+    and-int/lit8 v2, v2, 0x40
+
+    if-eqz v2, :cond_17
+
+    .line 199
+    iget v14, v3, Lorg/telegram/tgnet/TLRPC$Chat;->color:I
+
+    goto :goto_8
+
+    .line 201
+    :cond_17
+    iget-wide v2, v3, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    rem-long/2addr v2, v11
+
+    goto/16 :goto_1
+
+    :cond_18
+    move v14, v5
+
+    .line 206
+    :goto_8
+    invoke-direct {v0, v1, v14, v4}, Lorg/telegram/ui/Components/ReplyMessageLine;->resolveColor(Lorg/telegram/messenger/MessageObject;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 207
+    iget v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+
+    invoke-static {v2, v9}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
+
+    .line 208
+    iget v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
+
+    goto/16 :goto_e
+
     :cond_19
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyLine:I
+    if-eqz p5, :cond_26
+
+    .line 209
+    iget v3, v1, Lorg/telegram/messenger/MessageObject;->overrideLinkColor:I
+
+    if-gez v3, :cond_1b
+
+    iget-object v3, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    if-eqz v3, :cond_26
+
+    iget-object v13, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    if-eqz v13, :cond_26
+
+    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
+
+    if-eqz v3, :cond_26
+
+    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->reply_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
+
+    if-eqz v3, :cond_1a
+
+    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_name:Ljava/lang/String;
+
+    .line 213
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_26
+
+    :cond_1a
+    iget-object v3, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    iget-object v13, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    if-eqz v13, :cond_26
+
+    iget-object v13, v13, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    if-eqz v13, :cond_26
+
+    .line 216
+    invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isFromUser()Z
+
+    move-result v3
+
+    if-nez v3, :cond_1b
+
+    .line 217
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
+
+    move-result-wide v13
+
+    invoke-static {v13, v14}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
+
+    move-result v3
+
+    if-nez v3, :cond_1b
+
+    iget-object v3, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    .line 218
+    invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isFromChannel()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_26
+
+    .line 221
+    :cond_1b
+    sget-boolean v3, Lorg/telegram/messenger/SharedConfig;->isReplyColorsEnabled:Z
+
+    if-nez v3, :cond_1c
+
+    move v3, v10
+
+    goto/16 :goto_d
+
+    .line 224
+    :cond_1c
+    iget v3, v1, Lorg/telegram/messenger/MessageObject;->overrideLinkColor:I
+
+    if-ltz v3, :cond_1d
+
+    goto/16 :goto_d
+
+    .line 226
+    :cond_1d
+    iget-object v3, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
+
+    move-result-wide v13
+
+    invoke-static {v13, v14}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_21
+
+    .line 227
+    iget-object v3, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1e
+
+    iget-object v2, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    iget v2, v2, Lorg/telegram/messenger/MessageObject;->currentAccount:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lorg/telegram/messenger/UserConfig;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object v2
+
+    :cond_1e
+    if-eqz v2, :cond_25
+
+    .line 229
+    iget v3, v2, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
+
+    and-int/lit16 v13, v3, 0x80
+
+    if-eqz v13, :cond_1f
+
+    iget v11, v2, Lorg/telegram/tgnet/TLRPC$User;->color:I
 
     goto :goto_9
 
-    :cond_1a
-    :goto_8
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyLine2:I
+    :cond_1f
+    iget-wide v13, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    rem-long/2addr v13, v11
+
+    long-to-int v11, v13
 
     :goto_9
-    invoke-static {p2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    and-int/lit8 v3, v3, 0x40
 
-    move-result p2
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
-
-    .line 223
-    iget-boolean v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
-
-    if-eqz v5, :cond_1b
-
-    .line 224
-    iput-boolean p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->reversedOut:Z
-
-    const v5, 0x3e4ccccd    # 0.2f
-
-    .line 225
-    invoke-static {p2, v5}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
-
-    move-result p2
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
-
-    .line 226
-    iget p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
-
-    const/high16 v5, 0x3f000000    # 0.5f
-
-    invoke-static {p2, v5}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
-
-    move-result p2
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
-
-    goto :goto_a
-
-    .line 227
-    :cond_1b
-    iget-boolean v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
-
-    if-eqz v5, :cond_1c
-
-    .line 228
-    iput-boolean p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->reversedOut:Z
-
-    const v5, 0x3eb33333    # 0.35f
-
-    .line 229
-    invoke-static {p2, v5}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
-
-    move-result p2
-
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+    if-eqz v3, :cond_20
 
     .line 231
-    :cond_1c
+    iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$User;->background_emoji_id:J
+
+    iput-wide v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
+
+    :cond_20
     :goto_a
-    iget p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
+    move v3, v11
 
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
+    goto/16 :goto_d
 
-    move-result v5
+    .line 236
+    :cond_21
+    iget-object v2, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    if-eqz v5, :cond_1d
+    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isFromUser()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_23
+
+    .line 237
+    iget v2, v1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v2
+
+    iget-object v3, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    iget-object v3, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    iget-wide v13, v3, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
+
+    invoke-static {v13, v14}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_25
+
+    .line 239
+    iget v3, v2, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
+
+    and-int/lit16 v13, v3, 0x80
+
+    if-eqz v13, :cond_22
+
+    iget v11, v2, Lorg/telegram/tgnet/TLRPC$User;->color:I
 
     goto :goto_b
 
-    :cond_1d
-    move v3, v4
+    :cond_22
+    iget-wide v13, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
+
+    rem-long/2addr v13, v11
+
+    long-to-int v11, v13
 
     :goto_b
-    invoke-static {p2, v3}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+    and-int/lit8 v3, v3, 0x40
 
-    move-result p2
+    if-eqz v3, :cond_20
 
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
+    .line 241
+    iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$User;->background_emoji_id:J
 
-    .line 232
-    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyNameText:I
+    iput-wide v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
 
-    invoke-static {p2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    goto :goto_a
 
-    move-result p2
+    .line 246
+    :cond_23
+    iget-object v2, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    iput p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
+    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isFromChannel()Z
 
-    :cond_1e
+    move-result v2
+
+    if-eqz v2, :cond_25
+
+    .line 247
+    iget v2, v1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v2
+
+    iget-object v3, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
+
+    iget-object v3, v3, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    iget-wide v13, v3, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
+
+    invoke-static {v13, v14}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_25
+
+    .line 249
+    iget v3, v2, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
+
+    and-int/lit8 v13, v3, 0x40
+
+    if-eqz v13, :cond_24
+
+    iget v11, v2, Lorg/telegram/tgnet/TLRPC$Chat;->color:I
+
+    goto :goto_c
+
+    :cond_24
+    iget-wide v13, v2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
+
+    rem-long/2addr v13, v11
+
+    long-to-int v11, v13
+
     :goto_c
-    if-eqz p5, :cond_1f
+    and-int/lit8 v3, v3, 0x20
 
-    .line 234
-    iget-wide p1, p1, Lorg/telegram/messenger/MessageObject;->overrideLinkEmoji:J
+    if-eqz v3, :cond_20
 
-    const-wide/16 p4, -0x1
+    .line 251
+    iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$Chat;->background_emoji_id:J
 
-    cmp-long p4, p1, p4
+    iput-wide v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
 
-    if-eqz p4, :cond_1f
+    goto :goto_a
 
-    .line 235
-    iput-wide p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
+    :cond_25
+    move v3, v5
 
-    .line 237
-    :cond_1f
-    iget-wide p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
-
-    cmp-long p1, p1, v1
-
-    if-eqz p1, :cond_21
-
-    iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
-
-    if-nez p1, :cond_21
-
-    .line 238
-    new-instance p1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
-
-    iget-object p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->parentView:Landroid/view/View;
-
-    const/16 p4, 0x14
-
-    invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p4
-
-    const/16 p5, 0xd
-
-    invoke-direct {p1, p2, v0, p4, p5}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;-><init>(Landroid/view/View;ZII)V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
-
-    .line 239
-    iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->parentView:Landroid/view/View;
-
-    instance-of p2, p1, Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    if-eqz p2, :cond_20
-
-    check-cast p1, Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->isCellAttachedToWindow()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_21
-
-    goto :goto_d
-
-    :cond_20
-    invoke-virtual {p1}, Landroid/view/View;->isAttachedToWindow()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_21
-
-    .line 240
+    .line 259
     :goto_d
-    iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+    iget-object v2, v1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->attach()V
+    invoke-direct {v0, v2, v3, v4}, Lorg/telegram/ui/Components/ReplyMessageLine;->resolveColor(Lorg/telegram/messenger/MessageObject;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 243
-    :cond_21
-    iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+    .line 260
+    iget v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
 
-    if-eqz p1, :cond_22
+    invoke-static {v2, v9}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
-    .line 244
-    iget-wide p4, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
+    move-result v2
 
-    invoke-virtual {p1, p4, p5, p3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)Z
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
 
-    move-result p1
+    .line 261
+    iget v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
 
-    if-eqz p1, :cond_22
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
 
-    .line 245
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiLoaded:Z
+    goto :goto_e
 
-    .line 248
-    :cond_22
-    iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColorAnimated:Lorg/telegram/ui/Components/AnimatedColor;
+    .line 263
+    :cond_26
+    iput-boolean v5, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
 
-    iget p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
+    .line 264
+    iput-boolean v5, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
 
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AnimatedColor;->set(I)I
+    .line 265
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReplyLine:I
 
-    move-result p1
+    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    return p1
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+
+    .line 266
+    invoke-static {v2, v9}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
+
+    .line 267
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReplyNameText:I
+
+    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
+
+    .line 269
+    :goto_e
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->shouldDrawWithoutBackground()Z
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_27
+
+    .line 270
+    iput-boolean v5, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
+
+    .line 271
+    iput-boolean v5, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
+
+    .line 272
+    iput v10, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
+
+    iput v10, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
+
+    iput v10, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+
+    .line 273
+    iput v5, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
+
+    .line 274
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_stickerReplyNameText:I
+
+    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
+
+    goto :goto_13
+
+    .line 275
+    :cond_27
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2d
+
+    .line 276
+    iget-boolean v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
+
+    if-nez v2, :cond_29
+
+    iget-boolean v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
+
+    if-eqz v2, :cond_28
+
+    goto :goto_f
+
+    :cond_28
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyLine:I
+
+    goto :goto_10
+
+    :cond_29
+    :goto_f
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyLine2:I
+
+    :goto_10
+    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+
+    .line 277
+    iget-boolean v10, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
+
+    if-eqz v10, :cond_2a
+
+    .line 278
+    iput-boolean v3, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->reversedOut:Z
+
+    const v10, 0x3e4ccccd    # 0.2f
+
+    .line 279
+    invoke-static {v2, v10}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+
+    .line 280
+    iget v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
+
+    const/high16 v10, 0x3f000000    # 0.5f
+
+    invoke-static {v2, v10}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
+
+    goto :goto_11
+
+    .line 281
+    :cond_2a
+    iget-boolean v10, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
+
+    if-eqz v10, :cond_2b
+
+    .line 282
+    iput-boolean v3, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->reversedOut:Z
+
+    const v10, 0x3eb33333    # 0.35f
+
+    .line 283
+    invoke-static {v2, v10}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
+
+    .line 285
+    :cond_2b
+    :goto_11
+    iget v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3:I
+
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isCurrentThemeDark()Z
+
+    move-result v10
+
+    if-eqz v10, :cond_2c
+
+    goto :goto_12
+
+    :cond_2c
+    move v8, v9
+
+    :goto_12
+    invoke-static {v2, v8}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
+
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
+
+    .line 286
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyNameText:I
+
+    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result v2
+
+    iput v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
+
+    :cond_2d
+    :goto_13
+    if-eqz p5, :cond_2e
+
+    .line 288
+    iget-wide v1, v1, Lorg/telegram/messenger/MessageObject;->overrideLinkEmoji:J
+
+    const-wide/16 v8, -0x1
+
+    cmp-long v4, v1, v8
+
+    if-eqz v4, :cond_2e
+
+    .line 289
+    iput-wide v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
+
+    .line 291
+    :cond_2e
+    iget-wide v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
+
+    cmp-long v1, v1, v6
+
+    if-eqz v1, :cond_30
+
+    iget-object v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+
+    if-nez v1, :cond_30
+
+    .line 292
+    new-instance v1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+
+    iget-object v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->parentView:Landroid/view/View;
+
+    const/16 v4, 0x14
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    const/16 v6, 0xd
+
+    invoke-direct {v1, v2, v5, v4, v6}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;-><init>(Landroid/view/View;ZII)V
+
+    iput-object v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+
+    .line 293
+    iget-object v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->parentView:Landroid/view/View;
+
+    instance-of v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    if-eqz v2, :cond_2f
+
+    check-cast v1, Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->isCellAttachedToWindow()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_30
+
+    goto :goto_14
+
+    :cond_2f
+    invoke-virtual {v1}, Landroid/view/View;->isAttachedToWindow()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_30
+
+    .line 294
+    :goto_14
+    iget-object v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->attach()V
+
+    .line 297
+    :cond_30
+    iget-object v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+
+    if-eqz v1, :cond_31
+
+    .line 298
+    iget-wide v6, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiDocumentId:J
+
+    invoke-virtual {v1, v6, v7, v3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_31
+
+    .line 299
+    iput-boolean v5, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiLoaded:Z
+
+    .line 302
+    :cond_31
+    iget-object v1, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColorAnimated:Lorg/telegram/ui/Components/AnimatedColor;
+
+    iget v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AnimatedColor;->set(I)I
+
+    move-result v1
+
+    return v1
 .end method
 
 .method public drawBackground(Landroid/graphics/Canvas;Landroid/graphics/RectF;FFFF)V
@@ -1611,7 +1982,7 @@
 
     move v6, p6
 
-    .line 380
+    .line 432
     invoke-virtual/range {v0 .. v8}, Lorg/telegram/ui/Components/ReplyMessageLine;->drawBackground(Landroid/graphics/Canvas;Landroid/graphics/RectF;FFFFZZ)V
 
     return-void
@@ -1620,7 +1991,7 @@
 .method public drawBackground(Landroid/graphics/Canvas;Landroid/graphics/RectF;FFFFZZ)V
     .locals 6
 
-    .line 384
+    .line 436
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
 
     sget v1, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
@@ -1661,7 +2032,7 @@
 
     aput p3, v0, v1
 
-    .line 385
+    .line 437
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
 
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -1678,7 +2049,7 @@
 
     aput p4, p3, v0
 
-    .line 386
+    .line 438
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
 
     invoke-static {p5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -1695,7 +2066,7 @@
 
     aput p4, p3, v0
 
-    .line 387
+    .line 439
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
 
     sget p4, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
@@ -1746,7 +2117,7 @@
 
     move v5, p8
 
-    .line 388
+    .line 440
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Components/ReplyMessageLine;->drawBackground(Landroid/graphics/Canvas;Landroid/graphics/RectF;FZZ)V
 
     return-void
@@ -1763,12 +2134,12 @@
 
     if-nez p5, :cond_0
 
-    .line 414
+    .line 466
     iget-object v3, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundPath:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->rewind()V
 
-    .line 415
+    .line 467
     iget-object v3, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundPath:Landroid/graphics/Path;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
@@ -1777,7 +2148,7 @@
 
     invoke-virtual {v3, v2, v4, v5}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 417
+    .line 469
     iget-object v3, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundPaint:Landroid/graphics/Paint;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColorAnimated:Lorg/telegram/ui/Components/AnimatedColor;
@@ -1790,7 +2161,7 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 418
+    .line 470
     iget-object v3, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v3}, Landroid/graphics/Paint;->getAlpha()I
@@ -1805,20 +2176,20 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 419
+    .line 471
     iget-object v3, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundPath:Landroid/graphics/Path;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3, v4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 422
+    .line 474
     :cond_0
     iget-object v3, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     if-eqz v3, :cond_6
 
-    .line 423
+    .line 475
     iget-object v3, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emojiLoadedT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/ReplyMessageLine;->isEmojiLoaded()Z
@@ -1835,12 +2206,14 @@
 
     if-lez v4, :cond_6
 
-    .line 426
+    .line 478
     iget-object v4, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->iconCoords:[Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
     const/high16 v6, 0x3f000000    # 0.5f
 
-    const/4 v7, 0x0
+    const v7, 0x3e99999a    # 0.3f
+
+    const/4 v8, 0x0
 
     if-nez v4, :cond_1
 
@@ -1848,48 +2221,48 @@
 
     new-array v4, v4, [Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
-    .line 427
-    new-instance v8, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
+    .line 479
+    new-instance v9, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
-    const/high16 v9, 0x40800000    # 4.0f
+    const/high16 v10, 0x40800000    # 4.0f
 
-    const v10, -0x3f3570a4    # -6.33f
+    const v11, -0x3f3570a4    # -6.33f
 
-    const/high16 v11, 0x3f800000    # 1.0f
+    const/high16 v12, 0x3f800000    # 1.0f
 
-    invoke-direct {v8, v9, v10, v11, v11}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
+    invoke-direct {v9, v10, v11, v12, v12}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
 
-    aput-object v8, v4, v7
-
-    new-instance v8, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
-
-    const/high16 v9, 0x41f00000    # 30.0f
-
-    const/high16 v10, 0x40400000    # 3.0f
-
-    const v12, 0x3f47ae14    # 0.78f
-
-    const v13, 0x3f666666    # 0.9f
-
-    invoke-direct {v8, v9, v10, v12, v13}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
-
-    const/4 v9, 0x1
-
-    aput-object v8, v4, v9
-
-    const/4 v8, 0x2
+    aput-object v9, v4, v8
 
     new-instance v9, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
-    const/high16 v10, 0x42380000    # 46.0f
+    const/high16 v10, 0x41f00000    # 30.0f
 
-    const/high16 v14, -0x3e780000    # -17.0f
+    const/high16 v11, 0x40400000    # 3.0f
 
-    const v15, 0x3f19999a    # 0.6f
+    const v13, 0x3f47ae14    # 0.78f
 
-    invoke-direct {v9, v10, v14, v15, v15}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
+    const v14, 0x3f666666    # 0.9f
 
-    aput-object v9, v4, v8
+    invoke-direct {v9, v10, v11, v13, v14}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
+
+    const/4 v10, 0x1
+
+    aput-object v9, v4, v10
+
+    const/4 v9, 0x2
+
+    new-instance v10, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
+
+    const/high16 v11, 0x42380000    # 46.0f
+
+    const/high16 v15, -0x3e780000    # -17.0f
+
+    const v8, 0x3f19999a    # 0.6f
+
+    invoke-direct {v10, v11, v15, v8, v8}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
+
+    aput-object v10, v4, v9
 
     const/4 v8, 0x3
 
@@ -1897,13 +2270,13 @@
 
     const v10, 0x428b51ec    # 69.66f
 
-    const v14, -0x40d58106    # -0.666f
+    const v11, -0x40d58106    # -0.666f
 
     const v15, 0x3f5eb852    # 0.87f
 
-    const v7, 0x3f333333    # 0.7f
+    const v5, 0x3f333333    # 0.7f
 
-    invoke-direct {v9, v10, v14, v15, v7}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
+    invoke-direct {v9, v10, v11, v15, v5}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
 
     aput-object v9, v4, v8
 
@@ -1913,45 +2286,43 @@
 
     const/high16 v10, 0x42d60000    # 107.0f
 
-    const v14, -0x3eb66666    # -12.6f
+    const v11, -0x3eb66666    # -12.6f
 
     const v15, 0x3f83d70a    # 1.03f
 
-    const v5, 0x3e99999a    # 0.3f
-
-    invoke-direct {v9, v10, v14, v15, v5}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
+    invoke-direct {v9, v10, v11, v15, v7}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
 
     aput-object v9, v4, v8
 
-    const/4 v5, 0x5
+    const/4 v8, 0x5
 
-    new-instance v8, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
+    new-instance v9, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
-    const/high16 v9, 0x424c0000    # 51.0f
+    const/high16 v10, 0x424c0000    # 51.0f
 
-    const/high16 v10, 0x41c00000    # 24.0f
+    const/high16 v11, 0x41c00000    # 24.0f
 
-    invoke-direct {v8, v9, v10, v11, v6}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
+    invoke-direct {v9, v10, v11, v12, v6}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
 
-    aput-object v8, v4, v5
+    aput-object v9, v4, v8
 
-    const/4 v5, 0x6
+    const/4 v8, 0x6
 
-    new-instance v8, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
+    new-instance v9, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
-    const v9, 0x40ca8f5c    # 6.33f
+    const v10, 0x40ca8f5c    # 6.33f
 
-    const/high16 v10, 0x41a00000    # 20.0f
+    const/high16 v11, 0x41a00000    # 20.0f
 
-    const v14, 0x3f451eb8    # 0.77f
+    const v15, 0x3f451eb8    # 0.77f
 
-    invoke-direct {v8, v9, v10, v14, v7}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
+    invoke-direct {v9, v10, v11, v15, v5}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
 
-    aput-object v8, v4, v5
+    aput-object v9, v4, v8
 
     const/4 v5, 0x7
 
-    new-instance v7, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
+    new-instance v8, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
     const/high16 v17, -0x3e680000    # -19.0f
 
@@ -1963,27 +2334,27 @@
 
     const/16 v21, 0x1
 
-    move-object/from16 v16, v7
+    move-object/from16 v16, v8
 
     invoke-direct/range {v16 .. v21}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFFZ)V
 
-    aput-object v7, v4, v5
+    aput-object v8, v4, v5
 
     const/16 v5, 0x8
 
-    new-instance v7, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
+    new-instance v8, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
-    const/high16 v8, 0x41d00000    # 26.0f
+    const/high16 v9, 0x41d00000    # 26.0f
 
-    const/high16 v9, 0x42280000    # 42.0f
+    const/high16 v10, 0x42280000    # 42.0f
 
-    invoke-direct {v7, v8, v9, v12, v13}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
+    invoke-direct {v8, v9, v10, v13, v14}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
 
-    aput-object v7, v4, v5
+    aput-object v8, v4, v5
 
     const/16 v5, 0x9
 
-    new-instance v7, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
+    new-instance v8, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
     const/high16 v17, -0x3e500000    # -22.0f
 
@@ -1993,36 +2364,36 @@
 
     const/high16 v20, 0x3f000000    # 0.5f
 
-    move-object/from16 v16, v7
+    move-object/from16 v16, v8
 
     invoke-direct/range {v16 .. v21}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFFZ)V
 
-    aput-object v7, v4, v5
+    aput-object v8, v4, v5
 
     new-instance v5, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
-    const/high16 v7, -0x40800000    # -1.0f
+    const/high16 v8, -0x40800000    # -1.0f
 
-    const/high16 v8, 0x42400000    # 48.0f
+    const/high16 v9, 0x42400000    # 48.0f
 
-    const v9, 0x3ecccccd    # 0.4f
+    const v10, 0x3ecccccd    # 0.4f
 
-    invoke-direct {v5, v7, v8, v11, v9}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
+    invoke-direct {v5, v8, v9, v12, v10}, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;-><init>(FFFF)V
 
-    const/16 v7, 0xa
+    const/16 v8, 0xa
 
-    aput-object v5, v4, v7
+    aput-object v5, v4, v8
 
     iput-object v4, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->iconCoords:[Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
-    .line 442
+    .line 494
     :cond_1
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 443
+    .line 495
     invoke-virtual/range {p1 .. p2}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
 
-    .line 445
+    .line 497
     iget v4, v2, Landroid/graphics/RectF;->right:F
 
     const/16 v5, 0xf
@@ -2047,7 +2418,7 @@
 
     const/16 v5, 0xc
 
-    .line 447
+    .line 499
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -2056,53 +2427,15 @@
 
     sub-float/2addr v4, v5
 
-    .line 449
+    .line 501
     :cond_2
     invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->centerY()F
 
     move-result v5
 
-    iget v7, v2, Landroid/graphics/RectF;->top:F
+    iget v8, v2, Landroid/graphics/RectF;->top:F
 
-    const/16 v8, 0x15
-
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v8
-
-    int-to-float v8, v8
-
-    add-float/2addr v7, v8
-
-    invoke-static {v5, v7}, Ljava/lang/Math;->min(FF)F
-
-    move-result v5
-
-    .line 451
-    iget-object v7, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
-
-    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ReplyMessageLine;->getColor()I
-
-    move-result v8
-
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->setColor(Ljava/lang/Integer;)V
-
-    .line 452
-    iget-object v7, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
-
-    const/high16 v8, 0x437f0000    # 255.0f
-
-    mul-float v8, v8, p3
-
-    invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->width()F
-
-    move-result v2
-
-    const/16 v9, 0x8c
+    const/16 v9, 0x15
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -2110,33 +2443,71 @@
 
     int-to-float v9, v9
 
-    cmpg-float v2, v2, v9
+    add-float/2addr v8, v9
+
+    invoke-static {v5, v8}, Ljava/lang/Math;->min(FF)F
+
+    move-result v5
+
+    .line 503
+    iget-object v8, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+
+    invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ReplyMessageLine;->getColor()I
+
+    move-result v9
+
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v9
+
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->setColor(Ljava/lang/Integer;)V
+
+    .line 504
+    iget-object v8, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+
+    const/high16 v9, 0x437f0000    # 255.0f
+
+    mul-float v9, v9, p3
+
+    invoke-virtual/range {p2 .. p2}, Landroid/graphics/RectF;->width()F
+
+    move-result v2
+
+    const/16 v10, 0x8c
+
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v10
+
+    int-to-float v10, v10
+
+    cmpg-float v2, v2, v10
 
     if-gez v2, :cond_3
 
-    const v6, 0x3e8a3d71    # 0.27f
+    move v6, v7
 
     :cond_3
-    mul-float/2addr v8, v6
+    mul-float/2addr v9, v6
 
-    float-to-int v2, v8
+    float-to-int v2, v9
 
-    invoke-virtual {v7, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->setAlpha(I)V
+    invoke-virtual {v8, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->setAlpha(I)V
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
-    .line 453
+    .line 505
     :goto_0
     iget-object v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->iconCoords:[Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;
 
     array-length v6, v2
 
-    if-ge v7, v6, :cond_5
+    if-ge v8, v6, :cond_5
 
-    .line 454
-    aget-object v2, v2, v7
+    .line 506
+    aget-object v2, v2, v8
 
-    .line 455
+    .line 507
     iget-boolean v6, v2, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;->q:Z
 
     if-eqz v6, :cond_4
@@ -2147,21 +2518,21 @@
 
     goto :goto_1
 
-    .line 458
+    .line 510
     :cond_4
     iget-object v6, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    const/high16 v8, 0x42990000    # 76.5f
+    const/high16 v7, 0x42990000    # 76.5f
 
     iget v9, v2, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;->a:F
 
-    mul-float/2addr v9, v8
+    mul-float/2addr v9, v7
 
-    float-to-int v8, v9
+    float-to-int v7, v9
 
-    invoke-virtual {v6, v8}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->setAlpha(I)V
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->setAlpha(I)V
 
-    .line 459
+    .line 511
     iget v6, v2, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;->x:F
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -2172,20 +2543,20 @@
 
     sub-float v6, v4, v6
 
-    .line 460
-    iget v8, v2, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;->y:F
+    .line 512
+    iget v7, v2, Lorg/telegram/ui/Components/ReplyMessageLine$IconCoords;->y:F
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v8
+    move-result v7
 
-    int-to-float v8, v8
+    int-to-float v7, v7
 
-    add-float/2addr v8, v5
+    add-float/2addr v7, v5
 
     const/16 v9, 0xa
 
-    .line 461
+    .line 513
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -2198,14 +2569,14 @@
 
     mul-float/2addr v10, v3
 
-    .line 462
+    .line 514
     iget-object v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     sub-float v11, v6, v10
 
     float-to-int v11, v11
 
-    sub-float v12, v8, v10
+    sub-float v12, v7, v10
 
     float-to-int v12, v12
 
@@ -2213,23 +2584,23 @@
 
     float-to-int v6, v6
 
-    add-float/2addr v8, v10
+    add-float/2addr v7, v10
 
-    float-to-int v8, v8
+    float-to-int v7, v7
 
-    invoke-virtual {v2, v11, v12, v6, v8}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v2, v11, v12, v6, v7}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 463
+    .line 515
     iget-object v2, v0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->draw(Landroid/graphics/Canvas;)V
 
     :goto_1
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
-    .line 466
+    .line 518
     :cond_5
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -2242,7 +2613,7 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 292
+    .line 346
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/Components/ReplyMessageLine;->drawLine(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
 
     return-void
@@ -2251,15 +2622,15 @@
 .method public drawLine(Landroid/graphics/Canvas;Landroid/graphics/RectF;F)V
     .locals 11
 
-    .line 296
+    .line 350
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 298
+    .line 352
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->clipPath:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 299
+    .line 353
     sget v0, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
 
     int-to-float v0, v0
@@ -2276,7 +2647,7 @@
 
     double-to-int v0, v0
 
-    .line 300
+    .line 354
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->rectF:Landroid/graphics/RectF;
 
     iget v2, p2, Landroid/graphics/RectF;->left:F
@@ -2307,7 +2678,7 @@
 
     invoke-virtual {v1, v2, v3, v5, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 301
+    .line 355
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->clipPath:Landroid/graphics/Path;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->rectF:Landroid/graphics/RectF;
@@ -2328,12 +2699,12 @@
 
     invoke-virtual {v1, v2, v3, v0, v5}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 302
+    .line 356
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->clipPath:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 303
+    .line 357
     iget v0, p2, Landroid/graphics/RectF;->left:F
 
     iget v1, p2, Landroid/graphics/RectF;->top:F
@@ -2350,7 +2721,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 305
+    .line 359
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1Paint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1Animated:Lorg/telegram/ui/Components/AnimatedColor;
@@ -2367,7 +2738,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 306
+    .line 360
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Paint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Animated:Lorg/telegram/ui/Components/AnimatedColor;
@@ -2384,7 +2755,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 307
+    .line 361
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Paint:Landroid/graphics/Paint;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Animated:Lorg/telegram/ui/Components/AnimatedColor;
@@ -2401,7 +2772,7 @@
 
     invoke-virtual {v0, p3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 310
+    .line 364
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loadingStateT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loading:Z
@@ -2418,22 +2789,22 @@
 
     if-lez v1, :cond_0
 
-    .line 311
+    .line 365
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
 
     if-nez v1, :cond_0
 
-    .line 312
+    .line 366
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 315
+    .line 369
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1Paint:Landroid/graphics/Paint;
 
     invoke-virtual {v1}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v1
 
-    .line 316
+    .line 370
     iget-object v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1Paint:Landroid/graphics/Paint;
 
     int-to-float v4, v1
@@ -2446,25 +2817,20 @@
 
     invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 317
+    .line 371
     iget-object v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1Paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->drawPaint(Landroid/graphics/Paint;)V
 
-    .line 318
+    .line 372
     iget-object v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1Paint:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 320
-    iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lineClipPath:Landroid/graphics/Path;
-
-    invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
-
-    .line 322
+    .line 374
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReplyMessageLine;->incrementLoadingT()V
 
-    .line 324
+    .line 376
     iget v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loadingT:F
 
     const/high16 v3, 0x43700000    # 240.0f
@@ -2489,7 +2855,7 @@
 
     const/high16 v3, 0x3f000000    # 0.5f
 
-    .line 325
+    .line 377
     invoke-static {v1, v3}, Ljava/lang/Math;->max(FF)F
 
     move-result v4
@@ -2518,19 +2884,19 @@
 
     mul-float/2addr v1, v3
 
-    .line 326
+    .line 378
     invoke-static {v1, v0, v7}, Landroidx/core/math/MathUtils;->clamp(FFF)F
 
     move-result v1
 
-    .line 328
+    .line 380
     iget-object v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->rectF:Landroid/graphics/RectF;
 
     iget v5, p2, Landroid/graphics/RectF;->left:F
 
     iget v6, p2, Landroid/graphics/RectF;->top:F
 
-    .line 330
+    .line 382
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
 
     move-result v8
@@ -2555,7 +2921,7 @@
 
     const/4 v8, 0x6
 
-    .line 331
+    .line 383
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -2566,7 +2932,7 @@
 
     iget v8, p2, Landroid/graphics/RectF;->top:F
 
-    .line 332
+    .line 384
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
 
     move-result v9
@@ -2587,15 +2953,15 @@
 
     add-float/2addr v8, v9
 
-    .line 328
+    .line 380
     invoke-virtual {v3, v5, v6, v4, v8}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 334
+    .line 386
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lineClipPath:Landroid/graphics/Path;
 
     invoke-virtual {p3}, Landroid/graphics/Path;->rewind()V
 
-    .line 335
+    .line 387
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lineClipPath:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->rectF:Landroid/graphics/RectF;
@@ -2618,14 +2984,14 @@
 
     invoke-virtual {p3, v1, v4, v3, v5}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 336
+    .line 388
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->lineClipPath:Landroid/graphics/Path;
 
     invoke-virtual {p1, p3}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
     const/4 p3, 0x1
 
-    .line 339
+    .line 391
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->parentView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->invalidate()V
@@ -2635,13 +3001,13 @@
     :cond_0
     move p3, v2
 
-    .line 342
+    .line 393
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1Paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->drawPaint(Landroid/graphics/Paint;)V
 
-    .line 343
+    .line 394
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Alpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
@@ -2654,20 +3020,20 @@
 
     if-lez v3, :cond_3
 
-    .line 345
+    .line 396
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 346
+    .line 397
     iget v3, p2, Landroid/graphics/RectF;->left:F
 
     iget v4, p2, Landroid/graphics/RectF;->top:F
 
     invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 347
+    .line 398
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReplyMessageLine;->incrementLoadingT()V
 
-    .line 349
+    .line 400
     iget-object v3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Alpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
@@ -2676,12 +3042,12 @@
 
     move-result v3
 
-    .line 351
+    .line 402
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor3:Z
 
     if-eqz v4, :cond_1
 
-    .line 352
+    .line 403
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
 
     move-result v4
@@ -2704,7 +3070,7 @@
 
     goto :goto_1
 
-    .line 354
+    .line 405
     :cond_1
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
 
@@ -2731,8 +3097,22 @@
 
     sub-float/2addr v4, v5
 
-    .line 356
+    .line 408
     iget v5, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loadingTranslationT:F
+
+    iget-object v6, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->switchStateT:Lorg/telegram/ui/Components/AnimatedFloat;
+
+    iget v7, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->switchedCount:I
+
+    mul-int/lit16 v7, v7, 0x1a9
+
+    int-to-float v7, v7
+
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
+
+    move-result v6
+
+    add-float/2addr v5, v6
 
     iget-boolean v6, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->reversedOut:Z
 
@@ -2765,7 +3145,7 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 358
+    .line 410
     invoke-virtual {p2}, Landroid/graphics/RectF;->height()F
 
     move-result p2
@@ -2776,14 +3156,14 @@
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ReplyMessageLine;->checkColorPathes(F)V
 
-    .line 359
+    .line 411
     iget-object p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Paint:Landroid/graphics/Paint;
 
     invoke-virtual {p2}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result p2
 
-    .line 360
+    .line 412
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Paint:Landroid/graphics/Paint;
 
     int-to-float v2, p2
@@ -2794,26 +3174,26 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 361
+    .line 413
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 362
+    .line 414
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 364
+    .line 416
     iget-object p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Paint:Landroid/graphics/Paint;
 
     invoke-virtual {p2}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result p2
 
-    .line 365
+    .line 417
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Paint:Landroid/graphics/Paint;
 
     int-to-float v1, p2
@@ -2824,28 +3204,28 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 366
+    .line 418
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 367
+    .line 419
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color3Paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 369
+    .line 421
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3
     if-eqz p3, :cond_4
 
-    .line 373
+    .line 425
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 376
+    .line 428
     :cond_4
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -2855,7 +3235,7 @@
 .method public drawLoadingBackground(Landroid/graphics/Canvas;Landroid/graphics/RectF;FFFF)V
     .locals 5
 
-    .line 486
+    .line 538
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
 
     sget v1, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
@@ -2896,7 +3276,7 @@
 
     aput p3, v0, v3
 
-    .line 487
+    .line 539
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
 
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -2913,7 +3293,7 @@
 
     aput p4, p3, v0
 
-    .line 488
+    .line 540
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
 
     invoke-static {p5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -2930,7 +3310,7 @@
 
     aput p4, p3, v0
 
-    .line 489
+    .line 541
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
 
     sget p4, Lorg/telegram/messenger/SharedConfig;->bubbleRadius:I
@@ -2969,7 +3349,7 @@
 
     aput p4, p3, p5
 
-    .line 491
+    .line 543
     iget-boolean p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loading:Z
 
     if-nez p3, :cond_1
@@ -2986,49 +3366,49 @@
 
     goto :goto_0
 
-    .line 514
+    .line 566
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     if-eqz p1, :cond_3
 
-    .line 515
+    .line 567
     invoke-virtual {p1}, Lorg/telegram/ui/Components/LoadingDrawable;->reset()V
 
     goto :goto_1
 
-    .line 492
+    .line 544
     :cond_1
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     if-nez p3, :cond_2
 
-    .line 493
+    .line 545
     new-instance p3, Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-direct {p3}, Lorg/telegram/ui/Components/LoadingDrawable;-><init>()V
 
     iput-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
-    .line 494
+    .line 546
     invoke-virtual {p3, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setAppearByGradient(Z)V
 
-    .line 495
+    .line 547
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     const/high16 p4, 0x40600000    # 3.5f
 
     invoke-virtual {p3, p4}, Lorg/telegram/ui/Components/LoadingDrawable;->setGradientScale(F)V
 
-    .line 496
+    .line 548
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     const/high16 p4, 0x3f000000    # 0.5f
 
     invoke-virtual {p3, p4}, Lorg/telegram/ui/Components/LoadingDrawable;->setSpeed(F)V
 
-    .line 499
+    .line 551
     :cond_2
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
@@ -3036,7 +3416,7 @@
 
     const p5, 0x3dcccccd    # 0.1f
 
-    .line 500
+    .line 552
     invoke-static {p4, p5}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result p4
@@ -3045,14 +3425,14 @@
 
     const v0, 0x3e99999a    # 0.3f
 
-    .line 501
+    .line 553
     invoke-static {p5, v0}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result p5
 
     iget v2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
 
-    .line 502
+    .line 554
     invoke-static {v2, v0}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result v0
@@ -3061,27 +3441,27 @@
 
     const/high16 v3, 0x3fa00000    # 1.25f
 
-    .line 503
+    .line 555
     invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result v2
 
-    .line 499
+    .line 551
     invoke-virtual {p3, p4, p5, v0, v2}, Lorg/telegram/ui/Components/LoadingDrawable;->setColors(IIII)V
 
-    .line 506
+    .line 558
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {p3, p2}, Lorg/telegram/ui/Components/LoadingDrawable;->setBounds(Landroid/graphics/RectF;)V
 
-    .line 507
+    .line 559
     iget-object p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     iget-object p3, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->radii:[F
 
     invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/LoadingDrawable;->setRadii([F)V
 
-    .line 508
+    .line 560
     iget-object p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/LoadingDrawable;->strokePaint:Landroid/graphics/Paint;
@@ -3094,7 +3474,7 @@
 
     invoke-virtual {p2, p3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 510
+    .line 562
     iget-object p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     const/high16 p3, 0x437f0000    # 255.0f
@@ -3105,12 +3485,12 @@
 
     invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/LoadingDrawable;->setAlpha(I)V
 
-    .line 511
+    .line 563
     iget-object p2, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/LoadingDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 513
+    .line 565
     iget-object p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->parentView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -3123,7 +3503,7 @@
 .method public getBackgroundColor()I
     .locals 1
 
-    .line 94
+    .line 98
     iget v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
 
     return v0
@@ -3132,7 +3512,7 @@
 .method public getColor()I
     .locals 1
 
-    .line 90
+    .line 94
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->reversedOut:Z
 
     if-eqz v0, :cond_0
@@ -3151,7 +3531,7 @@
 .method public resetAnimation()V
     .locals 3
 
-    .line 252
+    .line 306
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1Animated:Lorg/telegram/ui/Components/AnimatedColor;
 
     iget v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color1:I
@@ -3160,43 +3540,52 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedColor;->set(IZ)I
 
-    .line 253
+    .line 307
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Animated:Lorg/telegram/ui/Components/AnimatedColor;
 
     iget v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2:I
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedColor;->set(IZ)I
 
-    .line 254
+    .line 308
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->color2Alpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->hasColor2:Z
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedFloat;->set(ZZ)F
 
-    .line 255
+    .line 309
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColorAnimated:Lorg/telegram/ui/Components/AnimatedColor;
 
     iget v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->nameColor:I
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedColor;->set(IZ)I
 
-    .line 256
+    .line 310
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColorAnimated:Lorg/telegram/ui/Components/AnimatedColor;
 
     iget v1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedColor;->set(IZ)I
 
-    .line 257
+    .line 311
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->emoji:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 258
+    .line 312
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->resetAnimation()V
 
     :cond_0
+    return-void
+.end method
+
+.method public setBackgroundColor(I)V
+    .locals 0
+
+    .line 102
+    iput p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundColor:I
+
     return-void
 .end method
 
@@ -3205,22 +3594,22 @@
 
     if-nez p1, :cond_0
 
-    .line 268
+    .line 322
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loading:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 269
+    .line 323
     iput v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loadingT:F
 
-    .line 270
+    .line 324
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 271
+    .line 325
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LoadingDrawable;->disappear()V
 
     goto :goto_0
@@ -3228,25 +3617,25 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 273
+    .line 327
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loading:Z
 
     if-nez v0, :cond_1
 
-    .line 274
+    .line 328
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 275
+    .line 329
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LoadingDrawable;->resetDisappear()V
 
-    .line 276
+    .line 330
     iget-object v0, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->backgroundLoadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LoadingDrawable;->reset()V
 
-    .line 279
+    .line 333
     :cond_1
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ReplyMessageLine;->loading:Z

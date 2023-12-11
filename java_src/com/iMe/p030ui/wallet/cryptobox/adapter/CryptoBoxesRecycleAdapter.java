@@ -16,7 +16,7 @@ import com.iMe.p030ui.adapter.provider.SortingListHeaderProvider;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* compiled from: CryptoBoxesRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.adapter.CryptoBoxesRecycleAdapter */
 /* loaded from: classes.dex */
@@ -36,7 +36,7 @@ public final class CryptoBoxesRecycleAdapter extends BaseNodeAdapter<BaseNode> {
         Intrinsics.checkNotNullParameter(cryptoBoxProvider, "cryptoBoxProvider");
         Intrinsics.checkNotNullParameter(globalStateProvider, "globalStateProvider");
         this.globalStateProvider = globalStateProvider;
-        addChildClickViewIds(C3634R.C3637id.button_action, C3634R.C3637id.image_order);
+        addChildClickViewIds(C3632R.C3635id.button_action, C3632R.C3635id.image_order);
         addItemProvider(BaseQuickAdapterExtKt.asItem(animatedHeaderProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(sortingListHeaderProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(cryptoBoxesChatProvider));

@@ -18,7 +18,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import timber.log.Timber;
 /* compiled from: AddressMismatchPresenter.kt */
 @InjectViewState
@@ -45,7 +45,7 @@ public final class AddressMismatchPresenter extends BasePresenter<AddressMismatc
     }
 
     public final DialogModel getDeleteWalletDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn));
+        return new DialogModel(this.resourceManager.getString(C3632R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3632R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3632R.string.common_cancel), this.resourceManager.getString(C3632R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn));
     }
 
     public static /* synthetic */ void deleteActiveWallet$default(AddressMismatchPresenter addressMismatchPresenter, long j, int i, Object obj) {
@@ -150,12 +150,12 @@ public final class AddressMismatchPresenter extends BasePresenter<AddressMismatc
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
-                m1623invoke(cryptoEvent);
+                m1624invoke(cryptoEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1623invoke(DomainRxEvents.CryptoEvent it) {
+            public final void m1624invoke(DomainRxEvents.CryptoEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.CryptoEvent cryptoEvent = it;
                 if (Intrinsics.areEqual(cryptoEvent, DomainRxEvents.SuccessSaveBackup.INSTANCE)) {

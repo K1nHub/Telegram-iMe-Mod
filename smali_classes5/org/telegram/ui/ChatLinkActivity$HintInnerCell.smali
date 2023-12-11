@@ -24,10 +24,10 @@
 .method public constructor <init>(Lorg/telegram/ui/ChatLinkActivity;Landroid/content/Context;)V
     .locals 8
 
-    .line 649
+    .line 653
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 651
+    .line 655
     new-instance v0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/ChatLinkActivity$EmptyView;-><init>(Landroid/content/Context;)V
@@ -48,21 +48,21 @@
 
     const/4 v7, 0x0
 
-    .line 652
+    .line 656
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 654
+    .line 658
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
-    .line 655
+    .line 659
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -71,7 +71,7 @@
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 656
+    .line 660
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     const/4 v0, 0x1
@@ -80,14 +80,14 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 657
+    .line 661
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     const/16 v1, 0x11
 
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 658
+    .line 662
     invoke-static {p1}, Lorg/telegram/ui/ChatLinkActivity;->access$1000(Lorg/telegram/ui/ChatLinkActivity;)Z
 
     move-result p2
@@ -96,7 +96,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 659
+    .line 663
     invoke-static {p1}, Lorg/telegram/ui/ChatLinkActivity;->access$1100(Lorg/telegram/ui/ChatLinkActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     move-result-object p2
@@ -115,7 +115,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 660
+    .line 664
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p2
@@ -136,7 +136,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 662
+    .line 666
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->DiscussionChannelGroupSetHelp2:I
@@ -161,7 +161,7 @@
 
     goto :goto_0
 
-    .line 665
+    .line 669
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
@@ -177,7 +177,7 @@
 
     goto :goto_0
 
-    .line 668
+    .line 672
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -199,7 +199,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 670
+    .line 674
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/messenger/R$string;->DiscussionGroupHelp:I
@@ -222,7 +222,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 674
+    .line 678
     :cond_2
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
@@ -255,7 +255,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 679
+    .line 683
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkCustomMenuItemBinding implements ViewBinding {
     private ForkCustomMenuItemBinding(ConstraintLayout constraintLayout, ImageView imageView, TextView textView) {
@@ -19,7 +19,7 @@ public final class ForkCustomMenuItemBinding implements ViewBinding {
     }
 
     public static ForkCustomMenuItemBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_custom_menu_item, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_custom_menu_item, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -27,10 +27,10 @@ public final class ForkCustomMenuItemBinding implements ViewBinding {
     }
 
     public static ForkCustomMenuItemBinding bind(View view) {
-        int i = C3634R.C3637id.menu_item_icon;
+        int i = C3632R.C3635id.menu_item_icon;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
         if (imageView != null) {
-            i = C3634R.C3637id.menu_item_title;
+            i = C3632R.C3635id.menu_item_title;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
                 return new ForkCustomMenuItemBinding((ConstraintLayout) view, imageView, textView);

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTonControllerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TonControllerImpl.kt\ncom/iMe/storage/data/manager/ton/TonControllerImpl\n+ 2 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n+ 3 SerialFormat.kt\nkotlinx/serialization/SerialFormatKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 WalletTransfer.kt\norg/ton/contract/wallet/WalletTransferKt\n+ 6 ResultExt.kt\ncom/iMe/storage/domain/utils/extensions/ResultExtKt\n+ 7 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n*L\n1#1,209:1\n6#2,6:210\n123#3:216\n1#4:217\n35#5,2:218\n15#6:220\n15#6:232\n8#6,2:233\n15#6:235\n314#7,11:221\n*S KotlinDebug\n*F\n+ 1 TonControllerImpl.kt\ncom/iMe/storage/data/manager/ton/TonControllerImpl\n*L\n54#1:210,6\n126#1:216\n172#1:218,2\n181#1:220\n66#1:232\n112#1:233,2\n119#1:235\n185#1:221,11\n*E\n"
+    value = "SMAP\nTonControllerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TonControllerImpl.kt\ncom/iMe/storage/data/manager/ton/TonControllerImpl\n+ 2 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n+ 3 SerialFormat.kt\nkotlinx/serialization/SerialFormatKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 WalletTransfer.kt\norg/ton/contract/wallet/WalletTransferKt\n+ 6 ResultExt.kt\ncom/iMe/storage/domain/utils/extensions/ResultExtKt\n+ 7 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n*L\n1#1,219:1\n6#2,6:220\n123#3:226\n1#4:227\n35#5,2:228\n15#6:230\n15#6:242\n15#6:243\n8#6,2:244\n15#6:246\n314#7,11:231\n*S KotlinDebug\n*F\n+ 1 TonControllerImpl.kt\ncom/iMe/storage/data/manager/ton/TonControllerImpl\n*L\n55#1:220,6\n132#1:226\n178#1:228,2\n187#1:230\n67#1:242\n75#1:243\n118#1:244,2\n125#1:246\n191#1:231,11\n*E\n"
 .end annotation
 
 
@@ -57,30 +57,50 @@
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$GP17rYU8zIWi3Dfw_AKIDXutFWo(Ljava/lang/Throwable;)Lcom/iMe/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$J1StujuC9SFrOxRsa4XIVjCtO3g(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->sendTransaction$lambda$3(Ljava/lang/Throwable;)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->signData$lambda$7(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$UqlkkB4szk3bioQOQqAAUed48S8(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;[B)Lcom/iMe/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$_l9urNBmC0C9wsY7w5reVLShHQk(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->signData$lambda$4(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;[B)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->isValidMnemonic$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$_bkOJwkPkVVaipLjG_4ICiV6pr8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+.method public static synthetic $r8$lambda$ePdIGElSzWniKSoS_IRiuJ4ACnQ(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;[B)Lcom/iMe/storage/domain/model/Result;
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->signData$lambda$5(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    invoke-static {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->signData$lambda$6(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;[B)Lcom/iMe/storage/domain/model/Result;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$emkEzOeaqOQi2zXWh5BsK5CzuV8(Ljava/lang/String;)Lcom/iMe/storage/domain/model/Result;
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->isValidMnemonic$lambda$3(Ljava/lang/String;)Lcom/iMe/storage/domain/model/Result;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$jvkE_syHYvieNzE94yfQf9MS7bg(Ljava/lang/Throwable;)Lcom/iMe/storage/domain/model/Result;
+    .locals 0
+
+    invoke-static {p0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->sendTransaction$lambda$5(Ljava/lang/Throwable;)Lcom/iMe/storage/domain/model/Result;
 
     move-result-object p0
 
@@ -106,19 +126,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 43
     iput-object p2, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 43
+    .line 44
     iput-object p3, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 44
+    .line 45
     iput-object p4, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->tonConfigRepository:Lcom/iMe/storage/domain/repository/crypto/ton/TonConfigRepository;
 
-    .line 47
+    .line 48
     sget-object p2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$json$2;->INSTANCE:Lcom/iMe/storage/data/manager/ton/TonControllerImpl$json$2;
 
     invoke-static {p2}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -127,16 +147,16 @@
 
     iput-object p2, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->json$delegate:Lkotlin/Lazy;
 
-    .line 55
+    .line 56
     :try_start_0
     new-instance p2, Ljava/io/File;
 
-    .line 56
+    .line 57
     invoke-interface {p1}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getFilesFixedDirectory()Ljava/io/File;
 
     move-result-object p3
 
-    .line 57
+    .line 58
     new-instance p4, Ljava/lang/StringBuilder;
 
     invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
@@ -159,10 +179,10 @@
 
     move-result-object p1
 
-    .line 55
+    .line 56
     invoke-direct {p2, p3, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 58
+    .line 59
     invoke-virtual {p2}, Ljava/io/File;->delete()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -182,7 +202,7 @@
 .method public static final synthetic access$getCryptoPreferenceHelper$p(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;)Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
     .locals 0
 
-    .line 40
+    .line 41
     iget-object p0, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     return-object p0
@@ -191,7 +211,7 @@
 .method public static final synthetic access$getPrivateKeySafe(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;)Lorg/ton/api/pk/PrivateKeyEd25519;
     .locals 0
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->getPrivateKeySafe()Lorg/ton/api/pk/PrivateKeyEd25519;
 
     move-result-object p0
@@ -202,7 +222,7 @@
 .method public static final synthetic access$getSchedulersProvider$p(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
     .locals 0
 
-    .line 40
+    .line 41
     iget-object p0, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-object p0
@@ -211,7 +231,7 @@
 .method public static final synthetic access$getTonConfigRepository$p(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;)Lcom/iMe/storage/domain/repository/crypto/ton/TonConfigRepository;
     .locals 0
 
-    .line 40
+    .line 41
     iget-object p0, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->tonConfigRepository:Lcom/iMe/storage/domain/repository/crypto/ton/TonConfigRepository;
 
     return-object p0
@@ -220,7 +240,7 @@
 .method public static final synthetic access$initLiteClient(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 0
 
-    .line 40
+    .line 41
     invoke-direct {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->initLiteClient(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -231,7 +251,7 @@
 .method public static final synthetic access$initWallet(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 0
 
-    .line 40
+    .line 41
     invoke-direct {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->initWallet(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -242,7 +262,7 @@
 .method public static final synthetic access$sendInternal(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;Ljava/lang/String;JILcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 0
 
-    .line 40
+    .line 41
     invoke-direct/range {p0 .. p6}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->sendInternal(Ljava/lang/String;JILcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
@@ -253,7 +273,7 @@
 .method public static final synthetic access$setPrivateKey$p(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;Lorg/ton/api/pk/PrivateKeyEd25519;)V
     .locals 0
 
-    .line 40
+    .line 41
     iput-object p1, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->privateKey:Lorg/ton/api/pk/PrivateKeyEd25519;
 
     return-void
@@ -286,17 +306,17 @@
     .line 321
     invoke-virtual {v0}, Lkotlinx/coroutines/CancellableContinuationImpl;->initCancellability()V
 
-    .line 186
+    .line 192
     invoke-static {p0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->access$getTonConfigRepository$p(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;)Lcom/iMe/storage/domain/repository/crypto/ton/TonConfigRepository;
 
     move-result-object v1
 
-    .line 187
+    .line 193
     invoke-interface {v1}, Lcom/iMe/storage/domain/repository/crypto/ton/TonConfigRepository;->getTonConfigJsonString()Lio/reactivex/Observable;
 
     move-result-object v1
 
-    .line 188
+    .line 194
     sget-object v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$1;->INSTANCE:Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$1;
 
     new-instance v3, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sam$io_reactivex_functions_Predicate$0;
@@ -307,7 +327,7 @@
 
     move-result-object v1
 
-    .line 189
+    .line 195
     new-instance v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$2;
 
     invoke-direct {v2, p0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$2;-><init>(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;)V
@@ -320,7 +340,7 @@
 
     move-result-object v1
 
-    .line 198
+    .line 208
     invoke-static {p0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->access$getSchedulersProvider$p(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     move-result-object v2
@@ -333,7 +353,7 @@
 
     move-result-object v1
 
-    .line 200
+    .line 210
     new-instance v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$3;
 
     invoke-direct {v2, v0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$3;-><init>(Ljava/lang/Object;)V
@@ -342,7 +362,7 @@
 
     invoke-direct {v3, v2}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sam$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 201
+    .line 211
     new-instance v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$4;
 
     invoke-direct {v2, v0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$disposable$4;-><init>(Ljava/lang/Object;)V
@@ -351,12 +371,12 @@
 
     invoke-direct {v4, v2}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sam$io_reactivex_functions_Consumer$0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    .line 199
+    .line 209
     invoke-virtual {v1, v3, v4}, Lio/reactivex/Observable;->subscribe(Lio/reactivex/functions/Consumer;Lio/reactivex/functions/Consumer;)Lio/reactivex/disposables/Disposable;
 
     move-result-object v1
 
-    .line 204
+    .line 214
     new-instance v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$1;
 
     invoke-direct {v2, v1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$1;-><init>(Lio/reactivex/disposables/Disposable;)V
@@ -384,7 +404,7 @@
 .method private final getJson()Lkotlinx/serialization/json/Json;
     .locals 1
 
-    .line 47
+    .line 48
     iget-object v0, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->json$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -409,7 +429,7 @@
         }
     .end annotation
 
-    .line 138
+    .line 144
     iget-object v0, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->liteClient:Lorg/ton/lite/client/LiteClient;
 
     if-nez v0, :cond_0
@@ -427,7 +447,7 @@
 .method private final getPrivateKeySafe()Lorg/ton/api/pk/PrivateKeyEd25519;
     .locals 2
 
-    .line 135
+    .line 141
     iget-object v0, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->privateKey:Lorg/ton/api/pk/PrivateKeyEd25519;
 
     if-eqz v0, :cond_0
@@ -458,7 +478,7 @@
         }
     .end annotation
 
-    .line 141
+    .line 147
     iget-object v0, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->walletContract:Lorg/ton/contract/wallet/WalletContract;
 
     if-nez v0, :cond_0
@@ -520,7 +540,7 @@
 
     move-result-object v1
 
-    .line 125
+    .line 131
     iget v2, v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$initLiteClient$1;->label:I
 
     const/4 v3, 0x1
@@ -549,7 +569,7 @@
     :cond_2
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 126
+    .line 132
     invoke-direct {p0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->getJson()Lkotlinx/serialization/json/Json;
 
     move-result-object p1
@@ -573,7 +593,7 @@
 
     move-object p1, v4
 
-    .line 125
+    .line 131
     :goto_1
     check-cast p1, Ljava/lang/String;
 
@@ -600,15 +620,15 @@
 
     move-result-object p1
 
-    .line 126
+    .line 132
     check-cast p1, Lorg/ton/api/liteclient/config/LiteClientConfigGlobal;
 
-    .line 130
+    .line 136
     invoke-static {}, Lkotlinx/coroutines/Dispatchers;->getDefault()Lkotlinx/coroutines/CoroutineDispatcher;
 
     move-result-object v0
 
-    .line 128
+    .line 134
     new-instance v1, Lorg/ton/lite/client/LiteClient;
 
     invoke-direct {v1, v0, p1}, Lorg/ton/lite/client/LiteClient;-><init>(Lkotlin/coroutines/CoroutineContext;Lorg/ton/api/liteclient/config/LiteClientConfigGlobal;)V
@@ -664,7 +684,7 @@
 
     move-result-object v1
 
-    .line 143
+    .line 149
     iget v2, v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$initWallet$1;->label:I
 
     const/4 v3, 0x0
@@ -723,11 +743,11 @@
     :cond_3
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 145
+    .line 151
     :try_start_2
     sget-object v2, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract;->Companion:Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion;
 
-    .line 146
+    .line 152
     iput-object p0, v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$initWallet$1;->L$0:Ljava/lang/Object;
 
     iput-object v2, v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$initWallet$1;->L$1:Ljava/lang/Object;
@@ -747,18 +767,18 @@
     :cond_4
     move-object v5, p0
 
-    .line 143
+    .line 149
     :goto_1
     :try_start_3
     check-cast p1, Lorg/ton/lite/client/LiteClient;
 
-    .line 147
+    .line 153
     sget-object v6, Lorg/ton/contract/SmartContract;->Companion:Lorg/ton/contract/SmartContract$Companion;
 
-    .line 149
+    .line 155
     sget-object v7, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract;->Companion:Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion;
 
-    .line 150
+    .line 156
     invoke-direct {v5}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->getPrivateKeySafe()Lorg/ton/api/pk/PrivateKeyEd25519;
 
     move-result-object v8
@@ -767,7 +787,7 @@
 
     move-result-object v8
 
-    .line 151
+    .line 157
     sget v9, Lorg/ton/contract/wallet/WalletContract;->DEFAULT_WALLET_ID:I
 
     const/4 v10, 0x0
@@ -776,17 +796,17 @@
 
     const/4 v12, 0x0
 
-    .line 149
+    .line 155
     invoke-static/range {v7 .. v12}, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion;->createStateInit$default(Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion;Lorg/ton/api/pub/PublicKeyEd25519;IIILjava/lang/Object;)Lorg/ton/block/StateInit;
 
     move-result-object v7
 
-    .line 147
+    .line 153
     invoke-virtual {v6, v3, v7}, Lorg/ton/contract/SmartContract$Companion;->address(ILorg/ton/block/StateInit;)Lorg/ton/block/AddrStd;
 
     move-result-object v6
 
-    .line 145
+    .line 151
     iput-object v5, v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$initWallet$1;->L$0:Ljava/lang/Object;
 
     const/4 v7, 0x0
@@ -819,7 +839,7 @@
     :catch_1
     move-object v0, p0
 
-    .line 156
+    .line 162
     :catch_2
     :goto_3
     new-instance p1, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract;
@@ -834,7 +854,7 @@
 
     invoke-direct {p1, v3, v1}, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract;-><init>(ILorg/ton/api/pub/PublicKeyEd25519;)V
 
-    .line 158
+    .line 164
     :goto_4
     iput-object p1, v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->walletContract:Lorg/ton/contract/wallet/WalletContract;
 
@@ -859,12 +879,12 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 66
     sget-object v0, Lorg/ton/block/AddrStd;->Companion:Lorg/ton/block/AddrStd$Companion;
 
     invoke-virtual {v0, p0}, Lorg/ton/block/AddrStd$Companion;->parse(Ljava/lang/String;)Lorg/ton/block/AddrStd;
 
-    .line 66
+    .line 67
     sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     .line 15
@@ -884,7 +904,58 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 68
+    .line 69
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lcom/iMe/storage/domain/model/Result;
+
+    return-object p0
+.end method
+
+.method private static final isValidMnemonic$lambda$3(Ljava/lang/String;)Lcom/iMe/storage/domain/model/Result;
+    .locals 2
+
+    const-string v0, "$mnemonic"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 75
+    invoke-static {p0}, Lcom/iMe/storage/data/utils/extentions/StringExtKt;->splitBySpace(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object p0
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x6
+
+    invoke-static {p0, v0, v0, v1, v0}, Lorg/ton/mnemonic/Mnemonic;->isValid$default(Ljava/util/List;Ljava/lang/String;Ljava/util/List;ILjava/lang/Object;)Z
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p0
+
+    .line 15
+    sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
+
+    invoke-virtual {v0, p0}, Lcom/iMe/storage/domain/model/Result$Companion;->success(Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final isValidMnemonic$lambda$4(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 76
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -949,7 +1020,7 @@
 
     move-result-object v3
 
-    .line 160
+    .line 166
     iget v4, v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sendInternal$1;->label:I
 
     const/4 v5, 0x3
@@ -1040,7 +1111,7 @@
     :cond_4
     invoke-static {v1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 166
+    .line 172
     iput-object v0, v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sendInternal$1;->L$0:Ljava/lang/Object;
 
     move-object/from16 v1, p1
@@ -1078,19 +1149,19 @@
 
     move-object/from16 v1, v16
 
-    .line 160
+    .line 166
     :goto_1
     check-cast v1, Lorg/ton/contract/wallet/WalletContract;
 
-    .line 167
+    .line 173
     instance-of v13, v1, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract;
 
     if-eqz v13, :cond_8
 
-    .line 168
+    .line 174
     check-cast v1, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract;
 
-    .line 169
+    .line 175
     iput-object v12, v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sendInternal$1;->L$0:Ljava/lang/Object;
 
     iput-object v11, v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sendInternal$1;->L$1:Ljava/lang/Object;
@@ -1127,12 +1198,12 @@
 
     move-result-object v6
 
-    .line 170
+    .line 176
     invoke-direct {v12}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->getPrivateKeySafe()Lorg/ton/api/pk/PrivateKeyEd25519;
 
     move-result-object v12
 
-    .line 171
+    .line 177
     invoke-static {v4}, Lkotlin/coroutines/jvm/internal/Boxing;->boxInt(I)Ljava/lang/Integer;
 
     move-result-object v4
@@ -1146,7 +1217,7 @@
 
     invoke-direct {v14}, Lorg/ton/contract/wallet/WalletTransferBuilder;-><init>()V
 
-    .line 173
+    .line 179
     sget-object v15, Lorg/ton/block/AddrStd;->Companion:Lorg/ton/block/AddrStd$Companion;
 
     invoke-virtual {v15, v11}, Lorg/ton/block/AddrStd$Companion;->parseUserFriendly(Ljava/lang/String;)Lorg/ton/block/AddrStd;
@@ -1155,7 +1226,7 @@
 
     invoke-virtual {v14, v11}, Lorg/ton/contract/wallet/WalletTransferBuilder;->setDestination(Lorg/ton/block/MsgAddressInt;)V
 
-    .line 174
+    .line 180
     sget-object v11, Lorg/ton/block/Coins;->Companion:Lorg/ton/block/Coins$Companion;
 
     invoke-virtual {v11, v8, v9}, Lorg/ton/block/Coins$Companion;->ofNano(J)Lorg/ton/block/Coins;
@@ -1168,7 +1239,7 @@
 
     if-eqz v10, :cond_7
 
-    .line 175
+    .line 181
     invoke-virtual {v10}, Lcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;->getCell()Lorg/ton/cell/Cell;
 
     move-result-object v9
@@ -1181,7 +1252,7 @@
     :goto_3
     invoke-virtual {v14, v9}, Lorg/ton/contract/wallet/WalletTransferBuilder;->setBody(Lorg/ton/cell/Cell;)V
 
-    .line 176
+    .line 182
     sget-object v9, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     .line 36
@@ -1191,7 +1262,7 @@
 
     aput-object v9, v7, v13
 
-    .line 168
+    .line 174
     iput-object v8, v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sendInternal$1;->L$0:Ljava/lang/Object;
 
     iput-object v8, v2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sendInternal$1;->L$1:Ljava/lang/Object;
@@ -1236,14 +1307,14 @@
     return-object v1
 .end method
 
-.method private static final sendTransaction$lambda$3(Ljava/lang/Throwable;)Lcom/iMe/storage/domain/model/Result;
+.method private static final sendTransaction$lambda$5(Ljava/lang/Throwable;)Lcom/iMe/storage/domain/model/Result;
     .locals 3
 
     const-string v0, "it"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 112
+    .line 118
     new-instance v0, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
     const/4 v1, 0x0
@@ -1264,7 +1335,7 @@
     return-object p0
 .end method
 
-.method private static final signData$lambda$4(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;[B)Lcom/iMe/storage/domain/model/Result;
+.method private static final signData$lambda$6(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;[B)Lcom/iMe/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "this$0"
@@ -1275,7 +1346,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 119
+    .line 125
     invoke-direct {p0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->getPrivateKeySafe()Lorg/ton/api/pk/PrivateKeyEd25519;
 
     move-result-object p0
@@ -1294,14 +1365,14 @@
     return-object p0
 .end method
 
-.method private static final signData$lambda$5(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+.method private static final signData$lambda$7(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
     .locals 1
 
     const-string v0, "$tmp0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 121
+    .line 127
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -1325,7 +1396,7 @@
         }
     .end annotation
 
-    .line 73
+    .line 79
     new-instance v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$createWallet$1;
 
     const/4 v1, 0x0
@@ -1338,7 +1409,7 @@
 
     move-result-object v0
 
-    .line 85
+    .line 91
     invoke-virtual {v0}, Lio/reactivex/Single;->toObservable()Lio/reactivex/Observable;
 
     move-result-object v0
@@ -1369,7 +1440,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 88
+    .line 94
     new-instance v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$importWallet$1;
 
     const/4 v1, 0x0
@@ -1382,7 +1453,7 @@
 
     move-result-object p1
 
-    .line 99
+    .line 105
     invoke-virtual {p1}, Lio/reactivex/Single;->toObservable()Lio/reactivex/Observable;
 
     move-result-object p1
@@ -1412,16 +1483,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 64
-    new-instance v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda4;
+    .line 65
+    new-instance v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda5;
 
-    invoke-direct {v0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda4;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda5;-><init>(Ljava/lang/String;)V
 
     invoke-static {v0}, Lio/reactivex/Observable;->fromCallable(Ljava/util/concurrent/Callable;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 68
+    .line 69
     sget-object v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$isValidAddress$2;->INSTANCE:Lcom/iMe/storage/data/manager/ton/TonControllerImpl$isValidAddress$2;
 
     new-instance v1, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda0;
@@ -1433,6 +1504,51 @@
     move-result-object p1
 
     const-string v0, "fromCallable {\n         \u2026rror(false)\n            }"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public isValidMnemonic(Ljava/lang/String;)Lio/reactivex/Observable;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/lang/Boolean;",
+            ">;>;"
+        }
+    .end annotation
+
+    const-string v0, "mnemonic"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 75
+    new-instance v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda6;
+
+    invoke-direct {v0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda6;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Lio/reactivex/Observable;->fromCallable(Ljava/util/concurrent/Callable;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    .line 76
+    sget-object v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$isValidMnemonic$2;->INSTANCE:Lcom/iMe/storage/data/manager/ton/TonControllerImpl$isValidMnemonic$2;
+
+    new-instance v1, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;
+
+    invoke-direct {v1, v0}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    const-string v0, "fromCallable { Mnemonic.\u2026urn { false.toSuccess() }"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1459,7 +1575,7 @@
 
     invoke-static {p1, p6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 108
+    .line 114
     new-instance p6, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sendTransaction$1;
 
     const/4 v7, 0x0
@@ -1486,14 +1602,14 @@
 
     move-result-object p1
 
-    sget-object p2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;->INSTANCE:Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda2;
+    sget-object p2, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda3;->INSTANCE:Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda3;
 
-    .line 111
+    .line 117
     invoke-virtual {p1, p2}, Lio/reactivex/Single;->onErrorReturn(Lio/reactivex/functions/Function;)Lio/reactivex/Single;
 
     move-result-object p1
 
-    .line 114
+    .line 120
     invoke-virtual {p1}, Lio/reactivex/Single;->toObservable()Lio/reactivex/Observable;
 
     move-result-object p1
@@ -1520,16 +1636,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 118
-    new-instance v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda3;
+    .line 124
+    new-instance v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda4;
 
-    invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;[B)V
+    invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda4;-><init>(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;[B)V
 
     invoke-static {v0}, Lio/reactivex/Observable;->fromCallable(Ljava/util/concurrent/Callable;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 121
+    .line 127
     sget-object v0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$signData$2;->INSTANCE:Lcom/iMe/storage/data/manager/ton/TonControllerImpl$signData$2;
 
     new-instance v1, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$$ExternalSyntheticLambda1;

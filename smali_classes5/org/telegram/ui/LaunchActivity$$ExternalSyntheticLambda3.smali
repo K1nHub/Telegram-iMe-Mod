@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda3;->f$2:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$r1P_GtZkK9wV0pvXF_3aB-r-x3w(I[ILjava/lang/Runnable;Landroid/content/DialogInterface;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$FCq2GaUgc1NSOTrMfg1BeLEYVkM(I[ILjava/lang/Runnable;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

@@ -22,21 +22,21 @@ public final class LiteServerAccountState {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: id */
-    private final TonNodeBlockIdExt f2099id;
+    private final TonNodeBlockIdExt f2100id;
     private final byte[] proof;
     private final TonNodeBlockIdExt shardBlock;
     private final byte[] shardProof;
     private final byte[] state;
 
     public String toString() {
-        return "LiteServerAccountState(id=" + this.f2099id + ", shardBlock=" + this.shardBlock + ", shardProof=" + Arrays.toString(this.shardProof) + ", proof=" + Arrays.toString(this.proof) + ", state=" + Arrays.toString(this.state) + ')';
+        return "LiteServerAccountState(id=" + this.f2100id + ", shardBlock=" + this.shardBlock + ", shardProof=" + Arrays.toString(this.shardProof) + ", proof=" + Arrays.toString(this.proof) + ", state=" + Arrays.toString(this.state) + ')';
     }
 
     public /* synthetic */ LiteServerAccountState(int i, TonNodeBlockIdExt tonNodeBlockIdExt, TonNodeBlockIdExt tonNodeBlockIdExt2, byte[] bArr, byte[] bArr2, byte[] bArr3, SerializationConstructorMarker serializationConstructorMarker) {
         if (31 != (i & 31)) {
             PluginExceptionsKt.throwMissingFieldException(i, 31, LiteServerAccountState$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2099id = tonNodeBlockIdExt;
+        this.f2100id = tonNodeBlockIdExt;
         this.shardBlock = tonNodeBlockIdExt2;
         this.shardProof = bArr;
         this.proof = bArr2;
@@ -49,7 +49,7 @@ public final class LiteServerAccountState {
         Intrinsics.checkNotNullParameter(shardProof, "shardProof");
         Intrinsics.checkNotNullParameter(proof, "proof");
         Intrinsics.checkNotNullParameter(state, "state");
-        this.f2099id = id;
+        this.f2100id = id;
         this.shardBlock = shardBlock;
         this.shardProof = shardProof;
         this.proof = proof;
@@ -58,7 +58,7 @@ public final class LiteServerAccountState {
 
     public static final /* synthetic */ void write$Self(LiteServerAccountState liteServerAccountState, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         TonNodeBlockIdExt$$serializer tonNodeBlockIdExt$$serializer = TonNodeBlockIdExt$$serializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, tonNodeBlockIdExt$$serializer, liteServerAccountState.f2099id);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, tonNodeBlockIdExt$$serializer, liteServerAccountState.f2100id);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, tonNodeBlockIdExt$$serializer, liteServerAccountState.shardBlock);
         Base64ByteArraySerializer base64ByteArraySerializer = Base64ByteArraySerializer.INSTANCE;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 2, base64ByteArraySerializer, liteServerAccountState.shardProof);
@@ -67,7 +67,7 @@ public final class LiteServerAccountState {
     }
 
     public final TonNodeBlockIdExt getId() {
-        return this.f2099id;
+        return this.f2100id;
     }
 
     public final TonNodeBlockIdExt getShardBlock() {
@@ -92,13 +92,13 @@ public final class LiteServerAccountState {
         }
         if (obj instanceof LiteServerAccountState) {
             LiteServerAccountState liteServerAccountState = (LiteServerAccountState) obj;
-            return Intrinsics.areEqual(this.f2099id, liteServerAccountState.f2099id) && Intrinsics.areEqual(this.shardBlock, liteServerAccountState.shardBlock) && Arrays.equals(this.shardProof, liteServerAccountState.shardProof) && Arrays.equals(this.proof, liteServerAccountState.proof) && Arrays.equals(this.state, liteServerAccountState.state);
+            return Intrinsics.areEqual(this.f2100id, liteServerAccountState.f2100id) && Intrinsics.areEqual(this.shardBlock, liteServerAccountState.shardBlock) && Arrays.equals(this.shardProof, liteServerAccountState.shardProof) && Arrays.equals(this.proof, liteServerAccountState.proof) && Arrays.equals(this.state, liteServerAccountState.state);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((this.f2099id.hashCode() * 31) + this.shardBlock.hashCode()) * 31) + Arrays.hashCode(this.shardProof)) * 31) + Arrays.hashCode(this.proof)) * 31) + Arrays.hashCode(this.state);
+        return (((((((this.f2100id.hashCode() * 31) + this.shardBlock.hashCode()) * 31) + Arrays.hashCode(this.shardProof)) * 31) + Arrays.hashCode(this.proof)) * 31) + Arrays.hashCode(this.state);
     }
 
     /* compiled from: LiteServerAccountState.kt */

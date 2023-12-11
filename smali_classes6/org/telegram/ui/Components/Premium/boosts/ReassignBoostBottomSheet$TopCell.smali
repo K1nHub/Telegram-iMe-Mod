@@ -282,9 +282,11 @@
     .line 367
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/boosts/ReassignBoostBottomSheet$TopCell;->description:Landroid/widget/TextView;
 
-    sget v1, Lorg/telegram/messenger/R$string;->BoostingReassignBoostText:I
+    invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->boostsPerSentGift()I
 
-    const/4 v2, 0x2
+    move-result v1
+
+    const/4 v2, 0x1
 
     new-array v2, v2, [Ljava/lang/Object;
 
@@ -302,21 +304,9 @@
 
     aput-object p1, v2, v3
 
-    const/4 p1, 0x1
+    const-string p1, "BoostingReassignBoostTextPlural"
 
-    invoke-static {}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository;->boostsPerSentGift()I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    aput-object v3, v2, p1
-
-    const-string p1, "BoostingReassignBoostText"
-
-    invoke-static {p1, v1, v2}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v1, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 

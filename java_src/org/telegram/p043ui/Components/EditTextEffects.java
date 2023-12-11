@@ -29,6 +29,7 @@ import org.telegram.p043ui.Components.spoilers.SpoilersClickDetector;
 /* renamed from: org.telegram.ui.Components.EditTextEffects */
 /* loaded from: classes6.dex */
 public class EditTextEffects extends EditText {
+    private static Boolean allowHackingTextCanvasCache;
     private ColorFilter animatedEmojiColorFilter;
     private AnimatedEmojiSpan.EmojiGroupedSpans animatedEmojiDrawables;
     private SpoilersClickDetector clickDetector;
@@ -109,7 +110,7 @@ public class EditTextEffects extends EditText {
             }
         };
         this.rect = new Rect();
-        this.wrapCanvasToFixClipping = Build.VERSION.SDK_INT < 29;
+        this.wrapCanvasToFixClipping = allowHackingTextCanvas();
         if (Looper.getMainLooper().getThread() == Thread.currentThread() && z) {
             this.clickDetector = new SpoilersClickDetector(this, this.spoilers, new SpoilersClickDetector.OnSpoilerClickedListener() { // from class: org.telegram.ui.Components.EditTextEffects$$ExternalSyntheticLambda5
                 @Override // org.telegram.p043ui.Components.spoilers.SpoilersClickDetector.OnSpoilerClickedListener
@@ -363,6 +364,14 @@ public class EditTextEffects extends EditText {
 
     public float getOffsetY() {
         return this.offsetY;
+    }
+
+    public static boolean allowHackingTextCanvas() {
+        String str;
+        if (allowHackingTextCanvasCache == null) {
+            allowHackingTextCanvasCache = Boolean.valueOf(Build.VERSION.SDK_INT > 20 && ((str = Build.MANUFACTURER) == null || !(str.equalsIgnoreCase("HONOR") || str.equalsIgnoreCase("HUAWEI"))));
+        }
+        return allowHackingTextCanvasCache.booleanValue();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

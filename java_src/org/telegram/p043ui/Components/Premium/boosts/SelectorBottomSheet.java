@@ -22,7 +22,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.ImageReceiver;
@@ -387,7 +387,7 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
             this.recyclerListView.getLayoutManager().startSmoothScroll(linearSmoothScrollerCustom);
             return;
         }
-        this.recyclerListView.scrollToPosition(1);
+        this.recyclerListView.scrollToPosition(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -567,6 +567,7 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         updateList(false, true);
         this.headerView.setText(getTitle());
         updateActionButton(false);
+        scrollToTop(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -581,12 +582,12 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
             formatPluralStringComma = LocaleController.formatPluralStringComma("Subscribers", Math.max(0, this.selectorAdapter.getParticipantsCount(this.currentChat) - 1));
             this.sectionCell.setLayerHeight(32);
         } else if (i == 2) {
-            formatPluralStringComma = LocaleController.formatString("BoostingSelectUpTo", C3634R.string.BoostingSelectUpTo, Long.valueOf(BoostRepository.giveawayAddPeersMax()));
+            formatPluralStringComma = LocaleController.formatPluralString("BoostingSelectUpToPlural", (int) BoostRepository.giveawayAddPeersMax(), new Object[0]);
             this.sectionCell.setLayerHeight(32);
         } else if (i != 3) {
             formatPluralStringComma = "";
         } else {
-            formatPluralStringComma = LocaleController.formatString("BoostingSelectUpTo", C3634R.string.BoostingSelectUpToCountries, Long.valueOf(BoostRepository.giveawayCountriesMax()));
+            formatPluralStringComma = LocaleController.formatPluralString("BoostingSelectUpToCountriesPlural", (int) BoostRepository.giveawayCountriesMax(), new Object[0]);
             this.sectionCell.setLayerHeight(1);
         }
         this.sectionCell.setText(formatPluralStringComma);
@@ -596,11 +597,11 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         String string;
         int i = this.type;
         if (i == 1) {
-            string = LocaleController.getString("BoostingSelectUpToWarningUsers", C3634R.string.BoostingSelectUpToWarningUsers);
+            string = LocaleController.getString("BoostingSelectUpToWarningUsers", C3632R.string.BoostingSelectUpToWarningUsers);
         } else if (i == 2) {
-            string = LocaleController.formatString("BoostingSelectUpToWarningChannels", C3634R.string.BoostingSelectUpToWarningChannels, Long.valueOf(BoostRepository.giveawayAddPeersMax()));
+            string = LocaleController.formatPluralString("BoostingSelectUpToWarningChannelsPlural", (int) BoostRepository.giveawayAddPeersMax(), new Object[0]);
         } else {
-            string = i != 3 ? "" : LocaleController.formatString("BoostingSelectUpToWarningCountries", C3634R.string.BoostingSelectUpToWarningCountries, Long.valueOf(BoostRepository.giveawayCountriesMax()));
+            string = i != 3 ? "" : LocaleController.formatPluralString("BoostingSelectUpToWarningCountriesPlural", (int) BoostRepository.giveawayCountriesMax(), new Object[0]);
         }
         SelectedObjectsListener selectedObjectsListener = this.selectedObjectsListener;
         if (selectedObjectsListener != null) {
@@ -663,9 +664,9 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         this.actionButton.setShowZero(false);
         int i = this.type;
         if (i != 1) {
-            string = (i == 2 || i == 3) ? LocaleController.getString("Save", C3634R.string.Save) : "";
+            string = (i == 2 || i == 3) ? LocaleController.getString("Save", C3632R.string.Save) : "";
         } else {
-            string = LocaleController.getString("BoostingSaveRecipients", C3634R.string.BoostingSaveRecipients);
+            string = LocaleController.getString("BoostingSaveRecipients", C3632R.string.BoostingSaveRecipients);
         }
         this.actionButton.setText(string, z);
         this.actionButton.setCount(this.selectedIds.size(), z);
@@ -699,7 +700,7 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
 
     private void updateSectionCell(boolean z) {
         if (this.selectedIds.size() > 0 && this.type != 3) {
-            this.sectionCell.setRightText(LocaleController.getString(C3634R.string.UsersDeselectAll), true, new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda0
+            this.sectionCell.setRightText(LocaleController.getString(C3632R.string.UsersDeselectAll), true, new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.boosts.SelectorBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     SelectorBottomSheet.this.lambda$updateSectionCell$13(view);
@@ -803,11 +804,11 @@ public class SelectorBottomSheet extends BottomSheetWithRecyclerListView {
         int i = this.type;
         if (i != 1) {
             if (i != 2) {
-                return i != 3 ? "" : LocaleController.getString("BoostingSelectCountry", C3634R.string.BoostingSelectCountry);
+                return i != 3 ? "" : LocaleController.getString("BoostingSelectCountry", C3632R.string.BoostingSelectCountry);
             }
-            return LocaleController.getString("BoostingAddChannel", C3634R.string.BoostingAddChannel);
+            return LocaleController.getString("BoostingAddChannel", C3632R.string.BoostingAddChannel);
         }
-        return LocaleController.getString("GiftPremium", C3634R.string.GiftPremium);
+        return LocaleController.getString("GiftPremium", C3632R.string.GiftPremium);
     }
 
     @Override // org.telegram.p043ui.Components.BottomSheetWithRecyclerListView

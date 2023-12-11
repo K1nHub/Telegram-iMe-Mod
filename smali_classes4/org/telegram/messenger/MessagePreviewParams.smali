@@ -39,6 +39,8 @@
 
 .field public isSecret:Z
 
+.field public isVideo:Z
+
 .field public linkMedia:Lorg/telegram/tgnet/TLRPC$WebPage;
 
 .field public linkMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
@@ -56,8 +58,6 @@
 .field public quoteStart:I
 
 .field public replyMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
-
-.field public secret:Z
 
 .field public singleLink:Z
 
@@ -86,7 +86,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 261
-    iput-boolean p1, p0, Lorg/telegram/messenger/MessagePreviewParams;->secret:Z
+    iput-boolean p1, p0, Lorg/telegram/messenger/MessagePreviewParams;->isSecret:Z
 
     if-nez p1, :cond_1
 
@@ -145,13 +145,13 @@
 
     goto :goto_1
 
-    .line 420
+    .line 422
     :cond_0
     invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
 
-    .line 421
+    .line 423
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p1
@@ -162,7 +162,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 423
+    .line 425
     invoke-virtual {p0}, Landroid/net/Uri;->getHost()Ljava/lang/String;
 
     move-result-object v2
@@ -183,7 +183,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 424
+    .line 426
     invoke-virtual {p0}, Landroid/net/Uri;->getPort()I
 
     move-result v2
@@ -194,7 +194,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 425
+    .line 427
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v2
@@ -217,7 +217,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 426
+    .line 428
     invoke-virtual {p0}, Landroid/net/Uri;->getQuery()Ljava/lang/String;
 
     move-result-object v2
@@ -281,7 +281,7 @@
     :cond_0
     const-string v0, "/"
 
-    .line 431
+    .line 433
     invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v1
@@ -334,7 +334,7 @@
 .method private toPreviewMessage(Lorg/telegram/messenger/MessageObject;Ljava/lang/Boolean;I)Lorg/telegram/messenger/MessageObject;
     .locals 11
 
-    .line 494
+    .line 496
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
@@ -343,7 +343,7 @@
 
     if-eq p3, v7, :cond_0
 
-    .line 496
+    .line 498
     iget v0, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -358,7 +358,7 @@
 
     goto :goto_0
 
-    .line 498
+    .line 500
     :cond_0
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -366,7 +366,7 @@
 
     iput v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
-    .line 500
+    .line 502
     :goto_0
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -374,47 +374,47 @@
 
     iput v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 501
+    .line 503
     iget-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->grouped_id:J
 
     iput-wide v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->grouped_id:J
 
-    .line 502
+    .line 504
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 503
+    .line 505
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 504
+    .line 506
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 505
+    .line 507
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 506
+    .line 508
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
     const/4 v8, 0x0
 
-    .line 507
+    .line 509
     iput v8, v3, Lorg/telegram/tgnet/TLRPC$Message;->edit_date:I
 
-    .line 508
+    .line 510
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->entities:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_1
 
-    .line 509
+    .line 511
     iget-object v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
@@ -422,7 +422,7 @@
     :cond_1
     if-nez p2, :cond_2
 
-    .line 512
+    .line 514
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
@@ -437,65 +437,65 @@
     :goto_1
     iput-boolean p2, v3, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 513
+    .line 515
     iput-boolean v8, v3, Lorg/telegram/tgnet/TLRPC$Message;->unread:Z
 
-    .line 514
+    .line 516
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-wide v0, p2, Lorg/telegram/tgnet/TLRPC$Message;->via_bot_id:J
 
     iput-wide v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->via_bot_id:J
 
-    .line 515
+    .line 517
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$Message;->reply_markup:Lorg/telegram/tgnet/TLRPC$ReplyMarkup;
 
     iput-object v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->reply_markup:Lorg/telegram/tgnet/TLRPC$ReplyMarkup;
 
-    .line 516
+    .line 518
     iget-boolean v0, p2, Lorg/telegram/tgnet/TLRPC$Message;->post:Z
 
     iput-boolean v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->post:Z
 
-    .line 517
+    .line 519
     iget-boolean v0, p2, Lorg/telegram/tgnet/TLRPC$Message;->legacy:Z
 
     iput-boolean v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->legacy:Z
 
-    .line 518
+    .line 520
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$Message;->restriction_reason:Ljava/util/ArrayList;
 
     iput-object v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->restriction_reason:Ljava/util/ArrayList;
 
-    .line 519
+    .line 521
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$Message;->replyMessage:Lorg/telegram/tgnet/TLRPC$Message;
 
     iput-object v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->replyMessage:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-nez v0, :cond_3
 
-    .line 520
+    .line 522
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_3
 
-    .line 521
+    .line 523
     iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iput-object v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->replyMessage:Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 523
+    .line 525
     :cond_3
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
     iput-object v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
-    .line 524
+    .line 526
     iget-boolean v0, p2, Lorg/telegram/tgnet/TLRPC$Message;->invert_media:Z
 
     iput-boolean v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->invert_media:Z
 
-    .line 525
+    .line 527
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
     iput-object p2, v3, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
@@ -504,7 +504,7 @@
 
     const/4 p2, 0x0
 
-    .line 529
+    .line 531
     iget v0, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -513,31 +513,31 @@
 
     iget-wide v0, v0, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    .line 530
+    .line 532
     iget-boolean v2, p0, Lorg/telegram/messenger/MessagePreviewParams;->isSecret:Z
 
     if-nez v2, :cond_8
 
-    .line 531
+    .line 533
     iget-object v2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
 
     if-eqz v4, :cond_5
 
-    .line 533
+    .line 535
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isDice()Z
 
     move-result p2
 
     if-nez p2, :cond_4
 
-    .line 534
+    .line 536
     iput-boolean v7, p0, Lorg/telegram/messenger/MessagePreviewParams;->hasSenders:Z
 
     goto :goto_2
 
-    .line 536
+    .line 538
     :cond_4
     iput-boolean v7, p0, Lorg/telegram/messenger/MessagePreviewParams;->willSeeSenders:Z
 
@@ -546,7 +546,7 @@
 
     goto :goto_3
 
-    .line 538
+    .line 540
     :cond_5
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
@@ -568,32 +568,32 @@
 
     if-eqz v0, :cond_8
 
-    .line 539
+    .line 541
     :cond_6
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_messageFwdHeader;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_messageFwdHeader;-><init>()V
 
-    .line 540
+    .line 542
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     iput-object v0, p2, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 541
+    .line 543
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isDice()Z
 
     move-result v0
 
     if-nez v0, :cond_7
 
-    .line 542
+    .line 544
     iput-boolean v7, p0, Lorg/telegram/messenger/MessagePreviewParams;->hasSenders:Z
 
     goto :goto_3
 
-    .line 544
+    .line 546
     :cond_7
     iput-boolean v7, p0, Lorg/telegram/messenger/MessagePreviewParams;->willSeeSenders:Z
 
@@ -601,17 +601,17 @@
     :goto_3
     if-eqz p2, :cond_9
 
-    .line 549
+    .line 551
     iput-object p2, v3, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
 
-    .line 550
+    .line 552
     iget p2, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     or-int/lit8 p2, p2, 0x4
 
     iput p2, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 554
+    .line 556
     :cond_9
     new-instance p2, Lorg/telegram/messenger/MessagePreviewParams$1;
 
@@ -629,35 +629,35 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/messenger/MessagePreviewParams$1;-><init>(Lorg/telegram/messenger/MessagePreviewParams;ILorg/telegram/tgnet/TLRPC$Message;ZZI)V
 
-    .line 586
+    .line 588
     iget-boolean v0, p1, Lorg/telegram/messenger/MessageObject;->attachPathExists:Z
 
     iput-boolean v0, p2, Lorg/telegram/messenger/MessageObject;->attachPathExists:Z
 
-    .line 587
+    .line 589
     iget-boolean v0, p1, Lorg/telegram/messenger/MessageObject;->mediaExists:Z
 
     iput-boolean v0, p2, Lorg/telegram/messenger/MessageObject;->mediaExists:Z
 
-    .line 588
+    .line 590
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isWebpage()Z
 
     move-result p1
 
     iput-boolean p1, p2, Lorg/telegram/messenger/MessageObject;->hasPreview:Z
 
-    .line 589
+    .line 591
     invoke-virtual {p2, v7}, Lorg/telegram/messenger/MessageObject;->generateThumbs(Z)V
 
     if-nez p3, :cond_a
 
     move v8, v7
 
-    .line 591
+    .line 593
     :cond_a
     iput-boolean v8, p2, Lorg/telegram/messenger/MessageObject;->previewForward:Z
 
-    .line 593
+    .line 595
     iput-boolean v7, p2, Lorg/telegram/messenger/MessageObject;->preview:Z
 
     return-object p2
@@ -668,7 +668,7 @@
 .method public attach(Lorg/telegram/ui/Components/MessagePreviewView;)V
     .locals 0
 
-    .line 611
+    .line 613
     iput-object p1, p0, Lorg/telegram/messenger/MessagePreviewParams;->previewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     return-void
@@ -679,12 +679,12 @@
 
     const/4 v0, 0x0
 
-    .line 383
+    .line 385
     iput-object v0, p0, Lorg/telegram/messenger/MessagePreviewParams;->currentLink:Landroid/text/style/CharacterStyle;
 
     if-eqz p1, :cond_1
 
-    .line 384
+    .line 386
     iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageText:Ljava/lang/CharSequence;
 
     instance-of v0, p1, Landroid/text/Spanned;
@@ -699,10 +699,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 385
+    .line 387
     check-cast p1, Landroid/text/Spanned;
 
-    .line 386
+    .line 388
     invoke-interface {p1}, Landroid/text/Spanned;->length()I
 
     move-result v0
@@ -717,13 +717,13 @@
 
     check-cast p1, [Landroid/text/style/URLSpan;
 
-    .line 388
+    .line 390
     :goto_0
     array-length v0, p1
 
     if-ge v2, v0, :cond_1
 
-    .line 389
+    .line 391
     aget-object v0, p1, v2
 
     invoke-virtual {v0}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
@@ -740,7 +740,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 390
+    .line 392
     aget-object p1, p1, v2
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagePreviewParams;->currentLink:Landroid/text/style/CharacterStyle;
@@ -768,21 +768,21 @@
         }
     .end annotation
 
-    .line 616
+    .line 618
     iget-object v0, p0, Lorg/telegram/messenger/MessagePreviewParams;->forwardMessages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 617
+    .line 619
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/MessagePreviewParams$Messages;->checkEdits(Ljava/util/ArrayList;)Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 619
+    .line 621
     iput-object v0, p0, Lorg/telegram/messenger/MessagePreviewParams;->forwardMessages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     move v0, v1
@@ -792,38 +792,38 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 623
+    .line 625
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/MessagePreviewParams;->replyMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     if-eqz v2, :cond_1
 
-    .line 624
+    .line 626
     invoke-virtual {v2, p1}, Lorg/telegram/messenger/MessagePreviewParams$Messages;->checkEdits(Ljava/util/ArrayList;)Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     move-result-object v2
 
     if-eqz v2, :cond_1
 
-    .line 626
+    .line 628
     iput-object v2, p0, Lorg/telegram/messenger/MessagePreviewParams;->replyMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     move v0, v1
 
-    .line 630
+    .line 632
     :cond_1
     iget-object v2, p0, Lorg/telegram/messenger/MessagePreviewParams;->linkMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     if-eqz v2, :cond_2
 
-    .line 631
+    .line 633
     invoke-virtual {v2, p1}, Lorg/telegram/messenger/MessagePreviewParams$Messages;->checkEdits(Ljava/util/ArrayList;)Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     move-result-object p1
 
     if-eqz p1, :cond_2
 
-    .line 633
+    .line 635
     iput-object p1, p0, Lorg/telegram/messenger/MessagePreviewParams;->linkMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     goto :goto_1
@@ -834,12 +834,12 @@
     :goto_1
     if-eqz v1, :cond_3
 
-    .line 637
+    .line 639
     iget-object p1, p0, Lorg/telegram/messenger/MessagePreviewParams;->previewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     if-eqz p1, :cond_3
 
-    .line 638
+    .line 640
     invoke-virtual {p1}, Lorg/telegram/ui/Components/MessagePreviewView;->updateAll()V
 
     :cond_3
@@ -876,14 +876,14 @@
 
     if-eqz p2, :cond_1
 
-    .line 399
+    .line 401
     invoke-static {p1}, Landroid/text/SpannableString;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableString;
 
     move-result-object p1
 
     const/4 v1, 0x1
 
-    .line 401
+    .line 403
     :try_start_0
     invoke-static {p1, v1}, Lorg/telegram/messenger/AndroidUtilities;->addLinks(Landroid/text/Spannable;I)Z
     :try_end_0
@@ -894,10 +894,10 @@
     :catch_0
     move-exception v2
 
-    .line 403
+    .line 405
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 405
+    .line 407
     :goto_0
     invoke-interface {p1}, Landroid/text/Spannable;->length()I
 
@@ -913,13 +913,13 @@
 
     move v2, v0
 
-    .line 407
+    .line 409
     :goto_1
     array-length v3, p1
 
     if-ge v2, v3, :cond_1
 
-    .line 408
+    .line 410
     aget-object v3, p1, v2
 
     invoke-virtual {v3}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
@@ -946,7 +946,7 @@
 .method public isEmpty()Z
     .locals 1
 
-    .line 602
+    .line 604
     iget-object v0, p0, Lorg/telegram/messenger/MessagePreviewParams;->forwardMessages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     if-eqz v0, :cond_0
@@ -955,7 +955,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 603
+    .line 605
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -971,7 +971,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 604
+    .line 606
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -987,7 +987,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 605
+    .line 607
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -1054,37 +1054,37 @@
 
     const/4 v10, 0x0
 
-    .line 435
+    .line 437
     iput-boolean v10, v8, Lorg/telegram/messenger/MessagePreviewParams;->hasPreview:Z
 
-    .line 436
+    .line 438
     iput-boolean v10, v8, Lorg/telegram/messenger/MessagePreviewParams;->hasCaption:Z
 
-    .line 437
+    .line 439
     iput-boolean v10, v8, Lorg/telegram/messenger/MessagePreviewParams;->hasSenders:Z
 
-    .line 438
+    .line 440
     invoke-static/range {p2 .. p3}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result v0
 
     iput-boolean v0, v8, Lorg/telegram/messenger/MessagePreviewParams;->isSecret:Z
 
-    .line 439
+    .line 441
     iput-boolean v10, v8, Lorg/telegram/messenger/MessagePreviewParams;->multipleUsers:Z
 
     const/4 v11, 0x0
 
     if-eqz v9, :cond_a
 
-    .line 442
+    .line 444
     new-instance v12, Ljava/util/ArrayList;
 
     invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
     move v0, v10
 
-    .line 443
+    .line 445
     :goto_0
     invoke-virtual/range {p1 .. p1}, Ljava/util/ArrayList;->size()I
 
@@ -1094,14 +1094,14 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 444
+    .line 446
     invoke-virtual {v9, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/messenger/MessageObject;
 
-    .line 445
+    .line 447
     iget-object v2, v1, Lorg/telegram/messenger/MessageObject;->caption:Ljava/lang/CharSequence;
 
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1110,10 +1110,10 @@
 
     if-nez v2, :cond_0
 
-    .line 446
+    .line 448
     iput-boolean v13, v8, Lorg/telegram/messenger/MessagePreviewParams;->hasCaption:Z
 
-    .line 449
+    .line 451
     :cond_0
     iget-boolean v2, v8, Lorg/telegram/messenger/MessagePreviewParams;->hasPreview:Z
 
@@ -1125,23 +1125,23 @@
 
     if-eqz v2, :cond_1
 
-    .line 450
+    .line 452
     iput-boolean v13, v8, Lorg/telegram/messenger/MessagePreviewParams;->hasPreview:Z
 
-    .line 453
+    .line 455
     :cond_1
     iget-boolean v2, v8, Lorg/telegram/messenger/MessagePreviewParams;->isSecret:Z
 
     if-nez v2, :cond_2
 
-    .line 454
+    .line 456
     iget-object v1, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
 
     if-eqz v1, :cond_2
 
-    .line 456
+    .line 458
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     if-nez v2, :cond_2
@@ -1154,7 +1154,7 @@
 
     if-nez v2, :cond_2
 
-    .line 457
+    .line 459
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;->from_name:Ljava/lang/String;
 
     invoke-virtual {v12, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -1164,7 +1164,7 @@
 
     goto :goto_0
 
-    .line 462
+    .line 464
     :cond_3
     new-instance v14, Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
@@ -1198,7 +1198,7 @@
 
     iput-object v14, v8, Lorg/telegram/messenger/MessagePreviewParams;->forwardMessages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
-    .line 463
+    .line 465
     iget-object v0, v14, Lorg/telegram/messenger/MessagePreviewParams$Messages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1207,16 +1207,16 @@
 
     if-eqz v0, :cond_5
 
-    .line 464
+    .line 466
     iput-object v11, v8, Lorg/telegram/messenger/MessagePreviewParams;->forwardMessages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
-    .line 467
+    .line 469
     :cond_5
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 468
+    .line 470
     :goto_2
     invoke-virtual/range {p1 .. p1}, Ljava/util/ArrayList;->size()I
 
@@ -1224,21 +1224,21 @@
 
     if-ge v10, v1, :cond_9
 
-    .line 469
+    .line 471
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/messenger/MessageObject;
 
-    .line 471
+    .line 473
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->isFromUser()Z
 
     move-result v2
 
     if-eqz v2, :cond_6
 
-    .line 472
+    .line 474
     iget-object v1, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -1247,7 +1247,7 @@
 
     goto :goto_4
 
-    .line 474
+    .line 476
     :cond_6
     iget v2, v1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
@@ -1269,7 +1269,7 @@
 
     move-result-object v2
 
-    .line 475
+    .line 477
     invoke-static {v2}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v3
@@ -1286,7 +1286,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 476
+    .line 478
     iget-object v1, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->fwd_from:Lorg/telegram/tgnet/TLRPC$MessageFwdHeader;
@@ -1297,7 +1297,7 @@
 
     goto :goto_3
 
-    .line 478
+    .line 480
     :cond_7
     iget-object v1, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -1308,7 +1308,7 @@
     :goto_3
     neg-long v1, v1
 
-    .line 481
+    .line 483
     :goto_4
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -1320,7 +1320,7 @@
 
     if-nez v3, :cond_8
 
-    .line 482
+    .line 484
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
@@ -1332,7 +1332,7 @@
 
     goto :goto_2
 
-    .line 485
+    .line 487
     :cond_9
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1346,12 +1346,12 @@
 
     if-le v0, v13, :cond_b
 
-    .line 486
+    .line 488
     iput-boolean v13, v8, Lorg/telegram/messenger/MessagePreviewParams;->multipleUsers:Z
 
     goto :goto_5
 
-    .line 489
+    .line 491
     :cond_a
     iput-object v11, v8, Lorg/telegram/messenger/MessagePreviewParams;->forwardMessages:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
@@ -1368,12 +1368,15 @@
     .line 296
     iput-boolean v0, p0, Lorg/telegram/messenger/MessagePreviewParams;->hasMedia:Z
 
+    .line 297
+    iput-boolean v0, p0, Lorg/telegram/messenger/MessagePreviewParams;->isVideo:Z
+
     const/4 v1, 0x1
 
-    .line 297
+    .line 298
     iput-boolean v1, p0, Lorg/telegram/messenger/MessagePreviewParams;->singleLink:Z
 
-    .line 298
+    .line 299
     iget-object v2, p0, Lorg/telegram/messenger/MessagePreviewParams;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
     if-eq v2, p2, :cond_0
@@ -1385,11 +1388,11 @@
     :cond_0
     move v2, v0
 
-    .line 299
+    .line 300
     :goto_0
     iput-object p2, p0, Lorg/telegram/messenger/MessagePreviewParams;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    .line 300
+    .line 301
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
@@ -1402,7 +1405,7 @@
 
     if-nez v3, :cond_1
 
-    .line 301
+    .line 302
     iput-object v4, p0, Lorg/telegram/messenger/MessagePreviewParams;->linkMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     goto/16 :goto_b
@@ -1412,7 +1415,7 @@
 
     const-string p3, ""
 
-    .line 307
+    .line 308
     :cond_2
     iget-object v3, p0, Lorg/telegram/messenger/MessagePreviewParams;->linkMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
@@ -1436,17 +1439,17 @@
 
     if-eqz p6, :cond_5
 
-    .line 308
+    .line 309
     iget-object v3, p6, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz v3, :cond_5
 
-    .line 309
+    .line 310
     iget-boolean v5, v3, Lorg/telegram/tgnet/TLRPC$Message;->invert_media:Z
 
     iput-boolean v5, p0, Lorg/telegram/messenger/MessagePreviewParams;->webpageTop:Z
 
-    .line 310
+    .line 311
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     if-eqz v3, :cond_5
@@ -1455,16 +1458,16 @@
 
     if-eqz v3, :cond_5
 
-    .line 311
+    .line 312
     iput-boolean v1, p0, Lorg/telegram/messenger/MessagePreviewParams;->webpageSmall:Z
 
-    .line 315
+    .line 316
     :cond_5
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
-    .line 316
+    .line 317
     new-instance v5, Landroid/text/SpannableStringBuilder;
 
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->getTrimmedString(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
@@ -1477,14 +1480,14 @@
 
     aput-object v5, p3, v0
 
-    .line 318
+    .line 319
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v5, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 319
+    .line 320
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v6
@@ -1495,14 +1498,14 @@
 
     iput-wide v6, v5, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 320
+    .line 321
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v5, v3, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 321
+    .line 322
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v6
@@ -1513,7 +1516,7 @@
 
     iput-wide v6, v5, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 322
+    .line 323
     invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
     move-result-object v5
@@ -1524,7 +1527,7 @@
 
     iput-object v5, v3, Lorg/telegram/tgnet/TLRPC$Message;->entities:Ljava/util/ArrayList;
 
-    .line 323
+    .line 324
     aget-object p3, p3, v0
 
     invoke-interface {p3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
@@ -1533,76 +1536,85 @@
 
     iput-object p3, v3, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 324
+    .line 325
     iget-boolean p3, p0, Lorg/telegram/messenger/MessagePreviewParams;->webpageTop:Z
 
     iput-boolean p3, v3, Lorg/telegram/tgnet/TLRPC$Message;->invert_media:Z
 
     if-eqz p2, :cond_7
 
-    .line 326
+    .line 327
     iget p3, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     or-int/lit16 p3, p3, 0x200
 
     iput p3, v3, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 327
+    .line 328
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_messageMediaWebPage;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaWebPage;-><init>()V
 
     iput-object p3, v3, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 328
+    .line 329
     iput-object p2, p3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    .line 329
+    .line 330
     iget-boolean v5, p0, Lorg/telegram/messenger/MessagePreviewParams;->webpageSmall:Z
 
     xor-int/lit8 v6, v5, 0x1
 
     iput-boolean v6, p3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->force_large_media:Z
 
-    .line 330
+    .line 331
     iput-boolean v5, p3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->force_small_media:Z
 
-    .line 331
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$WebPage;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
+    .line 332
+    iget-object p3, p2, Lorg/telegram/tgnet/TLRPC$WebPage;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    if-eqz p2, :cond_6
+    if-eqz p3, :cond_6
 
-    move p2, v1
+    move p3, v1
 
     goto :goto_3
 
     :cond_6
-    move p2, v0
+    move p3, v0
 
     :goto_3
-    iput-boolean p2, p0, Lorg/telegram/messenger/MessagePreviewParams;->hasMedia:Z
+    iput-boolean p3, p0, Lorg/telegram/messenger/MessagePreviewParams;->hasMedia:Z
+
+    .line 333
+    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$WebPage;->document:Lorg/telegram/tgnet/TLRPC$Document;
+
+    invoke-static {p2}, Lorg/telegram/messenger/MessageObject;->isVideoDocument(Lorg/telegram/tgnet/TLRPC$Document;)Z
+
+    move-result p2
+
+    iput-boolean p2, p0, Lorg/telegram/messenger/MessagePreviewParams;->isVideo:Z
 
     goto :goto_4
 
-    .line 333
+    .line 335
     :cond_7
     iput-boolean v0, p0, Lorg/telegram/messenger/MessagePreviewParams;->hasMedia:Z
 
-    .line 335
+    .line 337
     :goto_4
     iput-boolean v1, v3, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 336
+    .line 338
     iput-boolean v0, v3, Lorg/telegram/tgnet/TLRPC$Message;->unread:Z
 
     if-eqz p4, :cond_8
 
-    .line 339
+    .line 341
     iget-object p2, p4, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iput-object p2, v3, Lorg/telegram/tgnet/TLRPC$Message;->replyMessage:Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 340
+    .line 342
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;-><init>()V
@@ -1611,14 +1623,14 @@
 
     if-eqz p5, :cond_8
 
-    .line 342
+    .line 344
     invoke-virtual {p5}, Lorg/telegram/ui/ChatActivity$ReplyQuote;->getText()Ljava/lang/String;
 
     move-result-object p3
 
     iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->quote_text:Ljava/lang/String;
 
-    .line 343
+    .line 345
     iget-object p2, v3, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
     iget p3, p2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->flags:I
@@ -1627,28 +1639,28 @@
 
     iput p3, p2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->flags:I
 
-    .line 345
+    .line 347
     invoke-virtual {p5}, Lorg/telegram/ui/ChatActivity$ReplyQuote;->getEntities()Ljava/util/ArrayList;
 
     move-result-object p3
 
     iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->quote_entities:Ljava/util/ArrayList;
 
-    .line 346
+    .line 348
     iget-object p2, v3, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
     iget-object p3, p2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->quote_entities:Ljava/util/ArrayList;
 
     if-eqz p3, :cond_8
 
-    .line 347
+    .line 349
     iget p3, p2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->flags:I
 
     or-int/lit16 p3, p3, 0x80
 
     iput p3, p2, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->flags:I
 
-    .line 352
+    .line 354
     :cond_8
     new-instance p2, Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
@@ -1664,7 +1676,7 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MessagePreviewParams;->linkMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
-    .line 353
+    .line 355
     iget-object p1, p2, Lorg/telegram/messenger/MessagePreviewParams$Messages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1673,12 +1685,12 @@
 
     if-eqz p1, :cond_9
 
-    .line 354
+    .line 356
     iput-object v4, p0, Lorg/telegram/messenger/MessagePreviewParams;->linkMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
     goto/16 :goto_b
 
-    .line 356
+    .line 358
     :cond_9
     iget-object p1, p0, Lorg/telegram/messenger/MessagePreviewParams;->linkMessage:Lorg/telegram/messenger/MessagePreviewParams$Messages;
 
@@ -1690,7 +1702,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 357
+    .line 359
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageText:Ljava/lang/CharSequence;
 
     instance-of p3, p2, Landroid/text/Spanned;
@@ -1703,7 +1715,7 @@
 
     if-nez p2, :cond_c
 
-    .line 358
+    .line 360
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageText:Ljava/lang/CharSequence;
 
     move-object p3, p2
@@ -1724,7 +1736,7 @@
 
     if-eqz p2, :cond_b
 
-    .line 359
+    .line 361
     array-length p2, p2
 
     if-gt p2, v1, :cond_a
@@ -1745,7 +1757,7 @@
 
     goto :goto_9
 
-    .line 360
+    .line 362
     :cond_c
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->caption:Ljava/lang/CharSequence;
 
@@ -1759,7 +1771,7 @@
 
     if-nez p2, :cond_f
 
-    .line 361
+    .line 363
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageText:Ljava/lang/CharSequence;
 
     check-cast p2, Landroid/text/Spanned;
@@ -1780,7 +1792,7 @@
 
     if-eqz p2, :cond_e
 
-    .line 362
+    .line 364
     array-length p2, p2
 
     if-gt p2, v1, :cond_d
@@ -1799,7 +1811,7 @@
     :goto_8
     iput-boolean p2, p0, Lorg/telegram/messenger/MessagePreviewParams;->singleLink:Z
 
-    .line 364
+    .line 366
     :cond_f
     :goto_9
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->hasLinkMediaToMakeSmall()Z
@@ -1812,7 +1824,7 @@
 
     if-eqz p6, :cond_12
 
-    .line 365
+    .line 367
     iget-object p2, p6, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     if-eqz p2, :cond_12
@@ -1821,7 +1833,7 @@
 
     if-eqz p2, :cond_12
 
-    .line 366
+    .line 368
     iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->force_small_media:Z
 
     if-nez p2, :cond_10
@@ -1851,14 +1863,14 @@
     :cond_12
     if-eqz v2, :cond_13
 
-    .line 368
+    .line 370
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isLinkMediaSmall()Z
 
     move-result p2
 
     iput-boolean p2, p0, Lorg/telegram/messenger/MessagePreviewParams;->webpageSmall:Z
 
-    .line 370
+    .line 372
     :cond_13
     :goto_a
     iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -1869,24 +1881,24 @@
 
     if-eqz p1, :cond_14
 
-    .line 371
+    .line 373
     iget-boolean p2, p0, Lorg/telegram/messenger/MessagePreviewParams;->webpageSmall:Z
 
     xor-int/lit8 p3, p2, 0x1
 
     iput-boolean p3, p1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->force_large_media:Z
 
-    .line 372
+    .line 374
     iput-boolean p2, p1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->force_small_media:Z
 
-    .line 377
+    .line 379
     :cond_14
     :goto_b
     iget-object p1, p0, Lorg/telegram/messenger/MessagePreviewParams;->previewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     if-eqz p1, :cond_15
 
-    .line 378
+    .line 380
     invoke-virtual {p1}, Lorg/telegram/ui/Components/MessagePreviewView;->updateLink()V
 
     :cond_15
@@ -1911,11 +1923,15 @@
 
     move-object v1, p2
 
+    .line 266
+    iget-boolean v2, v8, Lorg/telegram/messenger/MessagePreviewParams;->isSecret:Z
+
     const/4 v9, 0x0
+
+    if-nez v2, :cond_1
 
     if-eqz v0, :cond_1
 
-    .line 266
     iget v2, v0, Lorg/telegram/messenger/MessageObject;->type:I
 
     const/16 v3, 0xa

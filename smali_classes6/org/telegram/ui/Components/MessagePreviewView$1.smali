@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView;)V
     .locals 0
 
-    .line 1940
+    .line 1998
     iput-object p1, p0, Lorg/telegram/ui/Components/MessagePreviewView$1;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 1
 
-    .line 1943
+    .line 2001
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$1;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView;->offsetsAnimator:Landroid/animation/ValueAnimator;
@@ -51,7 +51,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1944
+    .line 2002
     iget-object v0, p0, Lorg/telegram/ui/Components/MessagePreviewView$1;->this$0:Lorg/telegram/ui/Components/MessagePreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/MessagePreviewView;->offsetsAnimator:Landroid/animation/ValueAnimator;

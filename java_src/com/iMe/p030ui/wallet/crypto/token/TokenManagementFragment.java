@@ -64,7 +64,7 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.browser.Browser;
@@ -72,7 +72,7 @@ import org.telegram.messenger.databinding.ForkFragmentTokenManagementBinding;
 import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.CameraScanActivity;
@@ -280,12 +280,12 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         ScreenType screenType = this.screenType;
         if (screenType instanceof ScreenType.Import) {
             ViewExtKt.visible$default(setupActionButtonState$lambda$2, false, 1, null);
-            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_import_confirmation_import));
+            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3632R.string.wallet_tokens_management_import_confirmation_import));
             setupActionButtonState$lambda$2.setEnabled(z2);
             setupActionButtonState$lambda$2.setAlpha(z2 ? 1.0f : 0.5f);
         } else if ((screenType instanceof ScreenType.View) && z) {
             ViewExtKt.visible$default(setupActionButtonState$lambda$2, false, 1, null);
-            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3634R.string.favorite_folder_delete));
+            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3632R.string.favorite_folder_delete));
         }
     }
 
@@ -319,8 +319,8 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
             LinearLayout linearSafety = binding.linearSafety;
             Intrinsics.checkNotNullExpressionValue(linearSafety, "linearSafety");
             ViewExtKt.visible$default(linearSafety, false, 1, null);
-            binding.textSafetyStatus.setText(LocaleController.formatPluralStringInternal(C3634R.string.plural_wallet_tokens_management_verified, num.intValue()));
-            binding.imageSafetyStatus.setImageResource(num.intValue() > 0 ? C3634R.C3636drawable.fork_ic_verified : C3634R.C3636drawable.fork_ic_warning_info);
+            binding.textSafetyStatus.setText(LocaleController.formatPluralStringInternal(C3632R.string.plural_wallet_tokens_management_verified, num.intValue()));
+            binding.imageSafetyStatus.setImageResource(num.intValue() > 0 ? C3632R.C3634drawable.fork_ic_verified : C3632R.C3634drawable.fork_ic_warning_info);
         }
     }
 
@@ -373,12 +373,12 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setTitle(getResourceManager().getString(Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE) ? C3634R.string.wallet_tokens_management_title_import : C3634R.string.wallet_tokens_management_title_details));
-        c3706ActionBar.setAllowOverlayTitle(true);
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setTitle(getResourceManager().getString(Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE) ? C3632R.string.wallet_tokens_management_title_import : C3632R.string.wallet_tokens_management_title_details));
+        c3704ActionBar.setAllowOverlayTitle(true);
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 TokenManagementPresenter presenter;
                 if (i == -1) {
@@ -393,7 +393,7 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
             Activity parentActivity = getParentActivity();
             Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
             this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-            ActionBarMenuItem setupActionBar$lambda$6$lambda$5 = c3706ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+            ActionBarMenuItem setupActionBar$lambda$6$lambda$5 = c3704ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
             setupActionBar$lambda$6$lambda$5.disableRipple();
             Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$6$lambda$5, "setupActionBar$lambda$6$lambda$5");
             com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$6$lambda$5, AndroidUtilities.m104dp(14));
@@ -597,19 +597,19 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$18$lambda$17, "setupViews$lambda$18$lambda$17");
         setupViews$lambda$18$lambda$17.setVisibility(Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE) ? 0 : 8);
         setupViews$lambda$18$lambda$17.setBackground(null);
-        setupViews$lambda$18$lambda$17.setHint(getResourceManager().getString(C3634R.string.channel_donations_address_field_hint));
+        setupViews$lambda$18$lambda$17.setHint(getResourceManager().getString(C3632R.string.channel_donations_address_field_hint));
         TextView textAddress = binding.textAddress;
         Intrinsics.checkNotNullExpressionValue(textAddress, "textAddress");
         textAddress.setVisibility(this.screenType instanceof ScreenType.View ? 0 : 8);
-        binding.textAddressTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_token_address));
-        binding.textInformationTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_token_information));
-        binding.textIconTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_icon));
-        binding.textSymbolTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_symbol));
-        binding.textNameTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_name));
-        binding.textDecimalsTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_decimals));
-        binding.textNetworkTitle.setText(getResourceManager().getString(C3634R.string.wallet_connect_session_details_network));
-        binding.textSafetyTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_token_safety));
-        binding.textNotFound.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_token_not_found));
+        binding.textAddressTitle.setText(getResourceManager().getString(C3632R.string.wallet_tokens_management_token_address));
+        binding.textInformationTitle.setText(getResourceManager().getString(C3632R.string.wallet_tokens_management_token_information));
+        binding.textIconTitle.setText(getResourceManager().getString(C3632R.string.wallet_tokens_management_icon));
+        binding.textSymbolTitle.setText(getResourceManager().getString(C3632R.string.wallet_tokens_management_symbol));
+        binding.textNameTitle.setText(getResourceManager().getString(C3632R.string.wallet_tokens_management_name));
+        binding.textDecimalsTitle.setText(getResourceManager().getString(C3632R.string.wallet_tokens_management_decimals));
+        binding.textNetworkTitle.setText(getResourceManager().getString(C3632R.string.wallet_connect_session_details_network));
+        binding.textSafetyTitle.setText(getResourceManager().getString(C3632R.string.wallet_tokens_management_token_safety));
+        binding.textNotFound.setText(getResourceManager().getString(C3632R.string.wallet_tokens_management_token_not_found));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -627,8 +627,8 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         final ActionBarMenuItem setupAddressOptions$lambda$21 = getBinding().buttonAddressOptions;
         setupAddressOptions$lambda$21.removeAllSubItems();
         if (Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE)) {
-            setupAddressOptions$lambda$21.setIcon(C3634R.C3636drawable.msg_qrcode);
-            setupAddressOptions$lambda$21.setContentDescription(getResourceManager().getString(C3634R.string.wallet_backup_scan_qr));
+            setupAddressOptions$lambda$21.setIcon(C3632R.C3634drawable.msg_qrcode);
+            setupAddressOptions$lambda$21.setContentDescription(getResourceManager().getString(C3632R.string.wallet_backup_scan_qr));
             Intrinsics.checkNotNullExpressionValue(setupAddressOptions$lambda$21, "setupAddressOptions$lambda$21");
             ViewExtKt.safeThrottledClick$default(setupAddressOptions$lambda$21, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupAddressOptions$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -650,11 +650,11 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
             }, 1, null);
         }
         if (z) {
-            setupAddressOptions$lambda$21.setIcon(C3634R.C3636drawable.ic_ab_other);
-            setupAddressOptions$lambda$21.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
-            setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.COPY, C3634R.C3636drawable.msg_copy, getResourceManager().getString(C3634R.string.wallet_transaction_details_action_copy_address));
+            setupAddressOptions$lambda$21.setIcon(C3632R.C3634drawable.ic_ab_other);
+            setupAddressOptions$lambda$21.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3632R.string.AccDescrMoreOptions));
+            setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.COPY, C3632R.C3634drawable.msg_copy, getResourceManager().getString(C3632R.string.wallet_transaction_details_action_copy_address));
             if (network != null && (explorer = network.getExplorer()) != null) {
-                setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3634R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
+                setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3632R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
             }
             Intrinsics.checkNotNullExpressionValue(setupAddressOptions$lambda$21, "setupAddressOptions$lambda$21");
             ViewExtKt.safeThrottledClick$default(setupAddressOptions$lambda$21, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupAddressOptions$1$3
@@ -713,7 +713,7 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showTokensListsInfoDialog() {
-        showDialog(DialogsFactoryKt.createDialogInfoWithAnimation$default(this, 0, null, getResourceManager().getString(C3634R.string.token_lists_description), 0, null, null, 59, null));
+        showDialog(DialogsFactoryKt.createDialogInfoWithAnimation$default(this, 0, null, getResourceManager().getString(C3632R.string.token_lists_description), 0, null, null, 59, null));
     }
 
     /* compiled from: TokenManagementFragment.kt */

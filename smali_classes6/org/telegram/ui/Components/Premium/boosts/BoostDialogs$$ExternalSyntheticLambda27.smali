@@ -35,7 +35,7 @@
 .method public final format(I)Ljava/lang/String;
     .locals 0
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$l0r_WvAKWX9-YBOafK_PW6A19Mg(I)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostDialogs;->$r8$lambda$doXfFJDB5ttdt-CnztsS_Azm0pQ(I)Ljava/lang/String;
 
     move-result-object p1
 

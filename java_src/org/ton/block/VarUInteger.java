@@ -121,25 +121,25 @@ public final class VarUInteger implements TlbObject {
     private static final class VarUIntegerTlbConstructor extends org.ton.tlb.TlbConstructor<VarUInteger> {
 
         /* renamed from: n */
-        private final int f2054n;
+        private final int f2055n;
 
         public VarUIntegerTlbConstructor(int i) {
             super("var_uint$_ {n:#} len:(#< n) value:(uint (len * 8)) = VarUInteger n;", null, 2, null);
-            this.f2054n = i;
+            this.f2055n = i;
         }
 
         @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
         public void storeTlb(CellBuilder cellBuilder, VarUInteger value) {
             Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
             Intrinsics.checkNotNullParameter(value, "value");
-            cellBuilder.storeUIntLes(value.len(), this.f2054n);
+            cellBuilder.storeUIntLes(value.len(), this.f2055n);
             cellBuilder.storeUInt(value.value(), value.len() * 8);
         }
 
         @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
         public VarUInteger loadTlb(CellSlice cellSlice) {
             Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-            int intValue = cellSlice.loadUIntLes(this.f2054n).intValue();
+            int intValue = cellSlice.loadUIntLes(this.f2055n).intValue();
             return new VarUInteger(intValue, cellSlice.loadUInt(intValue * 8));
         }
     }

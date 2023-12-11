@@ -46,13 +46,13 @@ public final class ValidatorInfo implements TlbObject {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1974hashCodeimpl = ((UInt.m1974hashCodeimpl(this.validatorListHashShort) * 31) + UInt.m1974hashCodeimpl(this.catchainSeqno)) * 31;
+        int m1976hashCodeimpl = ((UInt.m1976hashCodeimpl(this.validatorListHashShort) * 31) + UInt.m1976hashCodeimpl(this.catchainSeqno)) * 31;
         boolean z = this.nxCcUpdated;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m1974hashCodeimpl + i;
+        return m1976hashCodeimpl + i;
     }
 
     private ValidatorInfo(int i, int i2, boolean z) {
@@ -65,25 +65,25 @@ public final class ValidatorInfo implements TlbObject {
         if (7 != (i & 7)) {
             PluginExceptionsKt.throwMissingFieldException(i, 7, ValidatorInfo$$serializer.INSTANCE.getDescriptor());
         }
-        this.validatorListHashShort = uInt.m1976unboximpl();
-        this.catchainSeqno = uInt2.m1976unboximpl();
+        this.validatorListHashShort = uInt.m1978unboximpl();
+        this.catchainSeqno = uInt2.m1978unboximpl();
         this.nxCcUpdated = z;
     }
 
     public static final /* synthetic */ void write$Self(ValidatorInfo validatorInfo, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         UIntSerializer uIntSerializer = UIntSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1971boximpl(validatorInfo.validatorListHashShort));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1971boximpl(validatorInfo.catchainSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1973boximpl(validatorInfo.validatorListHashShort));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1973boximpl(validatorInfo.catchainSeqno));
         compositeEncoder.encodeBooleanElement(serialDescriptor, 2, validatorInfo.nxCcUpdated);
     }
 
     /* renamed from: getValidatorListHashShort-pVg5ArA  reason: not valid java name */
-    public final int m5205getValidatorListHashShortpVg5ArA() {
+    public final int m5187getValidatorListHashShortpVg5ArA() {
         return this.validatorListHashShort;
     }
 
     /* renamed from: getCatchainSeqno-pVg5ArA  reason: not valid java name */
-    public final int m5204getCatchainSeqnopVg5ArA() {
+    public final int m5186getCatchainSeqnopVg5ArA() {
         return this.catchainSeqno;
     }
 
@@ -141,8 +141,8 @@ public final class ValidatorInfo implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("validator_info");
-        open.field("validator_list_hash_short", UInt.m1971boximpl(this.validatorListHashShort));
-        open.field("catchain_seqno", UInt.m1971boximpl(this.catchainSeqno));
+        open.field("validator_list_hash_short", UInt.m1973boximpl(this.validatorListHashShort));
+        open.field("catchain_seqno", UInt.m1973boximpl(this.catchainSeqno));
         open.field("nx_cc_updated", Boolean.valueOf(this.nxCcUpdated));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;

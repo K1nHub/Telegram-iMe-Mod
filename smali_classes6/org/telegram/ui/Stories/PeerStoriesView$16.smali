@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 2194
+    .line 2191
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public addEmojiToRecent(Ljava/lang/String;)V
     .locals 1
 
-    .line 2215
+    .line 2212
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -51,7 +51,7 @@
 .method public getFontMetrics()Landroid/graphics/Paint$FontMetricsInt;
     .locals 1
 
-    .line 2210
+    .line 2207
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -76,7 +76,7 @@
 
     move-object/from16 v0, p0
 
-    .line 2197
+    .line 2194
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)I
@@ -123,7 +123,7 @@
 
     invoke-virtual/range {v2 .. v16}, Lorg/telegram/messenger/SendMessagesHelper;->sendSticker(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Lorg/telegram/messenger/MessageObject$SendAnimationData;ZIZLjava/lang/Object;Ljava/lang/String;)V
 
-    .line 2198
+    .line 2195
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -132,7 +132,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->addStickerToRecent(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 2199
+    .line 2196
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -141,7 +141,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setFieldText(Ljava/lang/CharSequence;)V
 
-    .line 2200
+    .line 2197
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5700(Lorg/telegram/ui/Stories/PeerStoriesView;)V
@@ -152,7 +152,7 @@
 .method public replaceText(IILjava/lang/CharSequence;Z)V
     .locals 1
 
-    .line 2205
+    .line 2202
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -169,7 +169,7 @@
 
     move-object/from16 v3, p1
 
-    .line 2220
+    .line 2217
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/MentionsContainerView;
@@ -184,19 +184,19 @@
 
     move-result-wide v14
 
-    .line 2221
+    .line 2218
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
-    .line 2222
+    .line 2219
     iget-object v1, v3, Lorg/telegram/tgnet/TLRPC$BotInlineResult;->id:Ljava/lang/String;
 
     const-string v2, "id"
 
     invoke-virtual {v4, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2223
+    .line 2220
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -217,7 +217,7 @@
 
     invoke-virtual {v4, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2224
+    .line 2221
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -234,7 +234,7 @@
 
     invoke-virtual {v4, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2225
+    .line 2222
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/MentionsContainerView;
@@ -253,7 +253,7 @@
 
     invoke-virtual {v4, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2226
+    .line 2223
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
@@ -300,19 +300,19 @@
 
     invoke-static/range {v1 .. v13}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingBotContextResult(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$BotInlineResult;Ljava/util/HashMap;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;ZILjava/lang/String;)V
 
-    .line 2227
+    .line 2224
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v1, v14}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setFieldText(Ljava/lang/CharSequence;)V
 
-    .line 2228
+    .line 2225
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5700(Lorg/telegram/ui/Stories/PeerStoriesView;)V
 
-    .line 2229
+    .line 2226
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$16;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)I

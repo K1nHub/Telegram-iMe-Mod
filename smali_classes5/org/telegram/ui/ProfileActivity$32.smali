@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
-    .line 5223
+    .line 5220
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$32;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .method public onZoomStarted(Lorg/telegram/messenger/MessageObject;)V
     .locals 3
 
-    .line 5226
+    .line 5223
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$32;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2300(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -67,7 +67,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->cancelClickRunnables(Z)V
 
-    .line 5227
+    .line 5224
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$32;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2500(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -88,7 +88,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 5228
+    .line 5225
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$32;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$2500(Lorg/telegram/ui/ProfileActivity;)Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -101,7 +101,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->cancelClickRunnables(Z)V
 
-    .line 5230
+    .line 5227
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$32;->this$0:Lorg/telegram/ui/ProfileActivity;
 

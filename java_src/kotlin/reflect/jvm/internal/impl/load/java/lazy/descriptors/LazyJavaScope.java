@@ -647,7 +647,7 @@ public abstract class LazyJavaScope extends MemberScopeImpl {
         if (kindFilter.acceptsKinds(DescriptorKindFilter.Companion.getCLASSIFIERS_MASK())) {
             for (Name name : computeClassNames(kindFilter, nameFilter)) {
                 if (nameFilter.invoke(name).booleanValue()) {
-                    CollectionsKt.addIfNotNull(linkedHashSet, mo2053getContributedClassifier(name, noLookupLocation));
+                    CollectionsKt.addIfNotNull(linkedHashSet, mo2055getContributedClassifier(name, noLookupLocation));
                 }
             }
         }

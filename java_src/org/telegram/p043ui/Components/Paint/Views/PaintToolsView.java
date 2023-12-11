@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.Components.CubicBezierInterpolator;
 import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.p043ui.Components.Paint.Brush;
@@ -84,7 +84,7 @@ public class PaintToolsView extends LinearLayout {
                     i++;
                 }
             } else if (i == Brush.BRUSHES_LIST.size() + 1) {
-                this.buttons[i2].setImageResource(C3634R.C3636drawable.msg_add);
+                this.buttons[i2].setImageResource(C3632R.C3634drawable.msg_add);
                 this.buttons[i2].setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.Paint.Views.PaintToolsView$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -119,7 +119,7 @@ public class PaintToolsView extends LinearLayout {
         this.selectedIndex = i;
         if (this.isShapeSelected) {
             this.isShapeSelected = false;
-            AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], C3634R.C3636drawable.msg_add);
+            AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], C3632R.C3634drawable.msg_add);
         }
         invalidate();
     }
@@ -160,7 +160,7 @@ public class PaintToolsView extends LinearLayout {
                 }
                 if (this.isShapeSelected) {
                     this.isShapeSelected = false;
-                    AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], C3634R.C3636drawable.msg_add);
+                    AndroidUtilities.updateImageViewImageAnimated(this.buttons[this.brushesCount + 1], C3632R.C3634drawable.msg_add);
                 }
                 this.nextSelectedIndex = i;
                 this.nextSelectedIndexProgress = BitmapDescriptorFactory.HUE_RED;

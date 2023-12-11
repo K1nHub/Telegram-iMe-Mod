@@ -30,11 +30,11 @@ public class UIntTlbConstructor extends TlbConstructor<BigInteger> {
             if ((i2 & 1) != 0) {
                 i = 32;
             }
-            return companion.m5255int(i);
+            return companion.m5237int(i);
         }
 
         /* renamed from: int  reason: not valid java name */
-        public final TlbConstructor<UInt> m5255int(final int i) {
+        public final TlbConstructor<UInt> m5237int(final int i) {
             return number(new Function2<CellBuilder, UInt, Unit>() { // from class: org.ton.tlb.constructor.UIntTlbConstructor$Companion$int$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -44,12 +44,12 @@ public class UIntTlbConstructor extends TlbConstructor<BigInteger> {
 
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(CellBuilder cellBuilder, UInt uInt) {
-                    m5257invokeQn1smSk(cellBuilder, uInt.m1976unboximpl());
+                    m5239invokeQn1smSk(cellBuilder, uInt.m1978unboximpl());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-Qn1smSk  reason: not valid java name */
-                public final void m5257invokeQn1smSk(CellBuilder number, int i2) {
+                public final void m5239invokeQn1smSk(CellBuilder number, int i2) {
                     Intrinsics.checkNotNullParameter(number, "$this$number");
                     number.storeUInt(i2, i);
                 }
@@ -62,13 +62,13 @@ public class UIntTlbConstructor extends TlbConstructor<BigInteger> {
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ UInt invoke(CellSlice cellSlice) {
-                    return UInt.m1971boximpl(m5258invokeOGnWXxg(cellSlice));
+                    return UInt.m1973boximpl(m5240invokeOGnWXxg(cellSlice));
                 }
 
                 /* renamed from: invoke-OGnWXxg  reason: not valid java name */
-                public final int m5258invokeOGnWXxg(CellSlice number) {
+                public final int m5240invokeOGnWXxg(CellSlice number) {
                     Intrinsics.checkNotNullParameter(number, "$this$number");
-                    return UInt.m1972constructorimpl(number.loadUInt(i).intValue());
+                    return UInt.m1974constructorimpl(number.loadUInt(i).intValue());
                 }
             });
         }
@@ -77,11 +77,11 @@ public class UIntTlbConstructor extends TlbConstructor<BigInteger> {
             if ((i2 & 1) != 0) {
                 i = 64;
             }
-            return companion.m5256long(i);
+            return companion.m5238long(i);
         }
 
         /* renamed from: long  reason: not valid java name */
-        public final TlbConstructor<ULong> m5256long(final int i) {
+        public final TlbConstructor<ULong> m5238long(final int i) {
             return number(new Function2<CellBuilder, ULong, Unit>() { // from class: org.ton.tlb.constructor.UIntTlbConstructor$Companion$long$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -91,12 +91,12 @@ public class UIntTlbConstructor extends TlbConstructor<BigInteger> {
 
                 @Override // kotlin.jvm.functions.Function2
                 public /* bridge */ /* synthetic */ Unit invoke(CellBuilder cellBuilder, ULong uLong) {
-                    m5259invoke2TYgG_w(cellBuilder, uLong.m1998unboximpl());
+                    m5241invoke2TYgG_w(cellBuilder, uLong.m2000unboximpl());
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke-2TYgG_w  reason: not valid java name */
-                public final void m5259invoke2TYgG_w(CellBuilder number, long j) {
+                public final void m5241invoke2TYgG_w(CellBuilder number, long j) {
                     Intrinsics.checkNotNullParameter(number, "$this$number");
                     number.storeUInt(j, i);
                 }
@@ -109,13 +109,13 @@ public class UIntTlbConstructor extends TlbConstructor<BigInteger> {
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ ULong invoke(CellSlice cellSlice) {
-                    return ULong.m1993boximpl(m5260invokeI7RO_PI(cellSlice));
+                    return ULong.m1995boximpl(m5242invokeI7RO_PI(cellSlice));
                 }
 
                 /* renamed from: invoke-I7RO_PI  reason: not valid java name */
-                public final long m5260invokeI7RO_PI(CellSlice number) {
+                public final long m5242invokeI7RO_PI(CellSlice number) {
                     Intrinsics.checkNotNullParameter(number, "$this$number");
-                    return ULong.m1994constructorimpl(number.loadUInt(i).longValue());
+                    return ULong.m1996constructorimpl(number.loadUInt(i).longValue());
                 }
             });
         }

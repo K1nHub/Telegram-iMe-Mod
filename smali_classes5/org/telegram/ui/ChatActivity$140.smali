@@ -22,7 +22,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 34135
+    .line 34208
     invoke-static {}, Lorg/telegram/ui/AvatarPreviewer$MenuItem;->values()[Lorg/telegram/ui/AvatarPreviewer$MenuItem;
 
     move-result-object v0

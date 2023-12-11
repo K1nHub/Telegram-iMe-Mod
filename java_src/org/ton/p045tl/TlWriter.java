@@ -64,22 +64,22 @@ public final class TlWriter {
         int i3;
         Intrinsics.checkNotNullParameter(value, "value");
         if (i2 < 254) {
-            this.output.writeByte(UByte.m1950constructorimpl((byte) i2));
+            this.output.writeByte(UByte.m1952constructorimpl((byte) i2));
             i3 = i2 + 1;
         } else if (i2 < 16777216) {
             this.output.writeByte((byte) -2);
-            this.output.writeByte(UByte.m1950constructorimpl((byte) (i2 & 255)));
-            this.output.writeByte(UByte.m1950constructorimpl((byte) ((i2 >> 8) & 255)));
-            this.output.writeByte(UByte.m1950constructorimpl((byte) (i2 >> 16)));
+            this.output.writeByte(UByte.m1952constructorimpl((byte) (i2 & 255)));
+            this.output.writeByte(UByte.m1952constructorimpl((byte) ((i2 >> 8) & 255)));
+            this.output.writeByte(UByte.m1952constructorimpl((byte) (i2 >> 16)));
             i3 = i2 + 4;
         } else if (i2 >= Integer.MAX_VALUE) {
             throw new IllegalStateException("Too big byte array: " + i2);
         } else {
             this.output.writeByte((byte) -1);
-            this.output.writeByte(UByte.m1950constructorimpl((byte) (i2 & 255)));
-            this.output.writeByte(UByte.m1950constructorimpl((byte) ((i2 >> 8) & 255)));
-            this.output.writeByte(UByte.m1950constructorimpl((byte) ((i2 >> 16) & 255)));
-            this.output.writeByte(UByte.m1950constructorimpl((byte) ((i2 >> 24) & 255)));
+            this.output.writeByte(UByte.m1952constructorimpl((byte) (i2 & 255)));
+            this.output.writeByte(UByte.m1952constructorimpl((byte) ((i2 >> 8) & 255)));
+            this.output.writeByte(UByte.m1952constructorimpl((byte) ((i2 >> 16) & 255)));
+            this.output.writeByte(UByte.m1952constructorimpl((byte) ((i2 >> 24) & 255)));
             this.output.writeByte((byte) 0);
             this.output.writeByte((byte) 0);
             this.output.writeByte((byte) 0);

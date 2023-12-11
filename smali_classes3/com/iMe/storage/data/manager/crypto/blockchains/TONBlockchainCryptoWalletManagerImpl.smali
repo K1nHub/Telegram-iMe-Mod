@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTONBlockchainCryptoWalletManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt\n*L\n1#1,82:1\n29#2,7:83\n29#2,7:90\n29#2,7:97\n*S KotlinDebug\n*F\n+ 1 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl\n*L\n34#1:83,7\n52#1:90,7\n73#1:97,7\n*E\n"
+    value = "SMAP\nTONBlockchainCryptoWalletManagerImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt\n*L\n1#1,85:1\n29#2,7:86\n29#2,7:93\n29#2,7:100\n*S KotlinDebug\n*F\n+ 1 TONBlockchainCryptoWalletManagerImpl.kt\ncom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl\n*L\n34#1:86,7\n52#1:93,7\n76#1:100,7\n*E\n"
 .end annotation
 
 
@@ -92,71 +92,6 @@
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
-.end method
-
-.method public generateAddressByMnemonic(Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Lio/reactivex/Observable<",
-            "Lcom/iMe/storage/domain/model/Result<",
-            "Ljava/lang/String;",
-            ">;>;"
-        }
-    .end annotation
-
-    const-string v0, "mnemonic"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 70
-    iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl;->tonController:Lcom/iMe/storage/domain/manager/ton/TonController;
-
-    .line 71
-    invoke-static {p1}, Lcom/iMe/storage/data/utils/extentions/StringExtKt;->splitBySpace(Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object p1
-
-    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/manager/ton/TonController;->importWallet(Ljava/util/List;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    .line 72
-    iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Lio/reactivex/Observable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string v0, "tonController\n          \u2026(schedulersProvider.io())"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 29
-    new-instance v0, Lcom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$$inlined$mapSuccess$1;
-
-    invoke-direct {v0}, Lcom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$$inlined$mapSuccess$1;-><init>()V
-
-    new-instance v1, Lcom/iMe/storage/domain/utils/extensions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-
-    invoke-direct {v1, v0}, Lcom/iMe/storage/domain/utils/extensions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-virtual {p1, v1}, Lio/reactivex/Observable;->map(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
-
-    move-result-object p1
-
-    const-string v0, "crossinline body: (T) ->\u2026ult as? R\n        }\n    }"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    return-object p1
 .end method
 
 .method public importWallet(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
@@ -252,15 +187,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 78
+    .line 81
     iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl;->tonController:Lcom/iMe/storage/domain/manager/ton/TonController;
 
-    .line 79
+    .line 82
     invoke-interface {v0, p1}, Lcom/iMe/storage/domain/manager/ton/TonController;->isValidAddress(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 80
+    .line 83
     iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -274,6 +209,34 @@
     const-string v0, "tonController\n          \u2026(schedulersProvider.io())"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public isValidMnemonic(Ljava/lang/String;)Lio/reactivex/Observable;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/lang/Boolean;",
+            ">;>;"
+        }
+    .end annotation
+
+    const-string v0, "mnemonic"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 70
+    iget-object v0, p0, Lcom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl;->tonController:Lcom/iMe/storage/domain/manager/ton/TonController;
+
+    invoke-interface {v0, p1}, Lcom/iMe/storage/domain/manager/ton/TonController;->isValidMnemonic(Ljava/lang/String;)Lio/reactivex/Observable;
+
+    move-result-object p1
 
     return-object p1
 .end method

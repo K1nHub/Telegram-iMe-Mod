@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/EmojiAnimationsOverlay;ZLorg/telegram/messenger/MessageObject;)V
     .locals 0
 
-    .line 709
+    .line 710
     iput-object p1, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$3;->this$0:Lorg/telegram/ui/EmojiAnimationsOverlay;
 
     iput-boolean p2, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$3;->val$sendTap:Z
@@ -52,7 +52,7 @@
 .method public onAnimationReady(Lorg/telegram/messenger/ImageReceiver;)V
     .locals 2
 
-    .line 716
+    .line 717
     iget-boolean v0, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$3;->val$sendTap:Z
 
     if-eqz v0, :cond_0
@@ -81,7 +81,7 @@
 
     if-nez p1, :cond_0
 
-    .line 717
+    .line 718
     iget-object p1, p0, Lorg/telegram/ui/EmojiAnimationsOverlay$3;->this$0:Lorg/telegram/ui/EmojiAnimationsOverlay;
 
     iget-object p1, p1, Lorg/telegram/ui/EmojiAnimationsOverlay;->contentLayout:Landroid/widget/FrameLayout;

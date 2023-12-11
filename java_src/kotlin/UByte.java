@@ -9,41 +9,41 @@ public final class UByte implements Comparable<UByte> {
     private final byte data;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ UByte m1949boximpl(byte b) {
+    public static final /* synthetic */ UByte m1951boximpl(byte b) {
         return new UByte(b);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static byte m1950constructorimpl(byte b) {
+    public static byte m1952constructorimpl(byte b) {
         return b;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1951equalsimpl(byte b, Object obj) {
-        return (obj instanceof UByte) && b == ((UByte) obj).m1954unboximpl();
+    public static boolean m1953equalsimpl(byte b, Object obj) {
+        return (obj instanceof UByte) && b == ((UByte) obj).m1956unboximpl();
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1952hashCodeimpl(byte b) {
+    public static int m1954hashCodeimpl(byte b) {
         return b;
     }
 
     public boolean equals(Object obj) {
-        return m1951equalsimpl(this.data, obj);
+        return m1953equalsimpl(this.data, obj);
     }
 
     public int hashCode() {
-        return m1952hashCodeimpl(this.data);
+        return m1954hashCodeimpl(this.data);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ byte m1954unboximpl() {
+    public final /* synthetic */ byte m1956unboximpl() {
         return this.data;
     }
 
     @Override // java.lang.Comparable
     public /* bridge */ /* synthetic */ int compareTo(UByte uByte) {
-        return Intrinsics.compare(m1954unboximpl() & 255, uByte.m1954unboximpl() & 255);
+        return Intrinsics.compare(m1956unboximpl() & 255, uByte.m1956unboximpl() & 255);
     }
 
     private /* synthetic */ UByte(byte b) {
@@ -62,11 +62,11 @@ public final class UByte implements Comparable<UByte> {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1953toStringimpl(byte b) {
+    public static String m1955toStringimpl(byte b) {
         return String.valueOf(b & 255);
     }
 
     public String toString() {
-        return m1953toStringimpl(this.data);
+        return m1955toStringimpl(this.data);
     }
 }

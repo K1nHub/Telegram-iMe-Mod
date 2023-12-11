@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
 
-    .line 1286
+    .line 1287
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$11;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-direct {p0, p2, p3}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
@@ -44,7 +44,7 @@
 .method public get(Landroid/view/View;)Ljava/lang/Float;
     .locals 0
 
-    .line 1289
+    .line 1290
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$11;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4200(Lorg/telegram/ui/Components/ChatActivityEnterView;)F
@@ -61,7 +61,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 1286
+    .line 1287
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$11;->get(Landroid/view/View;)Ljava/lang/Float;
@@ -74,7 +74,7 @@
 .method public set(Landroid/view/View;Ljava/lang/Float;)V
     .locals 0
 
-    .line 1294
+    .line 1295
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$11;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
@@ -83,7 +83,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4202(Lorg/telegram/ui/Components/ChatActivityEnterView;F)F
 
-    .line 1295
+    .line 1296
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$11;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$4300(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
@@ -94,7 +94,7 @@
 .method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
-    .line 1286
+    .line 1287
     check-cast p1, Landroid/view/View;
 
     check-cast p2, Ljava/lang/Float;

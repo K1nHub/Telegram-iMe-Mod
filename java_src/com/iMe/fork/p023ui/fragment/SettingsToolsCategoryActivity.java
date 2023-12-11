@@ -36,13 +36,13 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.AlertDialog;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.AppIconsSelectorCell;
@@ -96,6 +96,7 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
     private int messagesTranslateRow;
     private int multiReplyRow;
     private int reactionSettingsRow;
+    private int replyColorsRow;
     private final ResettableLazy rootView$delegate;
     private int rowCount;
     private int sendMessagesRow;
@@ -184,14 +185,14 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
         int i3 = Theme.key_windowBackgroundWhiteBlackText;
         int i4 = Theme.key_windowBackgroundWhiteGrayText2;
         int i5 = Theme.key_switchTrack;
         int i6 = Theme.key_switchTrackChecked;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3706ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, TextCell.class, NotificationsCheckCell.class, TextCheckCell.class, AppIconsSelectorCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3704ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, TextCell.class, NotificationsCheckCell.class, TextCheckCell.class, AppIconsSelectorCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5), new ThemeDescription(getListView(), 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
         return arrayListOf;
     }
 
@@ -205,13 +206,13 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public final String getHint(int i) {
         if (i == this.multiReplyRow) {
-            return LocaleController.getInternalString(C3634R.string.settings_tools_multi_reply_hint);
+            return LocaleController.getInternalString(C3632R.string.settings_tools_multi_reply_hint);
         }
         if (i == this.cloudAlbumsRow) {
-            return LocaleController.getInternalString(C3634R.string.settings_tools_cloud_albums_hint);
+            return LocaleController.getInternalString(C3632R.string.settings_tools_cloud_albums_hint);
         }
         if (i == this.sendPopupReactionsRow) {
-            return LocaleController.getInternalString(C3634R.string.settings_tools_send_popup_reactions_hint);
+            return LocaleController.getInternalString(C3632R.string.settings_tools_send_popup_reactions_hint);
         }
         return null;
     }
@@ -219,7 +220,7 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
     private final void showHintDialog(String str) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         builder.setMessage(str);
-        builder.setPositiveButton(LocaleController.getString("OK", C3634R.string.OK), null);
+        builder.setPositiveButton(LocaleController.getString("OK", C3632R.string.OK), null);
         showDialog(builder.create());
     }
 
@@ -318,6 +319,8 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
                 ToolsController toolsController3 = this$0.getToolsController();
                 toolsController3.setChannelWidePostsEnabled(!toolsController3.isChannelWidePostsEnabled());
                 toolsController3.saveConfig();
+            } else if (i == this$0.replyColorsRow) {
+                SharedConfig.setReplyColorsEnabled(!SharedConfig.isReplyColorsEnabled);
             }
         } else if (view instanceof NotificationsCheckCell) {
             if (i == this$0.chatMultiPanelRow) {
@@ -439,12 +442,12 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3706ActionBar c3706ActionBar = this.actionBar;
-        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
-        c3706ActionBar.setAllowOverlayTitle(true);
-        c3706ActionBar.setTitle(this.category.getTitle());
-        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.SettingsToolsCategoryActivity$setupActionBar$1$1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        C3704ActionBar c3704ActionBar = this.actionBar;
+        c3704ActionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
+        c3704ActionBar.setAllowOverlayTitle(true);
+        c3704ActionBar.setTitle(this.category.getTitle());
+        c3704ActionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.SettingsToolsCategoryActivity$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SettingsToolsCategoryActivity.this.finishFragment();
@@ -461,8 +464,8 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
 
     private final AlertDialog createChooseSelectedIconHolidayDesignSideMenuDialog() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getInternalString(C3634R.string.settings_tools_design_icon));
-        builder.setNegativeButton(LocaleController.getInternalString(C3634R.string.common_cancel), null);
+        builder.setTitle(LocaleController.getInternalString(C3632R.string.settings_tools_design_icon));
+        builder.setNegativeButton(LocaleController.getInternalString(C3632R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         linearLayout.setOrientation(1);
         DrawerHolidayIconType[] values = DrawerHolidayIconType.values();
@@ -635,61 +638,65 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
                                                                         if (i != SettingsToolsCategoryActivity.this.confirmationSendingStickerRow) {
                                                                             if (i != SettingsToolsCategoryActivity.this.confirmationSpeakWithoutHoldRow) {
                                                                                 if (i != SettingsToolsCategoryActivity.this.confirmationVideoSpeakWithoutHoldRow) {
-                                                                                    if (i == SettingsToolsCategoryActivity.this.messageWidePostsRow) {
-                                                                                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_wide_posts_in_channel), SettingsToolsCategoryActivity.this.getToolsController().isChannelWidePostsEnabled(), z2);
+                                                                                    if (i != SettingsToolsCategoryActivity.this.messageWidePostsRow) {
+                                                                                        if (i == SettingsToolsCategoryActivity.this.replyColorsRow) {
+                                                                                            textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_colored_replies), SharedConfig.isReplyColorsEnabled, z2);
+                                                                                            return;
+                                                                                        }
                                                                                         return;
                                                                                     }
+                                                                                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_wide_posts_in_channel), SettingsToolsCategoryActivity.this.getToolsController().isChannelWidePostsEnabled(), z2);
                                                                                     return;
                                                                                 }
-                                                                                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_video_speak_without_hold), SharedConfig.isVideoSpeakWithoutHoldEnabled, z2);
+                                                                                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_video_speak_without_hold), SharedConfig.isVideoSpeakWithoutHoldEnabled, z2);
                                                                                 return;
                                                                             }
-                                                                            textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_speak_without_hold), SharedConfig.isSpeakWithoutHoldEnabled, z2);
+                                                                            textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_speak_without_hold), SharedConfig.isSpeakWithoutHoldEnabled, z2);
                                                                             return;
                                                                         }
-                                                                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_sending_sticker_confirmation), SharedConfig.isSendingStickerConfirmationEnabled, z2);
+                                                                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_sending_sticker_confirmation), SharedConfig.isSendingStickerConfirmationEnabled, z2);
                                                                         return;
                                                                     }
-                                                                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_sending_gif_confirmation), SharedConfig.isSendingGifConfirmationEnabled, z2);
+                                                                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_sending_gif_confirmation), SharedConfig.isSendingGifConfirmationEnabled, z2);
                                                                     return;
                                                                 }
-                                                                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_delete_cloud_confirmation), SharedConfig.isDeleteCloudConfirmationEnabled, z2);
+                                                                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_delete_cloud_confirmation), SharedConfig.isDeleteCloudConfirmationEnabled, z2);
                                                                 return;
                                                             }
-                                                            textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_calls_confirmation), SharedConfig.isCallsConfirmationEnabled, z2);
+                                                            textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_calls_confirmation), SharedConfig.isCallsConfirmationEnabled, z2);
                                                             return;
                                                         }
-                                                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_tools_send_popup_reactions), SharedConfig.isReactionsInSendPopupEnabled, z2);
+                                                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_tools_send_popup_reactions), SharedConfig.isReactionsInSendPopupEnabled, z2);
                                                         return;
                                                     }
-                                                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_tools_remember_chat), SettingsToolsCategoryActivity.this.getToolsController().isRememberLastDialogEnabled(), z2);
+                                                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_tools_remember_chat), SettingsToolsCategoryActivity.this.getToolsController().isRememberLastDialogEnabled(), z2);
                                                     return;
                                                 }
-                                                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_chat_themes), SharedConfig.isChatThemesEnabled, z2);
+                                                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_chat_themes), SharedConfig.isChatThemesEnabled, z2);
                                                 return;
                                             }
-                                            textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_chat_hide_keyboard_on_scroll), SharedConfig.isHideChatKeyboardOnScrollEnabled, z2);
+                                            textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_chat_hide_keyboard_on_scroll), SharedConfig.isHideChatKeyboardOnScrollEnabled, z2);
                                             return;
                                         }
-                                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_bottom_panel_in_channel), SettingsToolsCategoryActivity.this.getToolsController().isShowChannelBottomPanel(), z2);
+                                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_bottom_panel_in_channel), SettingsToolsCategoryActivity.this.getToolsController().isShowChannelBottomPanel(), z2);
                                         return;
                                     }
-                                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_tools_cloud_albums), SharedConfig.isCloudAlbumsEnabled, z2);
+                                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_tools_cloud_albums), SharedConfig.isCloudAlbumsEnabled, z2);
                                     return;
                                 }
-                                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_proxy_button_in_toolbar), SharedConfig.isProxyButtonEnabled, z2);
+                                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_proxy_button_in_toolbar), SharedConfig.isProxyButtonEnabled, z2);
                                 return;
                             }
-                            textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_action_bar_menu), SharedConfig.isMainActionBarMenuEnabled, z2);
+                            textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_action_bar_menu), SharedConfig.isMainActionBarMenuEnabled, z2);
                             return;
                         }
-                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_interface_action_bar_account_switch), SharedConfig.isActionBarAccountSwitchEnabled, z2);
+                        textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_interface_action_bar_account_switch), SharedConfig.isActionBarAccountSwitchEnabled, z2);
                         return;
                     }
-                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.settings_tools_multi_reply), SharedConfig.isMultiReplyEnabled, z2);
+                    textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.settings_tools_multi_reply), SharedConfig.isMultiReplyEnabled, z2);
                     return;
                 }
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3634R.string.auto_open_forwarding_options), SharedConfig.isOpenForwardingOptionsAutomaticallyEnabled, z2);
+                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3632R.string.auto_open_forwarding_options), SharedConfig.isOpenForwardingOptionsAutomaticallyEnabled, z2);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_CELL && (view instanceof TextCell)) {
                 if (i != SettingsToolsCategoryActivity.this.drawerHeaderSettingsRow) {
                     if (i != SettingsToolsCategoryActivity.this.drawerItemsRow) {
@@ -701,114 +708,114 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
                                             if (i != SettingsToolsCategoryActivity.this.messagesTranslateRow) {
                                                 if (i != SettingsToolsCategoryActivity.this.messagesContextMenuRow) {
                                                     if (i == SettingsToolsCategoryActivity.this.sendMessagesRow) {
-                                                        ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3634R.string.sending_settings_send), C3634R.C3636drawable.msg_send, z2);
+                                                        ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3632R.string.sending_settings_send), C3632R.C3634drawable.msg_send, z2);
                                                         return;
                                                     }
                                                     return;
                                                 }
-                                                ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3634R.string.settings_interface_message_context_menu), C3634R.C3636drawable.fork_settings_context_menu, z2);
+                                                ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3632R.string.settings_interface_message_context_menu), C3632R.C3634drawable.fork_settings_context_menu, z2);
                                                 return;
                                             }
-                                            ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3634R.string.settings_tools_translator), C3634R.C3636drawable.msg_translate, z2);
+                                            ((TextCell) view).setTextAndIcon(LocaleController.getInternalString(C3632R.string.settings_tools_translator), C3632R.C3634drawable.msg_translate, z2);
                                             return;
                                         }
-                                        ((TextCell) view).setText(LocaleController.getString("Reactions", C3634R.string.Reactions), z2);
+                                        ((TextCell) view).setText(LocaleController.getString("Reactions", C3632R.string.Reactions), z2);
                                         return;
                                     }
-                                    ((TextCell) view).setText(LocaleController.getInternalString(C3634R.string.settings_interface_chat_user_options_by_avatar_click_subtitle), z2);
+                                    ((TextCell) view).setText(LocaleController.getInternalString(C3632R.string.settings_interface_chat_user_options_by_avatar_click_subtitle), z2);
                                     return;
                                 }
-                                ((TextCell) view).setText(LocaleController.getInternalString(C3634R.string.settings_interface_chat_attach_alert_buttons), z2);
+                                ((TextCell) view).setText(LocaleController.getInternalString(C3632R.string.settings_interface_chat_attach_alert_buttons), z2);
                                 return;
                             }
-                            ((TextCell) view).setText(LocaleController.getInternalString(C3634R.string.topics), z2);
+                            ((TextCell) view).setText(LocaleController.getInternalString(C3632R.string.topics), z2);
                             return;
                         }
-                        ((TextCell) view).setText(LocaleController.getString("Filters", C3634R.string.Filters), z2);
+                        ((TextCell) view).setText(LocaleController.getString("Filters", C3632R.string.Filters), z2);
                         return;
                     }
-                    ((TextCell) view).setText(LocaleController.getInternalString(C3634R.string.settings_interface_drawer_items), z2);
+                    ((TextCell) view).setText(LocaleController.getInternalString(C3632R.string.settings_interface_drawer_items), z2);
                     return;
                 }
-                ((TextCell) view).setText(LocaleController.getInternalString(C3634R.string.settings_interface_drawer_account_info), z2);
+                ((TextCell) view).setText(LocaleController.getInternalString(C3632R.string.settings_interface_drawer_account_info), z2);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_SETTINGS_CELL && (view instanceof TextSettingsCell)) {
                 if (i != SettingsToolsCategoryActivity.this.chatsTemplatesRow) {
                     if (i != SettingsToolsCategoryActivity.this.confirmationVideoVoiceCameraRow) {
                         if (i != SettingsToolsCategoryActivity.this.drawerHolidayIconTypeRow) {
                             if (i == SettingsToolsCategoryActivity.this.messagesFormattingRow) {
-                                ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3634R.string.settings_messages_formatting_title), SettingsToolsCategoryActivity.this.getFormattingTextController().getFormattingPanelType().getTitle(), z2);
+                                ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3632R.string.settings_messages_formatting_title), SettingsToolsCategoryActivity.this.getFormattingTextController().getFormattingPanelType().getTitle(), z2);
                                 return;
                             }
                             return;
                         }
-                        ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3634R.string.settings_tools_design_icon), SharedConfig.drawerHolidayIconType.getTitle(), z2);
+                        ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3632R.string.settings_tools_design_icon), SharedConfig.drawerHolidayIconType.getTitle(), z2);
                         return;
                     }
-                    ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3634R.string.settings_interface_video_voice_camera), LocaleController.getInternalString(SharedConfig.selectedVideoVoiceCamera.getShortTextResId()), z2);
+                    ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3632R.string.settings_interface_video_voice_camera), LocaleController.getInternalString(SharedConfig.selectedVideoVoiceCamera.getShortTextResId()), z2);
                     return;
                 }
-                ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3634R.string.chat_templates), LocaleController.getInternalString(SharedConfig.selectedTemplatesMode.getTextResId()), z2);
+                ((TextSettingsCell) view).setTextAndValue(LocaleController.getInternalString(C3632R.string.chat_templates), LocaleController.getInternalString(SharedConfig.selectedTemplatesMode.getTextResId()), z2);
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATIONS_CHECK_CELL && (holder.itemView instanceof NotificationsCheckCell)) {
                 String str2 = null;
                 if (i != SettingsToolsCategoryActivity.this.chatMultiPanelRow) {
                     if (i != SettingsToolsCategoryActivity.this.chatSwipeToGoToNextUnreadDialogRow) {
                         if (i != SettingsToolsCategoryActivity.this.chatListRecentChatsRow) {
                             if (i == SettingsToolsCategoryActivity.this.chatProfileTelegramIdRow) {
-                                str2 = LocaleController.getInternalString(C3634R.string.settings_tools_chat_profile_id_telegram);
+                                str2 = LocaleController.getInternalString(C3632R.string.settings_tools_chat_profile_id_telegram);
                                 z = SettingsToolsCategoryActivity.this.getChatProfileController().isChatProfileEnabled();
                                 if (z) {
                                     List<String> chatProfileDialogType = SettingsToolsCategoryActivity.this.getChatProfileController().getChatProfileDialogType();
                                     if (chatProfileDialogType.isEmpty()) {
-                                        str = LocaleController.getInternalString(C3634R.string.settings_interface_multi_panel_no_buttons);
+                                        str = LocaleController.getInternalString(C3632R.string.settings_interface_multi_panel_no_buttons);
                                     } else {
                                         str = TextUtils.join(", ", chatProfileDialogType);
                                     }
                                 } else {
-                                    str = LocaleController.getInternalString(C3634R.string.folder_tabs_sorting_settings_item_value_off);
+                                    str = LocaleController.getInternalString(C3632R.string.folder_tabs_sorting_settings_item_value_off);
                                 }
                             } else {
                                 str = null;
                             }
                         } else {
-                            str2 = LocaleController.getInternalString(C3634R.string.settings_interface_recent_chats);
+                            str2 = LocaleController.getInternalString(C3632R.string.settings_interface_recent_chats);
                             z = SettingsToolsCategoryActivity.this.getRecentChatsController().isRecentChatsEnabled();
                             if (z) {
                                 List<String> dialogTypesSettingsRecentChats = SettingsToolsCategoryActivity.this.getRecentChatsController().getDialogTypesSettingsRecentChats();
                                 if (dialogTypesSettingsRecentChats.isEmpty()) {
-                                    str = LocaleController.getInternalString(C3634R.string.settings_interface_multi_panel_no_buttons);
+                                    str = LocaleController.getInternalString(C3632R.string.settings_interface_multi_panel_no_buttons);
                                 } else {
                                     str = TextUtils.join(", ", dialogTypesSettingsRecentChats);
                                 }
                             } else {
-                                str = LocaleController.getInternalString(C3634R.string.folder_tabs_sorting_settings_item_value_off);
+                                str = LocaleController.getInternalString(C3632R.string.folder_tabs_sorting_settings_item_value_off);
                             }
                         }
                     } else {
-                        str2 = LocaleController.getInternalString(C3634R.string.settings_interface_swipe_to_next_unread_dialog);
+                        str2 = LocaleController.getInternalString(C3632R.string.settings_interface_swipe_to_next_unread_dialog);
                         z = SettingsToolsCategoryActivity.this.getToolsController().isSwipeToGoToNextUnreadDialogEnabled();
                         if (z) {
                             List<String> swipeToGoToNextUnreadDialogTypeNames = SettingsToolsCategoryActivity.this.getToolsController().getSwipeToGoToNextUnreadDialogTypeNames();
                             if (swipeToGoToNextUnreadDialogTypeNames.isEmpty()) {
-                                str = LocaleController.getInternalString(C3634R.string.settings_interface_multi_panel_no_buttons);
+                                str = LocaleController.getInternalString(C3632R.string.settings_interface_multi_panel_no_buttons);
                             } else {
                                 str = TextUtils.join(", ", swipeToGoToNextUnreadDialogTypeNames);
                             }
                         } else {
-                            str = LocaleController.getInternalString(C3634R.string.folder_tabs_sorting_settings_item_value_off);
+                            str = LocaleController.getInternalString(C3632R.string.folder_tabs_sorting_settings_item_value_off);
                         }
                     }
                 } else {
-                    str2 = LocaleController.getInternalString(C3634R.string.settings_multi_panel_item_title);
+                    str2 = LocaleController.getInternalString(C3632R.string.settings_multi_panel_item_title);
                     z = SettingsToolsCategoryActivity.this.getMultiPanelController().isMultiPanelEnabled();
                     if (z) {
                         List<String> activeDialogTypeNames = SettingsToolsCategoryActivity.this.getMultiPanelController().getActiveDialogTypeNames();
                         if (activeDialogTypeNames.isEmpty()) {
-                            str = LocaleController.getInternalString(C3634R.string.settings_interface_multi_panel_no_buttons);
+                            str = LocaleController.getInternalString(C3632R.string.settings_interface_multi_panel_no_buttons);
                         } else {
                             str = TextUtils.join(", ", activeDialogTypeNames);
                         }
                     } else {
-                        str = LocaleController.getInternalString(C3634R.string.folder_tabs_sorting_settings_item_value_off);
+                        str = LocaleController.getInternalString(C3632R.string.folder_tabs_sorting_settings_item_value_off);
                     }
                 }
                 ((NotificationsCheckCell) holder.itemView).setTextAndValueAndCheck(str2, str, z, z2);
@@ -857,6 +864,7 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
             SettingsToolsCategoryActivity.this.confirmationVideoSpeakWithoutHoldRow = -1;
             SettingsToolsCategoryActivity.this.confirmationVideoVoiceCameraRow = -1;
             SettingsToolsCategoryActivity.this.messageWidePostsRow = -1;
+            SettingsToolsCategoryActivity.this.replyColorsRow = -1;
             SettingsToolsCategoryActivity.this.rowCount = 0;
             switch (WhenMappings.$EnumSwitchMapping$0[SettingsToolsCategoryActivity.this.getCategory().ordinal()]) {
                 case 1:
@@ -975,53 +983,57 @@ public final class SettingsToolsCategoryActivity extends MvpFragment {
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity26 = SettingsToolsCategoryActivity.this;
                     int i26 = settingsToolsCategoryActivity26.rowCount;
                     settingsToolsCategoryActivity26.rowCount = i26 + 1;
-                    settingsToolsCategoryActivity26.messagesFormattingRow = i26;
-                    return;
-                case 8:
+                    settingsToolsCategoryActivity26.replyColorsRow = i26;
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity27 = SettingsToolsCategoryActivity.this;
                     int i27 = settingsToolsCategoryActivity27.rowCount;
                     settingsToolsCategoryActivity27.rowCount = i27 + 1;
-                    settingsToolsCategoryActivity27.reactionSettingsRow = i27;
+                    settingsToolsCategoryActivity27.messagesFormattingRow = i27;
+                    return;
+                case 8:
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity28 = SettingsToolsCategoryActivity.this;
                     int i28 = settingsToolsCategoryActivity28.rowCount;
                     settingsToolsCategoryActivity28.rowCount = i28 + 1;
-                    settingsToolsCategoryActivity28.sendPopupReactionsRow = i28;
-                    return;
-                case 9:
+                    settingsToolsCategoryActivity28.reactionSettingsRow = i28;
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity29 = SettingsToolsCategoryActivity.this;
                     int i29 = settingsToolsCategoryActivity29.rowCount;
                     settingsToolsCategoryActivity29.rowCount = i29 + 1;
-                    settingsToolsCategoryActivity29.confirmationCallsRow = i29;
+                    settingsToolsCategoryActivity29.sendPopupReactionsRow = i29;
+                    return;
+                case 9:
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity30 = SettingsToolsCategoryActivity.this;
                     int i30 = settingsToolsCategoryActivity30.rowCount;
                     settingsToolsCategoryActivity30.rowCount = i30 + 1;
-                    settingsToolsCategoryActivity30.confirmationDeleteCloudRow = i30;
+                    settingsToolsCategoryActivity30.confirmationCallsRow = i30;
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity31 = SettingsToolsCategoryActivity.this;
                     int i31 = settingsToolsCategoryActivity31.rowCount;
                     settingsToolsCategoryActivity31.rowCount = i31 + 1;
-                    settingsToolsCategoryActivity31.confirmationSendingGifRow = i31;
+                    settingsToolsCategoryActivity31.confirmationDeleteCloudRow = i31;
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity32 = SettingsToolsCategoryActivity.this;
                     int i32 = settingsToolsCategoryActivity32.rowCount;
                     settingsToolsCategoryActivity32.rowCount = i32 + 1;
-                    settingsToolsCategoryActivity32.confirmationSendingStickerRow = i32;
+                    settingsToolsCategoryActivity32.confirmationSendingGifRow = i32;
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity33 = SettingsToolsCategoryActivity.this;
                     int i33 = settingsToolsCategoryActivity33.rowCount;
                     settingsToolsCategoryActivity33.rowCount = i33 + 1;
-                    settingsToolsCategoryActivity33.confirmationSpeakWithoutHoldRow = i33;
+                    settingsToolsCategoryActivity33.confirmationSendingStickerRow = i33;
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity34 = SettingsToolsCategoryActivity.this;
                     int i34 = settingsToolsCategoryActivity34.rowCount;
                     settingsToolsCategoryActivity34.rowCount = i34 + 1;
-                    settingsToolsCategoryActivity34.confirmationVideoSpeakWithoutHoldRow = i34;
+                    settingsToolsCategoryActivity34.confirmationSpeakWithoutHoldRow = i34;
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity35 = SettingsToolsCategoryActivity.this;
                     int i35 = settingsToolsCategoryActivity35.rowCount;
                     settingsToolsCategoryActivity35.rowCount = i35 + 1;
-                    settingsToolsCategoryActivity35.confirmationVideoVoiceCameraRow = i35;
-                    return;
-                case 10:
+                    settingsToolsCategoryActivity35.confirmationVideoSpeakWithoutHoldRow = i35;
                     SettingsToolsCategoryActivity settingsToolsCategoryActivity36 = SettingsToolsCategoryActivity.this;
                     int i36 = settingsToolsCategoryActivity36.rowCount;
                     settingsToolsCategoryActivity36.rowCount = i36 + 1;
-                    settingsToolsCategoryActivity36.chatProfileTelegramIdRow = i36;
+                    settingsToolsCategoryActivity36.confirmationVideoVoiceCameraRow = i36;
+                    return;
+                case 10:
+                    SettingsToolsCategoryActivity settingsToolsCategoryActivity37 = SettingsToolsCategoryActivity.this;
+                    int i37 = settingsToolsCategoryActivity37.rowCount;
+                    settingsToolsCategoryActivity37.rowCount = i37 + 1;
+                    settingsToolsCategoryActivity37.chatProfileTelegramIdRow = i37;
                     return;
                 default:
                     return;

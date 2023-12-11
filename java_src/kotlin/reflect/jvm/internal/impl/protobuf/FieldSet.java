@@ -165,7 +165,7 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
     private static void verifyType(kotlin.reflect.jvm.internal.impl.protobuf.WireFormat.FieldType r2, java.lang.Object r3) {
         /*
             java.util.Objects.requireNonNull(r3)
-            int[] r0 = kotlin.reflect.jvm.internal.impl.protobuf.FieldSet.C34201.$SwitchMap$com$google$protobuf$WireFormat$JavaType
+            int[] r0 = kotlin.reflect.jvm.internal.impl.protobuf.FieldSet.C34171.$SwitchMap$com$google$protobuf$WireFormat$JavaType
             kotlin.reflect.jvm.internal.impl.protobuf.WireFormat$JavaType r2 = r2.getJavaType()
             int r2 = r2.ordinal()
             r2 = r0[r2]
@@ -333,7 +333,7 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: kotlin.reflect.jvm.internal.impl.protobuf.FieldSet$1 */
     /* loaded from: classes4.dex */
-    public static /* synthetic */ class C34201 {
+    public static /* synthetic */ class C34171 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$JavaType;
 
@@ -454,7 +454,7 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
     }
 
     public static Object readPrimitiveField(CodedInputStream codedInputStream, WireFormat.FieldType fieldType, boolean z) throws IOException {
-        switch (C34201.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C34171.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 return Double.valueOf(codedInputStream.readDouble());
             case 2:
@@ -509,7 +509,7 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
     }
 
     private static void writeElementNoTag(CodedOutputStream codedOutputStream, WireFormat.FieldType fieldType, Object obj) throws IOException {
-        switch (C34201.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C34171.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 codedOutputStream.writeDoubleNoTag(((Double) obj).doubleValue());
                 return;
@@ -627,7 +627,7 @@ public final class FieldSet<FieldDescriptorType extends FieldDescriptorLite<Fiel
     }
 
     private static int computeElementSizeNoTag(WireFormat.FieldType fieldType, Object obj) {
-        switch (C34201.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C34171.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 return CodedOutputStream.computeDoubleSizeNoTag(((Double) obj).doubleValue());
             case 2:

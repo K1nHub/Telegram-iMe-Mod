@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MessagePreviewView$Page;Lorg/telegram/ui/Components/MessagePreviewView;)V
     .locals 0
 
-    .line 809
+    .line 830
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
@@ -31,37 +31,37 @@
 
     const/4 p3, 0x0
 
-    .line 812
+    .line 833
     iput p3, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 813
+    .line 834
     instance-of p4, p2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz p4, :cond_4
 
-    .line 814
+    .line 835
     check-cast p2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 815
+    .line 836
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentMessagesGroup()Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
     move-result-object p4
 
     if-eqz p4, :cond_4
 
-    .line 817
+    .line 838
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentPosition()Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
     move-result-object v0
 
     if-eqz v0, :cond_4
 
-    .line 818
+    .line 839
     iget-object v1, v0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->siblingHeights:[F
 
     if-eqz v1, :cond_4
 
-    .line 819
+    .line 840
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v2, v1, Landroid/graphics/Point;->x:I
@@ -78,14 +78,14 @@
 
     mul-float/2addr v1, v2
 
-    .line 820
+    .line 841
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->getExtraInsetHeight()I
 
     move-result p2
 
     move v2, p3
 
-    .line 821
+    .line 842
     :goto_0
     iget-object v3, v0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->siblingHeights:[F
 
@@ -93,7 +93,7 @@
 
     if-ge v2, v4, :cond_0
 
-    .line 822
+    .line 843
     aget v3, v3, v2
 
     mul-float/2addr v3, v1
@@ -112,7 +112,7 @@
 
     goto :goto_0
 
-    .line 824
+    .line 845
     :cond_0
     iget-byte v2, v0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->maxY:B
 
@@ -134,7 +134,7 @@
 
     add-int/2addr p2, v2
 
-    .line 825
+    .line 846
     iget-object v2, p4, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -144,7 +144,7 @@
     :goto_1
     if-ge p3, v2, :cond_3
 
-    .line 827
+    .line 848
     iget-object v3, p4, Lorg/telegram/messenger/MessageObject$GroupedMessages;->posArray:Ljava/util/ArrayList;
 
     invoke-virtual {v3, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -153,7 +153,7 @@
 
     check-cast v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 828
+    .line 849
     iget-byte v4, v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->minY:B
 
     iget-byte v5, v0, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->minY:B
@@ -185,7 +185,7 @@
     :cond_1
     if-ne v4, v5, :cond_2
 
-    .line 832
+    .line 853
     iget p3, v3, Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;->ph:F
 
     mul-float/2addr v1, p3
@@ -220,7 +220,7 @@
     :goto_3
     neg-int p2, p2
 
-    .line 836
+    .line 857
     iput p2, p1, Landroid/graphics/Rect;->bottom:I
 
     :cond_4

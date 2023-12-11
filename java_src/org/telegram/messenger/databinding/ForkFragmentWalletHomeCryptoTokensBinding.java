@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletHomeCryptoTokensBinding implements ViewBinding {
     public final RecyclerView recycleMain;
@@ -29,7 +29,7 @@ public final class ForkFragmentWalletHomeCryptoTokensBinding implements ViewBind
     }
 
     public static ForkFragmentWalletHomeCryptoTokensBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3634R.layout.fork_fragment_wallet_home_crypto_tokens, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3632R.layout.fork_fragment_wallet_home_crypto_tokens, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -37,10 +37,10 @@ public final class ForkFragmentWalletHomeCryptoTokensBinding implements ViewBind
     }
 
     public static ForkFragmentWalletHomeCryptoTokensBinding bind(View view) {
-        int i = C3634R.C3637id.recycle_main;
+        int i = C3632R.C3635id.recycle_main;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
-            i = C3634R.C3637id.recycle_tokens_search;
+            i = C3632R.C3635id.recycle_tokens_search;
             RecyclerView recyclerView2 = (RecyclerView) ViewBindings.findChildViewById(view, i);
             if (recyclerView2 != null) {
                 return new ForkFragmentWalletHomeCryptoTokensBinding((FrameLayout) view, recyclerView, recyclerView2);

@@ -57,7 +57,7 @@ public final class FlexibleTypeImpl extends FlexibleType implements CustomTypePa
 
     @Override // kotlin.reflect.jvm.internal.impl.types.CustomTypeParameter
     public boolean isTypeParameter() {
-        return (getLowerBound().getConstructor().mo2051getDeclarationDescriptor() instanceof TypeParameterDescriptor) && Intrinsics.areEqual(getLowerBound().getConstructor(), getUpperBound().getConstructor());
+        return (getLowerBound().getConstructor().mo2053getDeclarationDescriptor() instanceof TypeParameterDescriptor) && Intrinsics.areEqual(getLowerBound().getConstructor(), getUpperBound().getConstructor());
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.types.CustomTypeParameter

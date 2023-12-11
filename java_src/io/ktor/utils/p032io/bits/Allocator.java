@@ -6,8 +6,8 @@ import java.nio.ByteBuffer;
 /* loaded from: classes4.dex */
 public interface Allocator {
     /* renamed from: alloc-gFv-Zug  reason: not valid java name */
-    ByteBuffer mo1908allocgFvZug(int i);
+    ByteBuffer mo1910allocgFvZug(int i);
 
     /* renamed from: free-3GNKZMM  reason: not valid java name */
-    void mo1909free3GNKZMM(ByteBuffer byteBuffer);
+    void mo1911free3GNKZMM(ByteBuffer byteBuffer);
 }

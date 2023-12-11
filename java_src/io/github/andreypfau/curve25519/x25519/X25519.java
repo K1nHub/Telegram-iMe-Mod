@@ -29,7 +29,7 @@ public final class X25519 {
     }
 
     public static final byte[] x25519(byte[] scalar, byte[] point, byte[] output, int i) {
-        int m1994constructorimpl;
+        int m1996constructorimpl;
         Intrinsics.checkNotNullParameter(scalar, "scalar");
         Intrinsics.checkNotNullParameter(point, "point");
         Intrinsics.checkNotNullParameter(output, "output");
@@ -39,16 +39,16 @@ public final class X25519 {
             scalarMult(scalar, point, output, i);
             byte[] bArr = new byte[32];
             if (output.length != 32) {
-                m1994constructorimpl = 0;
+                m1996constructorimpl = 0;
             } else {
                 int length = output.length;
                 int i2 = 0;
                 for (int i3 = 0; i3 < length; i3++) {
                     i2 |= output[i3] ^ bArr[i3];
                 }
-                m1994constructorimpl = (int) ULong.m1994constructorimpl(ULong.m1994constructorimpl(ULong.m1994constructorimpl(UInt.m1972constructorimpl(i2 ^ 0) & 4294967295L) - ULong.m1994constructorimpl(1L)) >>> 63);
+                m1996constructorimpl = (int) ULong.m1996constructorimpl(ULong.m1996constructorimpl(ULong.m1996constructorimpl(UInt.m1974constructorimpl(i2 ^ 0) & 4294967295L) - ULong.m1996constructorimpl(1L)) >>> 63);
             }
-            if (!(m1994constructorimpl != 1)) {
+            if (!(m1996constructorimpl != 1)) {
                 throw new IllegalStateException("bad input point: low order point".toString());
             }
         }

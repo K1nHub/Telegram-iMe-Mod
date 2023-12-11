@@ -35,7 +35,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BringAppForegroundService;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -165,18 +165,18 @@ public class PhotoViewerWebView extends FrameLayout {
                 });
             }
             if (i == 2) {
-                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3634R.string.YouTubeVideoErrorInvalid));
+                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3632R.string.YouTubeVideoErrorInvalid));
             } else if (i != 5) {
                 if (i != 150) {
                     if (i == 100) {
-                        PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3634R.string.YouTubeVideoErrorNotFound));
+                        PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3632R.string.YouTubeVideoErrorNotFound));
                         return;
                     } else if (i != 101) {
                         return;
                     }
                 }
-                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3634R.string.YouTubeVideoErrorNotAvailableInApp));
-                PhotoViewerWebView.this.errorButton.setText(LocaleController.getString(C3634R.string.YouTubeVideoErrorOpenExternal));
+                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3632R.string.YouTubeVideoErrorNotAvailableInApp));
+                PhotoViewerWebView.this.errorButton.setText(LocaleController.getString(C3632R.string.YouTubeVideoErrorOpenExternal));
                 PhotoViewerWebView.this.errorButton.setVisibility(0);
                 PhotoViewerWebView.this.errorButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoViewerWebView$YoutubeProxy$$ExternalSyntheticLambda0
                     @Override // android.view.View.OnClickListener
@@ -185,7 +185,7 @@ public class PhotoViewerWebView extends FrameLayout {
                     }
                 });
             } else {
-                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3634R.string.YouTubeVideoErrorHTML));
+                PhotoViewerWebView.this.errorMessage.setText(LocaleController.getString(C3632R.string.YouTubeVideoErrorHTML));
             }
         }
 
@@ -313,7 +313,7 @@ public class PhotoViewerWebView extends FrameLayout {
             this.webView.getSettings().setMixedContentMode(0);
             CookieManager.getInstance().setAcceptThirdPartyCookies(this.webView, true);
         }
-        this.webView.setWebViewClient(new C53092());
+        this.webView.setWebViewClient(new C53062());
         addView(this.webView, LayoutHelper.createFrame(-1, -1, 51));
         LinearLayout linearLayout = new LinearLayout(context);
         this.errorLayout = linearLayout;
@@ -357,8 +357,8 @@ public class PhotoViewerWebView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.PhotoViewerWebView$2 */
     /* loaded from: classes6.dex */
-    public class C53092 extends WebViewClient {
-        C53092() {
+    public class C53062 extends WebViewClient {
+        C53062() {
         }
 
         @Override // android.webkit.WebViewClient
@@ -379,7 +379,7 @@ public class PhotoViewerWebView extends FrameLayout {
                 Utilities.externalNetworkQueue.postRunnable(new Runnable() { // from class: org.telegram.ui.Components.PhotoViewerWebView$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PhotoViewerWebView.C53092.this.lambda$shouldInterceptRequest$0(uri, webResourceRequest);
+                        PhotoViewerWebView.C53062.this.lambda$shouldInterceptRequest$0(uri, webResourceRequest);
                     }
                 });
                 return null;

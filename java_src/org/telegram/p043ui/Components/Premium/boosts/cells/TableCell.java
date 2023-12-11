@@ -20,7 +20,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
@@ -69,15 +69,15 @@ public class TableCell extends FrameLayout {
         this.roundRect = new RectF();
         paint.setStyle(Paint.Style.STROKE);
         this.resourcesProvider = resourcesProvider;
-        TextView createTextView = createTextView(LocaleController.getString("BoostingFrom", C3634R.string.BoostingFrom), false);
+        TextView createTextView = createTextView(LocaleController.getString("BoostingFrom", C3632R.string.BoostingFrom), false);
         this.fromNameTextView = createTextView;
-        TextView createTextView2 = createTextView(LocaleController.getString("BoostingTo", C3634R.string.BoostingTo), false);
+        TextView createTextView2 = createTextView(LocaleController.getString("BoostingTo", C3632R.string.BoostingTo), false);
         this.toNameTextView = createTextView2;
-        TextView createTextView3 = createTextView(LocaleController.getString("BoostingGift", C3634R.string.BoostingGift), false);
+        TextView createTextView3 = createTextView(LocaleController.getString("BoostingGift", C3632R.string.BoostingGift), false);
         this.giftNameTextView = createTextView3;
-        TextView createTextView4 = createTextView(LocaleController.getString("BoostingReason", C3634R.string.BoostingReason), false);
+        TextView createTextView4 = createTextView(LocaleController.getString("BoostingReason", C3632R.string.BoostingReason), false);
         this.reasonNameTextView = createTextView4;
-        TextView createTextView5 = createTextView(LocaleController.getString("BoostingDate", C3634R.string.BoostingDate), false);
+        TextView createTextView5 = createTextView(LocaleController.getString("BoostingDate", C3632R.string.BoostingDate), false);
         this.dateNameTextView = createTextView5;
         TextView createTextView6 = createTextView(true);
         this.fromTextView = createTextView6;
@@ -206,12 +206,12 @@ public class TableCell extends FrameLayout {
 
     public void setData(final TLRPC$TL_payments_checkedGiftCode tLRPC$TL_payments_checkedGiftCode, final Utilities.Callback<TLObject> callback) {
         Date date = new Date(tLRPC$TL_payments_checkedGiftCode.date * 1000);
-        this.dateTextView.setText(LocaleController.formatString("formatDateAtTime", C3634R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(date), LocaleController.getInstance().formatterDay.format(date)));
+        this.dateTextView.setText(LocaleController.formatString("formatDateAtTime", C3632R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(date), LocaleController.getInstance().formatterDay.format(date)));
         this.reasonTextView.setTextColor(Theme.getColor(tLRPC$TL_payments_checkedGiftCode.via_giveaway ? Theme.key_dialogTextBlue : Theme.key_dialogTextBlack, this.resourcesProvider));
         if (tLRPC$TL_payments_checkedGiftCode.via_giveaway) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             spannableStringBuilder.append((CharSequence) "**");
-            spannableStringBuilder.append((CharSequence) LocaleController.getString("BoostingGiveaway", C3634R.string.BoostingGiveaway));
+            spannableStringBuilder.append((CharSequence) LocaleController.getString("BoostingGiveaway", C3632R.string.BoostingGiveaway));
             spannableStringBuilder.append((CharSequence) "**");
             this.reasonTextView.setText(AndroidUtilities.replaceSingleTag(spannableStringBuilder.toString(), Theme.key_chat_messageLinkIn, 0, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.cells.TableCell$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
@@ -226,11 +226,11 @@ public class TableCell extends FrameLayout {
                 }
             });
         } else {
-            this.reasonTextView.setText(LocaleController.getString("BoostingYouWereSelected", C3634R.string.BoostingYouWereSelected));
+            this.reasonTextView.setText(LocaleController.getString("BoostingYouWereSelected", C3632R.string.BoostingYouWereSelected));
             this.reasonTextView.setOnClickListener(null);
         }
         int i = tLRPC$TL_payments_checkedGiftCode.months;
-        this.giftTextView.setText(LocaleController.formatString("BoostingTelegramPremiumFor", C3634R.string.BoostingTelegramPremiumFor, i == 12 ? LocaleController.formatPluralString("Years", 1, new Object[0]) : LocaleController.formatPluralString("Months", i, new Object[0])));
+        this.giftTextView.setText(LocaleController.formatString("BoostingTelegramPremiumFor", C3632R.string.BoostingTelegramPremiumFor, i == 12 ? LocaleController.formatPluralString("Years", 1, new Object[0]) : LocaleController.formatPluralString("Months", i, new Object[0])));
         final TLRPC$Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-DialogObject.getPeerDialogId(tLRPC$TL_payments_checkedGiftCode.from_id)));
         if (chat != null) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
@@ -266,7 +266,7 @@ public class TableCell extends FrameLayout {
         if (tLRPC$TL_payments_checkedGiftCode.to_id == -1 && tLRPC$TL_payments_checkedGiftCode.via_giveaway) {
             SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
             spannableStringBuilder3.append((CharSequence) "**");
-            spannableStringBuilder3.append((CharSequence) LocaleController.getString("BoostingIncompleteGiveaway", C3634R.string.BoostingIncompleteGiveaway));
+            spannableStringBuilder3.append((CharSequence) LocaleController.getString("BoostingIncompleteGiveaway", C3632R.string.BoostingIncompleteGiveaway));
             spannableStringBuilder3.append((CharSequence) "**");
             this.reasonTextView.setText(AndroidUtilities.replaceSingleTag(spannableStringBuilder3.toString(), Theme.key_chat_messageLinkIn, 0, new Runnable() { // from class: org.telegram.ui.Components.Premium.boosts.cells.TableCell$$ExternalSyntheticLambda5
                 @Override // java.lang.Runnable
@@ -274,7 +274,7 @@ public class TableCell extends FrameLayout {
                     Utilities.Callback.this.run(tLRPC$TL_payments_checkedGiftCode);
                 }
             }, this.resourcesProvider));
-            this.toTextView.setText(LocaleController.getString("BoostingNoRecipient", C3634R.string.BoostingNoRecipient));
+            this.toTextView.setText(LocaleController.getString("BoostingNoRecipient", C3632R.string.BoostingNoRecipient));
             this.toTextView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack, this.resourcesProvider));
             ((ViewGroup.MarginLayoutParams) this.toTextView.getLayoutParams()).leftMargin = 0;
             ((ViewGroup.MarginLayoutParams) this.toTextView.getLayoutParams()).rightMargin = 0;

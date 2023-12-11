@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 8186
+    .line 8236
     iput-object p1, p0, Lorg/telegram/messenger/MediaDataController$2;->this$0:Lorg/telegram/messenger/MediaDataController;
 
     iput-object p2, p0, Lorg/telegram/messenger/MediaDataController$2;->val$previewItems:Ljava/util/ArrayList;
@@ -48,14 +48,14 @@
 .method private synthetic lambda$run$0(Ljava/util/ArrayList;)V
     .locals 1
 
-    .line 8195
+    .line 8245
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$2;->this$0:Lorg/telegram/messenger/MediaDataController;
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaDataController;->defaultEmojiThemes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 8196
+    .line 8246
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$2;->this$0:Lorg/telegram/messenger/MediaDataController;
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaDataController;->defaultEmojiThemes:Ljava/util/ArrayList;
@@ -74,7 +74,7 @@
 
     move v1, v0
 
-    .line 8189
+    .line 8239
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$2;->val$previewItems:Ljava/util/ArrayList;
 
@@ -84,7 +84,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 8190
+    .line 8240
     iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$2;->val$previewItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -105,7 +105,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 8191
+    .line 8241
     iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$2;->val$previewItems:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -123,7 +123,7 @@
 
     goto :goto_0
 
-    .line 8194
+    .line 8244
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$2;->val$previewItems:Ljava/util/ArrayList;
 

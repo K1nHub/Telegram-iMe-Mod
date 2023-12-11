@@ -27,7 +27,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.math.MathUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -236,7 +236,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                 TL_stories$StoryItem tL_stories$StoryItem = messageObject.storyItem;
                 if (tL_stories$StoryItem != null && (tL_stories$StoryItem.media instanceof TLRPC$TL_messageMediaUnsupported)) {
                     tL_stories$StoryItem.dialogId = messageObject.getDialogId();
-                    Drawable mutate = getContext().getResources().getDrawable(C3634R.C3636drawable.msg_emoji_recent).mutate();
+                    Drawable mutate = getContext().getResources().getDrawable(C3632R.C3634drawable.msg_emoji_recent).mutate();
                     mutate.setColorFilter(new PorterDuffColorFilter(1090519039, PorterDuff.Mode.SRC_IN));
                     this.imageReceiver.setImageBitmap(new CombinedDrawable(new ColorDrawable(-13421773), mutate));
                 } else if (messageObject.isVideo()) {
@@ -301,7 +301,7 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
                 z = false;
             }
             if (z) {
-                this.imageReceiver.setImageBitmap(ContextCompat.getDrawable(getContext(), C3634R.C3636drawable.photo_placeholder_in));
+                this.imageReceiver.setImageBitmap(ContextCompat.getDrawable(getContext(), C3632R.C3634drawable.photo_placeholder_in));
             }
             if (this.blurImageReceiver.getBitmap() != null) {
                 this.blurImageReceiver.getBitmap().recycle();
@@ -729,10 +729,10 @@ public class SharedPhotoVideoCell2 extends FrameLayout {
             this.textPaint.setTextSize(AndroidUtilities.m104dp(12));
             this.textPaint.setColor(-1);
             this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            Drawable drawable = ContextCompat.getDrawable(context, C3634R.C3636drawable.play_mini_video);
+            Drawable drawable = ContextCompat.getDrawable(context, C3632R.C3634drawable.play_mini_video);
             this.playDrawable = drawable;
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), this.playDrawable.getIntrinsicHeight());
-            Drawable drawable2 = ContextCompat.getDrawable(context, C3634R.C3636drawable.filled_views);
+            Drawable drawable2 = ContextCompat.getDrawable(context, C3632R.C3634drawable.filled_views);
             this.viewDrawable = drawable2;
             drawable2.setBounds(0, 0, (int) (drawable2.getIntrinsicWidth() * 0.7f), (int) (this.viewDrawable.getIntrinsicHeight() * 0.7f));
             this.backgroundPaint.setColor(Theme.getColor(Theme.key_sharedMedia_photoPlaceholder, resourcesProvider));

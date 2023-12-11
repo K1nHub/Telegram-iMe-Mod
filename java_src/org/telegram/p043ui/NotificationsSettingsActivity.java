@@ -23,7 +23,7 @@ import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
@@ -35,7 +35,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p043ui.ActionBar.AlertDialog;
 import org.telegram.p043ui.ActionBar.BaseFragment;
-import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.C3704ActionBar;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.ActionBar.ThemeDescription;
 import org.telegram.p043ui.Cells.HeaderCell;
@@ -314,11 +314,11 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
 
     @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3632R.C3634drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("NotificationsAndSounds", C3634R.string.NotificationsAndSounds));
-        this.actionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.NotificationsSettingsActivity.1
-            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setTitle(LocaleController.getString("NotificationsAndSounds", C3632R.string.NotificationsAndSounds));
+        this.actionBar.setActionBarMenuOnItemClick(new C3704ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.NotificationsSettingsActivity.1
+            @Override // org.telegram.p043ui.ActionBar.C3704ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     NotificationsSettingsActivity.this.finishFragment();
@@ -439,15 +439,15 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
             }
         } else if (i == this.resetNotificationsRow) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-            builder.setTitle(LocaleController.getString("ResetNotificationsAlertTitle", C3634R.string.ResetNotificationsAlertTitle));
-            builder.setMessage(LocaleController.getString("ResetNotificationsAlert", C3634R.string.ResetNotificationsAlert));
-            builder.setPositiveButton(LocaleController.getString("Reset", C3634R.string.Reset), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda1
+            builder.setTitle(LocaleController.getString("ResetNotificationsAlertTitle", C3632R.string.ResetNotificationsAlertTitle));
+            builder.setMessage(LocaleController.getString("ResetNotificationsAlert", C3632R.string.ResetNotificationsAlert));
+            builder.setPositiveButton(LocaleController.getString("Reset", C3632R.string.Reset), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i4) {
                     NotificationsSettingsActivity.this.lambda$createView$6(dialogInterface, i4);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
             AlertDialog create = builder.create();
             showDialog(create);
             TextView textView = (TextView) create.getButton(-1);
@@ -582,14 +582,14 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
             }));
         } else if (i == this.repeatRow) {
             AlertDialog.Builder builder2 = new AlertDialog.Builder(getParentActivity());
-            builder2.setTitle(LocaleController.getString("RepeatNotifications", C3634R.string.RepeatNotifications));
-            builder2.setItems(new CharSequence[]{LocaleController.getString("RepeatDisabled", C3634R.string.RepeatDisabled), LocaleController.formatPluralString("Minutes", 5, new Object[0]), LocaleController.formatPluralString("Minutes", 10, new Object[0]), LocaleController.formatPluralString("Minutes", 30, new Object[0]), LocaleController.formatPluralString("Hours", 1, new Object[0]), LocaleController.formatPluralString("Hours", 2, new Object[0]), LocaleController.formatPluralString("Hours", 4, new Object[0])}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda2
+            builder2.setTitle(LocaleController.getString("RepeatNotifications", C3632R.string.RepeatNotifications));
+            builder2.setItems(new CharSequence[]{LocaleController.getString("RepeatDisabled", C3632R.string.RepeatDisabled), LocaleController.formatPluralString("Minutes", 5, new Object[0]), LocaleController.formatPluralString("Minutes", 10, new Object[0]), LocaleController.formatPluralString("Minutes", 30, new Object[0]), LocaleController.formatPluralString("Hours", 1, new Object[0]), LocaleController.formatPluralString("Hours", 2, new Object[0]), LocaleController.formatPluralString("Hours", 4, new Object[0])}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda2
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i5) {
                     NotificationsSettingsActivity.this.lambda$createView$9(i, dialogInterface, i5);
                 }
             });
-            builder2.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), null);
+            builder2.setNegativeButton(LocaleController.getString("Cancel", C3632R.string.Cancel), null);
             showDialog(builder2.create());
         }
         if (view instanceof TextCheckCell) {
@@ -660,7 +660,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
         this.exceptionUsers.clear();
         this.adapter.notifyDataSetChanged();
         if (getParentActivity() != null) {
-            Toast.makeText(getParentActivity(), LocaleController.getString("ResetNotificationsText", C3634R.string.ResetNotificationsText), 0).show();
+            Toast.makeText(getParentActivity(), LocaleController.getString("ResetNotificationsText", C3632R.string.ResetNotificationsText), 0).show();
         }
         getMessagesStorage().updateMutedDialogsFiltersCounters();
     }
@@ -687,12 +687,12 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
             if (uri != null && (ringtone = RingtoneManager.getRingtone(getParentActivity(), uri)) != null) {
                 if (i == this.callsRingtoneRow) {
                     if (uri.equals(Settings.System.DEFAULT_RINGTONE_URI)) {
-                        str = LocaleController.getString("DefaultRingtone", C3634R.string.DefaultRingtone);
+                        str = LocaleController.getString("DefaultRingtone", C3632R.string.DefaultRingtone);
                     } else {
                         str = ringtone.getTitle(getParentActivity());
                     }
                 } else if (uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI)) {
-                    str = LocaleController.getString("SoundDefault", C3634R.string.SoundDefault);
+                    str = LocaleController.getString("SoundDefault", C3632R.string.SoundDefault);
                 } else {
                     str = ringtone.getTitle(getParentActivity());
                 }
@@ -756,18 +756,18 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         if (arrayList.size() == 1) {
-            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsExceptionsSingleAlert", C3634R.string.NotificationsExceptionsSingleAlert, str)));
+            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsExceptionsSingleAlert", C3632R.string.NotificationsExceptionsSingleAlert, str)));
         } else {
-            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsExceptionsAlert", C3634R.string.NotificationsExceptionsAlert, str)));
+            builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("NotificationsExceptionsAlert", C3632R.string.NotificationsExceptionsAlert, str)));
         }
-        builder.setTitle(LocaleController.getString("NotificationsExceptions", C3634R.string.NotificationsExceptions));
-        builder.setNeutralButton(LocaleController.getString("ViewExceptions", C3634R.string.ViewExceptions), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda3
+        builder.setTitle(LocaleController.getString("NotificationsExceptions", C3632R.string.NotificationsExceptions));
+        builder.setNeutralButton(LocaleController.getString("ViewExceptions", C3632R.string.ViewExceptions), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda3
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 NotificationsSettingsActivity.this.lambda$showExceptionsAlert$11(arrayList, arrayList2, dialogInterface, i2);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("OK", C3634R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda0
+        builder.setNegativeButton(LocaleController.getString("OK", C3632R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.NotificationsSettingsActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 runnable.run();
@@ -840,7 +840,7 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
                 headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else {
                 headerCell = new TextInfoPrivacyCell(this.mContext);
-                headerCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3634R.C3636drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                headerCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3632R.C3634drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
             }
             return new RecyclerListView.Holder(headerCell);
         }
@@ -885,10 +885,10 @@ public class NotificationsSettingsActivity extends BaseFragment implements Notif
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, TextCheckCell.class, TextDetailSettingsCell.class, TextSettingsCell.class, NotificationsCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        C3706ActionBar c3706ActionBar = this.actionBar;
+        C3704ActionBar c3704ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3706ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(c3704ActionBar, i, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

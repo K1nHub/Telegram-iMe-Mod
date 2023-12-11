@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.p043ui.ActionBar.Theme;
 import org.telegram.p043ui.Components.LayoutHelper;
@@ -50,7 +50,7 @@ public class LinkCell extends FrameLayout {
         });
         ImageView imageView = new ImageView(getContext());
         this.imageView = imageView;
-        imageView.setImageResource(C3634R.C3636drawable.msg_copy);
+        imageView.setImageResource(C3632R.C3634drawable.msg_copy);
         this.imageView.setColorFilter(Theme.getColor(Theme.key_dialogTextBlack, resourcesProvider));
         this.imageView.setPadding(AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8));
         this.imageView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(20), 0, ColorUtils.setAlphaComponent(Theme.getColor(i, resourcesProvider), 76)));

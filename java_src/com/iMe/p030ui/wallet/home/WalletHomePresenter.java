@@ -58,12 +58,12 @@ public final class WalletHomePresenter extends BasePresenter<WalletHomeView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1721invoke(rxEvent);
+                m1722invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1721invoke(RxEvent it) {
+            public final void m1722invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (rxEvent instanceof AppRxEvents.UpdateWalletScreen) {

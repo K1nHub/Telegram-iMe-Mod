@@ -87,7 +87,7 @@
 
     move-object/from16 v14, p2
 
-    invoke-static/range {v1 .. v14}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$_JivjLqvkC8dpb2pZvwhDjx5vm0(Lorg/telegram/messenger/MediaDataController;JZLjava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZJLorg/telegram/tgnet/TLRPC$TL_channels_getMessages;Ljava/util/concurrent/CountDownLatch;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v1 .. v14}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$AVRD-XnwNaundu-s64IeN3QfSr0(Lorg/telegram/messenger/MediaDataController;JZLjava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZJLorg/telegram/tgnet/TLRPC$TL_channels_getMessages;Ljava/util/concurrent/CountDownLatch;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

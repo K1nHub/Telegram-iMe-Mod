@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.widget.NestedScrollView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3634R;
+import org.telegram.messenger.C3632R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p043ui.ActionBar.BaseFragment;
@@ -42,7 +42,7 @@ public class DownloadsInfoBottomSheet extends BottomSheet {
         ImageView imageView = new ImageView(context);
         imageView.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
         imageView.setColorFilter(getThemedColor(Theme.key_sheet_other));
-        imageView.setImageResource(C3634R.C3636drawable.ic_layer_close);
+        imageView.setImageResource(C3632R.C3634drawable.ic_layer_close);
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.DownloadsInfoBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -61,14 +61,14 @@ public class DownloadsInfoBottomSheet extends BottomSheet {
         int i2 = Theme.key_dialogTextBlack;
         textView.setTextColor(Theme.getColor(i2));
         textView.setTextSize(1, 20.0f);
-        textView.setText(LocaleController.getString("DownloadedFiles", C3634R.string.DownloadedFiles));
+        textView.setText(LocaleController.getString("DownloadedFiles", C3632R.string.DownloadedFiles));
         linearLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 0, 21, 20, 21, 0));
         TextView textView2 = new TextView(context);
         textView2.setGravity(1);
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(Theme.getColor(i2));
         textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-        textView2.setText(LocaleController.formatString("DownloadedFilesMessage", C3634R.string.DownloadedFilesMessage, new Object[0]));
+        textView2.setText(LocaleController.formatString("DownloadedFilesMessage", C3632R.string.DownloadedFilesMessage, new Object[0]));
         linearLayout.addView(textView2, LayoutHelper.createFrame(-1, -2, 0, 28, 7, 28, 0));
         TextView textView3 = new TextView(context);
         textView3.setGravity(17);
@@ -76,7 +76,7 @@ public class DownloadsInfoBottomSheet extends BottomSheet {
         textView3.setSingleLine(true);
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("ManageDeviceStorage", C3634R.string.ManageDeviceStorage));
+        textView3.setText(LocaleController.getString("ManageDeviceStorage", C3632R.string.ManageDeviceStorage));
         textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         int m104dp2 = AndroidUtilities.m104dp(8);
         int i3 = Theme.key_featuredStickers_addButton;
@@ -88,7 +88,7 @@ public class DownloadsInfoBottomSheet extends BottomSheet {
         textView4.setSingleLine(true);
         textView4.setTextSize(1, 14.0f);
         textView4.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView4.setText(LocaleController.getString("ClearDownloadsList", C3634R.string.ClearDownloadsList));
+        textView4.setText(LocaleController.getString("ClearDownloadsList", C3632R.string.ClearDownloadsList));
         textView4.setTextColor(Theme.getColor(i3));
         textView4.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(8), 0, ColorUtils.setAlphaComponent(Theme.getColor(i3), 120)));
         if (Build.VERSION.SDK_INT >= 21) {

@@ -1958,7 +1958,7 @@
 
     const v2, 0x1020022
 
-    if-ne p1, v2, :cond_1
+    if-ne p1, v2, :cond_3
 
     .line 655
     invoke-virtual {p0}, Landroid/widget/EditText;->getContext()Landroid/content/Context;
@@ -1978,14 +1978,14 @@
 
     move-result-object v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_7
 
     .line 657
     invoke-virtual {v2}, Landroid/content/ClipData;->getItemCount()I
 
     move-result v3
 
-    if-ne v3, v0, :cond_5
+    if-ne v3, v0, :cond_7
 
     invoke-virtual {v2}, Landroid/content/ClipData;->getDescription()Landroid/content/ClipDescription;
 
@@ -1997,7 +1997,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_5
+    if-eqz v3, :cond_7
 
     .line 659
     :try_start_0
@@ -2079,50 +2079,110 @@
 
     invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I
 
-    move-result v1
+    move-result v3
 
     .line 669
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-interface {v3}, Landroid/text/Editable;->length()I
-
-    move-result v3
-
-    invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionEnd()I
+    invoke-interface {v4}, Landroid/text/Editable;->length()I
 
     move-result v4
 
-    invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
+    invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionEnd()I
 
-    move-result v3
+    move-result v5
+
+    invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
+
+    move-result v4
 
     .line 670
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-interface {v4, v1, v3, v2}, Landroid/text/Editable;->replace(IILjava/lang/CharSequence;)Landroid/text/Editable;
+    const-class v6, Lorg/telegram/ui/Components/QuoteSpan$QuoteStyleSpan;
 
-    move-result-object v3
+    invoke-interface {v5, v3, v4, v6}, Landroid/text/Editable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
 
-    invoke-virtual {p0, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+    move-result-object v5
+
+    check-cast v5, [Lorg/telegram/ui/Components/QuoteSpan$QuoteStyleSpan;
+
+    if-eqz v5, :cond_1
 
     .line 671
+    array-length v5, v5
+
+    if-lez v5, :cond_1
+
+    .line 672
     invoke-interface {v2}, Landroid/text/Spannable;->length()I
 
-    move-result v3
+    move-result v5
 
-    add-int/2addr v3, v1
+    const-class v6, Lorg/telegram/ui/Components/QuoteSpan$QuoteStyleSpan;
+
+    invoke-interface {v2, v1, v5, v6}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, [Lorg/telegram/ui/Components/QuoteSpan$QuoteStyleSpan;
+
+    .line 673
+    :goto_1
+    array-length v6, v5
+
+    if-ge v1, v6, :cond_2
+
+    .line 674
+    aget-object v6, v5, v1
+
+    invoke-interface {v2, v6}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
+
+    .line 675
+    aget-object v6, v5, v1
+
+    iget-object v6, v6, Lorg/telegram/ui/Components/QuoteSpan$QuoteStyleSpan;->span:Lorg/telegram/ui/Components/QuoteSpan;
+
+    invoke-interface {v2, v6}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_1
+
+    .line 678
+    :cond_1
+    invoke-static {v2}, Lorg/telegram/ui/Components/QuoteSpan;->normalizeQuotes(Landroid/text/Spannable;)V
+
+    .line 680
+    :cond_2
+    invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-interface {v1, v3, v4, v2}, Landroid/text/Editable;->replace(IILjava/lang/CharSequence;)Landroid/text/Editable;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
+
+    .line 681
+    invoke-interface {v2}, Landroid/text/Spannable;->length()I
+
+    move-result v1
+
+    add-int/2addr v1, v3
 
     invoke-interface {v2}, Landroid/text/Spannable;->length()I
 
     move-result v2
 
-    add-int/2addr v1, v2
+    add-int/2addr v3, v2
 
-    invoke-virtual {p0, v3, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(II)V
+    invoke-virtual {p0, v1, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2131,17 +2191,17 @@
     :catch_0
     move-exception v0
 
-    .line 674
+    .line 684
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    goto/16 :goto_1
+    goto/16 :goto_2
 
-    :cond_1
+    :cond_3
     const v2, 0x1020021
 
-    if-ne p1, v2, :cond_2
+    if-ne p1, v2, :cond_4
 
-    .line 678
+    .line 688
     invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionStart()I
 
     move-result v2
@@ -2150,7 +2210,7 @@
 
     move-result v1
 
-    .line 679
+    .line 689
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
@@ -2167,7 +2227,7 @@
 
     move-result v2
 
-    .line 681
+    .line 691
     :try_start_1
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -2183,12 +2243,12 @@
 
     return v0
 
-    :cond_2
+    :cond_4
     const v2, 0x1020020
 
-    if-ne p1, v2, :cond_5
+    if-ne p1, v2, :cond_7
 
-    .line 687
+    .line 697
     invoke-virtual {p0}, Landroid/widget/EditText;->getSelectionStart()I
 
     move-result v2
@@ -2197,7 +2257,7 @@
 
     move-result v2
 
-    .line 688
+    .line 698
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v3
@@ -2214,7 +2274,7 @@
 
     move-result v3
 
-    .line 690
+    .line 700
     :try_start_2
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -2226,14 +2286,14 @@
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
 
-    .line 691
+    .line 701
     new-instance v4, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v4}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_5
 
-    .line 693
+    .line 703
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v5
@@ -2244,8 +2304,8 @@
 
     invoke-virtual {v4, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 695
-    :cond_3
+    .line 705
+    :cond_5
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v1
@@ -2254,9 +2314,9 @@
 
     move-result v1
 
-    if-eq v3, v1, :cond_4
+    if-eq v3, v1, :cond_6
 
-    .line 696
+    .line 706
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v1
@@ -2275,21 +2335,21 @@
 
     invoke-virtual {v4, v1}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 698
-    :cond_4
+    .line 708
+    :cond_6
     invoke-virtual {p0, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 699
+    .line 709
     invoke-virtual {p0, v2, v2}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(II)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     return v0
 
-    .line 705
+    .line 715
     :catch_1
-    :cond_5
-    :goto_1
+    :cond_7
+    :goto_2
     invoke-super {p0, p1}, Landroid/widget/EditText;->onTextContextMenuItem(I)Z
 
     move-result p1

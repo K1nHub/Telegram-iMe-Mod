@@ -124,61 +124,49 @@
 
 .field public static final ic_launcher_round:I = 0x7f0d0036
 
-.field public static final ic_launcher_sa:I = 0x7f0d0037
+.field public static final icon_2_launcher:I = 0x7f0d0037
 
-.field public static final icon_2_launcher:I = 0x7f0d0038
+.field public static final icon_2_launcher_round:I = 0x7f0d0038
 
-.field public static final icon_2_launcher_round:I = 0x7f0d0039
+.field public static final icon_3_foreground:I = 0x7f0d0039
 
-.field public static final icon_2_launcher_sa:I = 0x7f0d003a
+.field public static final icon_3_foreground_round:I = 0x7f0d003a
 
-.field public static final icon_3_foreground:I = 0x7f0d003b
+.field public static final icon_3_foreground_sa:I = 0x7f0d003b
 
-.field public static final icon_3_foreground_round:I = 0x7f0d003c
+.field public static final icon_3_launcher:I = 0x7f0d003c
 
-.field public static final icon_3_foreground_sa:I = 0x7f0d003d
+.field public static final icon_3_launcher_round:I = 0x7f0d003d
 
-.field public static final icon_3_launcher:I = 0x7f0d003e
+.field public static final icon_4_launcher:I = 0x7f0d003e
 
-.field public static final icon_3_launcher_round:I = 0x7f0d003f
+.field public static final icon_4_launcher_round:I = 0x7f0d003f
 
-.field public static final icon_3_launcher_sa:I = 0x7f0d0040
+.field public static final icon_5_foreground:I = 0x7f0d0040
 
-.field public static final icon_4_launcher:I = 0x7f0d0041
+.field public static final icon_5_foreground_round:I = 0x7f0d0041
 
-.field public static final icon_4_launcher_round:I = 0x7f0d0042
+.field public static final icon_5_foreground_sa:I = 0x7f0d0042
 
-.field public static final icon_4_launcher_sa:I = 0x7f0d0043
+.field public static final icon_5_launcher:I = 0x7f0d0043
 
-.field public static final icon_5_foreground:I = 0x7f0d0044
+.field public static final icon_5_launcher_round:I = 0x7f0d0044
 
-.field public static final icon_5_foreground_round:I = 0x7f0d0045
+.field public static final icon_6_foreground:I = 0x7f0d0045
 
-.field public static final icon_5_foreground_sa:I = 0x7f0d0046
+.field public static final icon_6_foreground_round:I = 0x7f0d0046
 
-.field public static final icon_5_launcher:I = 0x7f0d0047
+.field public static final icon_6_foreground_sa:I = 0x7f0d0047
 
-.field public static final icon_5_launcher_round:I = 0x7f0d0048
+.field public static final icon_6_launcher:I = 0x7f0d0048
 
-.field public static final icon_5_launcher_sa:I = 0x7f0d0049
+.field public static final icon_6_launcher_round:I = 0x7f0d0049
 
-.field public static final icon_6_foreground:I = 0x7f0d004a
+.field public static final icon_foreground:I = 0x7f0d004a
 
-.field public static final icon_6_foreground_round:I = 0x7f0d004b
+.field public static final icon_foreground_round:I = 0x7f0d004b
 
-.field public static final icon_6_foreground_sa:I = 0x7f0d004c
-
-.field public static final icon_6_launcher:I = 0x7f0d004d
-
-.field public static final icon_6_launcher_round:I = 0x7f0d004e
-
-.field public static final icon_6_launcher_sa:I = 0x7f0d004f
-
-.field public static final icon_foreground:I = 0x7f0d0050
-
-.field public static final icon_foreground_round:I = 0x7f0d0051
-
-.field public static final icon_foreground_sa:I = 0x7f0d0052
+.field public static final icon_foreground_sa:I = 0x7f0d004c
 
 
 # direct methods

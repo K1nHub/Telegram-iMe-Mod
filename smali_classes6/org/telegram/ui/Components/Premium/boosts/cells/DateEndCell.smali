@@ -256,7 +256,7 @@
 
     move-result p1
 
-    const/16 v0, 0x38
+    const/16 v0, 0x32
 
     .line 65
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I

@@ -59,7 +59,7 @@
 .method public final getName()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "isSynthetic"
+    const-string/jumbo v0, "isSynthetic"
 
     return-object v0
 .end method
@@ -79,7 +79,7 @@
 .method public final getSignature()Ljava/lang/String;
     .locals 1
 
-    const-string v0, "isSynthetic()Z"
+    const-string/jumbo v0, "isSynthetic()Z"
 
     return-object v0
 .end method

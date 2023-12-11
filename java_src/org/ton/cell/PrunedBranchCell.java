@@ -31,8 +31,8 @@ public final class PrunedBranchCell implements Cell {
 
     @Override // org.ton.cell.Cell
     /* renamed from: getLevelMask-Kat384U */
-    public int mo5206getLevelMaskKat384U() {
-        return Cell.DefaultImpls.m5207getLevelMaskKat384U(this);
+    public int mo5188getLevelMaskKat384U() {
+        return Cell.DefaultImpls.m5189getLevelMaskKat384U(this);
     }
 
     @Override // org.ton.cell.Cell
@@ -60,24 +60,24 @@ public final class PrunedBranchCell implements Cell {
     @Override // org.ton.cell.Cell
     public BitString hash(int i) {
         byte[] copyOfRange;
-        int m5232getHashIndeximpl = LevelMask.m5232getHashIndeximpl(LevelMask.m5226applyspGXSBY(getDescriptor().mo5217getLevelMaskKat384U(), i));
-        if (m5232getHashIndeximpl == LevelMask.m5233getLevelimpl(getDescriptor().mo5217getLevelMaskKat384U())) {
+        int m5214getHashIndeximpl = LevelMask.m5214getHashIndeximpl(LevelMask.m5208applyspGXSBY(getDescriptor().mo5199getLevelMaskKat384U(), i));
+        if (m5214getHashIndeximpl == LevelMask.m5215getLevelimpl(getDescriptor().mo5199getLevelMaskKat384U())) {
             return this.hash;
         }
-        int i2 = (m5232getHashIndeximpl * 32) + 2;
+        int i2 = (m5214getHashIndeximpl * 32) + 2;
         copyOfRange = ArraysKt___ArraysJvmKt.copyOfRange(BitString.DefaultImpls.toByteArray$default(getBits(), false, 1, null), i2, i2 + 32);
         return BitString.Companion.m43of(copyOfRange, copyOfRange.length * 8);
     }
 
     @Override // org.ton.cell.Cell
     public int depth(int i) {
-        int m5232getHashIndeximpl = LevelMask.m5232getHashIndeximpl(LevelMask.m5226applyspGXSBY(getDescriptor().mo5217getLevelMaskKat384U(), i));
-        if (m5232getHashIndeximpl == LevelMask.m5233getLevelimpl(getDescriptor().mo5217getLevelMaskKat384U())) {
+        int m5214getHashIndeximpl = LevelMask.m5214getHashIndeximpl(LevelMask.m5208applyspGXSBY(getDescriptor().mo5199getLevelMaskKat384U(), i));
+        if (m5214getHashIndeximpl == LevelMask.m5215getLevelimpl(getDescriptor().mo5199getLevelMaskKat384U())) {
             return this.depth;
         }
-        int m5233getLevelimpl = (LevelMask.m5233getLevelimpl(getDescriptor().mo5217getLevelMaskKat384U()) * 32) + 2 + (m5232getHashIndeximpl * 2);
+        int m5215getLevelimpl = (LevelMask.m5215getLevelimpl(getDescriptor().mo5199getLevelMaskKat384U()) * 32) + 2 + (m5214getHashIndeximpl * 2);
         byte[] byteArray$default = BitString.DefaultImpls.toByteArray$default(getBits(), false, 1, null);
-        return (byteArray$default[m5233getLevelimpl + 1] & 255) | ((byteArray$default[m5233getLevelimpl] & 255) << 8);
+        return (byteArray$default[m5215getLevelimpl + 1] & 255) | ((byteArray$default[m5215getLevelimpl] & 255) << 8);
     }
 
     @Override // org.ton.cell.Cell
