@@ -10,7 +10,7 @@ sdkInfo:
   targetSdkVersion: 33
 packageInfo:
   forcedPackageId: 127
-  renameManifestPackage: null
+  renameManifestPackage: org.telegram.messenger
 versionInfo:
   versionCode: 1060109
   versionName: 10.6.1
