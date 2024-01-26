@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="binance_opensdk_download">バイナンスアプリをダウンロード</string>
-    <string name="binance_opensdk_login_to_connect">バイナンスアカウントにログインをして接続してください</string>
-    <string name="binance_opensdk_login_with_mail_or_phone">メールまたは電話でログイン</string>
-    <string name="binance_opensdk_upgrade">バイナンスアプリをアップグレード</string>
-</resources>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/linear_root" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.iMe.ui.custom.TitledInputFieldView android:id="@id/input_chat" android:paddingLeft="@dimen/margin_normal_20" android:paddingTop="@dimen/margin_normal_2" android:paddingRight="@dimen/margin_normal_20" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="@dimen/wallet_card_elevation" android:paddingHorizontal="@dimen/margin_normal_20" />
-    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_normal" android:id="@id/text_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_20" android:layout_marginTop="@dimen/margin_under_normal" android:layout_marginRight="@dimen/margin_normal_20" android:layout_marginBottom="@dimen/margin_under_normal" android:layout_marginHorizontal="@dimen/margin_normal_20" android:layout_marginVertical="@dimen/margin_under_normal" />
-</LinearLayout>

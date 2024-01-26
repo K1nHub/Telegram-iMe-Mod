@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="binance_opensdk_download">I-download ang Binance App</string>
-    <string name="binance_opensdk_login_to_connect">Mag-login sa iyong Binance account upang kumonekta</string>
-    <string name="binance_opensdk_login_with_mail_or_phone">Mag-login gamit ang email o telepono</string>
-    <string name="binance_opensdk_upgrade">I-upgrade ang Binance App</string>
-</resources>

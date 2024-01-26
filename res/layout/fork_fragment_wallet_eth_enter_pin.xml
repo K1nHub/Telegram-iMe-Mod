@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="start|center|top" android:id="@id/image_back" android:layout_width="@dimen/icon_size_default" android:layout_height="@dimen/icon_size_default" android:layout_margin="@dimen/margin_normal" android:elevation="@dimen/margin_tiny" />
-    <org.telegram.ui.Components.PasscodeView android:id="@id/passcode_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</FrameLayout>

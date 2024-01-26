@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <include android:id="@id/toolbar" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="54.0dip" app:layout_constraintTop_toTopOf="parent" layout="@layout/fork_toolbar" />
-    <WebView android:id="@id/web_view" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/toolbar" />
-    <ProgressBar android:id="@id/progress_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:indeterminate="true" app:layout_constraintTop_toBottomOf="@id/toolbar" style="?android:progressBarStyleHorizontal" />
-</androidx.constraintlayout.widget.ConstraintLayout>

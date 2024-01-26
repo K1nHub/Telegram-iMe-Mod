@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="binance_opensdk_download">바이낸스 앱 다운로드</string>
-    <string name="binance_opensdk_login_to_connect">바이낸스 계정에 로그인하여 연결</string>
-    <string name="binance_opensdk_login_with_mail_or_phone">메일 또는 전화로 로그인</string>
-    <string name="binance_opensdk_upgrade">바이낸스 앱 업그레이드</string>
-</resources>

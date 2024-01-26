@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="binance_opensdk_download">Скачать приложение Binance</string>
-    <string name="binance_opensdk_login_to_connect">Для подключения войдите в свой аккаунт Binance</string>
-    <string name="binance_opensdk_login_with_mail_or_phone">Войти с помощью электронной почты или телефона</string>
-    <string name="binance_opensdk_upgrade">Обновить приложение Binance</string>
-</resources>

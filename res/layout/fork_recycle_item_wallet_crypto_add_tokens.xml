@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/frame_container" android:paddingTop="@dimen/padding_paranormal" android:paddingBottom="@dimen/padding_paranormal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingVertical="@dimen/padding_paranormal"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_small_upper" android:gravity="center" android:layout_gravity="center" android:id="@id/text_add_tokens" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:drawablePadding="@dimen/margin_extra_small" app:drawableStartCompat="@drawable/fork_ic_add" />
-</FrameLayout>

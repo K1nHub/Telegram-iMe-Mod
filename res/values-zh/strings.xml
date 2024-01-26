@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="binance_opensdk_download">下载币安App</string>
-    <string name="binance_opensdk_login_to_connect">登入币安帐户以绑定</string>
-    <string name="binance_opensdk_login_with_mail_or_phone">使用邮箱或手机号登入</string>
-    <string name="binance_opensdk_upgrade">升级币安App</string>
-</resources>

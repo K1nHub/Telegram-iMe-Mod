@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView android:id="@id/card_word" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_half_small" app:cardCornerRadius="@dimen/margin_under_normal" app:cardElevation="2.0dip">
-        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_small_upper" android:id="@id/text_word" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_extra_small" android:layout_marginBottom="@dimen/margin_extra_small" android:layout_marginStart="@dimen/margin_normal_2" android:layout_marginEnd="@dimen/margin_normal_2" />
-    </androidx.cardview.widget.CardView>
-</FrameLayout>

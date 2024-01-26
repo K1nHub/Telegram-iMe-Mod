@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/frame_root" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView android:id="@id/card_empty_account" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_extra_small" android:layout_marginRight="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_extra_small" android:layout_marginHorizontal="@dimen/margin_normal" android:layout_marginVertical="@dimen/margin_extra_small" app:cardCornerRadius="@dimen/margin_small" app:cardElevation="@dimen/wallet_card_elevation">
-        <com.iMe.ui.custom.HorizontalActionButtonsView android:id="@id/horizontal_action_buttons" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    </androidx.cardview.widget.CardView>
-</FrameLayout>
