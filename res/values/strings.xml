@@ -556,9 +556,9 @@ to: %2$s"</string>
     <string name="AppIconPremium">Premium</string>
     <string name="AppIconTurbo">Turbo</string>
     <string name="AppIconVintage">Vintage</string>
-    <string name="AppName">iMe</string>
+    <string name="AppName">Telegram</string>
     <string name="AppNameBeta">Telegram Beta</string>
-    <string name="AppUpdate">Update iMe</string>
+    <string name="AppUpdate">Update Telegram</string>
     <string name="AppUpdateChangelogEmpty">"**What's new?**
 
 • Bug fixes and improvements."</string>
@@ -785,7 +785,7 @@ Please take a look at the &lt;a href=\"https://telegram.org/faq#general-question
     <string name="AuthAnotherClientInfo1">Download Telegram on your computer from *getdesktop.telegram.org*.</string>
     <string name="AuthAnotherClientInfo2">Run Telegram Desktop to get the QR code.</string>
     <string name="AuthAnotherClientInfo3">Scan the QR code to connect your account.</string>
-    <string name="AuthAnotherClientInfo4">You can login iMe apps for *iOS*, *Android* and *Desktop* with the QR-code.</string>
+    <string name="AuthAnotherClientInfo4">You can login Telegram apps for *iOS*, *Android* and *Desktop* with the QR-code.</string>
     <string name="AuthAnotherClientInfo5">Go to *imem.app/desktop* to get the QR-code</string>
     <string name="AuthAnotherClientNotFound">No auth token found</string>
     <string name="AuthAnotherClientOk">Auth successfull</string>
@@ -3743,7 +3743,7 @@ until the import is completed."</string>
     <string name="InviteChannelRestrictedUsers_two">**%d users** restrict adding them to channels. You can send them an invite link as message instead.</string>
     <string name="InviteExpired">This invite link has expired.</string>
     <string name="InviteFriends">Invite Friends</string>
-    <string name="InviteFriendsHelp">Select contacts to invite them to iMe</string>
+    <string name="InviteFriendsHelp">Select contacts to invite them to Telegram</string>
     <string name="InviteLink">Invite Link</string>
     <string name="InviteLinkCount_few">%1$d invite links</string>
     <string name="InviteLinkCount_many">%1$d invite links</string>
@@ -3772,7 +3772,7 @@ until the import is completed."</string>
     <string name="InviteRestrictedUsers_other">**%d users** restrict adding them to groups. You can send them an invite link as message instead.</string>
     <string name="InviteRestrictedUsers_two">**%d users** restrict adding them to groups. You can send them an invite link as message instead.</string>
     <string name="InviteRevokedHint">The invite link has been revoked.</string>
-    <string name="InviteText2">"Hi, I'm here to chat with you using an advanced Telegram client. Download iMe and keep communicating with Telegram users in a new format! %1$s"</string>
+    <string name="InviteText2">"Hi, I'm here to chat with you using an advanced Telegram client. Download Telegram and keep communicating with Telegram users in a new format! %1$s"</string>
     <string name="InviteTextNum_few">"Hey, I'm using Telegram to chat – and so are %1$d of our other contacts. Join us! Download it here: %2$s"</string>
     <string name="InviteTextNum_many">"Hey, I'm using Telegram to chat – and so are %1$d of our other contacts. Join us! Download it here: %2$s"</string>
     <string name="InviteTextNum_one">"Hey, I'm using Telegram to chat – and so are %1$d of our other contact. Join us! Download it here: %2$s"</string>
@@ -3790,7 +3790,7 @@ until the import is completed."</string>
     <string name="InviteToGroupErrorTitleSomeUsers">"Can't add some users"</string>
     <string name="InviteToGroupErrorTitleTheseUsers">"Can't add these users"</string>
     <string name="InviteToGroupErrorTitleThisUser">"Can't add this user"</string>
-    <string name="InviteToTelegram">INVITE TO iMe</string>
+    <string name="InviteToTelegram">INVITE TO Telegram</string>
     <string name="InviteToTelegramShort">Invite To Telegram</string>
     <string name="InviteUser">This user does not have Telegram yet, send an invitation?</string>
     <string name="Invited">invited</string>
@@ -4940,7 +4940,7 @@ Do not give this code to anyone."</string>
     <string name="P2PNobodyPlus">Nobody (+%1$d)</string>
     <string name="Page1Message">"Unofficial client
 based on Telegram API"</string>
-    <string name="Page1Title">iMe Messenger</string>
+    <string name="Page1Title">Telegram Messenger</string>
     <string name="Page2Message">"Message delivery is quicker than
  in any other app."</string>
     <string name="Page2Title">Fast</string>
@@ -5316,7 +5316,7 @@ Please turn on location services to enable this feature."</string>
     <string name="PeopleNearbyInfo2">Exchange contact info with people nearby and find new friends.</string>
     <string name="Permanent">Permanent</string>
     <string name="PermanentLinkForThisAdmin">Invite link for this admin</string>
-    <string name="PermissionBackgroundLocation">"To share your live location in this chat, iMe needs access to your location all the time, including while the app is in the background.
+    <string name="PermissionBackgroundLocation">"To share your live location in this chat, Telegram needs access to your location all the time, including while the app is in the background.
 
 We will access your location only for the duration you choose, and you can stop sharing it any time. We won't use your location for any purpose other than sharing it in this chat."</string>
     <string name="PermissionContacts">"To let you connect with friends across all your devices, your contacts will be continuously synced with Telegram's heavily encrypted cloud servers."</string>
@@ -6548,7 +6548,7 @@ Don't accept the call, Telegram will process everything automatically."</string>
     <string name="SharePhoneNumberWith">Share my phone number with %1$s</string>
     <string name="ShareQrCode">Share QR Code</string>
     <string name="ShareSendTo">Send to...</string>
-    <string name="ShareTelegram">Share iMe...</string>
+    <string name="ShareTelegram">Share Telegram...</string>
     <string name="ShareTheme">Share theme</string>
     <string name="ShareVideo">Share Camera Video</string>
     <string name="ShareYouLocationInfo">This will send your current location to the bot.</string>
@@ -7261,7 +7261,7 @@ Here’s what is now unlocked."</string>
     <string name="TelegramPremiumUserStatusDialogSubtitle">Emoji status is a premium feature. Other features included in **Telegram Premium**:</string>
     <string name="TelegramPremiumUserStatusDialogTitle">%1$s set this emoji from **%2$s** as their current status.</string>
     <string name="TelegramTones">Telegram tones</string>
-    <string name="TelegramVersion">iMe for Android %1$s</string>
+    <string name="TelegramVersion">Telegram for Android %1$s</string>
     <string name="Terminate">Terminate</string>
     <string name="TerminateAllSessions">Terminate All Other Sessions</string>
     <string name="TerminateAllWebSessions">Disconnect All Websites</string>
@@ -7559,7 +7559,7 @@ But if you're generally not OK with Telegram's modest needs, it won't be possibl
     <string name="UnsavedChanges">Unsaved Changes</string>
     <string name="UnsavedChangesMessage">You have changed the settings of this invite link. Apply changes?</string>
     <string name="UnsupportedAttachment">Unsupported attachment</string>
-    <string name="UnsupportedMedia">The message is not supported by your version of iMe. Please update to the latest version. If the update is not available yet, then try again later, we are already working on the update, and will release new functionality in the coming days.</string>
+    <string name="UnsupportedMedia">The message is not supported by your version of Telegram. Please update to the latest version. If the update is not available yet, then try again later, we are already working on the update, and will release new functionality in the coming days.</string>
     <string name="UnsupportedMediaStandalone">This message is not supported on your version of Telegram. Update the app to view: https://telegram.org/dl</string>
     <string name="Unvote">Retract Vote</string>
     <string name="UpToFileSize">Up to %s</string>
@@ -8300,7 +8300,7 @@ Do you still remember your password?"</string>
     <string name="airdrop_dialog_auth_description">Authorize in our Wallet via bot</string>
     <string name="airdrop_dialog_claim_bonus_description">Collect LIME tokens</string>
     <string name="airdrop_dialog_create_wallet_description">Create or import crypto wallet</string>
-    <string name="airdrop_dialog_description">"iMe gives you %s LIME BEP20, thank you for staying with us!
+    <string name="airdrop_dialog_description">"Telegram gives you %s LIME BEP20, thank you for staying with us!
 
 To get the reward, you need to:"</string>
     <string name="airdrop_dialog_lime_beginner_menu_title">What is the LIME?</string>
@@ -8349,15 +8349,15 @@ To get the reward, you need to:"</string>
     <string name="archive_empty_subtitle">This is where the chats you sent to the archive are stored</string>
     <string name="archive_empty_title">Archive is empty</string>
     <string name="attach_menu_select_all">Select all</string>
-    <string name="auth_dialog_description">"Get access to all features provided by iMe Platform free of charge! Full functionality is available for users who agree to our Terms of Service.
+    <string name="auth_dialog_description">"Get access to all features provided by Telegram Platform free of charge! Full functionality is available for users who agree to our Terms of Service.
 
 By continuing, you agree
 to the *Terms of Service*"</string>
-    <string name="auth_dialog_title">iMe Ecosystem</string>
+    <string name="auth_dialog_title">Telegram Ecosystem</string>
     <string name="auth_login_terms_of_service">"By login, you agree
 to the *Terms of Service*"</string>
     <string name="auth_signup_terms_of_service_postfix">"
-You agree to the *iMe Terms of Service*
+You agree to the *Telegram Terms of Service*
 
 We reserve the right to update these
 Terms of Service later."</string>
@@ -8381,13 +8381,13 @@ Settings > Tools > Customization"</string>
     <string name="backup_message_popup_restore">Restore settings</string>
     <string name="backup_restore">Restore</string>
     <string name="backup_settings_disabled">Do not save</string>
-    <string name="backup_settings_header">iMe Backup</string>
+    <string name="backup_settings_header">Telegram Backup</string>
     <string name="backup_settings_interval_every_day">Every day</string>
     <string name="backup_settings_interval_every_month">Every month</string>
     <string name="backup_settings_interval_every_week">Every week</string>
     <string name="backup_settings_save_auto">Save automatically</string>
     <string name="backup_settings_save_manually">Save manually</string>
-    <string name="backup_settings_save_manually_alert">"Local iMe settings will be saved in your Cloud chat as a file.
+    <string name="backup_settings_save_manually_alert">"Local Telegram settings will be saved in your Cloud chat as a file.
 
 After reinstalling the application, click on this file and restore the settings."</string>
     <string name="binance_convert_balance">"Spot: %1$s
@@ -8415,7 +8415,7 @@ Please update your App version or login via browser."</string>
     <string name="binance_replenish_no_token_on_balance">You have no tokens to replenish</string>
     <string name="binance_replenish_token_choose_token_cant_change_error">Address for replenishment provided by Binance can`t be changed</string>
     <string name="binance_replenish_token_choose_token_first_error">Select token to get address for replenishment automatically</string>
-    <string name="binance_replenish_token_description">Replenish Binance from iMe wallet</string>
+    <string name="binance_replenish_token_description">Replenish Binance from Telegram wallet</string>
     <string name="binance_replenish_token_toolbar_title">Replenish Binance</string>
     <string name="binance_replenish_unsupported_network">Unsupported network</string>
     <string name="binance_token_details_distribution_margin">Funding</string>
@@ -8465,7 +8465,7 @@ Click here to add bot quickly"</string>
     <string name="channel_donations_link_address_dialog_description">Are you sure you want to link address (%s) as donation address? Your address will be public for everyone.</string>
     <string name="channel_donations_link_address_dialog_positive_button">Link</string>
     <string name="channel_donations_link_address_dialog_title">Link address</string>
-    <string name="channel_donations_link_non_castodial_wallet_address_dialog_title">Use iMe address</string>
+    <string name="channel_donations_link_non_castodial_wallet_address_dialog_title">Use Telegram address</string>
     <string name="channel_donations_the_same_address_error">Enter a different address from the current linked one</string>
     <string name="channel_donations_toolbar_title">Donations</string>
     <string name="channel_donations_unlink_address_dialog_description">Are you sure you want to unlink linked address (%s) and disable donations? All donations history will be removed.</string>
@@ -8506,7 +8506,7 @@ Click here to add bot quickly"</string>
     <string name="chat_reaction_create">Create</string>
     <string name="chat_reaction_create_a_reaction">Create a reaction</string>
     <string name="chat_reaction_create_button">Create button</string>
-    <string name="chat_reaction_dialog_text">To activate this feature, you need to launch the @iMeLikeBot bot. In the future, you will not need to log into the bot.</string>
+    <string name="chat_reaction_dialog_text">To activate this feature, you need to launch the @TelegramLikeBot bot. In the future, you will not need to log into the bot.</string>
     <string name="chat_reaction_dialog_title">Add reactions</string>
     <string name="chat_reaction_empty_field_warning">Fill in or delete empty items</string>
     <string name="chat_reaction_enter_the_title">Enter the title</string>
@@ -8530,7 +8530,7 @@ Click here to add bot quickly"</string>
     <string name="chat_send_panel_neurobot_popup_share">Share</string>
     <string name="chat_send_panel_neurobots_responses_empty">None of the neurobots responded to the last incoming phrase</string>
     <string name="chat_settings_alert_channel_view_bottom_cell">Bottom panel in channels</string>
-    <string name="chat_settings_app_icon_alert_message">You are about to change the icon for iMe. The application will restart.</string>
+    <string name="chat_settings_app_icon_alert_message">You are about to change the icon for Telegram. The application will restart.</string>
     <string name="chat_settings_app_icon_alert_title">Change icon?</string>
     <string name="chat_settings_app_icon_autumn">Autumn</string>
     <string name="chat_settings_app_icon_black">Black</string>
@@ -8758,7 +8758,7 @@ Approval will be given for this smart contract:
     <string name="cryptobox_create_success_title">Success</string>
     <string name="cryptobox_create_title">Create new CryptoBox</string>
     <string name="cryptobox_create_user_not_owner">Please promote the bot to an admin for correct CryptoBoxes operation</string>
-    <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_description">Please allow admin rights for @iMe_Official_Bot for correct CryptoBoxes operation</string>
+    <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_description">Please allow admin rights for @Telegram_Official_Bot for correct CryptoBoxes operation</string>
     <string name="cryptobox_create_wallet_bot_amin_rights_confirmation_title">Required Admin Rights</string>
     <string name="cryptobox_details_balance">Balance</string>
     <string name="cryptobox_details_chat">Chat name</string>
@@ -8889,7 +8889,7 @@ Approval will be given for this smart contract:
     <string name="currency_kono_site">https://www.konomi.network/</string>
     <string name="currency_lank">Lanceria</string>
     <string name="currency_lank_site">https://lanceria.io/</string>
-    <string name="currency_lime">iMe Lab</string>
+    <string name="currency_lime">Telegram Lab</string>
     <string name="currency_lime_site">https://imem.app</string>
     <string name="currency_link">Chainlink</string>
     <string name="currency_link_site">https://chain.link/</string>
@@ -9081,7 +9081,7 @@ Approval will be given for this smart contract:
     <string name="dialog_promo_en_news_channel_description">English</string>
     <string name="dialog_promo_ru_news_channel_description">Russian</string>
     <string name="dialog_promo_subscribe_subtitle">Then join to our channel</string>
-    <string name="dialog_promo_subscribe_title">Do you want to follow iMe news?</string>
+    <string name="dialog_promo_subscribe_title">Do you want to follow Telegram news?</string>
     <string name="dialogs_activity_move_to_folder">Move to folder</string>
     <string name="dialogs_albums_sort_alphabetically">Sort alphabetically</string>
     <string name="dialogs_albums_sort_date">Sort by date</string>
@@ -9207,73 +9207,73 @@ and we will try to find his Telegram account"</string>
     <string name="fork_premium_antivirus_title">Antivirus</string>
     <string name="fork_premium_chat_password_description">Protect your chats with personalized passwords, keeping your conversations private and restricting access to others.</string>
     <string name="fork_premium_chat_password_title">Chat Password</string>
-    <string name="fork_premium_cross_platform_sync_description">Experience seamless synchronization of your iMe features and settings across iOS, Android, and Desktop platforms.</string>
+    <string name="fork_premium_cross_platform_sync_description">Experience seamless synchronization of your Telegram features and settings across iOS, Android, and Desktop platforms.</string>
     <string name="fork_premium_cross_platform_sync_title">Cross-platform Synchronization</string>
     <string name="fork_premium_description_buy">"Go **beyond the limits**, get exclusive features and
-support us by subscribing to **iMe Premium**."</string>
-    <string name="fork_premium_description_premium">"Thank you for subscribing to **iMe Premium**.
+support us by subscribing to **Telegram Premium**."</string>
+    <string name="fork_premium_description_premium">"Thank you for subscribing to **Telegram Premium**.
 Here's what is now unlocked."</string>
-    <string name="fork_premium_disable_ads_description">Benefit from ad-free iMe experience across all your devices.</string>
-    <string name="fork_premium_disable_ads_title">Disabling iMe Ads</string>
-    <string name="fork_premium_discount_ad_description">"Try an enhanced version of iMe with iMe Premium!
+    <string name="fork_premium_disable_ads_description">Benefit from ad-free Telegram experience across all your devices.</string>
+    <string name="fork_premium_disable_ads_title">Disabling Telegram Ads</string>
+    <string name="fork_premium_discount_ad_description">"Try an enhanced version of Telegram with Telegram Premium!
 More exclusive features, prioritized support"</string>
-    <string name="fork_premium_discount_ad_title">iMe Premium with a discount of **%1$d%%**</string>
+    <string name="fork_premium_discount_ad_title">Telegram Premium with a discount of **%1$d%%**</string>
     <string name="fork_premium_exclusive_icons_description">Customize your home screen with a selection of unique and exclusive app icons.</string>
     <string name="fork_premium_exclusive_icons_title">Exclusive App Icons</string>
-    <string name="fork_premium_feature_get_premium">Get iMe Premium</string>
+    <string name="fork_premium_feature_get_premium">Get Telegram Premium</string>
     <string name="fork_premium_feature_see_details">See details</string>
     <string name="fork_premium_feature_soon">SOON</string>
-    <string name="fork_premium_gift">Gift iMe Premium</string>
-    <string name="fork_premium_gift_features_list">You can review the list of features and Terms of Use for iMe Premium *here*.</string>
-    <string name="fork_premium_gift_subtitle">Give **%1$s** access to exclusive features with **iMe Premium**.</string>
-    <string name="fork_premium_gift_success">Thanks! You have successfully gifted iMe Premium to %s</string>
-    <string name="fork_premium_gift_title">iMe Premium</string>
-    <string name="fork_premium_gift_user_already_premium">The user has iMe Premium already</string>
+    <string name="fork_premium_gift">Gift Telegram Premium</string>
+    <string name="fork_premium_gift_features_list">You can review the list of features and Terms of Use for Telegram Premium *here*.</string>
+    <string name="fork_premium_gift_subtitle">Give **%1$s** access to exclusive features with **Telegram Premium**.</string>
+    <string name="fork_premium_gift_success">Thanks! You have successfully gifted Telegram Premium to %s</string>
+    <string name="fork_premium_gift_title">Telegram Premium</string>
+    <string name="fork_premium_gift_user_already_premium">The user has Telegram Premium already</string>
     <string name="fork_premium_gift_via_bot">Gift via bot</string>
     <string name="fork_premium_hiding_messages_by_filters_description">Control your chats environment by filtering out messages containing specific keywords, like promotional content or advertisements.</string>
     <string name="fork_premium_hiding_messages_by_filters_title">Hiding Messages by Filters</string>
-    <string name="fork_premium_main_ad_description">"Try an enhanced version of iMe with iMe Boost!
+    <string name="fork_premium_main_ad_description">"Try an enhanced version of Telegram with Telegram Boost!
 More exclusive features, prioritized support and
 the opportunity for the project
 to become better because of you!"</string>
     <string name="fork_premium_main_ad_get">Get a Premium</string>
     <string name="fork_premium_main_ad_not_interested">"I'm not interested"</string>
-    <string name="fork_premium_main_ad_title">iMe Premium is here!</string>
+    <string name="fork_premium_main_ad_title">Telegram Premium is here!</string>
     <string name="fork_premium_payment_problems">Problems with payment? *Try this*</string>
     <string name="fork_premium_play_store">Play Store</string>
-    <string name="fork_premium_premium_profile_mark_description">Showcase your exclusive status with a distinguished Premium mark on your profile, reserved for the elite iMe members.</string>
+    <string name="fork_premium_premium_profile_mark_description">Showcase your exclusive status with a distinguished Premium mark on your profile, reserved for the elite Telegram members.</string>
     <string name="fork_premium_premium_profile_mark_title">Premium Profile Mark</string>
-    <string name="fork_premium_premium_support_description">Enjoy immediate, 24/7 support for all iMe functionality inquiries, bypassing the wait.</string>
+    <string name="fork_premium_premium_support_description">Enjoy immediate, 24/7 support for all Telegram functionality inquiries, bypassing the wait.</string>
     <string name="fork_premium_premium_support_title">Premium Support</string>
     <string name="fork_premium_privacy">Privacy Policy</string>
     <string name="fork_premium_purchase_error_already_owned">"Product already owned.
-You can have only one iMe Premium subscription per Google account"</string>
+You can have only one Telegram Premium subscription per Google account"</string>
     <string name="fork_premium_purchase_error_canceled">User cancelled purchase</string>
-    <string name="fork_premium_purchase_error_common">An error occurred, try again via @iMePremiumBot</string>
+    <string name="fork_premium_purchase_error_common">An error occurred, try again via @TelegramPremiumBot</string>
     <string name="fork_premium_purchase_error_network_error">Network error during purchase</string>
     <string name="fork_premium_purchase_success">Purchase was made successfully</string>
     <string name="fork_premium_real_time_translation_description">Communicate globally with real-time translation for all chat types, breaking down language barriers instantly.</string>
     <string name="fork_premium_real_time_translation_title">Real-Time Translation</string>
-    <string name="fork_premium_required_bulletin">"Subscribe to **iMe Premium** to be able
+    <string name="fork_premium_required_bulletin">"Subscribe to **Telegram Premium** to be able
 change this configuration"</string>
     <string name="fork_premium_status_manage">Manage your subscription in the %s</string>
-    <string name="fork_premium_status_terms">"By subscribing to iMe Premium you agree to
+    <string name="fork_premium_status_terms">"By subscribing to Telegram Premium you agree to
 the %1$s and %2$s."</string>
     <string name="fork_premium_status_valid_until">"Your Premium Subscription is active.
 Extension date is %1$s"</string>
     <string name="fork_premium_stories_settings_description">Customize stories displaying with various settings in a convenient format.</string>
     <string name="fork_premium_stories_settings_title">Stories Displaying Settings</string>
     <string name="fork_premium_subscribe_via_bot">Subscribe via bot</string>
-    <string name="fork_premium_subtitle">Try advanced iMe with Boost</string>
-    <string name="fork_premium_terms">iMe Terms of Service</string>
-    <string name="fork_premium_title">iMe Premium</string>
+    <string name="fork_premium_subtitle">Try advanced Telegram with Boost</string>
+    <string name="fork_premium_terms">Telegram Terms of Service</string>
+    <string name="fork_premium_title">Telegram Premium</string>
     <string name="fork_premium_to_do_list_description">Boost your productivity by creating tasks and setting reminders with flexible configurations.</string>
     <string name="fork_premium_to_do_list_title">To-Do List</string>
     <string name="fork_premium_unlimited_bookmarks_description">Save and manage an unlimited number of bookmarks within your chats, accessible across all devices and platforms.</string>
     <string name="fork_premium_unlimited_bookmarks_title">Unlimited Bookmarks</string>
     <string name="fork_premium_voice_to_text_description">Convert voice and video messages up to 10 min into text in seconds with multi-language support from the leading AI system.</string>
     <string name="fork_premium_voice_to_text_title">Voice-To-Text Conversion</string>
-    <string name="fork_premium_x2_connected_accounts_description">Connect up to 10 accounts with different phone numbers, doubling the standard iMe limit.</string>
+    <string name="fork_premium_x2_connected_accounts_description">Connect up to 10 accounts with different phone numbers, doubling the standard Telegram limit.</string>
     <string name="fork_premium_x2_connected_accounts_details_description">Connect 10 accounts with different phone numbers</string>
     <string name="fork_premium_x2_connected_accounts_details_title">Connected Accounts</string>
     <string name="fork_premium_x2_connected_accounts_title">x2 Connected Accounts</string>
@@ -9552,7 +9552,7 @@ Add music to the Playlist"</string>
     <string name="neurobots_store_bot_action_enable">Enable</string>
     <string name="neurobots_store_bot_action_update">Update</string>
     <string name="neurobots_store_bot_added">Added</string>
-    <string name="neurobots_store_bot_info_developer">Developer: iMe</string>
+    <string name="neurobots_store_bot_info_developer">Developer: Telegram</string>
     <string name="neurobots_store_bot_info_installs">Installs</string>
     <string name="neurobots_store_bot_info_link">Link</string>
     <string name="neurobots_store_bot_info_phrases">Phrases</string>
@@ -9589,8 +9589,8 @@ Add music to the Playlist"</string>
     <string name="notifications_clear_all">Clear notifications history</string>
     <string name="notifications_clear_confirmation_description">All your notifications will be deleted</string>
     <string name="notifications_clear_confirmation_title">Clear Notifications</string>
-    <string name="notifications_group_common">iMe</string>
-    <string name="open_telegram_alert_auth">From February 18, 2023, new Telegram authorization rules have come into effect, according to which the alternative clients users can receive the SMS code only from the official Telegram client. Please install Telegram app and log into your account there if you need the SMS code, after which you can re-request the code in iMe (it will come in the Telegram service chat).</string>
+    <string name="notifications_group_common">Telegram</string>
+    <string name="open_telegram_alert_auth">From February 18, 2023, new Telegram authorization rules have come into effect, according to which the alternative clients users can receive the SMS code only from the official Telegram client. Please install Telegram app and log into your account there if you need the SMS code, after which you can re-request the code in Telegram (it will come in the Telegram service chat).</string>
     <string name="open_telegram_alert_change_phone_number">Unfortunately, according to the new Telegram rules, the alternative clients users can not receive the SMS code for changing phone number. Please, download the official Telegram client and try again.</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
@@ -9654,7 +9654,7 @@ You need to be in their Telegram contacts to add them back, otherwise they will 
     <string name="profile_group_filter_title">Members filter</string>
     <string name="profile_group_id_item_title">Group ID</string>
     <string name="profile_mark_preview">Mark Preview</string>
-    <string name="profile_mark_preview_message_text">The selected icon will be displayed on your profile avatar among iMe users.</string>
+    <string name="profile_mark_preview_message_text">The selected icon will be displayed on your profile avatar among Telegram users.</string>
     <string name="profile_mark_settings_applied_bulletin">Your profile mark has been updated!</string>
     <string name="profile_mark_settings_apply">Apply Profile Mark</string>
     <string name="profile_mark_settings_enable">Show Profile Mark</string>
@@ -9673,7 +9673,7 @@ You need to be in their Telegram contacts to add them back, otherwise they will 
     <string name="profile_mark_settings_toolbar_title">Your Profile Mark</string>
     <string name="profile_my_id_item_title">My ID</string>
     <string name="profile_twitter_account_actions_title">Twitter account</string>
-    <string name="profile_twitter_auth_to_use_feature_description">To use this functionality, you must authorize your Telegram account via our iMe Wallet bot.</string>
+    <string name="profile_twitter_auth_to_use_feature_description">To use this functionality, you must authorize your Telegram account via our Telegram Wallet bot.</string>
     <string name="profile_twitter_bot_confirmation_alert_description">To connect Twitter, please add %s bot as a group admin to confirm that you are the owner of the chat</string>
     <string name="profile_twitter_bot_confirmation_alert_title">Owner verification</string>
     <string name="profile_twitter_link_confirmation_alert_description">Your Twitter account is linked to another account, if you link it to the current one, the other connections will be reset</string>
@@ -9708,7 +9708,7 @@ Please log out or link the Twitter account again."</string>
     <string name="push_notification_staking_safe_withdrawal_finished" formatted="false">Scheduled withdrawal of %1s has been completed. Your amount of %2s %3s from staking is available for claim.</string>
     <string name="push_notification_staking_safe_withdrawal_started">Your withdrawal request has been created. You can claim your tokens on %1s.</string>
     <string name="push_notification_staking_started">New %1s staking is available in the Wallet!</string>
-    <string name="push_notification_staking_title">iMe Staking Platform</string>
+    <string name="push_notification_staking_title">Telegram Staking Platform</string>
     <string name="push_notification_wallet_approve_category_title">Token approval</string>
     <string name="push_notification_wallet_approve_failed_description">%1$s token approval transaction failed</string>
     <string name="push_notification_wallet_approve_success_description">%1$s token approval transaction was successful</string>
@@ -9761,13 +9761,13 @@ Please log out or link the Twitter account again."</string>
     <string name="setting_tools_drawer_holiday_icon_menu_ny">New Year</string>
     <string name="settings_colored_replies">Colored replies</string>
     <string name="settings_emoji_premium_suggest_sets">Suggest emoji sets</string>
-    <string name="settings_help_alert_channel_item_title">iMe Channel</string>
+    <string name="settings_help_alert_channel_item_title">Telegram Channel</string>
     <string name="settings_help_alert_channel_username">https://t.me/ime_en</string>
-    <string name="settings_help_alert_faq_item_title">iMe FAQ</string>
+    <string name="settings_help_alert_faq_item_title">Telegram FAQ</string>
     <string name="settings_help_alert_faq_url">https://imem.gitbook.io/faq-eng/</string>
-    <string name="settings_help_alert_group_item_title">iMe Group</string>
+    <string name="settings_help_alert_group_item_title">Telegram Group</string>
     <string name="settings_help_alert_lime_group_item_title">Lime Group</string>
-    <string name="settings_help_alert_support_item_title">iMe Support</string>
+    <string name="settings_help_alert_support_item_title">Telegram Support</string>
     <string name="settings_interface">Interface</string>
     <string name="settings_interface_action_bar_account_switch">Account switcher</string>
     <string name="settings_interface_action_bar_menu">3 dots</string>
@@ -9914,7 +9914,7 @@ If you select Bot API option, a \"-\" will be added to the beginning of the ID f
 
 Enable this option so that your messages sent in a row within 30 seconds will be combined into one message."</string>
     <string name="settings_tools_custom_sharing">Multi-sharing</string>
-    <string name="settings_tools_custom_sharing_hint">Displaying the sorting tabs of the main and archive chat list when sharing from outside. For instance, when you share a photo from the device gallery in iMe.</string>
+    <string name="settings_tools_custom_sharing_hint">Displaying the sorting tabs of the main and archive chat list when sharing from outside. For instance, when you share a photo from the device gallery in Telegram.</string>
     <string name="settings_tools_customization">Customization</string>
     <string name="settings_tools_design_icon">Icons design</string>
     <string name="settings_tools_message_popup_reactions">In context menu</string>
@@ -9924,7 +9924,7 @@ Enable this option so that your messages sent in a row within 30 seconds will be
     <string name="settings_tools_neuro_bots">Neurobots</string>
     <string name="settings_tools_photo_viewer">Photos and images</string>
     <string name="settings_tools_photo_viewer_menu_items">Popup menu</string>
-    <string name="settings_tools_profile_ime">iMe Settings</string>
+    <string name="settings_tools_profile_ime">Telegram Settings</string>
     <string name="settings_tools_profile_mark">Profile Mark</string>
     <string name="settings_tools_profile_telegram">Telegram Settings</string>
     <string name="settings_tools_reactions">Reactions and buttons</string>
@@ -10037,7 +10037,7 @@ The calculator will show you statistics with possible profitability for given in
     <string name="staking_details_withdraw">Withdraw</string>
     <string name="staking_info_description">"**Staking is passive income by simply storing cryptocoins and tokens.**
 
-Staking in iMe is perpetual and decentralized, with daily interest accrual, which is based on smart contracts to ensure the security and guarantee of execution of transactions."</string>
+Staking in Telegram is perpetual and decentralized, with daily interest accrual, which is based on smart contracts to ensure the security and guarantee of execution of transactions."</string>
     <string name="staking_info_hint">What is staking?</string>
     <string name="staking_info_more">More details</string>
     <string name="staking_info_site_url">https://telegra.ph/STAKING-10-27</string>
@@ -10058,7 +10058,7 @@ Staking in iMe is perpetual and decentralized, with daily interest accrual, whic
     <string name="staking_profit_error_title">Claim error</string>
     <string name="staking_profit_get">Get</string>
     <string name="staking_profit_help_alert">"When claiming funds from the deposit account, you only pay gas for conducting transaction in the blockchain from the staking smart contract address to your wallet address.
-There is no additional fee from iMe."</string>
+There is no additional fee from Telegram."</string>
     <string name="staking_profit_no_tokens_to_claim">You have no tokens to claim</string>
     <string name="staking_profit_overlap_error_description">Claim is in progress, please wait for the previous transaction to complete</string>
     <string name="staking_profit_success_description">"You have claimed %1$s %2$s
@@ -10115,7 +10115,7 @@ Your balance will be updated after the transaction is confirmed in the blockchai
 • Gas payment is required to create a request;
 • Interest accrual on the amount of declared tokens for withdrawal stops;
 • The request execution for the ability to withdraw funds will occur in %1s;
-• Additional iMe fee will be %2s%% of the amount of withdrawn tokens;
+• Additional Telegram fee will be %2s%% of the amount of withdrawn tokens;
 • The amount of the completed request for the ability to withdraw will be displayed in Withdraw button;
 • Gas payment will be required for withdrawal."</string>
     <string name="staking_withdraw_safe_withdrawal_help_alert_title">Scheduled withdrawal</string>
@@ -10253,7 +10253,7 @@ Your balance will be updated after the transaction is confirmed in the blockchai
     <string name="twitter_search_invite_confirmation_description">Are you sure you want to send invitation to %s?</string>
     <string name="twitter_search_invite_confirmation_title">Send invitation</string>
     <string name="twitter_search_invite_direct_messages_error">The error occurred when sending invitation. The user disabled direct messages.</string>
-    <string name="twitter_search_invite_subtitle">Not found in iMe</string>
+    <string name="twitter_search_invite_subtitle">Not found in Telegram</string>
     <string name="twitter_search_invite_success">Invitation was successfully sent</string>
     <string name="twitter_search_open_in_twitter">Open in Twitter</string>
     <string name="twitter_search_subtitle">"Enter recipient's Twitter username in the search pole"</string>
@@ -10339,8 +10339,8 @@ Archive access button is in the Side Menu"</string>
 🔗 Hash: %5$s
 ⏰ Date: %6$s
 %7$s
-#iMeTransfer"</string>
-    <string name="wallet_amount_send_message_processing_name">iMe Wallet</string>
+#TelegramTransfer"</string>
+    <string name="wallet_amount_send_message_processing_name">Telegram Wallet</string>
     <string name="wallet_amount_send_recipient_crypto_bsc_unknown">BNB Chain address</string>
     <string name="wallet_amount_send_recipient_crypto_unknown">Ethereum address</string>
     <string name="wallet_amount_send_recipient_tg_id">ID %s</string>
@@ -10357,17 +10357,17 @@ Archive access button is in the Side Menu"</string>
     <string name="wallet_amount_validation_accept_to_send_message_error">Confirm sending message to seller</string>
     <string name="wallet_amount_validation_zero_amount_error">Amount must be greater than 0!</string>
     <string name="wallet_app_update_dialog_action_btn">Update</string>
-    <string name="wallet_app_update_dialog_description">To ensure wallet security, you must use the latest version of iMe Messenger.</string>
+    <string name="wallet_app_update_dialog_description">To ensure wallet security, you must use the latest version of Telegram Messenger.</string>
     <string name="wallet_app_update_dialog_title">Update application</string>
     <string name="wallet_auth_dialog_action_btn">Activate</string>
     <string name="wallet_auth_dialog_cancel_btn">Cancel</string>
     <string name="wallet_auth_dialog_channels_description">To add a channel or group to the Catalog, activate Wallet and create an advertising campaign.</string>
     <string name="wallet_auth_dialog_description">To activate the Wallet, you must go through the authorization of your Telegram account!</string>
     <string name="wallet_auth_dialog_donations_description">To use donation functionality, you need to activate Wallet.</string>
-    <string name="wallet_auth_dialog_from_shop_description">To pay for your purchase, you need to activate the Wallet, and then return to the store again and click pay via iMe Wallet.</string>
+    <string name="wallet_auth_dialog_from_shop_description">To pay for your purchase, you need to activate the Wallet, and then return to the store again and click pay via Telegram Wallet.</string>
     <string name="wallet_auth_dialog_secure_description">For security reasons, please re-activate the Wallet using the bot</string>
     <string name="wallet_auth_dialog_title">Activation</string>
-    <string name="wallet_auth_dialog_to_use_feature_description">"To use this functionality, you must authorize your Telegram account via our iMe Wallet bot.
+    <string name="wallet_auth_dialog_to_use_feature_description">"To use this functionality, you must authorize your Telegram account via our Telegram Wallet bot.
 
 After activating the wallet, you will be able to use fully and safely, Voice to Text, Text from Photos, and other Google API services."</string>
     <string name="wallet_auth_dialog_transfer_description">To make a transfer, you need to activate Wallet.</string>
@@ -10388,7 +10388,7 @@ Use these secret words to restore access to your wallet if you lose your passcod
     <string name="wallet_backup_secret_words_pdf_secret_words">Your secret words for recovery:</string>
     <string name="wallet_backup_secret_words_pdf_store_carefully">"Store these words carefully.
 Anyone who owns these words has access to the wallet."</string>
-    <string name="wallet_backup_secret_words_pdf_title">iMe Messenger &amp; Crypto Wallet</string>
+    <string name="wallet_backup_secret_words_pdf_title">Telegram Messenger &amp; Crypto Wallet</string>
     <string name="wallet_backup_secret_words_qr">Get QR-code</string>
     <string name="wallet_backup_secret_words_qr_description">You can use this QR code to simply restore your wallet on another device</string>
     <string name="wallet_backup_secret_words_qr_title">QR code</string>
@@ -10430,7 +10430,7 @@ Please enter the words **%d**, **%d** and **%d** below:"</string>
     <string name="wallet_banner_slide_crypto_transfers_long_description">Make cryptocurrency transfers right in chats, by Telegram ID, using QR code or public addresses.</string>
     <string name="wallet_banner_slide_crypto_transfers_title">CRYPTO TRANSFERS</string>
     <string name="wallet_banner_slide_faq_description">General functionality description</string>
-    <string name="wallet_banner_slide_faq_long_description">Please read the iMe functionality description, you will find a lot of answers to your questions.</string>
+    <string name="wallet_banner_slide_faq_long_description">Please read the Telegram functionality description, you will find a lot of answers to your questions.</string>
     <string name="wallet_banner_slide_faq_title">FAQ</string>
     <string name="wallet_banner_slide_gate_description">Your Gateway to Cryptocurrency</string>
     <string name="wallet_banner_slide_gate_long_description">Trade LIME and other cryptocurrencies with low exchange fees.</string>
@@ -10442,7 +10442,7 @@ Please enter the words **%d**, **%d** and **%d** below:"</string>
     <string name="wallet_banner_slide_non_custodial_long_description">You are the only who have access to your wallet. Save the passphrase to be able to restore or import your wallet.</string>
     <string name="wallet_banner_slide_non_custodial_title">NON-CUSTODIAL</string>
     <string name="wallet_banner_slide_safe_description">Verified tokens and no fakes</string>
-    <string name="wallet_banner_slide_safe_long_description">The inability to add fake tokens into iMe will protect you from losses in case of accidental exchange for a fake token.</string>
+    <string name="wallet_banner_slide_safe_long_description">The inability to add fake tokens into Telegram will protect you from losses in case of accidental exchange for a fake token.</string>
     <string name="wallet_banner_slide_safe_title">SAFE</string>
     <string name="wallet_banner_slide_staking_description">Create deposits</string>
     <string name="wallet_banner_slide_staking_long_description">Create deposits in LIME and partner tokens to make your assets work for you.</string>
@@ -10464,7 +10464,7 @@ Please enter the words **%d**, **%d** and **%d** below:"</string>
     <string name="wallet_binance_pay_intro_scan_description">Please scan the Binance Pay QR-code to make payment</string>
     <string name="wallet_binance_pay_intro_scan_title">Pay via QR Code</string>
     <string name="wallet_binance_pay_login">Add Binance</string>
-    <string name="wallet_binance_pay_login_description">Connect your Binance account and Telegram ID for receiving and making transfers between users via iMe.</string>
+    <string name="wallet_binance_pay_login_description">Connect your Binance account and Telegram ID for receiving and making transfers between users via Telegram.</string>
     <string name="wallet_binance_pay_login_positive_button">Begin</string>
     <string name="wallet_binance_pay_login_title">Create</string>
     <string name="wallet_binance_pay_not_activated_dialog_description">To use this functionality, please activate Binance tab in the Wallet</string>
@@ -10539,7 +10539,7 @@ All transactions are carried out via Binance platform with no fees."</string>
     <string name="wallet_connect_active_sessions">Active sessions</string>
     <string name="wallet_connect_description">Connect your wallet with WalletConnect to make transactions</string>
     <string name="wallet_connect_error_alert_title">WalletConnect error</string>
-    <string name="wallet_connect_error_unsupported_network">"iMe doesn't support dApp's selected network"</string>
+    <string name="wallet_connect_error_unsupported_network">"Telegram doesn't support dApp's selected network"</string>
     <string name="wallet_connect_message_sign_address_hidden">The address is hidden because the wallet is locked</string>
     <string name="wallet_connect_message_sign_confirm_description">Are you sure you want to sign this message?</string>
     <string name="wallet_connect_message_sign_confirm_title">Sign Confirmation</string>
@@ -10605,13 +10605,13 @@ address, restore your account using the
 seed phrase.
 
 If you create a new account, the data of
-the old iMe Wallet account will be over-
+the old Telegram Wallet account will be over-
 written and a new crypto wallet address
 will be linked to your Telegram ID.
 
 Note:
 You can only have one active crypto wallet
-in iMe Wallet. Therefore, when
+in Telegram Wallet. Therefore, when
 other users transfer funds to your 
 Telegram ID, all funds will be automatically
 credited to the last linked address."</string>
@@ -10621,7 +10621,7 @@ credited to the last linked address."</string>
     <string name="wallet_creation_intro_new_wallet_confirmation_title">Warning</string>
     <string name="wallet_creation_intro_privacy">"By continuing, you agree
 with the *Terms of Service*"</string>
-    <string name="wallet_creation_intro_title">iMe - self-custodial wallet</string>
+    <string name="wallet_creation_intro_title">Telegram - self-custodial wallet</string>
     <string name="wallet_creation_intro_title_create">Create wallet</string>
     <string name="wallet_creation_intro_title_import">Import wallet</string>
     <string name="wallet_crypto_blockchains_active_wallets">Active wallets</string>
@@ -10690,17 +10690,17 @@ Only you have access to it."</string>
 
 To use the previously linked crypto wallet address, restore your account using a passphrase.
 
-If you create a new account, the data of the old iMe Wallet account will be overwritten and a new crypto wallet address will be linked to your Telegram ID.
+If you create a new account, the data of the old Telegram Wallet account will be overwritten and a new crypto wallet address will be linked to your Telegram ID.
 
 Note:
-You can only have one active crypto wallet account in iMe Wallet. Therefore, when other users transfer funds to your Telegram ID, all funds will be automatically credited to the last linked address."</string>
+You can only have one active crypto wallet account in Telegram Wallet. Therefore, when other users transfer funds to your Telegram ID, all funds will be automatically credited to the last linked address."</string>
     <string name="wallet_dashboard_create_start_dialog_description">"Non-custodial wallet for cryptocurrencies and tokens.
 
 Store, buy, swap and make transfers on Ethereum, Bitcoin, BNB Chain, Polygon, Fantom, Tron and TON networks.
 
 By pressing NEXT, you agree with
 %s
-iMe Wallet."</string>
+Telegram Wallet."</string>
     <string name="wallet_dashboard_create_start_dialog_description_privacy">Privacy policy</string>
     <string name="wallet_dashboard_create_start_dialog_description_privacy_link">https://imem.gitbook.io/ime-faq-eng/docs-and-terms/privacy-policy</string>
     <string name="wallet_dashboard_create_start_dialog_title">Crypto wallet</string>
@@ -10712,10 +10712,10 @@ iMe Wallet."</string>
 
 To use the previously linked crypto wallet address, restore your account using a passphrase.
 
-If you import an account, the data of the old iMe Wallet account will be overwritten and a new crypto wallet address will be linked to your Telegram ID.
+If you import an account, the data of the old Telegram Wallet account will be overwritten and a new crypto wallet address will be linked to your Telegram ID.
 
 Note:
-You can only have one active crypto wallet account in iMe Wallet. Therefore, when other users transfer funds to your Telegram ID, all funds will be automatically credited to the last linked address."</string>
+You can only have one active crypto wallet account in Telegram Wallet. Therefore, when other users transfer funds to your Telegram ID, all funds will be automatically credited to the last linked address."</string>
     <string name="wallet_dashboard_import_start_dialog_description">Prepare your phrase - these are words for wallet recovery, which were needed to be written down and saved when creating a backup.</string>
     <string name="wallet_dashboard_import_start_dialog_title">Passphrase</string>
     <string name="wallet_dashboard_internal_point_info_dialog_description">"%1$s have constant value is 0.01$ (it is a stablepoint) and do not have any investment and speculative components.
@@ -10770,7 +10770,7 @@ Delete the local data of the inactive account from this device and restore the a
 Before deleting old data, you can save the passphrase of the inactive account to have a recovery backup.
 
 Note:
-In the iMe Wallet, you can have only one active crypto wallet account linked to your Telegram ID, regardless of the number of devices used."</string>
+In the Telegram Wallet, you can have only one active crypto wallet account linked to your Telegram ID, regardless of the number of devices used."</string>
     <string name="wallet_eth_address_mismatch_title">The Data differ</string>
     <string name="wallet_eth_backup_confirm_error">Incorrectly checked</string>
     <string name="wallet_eth_backup_confirm_toolbar_title">Need to check</string>
@@ -10821,7 +10821,7 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_import_too_bad_info">Without secret words you can’t restore access to the wallet.</string>
     <string name="wallet_import_words_count">%d words</string>
     <string name="wallet_internal_point_ads_subtitle">Advertise your neurobots in store and your channels in catalogue.</string>
-    <string name="wallet_internal_point_ads_title">iMe Ads</string>
+    <string name="wallet_internal_point_ads_title">Telegram Ads</string>
     <string name="wallet_internal_point_basic_services">Lime services</string>
     <string name="wallet_internal_point_channels_catalog_subtitle">Categorized compilation of Telegram channels. Add your channel to the catalogue so users can find it.</string>
     <string name="wallet_internal_point_channels_catalog_title">Channels catalog</string>
@@ -10880,9 +10880,9 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_recipient_address_hint">Type %s address</string>
     <string name="wallet_recipient_error_dialog_no_eth_address_description">The recipient does not have an activated crypto wallet</string>
     <string name="wallet_recipient_error_invalid_user_btn_txt">Invite %1$s %2$s</string>
-    <string name="wallet_recipient_error_invalid_user_description">The user does not have activated iMe wallet. In order to send tokens, please invite them to iMe at first</string>
-    <string name="wallet_recipient_error_invalid_user_title">Oops... Not an iMe Wallet user</string>
-    <string name="wallet_recipient_error_send_message_invitation">"I invite you to the iMe Messenger &amp; Crypto Wallet!
+    <string name="wallet_recipient_error_invalid_user_description">The user does not have activated Telegram wallet. In order to send tokens, please invite them to Telegram at first</string>
+    <string name="wallet_recipient_error_invalid_user_title">Oops... Not an Telegram Wallet user</string>
+    <string name="wallet_recipient_error_send_message_invitation">"I invite you to the Telegram Messenger &amp; Crypto Wallet!
 
 An advanced client, powered by Telegram API, with common synchronization and security, with improved functionality and crypto wallet. 
 
@@ -11021,7 +11021,7 @@ Slippage is a change in price between the moment you place your swap order and i
     <string name="wallet_tokens_management_delete_title">Delete</string>
     <string name="wallet_tokens_management_enable_description">"This token exists in our database, there is no need to add it manually.
 
-Do you want this token to be displayed in iMe Wallet?"</string>
+Do you want this token to be displayed in Telegram Wallet?"</string>
     <string name="wallet_tokens_management_enable_title">Token information</string>
     <string name="wallet_tokens_management_icon">Icon</string>
     <string name="wallet_tokens_management_import_confirmation_description">"Are you sure you want to import this custom token?
@@ -11061,7 +11061,7 @@ Custom tokens can be set up in crypto account settings."</string>
     <string name="wallet_transaction_details_recipient_title">Recipient</string>
     <string name="wallet_transaction_details_section_actions">Actions</string>
     <string name="wallet_transaction_details_section_info">Transaction details</string>
-    <string name="wallet_transaction_details_sender">iMe</string>
+    <string name="wallet_transaction_details_sender">Telegram</string>
     <string name="wallet_transaction_details_sender_bonus">Bonus program</string>
     <string name="wallet_transaction_details_sender_referral">Referral program for ID %s</string>
     <string name="wallet_transaction_details_sender_title">Sender</string>
