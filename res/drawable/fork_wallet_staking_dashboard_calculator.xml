@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="26.0dip" android:width="26.0dip" android:viewportWidth="26.0" android:viewportHeight="26.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@android:color/transparent" android:pathData="M17.085,2.167H8.915C5.188,2.167 2.167,5.188 2.167,8.915V17.085C2.167,20.812 5.188,23.833 8.915,23.833H17.085C20.812,23.833 23.833,20.812 23.833,17.085V8.915C23.833,5.188 20.812,2.167 17.085,2.167Z" android:strokeColor="@android:color/white" android:strokeWidth="1.6" />
+    <path android:fillColor="@android:color/transparent" android:pathData="M9.165,6.885L9.165,11.314" android:strokeColor="@android:color/white" android:strokeWidth="1.33062" android:strokeLineCap="round" />
+    <path android:fillColor="@android:color/transparent" android:pathData="M10.731,15.285L7.599,18.417" android:strokeColor="@android:color/white" android:strokeWidth="1.33062" android:strokeLineCap="round" />
+    <path android:fillColor="@android:color/transparent" android:pathData="M11.38,9.099L6.95,9.099" android:strokeColor="@android:color/white" android:strokeWidth="1.33062" android:strokeLineCap="round" />
+    <path android:fillColor="@android:color/transparent" android:pathData="M10.731,18.417L7.599,15.285" android:strokeColor="@android:color/white" android:strokeWidth="1.33062" android:strokeLineCap="round" />
+    <path android:fillColor="@android:color/transparent" android:pathData="M19.131,9.099L14.702,9.099" android:strokeColor="@android:color/white" android:strokeWidth="1.33062" android:strokeLineCap="round" />
+    <path android:fillColor="@android:color/transparent" android:pathData="M19.131,15.743L14.702,15.743" android:strokeColor="@android:color/white" android:strokeWidth="1.33062" android:strokeLineCap="round" />
+    <path android:fillColor="@android:color/transparent" android:pathData="M19.131,17.958L14.702,17.958" android:strokeColor="@android:color/white" android:strokeWidth="1.33062" android:strokeLineCap="round" />
+</vector>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:padding="60.0px" android:layout_width="595.0px" android:layout_height="842.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0px" android:textColor="@color/colorBlack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wallet_backup_secret_words_pdf_title" android:fontFamily="sans-serif-medium" />
+    <TextView android:textSize="14.0px" android:textColor="@color/colorBlack" android:id="@id/text_wallet_address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" />
+    <TextView android:textSize="14.0px" android:textColor="@color/colorBlack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_under_normal" android:text="@string/wallet_backup_secret_words_pdf_secret_words" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_small">
+        <TextView android:textSize="14.0px" android:textColor="@color/colorBlack" android:id="@id/text_column_left" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="14.0px" android:textColor="@color/colorBlack" android:id="@id/text_column_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="@dimen/margin_normal" />
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/image_qr" android:layout_width="200.0px" android:layout_height="200.0px" android:layout_marginTop="@dimen/margin_normal" />
+    <TextView android:textSize="14.0px" android:textColor="@color/colorBlack" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/wallet_backup_secret_words_pdf_store_carefully" />
+</LinearLayout>

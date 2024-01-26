@@ -1,0 +1,21 @@
+package p033j$.util.function;
+
+import java.util.Objects;
+import p033j$.util.concurrent.C2803a;
+/* renamed from: j$.util.function.BiConsumer */
+/* loaded from: classes2.dex */
+public interface BiConsumer<T, U> {
+
+    /* renamed from: j$.util.function.BiConsumer$-CC  reason: invalid class name */
+    /* loaded from: classes2.dex */
+    public final /* synthetic */ class CC {
+        public static BiConsumer $default$andThen(BiConsumer biConsumer, BiConsumer biConsumer2) {
+            Objects.requireNonNull(biConsumer2);
+            return new C2803a(biConsumer, biConsumer2);
+        }
+    }
+
+    void accept(T t, U u);
+
+    BiConsumer<T, U> andThen(BiConsumer<? super T, ? super U> biConsumer);
+}

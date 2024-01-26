@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/linear_root" android:layout_width="fill_parent" android:layout_height="wrap_content" android:animateLayoutChanges="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_normal_upper" android:gravity="start" android:id="@id/text_title" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_small" android:layout_marginRight="@dimen/margin_normal" android:layout_weight="1.0" android:layout_marginHorizontal="@dimen/margin_normal" />
+        <org.telegram.ui.ActionBar.ActionBarMenuItem android:layout_gravity="center_vertical" android:id="@id/button_close" android:layout_width="@dimen/action_bar_menu_size" android:layout_height="@dimen/action_bar_menu_size" android:layout_marginEnd="@dimen/margin_small" />
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/text_size_normal_upper" android:id="@id/text_description" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/text_size_normal" android:layout_marginTop="@dimen/margin_under_normal" android:layout_marginRight="@dimen/text_size_normal" android:layout_marginBottom="@dimen/margin_normal_2" android:layout_marginHorizontal="@dimen/text_size_normal" />
+    <com.iMe.ui.custom.BigActionButton android:id="@id/button_process" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_marginHorizontal="@dimen/margin_normal" />
+    <com.iMe.ui.custom.FeeView android:id="@id/fee_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_upper" android:layout_marginHorizontal="@dimen/margin_normal" />
+</LinearLayout>

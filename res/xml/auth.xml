@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<account-authenticator android:label="@string/AppName" android:icon="@mipmap/fork_launcher_blue_round" android:accountType="com.iMe.android" android:smallIcon="@mipmap/fork_launcher_blue_round" android:accountPreferences="@xml/auth_menu"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

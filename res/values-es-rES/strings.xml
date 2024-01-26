@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binance_opensdk_download">Descarga la aplicación de Binance</string>
+    <string name="binance_opensdk_login_to_connect">Inicia sesión con tu cuenta de Binance para conectarte</string>
+    <string name="binance_opensdk_login_with_mail_or_phone">Inicia sesión con tu correo o teléfono</string>
+    <string name="binance_opensdk_upgrade">Actualiza la aplicación de Binance</string>
+</resources>

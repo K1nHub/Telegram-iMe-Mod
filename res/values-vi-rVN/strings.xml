@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="binance_opensdk_download">Tải xuống Ứng dụng Binance</string>
+    <string name="binance_opensdk_login_to_connect">Đăng nhập vào tài khoản Binance của bạn để kết nối</string>
+    <string name="binance_opensdk_login_with_mail_or_phone">Đăng nhập bằng email hoặc điện thoại</string>
+    <string name="binance_opensdk_upgrade">Cập nhật Ứng dụng Binance</string>
+</resources>
